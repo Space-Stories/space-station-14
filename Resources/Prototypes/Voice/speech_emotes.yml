@@ -2,7 +2,7 @@
 - type: emote
   id: Scream
   category: Vocal
-  chatMessages: [screams!]
+  chatMessages: [кричит!]
   chatTriggers:
     - scream
     - screams
@@ -28,11 +28,20 @@
     - yells!
     - yelled
     - yelling
+    - кричит
+    - кричит.
+    - кричит!
+    - орёт
+    - орёт.
+    - орёт!
+    - визжит
+    - визжит.
+    - визжит!
 
 - type: emote
   id: Laugh
   category: Vocal
-  chatMessages: [laughs]
+  chatMessages: [смеётся.]
   chatTriggers:
     - laugh
     - laughs
@@ -52,6 +61,21 @@
     - giggles!
     - giggling
     - giggled
+    - смеется
+    - смеется.
+    - смеется!
+    - смеётся
+    - смеётся.
+    - смеётся!
+    - хохочет
+    - хохочет.
+    - хохочет!
+    - хихикает
+    - хихикает.
+    - хихикает!
+    - хихикнул
+    - хихикнула
+    - ржёт
 
 - type: emote
   id: Honk
@@ -61,7 +85,7 @@
 - type: emote
   id: Sigh
   category: Vocal
-  chatMessages: [sighs]
+  chatMessages: [вздыхает.]
   chatTriggers:
     - sigh
     - sighs
@@ -69,11 +93,17 @@
     - sigh.
     - sighs.
     - sighed.
+    - вздыхает
+    - вздыхает.
+    - вздохнул
+    - вздохнула
+    - вздохнул.
+    - вздохнула.
 
 - type: emote
   id: Whistle
   category: Vocal
-  chatMessages: [whistle]
+  chatMessages: [свистит.]
   chatTriggers:
     - whistle
     - whistle.
@@ -84,11 +114,17 @@
     - whistleblowing
     - whistleblowing.
     - whistleblowing!
+    - свистит
+    - свистит.
+    - свистит!
+    - свистнул
+    - свистнул.
+    - свистнул!
 
 - type: emote
   id: Crying
   category: Vocal
-  chatMessages: [crying]
+  chatMessages: [плачет.]
   chatTriggers:
     - cry
     - cry.
@@ -99,11 +135,17 @@
     - cries
     - cries.
     - cries!
+    - плачет
+    - плачет.
+    - плачет!
+    - рыдает
+    - рыдает.
+    - рыдает!
 
 - type: emote
   id: Squish
   category: Vocal
-  chatMessages: [squishing]
+  chatMessages: [хлюпает.]
   chatTriggers:
     - squish
     - squish.
@@ -114,11 +156,14 @@
     - squishes
     - squishes.
     - squishes!
+    - хлюпает
+    - хлюпает.
+    - хлюпает!
 
 - type: emote
   id: Chitter
   category: Vocal
-  chatMessages: [chitters.]
+  chatMessages: [стрекочет.]
   chatTriggers:
    - chitter
    - chitter.
@@ -129,11 +174,14 @@
    - chittered
    - chittered.
    - chittered!
+   - стрекочет
+   - стрекочет.
+   - стрекочет!
 
 - type: emote
   id: Squeak
   category: Vocal
-  chatMessages: [squeaks.]
+  chatMessages: [пищит.]
   chatTriggers:
    - squeak
    - squeak.
@@ -144,12 +192,15 @@
    - squeaked
    - squeaked.
    - squeaked!
+   - пищит
+   - пищит.
+   - пищит!
 
 # hand emotes
 - type: emote
   id: Clap
   category: Hands
-  chatMessages: [claps!]
+  chatMessages: [хлопает!]
   chatTriggers:
     - clap
     - claps
@@ -157,11 +208,24 @@
     - claps!
     - clapping
     - clapped
+    - хлопает
+    - хлопает.
+    - хлопает!
+    - хлопнул
+    - хлопнула
+    - хлопает в ладоши
+    - хлопает в ладоши.
+    - хлопает в ладоши!
+    - хлопнул в ладоши
+    - хлопнула в ладоши
+    - апплодирует
+    - апплодирует.
+    - апплодирует!
 
 - type: emote
   id: Snap
   category: Hands
-  chatMessages: [snaps fingers] # snaps <{THEIR($ent)}> fingers?
+  chatMessages: [щёлкает пальцами.] # snaps <{THEIR($ent)}> fingers?
   chatTriggers:
     - snap
     - snaps
@@ -176,11 +240,31 @@
     - snaps their fingers!
     - snapping fingers
     - snapped fingers
+    - щелкает
+    - щелкает.
+    - щелкает!
+    - щелкнул
+    - щелкнула
+    - щёлкает
+    - щёлкает.
+    - щёлкает!
+    - щёлкнул
+    - щёлкнула
+    - щелкает пальцами
+    - щелкает пальцами.
+    - щелкает пальцами!
+    - щелкнул пальцами
+    - щелкнула пальцами
+    - щёлкает пальцами
+    - щёлкает пальцами.
+    - щёлкает пальцами!
+    - щёлкнул пальцами
+    - щёлкнула пальцами
 
 - type: emote
   id: Salute
   category: Hands
-  chatMessages: [Salute]
+  chatMessages: [салютует.]
   chatTriggers:
     - salute
     - salute.
@@ -188,6 +272,18 @@
     - salutes
     - salutes.
     - salutes!
+    - салютует
+    - салютует.
+    - салютует!
+    - отдаёт честь
+    - отдаёт честь.
+    - отдаёт честь!
+    - отдал честь
+    - отдал честь.
+    - отдал честь!
+    - отдала честь
+    - отдала честь.
+    - отдала честь!
 
 - type: emote
   id: DefaultDeathgasp
