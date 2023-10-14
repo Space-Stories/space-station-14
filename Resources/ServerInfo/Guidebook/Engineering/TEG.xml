@@ -1,13 +1,13 @@
 ﻿<Document>
-  # Thermo-electric Engine (TEG)
+  # Термоэлектрический двигатель (ТЭД)
 
-  The TEG generates power by exchanging heat between hot and cold gases. On station, hot gas is usually created by burning plasma, and an array of heat-exchanging pipes in space radiates away heat to make a cold side.
+  ТЭД вырабатывает энергию за счет теплообмена между горячим и холодным газами. На станции горячий газ обычно образуется в результате сжигания плазмы, а массив теплообменных труб в космосе излучает тепло, образуя холодную сторону.
 
-  The TEG relies heavily on atmospherics piping. The only truly special component about it is the generator core, the rest is all off-the-shelf atmospherics equipment. Note that while the exact layout may vary significantly depending on station, the general components and setup are usually the same.
+  ТЭГ в значительной степени опирается на атмосферные трубопроводы. Единственным по-настоящему особенным компонентом в нем является сердечник генератора, все остальное - готовое атмосферное оборудование. Отметим, что, хотя точная схема может существенно отличаться в зависимости от станции, общие компоненты и устройство обычно одинаковы.
 
-  ## Generator
+  ## Генератор
 
-  The main generator itself is a machine made up of multiple parts: the core generator and two "circulators", in this arrangement:
+  Главный генератор представляет собой машину, состоящую из нескольких частей: сердечника генератора и двух "циркуляторов", расположенных в таком порядке:
 
   <Box>
     <GuideEntityEmbed Entity="TegCirculator" Rotation="180" Caption="" Margin="0" />
@@ -15,25 +15,25 @@
     <GuideEntityEmbed Entity="TegCirculator" Caption="" Margin="0" />
   </Box>
 
-  The circulators take in either a hot or cold gas, and pass it through the machine to exchange heat. The gas then gets output on the other end of the circulator. The generator produces the actual power and outputs it over an HV wire.
+  Циркуляторы принимают горячий или холодный газ и пропускают его через установку для теплообмена. Затем газ выходит на другом конце циркулятора. Генератор вырабатывает фактическую мощность и выдает ее по высоковольтному проводу.
 
-  Note that the circulators are [color=#a4885c]directional[/color]: they will only let gas through one way. You can see this direction in-game by examining the circulator itself. A pressure difference is required across the input and output, so pumps are generally provided and must be turned on.
+  Обратите внимание, что циркуляторы [color=#a4885c]направлены[/color]: они пропускают газ только в одну сторону. Это направление можно определить в игре, осмотрев сам циркулятор. На входе и выходе требуется разность давлений, поэтому обычно предусмотрены насосы, которые должны быть включены.
 
-  There is no preference for which side must be hot or cold, there need only be a difference in temperature between them. The gases in the two "loops" are never mixed, only energy is exchanged between them. The hot side will cool down, the cold side will heat up.
+  При этом нет предпочтения, какая сторона должна быть горячей, а какая холодной, необходимо только, чтобы между ними была разница температур. Газы в двух "петлях" никогда не смешиваются, между ними происходит только обмен энергией. Горячая сторона будет охлаждаться, холодная - нагреваться.
 
-  ## Burn Chamber
+  ## Камера сгорания
 
-  As I'm sure a wise person once said: the best way to make something hot is to light it on fire. Well, depending on context that may not be very wise, but luckily your engineering department has just what's needed to do it wisely after all.
+  Наверняка кто-то из мудрых людей сказал: лучший способ сделать что-то горячим - это поджечь его. В зависимости от контекста это может быть не очень разумно, но, к счастью, у вашего инженерного отдела есть все необходимое для того, чтобы сделать это разумно.
 
-  TODO: somebody fill this out once we settle on a general mapped layout for burn chambers.
+  TODO: кто-нибудь заполнит это, как только мы определимся с общей схемой расположения камер сгорания.
 
-  ## Coolant Array
+  ## Массив охлаждающей жидкости
 
-  A whole bunch of heat-exchanger piping in space. There's not much to say here: gas goes through and cools down.
+  Целая куча трубопроводов теплообменника в космосе. Здесь много говорить не надо: газ проходит и охлаждается.
 
-  ## The Pipes
+  ## Трубы
 
-  TODO: somebody fill this out once we settle on a general mapped layout for burn chambers.
+  TODO: кто-нибудь заполнит это, когда мы определимся с общей схемой расположения камер сгорания.
 
 
 </Document>
