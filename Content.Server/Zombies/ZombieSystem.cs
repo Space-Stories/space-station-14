@@ -255,7 +255,7 @@ namespace Content.Server.Zombies
             foreach (var (layer, info) in zombiecomp.BeforeZombifiedCustomBaseLayers)
             {
                 _humanoidAppearance.SetBaseLayerColor(target, layer, info.Color);
-                _humanoidAppearance.SetBaseLayerId(target, layer, info.Id);
+                _humanoidAppearance.SetBaseLayerId(target, layer, info.ID);
             }
             if(TryComp<HumanoidAppearanceComponent>(target, out var appcomp))
             {

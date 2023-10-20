@@ -106,10 +106,10 @@ namespace Content.Shared.Preferences
             "John Doe",
             "",
             SharedHumanoidAppearanceSystem.DefaultSpecies,
-            18,
-            Sex.Male,
-            Gender.Male,
-            new HumanoidCharacterAppearance(),
+                18,
+                Sex.Male,
+                Gender.Male,
+               new HumanoidCharacterAppearance(),
             ClothingPreference.Jumpsuit,
             BackpackPreference.Backpack,
             new Dictionary<string, JobPriority>
@@ -350,7 +350,7 @@ namespace Content.Shared.Preferences
             return Appearance.MemberwiseEquals(other.Appearance);
         }
 
-        public void EnsureValid()
+        public void EnsureValid(string[] sponsorMarkings)
         {
             var prototypeManager = IoCManager.Resolve<IPrototypeManager>();
 
@@ -407,7 +407,7 @@ namespace Content.Shared.Preferences
             var configManager = IoCManager.Resolve<IConfigurationManager>();
             if (configManager.GetCVar(CCVars.RestrictedNames))
             {
-                name = Regex.Replace(name, @"[^А-Яа-яёЁ0-9' -]", string.Empty);
+                name = Regex.Replace(name, @"[^А-Яа-яёЁ0-9' -]", string.Empty); // Corvax: Only cyrillic names
             }
 
             if (configManager.GetCVar(CCVars.ICNameCase))
@@ -433,7 +433,7 @@ namespace Content.Shared.Preferences
                 flavortext = FormattedMessage.RemoveMarkup(FlavorText);
             }
 
-            var appearance = HumanoidCharacterAppearance.EnsureValid(Appearance, Species, Sex);
+            var appearance = HumanoidCharacterAppearance.EnsureValid(Appearance, Species, sponsorMarkings);
 
             var prefsUnavailableMode = PreferenceUnavailable switch
             {

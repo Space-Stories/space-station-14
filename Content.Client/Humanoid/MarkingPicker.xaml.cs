@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Client.Corvax.Sponsors;
 using Content.Shared.Humanoid;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
@@ -18,6 +19,7 @@ public sealed partial class MarkingPicker : Control
 {
     [Dependency] private readonly MarkingManager _markingManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private readonly SponsorsManager _sponsorsManager = default!; // Corvax-Sponsors
 
     public Action<MarkingSet>? OnMarkingAdded;
     public Action<MarkingSet>? OnMarkingRemoved;
@@ -35,7 +37,6 @@ public sealed partial class MarkingPicker : Control
     private List<MarkingCategories> _markingCategories = Enum.GetValues<MarkingCategories>().ToList();
 
     private string _currentSpecies = SharedHumanoidAppearanceSystem.DefaultSpecies;
-    private Sex _currentSex = Sex.Unsexed;
     public Color CurrentSkinColor = Color.White;
     public Color CurrentEyeColor = Color.Black;
     public Marking? HairMarking;
@@ -78,7 +79,7 @@ public sealed partial class MarkingPicker : Control
         }
     }
 
-    public void SetData(List<Marking> newMarkings, string species, Sex sex, Color skinColor, Color eyeColor)
+    public void SetData(List<Marking> newMarkings, string species, Color skinColor, Color eyeColor)
     {
         var pointsProto = _prototypeManager
             .Index<SpeciesPrototype>(species).MarkingPoints;
@@ -90,7 +91,6 @@ public sealed partial class MarkingPicker : Control
         }
 
         _currentSpecies = species;
-        _currentSex = sex;
         CurrentSkinColor = skinColor;
         CurrentEyeColor = eyeColor;
 
@@ -98,7 +98,7 @@ public sealed partial class MarkingPicker : Control
         PopulateUsed();
     }
 
-    public void SetData(MarkingSet set, string species, Sex sex, Color skinColor, Color eyeColor)
+    public void SetData(MarkingSet set, string species, Color skinColor, Color eyeColor)
     {
         _currentMarkings = set;
 
@@ -108,7 +108,6 @@ public sealed partial class MarkingPicker : Control
         }
 
         _currentSpecies = species;
-        _currentSex = sex;
         CurrentSkinColor = skinColor;
         CurrentEyeColor = eyeColor;
 
@@ -185,8 +184,8 @@ public sealed partial class MarkingPicker : Control
         _selectedUnusedMarking = null;
 
         var markings = IgnoreSpecies
-            ? _markingManager.MarkingsByCategoryAndSex(_selectedMarkingCategory, _currentSex)
-            : _markingManager.MarkingsByCategoryAndSpeciesAndSex(_selectedMarkingCategory, _currentSpecies, _currentSex);
+            ? _markingManager.MarkingsByCategory(_selectedMarkingCategory)
+            : _markingManager.MarkingsByCategoryAndSpecies(_selectedMarkingCategory, _currentSpecies);
 
         var sortedMarkings = markings.Values.Where(m =>
             m.ID.ToLower().Contains(filter.ToLower()) ||
@@ -202,6 +201,16 @@ public sealed partial class MarkingPicker : Control
 
             var item = CMarkingsUnused.AddItem($"{GetMarkingName(marking)}", marking.Sprites[0].Frame0());
             item.Metadata = marking;
+            // Corvax-Sponsors-Start
+            if (marking.SponsorOnly)
+            {
+                item.Disabled = true;
+                if (_sponsorsManager.TryGetInfo(out var sponsor))
+                {
+                    item.Disabled = !sponsor.AllowedMarkings.Contains(marking.ID);
+                }
+            }
+            // Corvax-Sponsors-End
         }
 
         CMarkingPoints.Visible = _currentMarkings.PointsLeft(_selectedMarkingCategory) != -1;
@@ -322,22 +331,6 @@ public sealed partial class MarkingPicker : Control
 
         _currentMarkings = new(markingList, speciesPrototype.MarkingPoints, _markingManager, _prototypeManager);
         _currentMarkings.EnsureSpecies(species, null, _markingManager);
-        _currentMarkings.EnsureSexes(_currentSex, _markingManager);
-
-        Populate(CMarkingSearch.Text);
-        PopulateUsed();
-    }
-
-    public void SetSex(Sex sex)
-    {
-        _currentSex = sex;
-        var markingList = _currentMarkings.GetForwardEnumerator().ToList();
-
-        var speciesPrototype = _prototypeManager.Index<SpeciesPrototype>(_currentSpecies);
-
-        _currentMarkings = new(markingList, speciesPrototype.MarkingPoints, _markingManager, _prototypeManager);
-        _currentMarkings.EnsureSpecies(_currentSpecies, null, _markingManager);
-        _currentMarkings.EnsureSexes(_currentSex, _markingManager);
 
         Populate(CMarkingSearch.Text);
         PopulateUsed();
