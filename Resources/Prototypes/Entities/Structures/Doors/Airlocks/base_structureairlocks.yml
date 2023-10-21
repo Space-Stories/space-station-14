@@ -64,6 +64,7 @@
   - type: Weldable
     time: 3
   - type: Airlock
+    openUnlitVisible: true # Corvax-Resprite-Airlocks
   - type: DoorBolt
   - type: Appearance
   - type: WiresVisuals
