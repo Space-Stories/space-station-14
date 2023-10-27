@@ -1,0 +1,27 @@
+- type: statusIcon
+  parent: JobIcon
+  id: JobIconHeadOfSpacePrison
+  icon:
+    sprite: Stories/Interface/Misc/job_icons.rsi
+    state: HeadOfSpacePrison
+
+- type: statusIcon
+  parent: JobIcon
+  id: JobIconSpacePrisonOfficer
+  icon:
+    sprite: Stories/Interface/Misc/job_icons.rsi
+    state: SpacePrisonSecurityOfficer
+
+- type: statusIcon
+  parent: JobIcon
+  id: JobIconSpacePrisonEngineer
+  icon:
+    sprite: Stories/Interface/Misc/job_icons.rsi
+    state: SpacePrisonEngineer
+
+- type: statusIcon
+  parent: JobIcon
+  id: JobIconIAA
+  icon:
+    sprite: Stories/Interface/Misc/job_icons.rsi
+    state: IAA

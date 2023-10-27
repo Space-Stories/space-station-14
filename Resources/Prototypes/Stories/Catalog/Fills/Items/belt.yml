@@ -1,0 +1,8 @@
+- type: entity
+  id: ClothingBeltHoSPSheathFilled
+  parent: ClothingBeltHoSPSheath
+  suffix: Filled
+  components:
+  - type: StorageFill
+    contents:
+      - id: HoSPSabre

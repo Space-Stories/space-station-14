@@ -1,0 +1,35 @@
+- type: job
+  id: SpacePrisonOfficer
+  name: job-name-space-prison-officer
+  description: job-description-space-prison-officer
+  playTimeTracker: JobSpacePrisonOfficer
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 36000
+  startingGear: SpacePrisonOfficerGear
+  icon: "JobIconSpacePrisonOfficer"
+  supervisors: job-supervisors-hosp
+  canBeAntag: false
+  access:
+  - Security
+  - Brig
+  - Maintenance
+  - Service
+  - External
+
+- type: startingGear
+  id: SpacePrisonOfficerGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitSP
+    back: ClothingBackpackSpacePrisonFilled
+    shoes: ClothingShoesBootsJackSP
+    eyes: ClothingEyesGlassesSpacePrison
+    head: ClothingHeadHatBeretSP
+    outerClothing: ClothingOuterVestArmorSP
+    id: SpacePrisonOfficerPDA
+    ears: ClothingHeadsetPrison
+    belt: ClothingBeltSecurityFilled
+  innerclothingskirt: ClothingUniformJumpskirtSP
+  satchel: ClothingBackpackSatchelSpacePrisonFilled
+  duffelbag: ClothingBackpackDuffelSpacePrisonFilled

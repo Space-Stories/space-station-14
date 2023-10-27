@@ -1,0 +1,43 @@
+- type: job
+  id: SpacePrisonEngineer
+  name: job-name-space-prison-engineer
+  description: job-description-space-prison-engineer
+  playTimeTracker: JobSpacePrisonEngineer
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 24000
+    - !type:DepartmentTimeRequirement
+      department: Engineering
+      time: 18000
+  startingGear: SpacePrisonEngineerGear
+  icon: "JobIconSpacePrisonEngineer"
+  supervisors: job-supervisors-hosp
+  canBeAntag: false
+  access:
+  - Security
+  - Brig
+  - Maintenance
+  - Service
+  - External
+  - Maintenance
+  - Engineering
+  - External
+  - Atmospherics
+
+- type: startingGear
+  id: SpacePrisonEngineerGear
+  equipment:
+    head: ClothingHeadHatBeretEngineering
+    jumpsuit: ClothingUniformJumpsuitSP
+    back: ClothingBackpackEngineeringFilled
+    shoes: ClothingShoesBootsJackSP
+    outerClothing: ClothingOuterWinterEngi
+    id: SpacePrisonEngineerPDA
+    eyes: ClothingEyesGlassesMeson
+    belt: ClothingBeltUtilityEngineering
+    ears: ClothingHeadsetPrison
+    gloves: ClothingHandsGlovesColorYellow
+  innerclothingskirt: ClothingUniformJumpskirtSP
+  satchel: ClothingBackpackSatchelEngineeringFilled
+  duffelbag: ClothingBackpackDuffelEngineeringFilled

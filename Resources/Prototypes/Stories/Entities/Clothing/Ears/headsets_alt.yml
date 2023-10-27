@@ -1,0 +1,16 @@
+- type: entity
+  parent: ClothingHeadsetAlt
+  id: ClothingHeadsetPrisonAlt
+  name: Space prison over-ear headset
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyPrison
+      - EncryptionKeyCommon
+      - EncryptionKeySecurity
+      - EncryptionKeyCommand
+  - type: Sprite
+    sprite: Stories/Clothing/Ears/Headsets/prison.rsi
+  - type: Clothing
+    sprite: Stories/Clothing/Ears/Headsets/prison.rsi

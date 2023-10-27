@@ -36,7 +36,9 @@
   color: "#334E6D"
   roles:
   - Captain
+  - IAA # Stories-IAA
   - CentralCommandOfficial
+  - HeadOfSpacePrison # Stories-SpacePrison
   - ChiefEngineer
   - ChiefMedicalOfficer
   - HeadOfPersonnel

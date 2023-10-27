@@ -1,0 +1,17 @@
+- type: entity
+  parent: ClothingOuterStorageBase
+  id: ClothingOuterCoatHoSP
+  name: head of space prison trenchcoat
+  description: A rugged canvas trenchcoat, designed and created by TX Fabrication Corp. Wearing it makes you feel for the plight of the Tibetans.
+  components:
+  - type: Sprite
+    sprite: Stories/Clothing/OuterClothing/Coats/hosp.rsi
+  - type: Clothing
+    sprite: Stories/Clothing/OuterClothing/Coats/hosp.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.70
+        Slash: 0.70
+        Piercing: 0.70
+        Heat: 0.80

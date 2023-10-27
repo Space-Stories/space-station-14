@@ -147,8 +147,11 @@
     {
       "name": "paper_stamp-generic"
     },
-	{
+    {
       "name": "paper_stamp-psychologist"
+    },
+    {
+      "name": "paper_stamp-hosp"
     },
     {
       "name": "paper_talisman"
@@ -304,6 +307,9 @@
     },
     {
       "name": "stamp-psychologist"
+    },
+    {
+      "name": "stamp-hosp"
     }
   ]
 }

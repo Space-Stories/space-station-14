@@ -1,0 +1,8 @@
+﻿- type: entity
+  parent: ClothingShoesBootsJack
+  id: ClothingShoesBootsJackSP
+  components:
+    - type: Sprite
+      sprite: Stories/Clothing/Shoes/Boots/jackboots_sp.rsi
+    - type: Clothing
+      sprite: Stories/Clothing/Shoes/Boots/jackboots_sp.rsi

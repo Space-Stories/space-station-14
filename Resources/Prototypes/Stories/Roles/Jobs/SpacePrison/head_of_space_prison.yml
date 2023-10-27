@@ -1,0 +1,50 @@
+- type: job
+  id: HeadOfSpacePrison
+  name: job-name-hosp
+  description: job-description-hosp
+  playTimeTracker: JobHeadOfSpacePrison
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobWarden
+      time: 18000
+    - !type:DepartmentTimeRequirement
+      department: SpacePrison
+      time: 36000 # 200 minutes on space prison dep gameplay req
+  weight: 10
+  startingGear: HeadOfSpacePrisonGear
+  icon: "JobIconHeadOfSpacePrison"
+  requireAdminNotify: true
+  supervisors: job-supervisors-captain
+  canBeAntag: false
+  access:
+  - HeadOfSecurity
+  - Command
+  - Brig
+  - Security
+  - Armory
+  - Maintenance
+  - Service
+  - External
+  - Detective
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+      - type: CommandStaff
+
+- type: startingGear
+  id: HeadOfSpacePrisonGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitHoSP
+    back: ClothingBackpackSpacePrisonFilled
+    shoes: ClothingShoesBootsJackSP
+    outerClothing: ClothingOuterCoatHoSP
+    eyes: ClothingEyesGlassesSpacePrison
+    id: HeadOfSPPDA
+    gloves: ClothingHandsGlovesCombat
+    ears: ClothingHeadsetPrisonAlt
+    belt: ClothingBeltHoSPSheathFilled
+  innerclothingskirt: ClothingUniformJumpskirtHoSP
+  satchel: ClothingBackpackSatchelSpacePrisonFilled
+  duffelbag: ClothingBackpackDuffelSpacePrisonFilled

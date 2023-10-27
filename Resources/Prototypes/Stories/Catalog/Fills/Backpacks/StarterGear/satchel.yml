@@ -1,0 +1,30 @@
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackSatchelSpacePrison
+  id: ClothingBackpackSatchelSpacePrisonFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvivalSecurity
+      - id: Flash
+      - id: MagazinePistol
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackSatchel
+  id: ClothingBackpackSatchelIAAFilled
+  components:
+    - type: StorageFill
+      contents:
+        - id: BoxSurvival
+        - id: BriefcaseIAAFilled
+
+- type: entity
+  noSpawn: true
+  parent: ClothingBackpackSatchelMedical
+  id: ClothingBackpackSatchelPsychologistFilled
+  components:
+    - type: StorageFill
+      contents:
+        - id: BoxSurvivalMedical
+        - id: RubberStampPsychologist

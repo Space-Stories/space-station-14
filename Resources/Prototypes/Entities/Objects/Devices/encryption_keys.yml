@@ -72,6 +72,7 @@
     - Security
     - Service
     - Supply
+    - Prison
     defaultChannel: Command
   - type: Sprite
     layers:

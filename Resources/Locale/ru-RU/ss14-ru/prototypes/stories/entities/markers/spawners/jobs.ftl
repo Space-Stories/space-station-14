@@ -1,0 +1,10 @@
+ent-SpawnPointJobBaseStories = { ent-MarkerBase }
+    .desc = { ent-MarkerBase.desc }
+ent-SpawnPointIAA = АВД
+    .desc = { ent-SpawnPointJobBaseStories.desc }
+ent-SpawnPointHeadOfSpacePrison = глава кт
+    .desc = { ent-SpawnPointJobBaseStories.desc }
+ent-SpawnPointSpacePrisonOfficer = офицер кт
+    .desc = { ent-SpawnPointJobBaseStories.desc }
+ent-SpawnPointSpacePrisonEngineer = инженер кт
+    .desc = { ent-SpawnPointJobBaseStories.desc }

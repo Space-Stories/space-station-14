@@ -1,0 +1,52 @@
+- type: entity
+  parent: IDCardStandard
+  id: HeadOfSPIDCard
+  name: head of space prison ID card
+  components:
+  - type: Sprite
+    sprite: Stories/Objects/Misc/id_cards.rsi
+    layers:
+    - state: default
+    - state: idhosp
+  - type: PresetIdCard
+    job: HeadOfSpacePrison
+  - type: Clothing
+    slots:
+    - idcard
+    sprite: Stories/Objects/Misc/id_cards.rsi
+
+- type: entity
+  parent: HeadOfSPIDCard
+  id: SpacePrisonOfficerIDCard
+  name: space prison officer ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idspofficer
+  - type: PresetIdCard
+    job: SpacePrisonOfficer
+
+- type: entity
+  parent: HeadOfSPIDCard
+  id: SpacePrisonEngineerIDCard
+  name: space prison engineer ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: default
+    - state: idspengineer
+  - type: PresetIdCard
+    job: SpacePrisonEngineer
+
+- type: entity
+  parent: HeadOfSPIDCard
+  id: IAAIDCard
+  name: internal affairs agent ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: silver
+    - state: idiaa
+  - type: PresetIdCard
+    job: IAA

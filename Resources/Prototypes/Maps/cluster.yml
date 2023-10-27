@@ -1,4 +1,4 @@
-- type: gameMap
+﻿- type: gameMap
   id: Cluster
   mapName: 'Cluster'
   mapPath: /Maps/cluster.yml
@@ -21,6 +21,7 @@
           availableJobs:
             #service
             Captain: [ 1, 1 ]
+            IAA: [ 1, 1 ] # Corvax-IAA
             HeadOfPersonnel: [ 1, 1 ]
             Bartender: [ 1, 1 ]
             Botanist: [ 2, 2 ]
@@ -28,7 +29,7 @@
             Janitor: [ 1, 1 ]
             Chaplain: [ 1, 1 ]
             Librarian: [ 1, 1 ]
-            Lawyer: [ 1, 1 ]
+            #Lawyer: [ 1, 1 ] # Corvax-IAA
             ServiceWorker: [ 1, 1 ]
             #engineering
             ChiefEngineer: [ 1, 1 ]
@@ -64,4 +65,4 @@
             Clown: [ 1, 1 ]
             Mime: [ 1, 1 ]
             Musician: [ 1, 1 ]
-            
+

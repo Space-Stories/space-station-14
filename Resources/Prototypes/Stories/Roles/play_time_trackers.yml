@@ -1,0 +1,11 @@
+- type: playTimeTracker
+  id: JobHeadOfSpacePrison
+
+- type: playTimeTracker
+  id: JobSpacePrisonOfficer
+
+- type: playTimeTracker
+  id: JobSpacePrisonEngineer
+
+- type: playTimeTracker
+  id: JobIAA
