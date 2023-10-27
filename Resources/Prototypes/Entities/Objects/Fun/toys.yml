@@ -320,21 +320,6 @@
       - PlushieSharkGrey
 
 - type: entity
-  parent: PlushieSharkBlue
-  id: PlushieSharkJokerge
-  name: jokerge shark soft toy
-  description: Big and safe to have by your side if you want to discover the world below the surface of the ocean.
-  components:
-  - type: Sprite
-    sprite: Objects/Fun/sharkplush.rsi
-    state: jokerge
-  - type: Item
-    heldPrefix: jokerge
-  - type: Tag
-    tags:
-      - PlushieSharkGrey
-
-- type: entity
   parent: BasePlushie
   id: PlushieRatvar
   name: ratvar plushie
