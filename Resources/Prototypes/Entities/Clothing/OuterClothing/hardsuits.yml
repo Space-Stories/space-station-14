@@ -428,6 +428,17 @@
   name: blood-red hardsuit
   description: A heavily armored hardsuit designed for work in special operations. Property of Gorlex Marauders.
   components:
+  - type: ClothingWhitelist # SpaceStories exploding hardsuit (doublechest) - start
+    whitelist:
+      components:
+      - NukeOperative
+  - type: Explosive
+    explosionType: MicroBomb
+    totalIntensity: 120
+    intensitySlope: 5
+    maxIntensity: 30
+    canCreateVacuum: false
+  - type: ExplodeOnTrigger # SpaceStories exploding hardsuit (doublechest) - end
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/syndicate.rsi
   - type: Clothing
@@ -473,6 +484,17 @@
   name: syndicate elite hardsuit
   description: An elite version of the blood-red hardsuit, with improved armor and fireproofing. Property of Gorlex Marauders.
   components:
+  - type: ClothingWhitelist # SpaceStories exploding hardsuit (doublechest) - start
+    whitelist:
+      components:
+      - NukeOperative
+  - type: Explosive
+    explosionType: MicroBomb
+    totalIntensity: 120
+    intensitySlope: 5
+    maxIntensity: 30
+    canCreateVacuum: false
+  - type: ExplodeOnTrigger # SpaceStories exploding hardsuit (doublechest) - end
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/syndieelite.rsi
   - type: Clothing
@@ -506,6 +528,17 @@
   name: syndicate commander hardsuit
   description: A bulked up version of the blood-red hardsuit, purpose-built for the commander of a syndicate operative squad. Has significantly improved armor for those deadly front-lines firefights.
   components:
+  - type: ClothingWhitelist # SpaceStories exploding hardsuit (doublechest) - start
+    whitelist:
+      components:
+      - NukeOperative
+  - type: Explosive
+    explosionType: MicroBomb
+    totalIntensity: 120
+    intensitySlope: 5
+    maxIntensity: 30
+    canCreateVacuum: false
+  - type: ExplodeOnTrigger # SpaceStories exploding hardsuit (doublechest) - end
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/syndiecommander.rsi
   - type: Clothing
@@ -537,6 +570,17 @@
   name: cybersun juggernaut suit
   description: A suit made by the cutting edge R&D department at cybersun to be hyper resilient.
   components:
+  - type: ClothingWhitelist # SpaceStories exploding hardsuit (doublechest) - start
+    whitelist:
+      components:
+      - NukeOperative
+  - type: Explosive
+    explosionType: MicroBomb
+    totalIntensity: 120
+    intensitySlope: 5
+    maxIntensity: 30
+    canCreateVacuum: false
+  - type: ExplodeOnTrigger # SpaceStories exploding hardsuit (doublechest) - end
   - type: Sprite
     sprite: Clothing/OuterClothing/Hardsuits/cybersun.rsi
   - type: Clothing
