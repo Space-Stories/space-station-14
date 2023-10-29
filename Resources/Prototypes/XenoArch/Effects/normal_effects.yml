@@ -553,12 +553,12 @@
     intensitySlope: 2.5
     maxIntensity: 50
 
-- type: artifactEffect
-  id: EffectSingulo
-  targetDepth: 10
-  effectHint: artifact-effect-hint-destruction
-  components:
-  - type: SpawnArtifact
-    maxSpawns: 1
-    spawns:
-    - id: Singularity
+#- type: artifactEffect
+#  id: EffectSingulo
+#  targetDepth: 10
+#  effectHint: artifact-effect-hint-destruction
+#  components:
+#  - type: SpawnArtifact
+#    maxSpawns: 1
+#    spawns:
+#    - id: Singularity
