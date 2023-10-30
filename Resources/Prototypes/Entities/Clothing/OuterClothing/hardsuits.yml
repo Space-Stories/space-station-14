@@ -432,11 +432,13 @@
     whitelist:
       components:
       - NukeOperative
+    factionsWhitelist:
+    - Syndicate
   - type: Explosive
-    explosionType: MicroBomb
-    totalIntensity: 120
+    explosionType: PowerSink
+    maxIntensity: 8
     intensitySlope: 5
-    maxIntensity: 30
+    totalIntensity: 5
     canCreateVacuum: false
   - type: ExplodeOnTrigger # SpaceStories exploding hardsuit (doublechest) - end
   - type: Sprite
@@ -488,11 +490,13 @@
     whitelist:
       components:
       - NukeOperative
+    factionsWhitelist:
+    - Syndicate
   - type: Explosive
-    explosionType: MicroBomb
-    totalIntensity: 120
+    explosionType: PowerSink
+    maxIntensity: 8
     intensitySlope: 5
-    maxIntensity: 30
+    totalIntensity: 5
     canCreateVacuum: false
   - type: ExplodeOnTrigger # SpaceStories exploding hardsuit (doublechest) - end
   - type: Sprite
@@ -532,11 +536,13 @@
     whitelist:
       components:
       - NukeOperative
+    factionsWhitelist:
+    - Syndicate
   - type: Explosive
-    explosionType: MicroBomb
-    totalIntensity: 120
+    explosionType: PowerSink
+    maxIntensity: 8
     intensitySlope: 5
-    maxIntensity: 30
+    totalIntensity: 5
     canCreateVacuum: false
   - type: ExplodeOnTrigger # SpaceStories exploding hardsuit (doublechest) - end
   - type: Sprite
@@ -574,11 +580,13 @@
     whitelist:
       components:
       - NukeOperative
+    factionsWhitelist:
+    - Syndicate
   - type: Explosive
-    explosionType: MicroBomb
-    totalIntensity: 120
+    explosionType: PowerSink
+    maxIntensity: 8
     intensitySlope: 5
-    maxIntensity: 30
+    totalIntensity: 5
     canCreateVacuum: false
   - type: ExplodeOnTrigger # SpaceStories exploding hardsuit (doublechest) - end
   - type: Sprite
