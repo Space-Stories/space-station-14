@@ -122,7 +122,7 @@ public sealed class BanPanelEui : BaseEui, IPostInjectInit
             {
                 _banManager.CreateRoleBan(targetUid, target, Player.UserId, addressRange, targetHWid, role, minutes, severity, reason, now);
             }
-            _banManager.WebhookUpdateRoleBans(targetUid, target, Player.UserId, addressRange, targetHWid, roles, minutes, severity, reason, now); // Space Stories Ban Webhook
+            _banManager.WebhookUpdateRoleBans(targetUid, target, Player.UserId, addressRange, targetHWid, roles, minutes, severity, reason, now); // Stories-BanWebhook
             return;
         }
 

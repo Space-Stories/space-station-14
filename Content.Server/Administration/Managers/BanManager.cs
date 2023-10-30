@@ -46,19 +46,19 @@ public sealed class BanManager : IBanManager, IPostInjectInit
     public const string SawmillId = "admin.bans";
     public const string JobPrefix = "Job:";
     private readonly Dictionary<NetUserId, HashSet<ServerRoleBanDef>> _cachedRoleBans = new();
-    // SpaceStories ban track - start
+    // Stories-BanTrack - start
     private string _webhookUrl = string.Empty;
     private WebhookData? _webhookData;
     private string _webhookName = "Ban Machine";
     private string _webhookAvatarUrl = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCSDvjudwZh_G5qrZI5OrDNMLMmYzNBLYWP3Tl_cS_zQ&s";
-    // SpaceStories ban track - end
+    // Stories-BanTrack - end
 
     public void Initialize()
     {
         _playerManager.PlayerStatusChanged += OnPlayerStatusChanged;
 
         _netManager.RegisterNetMessage<MsgRoleBans>();
-        _config.OnValueChanged(CCVars.DiscordBanWebhook, OnWebhookChanged, true); // SpaceStories ban track
+        _config.OnValueChanged(CCVars.DiscordBanWebhook, OnWebhookChanged, true); // Stories-BanTrack
         _config.OnValueChanged(CVars.GameHostName, OnServerNameChanged, true);
     }
     private void OnServerNameChanged(string obj)
