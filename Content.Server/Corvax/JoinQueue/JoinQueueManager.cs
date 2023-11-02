@@ -10,6 +10,7 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Enums;
 using Robust.Shared.Network;
 using Robust.Shared.Timing;
+using Robust.Shared.Player;
 
 namespace Content.Server.Corvax.JoinQueue;
 
@@ -31,7 +32,7 @@ public sealed class JoinQueueManager
         "Timings of players in queue",
         new HistogramConfiguration()
         {
-            LabelNames = new[] {"type"},
+            LabelNames = new[] { "type" },
             Buckets = Histogram.ExponentialBuckets(1, 2, 14),
         });
 
@@ -44,7 +45,7 @@ public sealed class JoinQueueManager
     /// <summary>
     ///     Queue of active player sessions
     /// </summary>
-    private readonly List<IPlayerSession> _queue = new(); // Real Queue class can't delete disconnected users
+    private readonly List<ICommonSession> _queue = new(); // Real Queue class can't delete disconnected users
 
     private bool _isEnabled = false;
 
@@ -73,7 +74,7 @@ public sealed class JoinQueueManager
         }
     }
 
-    private async void OnPlayerVerified(object? sender, IPlayerSession session)
+    private async void OnPlayerVerified(object? sender, ICommonSession session)
     {
         if (!_isEnabled)
         {
@@ -160,8 +161,8 @@ public sealed class JoinQueueManager
     ///     Letting player's session into game, change player state
     /// </summary>
     /// <param name="s">Player session that will be sent to game</param>
-    private void SendToGame(IPlayerSession s)
+    private void SendToGame(ICommonSession s)
     {
-        Timer.Spawn(0, s.JoinGame);
+        Timer.Spawn(0, () => _playerManager.JoinGame(s));
     }
 }
