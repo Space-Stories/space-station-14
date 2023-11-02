@@ -95,6 +95,7 @@ flavor-complex-eggplant = как баклажан
 flavor-complex-carrot = как морковь
 flavor-complex-cabbage = как капуста
 flavor-complex-potatoes = как картофель
+flavor-complex-pumpkin = как тыквы
 flavor-complex-mushroom = как грибы
 flavor-complex-tomato = как помидоры
 flavor-complex-corn = как кукуруза
