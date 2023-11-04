@@ -12,4 +12,5 @@ item-component-size-Normal = нормальный
 item-component-size-Large = большой
 item-component-size-Huge = огромный
 item-component-size-Ginormous = гигантский
-item-component-size-3 = нормальный
+item-component-size-3 = маленький
+item-component-size-15 = большой
