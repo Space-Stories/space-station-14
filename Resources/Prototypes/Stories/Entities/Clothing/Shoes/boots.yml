@@ -1,5 +1,16 @@
 ﻿- type: entity
   parent: ClothingShoesBootsJack
+  id: ClothingShoesBootsJackJediNt
+  name: подкованные сапоги стража клинка
+  description: Планировалось, что они будут удобнее обычных.
+  components:
+    - type: Sprite
+      sprite: Stories/Clothing/Shoes/Boots/jedi_nt.rsi
+    - type: Clothing
+      sprite: Stories/Clothing/Shoes/Boots/jedi_nt.rsi
+
+- type: entity
+  parent: ClothingShoesBootsJack
   id: ClothingShoesBootsJackSP
   components:
     - type: Sprite

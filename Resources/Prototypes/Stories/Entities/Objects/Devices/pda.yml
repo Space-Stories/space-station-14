@@ -1,5 +1,19 @@
 - type: entity
   parent: BasePDA
+  id: JediNtPDA
+  name: КПК стража клинка
+  description: Черный, чтобы скрыть повреждения от неправильного использования светового меча.
+  components:
+  - type: Pda
+    id: JediNtIDCard
+    state: pda-bartender
+  - type: PdaBorderColor
+    borderColor: "#262626"
+  - type: Icon
+    state: pda-bartender
+
+- type: entity
+  parent: BasePDA
   id: HeadOfSPPDA
   name: head of space prison PDA
   description: Red to hide the stains of passenger blood.
@@ -29,7 +43,7 @@
     borderColor: "#40408c"
   - type: Icon
     state: pda-spofficer
-  
+
 - type: entity
   parent: HeadOfSPPDA
   id: SpacePrisonEngineerPDA
