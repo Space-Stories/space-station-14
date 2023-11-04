@@ -21,3 +21,11 @@
 - type: stationGoal
   id: StationGoalZoo
   text: station-goal-zoo
+
+- type: stationGoal
+  id: StationGoalBorgbuild
+  text: station-goal-borgbuild
+
+- type: stationGoal
+  id: StationGoalColonization
+  text: station-goal-colonization
