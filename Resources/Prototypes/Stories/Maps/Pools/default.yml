@@ -1,0 +1,26 @@
+- type: gameMapPool
+  id: StoriesDefaultMapPool
+  maps:
+  - Aspid
+  - Bagel
+  - Barratry
+  - Box
+  - Cluster
+  - Core
+  - Fland
+  - Kettle
+  - Marathon
+#  - Meta
+  - Omega
+#  - Origin
+#  - Saltern
+  - Packed
+  - CorvaxAvrite
+  - CorvaxGate
+  - CorvaxDelta
+  - CorvaxGelta
+  - CorvaxSpectrum
+  - StoriesBox
+  - StoriesFland
+  - StoriesKettle
+  - StoriesMarathon

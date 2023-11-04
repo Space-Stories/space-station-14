@@ -2,7 +2,7 @@
   parent: BasePDA
   id: HeadOfSPPDA
   name: head of space prison PDA
-  description: Red to hide the stains of passenger blood.
+  description: Blue to hide the stains of passenger blood.
   components:
   - type: Sprite
     sprite: Stories/Objects/Devices/pda.rsi
@@ -20,7 +20,7 @@
   parent: HeadOfSPPDA
   id: SpacePrisonOfficerPDA
   name: space prison officer PDA
-  description: Red to hide the stains of passenger blood.
+  description: Blue to hide the stains of passenger blood.
   components:
   - type: Pda
     id: SpacePrisonOfficerIDCard
@@ -34,7 +34,7 @@
   parent: HeadOfSPPDA
   id: SpacePrisonEngineerPDA
   name: space prison engineer PDA
-  description: Red to hide the stains of passenger blood.
+  description: Blue to hide the stains of passenger blood.
   components:
   - type: Pda
     id: SpacePrisonEngineerIDCard
@@ -44,6 +44,21 @@
     accentVColor: "#40408c"
   - type: Icon
     state: pda-spengineer
+
+- type: entity
+  parent: HeadOfSPPDA
+  id: SpacePrisonMedicPDA
+  name: space prison medic PDA
+  description: Blue to hide the stains of passenger blood.
+  components:
+  - type: Pda
+    id: SpacePrisonMedicIDCard
+    state: pda-spmedic
+  - type: PdaBorderColor
+    borderColor: "#40408c"
+    accentVColor: "#5d99be"
+  - type: Icon
+    state: pda-spmedic
 
 - type: entity
   parent: BasePDA

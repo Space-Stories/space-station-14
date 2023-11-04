@@ -6,10 +6,10 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 24000
+      time: 18000 # 5 hours
     - !type:DepartmentTimeRequirement
       department: Engineering
-      time: 18000
+      time: 18000 # 5 hours
   startingGear: SpacePrisonEngineerGear
   icon: "JobIconSpacePrisonEngineer"
   supervisors: job-supervisors-hosp
@@ -24,15 +24,16 @@
   - Engineering
   - External
   - Atmospherics
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
 
 - type: startingGear
   id: SpacePrisonEngineerGear
   equipment:
-    head: ClothingHeadHatBeretEngineering
     jumpsuit: ClothingUniformJumpsuitSP
     back: ClothingBackpackEngineeringFilled
     shoes: ClothingShoesBootsJackSP
-    outerClothing: ClothingOuterWinterEngi
     id: SpacePrisonEngineerPDA
     eyes: ClothingEyesGlassesMeson
     belt: ClothingBeltUtilityEngineering

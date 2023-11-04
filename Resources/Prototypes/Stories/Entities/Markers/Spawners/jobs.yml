@@ -19,7 +19,7 @@
   name: headofsp
   components:
   - type: SpawnPoint
-    job_id: HeadOfSP
+    job_id: HeadOfSpacePrison
   - type: Sprite
     layers:
       - state: green
@@ -48,3 +48,15 @@
     layers:
       - state: green
       - state: engineer
+
+- type: entity
+  id: SpawnPointSpacePrisonMedic
+  parent: SpawnPointJobBaseStories
+  name: spmedic
+  components:
+  - type: SpawnPoint
+    job_id: SpacePrisonMedic
+  - type: Sprite
+    layers:
+      - state: green
+      - state: doctor

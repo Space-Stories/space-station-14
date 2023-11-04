@@ -4,5 +4,7 @@ ent-SpacePrisonOfficerIDCard = ID карта офицера космическо
     .desc = { ent-HeadOfSPIDCard.desc }
 ent-SpacePrisonEngineerIDCard = ID карта инженера космической тюрьмы
     .desc = { ent-HeadOfSPIDCard.desc }
+ent-SpacePrisonMedicIDCard = ID карта медика космической тюрьмы
+    .desc = { ent-HeadOfSPIDCard.desc }
 ent-IAAIDCard = ID карта агента внутрених дел
     .desc = { ent-HeadOfSPIDCard.desc }

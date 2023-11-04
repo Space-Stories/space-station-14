@@ -21,6 +21,13 @@
 
 - type: statusIcon
   parent: JobIcon
+  id: JobIconSpacePrisonMedic
+  icon:
+    sprite: Stories/Interface/Misc/job_icons.rsi
+    state: SpacePrisonMedic
+
+- type: statusIcon
+  parent: JobIcon
   id: JobIconIAA
   icon:
     sprite: Stories/Interface/Misc/job_icons.rsi

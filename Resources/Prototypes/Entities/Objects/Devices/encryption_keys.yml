@@ -72,7 +72,7 @@
     - Security
     - Service
     - Supply
-    - Prison
+    - Prison # Storis-SpacePrison
     defaultChannel: Command
   - type: Sprite
     layers:

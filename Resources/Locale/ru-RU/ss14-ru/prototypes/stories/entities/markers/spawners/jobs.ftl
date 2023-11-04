@@ -8,3 +8,5 @@ ent-SpawnPointSpacePrisonOfficer = офицер кт
     .desc = { ent-SpawnPointJobBaseStories.desc }
 ent-SpawnPointSpacePrisonEngineer = инженер кт
     .desc = { ent-SpawnPointJobBaseStories.desc }
+ent-SpawnPointSpacePrisonMedic = медик кт
+    .desc = { ent-SpawnPointJobBaseStories.desc }

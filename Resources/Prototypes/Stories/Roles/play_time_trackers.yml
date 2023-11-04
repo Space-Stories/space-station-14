@@ -8,4 +8,7 @@
   id: JobSpacePrisonEngineer
 
 - type: playTimeTracker
+  id: JobSpacePrisonMedic
+
+- type: playTimeTracker
   id: JobIAA

@@ -6,7 +6,7 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 36000
+      time: 36000 # 10 hours
   startingGear: SpacePrisonOfficerGear
   icon: "JobIconSpacePrisonOfficer"
   supervisors: job-supervisors-hosp
@@ -17,6 +17,9 @@
   - Maintenance
   - Service
   - External
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
 
 - type: startingGear
   id: SpacePrisonOfficerGear
@@ -28,8 +31,10 @@
     head: ClothingHeadHatBeretSP
     outerClothing: ClothingOuterVestArmorSP
     id: SpacePrisonOfficerPDA
+    gloves: ClothingHandsGlovesCombat
     ears: ClothingHeadsetPrison
     belt: ClothingBeltSecurityFilled
+    pocket1: WeaponPistolMk58Nonlethal
   innerclothingskirt: ClothingUniformJumpskirtSP
   satchel: ClothingBackpackSatchelSpacePrisonFilled
   duffelbag: ClothingBackpackDuffelSpacePrisonFilled

@@ -10,7 +10,7 @@
   - type: Clothing
     sprite: Stories/Clothing/Belt/hosp_sheath.rsi
   - type: Storage
-    capacity: 15
+    maxSlots: 1
     whitelist:
       tags:
         - HoSPSabre
