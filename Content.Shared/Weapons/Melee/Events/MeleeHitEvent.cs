@@ -74,6 +74,14 @@ public sealed class MeleeHitEvent : HandledEntityEventArgs
 [ByRefEvent]
 public record struct GetMeleeDamageEvent(EntityUid Weapon, DamageSpecifier Damage, List<DamageModifierSet> Modifiers, EntityUid User);
 
+// SpaceStories GetMeleeDamageOnHitEvent - start
+/// <summary>
+/// Raised on a melee weapon to calculate potential damage bonuses or decreases.
+/// </summary>
+[ByRefEvent]
+public record struct GetMeleeDamageOnHitEvent(EntityUid Weapon, DamageSpecifier Damage, List<DamageModifierSet> Modifiers, EntityUid User);
+// SpaceStories GetMeleeDamageOnHitEvent - end
+
 /// <summary>
 /// Raised on a melee weapon to calculate the attack rate.
 /// </summary>

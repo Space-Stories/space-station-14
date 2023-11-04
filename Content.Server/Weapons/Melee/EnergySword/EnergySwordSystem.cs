@@ -31,6 +31,7 @@ public sealed class EnergySwordSystem : EntitySystem
 
         SubscribeLocalEvent<EnergySwordComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<EnergySwordComponent, GetMeleeDamageEvent>(OnGetMeleeDamage);
+        SubscribeLocalEvent<EnergySwordComponent, GetMeleeDamageOnHitEvent>(OnGetMeleeOnHitDamage); // SpaceStories DamageOtherOnHit for EnergySword
         SubscribeLocalEvent<EnergySwordComponent, UseInHandEvent>(OnUseInHand);
         SubscribeLocalEvent<EnergySwordComponent, InteractUsingEvent>(OnInteractUsing);
         SubscribeLocalEvent<EnergySwordComponent, IsHotEvent>(OnIsHotEvent);
@@ -55,6 +56,15 @@ public sealed class EnergySwordSystem : EntitySystem
         // Adjusts base damage when the energy blade is active, by values set in yaml
         args.Damage += comp.LitDamageBonus;
     }
+
+    private void OnGetMeleeOnHitDamage(EntityUid uid, EnergySwordComponent comp, ref GetMeleeDamageOnHitEvent args) // SpaceStories DamageOtherOnHit for EnergySword - start
+    {
+        if (!comp.Activated)
+            return;
+
+        // Adjusts base damage when the energy blade is active, by values set in yaml
+        args.Damage += comp.LitDamageBonus;
+    } // SpaceStories DamageOtherOnHit for EnergySword - end
 
     private void OnUseInHand(EntityUid uid, EnergySwordComponent comp, UseInHandEvent args)
     {
