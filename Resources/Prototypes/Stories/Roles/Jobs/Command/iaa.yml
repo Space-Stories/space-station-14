@@ -9,6 +9,7 @@
     - !type:DepartmentTimeRequirement
       department: Security
       time: 36000
+  weight: 10
   startingGear: IAAGear
   icon: "JobIconIAA"
   supervisors: job-supervisors-centcom
@@ -19,6 +20,12 @@
     - Maintenance
     - Command
     - External
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+      - type: CommandStaff
 
 - type: startingGear
   id: IAAGear
