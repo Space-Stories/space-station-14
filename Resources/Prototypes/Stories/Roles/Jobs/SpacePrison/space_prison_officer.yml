@@ -17,6 +17,8 @@
   - Maintenance
   - Service
   - External
+  - Engineering
+  - Atmospherics
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]

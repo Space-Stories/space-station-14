@@ -26,6 +26,8 @@
   - Service
   - External
   - Detective
+  - Engineering
+  - Atmospherics
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
