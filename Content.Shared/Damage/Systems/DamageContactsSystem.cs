@@ -4,6 +4,7 @@ using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Timing;
 using Content.Shared.Weapons.Melee.Events;
+using Content.Shared.Weapons.Misc;
 
 namespace Content.Shared.Damage.Systems;
 
@@ -62,6 +63,9 @@ public sealed class DamageContactsSystem : EntitySystem
         var otherUid = args.OtherEntity;
 
         if (HasComp<DamagedByContactComponent>(otherUid))
+            return;
+
+        if (!HasComp<TetheredComponent>(uid) && component.OnlyTethered)
             return;
 
         if (component.IgnoreWhitelist?.IsValid(otherUid) ?? false)

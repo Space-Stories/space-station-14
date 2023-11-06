@@ -17,4 +17,7 @@ public sealed partial class DamageContactsComponent : Component
     /// </summary>
     [DataField("ignoreWhitelist")]
     public EntityWhitelist? IgnoreWhitelist;
+
+    [DataField("onlyTethered")]
+    public bool OnlyTethered = false;
 }
