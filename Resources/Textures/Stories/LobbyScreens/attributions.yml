@@ -13,12 +13,18 @@
   copyright: "https://ss3d.space"
   source: "https://github.com/SpaceStories/space-station-14"
 
-- files: ["lobby1.jpg"]
-  license: "CC-BY-SA-3.0"
-  copyright: "https://ss3d.space"
-  source: "https://github.com/SpaceStories/space-station-14"
+- files: ["planets.jpg"]
+  license: "CC-BY-SA-NC-4.0"
+  copyright: "Ňun1Ťoy (759125843259424819) From Discord: Space Stories (1111698541841240164)"
 
-- files: ["morepets.jpg"]
-  license: "CC-BY-SA-3.0"
-  copyright: "https://ss3d.space"
-  source: "https://github.com/SpaceStories/space-station-14"
+- files: ["pretty_unath.png"]
+  license: "CC-BY-SA-NC-4.0"
+  copyright: "iloveorangez (863844665538510888) From Discord: Space Stories (1111698541841240164)"
+
+- files: ["sleepy.png", "photo.png", "operation.png"]
+  license: "CC-BY-SA-NC-4.0"
+  copyright: "askolots (788252896016990219) From Discord: Space Stories (1111698541841240164)"
+
+- files: ["anomaly.png", "darkness.png"]
+  license: "CC-BY-SA-NC-4.0"
+  copyright: "homiks (988416380393099285) From Discord: Space Stories (1111698541841240164)"
