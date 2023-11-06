@@ -1,0 +1,26 @@
+- type: statusIcon
+  id: HealthIcon
+  abstract: true
+  priority: 6
+  locationPreference: Right
+
+- type: statusIcon
+  id: HealthIconAlive
+  parent: HealthIcon
+  icon:
+    sprite: Interface/Misc/health_icons.rsi
+    state: alive
+
+- type: statusIcon
+  id: HealthIconCritical
+  parent: HealthIcon
+  icon:
+    sprite: Interface/Misc/health_icons.rsi
+    state: critical
+
+- type: statusIcon
+  id: HealthIconDead
+  parent: HealthIcon
+  icon:
+    sprite: Interface/Misc/health_icons.rsi
+    state: dead

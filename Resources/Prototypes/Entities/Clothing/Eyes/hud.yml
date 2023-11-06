@@ -19,6 +19,7 @@
     sprite: Clothing/Eyes/Hud/med.rsi
   - type: Clothing
     sprite: Clothing/Eyes/Hud/med.rsi
+  - type: ShowHealthIcons
 
 - type: entity
   parent: ClothingEyesBase
@@ -92,6 +93,7 @@
   - type: Clothing
     sprite: Clothing/Eyes/Hud/medonion.rsi
   - type: ShowHungerIcons
+  - type: ShowHealthIcons
 
 - type: entity
   parent: ClothingEyesBase
@@ -105,6 +107,7 @@
     sprite: Clothing/Eyes/Hud/medonionbeer.rsi
   - type: ShowHungerIcons
   - type: ShowThirstIcons
+  - type: ShowHealthIcons
 
 - type: entity
   parent: ClothingEyesBase
@@ -117,6 +120,7 @@
   - type: Clothing
     sprite: Clothing/Eyes/Hud/medsec.rsi
   - type: ShowSecurityIcons
+  - type: ShowHealthIcons
 
 - type: entity
   parent: ClothingEyesBase
@@ -143,3 +147,4 @@
   - type: ShowSecurityIcons
   - type: ShowHungerIcons
   - type: ShowThirstIcons
+  - type: ShowHealthIcons
