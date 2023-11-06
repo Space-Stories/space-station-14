@@ -3,6 +3,7 @@ using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Timing;
+using Content.Shared.Weapons.Melee.Events;
 
 namespace Content.Shared.Damage.Systems;
 
@@ -67,6 +68,8 @@ public sealed class DamageContactsSystem : EntitySystem
             return;
 
         var damagedByContact = EnsureComp<DamagedByContactComponent>(otherUid);
-        damagedByContact.Damage = component.Damage;
+        var ev = new GetMeleeDamageContactEvent(otherUid, new(component.Damage), new(), uid);
+        RaiseLocalEvent(uid, ref ev);
+        damagedByContact.Damage = ev.Damage;
     }
 }
