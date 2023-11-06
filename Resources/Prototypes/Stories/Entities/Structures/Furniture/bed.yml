@@ -1,6 +1,6 @@
 - type: entity
   parent: Bed
-  id: bedStorage
+  id: BedStorage
   suffix: With storage
   components:
     - type: Storage
@@ -16,7 +16,7 @@
 
 - type: entity
   parent: Mattress
-  id: matressStorage
+  id: MatressStorage
   suffix: With storage
   components:
     - type: Storage
