@@ -62,7 +62,11 @@
   - type: SolarControlConsole # look ma i AM the computer!
   - type: CommunicationsConsole
     title: comms-console-announcement-title-centcom
-    color: "#228b22"
+    global: true
+    sound:
+      path: /Audio/Announcements/centcomm.ogg
+      params:
+        volume: -4
   - type: RadarConsole
   - type: CargoOrderConsole
   - type: CrewMonitoringConsole
