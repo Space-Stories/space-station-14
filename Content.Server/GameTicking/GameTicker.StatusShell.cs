@@ -37,6 +37,7 @@ namespace Content.Server.GameTicking
             {
                 jObject["name"] = _baseServer.ServerName;
                 jObject["players"] = _queueManager.ActualPlayersCount; // Corvax-Queue
+                jObject["map"] = _gameMapManager.GetSelectedMap()?.MapName;
                 jObject["soft_max_players"] = _cfg.GetCVar(CCVars.SoftMaxPlayers);
                 jObject["run_level"] = (int) _runLevel;
                 if (_runLevel >= GameRunLevel.InRound)

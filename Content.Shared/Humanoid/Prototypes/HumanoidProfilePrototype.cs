@@ -5,7 +5,7 @@ using static Content.Shared.Humanoid.HumanoidAppearanceState;
 namespace Content.Shared.Humanoid.Prototypes;
 
 [Prototype("humanoidProfile")]
-public sealed class HumanoidProfilePrototype : IPrototype
+public sealed partial class HumanoidProfilePrototype : IPrototype
 {
     [IdDataField]
     public string ID { get; private set; } = default!;
