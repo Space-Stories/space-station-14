@@ -1,43 +1,37 @@
-<!-- Please read these guidelines before opening your PR: https://docs.spacestation14.io/en/getting-started/pr-guideline -->
-<!-- The text between the arrows are comments - they will not be visible on your PR. -->
+<!-- Пожалуйста, прочитайте эти рекомендации перед тем, как открыть свой PR: https://docs.spacestation14.io/en/getting-started/pr-guideline -->
+<!-- Текст между стрелками является комментарием - он не будет виден на вашем PR. -->
 
-## About the PR
-<!-- What did you change in this PR? -->
+## О PR
+<!-- Что вы изменили в этом PR? -->
 
-## Why / Balance
-<!-- Why was it changed? Link any discussions or issues here. Please discuss how this would affect game balance. -->
+## Почему / Баланс
+<!-- Почему это было изменено? Укажите здесь любые обсуждения или вопросы. Пожалуйста, обсудите, как это повлияет на игровой баланс. -->
 
-## Technical details
-<!-- If this is a code change, summarize at high level how your new code works. This makes it easier to review. -->
+## Технические детали
+<!-- Если это изменение кода, кратко опишите на высоком уровне, как работает ваш новый код. Это облегчит рецензирование. -->
 
-## Media
+## Медиа
 <!-- 
-PRs which make ingame changes (adding clothing, items, new features, etc) are required to have media attached that showcase the changes.
-Small fixes/refactors are exempt.
-Any media may be used in SS14 progress reports, with clear credit given.
+К PR, вносящим внутриигровые изменения (добавление одежды, предметов, новых возможностей и т.д.), необходимо прикладывать медиа, демонстрирующие изменения.
+Небольшие исправления/рефакторы не рассматриваются.
+Любые медиаматериалы могут быть использованы в отчетах о проделанной работе в SS14, с указанием четких заслуг.
 
-If you're unsure whether your PR will require media, ask a maintainer.
+Если вы не уверены в том, что для вашего PR требуется медиа, обратитесь к сопровождающему.
 
-Check the box below to confirm that you have in fact seen this (put an X in the brackets, like [X]):
+Поставьте галочку в поле ниже, чтобы подтвердить, что вы действительно видели это (поставьте X в скобках, например [X]):
 -->
 
-- [ ] I have added screenshots/videos to this PR showcasing its changes ingame, **or** this PR does not require an ingame showcase
-
-## Breaking changes
-<!--
-List any breaking changes, including namespace, public class/method/field changes, prototype renames; and provide instructions for fixing them. This will be pasted in #codebase-changes.
--->
+- [ ] Я добавил к этому PR скриншоты/видео, демонстрирующие его изменения в игре, **или** этот PR не требует демонстрации в игре
 
 **Changelog**
 <!--
-Make players aware of new features and changes that could affect how they play the game by adding a Changelog entry. Please read the Changelog guidelines located at: https://docs.spacestation14.io/en/getting-started/pr-guideline#changelog
+Чтобы игроки знали о новых возможностях и изменениях, которые могут повлиять на их игру, добавьте запись в Changelog. Пожалуйста, ознакомьтесь с правилами составления Changelog, расположенными по адресу: https://docs.spacestation14.io/en/getting-started/pr-guideline#changelog.
 -->
 
 <!--
-Make sure to take this Changelog template out of the comment block in order for it to show up.
+Убедитесь, что вы убрали этот шаблон Changelog из блока комментариев, чтобы он отображался.
 :cl:
-- add: Added fun!
-- remove: Removed fun!
-- tweak: Changed fun!
-- fix: Fixed fun!
--->
+- add: Добавлена радость!
+- remove: Удалено развлечение!
+- tweak: Изменено развлечение!
+- fix: Исправлено развлечение!
