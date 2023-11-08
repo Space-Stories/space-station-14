@@ -10,7 +10,7 @@ namespace Content.Client.HealthOverlay.UI
     {
         public const byte HealthBarScale = 2;
 
-        private const int XPixelDiff = 20 * HealthBarScale;
+        private const int XPixelDiff = 18 * HealthBarScale;
 
         public HealthOverlayBar()
         {
@@ -38,7 +38,7 @@ namespace Content.Client.HealthOverlay.UI
                 leftOffset,
                 -2 + 2 * HealthBarScale,
                 leftOffset + (int) (XPixelDiff * Ratio * UIScale),
-                -2);
+                -4);
 
             handle.DrawRect(box, Color);
         }

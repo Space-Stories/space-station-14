@@ -1,7 +1,9 @@
 using Content.Client.HealthOverlay.UI;
 using Content.Shared.Damage;
 using Content.Shared.GameTicking;
+using Content.Shared.Inventory.Events;
 using Content.Shared.Mobs.Components;
+using Content.Shared.Overlays;
 using JetBrains.Annotations;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
@@ -42,6 +44,31 @@ namespace Content.Client.HealthOverlay
             base.Initialize();
 
             SubscribeNetworkEvent<RoundRestartCleanupEvent>(Reset);
+            SubscribeLocalEvent<ShowHealthBarComponent, GotEquippedEvent>(OnCompEquip);
+            SubscribeLocalEvent<ShowHealthBarComponent, GotUnequippedEvent>(OnCompUnequip);
+
+            SubscribeLocalEvent<LocalPlayerDetachedEvent>(OnPlayerDetached);
+        }
+
+        private void OnCompEquip(EntityUid uid, ShowHealthBarComponent component, GotEquippedEvent args)
+        {
+            if (args.Equipee != _player.LocalPlayer?.ControlledEntity)
+                return;
+
+            Enabled = true;
+        }
+
+        private void OnCompUnequip(EntityUid uid, ShowHealthBarComponent component, GotUnequippedEvent args)
+        {
+            if (args.Equipee != _player.LocalPlayer?.ControlledEntity)
+                return;
+            Enabled = false;
+        }
+
+        private void OnPlayerDetached(LocalPlayerDetachedEvent args)
+        {
+            if (args.Entity != _player.LocalEntity)
+                Enabled = false;
         }
 
         public void Reset(RoundRestartCleanupEvent ev)
@@ -63,7 +90,7 @@ namespace Content.Client.HealthOverlay
                 return;
             }
 
-            if (_player.LocalEntity is not {} ent || Deleted(ent))
+            if (_player.LocalEntity is not { } ent || Deleted(ent))
             {
                 return;
             }

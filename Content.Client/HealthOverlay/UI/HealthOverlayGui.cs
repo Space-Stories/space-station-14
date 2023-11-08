@@ -42,12 +42,6 @@ namespace Content.Client.HealthOverlay.UI
             {
                 Children =
                 {
-                    new TextureRect
-                    {
-                        Texture = StaticIoC.ResC.GetTexture("/Textures/Interface/Misc/health_bar.rsi/icon.png"),
-                        TextureScale = Vector2.One * HealthOverlayBar.HealthBarScale,
-                        VerticalAlignment = VAlignment.Center,
-                    },
                     CritBar,
                     HealthBar
                 }
@@ -89,7 +83,7 @@ namespace Content.Client.HealthOverlay.UI
             var mobThresholdSystem = _entities.EntitySysManager.GetEntitySystem<MobThresholdSystem>();
             if (mobStateSystem.IsAlive(Entity, mobState))
             {
-                if (!mobThresholdSystem.TryGetThresholdForState(Entity,MobState.Critical, out var threshold))
+                if (!mobThresholdSystem.TryGetThresholdForState(Entity, MobState.Critical, out var threshold))
                 {
                     CritBar.Visible = false;
                     HealthBar.Visible = false;
@@ -98,7 +92,7 @@ namespace Content.Client.HealthOverlay.UI
 
                 CritBar.Ratio = 1;
                 CritBar.Visible = true;
-                HealthBar.Ratio = 1 - ((FixedPoint2)(damageable.TotalDamage / threshold)).Float();
+                HealthBar.Ratio = 1 - ((FixedPoint2) (damageable.TotalDamage / threshold)).Float();
                 HealthBar.Visible = true;
             }
             else if (mobStateSystem.IsCritical(Entity, mobState))
@@ -148,7 +142,7 @@ namespace Content.Client.HealthOverlay.UI
 
             var screenCoordinates = _eyeManager.CoordinatesToScreen(_entities.GetComponent<TransformComponent>(Entity).Coordinates);
             var playerPosition = UserInterfaceManager.ScreenToUIPosition(screenCoordinates);
-            LayoutContainer.SetPosition(this, new Vector2(playerPosition.X - Width / 2, playerPosition.Y - Height - 30.0f));
+            LayoutContainer.SetPosition(this, new Vector2(playerPosition.X - Width / 2 - 20.0f, playerPosition.Y - Height - 25.0f));
         }
 
         protected override void Dispose(bool disposing)

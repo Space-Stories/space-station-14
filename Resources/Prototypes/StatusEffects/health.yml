@@ -2,7 +2,7 @@
   id: HealthIcon
   abstract: true
   priority: 6
-  locationPreference: Right
+  locationPreference: Left
 
 - type: statusIcon
   id: HealthIconAlive
