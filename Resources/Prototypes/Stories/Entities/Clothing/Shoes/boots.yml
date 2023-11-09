@@ -4,6 +4,7 @@
   name: подкованные сапоги стража клинка
   description: Планировалось, что они будут удобнее обычных.
   components:
+    - type: NoSlip
     - type: Sprite
       sprite: Stories/Clothing/Shoes/Boots/jedi_nt.rsi
     - type: Clothing
