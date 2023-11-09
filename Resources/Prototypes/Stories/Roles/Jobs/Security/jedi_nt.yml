@@ -4,9 +4,12 @@
   description: Встань на защиту станции со своим крутым мечом и способностями!
   playTimeTracker: JobJediNt
   requirements:
-    - !type:DepartmentTimeRequirement
-      department: Security
+    - !type:RoleTimeRequirement
+      role: JobHeadOfSecurity
       time: 36000
+    # - !type:DepartmentTimeRequirement
+    #   department: Security
+    #   time: 36000
   startingGear: JediNtGear
   icon: "JobIconJediNt"
   supervisors: job-supervisors-hos
@@ -17,6 +20,10 @@
   - Maintenance
   - Service
   - External
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: ForceSensitive
 
 - type: startingGear
   id: JediNtGear
@@ -25,13 +32,13 @@
     back: ClothingBackpackJediNtFilled
     shoes: ClothingShoesBootsJackJediNt
     eyes: ClothingEyesGlassesSunglasses
-    # head: ClothingHeadHatBeretSP
+    pocket1: LightSaberJediNt
     outerClothing: ClothingOuterVestJediNt
     id: JediNtPDA
     ears: ClothingHeadsetJediNtAlt
     belt: ClothingBeltSecurityFilled
     gloves: ClothingHandsGlovesCombat
-    neck: ClothingNeckCloakJediNt
+    neck: ClothingNeckMantleJediNt
   # innerclothingskirt: ClothingUniformJumpskirtSP
   # satchel: ClothingBackpackSatchelSpacePrisonFilled
   # duffelbag: ClothingBackpackDuffelSpacePrisonFilled
