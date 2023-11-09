@@ -2,7 +2,7 @@
   parent: ClothingBackpack
   id: ClothingBackpackJediNt
   name: рюкзак стража клинка
-  description: Этот особый дизайн был создан специально для хранения ваших секретов.
+  description: Кажется, вы где-то это уже видели.
   components:
   - type: Sprite
     sprite: Stories/Clothing/Back/Backpacks/jedi_nt.rsi
