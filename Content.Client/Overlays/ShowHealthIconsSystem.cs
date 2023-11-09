@@ -1,3 +1,4 @@
+using Content.Shared.Atmos.Miasma;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Overlays;
@@ -10,6 +11,7 @@ namespace Content.Client.Overlays;
 public sealed class ShowHealthIconsSystem : EquipmentHudSystem<ShowHealthIconsComponent>
 {
     [Dependency] private readonly IPrototypeManager _prototypeMan = default!;
+    [Dependency] private readonly IEntityManager _entity = default!;
 
     public override void Initialize()
     {
@@ -23,31 +25,32 @@ public sealed class ShowHealthIconsSystem : EquipmentHudSystem<ShowHealthIconsCo
         if (!IsActive || args.InContainer)
             return;
 
-        var healthIcons = DecideHealthIcon(mobStateComponent);
+        var healthIcons = DecideHealthIcon(uid, mobStateComponent);
 
         args.StatusIcons.AddRange(healthIcons);
     }
 
-    private IReadOnlyList<StatusIconPrototype> DecideHealthIcon(MobStateComponent mobStateComponent)
+    private IReadOnlyList<StatusIconPrototype> DecideHealthIcon(EntityUid uid, MobStateComponent mobStateComponent)
     {
         var result = new List<StatusIconPrototype>();
 
         switch (mobStateComponent.CurrentState)
         {
             case MobState.Alive:
-                if (_prototypeMan.TryIndex<StatusIconPrototype>("HealthIconAlive", out var alive))
+            case MobState.Critical:
+                if (_prototypeMan.TryIndex<StatusIconPrototype>("HealthStateIconNormal", out var alive))
                 {
                     result.Add(alive);
                 }
                 break;
-            case MobState.Critical:
-                if (_prototypeMan.TryIndex<StatusIconPrototype>("HealthIconCritical", out var critical))
-                {
-                    result.Add(critical);
-                }
-                break;
             case MobState.Dead:
-                if (_prototypeMan.TryIndex<StatusIconPrototype>("HealthIconDead", out var dead))
+                var isRotting = _entity.GetComponentOrNull<RottingComponent>(uid) != null;
+
+                if (!isRotting && _prototypeMan.TryIndex<StatusIconPrototype>("HealthStateIconDefib", out var defib))
+                {
+                    result.Add(defib);
+                }
+                else if (_prototypeMan.TryIndex<StatusIconPrototype>("HealthStateIconDead", out var dead))
                 {
                     result.Add(dead);
                 }

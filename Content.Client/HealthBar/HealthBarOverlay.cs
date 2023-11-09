@@ -3,6 +3,7 @@ using Content.Shared.Damage;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
+using Content.Shared.StatusIcon;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Shared.Enums;
@@ -19,6 +20,7 @@ namespace Content.Client.HealthOverlay
         private readonly HealthBarSystem _healthbar;
         private readonly ShaderInstance _shader;
         private readonly MobThresholdSystem _mobThreshold;
+        private readonly SpriteSystem _sprite = default!;
 
         public override OverlaySpace Space => OverlaySpace.WorldSpaceBelowFOV;
 
@@ -29,6 +31,7 @@ namespace Content.Client.HealthOverlay
             _transform = _entity.System<TransformSystem>();
             _healthbar = _entity.System<HealthBarSystem>();
             _mobThreshold = _entity.System<MobThresholdSystem>();
+            _sprite = _entity.System<SpriteSystem>();
 
             _shader = _prototype.Index<ShaderPrototype>("unshaded").Instance();
         }
@@ -51,8 +54,13 @@ namespace Content.Client.HealthOverlay
             handle.UseShader(_shader);
 
             var query = _entity.AllEntityQueryEnumerator<DamageableComponent, TransformComponent, SpriteComponent, MobStateComponent>();
-            while (query.MoveNext(out var entity, out var damageable, out var transform, out var sprite, out var _))
+            while (query.MoveNext(out var entity, out var damageable, out var transform, out var sprite, out var mobState))
             {
+                if (!_mobThreshold.TryGetThresholdForState(entity, MobState.Critical, out var critThreshold))
+                    continue;
+                if (!_mobThreshold.TryGetThresholdForState(entity, MobState.Dead, out var deadThreshold))
+                    continue;
+
                 if (transform.MapID != args.MapId)
                     continue;
 
@@ -63,41 +71,49 @@ namespace Content.Client.HealthOverlay
                 if (!bounds.Translated(worldPos).Intersects(args.WorldAABB))
                     continue;
 
-                worldPos.Y -= 0.24f;
                 var worldMatrix = Matrix3.CreateTranslation(worldPos);
                 Matrix3.Multiply(scaleMatrix, worldMatrix, out var scaledWorld);
                 Matrix3.Multiply(rotationMatrix, scaledWorld, out var matty);
                 handle.SetTransform(matty);
 
-                var height = 0.1f;
-                var width = 0.48f;
-                var bottom = 0.37f;
+                var accOffsetL = 0;
 
-                var critThreshold = _mobThreshold.GetThresholdForState(entity, MobState.Critical).Float();
-                var deadThreshold = _mobThreshold.GetThresholdForState(entity, MobState.Dead).Float();
-                var totalDamage = damageable.TotalDamage.Float();
+                float yOffset;
+                float xOffset;
 
-                var healthBar = totalDamage >= critThreshold ? 0 : width - totalDamage * width / critThreshold;
-                // if healthbar is shown
-                var critBar = healthBar > 0 ?
-                    // then draw full width crit bar
-                    width :
-                    // if not shown then check is total damage bigger than dead threshold
-                    totalDamage >= deadThreshold ?
-                    // if bigger we don't show crit bar
-                    0 :
-                    // and if not then calculate crit bar width
-                    width - (totalDamage - critThreshold) * width / (deadThreshold - critThreshold);
+                var healthbarState = Math.Min((int) Math.Round((double) (damageable.TotalDamage * 16 / critThreshold)), 16);
+                if (!_prototype.TryIndex<StatusIconPrototype>("HealthStateBar" + healthbarState.ToString(), out var healthbar))
+                    continue;
 
-                if (critBar > 0)
+                var healthBarTexture = _sprite.Frame0(healthbar.Icon);
+
+                if (accOffsetL + healthBarTexture.Height > sprite.Bounds.Height * EyeManager.PixelsPerMeter)
+                    break;
+
+                accOffsetL += healthBarTexture.Height;
+                yOffset = (bounds.Height + sprite.Offset.Y) / 2f - (float) accOffsetL / EyeManager.PixelsPerMeter;
+                xOffset = -(bounds.Width + sprite.Offset.X) / 2f;
+
+                var position = new Vector2(xOffset, yOffset);
+
+                if (mobState.CurrentState != MobState.Dead)
+                    handle.DrawTexture(healthBarTexture, position);
+
+                if (mobState.CurrentState == MobState.Critical)
                 {
-                    var rect = new Box2(0, bottom, critBar, bottom + height);
-                    handle.DrawRect(rect, Color.Red, true);
+                    if (!_prototype.TryIndex<StatusIconPrototype>("HealthStateBar17", out var critbar))
+                        continue;
+
+                    var critBarTexture = _sprite.Frame0(critbar.Icon);
+                    handle.DrawTexture(critBarTexture, position);
                 }
-                if (healthBar > 0)
+                if (mobState.CurrentState == MobState.Dead)
                 {
-                    var rect = new Box2(0, bottom, healthBar, bottom + height);
-                    handle.DrawRect(rect, Color.LimeGreen, true);
+                    if (!_prototype.TryIndex<StatusIconPrototype>("HealthStateBar18", out var deadbar))
+                        continue;
+
+                    var deadBarTexture = _sprite.Frame0(deadbar.Icon);
+                    handle.DrawTexture(deadBarTexture, position);
                 }
             }
 
