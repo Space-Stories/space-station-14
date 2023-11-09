@@ -37,13 +37,11 @@ namespace Content.Client.HealthOverlay
 
         private void Update(RefreshEquipmentHudEvent<ShowHealthBarComponent> ev)
         {
-            Log.Debug("Update");
             IsActive = true;
         }
 
         public void Deactivate()
         {
-            Log.Debug("Deactivate");
             if (!IsActive)
                 return;
 
@@ -73,7 +71,6 @@ namespace Content.Client.HealthOverlay
 
         private void OnCompEquip(EntityUid uid, ShowHealthBarComponent component, GotEquippedEvent args)
         {
-            Log.Debug("OnCompEquip");
             RefreshOverlay(args.Equipee);
         }
 
@@ -89,13 +86,11 @@ namespace Content.Client.HealthOverlay
 
         private void OnRefreshEquipmentHud(EntityUid uid, ShowHealthBarComponent component, InventoryRelayedEvent<RefreshEquipmentHudEvent<ShowHealthBarComponent>> args)
         {
-            Log.Debug("OnRefreshEquipmentHud");
             args.Args.Active = true;
         }
 
         private void OnRefreshComponentHud(EntityUid uid, ShowHealthBarComponent component, RefreshEquipmentHudEvent<ShowHealthBarComponent> args)
         {
-            Log.Debug("OnRefreshComponentHud");
             args.Active = true;
         }
 
@@ -104,10 +99,8 @@ namespace Content.Client.HealthOverlay
             if (uid != _player.LocalPlayer?.ControlledEntity)
                 return;
 
-            Log.Debug("RefreshOverlay");
             var ev = new RefreshEquipmentHudEvent<ShowHealthBarComponent>(TargetSlots);
             RaiseLocalEvent(uid, ev);
-            Log.Debug("Raised refresh overlay event");
 
             if (ev.Active)
                 Update(ev);
