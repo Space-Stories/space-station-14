@@ -92,7 +92,7 @@
       types:
         Slash: -7.5
         Heat: -7.5
-        Structural: 4
+        Structural: -2
         Blunt: -4.5
     ignoreWhitelist:
       components:
