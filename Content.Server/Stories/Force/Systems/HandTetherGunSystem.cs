@@ -4,11 +4,11 @@ using Content.Shared.Popups;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Timing;
 using Content.Shared.SpaceStories.Force.LightSaber;
-using Content.Shared.Whitelist;
+using Content.Shared.Weapons.Misc;
 
 namespace Content.Shared.SpaceStories.Force.Systems;
 
-public sealed class HandTetherGunSystem : EntitySystem
+public sealed class HandTetherGunSystem : SharedTetherGunSystem
 {
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
@@ -16,7 +16,6 @@ public sealed class HandTetherGunSystem : EntitySystem
 
     public override void Initialize()
     {
-        base.Initialize();
         SubscribeLocalEvent<ForceSensitiveComponent, HandTetherGunEvent>(OnHandTetherGunEvent);
     }
     private void OnHandTetherGunEvent(EntityUid uid, ForceSensitiveComponent comp, HandTetherGunEvent args)
@@ -24,7 +23,7 @@ public sealed class HandTetherGunSystem : EntitySystem
         if (args.Handled || _useDelay.ActiveDelay(args.Performer)) return;
 
         foreach (var item in _hands.EnumerateHeld(args.Performer))
-            if (TryComp<MetaDataComponent>(item, out var meta) && meta.EntityPrototype != null && meta.EntityPrototype.ID == "HandTetherGun") { Del(item); return; }
+            if (TryComp<MetaDataComponent>(item, out var meta) && meta.EntityPrototype != null && meta.EntityPrototype.ID == "HandTetherGun" && TryComp<TetherGunComponent>(item, out var tether)) { StopTether(item, tether); Del(item); return; }
 
         var gun = Spawn("HandTetherGun");
         _hands.TryPickupAnyHand(args.Performer, gun);
