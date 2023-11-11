@@ -14,6 +14,7 @@ using Content.Shared.CCVar;
 using Content.Shared.Chat;
 using Content.Shared.Database;
 using Content.Shared.Ghost;
+using Content.Shared.Humanoid;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Interaction;
 using Content.Shared.Mobs.Systems;
@@ -396,6 +397,10 @@ public sealed partial class ChatSystem : SharedChatSystem
         }
 
         name = FormattedMessage.EscapeText(name);
+        // Corvax-SpeakerColor-Start
+        if (TryComp<HumanoidAppearanceComponent>(source, out var comp))
+            name = $"[color={comp.SpeakerColor.ToHex()}]{name}[/color]";
+        // Corvax-SpeakerColor-End
         var speech = GetSpeechVerb(source, message);
         var wrappedMessage = Loc.GetString(speech.Bold ? "chat-manager-entity-say-bold-wrap-message" : "chat-manager-entity-say-wrap-message",
             ("entityName", name),
@@ -466,6 +471,10 @@ public sealed partial class ChatSystem : SharedChatSystem
             name = nameEv.Name;
         }
         name = FormattedMessage.EscapeText(name);
+        // Corvax-SpeakerColor-Start
+        if (TryComp<HumanoidAppearanceComponent>(source, out var comp))
+            name = $"[color={comp.SpeakerColor.ToHex()}]{name}[/color]";
+        // Corvax-SpeakerColor-End
 
 
         var wrappedMessage = Loc.GetString("chat-manager-entity-whisper-wrap-message",
