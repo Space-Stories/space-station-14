@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "license": "...",
+  "copyright": "...",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "icon"
+    },
+    {
+      "name": "equipped-BELT",
+      "directions": 4
+    },
+    {
+        "name": "lightsaber-icon"
+    },
+    {
+        "name": "lightsaber-equipped-BELT",
+        "directions": 4
+    }
+  ]
+}

@@ -10,7 +10,7 @@
     # - !type:DepartmentTimeRequirement
     #   department: Security
     #   time: 36000
-  startingGear: JediNtGear
+  startingGear: JediGear
   icon: "JobIconJediNt"
   supervisors: job-supervisors-hos
   canBeAntag: false
@@ -39,6 +39,24 @@
     belt: ClothingBeltSecurityFilled
     gloves: ClothingHandsGlovesCombat
     neck: ClothingNeckMantleJediNt
+  # innerclothingskirt: ClothingUniformJumpskirtSP
+  # satchel: ClothingBackpackSatchelSpacePrisonFilled
+  # duffelbag: ClothingBackpackDuffelSpacePrisonFilled
+
+- type: startingGear
+  id: JediGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitJedi
+    # back: ClothingBackpackJediNtFilled
+    shoes: ClothingShoesBootsJackJedi
+    # eyes: ClothingEyesGlassesSunglasses
+    pocket1: LightSaberJediNt
+    outerClothing: ClothingOuterCoatJediFilled
+    id: JediNtPDA
+    ears: ClothingHeadsetJediNtAlt
+    belt: ClothingBeltJediFilled
+    # gloves: ClothingHandsGlovesCombat
+    # neck: ClothingNeckMantleJediNt
   # innerclothingskirt: ClothingUniformJumpskirtSP
   # satchel: ClothingBackpackSatchelSpacePrisonFilled
   # duffelbag: ClothingBackpackDuffelSpacePrisonFilled

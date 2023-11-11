@@ -1,5 +1,31 @@
 - type: entity
   parent: ClothingOuterStorageBase
+  id: ClothingOuterCoatJedi
+  name: накидка джедая
+  description: Длинный вид одежды, который свободно лежит на плечах, охватывая шею, но не имеет капюшона.
+  components:
+  - type: Storage
+    maxItemSize: Large
+    maxTotalWeight: 16
+  - type: TemperatureProtection
+    coefficient: 0.001
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 1.04
+  - type: Sprite
+    sprite: Stories/Clothing/OuterClothing/Coats/jedi.rsi
+  - type: Clothing
+    sprite: Stories/Clothing/OuterClothing/Coats/jedi.rsi
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.90
+        Slash: 0.80
+        Piercing: 0.80
+        Heat: 0.90
+
+- type: entity
+  parent: ClothingOuterStorageBase
   id: ClothingOuterCoatHoSP
   name: head of space prison trenchcoat
   description: A rugged canvas trenchcoat, designed and created by TX Fabrication Corp. Wearing it makes you feel for the plight of the Tibetans.

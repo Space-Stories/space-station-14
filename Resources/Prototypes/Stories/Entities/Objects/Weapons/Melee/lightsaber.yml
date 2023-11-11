@@ -93,7 +93,7 @@
         Slash: -7.5
         Heat: -7.5
         Structural: -2
-        Blunt: -4.5
+        Blunt: 4.5
     ignoreWhitelist:
       components:
       - ForceSensitive # Чувствительные к силе отражают это, так как иначе бы это было имбой против них.
