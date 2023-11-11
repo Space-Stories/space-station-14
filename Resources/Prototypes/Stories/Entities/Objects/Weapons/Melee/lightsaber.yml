@@ -6,7 +6,10 @@
   components:
   - type: EnergySword
     colorOptions:
-      - White
+      - DodgerBlue
+      - Aqua
+      - MediumSpringGreen
+      - MediumOrchid
     litDamageBonus:
         types:
             Slash: 15
