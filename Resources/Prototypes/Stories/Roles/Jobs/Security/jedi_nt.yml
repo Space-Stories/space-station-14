@@ -6,10 +6,16 @@
   requirements:
     - !type:RoleTimeRequirement
       role: JobHeadOfSecurity
-      time: 36000
-    # - !type:DepartmentTimeRequirement
-    #   department: Security
-    #   time: 36000
+      time: 36000 # 10 hours
+    - !type:RoleTimeRequirement
+      role: JobCaptain
+      time: 36000 # 10 hours
+    - !type:RoleTimeRequirement
+      role: JobIAA
+      time: 36000 # 10 hours
+    - !type:RoleTimeRequirement
+      role: JobDetective
+      time: 18000 # 5 hours
   startingGear: JediNtGear
   icon: "JobIconJediNt"
   supervisors: job-supervisors-hos
