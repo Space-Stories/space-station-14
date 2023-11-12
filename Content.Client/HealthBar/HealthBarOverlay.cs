@@ -1,3 +1,4 @@
+using System.Linq;
 using System.Numerics;
 using Content.Shared.Damage;
 using Content.Shared.Mobs;
@@ -6,8 +7,13 @@ using Content.Shared.Mobs.Systems;
 using Content.Shared.StatusIcon;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
+using Robust.Client.ResourceManagement;
+using Robust.Client.Utility;
 using Robust.Shared.Enums;
+using Robust.Shared.Graphics.RSI;
 using Robust.Shared.Prototypes;
+using Robust.Shared.Timing;
+using Robust.Shared.Utility;
 
 namespace Content.Client.HealthOverlay
 {
@@ -15,6 +21,8 @@ namespace Content.Client.HealthOverlay
     {
         [Dependency] private readonly IEntityManager _entity = default!;
         [Dependency] private readonly IPrototypeManager _prototype = default!;
+        [Dependency] private readonly IResourceCache _resourceCache = default!;
+        [Dependency] private readonly IGameTiming _timing = default!;
 
         private readonly TransformSystem _transform;
         private readonly HealthBarSystem _healthbar;
@@ -85,7 +93,7 @@ namespace Content.Client.HealthOverlay
                 if (!_prototype.TryIndex<StatusIconPrototype>("HealthStateBar" + healthbarState.ToString(), out var healthbar))
                     continue;
 
-                var healthBarTexture = _sprite.Frame0(healthbar.Icon);
+                var healthBarTexture = GetTextureFrame(healthbar);
 
                 if (accOffsetL + healthBarTexture.Height > sprite.Bounds.Height * EyeManager.PixelsPerMeter)
                     break;
@@ -101,23 +109,67 @@ namespace Content.Client.HealthOverlay
 
                 if (mobState.CurrentState == MobState.Critical)
                 {
-                    if (!_prototype.TryIndex<StatusIconPrototype>("HealthStateBar17", out var critbar))
+                    // if human have less than 50 hp then critbar will flick more often
+                    var flickMoreOften = deadThreshold - damageable.TotalDamage < critThreshold / 2;
+
+                    if (!_prototype.TryIndex<StatusIconPrototype>(flickMoreOften ? "HealthStateBar18" : "HealthStateBar17", out var critbar))
                         continue;
 
-                    var critBarTexture = _sprite.Frame0(critbar.Icon);
+                    var critBarTexture = GetTextureFrame(critbar);
                     handle.DrawTexture(critBarTexture, position);
                 }
                 if (mobState.CurrentState == MobState.Dead)
                 {
-                    if (!_prototype.TryIndex<StatusIconPrototype>("HealthStateBar18", out var deadbar))
+                    if (!_prototype.TryIndex<StatusIconPrototype>("HealthStateBar19", out var deadbar))
                         continue;
 
-                    var deadBarTexture = _sprite.Frame0(deadbar.Icon);
+                    var deadBarTexture = GetTextureFrame(deadbar);
                     handle.DrawTexture(deadBarTexture, position);
                 }
             }
 
             handle.UseShader(null);
+        }
+
+        private Texture GetTextureFrame(StatusIconPrototype proto)
+        {
+            Texture? texture = null;
+
+            switch (proto.Icon)
+            {
+                case SpriteSpecifier.Rsi rsi:
+                    var rsiActual = _resourceCache.GetResource<RSIResource>("/Textures/" + rsi.RsiPath.ToString()).RSI;
+
+                    rsiActual.TryGetState(rsi.RsiState, out var state);
+
+                    var frames = state!.GetFrames(RsiDirection.South);
+                    var delays = state.GetDelays();
+                    var totalDelay = delays.Sum();
+                    var time = _timing.RealTime.TotalSeconds % totalDelay;
+                    var delaySum = 0f;
+
+                    for (var i = 0; i < delays.Length; i++)
+                    {
+                        var delay = delays[i];
+                        delaySum += delay;
+
+                        if (time > delaySum)
+                            continue;
+
+                        texture = frames[i];
+                        break;
+                    }
+
+                    texture ??= _sprite.Frame0(proto.Icon);
+                    break;
+                case SpriteSpecifier.Texture spriteTexture:
+                    texture = spriteTexture.GetTexture(_resourceCache);
+                    break;
+                default:
+                    throw new NotImplementedException();
+            }
+
+            return texture;
         }
     }
 }

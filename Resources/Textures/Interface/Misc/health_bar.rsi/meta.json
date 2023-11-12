@@ -56,13 +56,34 @@
             "name": "health_15"
         },
         {
-            "name": "health_16"
+            "name": "health_16",
+            "delays": [
+                [
+                    0.6,
+                    0.6
+                ]
+            ]
         },
         {
-            "name": "health_17"
+            "name": "health_17",
+            "delays": [
+                [
+                    0.6,
+                    0.6
+                ]
+            ]
         },
         {
-            "name": "health_18"
+            "name": "health_18",
+            "delays": [
+                [
+                    0.3,
+                    0.3
+                ]
+            ]
+        },
+        {
+            "name": "health_19"
         }
     ]
 }

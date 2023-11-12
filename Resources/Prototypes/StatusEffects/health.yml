@@ -1,7 +1,7 @@
 - type: statusIcon
   id: HealthStateIcon
   abstract: true
-  priority: 20
+  priority: 1
   locationPreference: Left
 
 - type: statusIcon
@@ -28,8 +28,6 @@
 - type: statusIcon
   id: HealthStateBar
   abstract: true
-  priority: 21
-  locationPreference: left
 
 - type: statusIcon
   id: HealthStateBar0
