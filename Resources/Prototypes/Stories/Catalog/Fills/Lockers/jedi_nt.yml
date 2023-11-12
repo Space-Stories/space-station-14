@@ -5,12 +5,8 @@
   components:
   - type: StorageFill
     contents:
-      - id: ClothingUniformJumpsuitJediNt
-      - id: ClothingBackpackJediNtFilled
-      - id: ClothingShoesBootsJackJediNt
-      - id: ClothingEyesGlassesSunglasses
-      - id: ClothingOuterVestJediNt
+      - id: ClothingUniformJumpsuitJedi
+      - id: ClothingShoesBootsJackJedi
+      - id: ClothingOuterCoatJedi
       - id: ClothingHeadsetJediNtAlt
-      - id: ClothingBeltSecurityFilled
-      - id: ClothingHandsGlovesCombat
-      - id: ClothingNeckMantleJediNt
+      - id: ClothingBeltJedi

@@ -10,7 +10,7 @@
     # - !type:DepartmentTimeRequirement
     #   department: Security
     #   time: 36000
-  startingGear: JediGear
+  startingGear: JediNtGear
   icon: "JobIconJediNt"
   supervisors: job-supervisors-hos
   canBeAntag: false
