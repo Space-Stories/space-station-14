@@ -12,6 +12,7 @@ using Content.Shared.Throwing;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Player;
+using Content.Shared.Weapons.Melee.Events;
 
 namespace Content.Server.Damage.Systems
 {
@@ -24,6 +25,7 @@ namespace Content.Server.Damage.Systems
         [Dependency] private readonly SharedCameraRecoilSystem _sharedCameraRecoil = default!;
         [Dependency] private readonly SharedColorFlashEffectSystem _color = default!;
         [Dependency] private readonly ThrownItemSystem _thrownItem = default!;
+        [Dependency] private readonly SharedAudioSystem _audio = default!;
 
         public override void Initialize()
         {
@@ -33,14 +35,19 @@ namespace Content.Server.Damage.Systems
 
         private void OnDoHit(EntityUid uid, DamageOtherOnHitComponent component, ThrowDoHitEvent args)
         {
-            var dmg = _damageable.TryChangeDamage(args.Target, component.Damage, component.IgnoreResistances, origin: args.Component.Thrower);
+            // SpaceStories GetMeleeDamageOnHitEvent - start
+            var ev = new GetMeleeDamageOnHitEvent(uid, new(component.Damage), new(), args.Target);
+            RaiseLocalEvent(uid, ref ev);
+
+            var dmg = _damageable.TryChangeDamage(args.Target, ev.Damage, component.IgnoreResistances, origin: args.Component.Thrower);
+            // SpaceStories GetMeleeDamageOnHitEvent - end
 
             // Log damage only for mobs. Useful for when people throw spears at each other, but also avoids log-spam when explosions send glass shards flying.
             if (dmg != null && HasComp<MobStateComponent>(args.Target))
                 _adminLogger.Add(LogType.ThrowHit, $"{ToPrettyString(args.Target):target} received {dmg.Total:damage} damage from collision");
 
             _color.RaiseEffect(Color.Red, new List<EntityUid>() { args.Target }, Filter.Pvs(args.Target, entityManager: EntityManager));
-            _guns.PlayImpactSound(args.Target, dmg, null, false);
+            _guns.PlayImpactSound(args.Target, dmg, component.HitSound, false);
             if (TryComp<PhysicsComponent>(uid, out var body) && body.LinearVelocity.LengthSquared() > 0f)
             {
                 var direction = body.LinearVelocity.Normalized();

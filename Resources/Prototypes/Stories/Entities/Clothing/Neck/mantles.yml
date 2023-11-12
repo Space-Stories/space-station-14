@@ -1,0 +1,10 @@
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckMantleJediNt
+  name: мантия стража клинка
+  description: Похоже тут выгравировано W o o b y. Что же это может значить?
+  components:
+  - type: Sprite
+    sprite: Stories/Clothing/Neck/mantles/jedi_nt_mantle_shoulder.rsi
+  - type: Clothing
+    sprite: Stories/Clothing/Neck/mantles/jedi_nt_mantle_shoulder.rsi

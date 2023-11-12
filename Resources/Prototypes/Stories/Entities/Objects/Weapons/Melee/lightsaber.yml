@@ -1,0 +1,99 @@
+- type: entity
+  name: световой меч
+  parent: BaseItem
+  id: LightSaberJediNt
+  description: Особенное оружие, созданное сколь для элегантного боя, сколь и для церемонний, его работа связана с кайбер-кристаллом внутри.
+  components:
+  - type: EnergySword
+    colorOptions:
+      - White
+    litDamageBonus:
+        types:
+            Slash: 15
+            Heat: 15
+            Structural: 4
+            Blunt: -4.5
+    litDisarmMalus: 0.6
+  - type: Sprite
+    sprite: Objects/Weapons/Melee/e_sword.rsi
+    layers:
+      - state: e_sword
+      - state: e_sword_blade
+        color: "#FFFFFF"
+        visible: false
+        shader: unshaded
+        map: [ "blade" ]
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: 1
+    soundHit:
+      path: /Audio/Weapons/eblade1.ogg
+    damage:
+      types:
+        Blunt: 4.5
+  - type: Item
+    size: Small
+    sprite: Objects/Weapons/Melee/e_sword.rsi
+  - type: UseDelay
+    delay: 1.0
+  - type: PointLight
+    enabled: false
+    radius: 2
+    energy: 2
+    color: white
+    netsync: false
+  - type: Appearance
+  - type: ToggleableLightVisuals
+    spriteLayer: blade
+    inhandVisuals:
+      left:
+      - state: inhand-left-blade
+        shader: unshaded
+      right:
+      - state: inhand-right-blade
+        shader: unshaded
+  - type: DisarmMalus
+    malus: 0
+  - type: Reflect
+    enabled: false
+    reflectProb: 0.50
+    spread: 45
+  - type: ThrowingAngle
+    angle: 225
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape: !type:PhysShapeCircle
+          vertices:
+            - -0.40,-0.30
+            - -0.30,-0.40
+            - 0.40,0.30
+            - 0.30,0.40
+        density: 1
+        mask:
+        - ItemMask
+        layer:
+        - FlyingMobLayer
+        restitution: 0.3
+        friction: 0.2
+  - type: Sharp
+  - type: LightSaber
+  - type: DamageOtherOnHit
+    soundHit:
+      path: /Audio/Weapons/eblade1.ogg
+    damage:
+      types:
+        Blunt: -4.5
+  - type: DamageContacts
+    soundHit:
+      path: /Audio/Weapons/eblade1.ogg
+    onlyTethered: true
+    damage:
+      types:
+        Slash: -7.5
+        Heat: -7.5
+        Structural: -2
+        Blunt: 4.5
+    ignoreWhitelist:
+      components:
+      - ForceSensitive # Чувствительные к силе отражают это, так как иначе бы это было имбой против них.

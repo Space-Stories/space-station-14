@@ -51,6 +51,15 @@
     },
     {
       "name": "sp_open"
+    },
+    {
+        "name": "jedi"
+    },
+    {
+        "name": "jedi_door"
+    },
+    {
+        "name": "jedi_open"
     }
   ]
 }

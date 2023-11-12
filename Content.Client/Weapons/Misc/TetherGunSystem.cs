@@ -29,10 +29,10 @@ public sealed class TetherGunSystem : SharedTetherGunSystem
 
     private void OnAfterState(EntityUid uid, BaseForceGunComponent component, ref AfterAutoHandleStateEvent args)
     {
-        if (!TryComp<SpriteComponent>(component.Tethered, out var sprite))
+        if (!TryComp<SpriteComponent>(component.Tethered, out var sprite) || component.LineColor == null)
             return;
 
-        sprite.Color = component.LineColor;
+        sprite.Color = component.LineColor.Value;
     }
 
     public override void Shutdown()
@@ -104,11 +104,13 @@ public sealed class TetherGunSystem : SharedTetherGunSystem
 
         if (TryComp<ForceGunComponent>(component.Tetherer, out var force))
         {
-            sprite.Color = force.LineColor;
+            if (force.LineColor == null) return;
+            sprite.Color = force.LineColor.Value;
         }
         else if (TryComp<TetherGunComponent>(component.Tetherer, out var tether))
         {
-            sprite.Color = tether.LineColor;
+            if (tether.LineColor == null) return;
+            sprite.Color = tether.LineColor.Value;
         }
     }
 

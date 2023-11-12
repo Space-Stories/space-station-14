@@ -1,3 +1,17 @@
+# JediNt
+
+- type: entity
+  id: SpawnPointJediNt
+  parent: SpawnPointJobBase
+  name: jedint
+  components:
+  - type: SpawnPoint
+    job_id: JediNt
+  - type: Sprite
+    layers:
+      - state: green
+      - state: hos
+
 # Base
 
 - type: entity

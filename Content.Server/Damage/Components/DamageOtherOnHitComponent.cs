@@ -1,5 +1,6 @@
 using Content.Server.Damage.Systems;
 using Content.Shared.Damage;
+using Robust.Shared.Audio;
 
 namespace Content.Server.Damage.Components
 {
@@ -7,6 +8,10 @@ namespace Content.Server.Damage.Components
     [RegisterComponent]
     public sealed partial class DamageOtherOnHitComponent : Component
     {
+        [ViewVariables(VVAccess.ReadWrite)]
+        [DataField("soundHit")]
+        public SoundSpecifier? HitSound;
+
         [DataField("ignoreResistances")]
         [ViewVariables(VVAccess.ReadWrite)]
         public bool IgnoreResistances = false;

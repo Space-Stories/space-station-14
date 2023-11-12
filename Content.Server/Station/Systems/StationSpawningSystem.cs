@@ -136,6 +136,8 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
             profile = HumanoidCharacterProfile.RandomWithSpecies(speciesId);
         }
 
+        DoJobSpecials(job, entity.Value);
+
         if (prototype?.StartingGear != null)
         {
             var startingGear = _prototypeManager.Index<StartingGearPrototype>(prototype.StartingGear);
@@ -154,7 +156,6 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
             }
         }
 
-        DoJobSpecials(job, entity.Value);
         _identity.QueueIdentityUpdate(entity.Value);
         return entity.Value;
     }

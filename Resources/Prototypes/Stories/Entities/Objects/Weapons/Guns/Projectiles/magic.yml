@@ -1,0 +1,22 @@
+- type: entity
+  id: JediPushBall
+  name: base bullet rubber
+  parent: BaseBullet
+  noSpawn: true
+  components:
+  - type: TimedDespawn
+    lifetime: 0.35
+  - type: Sprite
+    visible: true
+    sprite: Objects/Weapons/Guns/Projectiles/magic.rsi
+    layers:
+    - state: spell
+  - type: Projectile
+    damage:
+      types:
+        Structural: 50
+    soundHit:
+      path: /Audio/Weapons/egloves.ogg
+  - type: StaminaDamageOnCollide
+    damage: 100
+  - type: PushOnCollide

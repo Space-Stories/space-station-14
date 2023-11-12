@@ -1,0 +1,62 @@
+- type: job
+  id: JediNt
+  name: страж клинка
+  description: Встань на защиту станции со своим крутым мечом и способностями!
+  playTimeTracker: JobJediNt
+  requirements:
+    - !type:RoleTimeRequirement
+      role: JobHeadOfSecurity
+      time: 36000
+    # - !type:DepartmentTimeRequirement
+    #   department: Security
+    #   time: 36000
+  startingGear: JediNtGear
+  icon: "JobIconJediNt"
+  supervisors: job-supervisors-hos
+  canBeAntag: false
+  access:
+  - Security
+  - Brig
+  - Maintenance
+  - Service
+  - External
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: ForceSensitive
+
+- type: startingGear
+  id: JediNtGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitJediNt
+    back: ClothingBackpackJediNtFilled
+    shoes: ClothingShoesBootsJackJediNt
+    eyes: ClothingEyesGlassesSunglasses
+    pocket1: LightSaberJediNt
+    outerClothing: ClothingOuterVestJediNt
+    id: JediNtPDA
+    ears: ClothingHeadsetJediNtAlt
+    belt: ClothingBeltSecurityFilled
+    gloves: ClothingHandsGlovesCombat
+    neck: ClothingNeckMantleJediNt
+  # innerclothingskirt: ClothingUniformJumpskirtSP
+  # satchel: ClothingBackpackSatchelSpacePrisonFilled
+  # duffelbag: ClothingBackpackDuffelSpacePrisonFilled
+
+- type: startingGear
+  id: JediGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitJedi
+    # back: ClothingBackpackJediNtFilled
+    shoes: ClothingShoesBootsJackJedi
+    # eyes: ClothingEyesGlassesSunglasses
+    pocket1: LightSaberJediNt
+    outerClothing: ClothingOuterCoatJediFilled
+    id: JediNtPDA
+    ears: ClothingHeadsetJediNtAlt
+    belt: ClothingBeltJediFilled
+    # gloves: ClothingHandsGlovesCombat
+    # neck: ClothingNeckMantleJediNt
+  # innerclothingskirt: ClothingUniformJumpskirtSP
+  # satchel: ClothingBackpackSatchelSpacePrisonFilled
+  # duffelbag: ClothingBackpackDuffelSpacePrisonFilled

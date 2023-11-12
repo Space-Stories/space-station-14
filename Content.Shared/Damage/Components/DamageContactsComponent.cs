@@ -1,5 +1,6 @@
 using Content.Shared.Whitelist;
 using Robust.Shared.GameStates;
+using Robust.Shared.Audio;
 
 namespace Content.Shared.Damage.Components;
 
@@ -12,9 +13,16 @@ public sealed partial class DamageContactsComponent : Component
     [DataField("damage", required: true)]
     public DamageSpecifier Damage = new();
 
+    [ViewVariables(VVAccess.ReadWrite)]
+    [DataField("soundHit")]
+    public SoundSpecifier? HitSound;
+
     /// <summary>
     /// Entities that aren't damaged by this entity
     /// </summary>
     [DataField("ignoreWhitelist")]
     public EntityWhitelist? IgnoreWhitelist;
+
+    [DataField("onlyTethered")]
+    public bool OnlyTethered = false;
 }
