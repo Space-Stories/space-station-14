@@ -4,11 +4,11 @@
   - Aspid
   - Bagel
   - Barratry
-  - Box
+#  - Box
   - Cluster
   - Core
-  - Fland
-  - Kettle
+#  - Fland
+#  - Kettle
   - Marathon
 #  - Meta
   - Omega
@@ -23,4 +23,4 @@
   - StoriesBox
   - StoriesFland
   - StoriesKettle
-  - StoriesMarathon
+#  - StoriesMarathon
