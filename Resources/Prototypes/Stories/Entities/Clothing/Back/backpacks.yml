@@ -1,5 +1,14 @@
 - type: entity
   parent: ClothingBackpack
+  id: ClothingBackpackJediNt
+  name: рюкзак стража клинка
+  description: Кажется, вы где-то это уже видели.
+  components:
+  - type: Sprite
+    sprite: Stories/Clothing/Back/Backpacks/jedi_nt.rsi
+
+- type: entity
+  parent: ClothingBackpack
   id: ClothingBackpackSpacePrison
   name: space prison officer's backpack
   description: It's a very robust backpack.

@@ -1,0 +1,11 @@
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatHoodJedihood
+  name: капюшон джедая
+  noSpawn: true
+  description: Достаточно крут, чтобы вы его носили.
+  components:
+  - type: Sprite
+    sprite: Stories/Clothing/Head/Hoods/jedi.rsi
+  - type: Clothing
+    sprite: Stories/Clothing/Head/Hoods/jedi.rsi

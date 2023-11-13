@@ -1,5 +1,33 @@
 - type: entity
   parent: ClothingBeltStorageBase
+  id: ClothingBeltJedi
+  name: ремень джедая
+  description: Повесьте на него свой меч.
+  components:
+  - type: ClothingSpeedModifier
+    walkModifier: 1
+    sprintModifier: 1.02
+  - type: Sprite
+    sprite: Stories/Clothing/Belt/jedi_belt.rsi
+    state: icon
+  - type: Clothing
+    sprite: Stories/Clothing/Belt/jedi_belt.rsi
+  - type: Storage
+    maxSlots: 5
+    whitelist:
+      tags:
+        - CigPack
+        - Radio
+      components:
+        - FlashOnTrigger
+        - Flash
+        - Welder
+        - Flash
+        - Handcuff
+        - EnergySword
+
+- type: entity
+  parent: ClothingBeltStorageBase
   id: ClothingBeltHoSPSheath
   name: sabre sheath
   description: An ornate sheath designed to hold an officer's blade.

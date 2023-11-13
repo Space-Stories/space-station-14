@@ -1,0 +1,21 @@
+- type: entity
+  id: EffectProtectiveBubble
+  noSpawn: true
+  components:
+  - type: PointLight
+    radius: 3
+    energy: 3
+    color: skyblue
+  - type: Sprite
+    drawdepth: Effects
+    noRot: true
+    layers:
+    - shader: unshaded
+      map: ["enum.EffectLayers.Unshaded"]
+      sprite: Objects/Weapons/Effects
+      state: shield3
+  - type: EffectVisuals
+  - type: Tag
+    tags:
+    - HideContextMenu
+  - type: AnimationPlayer

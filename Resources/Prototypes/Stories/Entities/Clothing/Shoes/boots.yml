@@ -1,5 +1,32 @@
 ﻿- type: entity
   parent: ClothingShoesBootsJack
+  id: ClothingShoesBootsJackJedi
+  name: подкованные сапоги джедая
+  description: Создан, чтобы ваши ножки не промокли на далеких планетах.
+  components:
+    - type: ClothingSpeedModifier
+      walkModifier: 1
+      sprintModifier: 1.02
+    - type: NoSlip
+    - type: Sprite
+      sprite: Stories/Clothing/Shoes/Boots/jedi.rsi
+    - type: Clothing
+      sprite: Stories/Clothing/Shoes/Boots/jedi.rsi
+
+- type: entity
+  parent: ClothingShoesBootsJack
+  id: ClothingShoesBootsJackJediNt
+  name: подкованные сапоги стража клинка
+  description: Планировалось, что они будут удобнее обычных.
+  components:
+    - type: NoSlip
+    - type: Sprite
+      sprite: Stories/Clothing/Shoes/Boots/jedi_nt.rsi
+    - type: Clothing
+      sprite: Stories/Clothing/Shoes/Boots/jedi_nt.rsi
+
+- type: entity
+  parent: ClothingShoesBootsJack
   id: ClothingShoesBootsJackSP
   components:
     - type: Sprite
