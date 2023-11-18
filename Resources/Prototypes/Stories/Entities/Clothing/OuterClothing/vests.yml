@@ -1,5 +1,16 @@
 - type: entity
   parent: ClothingOuterArmorBasic
+  id: ClothingOuterVestJediNt
+  name: бронежилет
+  description: Похоже, на нем просто перекрасили одну полосу.
+  components:
+    - type: Sprite
+      sprite: Stories/Clothing/OuterClothing/Vests/jedi_nt.rsi
+    - type: Clothing
+      sprite: Stories/Clothing/OuterClothing/Vests/jedi_nt.rsi
+
+- type: entity
+  parent: ClothingOuterArmorBasic
   id: ClothingOuterVestArmorSP
   name: armor vest
   description: A slim Type I armored vest that provides decent protection against most types of damage.

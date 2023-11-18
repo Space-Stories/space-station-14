@@ -11,6 +11,16 @@
 
 - type: entity
   noSpawn: true
+  parent: ClothingBackpackJediNt
+  id: ClothingBackpackJediNtFilled
+  components:
+  - type: StorageFill
+    contents:
+      - id: BoxSurvivalSecurity
+      - id: Flash
+
+- type: entity
+  noSpawn: true
   parent: ClothingBackpack
   id: ClothingBackpackIAAFilled
   components:

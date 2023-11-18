@@ -81,6 +81,7 @@
   - SeniorOfficer
   - Detective
   - Warden
+  - JediNt # Stories-Jedi
 
 - type: department
   id: Science

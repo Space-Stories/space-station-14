@@ -1,0 +1,16 @@
+- type: entity
+  name: Гравирука
+  parent: BaseItem
+  noSpawn: true
+  id: HandTetherGun
+  description: Вот это да! Ваша рука может манипулировать гравитацией вокруг объектов.
+  components:
+    - type: Unremoveable
+    - type: TetherGun
+      maxForce: 2000
+      frequency: 5
+      dampingRatio: 4
+      lineColor: null
+    - type: Tag
+      tags:
+        - HideContextMenu

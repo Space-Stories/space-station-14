@@ -31,6 +31,8 @@ public sealed class EnergySwordSystem : EntitySystem
 
         SubscribeLocalEvent<EnergySwordComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<EnergySwordComponent, GetMeleeDamageEvent>(OnGetMeleeDamage);
+        SubscribeLocalEvent<EnergySwordComponent, GetMeleeDamageOnHitEvent>(OnGetMeleeOnHitDamage); // SpaceStories GetMeleeDamageOnHitEvent
+        SubscribeLocalEvent<EnergySwordComponent, GetMeleeDamageContactEvent>(OnGetMeleeDamageContact); // SpaceStories GetMeleeDamageContactEvent
         SubscribeLocalEvent<EnergySwordComponent, UseInHandEvent>(OnUseInHand);
         SubscribeLocalEvent<EnergySwordComponent, InteractUsingEvent>(OnInteractUsing);
         SubscribeLocalEvent<EnergySwordComponent, IsHotEvent>(OnIsHotEvent);
@@ -55,6 +57,24 @@ public sealed class EnergySwordSystem : EntitySystem
         // Adjusts base damage when the energy blade is active, by values set in yaml
         args.Damage += comp.LitDamageBonus;
     }
+
+    private void OnGetMeleeOnHitDamage(EntityUid uid, EnergySwordComponent comp, ref GetMeleeDamageOnHitEvent args) // SpaceStories GetMeleeDamageOnHitEvent - start
+    {
+        if (!comp.Activated)
+            return;
+
+        // Adjusts base damage when the energy blade is active, by values set in yaml
+        args.Damage += comp.LitDamageBonus;
+    } // SpaceStories GetMeleeDamageOnHitEvent - end
+
+    private void OnGetMeleeDamageContact(EntityUid uid, EnergySwordComponent comp, ref GetMeleeDamageContactEvent args) // SpaceStories GetMeleeDamageContactEvent - start
+    {
+        if (!comp.Activated)
+            return;
+
+        // Adjusts base damage when the energy blade is active, by values set in yaml
+        args.Damage += comp.LitDamageBonus;
+    } // SpaceStories GetMeleeDamageContactEvent - end
 
     private void OnUseInHand(EntityUid uid, EnergySwordComponent comp, UseInHandEvent args)
     {
