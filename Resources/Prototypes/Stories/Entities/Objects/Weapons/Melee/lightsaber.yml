@@ -4,6 +4,9 @@
   id: LightSaberJediNt
   description: Особенное оружие, созданное сколь для элегантного боя, сколь и для церемонний, его работа связана с кайбер-кристаллом внутри.
   components:
+  - type: BlockMeleeAttack
+    blockSound:
+      path: /Audio/Weapons/eblade1.ogg
   - type: EnergySword
     colorOptions:
       - White
@@ -58,6 +61,8 @@
     enabled: false
     reflectProb: 0.50
     spread: 45
+    reflects:
+      - Energy
   - type: ThrowingAngle
     angle: 225
   - type: Fixtures
