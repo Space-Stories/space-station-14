@@ -20,7 +20,6 @@
           availableJobs:
             #service
             Captain: [ 1, 1 ]
-            IAA: [ 1, 1 ] # Corvax-IAA
             HeadOfPersonnel: [ 1, 1 ]
             Bartender: [ 2, 2 ]
             Botanist: [ 3, 3 ]
@@ -28,7 +27,7 @@
             Janitor: [ 3, 3 ]
             Chaplain: [ 2, 2 ]
             Librarian: [ 2, 2 ]
-            #Lawyer: [ 2, 2 ] # Corvax-IAA
+            Lawyer: [ 2, 2 ]
             ServiceWorker: [ 3, 4 ]
             #engineering
             ChiefEngineer: [ 1, 1 ]
@@ -68,4 +67,4 @@
             Musician: [ 2, 2 ]
             Boxer: [ 1, 1 ]
             Reporter: [ 1, 1 ]
-
+            
