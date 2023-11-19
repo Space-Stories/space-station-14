@@ -1,14 +1,15 @@
 - type: gameMap
-  id: StoriesMarathon
-  mapName: 'Stories Marathon'
-  mapPath: /Maps/Stories/stories_marathon.yml
-  minPlayers: 45
+  id: StoriesCore
+  mapName: 'Stories Core'
+  mapPath: /Maps/Stories/stories_core.yml
+  minPlayers: 30
+  maxPlayers: 60
   stations:
-    Marathon:
+    Core:
       stationProto: StandardNanotrasenStation
       components:
         - type: StationNameSetup
-          mapNameTemplate: '{0} Marathon Station {1}'
+          mapNameTemplate: '{0} Core {1}'
           nameGenerator:
             !type:NanotrasenNameGenerator
             prefixCreator: '14'
@@ -19,54 +20,51 @@
             - Passenger
           availableJobs:
             #service
-            Captain: [ 1, 1 ]
-            IAA: [ 1, 1 ] # Corvax-IAA
-            HeadOfPersonnel: [ 1, 1 ]
             Bartender: [ 2, 2 ]
-            Botanist: [ 2, 3 ]
-            Chef: [ 2, 2 ]
-            Janitor: [ 1, 2 ]
+            JediNt: [ 1, 1 ] # Stories-Jedi
+            Botanist: [ 3, 3]
+            Chef: [ 1, 2 ]
+            Janitor: [ 2, 2 ]
+            Captain: [ 1, 1 ]
+            IAA: [ 2, 2 ] # Corvax-IAA
+            HeadOfPersonnel: [ 1, 1 ]
             Chaplain: [ 1, 1 ]
             Librarian: [ 1, 1 ]
-            ServiceWorker: [ 2, 2 ]
+            ServiceWorker: [ 2, 3 ]
             #engineering
             ChiefEngineer: [ 1, 1 ]
+            StationEngineer: [ 4, 4 ]
+            AtmosphericTechnician: [ 2, 2 ]
+            TechnicalAssistant: [ 2, 3 ]
             SeniorEngineer: [ 1, 1 ]
-            AtmosphericTechnician: [ 3, 3 ]
-            StationEngineer: [ 3, 3 ]
-            TechnicalAssistant: [ 3, 3 ]
             #medical
             ChiefMedicalOfficer: [ 1, 1 ]
+            MedicalDoctor: [ 3, 4 ]
+            Chemist: [ 2, 3 ]
+            MedicalIntern: [ 2, 3 ]
+            Paramedic: [ 1, 2 ]
             SeniorPhysician: [ 1, 1 ]
-            Chemist: [ 3, 3 ]
-            MedicalDoctor: [ 3, 3 ]
-            MedicalIntern: [ 3, 3 ]
-            Psychologist: [ 1, 1 ]
             #science
             ResearchDirector: [ 1, 1 ]
+            Scientist: [ 3, 4 ]
+            ResearchAssistant: [ 2, 2 ]
             SeniorResearcher: [ 1, 1 ]
-            Scientist: [ 3, 3 ]
-            ResearchAssistant: [ 3, 3 ]
-            Borg: [ 2, 2 ]
             #security
             HeadOfSecurity: [ 1, 1 ]
+            SecurityOfficer: [ 4, 4 ]
             Warden: [ 1, 1 ]
-            SeniorOfficer: [ 1, 1 ]
-            SecurityOfficer: [ 3, 3 ]
-            Detective: [ 1, 1 ]
-            SecurityCadet: [ 4, 4 ]
             #Lawyer: [ 2, 2 ] # Corvax-IAA
+            SecurityCadet: [ 2, 2 ]
+            Detective: [ 1, 1 ]
+            SeniorOfficer: [ 1, 1 ]
             #supply
+            CargoTechnician: [ 3, 3 ]
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 3, 3 ]
-            CargoTechnician: [ 3, 3 ]
             #civilian
             Passenger: [ -1, -1 ]
             Clown: [ 1, 1 ]
             Mime: [ 1, 1 ]
             Musician: [ 1, 1 ]
-            #SpacePrison
-            HeadOfSpacePrison: [ 1, 1 ]
-            SpacePrisonOfficer: [ 3, 3 ]
-            SpacePrisonEngineer: [ 2, 2 ]
-            SpacePrisonMedic: [ 1, 1 ]
+            Boxer: [ 2, 2 ]
+            Reporter: [ 1, 2 ]
