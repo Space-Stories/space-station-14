@@ -44,6 +44,7 @@ public sealed partial class BlockMeleeAttackSystem : EntitySystem
     {
         if (TryComp<BlockMeleeAttackComponent>(component.BlockingItem, out var blocking))
         {
+            if (args.Damage.GetTotal() <= 0) return;
             if (args.Origin == uid || args.Origin == component.BlockingItem) return;
 
             if (!_random.Prob(blocking.BlockProb)) return;

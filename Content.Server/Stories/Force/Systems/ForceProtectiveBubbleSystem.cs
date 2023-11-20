@@ -83,6 +83,7 @@ public sealed class ForceProtectiveBubbleSystem : EntitySystem
     }
     private void OnDamage(EntityUid uid, ForceProtectiveBubbleComponent component, DamageModifyEvent args)
     {
+        if (args.Damage.GetTotal() <= 0) return;
         args.Damage = DamageSpecifier.ApplyModifierSet(args.Damage, component.Modifiers);
         DamageBubble(uid, args.Damage.GetTotal().Value / 100);
     }
