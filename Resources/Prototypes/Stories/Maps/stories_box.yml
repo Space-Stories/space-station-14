@@ -1,7 +1,7 @@
 - type: gameMap
   id: StoriesBox
   mapName: 'Stories Box'
-  mapPath: /Maps/stories_box.yml
+  mapPath: /Maps/Stories/stories_box.yml
   minPlayers: 60
   stations:
     Boxstation:

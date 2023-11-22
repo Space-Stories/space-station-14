@@ -1,6 +1,9 @@
 gateway-window-title = Врата
 gateway-window-ready = Готово!
 gateway-window-ready-in = Готовы через: { $time }сек.
+gateway-window-portal-cooldown = Перезарядка
+gateway-window-portal-unlock = Следующая разблокировка
+gateway-window-locked = Заблокированный
 gateway-window-already-active = Уже открыт
 gateway-window-open-portal = Открыть портал
 gateway-window-no-destinations = Отсутствуют пункты назначения.

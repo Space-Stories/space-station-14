@@ -1,7 +1,7 @@
 - type: gameMap
   id: StoriesKettle
   mapName: 'Stories Kettle'
-  mapPath: /Maps/stories_kettle.yml
+  mapPath: /Maps/Stories/stories_kettle.yml
   minPlayers: 45
   stations:
     Kettle:

@@ -1,7 +1,7 @@
 - type: gameMap
   id: StoriesMarathon
   mapName: 'Stories Marathon'
-  mapPath: /Maps/stories_marathon.yml
+  mapPath: /Maps/Stories/stories_marathon.yml
   minPlayers: 45
   stations:
     Marathon:

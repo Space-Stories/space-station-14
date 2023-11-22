@@ -38,5 +38,7 @@
     ears: ClothingHeadsetIAA
     neck: ClothingNeckLawyerbadge
   innerclothingskirt: ClothingUniformJumpskirtLawyerBlack
+  inhand:
+    - BriefcaseIAAFilled
   satchel: ClothingBackpackSatchelIAAFilled
   duffelbag: ClothingBackpackDuffelIAAFilled
