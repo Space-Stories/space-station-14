@@ -70,3 +70,7 @@ public sealed partial class HandTetherGunEvent : InstantActionEvent
 public sealed partial class CreateProtectiveBubbleEvent : InstantActionEvent
 {
 }
+
+public sealed partial class StopProtectiveBubbleEvent : InstantActionEvent
+{
+}
