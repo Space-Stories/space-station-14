@@ -1,4 +1,5 @@
 using Content.Shared.Atmos.Miasma;
+using Content.Shared.Damage;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Overlays;
@@ -23,6 +24,10 @@ public sealed class ShowHealthIconsSystem : EquipmentHudSystem<ShowHealthIconsCo
     private void OnGetStatusIconsEvent(EntityUid uid, MobStateComponent mobStateComponent, ref GetStatusIconsEvent args)
     {
         if (!IsActive || args.InContainer)
+            return;
+
+        var damageable = _entity.GetComponent<DamageableComponent>(uid);
+        if (damageable.DamageContainerID != "Biological")
             return;
 
         var healthIcons = DecideHealthIcon(uid, mobStateComponent);

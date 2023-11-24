@@ -64,10 +64,14 @@ namespace Content.Client.HealthOverlay
             var query = _entity.AllEntityQueryEnumerator<DamageableComponent, TransformComponent, SpriteComponent, MobStateComponent>();
             while (query.MoveNext(out var entity, out var damageable, out var transform, out var sprite, out var mobState))
             {
-                if (!_mobThreshold.TryGetThresholdForState(entity, MobState.Critical, out var critThreshold))
+                if (damageable.DamageContainerID != "Biological")
+                    continue;
+                if (!_entity.TryGetComponent<MobThresholdsComponent>(entity, out _))
                     continue;
                 if (!_mobThreshold.TryGetThresholdForState(entity, MobState.Dead, out var deadThreshold))
                     continue;
+                if (!_mobThreshold.TryGetThresholdForState(entity, MobState.Critical, out var critThreshold))
+                    critThreshold = deadThreshold;
 
                 if (transform.MapID != args.MapId)
                     continue;
