@@ -6,15 +6,25 @@ using JetBrains.Annotations;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Shared.Player;
+using Content.Shared.CCVar;
+using Robust.Shared.Configuration;
 
 namespace Content.Client.HealthOverlay
 {
     [UsedImplicitly]
     public sealed class HealthBarSystem : EntitySystem
     {
-        public bool IsActive = false;
+        public bool IsActive
+        {
+            get => _config.GetCVar(CCVars.HealthBarShow);
+            set =>
+                _config.SetCVar(CCVars.HealthBarShow, value);
+        }
+
         [Dependency] private readonly IOverlayManager _overlay = default!;
         [Dependency] private readonly IPlayerManager _player = default!;
+        [Dependency] private readonly IConfigurationManager _config = default!;
+
         private static SlotFlags TargetSlots => ~SlotFlags.POCKET;
 
         public override void Initialize()
