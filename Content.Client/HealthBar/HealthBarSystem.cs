@@ -5,6 +5,7 @@ using Content.Shared.Overlays;
 using JetBrains.Annotations;
 using Robust.Client.Graphics;
 using Robust.Client.Player;
+using Robust.Shared.Player;
 
 namespace Content.Client.HealthOverlay
 {
