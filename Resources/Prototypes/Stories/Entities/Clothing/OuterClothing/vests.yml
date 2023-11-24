@@ -1,9 +1,11 @@
 - type: entity
   parent: ClothingOuterArmorBasic
   id: ClothingOuterVestJediNt
-  name: бронежилет
-  description: Похоже, на нем просто перекрасили одну полосу.
+  name: утепленный бронежилет стража клинка
+  description: Потому что, кто-то сказал, что бронежилеты могут быть утепленны.
   components:
+    - type: TemperatureProtection
+      coefficient: 0.001
     - type: Sprite
       sprite: Stories/Clothing/OuterClothing/Vests/jedi_nt.rsi
     - type: Clothing

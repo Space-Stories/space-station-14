@@ -58,3 +58,18 @@
     itemIconStyle: NoItem
     priority: -12
     event: !type:CreateProtectiveBubbleEvent {}
+
+- type: entity
+  id: ActionStopProtectiveBubble
+  name: Отключить защитный пузырь
+  description: Защитный пузырь вокруг вас пропадет.
+  noSpawn: true
+  components:
+  - type: InstantAction
+    useDelay: 1
+    icon:
+      sprite: Stories/Actions/force.rsi
+      state: stopshield
+    itemIconStyle: NoItem
+    priority: -12
+    event: !type:StopProtectiveBubbleEvent {}

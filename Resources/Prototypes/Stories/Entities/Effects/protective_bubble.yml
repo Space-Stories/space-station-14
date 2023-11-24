@@ -4,8 +4,8 @@
   components:
   - type: PointLight
     radius: 3
-    energy: 3
-    color: skyblue
+    energy: 2
+    color: white
   - type: Sprite
     drawdepth: Effects
     noRot: true
@@ -13,7 +13,7 @@
     - shader: unshaded
       map: ["enum.EffectLayers.Unshaded"]
       sprite: Objects/Weapons/Effects
-      state: shield3
+      state: shield3_bad
   - type: EffectVisuals
   - type: Tag
     tags:
