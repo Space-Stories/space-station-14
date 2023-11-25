@@ -39,6 +39,7 @@
     modifiers:
       coefficients:
         Blunt: 0.80
+  - type: Bioluminescence
   - type: MeleeWeapon
     hidden: true
     soundHit:
@@ -52,6 +53,7 @@
     energy: 1.5
     radius: 3
     color: "#556b2f"
+    enabled: false
   - type: Temperature
     heatDamageThreshold: 400
     coldDamageThreshold: 285
