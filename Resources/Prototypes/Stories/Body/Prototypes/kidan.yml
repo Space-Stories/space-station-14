@@ -1,0 +1,48 @@
+- type: body
+  name: "kidan"
+  id: Kidan
+  root: torso
+  slots:
+    head:
+      part: HeadKidan
+      connections:
+      - torso
+      organs:
+        brain: OrganHumanBrain
+    torso:
+      part: TorsoKidan
+      organs:
+        heart: OrganKidanHeart
+        lungs: OrganHumanLungs
+        stomach: OrganKidanStomach
+        liver: OrganKidanLiver
+        kidneys: OrganKidanKidneys
+      connections:
+      - left arm
+      - right arm
+      - left leg
+      - right leg
+    right arm:
+      part: RightArmKidan
+      connections:
+      - right hand
+    left arm:
+      part: LeftArmKidan
+      connections:
+      - left hand
+    right hand:
+      part: RightHandKidan
+    left hand:
+      part: LeftHandKidan
+    right leg:
+      part: RightLegKidan
+      connections:
+      - right foot
+    left leg:
+      part: LeftLegKidan
+      connections:
+      - left foot
+    right foot:
+      part: RightFootKidan
+    left foot:
+      part: LeftFootKidan
