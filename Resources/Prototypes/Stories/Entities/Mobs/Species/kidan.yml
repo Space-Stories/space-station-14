@@ -34,11 +34,7 @@
       Unsexed: MaleHuman
   - type: Damageable
     damageContainer: Biological
-    damageModifierSet: Scale
-  - type: DamageModificator
-    modifiers:
-      coefficients:
-        Blunt: 0.80
+    damageModifierSet: Kidan
   - type: Bioluminescence
   - type: MeleeWeapon
     hidden: true
