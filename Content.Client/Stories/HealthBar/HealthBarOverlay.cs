@@ -72,8 +72,13 @@ namespace Content.Client.HealthOverlay
                     continue;
                 if (!_mobThreshold.TryGetThresholdForState(entity, MobState.Critical, out var critThreshold))
                     critThreshold = deadThreshold;
+                if (!_entity.TryGetComponent<MetaDataComponent>(entity, out var meta))
+                    continue;
 
                 if (transform.MapID != args.MapId)
+                    continue;
+
+                if ((meta.Flags & MetaDataFlags.InContainer) != 0)
                     continue;
 
                 var bounds = sprite.Bounds;
