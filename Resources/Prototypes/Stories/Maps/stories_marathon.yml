@@ -65,8 +65,3 @@
             Clown: [ 1, 1 ]
             Mime: [ 1, 1 ]
             Musician: [ 1, 1 ]
-            #SpacePrison
-            HeadOfSpacePrison: [ 1, 1 ]
-            SpacePrisonOfficer: [ 3, 3 ]
-            SpacePrisonEngineer: [ 2, 2 ]
-            SpacePrisonMedic: [ 1, 1 ]
