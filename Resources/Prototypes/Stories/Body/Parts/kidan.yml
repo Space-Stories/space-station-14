@@ -1,0 +1,199 @@
+# TODO: Add descriptions (many)
+# TODO BODY: Part damage
+- type: entity
+  id: PartKidan
+  parent: BaseItem
+  name: "kidan body part"
+  abstract: true
+  components:
+  - type: Damageable
+    damageContainer: Biological
+  - type: BodyPart
+  - type: ContainerContainer
+    containers:
+      bodypart: !type:Container
+        ents: []
+  - type: Tag
+    tags:
+      - Trash
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 3
+      - ReagentId: Blood
+        Quantity: 10
+
+- type: entity
+  id: TorsoKidan
+  name: "kidan torso"
+  parent: PartKidan
+  components:
+  - type: Sprite
+    sprite: Stories/Mobs/Species/Kidan/parts.rsi
+    state: "torso_m"
+  - type: Icon
+    sprite: Stories/Mobs/Species/Kidan/parts.rsi
+    state: "torso_m"
+  - type: BodyPart
+    partType: Torso
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 10
+      - ReagentId: Blood
+        Quantity: 20
+
+- type: entity
+  id: HeadKidan
+  name: "kidan head"
+  parent: PartKidan
+  components:
+  - type: Sprite
+    sprite: Stories/Mobs/Species/Kidan/parts.rsi
+    state: "head_m"
+  - type: Icon
+    sprite: Stories/Mobs/Species/Kidan/parts.rsi
+    state: "head_m"
+  - type: BodyPart
+    partType: Head
+    vital: true
+  - type: Input
+    context: "ghost"
+  - type: Tag
+    tags:
+      - Head
+  - type: Extractable
+    juiceSolution:
+      reagents:
+      - ReagentId: Fat
+        Quantity: 5
+      - ReagentId: Blood
+        Quantity: 10
+
+- type: entity
+  id: LeftArmKidan
+  name: "left Kidan arm"
+  parent: PartKidan
+  components:
+  - type: Sprite
+    sprite: Stories/Mobs/Species/Kidan/parts.rsi
+    state: "l_arm"
+  - type: Icon
+    sprite: Stories/Mobs/Species/Kidan/parts.rsi
+    state: "l_arm"
+  - type: BodyPart
+    partType: Arm
+    symmetry: Left
+
+- type: entity
+  id: RightArmKidan
+  name: "right Kidan arm"
+  parent: PartKidan
+  components:
+  - type: Sprite
+    sprite: Stories/Mobs/Species/Kidan/parts.rsi
+    state: "r_arm"
+  - type: Icon
+    sprite: Stories/Mobs/Species/Kidan/parts.rsi
+    state: "r_arm"
+  - type: BodyPart
+    partType: Arm
+    symmetry: Right
+
+- type: entity
+  id: LeftHandKidan
+  name: "left Kidan hand"
+  parent: PartKidan
+  components:
+  - type: Sprite
+    sprite: Stories/Mobs/Species/Kidan/parts.rsi
+    state: "l_hand"
+  - type: Icon
+    sprite: Stories/Mobs/Species/Kidan/parts.rsi
+    state: "l_hand"
+  - type: BodyPart
+    partType: Hand
+    symmetry: Left
+
+- type: entity
+  id: RightHandKidan
+  name: "right Kidan hand"
+  parent: PartKidan
+  components:
+  - type: Sprite
+    sprite: Stories/Mobs/Species/Kidan/parts.rsi
+    state: "r_hand"
+  - type: Icon
+    sprite: Stories/Mobs/Species/Kidan/parts.rsi
+    state: "r_hand"
+  - type: BodyPart
+    partType: Hand
+    symmetry: Right
+
+- type: entity
+  id: LeftLegKidan
+  name: "left Kidan leg"
+  parent: PartKidan
+  components:
+  - type: Sprite
+    sprite: Stories/Mobs/Species/Kidan/parts.rsi
+    state: "l_leg"
+  - type: Icon
+    sprite: Stories/Mobs/Species/Kidan/parts.rsi
+    state: "l_leg"
+  - type: BodyPart
+    partType: Leg
+    symmetry: Left
+  - type: MovementBodyPart
+    walkSpeed : 2.7
+    sprintSpeed : 4.5
+
+- type: entity
+  id: RightLegKidan
+  name: "right Kidan leg"
+  parent: PartKidan
+  components:
+  - type: Sprite
+    sprite: Stories/Mobs/Species/Kidan/parts.rsi
+    state: "r_leg"
+  - type: Icon
+    sprite: Stories/Mobs/Species/Kidan/parts.rsi
+    state: "r_leg"
+  - type: BodyPart
+    partType: Leg
+    symmetry: Right
+  - type: MovementBodyPart
+    walkSpeed : 2.7
+    sprintSpeed : 4.5
+
+- type: entity
+  id: LeftFootKidan
+  name: "left Kidan foot"
+  parent: PartKidan
+  components:
+  - type: Sprite
+    sprite: Stories/Mobs/Species/Kidan/parts.rsi
+    state: "l_foot"
+  - type: Icon
+    sprite: Stories/Mobs/Species/Kidan/parts.rsi
+    state: "l_foot"
+  - type: BodyPart
+    partType: Foot
+    symmetry: Left
+
+- type: entity
+  id: RightFootKidan
+  name: "right Kidan foot"
+  parent: PartKidan
+  components:
+  - type: Sprite
+    sprite: Stories/Mobs/Species/Kidan/parts.rsi
+    state: "r_foot"
+  - type: Icon
+    sprite: Stories/Mobs/Species/Kidan/parts.rsi
+    state: "r_foot"
+  - type: BodyPart
+    partType: Foot
+    symmetry: Right
