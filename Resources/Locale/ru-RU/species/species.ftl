@@ -7,4 +7,3 @@ species-name-slime = Слаймолюд
 species-name-diona = Диона
 species-name-arachnid = Арахнид
 species-name-moth = Ниан
-species-name-kidan = Кидан
