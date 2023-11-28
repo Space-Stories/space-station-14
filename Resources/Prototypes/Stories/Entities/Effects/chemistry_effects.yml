@@ -1,0 +1,15 @@
+- type: entity
+  parent: BaseFoam
+  id: ShadowlingSmoke
+  name: shadowling smoke
+  noSpawn: true
+  components:
+    - type: Occluder
+    - type: Sprite
+      sprite: Effects/chemsmoke.rsi
+      state: chemsmoke
+    - type: TimedDespawn
+      lifetime: 30
+    - type: Tag
+      tags:
+        - HideContextMenu
