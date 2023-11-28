@@ -8,6 +8,7 @@ using Content.Shared.Popups;
 using Content.Shared.Timing;
 using Content.Shared.Explosion;
 using Robust.Server.GameObjects;
+using Content.Shared.Actions;
 
 namespace Content.Server.SpaceStories.Force.Systems;
 
@@ -17,6 +18,7 @@ public sealed class ForceProtectiveBubbleSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly UseDelaySystem _useDelay = default!;
     [Dependency] private readonly TransformSystem _transformSystem = default!;
+    [Dependency] private readonly SharedActionsSystem _actions = default!;
     public override void Initialize()
     {
         base.Initialize();
@@ -27,6 +29,7 @@ public sealed class ForceProtectiveBubbleSystem : EntitySystem
         SubscribeLocalEvent<ForceProtectiveBubbleComponent, MobStateChangedEvent>(OnMobStateChanged);
 
         SubscribeLocalEvent<ForceSensitiveComponent, CreateProtectiveBubbleEvent>(OnProtectiveBubble);
+        SubscribeLocalEvent<ForceProtectiveBubbleComponent, StopProtectiveBubbleEvent>(OnStopProtectiveBubble);
     }
     public override void Update(float frameTime)
     {
@@ -49,6 +52,8 @@ public sealed class ForceProtectiveBubbleSystem : EntitySystem
     }
     private void OnMarkerStartup(EntityUid uid, ForceProtectiveBubbleComponent comp, ComponentStartup args)
     {
+        _actions.AddAction(uid, ref comp.StopProtectiveBubbleActionEntity, out var act, comp.StopProtectiveBubbleAction);
+
         if (TryComp<BarotraumaComponent>(uid, out var barotrauma)) barotrauma.HasImmunity = true;
 
         comp.EffectEntity = Spawn(comp.EffectEntityProto, Transform(uid).Coordinates);
@@ -64,6 +69,8 @@ public sealed class ForceProtectiveBubbleSystem : EntitySystem
     }
     private void OnMarkerShutdown(EntityUid uid, ForceProtectiveBubbleComponent comp, ComponentShutdown? args = null)
     {
+        if (comp.StopProtectiveBubbleActionEntity != null) _actions.RemoveAction(uid, comp.StopProtectiveBubbleActionEntity);
+
         comp.PlayingStream?.Stop();
 
         var reflect = EnsureComp<ReflectComponent>(uid);
@@ -76,9 +83,15 @@ public sealed class ForceProtectiveBubbleSystem : EntitySystem
     }
     private void OnDamage(EntityUid uid, ForceProtectiveBubbleComponent component, DamageModifyEvent args)
     {
+        if (args.Damage.GetTotal() <= 0) return;
         args.Damage = DamageSpecifier.ApplyModifierSet(args.Damage, component.Modifiers);
         DamageBubble(uid, args.Damage.GetTotal().Value / 100);
     }
+    private void OnStopProtectiveBubble(EntityUid uid, ForceProtectiveBubbleComponent comp, StopProtectiveBubbleEvent args)
+    {
+        RemComp<ForceProtectiveBubbleComponent>(uid);
+    }
+
     private void OnProtectiveBubble(EntityUid uid, ForceSensitiveComponent comp, CreateProtectiveBubbleEvent args)
     {
         if (args.Handled) return;

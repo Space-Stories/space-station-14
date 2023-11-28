@@ -5,16 +5,13 @@
   noSpawn: true
   components:
   - type: TimedDespawn
-    lifetime: 0.35
+    lifetime: 0.2 # 4 тайла
   - type: Sprite
-    visible: true
+    visible: false
     sprite: Objects/Weapons/Guns/Projectiles/magic.rsi
     layers:
     - state: spell
   - type: Projectile
-    damage:
-      types:
-        Structural: 50
     soundHit:
       path: /Audio/Weapons/egloves.ogg
   - type: StaminaDamageOnCollide
