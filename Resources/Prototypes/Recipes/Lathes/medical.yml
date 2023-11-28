@@ -237,8 +237,8 @@
     Plastic: 300
 
 - type: latheRecipe
-  id: ClothingEyesHudSecurity
-  result: ClothingEyesHudSecurity
+  id: ClothingEyesHudMedical
+  result: ClothingEyesHudMedical
   completetime: 2
   materials:
     Steel: 300
