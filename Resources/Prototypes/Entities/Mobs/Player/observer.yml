@@ -51,6 +51,7 @@
     - Service
     - Supply
     - Syndicate
+    - Chitine
     globalReceive: true
   - type: Physics
     bodyType: KinematicController
