@@ -27,6 +27,7 @@
   - type: ActiveRadio
     channels:
     - Chitine
+  - type: KidanAccent
   - type: Vocal
     sounds:
       Male: UnsexedKidan
