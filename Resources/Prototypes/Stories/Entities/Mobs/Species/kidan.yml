@@ -29,22 +29,20 @@
     - Chitine
   - type: Vocal
     sounds:
-      Male: MaleHuman
-      Female: MaleHuman
-      Unsexed: MaleHuman
+      Male: UnsexedKidan
+      Female: UnsexedKidan
+      Unsexed: UnsexedKidan
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Kidan
   - type: Bioluminescence
   - type: MeleeWeapon
-    hidden: true
+    animation: WeaponArcClaw
     soundHit:
-      path: /Audio/Weapons/pierce.ogg
-    angle: 30
-    animation: WeaponArcPunch
+      collection: AlienClaw
     damage:
       types:
-        Piercing: 5
+        Slash: 5
   - type: PointLight
     energy: 1.5
     radius: 3
