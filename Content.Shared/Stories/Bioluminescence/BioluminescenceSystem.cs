@@ -22,11 +22,6 @@ public sealed class BioluminescenceSystem : EntitySystem
         if (!_light.ResolveLight(uid, ref light))
             return;
 
-        if (!TryComp<HumanoidAppearanceComponent>(uid, out var humanoid))
-            return;
-
-        _light.SetColor(uid, humanoid.EyeColor);
-
         EntityUid? act = null;
         _actions.AddAction(uid, ref act, "TurnBioluminescenceAction", uid, action);
 
@@ -40,5 +35,10 @@ public sealed class BioluminescenceSystem : EntitySystem
             return;
 
         _light.SetEnabled(uid, !light.Enabled);
+
+        if (!TryComp<HumanoidAppearanceComponent>(uid, out var humanoid))
+            return;
+
+        _light.SetColor(uid, humanoid.EyeColor, light);
     }
 }
