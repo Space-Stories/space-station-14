@@ -1,4 +1,5 @@
 using Content.Shared.Actions;
+using Content.Shared.Humanoid;
 
 namespace Content.Shared.SpaceStories.Bioluminescence;
 public sealed class BioluminescenceSystem : EntitySystem
@@ -20,6 +21,11 @@ public sealed class BioluminescenceSystem : EntitySystem
         SharedPointLightComponent? light = null;
         if (!_light.ResolveLight(uid, ref light))
             return;
+
+        if (!TryComp<HumanoidAppearanceComponent>(uid, out var humanoid))
+            return;
+
+        _light.SetColor(uid, humanoid.EyeColor);
 
         EntityUid? act = null;
         _actions.AddAction(uid, ref act, "TurnBioluminescenceAction", uid, action);
