@@ -3,12 +3,15 @@ using Robust.Client.Console;
 using Robust.Client.GameObjects;
 using Robust.Client.State;
 using Robust.Client.UserInterface;
+using Robust.Shared.Audio;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
 
 namespace Content.Client.Corvax.JoinQueue;
 
 public sealed class QueueState : State
 {
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly IUserInterfaceManager _userInterfaceManager = default!;
     [Dependency] private readonly IClientConsoleHost _consoleHost = default!;
 
@@ -34,10 +37,7 @@ public sealed class QueueState : State
 
     private void Ding()
     {
-        if (IoCManager.Resolve<IEntityManager>().TrySystem<AudioSystem>(out var audio))
-        {
-            audio.PlayGlobal(JoinSoundPath, Filter.Local(), false);
-        }
+        _audio.PlayGlobal(JoinSoundPath, Filter.Local(), false);
     }
     
     public void OnQueueUpdate(MsgQueueUpdate msg)

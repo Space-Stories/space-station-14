@@ -1,5 +1,6 @@
 using Content.Shared.Damage;
 using Robust.Shared.Audio;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 using Robust.Shared.Prototypes;
@@ -24,9 +25,6 @@ public sealed partial class ForceProtectiveBubbleComponent : Component
     [ViewVariables(VVAccess.ReadWrite), DataField("soundLoop")]
     public SoundSpecifier? SoundLoop = new SoundPathSpecifier("/Audio/Effects/Grenades/Supermatter/whitehole_loop.ogg") { Params = AudioParams.Default.WithLoop(true).WithVolume(-10f) };
 
-    [ViewVariables(VVAccess.ReadWrite), DataField("playingStream")]
-    public IPlayingAudioStream? PlayingStream { get; set; }
-
     [ViewVariables(VVAccess.ReadWrite), DataField("effectEntityProto")]
     public string EffectEntityProto = "EffectProtectiveBubble";
 
@@ -47,4 +45,6 @@ public sealed partial class ForceProtectiveBubbleComponent : Component
         { "Caustic", 0.5f }
         }
     };
+
+    public EntityUid? PlayingStream;
 }

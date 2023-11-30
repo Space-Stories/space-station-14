@@ -8,6 +8,8 @@ using Content.Shared.Popups;
 using Content.Shared.Timing;
 using Content.Shared.Explosion;
 using Robust.Server.GameObjects;
+using Robust.Shared.Audio;
+using Robust.Shared.Audio.Systems;
 using Content.Shared.Actions;
 
 namespace Content.Server.SpaceStories.Force.Systems;
@@ -65,13 +67,13 @@ public sealed class ForceProtectiveBubbleSystem : EntitySystem
         reflect.Reflects = ReflectType.Energy;
 
         if (comp.SoundLoop != null)
-            comp.PlayingStream = _audio.PlayPvs(comp.SoundLoop, uid, comp.SoundLoop.Params);
+            comp.PlayingStream = _audio.PlayPvs(comp.SoundLoop, uid, comp.SoundLoop.Params).Value.Entity;
     }
     private void OnMarkerShutdown(EntityUid uid, ForceProtectiveBubbleComponent comp, ComponentShutdown? args = null)
     {
         if (comp.StopProtectiveBubbleActionEntity != null) _actions.RemoveAction(uid, comp.StopProtectiveBubbleActionEntity);
-
-        comp.PlayingStream?.Stop();
+    
+        comp.PlayingStream = _audio.Stop(comp.PlayingStream);
 
         var reflect = EnsureComp<ReflectComponent>(uid);
         reflect.Enabled = false;
