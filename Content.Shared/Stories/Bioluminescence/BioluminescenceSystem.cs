@@ -1,4 +1,5 @@
 using Content.Shared.Actions;
+using Content.Shared.Humanoid;
 
 namespace Content.Shared.SpaceStories.Bioluminescence;
 public sealed class BioluminescenceSystem : EntitySystem
@@ -34,5 +35,10 @@ public sealed class BioluminescenceSystem : EntitySystem
             return;
 
         _light.SetEnabled(uid, !light.Enabled);
+
+        if (!TryComp<HumanoidAppearanceComponent>(uid, out var humanoid))
+            return;
+
+        _light.SetColor(uid, humanoid.EyeColor, light);
     }
 }

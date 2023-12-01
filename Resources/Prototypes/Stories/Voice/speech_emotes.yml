@@ -1,0 +1,71 @@
+- type: emote
+  id: Grumble
+  category: Vocal
+  chatMessages: [ворчит.]
+  chatTriggers:
+    - grumble
+    - grumble.
+    - grumble!
+    - grumbles
+    - grumbles.
+    - grumbles!
+    - grumbled
+    - grumbled.
+    - grumbled!
+    - ворчит
+    - ворчит.
+    - ворчит!
+
+- type: emote
+  id: Moan
+  category: Vocal
+  chatMessages: [стонет.]
+  chatTriggers:
+    - moan
+    - moan.
+    - moan!
+    - moans
+    - moans.
+    - moans!
+    - стонет
+    - стонет.
+    - стонет!
+
+- type: emote
+  id: WigglesAntennae
+  category: Vocal
+  chatMessages: [шевелит антенками.]
+  chatTriggers:
+    - waves antennae
+    - waves antennae.
+    - waves antennae!
+    - wiggles antennae
+    - wiggles antennae.
+    - wiggles antennae!
+    - шевелит антенками
+    - шевелит антенками.
+    - шевелит антенками!
+    - машет антенками
+    - машет антенками.
+    - машет антенками!
+    - шевелит усиками
+    - шевелит усиками.
+    - шевелит усиками!
+    - машет усиками
+    - машет усиками.
+    - машет усиками!
+
+- type: emote
+  id: WavesAntennaeSharply
+  category: Vocal
+  chatMessages: [резко машет антенками.]
+  chatTriggers:
+    - waves antennae sharply
+    - waves antennae sharply.
+    - waves antennae sharply!
+    - резко машет усиками
+    - резко машет усиками.
+    - резко машет усиками!
+    - резко машет антенками
+    - резко машет антенками.
+    - резко машет антенками!

@@ -51,6 +51,7 @@
     - Service
     - Supply
     - Syndicate
+    - Chitine
     - Freelance
     globalReceive: true
   - type: Physics

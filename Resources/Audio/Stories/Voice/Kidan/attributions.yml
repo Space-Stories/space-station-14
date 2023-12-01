@@ -1,0 +1,4 @@
+- files: ["cough1.ogg", "cry1.ogg", "cry2.ogg", "deathgasp1.ogg", "deathgasp2.ogg", "dying_gasp1.ogg", "dying_gasp2.ogg", "dying_gasp3.ogg", "giggles1.ogg", "giggles2.ogg", "grumble1.ogg", "grumble1.ogg", "grumble2.ogg", "grumble3.ogg", "sigh1.ogg", "sigh2.ogg", "sneeze1.ogg", "sneeze2.ogg", "sneeze2.ogg", "sneeze3.ogg", "sneeze3.ogg", "sneeze4.ogg", "speak1.ogg", "speak2.ogg", "speak3.ogg", "waves_antennae_sharply1.ogg", "waves_antennae_sharply2.ogg", "wiggles_antennae1.ogg", "wiggles_antennae2.ogg", "wiggles_antennae3.ogg"]
+  license: "CC-BY-SA-3.0"
+  copyright: "Taken from Parsdise SS13"
+  source: "https://github.com/ParadiseSS13/Paradise/blob/master/sound/"
