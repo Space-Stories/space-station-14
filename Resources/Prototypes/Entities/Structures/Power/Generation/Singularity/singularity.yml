@@ -65,7 +65,7 @@
     guides: [ Singularity, Power ] # uhhh.. I would hoped they'd  have read the manual before ever getting in viewing distance...
   - type: WarpPoint
     follow: true
-    location: singularity
+    location: "! сингулярность"
   - type: Sprite
     sprite: Structures/Power/Generation/Singularity/singularity_1.rsi
     shader: unshaded

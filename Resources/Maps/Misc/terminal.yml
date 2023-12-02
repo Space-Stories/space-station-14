@@ -5822,7 +5822,7 @@ entities:
     - pos: -0.5,1.5
       parent: 818
       type: Transform
-    - location: Terminal
+    - location: "! Терминал"
       type: WarpPoint
 - proto: Windoor
   entities:
