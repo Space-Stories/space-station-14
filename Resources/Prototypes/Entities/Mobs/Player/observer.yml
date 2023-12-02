@@ -53,6 +53,7 @@
     - Syndicate
     - Chitine
     - Freelance
+    - Prison
     globalReceive: true
   - type: Physics
     bodyType: KinematicController
