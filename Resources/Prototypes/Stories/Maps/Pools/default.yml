@@ -8,13 +8,23 @@
   - StoriesCore
   - StoriesOmega
   - StoriesPacked
+  - StoriesMarathon
+  - StoriesAtlas
+
+# Corvax Maps
   - StoriesAvrite
   - StoriesDelta
 #  - CorvaxGate
 #  - CorvaxGelta
 #  - CorvaxSpectrum
+
+# Space Prison Maps
   - StoriesBox
   - StoriesFland
   - StoriesKettle
-  - StoriesMarathon
-  - StoriesAtlas
+
+# New Maps
+#  - StoriesEuropa
+  - StoriesMeta
+  - StoriesOrigin
+  - StoriesSaltern

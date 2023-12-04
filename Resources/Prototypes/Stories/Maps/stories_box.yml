@@ -1,7 +1,7 @@
 - type: gameMap
   id: StoriesBox
-  mapName: 'Stories Box'
-  mapPath: /Maps/Stories/stories_box.yml
+  mapName: 'Box'
+  mapPath: /Maps/Stories/box.yml
   minPlayers: 60
   stations:
     Boxstation:
@@ -21,6 +21,7 @@
             #service
             Captain: [ 1, 1 ]
             IAA: [ 1, 1 ] # Corvax-IAA
+            JediNt: [ 1, 1 ] # Stories-Jedi
             HeadOfPersonnel: [ 1, 1 ]
             Bartender: [ 2, 2 ]
             Botanist: [ 3, 3 ]

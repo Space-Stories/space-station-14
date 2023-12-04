@@ -1,7 +1,7 @@
 - type: gameMap
   id: StoriesBarratry
-  mapName: 'Stories Barratry'
-  mapPath: /Maps/Stories/stories_barratry.yml
+  mapName: 'Barratry'
+  mapPath: /Maps/Stories/barratry.yml
   minPlayers: 30
   maxPlayers: 60
   stations:
