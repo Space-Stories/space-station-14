@@ -4,3 +4,12 @@
   keycode: 'з'
   frequency: 1102
   color: "#0036a2"
+
+- type: radioChannel
+  id: SpafMind #for spaf
+  name: chat-radio-spaf-mind
+  keycode: 'r'
+  frequency: 9361
+  color: "#00FF00"
+  # long range since otherwise it'd defeat the point of a handheld radio independent of telecomms
+  longRange: true
