@@ -1,3 +1,4 @@
+using Content.Shared.Corvax.TTS;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
 using Robust.Shared.Enums;
@@ -45,6 +46,14 @@ public sealed partial class HumanoidAppearanceComponent : Component
     /// </summary>
     [DataField("species", customTypeSerializer: typeof(PrototypeIdSerializer<SpeciesPrototype>), required: true)]
     public string Species { get; set; } = default!;
+
+    // Corvax-TTS-Start
+    /// <summary>
+    ///     Current voice. Used for correct cloning.
+    /// </summary>
+    [DataField("voice")]
+    public ProtoId<TTSVoicePrototype> Voice { get; set; } = SharedHumanoidAppearanceSystem.DefaultVoice;
+    // Corvax-TTS-End
 
     /// <summary>
     ///     The initial profile and base layers to apply to this humanoid.

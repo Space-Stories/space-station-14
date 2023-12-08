@@ -1,7 +1,7 @@
 - type: gameMap
   id: StoriesDelta
-  mapName: 'Stories Delta Station'
-  mapPath: /Maps/Stories/stories_delta.yml
+  mapName: 'Delta Station'
+  mapPath: /Maps/Stories/delta.yml
   minPlayers: 40
   stations:
     Delta:
@@ -28,6 +28,7 @@
             Mime: [ 1, 1 ]
             Captain: [ 1, 1 ]
             IAA: [ 1, 1 ]
+            JediNt: [ 1, 1 ] # Stories-Jedi
             HeadOfPersonnel: [ 1, 1 ]
             ChiefEngineer: [ 1, 1 ]
             StationEngineer: [ 5, 5 ]

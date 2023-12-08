@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Created by BeatusCrow",
+  "states": [
+    {
+      "name": "dead"
+    },
+    {
+      "name": "spaf_eggs",
+       "delays": [
+           [
+               3.0,
+               0.2,
+               0.2,
+               0.2
+           ]
+       ]
+    }
+  ]
+}

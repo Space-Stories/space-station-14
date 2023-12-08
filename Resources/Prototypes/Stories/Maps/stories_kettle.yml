@@ -1,7 +1,7 @@
 - type: gameMap
   id: StoriesKettle
-  mapName: 'Stories Kettle'
-  mapPath: /Maps/Stories/stories_kettle.yml
+  mapName: 'Kettle'
+  mapPath: /Maps/Stories/kettle.yml
   minPlayers: 45
   stations:
     Kettle:
@@ -21,6 +21,7 @@
             #service
             Captain: [ 1, 1 ]
             IAA: [ 1, 1 ] # Corvax-IAA
+            JediNt: [ 1, 1 ] # Stories-Jedi
             HeadOfPersonnel: [ 1, 1 ]
             Bartender: [ 1, 2 ]
             Botanist: [ 3, 4 ]

@@ -22,6 +22,7 @@
     Chest: MobKidanTorso
     HeadTop: MobHumanoidAnyMarking
     HeadSide: MobHumanoidAnyMarking
+    Eyes: MobKidanEyes
     LArm: MobKidanLArm
     RArm: MobKidanRArm
     LHand: MobKidanLHand
@@ -126,3 +127,9 @@
   baseSprite:
     sprite: Stories/Mobs/Species/Kidan/parts.rsi
     state: r_foot
+
+- type: humanoidBaseSprite
+  id: MobKidanEyes
+  baseSprite:
+    sprite: Stories/Mobs/Customization/Kidan/eyes.rsi
+    state: eyes

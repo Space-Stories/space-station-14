@@ -57,6 +57,7 @@ public sealed partial class HumanoidAppearanceSystem : SharedHumanoidAppearanceS
         SetSex(target, sourceHumanoid.Sex, false, targetHumanoid);
         targetHumanoid.CustomBaseLayers = new(sourceHumanoid.CustomBaseLayers);
         targetHumanoid.MarkingSet = new(sourceHumanoid.MarkingSet);
+        SetTTSVoice(target, sourceHumanoid.Voice, targetHumanoid); // Corvax-TTS
         targetHumanoid.SpeakerColor = sourceHumanoid.SpeakerColor; // Corvax-SpeakerColor
 
         targetHumanoid.Gender = sourceHumanoid.Gender;

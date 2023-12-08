@@ -1,7 +1,7 @@
 - type: gameMap
   id: StoriesFland
-  mapName: 'Stories Fland'
-  mapPath: /Maps/Stories/stories_fland.yml
+  mapName: 'Fland'
+  mapPath: /Maps/Stories/fland.yml
   minPlayers: 80
   stations:
     Fland:
@@ -21,6 +21,7 @@
             #service
             Captain: [ 1, 1 ]
             IAA: [ 1, 1 ] # Corvax-IAA
+            JediNt: [ 1, 1 ] # Stories-Jedi
             HeadOfPersonnel: [ 1, 1 ]
             Bartender: [ 2, 2 ]
             Botanist: [ 4, 4 ]

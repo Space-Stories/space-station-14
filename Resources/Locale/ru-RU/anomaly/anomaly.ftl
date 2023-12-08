@@ -22,6 +22,11 @@ anomaly-scanner-particle-containment = - [color=goldenrod]Сдерживающи
 anomaly-scanner-pulse-timer = Время до следующего импульса: [color=gray]{ $time }[/color]
 anomaly-sync-connected = Аномалия успешно привязана
 anomaly-sync-disconnected = Соединение с аномалией было потеряно!
+anomaly-sync-no-anomaly = Нету аномалий в диапазоне.
+anomaly-sync-examine-connected = Она [color=darkgreen]привязана[/color] к аномалии..
+anomaly-sync-examine-not-connected = Она [color=darkred]не привязана[/color] к аномалии..
+anomaly-sync-connect-verb-text = Прикрепить аномалию
+anomaly-sync-connect-verb-message = Прикрепите ближайшую аномалию к { THE($machine) }.
 anomaly-generator-ui-title = генератор аномалий
 anomaly-generator-fuel-display = Топливо:
 anomaly-generator-cooldown = Перезарядка: [color=gray]{ $time }[/color]

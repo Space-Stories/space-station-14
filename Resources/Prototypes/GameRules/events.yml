@@ -319,6 +319,9 @@
       prob: 0.02
     - id: MobMouse2
       prob: 0.02
+    specialEntries: # for spaf spawn
+    - id: MobMouseWithSpaf
+      prob: 0.005
 
 - type: entity
   id: SlimesSpawn

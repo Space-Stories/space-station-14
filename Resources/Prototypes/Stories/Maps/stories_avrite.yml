@@ -1,7 +1,7 @@
 - type: gameMap
   id: StoriesAvrite
-  mapName: 'Stories Avrite Station'
-  mapPath: /Maps/Stories/stories_avrit.yml
+  mapName: 'Avrite Station'
+  mapPath: /Maps/Stories/avrit.yml
   minPlayers: 40
   stations:
     Avrit:
@@ -28,6 +28,7 @@
             Mime: [ 1, 1 ]
             Captain: [ 1, 1 ]
             IAA: [ 1, 1 ]
+            JediNt: [ 1, 1 ] # Stories-Jedi
             Reporter: [ 2, 2 ]
             HeadOfPersonnel: [ 1, 1 ]
             ChiefEngineer: [ 1, 1 ]

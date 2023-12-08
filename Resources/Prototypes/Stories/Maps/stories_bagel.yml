@@ -1,7 +1,7 @@
 - type: gameMap
   id: StoriesBagel
-  mapName: 'Stories Bagel Station'
-  mapPath: /Maps/Stories/stories_bagel.yml
+  mapName: 'Bagel Station'
+  mapPath: /Maps/Stories/bagel.yml
   minPlayers: 40
   maxPlayers: 76
   stations:

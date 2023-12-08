@@ -1,7 +1,7 @@
 - type: gameMap
   id: StoriesOmega
-  mapName: 'Stories Omega'
-  mapPath: /Maps/Stories/stories_omega.yml
+  mapName: 'Omega'
+  mapPath: /Maps/Stories/omega.yml
   minPlayers: 0
   maxPlayers: 35
   stations:
@@ -23,6 +23,7 @@
             Captain: [ 1, 1 ]
             IAA: [ 1, 1 ] # Corvax-IAA
             HeadOfPersonnel: [ 1, 1 ]
+            JediNt: [ 1, 1 ] # Stories-Jedi
             Bartender: [ 1, 1 ]
             Botanist: [ 2, 2 ]
             Chef: [ 1, 1 ]

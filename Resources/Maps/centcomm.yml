@@ -41419,7 +41419,7 @@ entities:
     - pos: -0.5,3.5
       parent: 1668
       type: Transform
-    - location: Centcomm
+    - location: "! ЦентКомм"
       type: WarpPoint
 - proto: WaterCooler
   entities:

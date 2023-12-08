@@ -2,6 +2,19 @@
   id: Sneeze
   category: Vocal
   chatMessages: [чихает]
+  chatTriggers:
+    - sneeze
+    - sneeze.
+    - sneeze!
+    - sneezes
+    - sneezes.
+    - sneezes!
+    - чихает
+    - чихает.
+    - чихает!
+    - пчихает
+    - пчихает.
+    - пчихает!
     
 - type: emote
   id: Cough

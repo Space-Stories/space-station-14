@@ -194,6 +194,8 @@
     - ShoesRequiredStepTriggerImmune
     - DoorBumpOpener
   - type: Emoting
+  - type: TTS # Corvax-TTS
+    voice: TrainingRobot
   - type: GuideHelp
     guides:
       - Cyborgs

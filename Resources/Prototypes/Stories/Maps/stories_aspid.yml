@@ -1,7 +1,7 @@
 - type: gameMap
   id: StoriesAspid
-  mapName: 'Stories NCS Aspid'
-  mapPath: /Maps/Stories/stories_aspid.yml
+  mapName: 'NCS Aspid'
+  mapPath: /Maps/Stories/aspid.yml
   minPlayers: 25
   maxPlayers: 70
   stations:
@@ -21,6 +21,7 @@
           availableJobs:
             #service
             Captain: [ 1, 1 ]
+            JediNt: [ 1, 1 ] # Stories-Jedi
             IAA: [ 1, 1 ] # Corvax-IAA
             HeadOfPersonnel: [ 1, 1 ]
             Bartender: [ 1, 2 ]

@@ -51,7 +51,9 @@ namespace Content.Shared.Alert
         SuitPower,
         BorgHealth,
         BorgCrit,
-        BorgDead
+        BorgDead,
+        SpafHealth,
+        SpafDead
     }
 
 }
