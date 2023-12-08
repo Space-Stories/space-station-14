@@ -2,6 +2,8 @@
   id: BorgChassisGeneric
   parent: BaseBorgChassisNT
   components:
+  - type: TTS # Stories-TTS
+    voice: TrainingRobot
   - type: Sprite
     layers:
     - state: robot

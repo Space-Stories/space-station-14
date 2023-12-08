@@ -209,6 +209,8 @@
     - DoorBumpOpener
     - CanPilot
   - type: Emoting
+  - type: TTS # Stories-TTS
+    voice: TrainingRobot
   - type: GuideHelp
     guides:
       - Cyborgs

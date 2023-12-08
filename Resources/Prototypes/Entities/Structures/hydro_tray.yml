@@ -80,6 +80,8 @@
         acts: ["Destruction"]
   - type: Machine
     board: HydroponicsTrayMachineCircuitboard
+  - type: TTS # Stories-TTS
+    voice: TrainingRobot
   - type: WiresPanel
   - type: AmbientSound
     volume: -9

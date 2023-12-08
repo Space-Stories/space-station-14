@@ -756,6 +756,8 @@
     attributes:
       proper: true
       gender: female
+  - type: TTS # Stories-TTS
+    voice: Dryad
 
 - type: entity
   name: Pun Pun

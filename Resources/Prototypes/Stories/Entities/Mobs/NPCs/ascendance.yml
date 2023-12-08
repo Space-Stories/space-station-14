@@ -98,5 +98,5 @@
     enabled: true
     groups:
     - AllAccess
-  # - type: TTS
-  #   voice: illidan
+  - type: TTS
+    voice: illidan

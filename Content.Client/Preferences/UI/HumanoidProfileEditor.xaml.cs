@@ -50,6 +50,8 @@ namespace Content.Client.Preferences.UI
         private Button _saveButton => CSaveButton;
         private OptionButton _sexButton => CSexButton;
         private OptionButton _genderButton => CPronounsButton;
+        private OptionButton _voiceButton => CVoiceButton; // Stories-TTS
+        private Button _voicePlayButton => CVoicePlayButton; // Stories-TTS
         private Slider _skinColor => CSkin;
         private OptionButton _spawnPriorityButton => CSpawnPriorityButton;
         private SingleMarkingPicker _hairPicker => CHairStylePicker;
@@ -146,6 +148,14 @@ namespace Content.Client.Preferences.UI
             };
 
             #endregion Gender
+
+            // Stories-TTS-Start
+            #region Voice
+
+            InitializeVoice();
+
+            #endregion
+            // Stories-TTS-End
 
             #region Species
 
@@ -756,6 +766,7 @@ namespace Content.Client.Preferences.UI
                     break;
             }
             UpdateGenderControls();
+            UpdateTTSVoicesControls(); // Stories-TTS
             CMarkings.SetSex(newSex);
             SetDirty();
         }
@@ -765,6 +776,14 @@ namespace Content.Client.Preferences.UI
             Profile = Profile?.WithGender(newGender);
             SetDirty();
         }
+
+        // Stories-TTS-Start
+        private void SetVoice(string newVoice)
+        {
+            Profile = Profile?.WithVoice(newVoice);
+            IsDirty = true;
+        }
+        // Stories-TTS-End
 
         private void SetSpecies(string newSpecies)
         {
@@ -1120,6 +1139,7 @@ namespace Content.Client.Preferences.UI
             UpdateAntagPreferences();
             UpdateTraitPreferences();
             UpdateMarkings();
+            UpdateTTSVoicesControls(); // Stories-TTS
             UpdateHairPickers();
             UpdateCMarkingsHair();
             UpdateCMarkingsFacialHair();

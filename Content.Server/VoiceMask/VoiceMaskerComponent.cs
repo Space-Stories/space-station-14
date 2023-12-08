@@ -12,6 +12,9 @@ public sealed partial class VoiceMaskerComponent : Component
     public ProtoId<SpeechVerbPrototype>? LastSpeechVerb;
 
     [DataField]
+    public string? LastSetVoice; // Stories-TTS
+
+    [DataField]
     public EntProtoId Action = "ActionChangeVoiceMask";
 
     [DataField]
