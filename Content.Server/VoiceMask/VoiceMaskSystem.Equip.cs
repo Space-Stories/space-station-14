@@ -21,6 +21,10 @@ public sealed partial class VoiceMaskSystem
 
         var comp = EnsureComp<VoiceMaskComponent>(user);
         comp.VoiceName = component.LastSetName;
+        // Corvax-TTS-Start
+        if (component.LastSetVoice != null)
+            comp.VoiceId = component.LastSetVoice;
+        // Corvax-TTS-End
 
         _actions.AddAction(user, ref component.ActionEntity, component.Action, uid);
     }
