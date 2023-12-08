@@ -8,8 +8,8 @@
   - StoriesCore
   - StoriesOmega
   - StoriesPacked
-  - StoriesAvrite
-  - StoriesDelta
+#  - StoriesAvrite
+#  - StoriesDelta
 #  - CorvaxGate
 #  - CorvaxGelta
 #  - CorvaxSpectrum
@@ -17,4 +17,4 @@
   - StoriesFland
   - StoriesKettle
   - StoriesMarathon
-  - StoriesAtlas
+#  - StoriesAtlas
