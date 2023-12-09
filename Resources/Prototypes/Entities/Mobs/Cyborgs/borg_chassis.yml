@@ -189,7 +189,7 @@
   - type: AccessReader
     access: [["Medical"], ["Command"], ["Research"]]
   - type: TTS # Corvax-TTS
-    voice: TrainingRobot
+    voice: adventure_core
 
 - type: entity
   id: BorgChassisService
