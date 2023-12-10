@@ -23,6 +23,9 @@ public sealed class TTSVoicePrototype : IPrototype
     [DataField("speaker", required: true)]
     public string Speaker { get; } = string.Empty;
 
+    [DataField("description")]
+    public string Description { get; } = string.Empty;
+
     /// <summary>
     /// Whether the species is available "at round start" (In the character editor)
     /// </summary>

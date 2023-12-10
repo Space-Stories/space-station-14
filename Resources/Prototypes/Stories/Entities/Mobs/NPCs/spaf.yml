@@ -31,7 +31,6 @@
   parent:
     - BaseSimpleMobSpaf
     - MobCombat
-    - MobBloodstream
     - MobFlammable
   id: SimpleSpaceMobBaseSpaf # Mob without barotrauma, freezing and asphyxiation (for space carps!?)
   components:
@@ -77,8 +76,6 @@
       allowed:
         - Stun
         - StaminaModifier
-    - type: Bloodstream
-      bloodMaxVolume: 150
     - type: MobPrice
       price: 150
     - type: FloatingVisuals
@@ -103,8 +100,6 @@
     stateAlertDict:
       Alive: SpafHealth
     showOverlays: false
-  - type: Bloodstream
-    bloodReagent: Slime
   - type: DamageStateVisuals
     states:
       Alive:
@@ -225,8 +220,6 @@
       stateAlertDict:
         Alive: SpafHealth
       showOverlays: false
-    - type: Bloodstream
-      bloodReagent: Slime
     - type: DamageStateVisuals
       states:
         Alive:
@@ -515,8 +508,6 @@
     - type: Speech
       speechSounds: Squeak
       speechVerb: SmallMob
-    - type: Bloodstream
-      bloodReagent: Blood
     - type: DamageStateVisuals
       states:
         Alive:

@@ -706,7 +706,7 @@
       proper: true
       gender: female
   - type: TTS # Corvax-TTS
-    voice: Dryad
+    voice: ziggs
 
 - type: entity
   name: Pun Pun
