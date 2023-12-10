@@ -61,4 +61,4 @@ ent-ActionSpafEvolf = [color=green]Эволюция[/color]
 ent-ActionSpafEvols = [color=blue]Эволюция[/color]
     .desc = Потратьте 70 единиц еды, чтобы эволюционировать во взрослую особь
 ent-ActionSpafDevour = [color=lime]Поглощение[/color]
-    .desc = Съешьте свою жертву, чтобы получить с нее еды и восстановить здоровье
+    .desc = Съешьте свою жертву, чтобы насытиться
