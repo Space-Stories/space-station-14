@@ -47,9 +47,9 @@ ent-ActionSpafStealth = [color=limegreen]Режим невидимости[/colo
 ent-ActionSpafLight = [color=orange]Светящаяся эссенция[/color]
     .desc = Выработайте светящуюся эссенцию, чтобы осветить себе путь
 ent-ActionSpafLube = [color=purple]Слизь[/color]
-    .desc = Потратьте 20 единиц еды, чтобы создать органическую ловушку, которая оглушает врагов на время
-ent-ActionSpafMine = [color=rosybrown]Органическая ловушка[/color]
     .desc = Потратьте 10 единиц еды, чтобы выделить очень скользкую слизь
+ent-ActionSpafMine = [color=rosybrown]Органическая ловушка[/color]
+    .desc = Потратьте 20 единиц еды, чтобы создать органическую ловушку, которая оглушает врагов на время
 ent-ActionSpafFood = [color=lightseagreen]Таинственные знания[/color]
     .desc = Неизвестный науке метод, который позволяет вам с точностью до сотых определить наполненность своего желудка
 ent-ActionSpafGlue = [color=darkslateblue]Липкая слизь[/color]
