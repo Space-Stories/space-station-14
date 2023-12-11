@@ -130,7 +130,7 @@ namespace Content.Client.Options.UI.Tabs
             _cfg.SetCVar(CCVars.AmbienceVolume, AmbienceVolumeSlider.Value / 100f * ContentAudioSystem.AmbienceMultiplier);
             _cfg.SetCVar(CCVars.AmbientMusicVolume, AmbientMusicVolumeSlider.Value / 100f * ContentAudioSystem.AmbientMusicMultiplier);
             _cfg.SetCVar(CCVars.LobbyMusicVolume, LobbyVolumeSlider.Value / 100f * ContentAudioSystem.LobbyMultiplier);
-            _cfg.SetCVar(CCCVars.TTSVolume, TtsVolumeSlider.Value / 100f * ContentAudioSystem.TTSVolumeMultiplier); // Corvax-TTS
+            _cfg.SetCVar(CCCVars.TTSVolume, ((TtsVolumeSlider.Value - 100f) / ContentAudioSystem.TtsMultiplier)); // Corvax-TTS
 
             _cfg.SetCVar(CCVars.MaxAmbientSources, (int)AmbienceSoundsSlider.Value);
 
@@ -154,7 +154,7 @@ namespace Content.Client.Options.UI.Tabs
             AmbienceVolumeSlider.Value = _cfg.GetCVar(CCVars.AmbienceVolume) * 100f / ContentAudioSystem.AmbienceMultiplier;
             AmbientMusicVolumeSlider.Value = _cfg.GetCVar(CCVars.AmbientMusicVolume) * 100f / ContentAudioSystem.AmbientMusicMultiplier;
             LobbyVolumeSlider.Value = _cfg.GetCVar(CCVars.LobbyMusicVolume) * 100f / ContentAudioSystem.LobbyMultiplier;
-            TtsVolumeSlider.Value = _cfg.GetCVar(CCCVars.TTSVolume) * 100f / ContentAudioSystem.TTSVolumeMultiplier; // Corvax-TTS
+            TtsVolumeSlider.Value = _cfg.GetCVar(CCCVars.TTSVolume) * 100f / ContentAudioSystem.TtsMultiplier; // Corvax-TTS
 
             AmbienceSoundsSlider.Value = _cfg.GetCVar(CCVars.MaxAmbientSources);
 
@@ -179,7 +179,7 @@ namespace Content.Client.Options.UI.Tabs
             var isLobbyVolumeSame =
                 Math.Abs(LobbyVolumeSlider.Value - _cfg.GetCVar(CCVars.LobbyMusicVolume) * 100f / ContentAudioSystem.LobbyMultiplier) < 0.01f;
             var isTtsVolumeSame =
-                Math.Abs(TtsVolumeSlider.Value - _cfg.GetCVar(CCCVars.TTSVolume) * 100f / ContentAudioSystem.TTSVolumeMultiplier) < 0.01f; // Corvax-TTS
+                Math.Abs(TtsVolumeSlider.Value - _cfg.GetCVar(CCCVars.TTSVolume) * 100f / ContentAudioSystem.TtsMultiplier) < 0.01f;
 
             var isAmbientSoundsSame = (int)AmbienceSoundsSlider.Value == _cfg.GetCVar(CCVars.MaxAmbientSources);
             var isLobbySame = LobbyMusicCheckBox.Pressed == _cfg.GetCVar(CCVars.LobbyMusicEnabled);
