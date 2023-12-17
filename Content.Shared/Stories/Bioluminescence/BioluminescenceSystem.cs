@@ -39,6 +39,8 @@ public sealed class BioluminescenceSystem : EntitySystem
         if (!TryComp<HumanoidAppearanceComponent>(uid, out var humanoid))
             return;
 
-        _light.SetColor(uid, humanoid.EyeColor, light);
+        var luma = 0.2126 * humanoid.EyeColor.R + 0.7152 * humanoid.EyeColor.G + 0.0722 * humanoid.EyeColor.B;
+
+        _light.SetColor(uid, luma < 75 ? Color.FromHex("#556b2f") : humanoid.EyeColor, light);
     }
 }
