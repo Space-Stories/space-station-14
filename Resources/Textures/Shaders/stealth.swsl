@@ -4,8 +4,8 @@ uniform sampler2D SCREEN_TEXTURE;
 uniform highp float visibility; // number between -1 and 1
 uniform mediump vec2 reference;
 
-const mediump float time_scale = 0.25;
-const mediump float distance_scale = 0.125;
+const mediump float time_scale = 0.10; // Stories-Balance
+const mediump float distance_scale = 0.05; // Stories-Balance
 
 void fragment() {
 

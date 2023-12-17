@@ -31,7 +31,7 @@ public sealed partial class StunProviderComponent : Component
     /// Joules required in the battery to stun someone. Defaults to 10 uses on a small battery.
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public float StunCharge = 36f;
+    public float StunCharge = 72f; // Stories-Balance
 
     /// <summary>
     /// Damage dealt when stunning someone
@@ -41,7 +41,7 @@ public sealed partial class StunProviderComponent : Component
     {
         DamageDict = new()
         {
-            { "Shock", 5 }
+            { "Shock", 10 } // Stories-Balance
         }
     };
 
@@ -49,13 +49,13 @@ public sealed partial class StunProviderComponent : Component
     /// Time that someone is stunned for, stacks if done multiple times.
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public TimeSpan StunTime = TimeSpan.FromSeconds(5);
+    public TimeSpan StunTime = TimeSpan.FromSeconds(7); // Stories-Balance
 
     /// <summary>
     /// How long stunning is disabled after stunning something.
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public TimeSpan Cooldown = TimeSpan.FromSeconds(2);
+    public TimeSpan Cooldown = TimeSpan.FromSeconds(10); // Stories-Balance
 
     /// <summary>
     /// Locale string to popup when there is no power
