@@ -281,7 +281,7 @@ namespace Content.Client.Preferences.UI
                 IsDirty = true;
             };
 
-            _hairPicker.OnSlotAdd += delegate()
+            _hairPicker.OnSlotAdd += delegate ()
             {
                 if (Profile is null)
                     return;
@@ -301,7 +301,7 @@ namespace Content.Client.Preferences.UI
                 IsDirty = true;
             };
 
-            _facialHairPicker.OnSlotAdd += delegate()
+            _facialHairPicker.OnSlotAdd += delegate ()
             {
                 if (Profile is null)
                     return;
@@ -558,7 +558,7 @@ namespace Content.Client.Preferences.UI
 
                     category.AddChild(new PanelContainer
                     {
-                        PanelOverride = new StyleBoxFlat {BackgroundColor = Color.FromHex("#464966")},
+                        PanelOverride = new StyleBoxFlat { BackgroundColor = Color.FromHex("#464966") },
                         Children =
                         {
                             new Label
@@ -656,45 +656,45 @@ namespace Content.Client.Preferences.UI
             switch (skin)
             {
                 case HumanoidSkinColor.HumanToned:
-                {
-                    if (!_skinColor.Visible)
                     {
-                        _skinColor.Visible = true;
-                        _rgbSkinColorContainer.Visible = false;
+                        if (!_skinColor.Visible)
+                        {
+                            _skinColor.Visible = true;
+                            _rgbSkinColorContainer.Visible = false;
+                        }
+
+                        var color = SkinColor.HumanSkinTone((int) _skinColor.Value);
+
+                        CMarkings.CurrentSkinColor = color;
+                        Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));//
+                        break;
                     }
-
-                    var color = SkinColor.HumanSkinTone((int) _skinColor.Value);
-
-                    CMarkings.CurrentSkinColor = color;
-                    Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));//
-                    break;
-                }
                 case HumanoidSkinColor.Hues:
-                {
-                    if (!_rgbSkinColorContainer.Visible)
                     {
-                        _skinColor.Visible = false;
-                        _rgbSkinColorContainer.Visible = true;
-                    }
+                        if (!_rgbSkinColorContainer.Visible)
+                        {
+                            _skinColor.Visible = false;
+                            _rgbSkinColorContainer.Visible = true;
+                        }
 
-                    CMarkings.CurrentSkinColor = _rgbSkinColorSelector.Color;
-                    Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(_rgbSkinColorSelector.Color));
-                    break;
-                }
+                        CMarkings.CurrentSkinColor = _rgbSkinColorSelector.Color;
+                        Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(_rgbSkinColorSelector.Color));
+                        break;
+                    }
                 case HumanoidSkinColor.TintedHues:
-                {
-                    if (!_rgbSkinColorContainer.Visible)
                     {
-                        _skinColor.Visible = false;
-                        _rgbSkinColorContainer.Visible = true;
+                        if (!_rgbSkinColorContainer.Visible)
+                        {
+                            _skinColor.Visible = false;
+                            _rgbSkinColorContainer.Visible = true;
+                        }
+
+                        var color = SkinColor.TintedHues(_rgbSkinColorSelector.Color);
+
+                        CMarkings.CurrentSkinColor = color;
+                        Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
+                        break;
                     }
-
-                    var color = SkinColor.TintedHues(_rgbSkinColorSelector.Color);
-
-                    CMarkings.CurrentSkinColor = color;
-                    Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
-                    break;
-                }
             }
 
             IsDirty = true;
@@ -835,7 +835,7 @@ namespace Content.Client.Preferences.UI
 
         private void UpdateFlavorTextEdit()
         {
-            if(_flavorTextEdit != null)
+            if (_flavorTextEdit != null)
             {
                 _flavorTextEdit.TextRope = new Rope.Leaf(Profile?.FlavorText ?? "");
             }
@@ -862,7 +862,8 @@ namespace Content.Client.Preferences.UI
                 {
                     sexes.Add(sex);
                 }
-            } else
+            }
+            else
             {
                 sexes.Add(Sex.Unsexed);
             }
@@ -889,41 +890,41 @@ namespace Content.Client.Preferences.UI
             switch (skin)
             {
                 case HumanoidSkinColor.HumanToned:
-                {
-                    if (!_skinColor.Visible)
                     {
-                        _skinColor.Visible = true;
-                        _rgbSkinColorContainer.Visible = false;
+                        if (!_skinColor.Visible)
+                        {
+                            _skinColor.Visible = true;
+                            _rgbSkinColorContainer.Visible = false;
+                        }
+
+                        _skinColor.Value = SkinColor.HumanSkinToneFromColor(Profile.Appearance.SkinColor);
+
+                        break;
                     }
-
-                    _skinColor.Value = SkinColor.HumanSkinToneFromColor(Profile.Appearance.SkinColor);
-
-                    break;
-                }
                 case HumanoidSkinColor.Hues:
-                {
-                    if (!_rgbSkinColorContainer.Visible)
                     {
-                        _skinColor.Visible = false;
-                        _rgbSkinColorContainer.Visible = true;
-                    }
+                        if (!_rgbSkinColorContainer.Visible)
+                        {
+                            _skinColor.Visible = false;
+                            _rgbSkinColorContainer.Visible = true;
+                        }
 
-                    // set the RGB values to the direct values otherwise
-                    _rgbSkinColorSelector.Color = Profile.Appearance.SkinColor;
-                    break;
-                }
+                        // set the RGB values to the direct values otherwise
+                        _rgbSkinColorSelector.Color = Profile.Appearance.SkinColor;
+                        break;
+                    }
                 case HumanoidSkinColor.TintedHues:
-                {
-                    if (!_rgbSkinColorContainer.Visible)
                     {
-                        _skinColor.Visible = false;
-                        _rgbSkinColorContainer.Visible = true;
-                    }
+                        if (!_rgbSkinColorContainer.Visible)
+                        {
+                            _skinColor.Visible = false;
+                            _rgbSkinColorContainer.Visible = true;
+                        }
 
-                    // set the RGB values to the direct values otherwise
-                    _rgbSkinColorSelector.Color = Profile.Appearance.SkinColor;
-                    break;
-                }
+                        // set the RGB values to the direct values otherwise
+                        _rgbSkinColorSelector.Color = Profile.Appearance.SkinColor;
+                        break;
+                    }
             }
 
         }
@@ -1017,7 +1018,7 @@ namespace Content.Client.Preferences.UI
 
             // hair color
             Color? hairColor = null;
-            if ( Profile.Appearance.HairStyleId != HairStyles.DefaultHairStyle &&
+            if (Profile.Appearance.HairStyleId != HairStyles.DefaultHairStyle &&
                 _markingManager.Markings.TryGetValue(Profile.Appearance.HairStyleId, out var hairProto)
             )
             {
@@ -1035,7 +1036,7 @@ namespace Content.Client.Preferences.UI
             }
             if (hairColor != null)
             {
-                CMarkings.HairMarking = new (Profile.Appearance.HairStyleId, new List<Color>() { hairColor.Value });
+                CMarkings.HairMarking = new(Profile.Appearance.HairStyleId, new List<Color>() { hairColor.Value });
             }
             else
             {
@@ -1052,7 +1053,7 @@ namespace Content.Client.Preferences.UI
 
             // facial hair color
             Color? facialHairColor = null;
-            if ( Profile.Appearance.FacialHairStyleId != HairStyles.DefaultFacialHairStyle &&
+            if (Profile.Appearance.FacialHairStyleId != HairStyles.DefaultFacialHairStyle &&
                 _markingManager.Markings.TryGetValue(Profile.Appearance.FacialHairStyleId, out var facialHairProto)
             )
             {
@@ -1070,7 +1071,7 @@ namespace Content.Client.Preferences.UI
             }
             if (facialHairColor != null)
             {
-                CMarkings.FacialHairMarking = new (Profile.Appearance.FacialHairStyleId, new List<Color>() { facialHairColor.Value });
+                CMarkings.FacialHairMarking = new(Profile.Appearance.FacialHairStyleId, new List<Color>() { facialHairColor.Value });
             }
             else
             {
@@ -1213,7 +1214,7 @@ namespace Content.Client.Preferences.UI
                     Text = Loc.GetString("role-timer-locked"),
                     Visible = true,
                     HorizontalAlignment = HAlignment.Center,
-                    StyleClasses = {StyleBase.StyleClassLabelSubText},
+                    StyleClasses = { StyleBase.StyleClassLabelSubText },
                 };
 
                 _lockStripe = new StripeBack()
@@ -1229,7 +1230,7 @@ namespace Content.Client.Preferences.UI
 
                 _jobTitle = new Label()
                 {
-                    Margin = new Thickness(5f,0,5f,0),
+                    Margin = new Thickness(5f, 0, 5f, 0),
                     Text = job.LocalizedName,
                     MinSize = new Vector2(200, 0),
                     MouseFilter = MouseFilterMode.Stop
@@ -1285,7 +1286,7 @@ namespace Content.Client.Preferences.UI
         {
             foreach (var preferenceSelector in _antagPreferences)
             {
-                var antagId = preferenceSelector.Antag.ID;
+                var antagId = preferenceSelector.Proto.ID;
                 var preference = Profile?.AntagPreferences.Contains(antagId) ?? false;
 
                 preferenceSelector.Preference = preference;
@@ -1303,39 +1304,143 @@ namespace Content.Client.Preferences.UI
             }
         }
 
-        private sealed class AntagPreferenceSelector : Control
+        private abstract class RequirementsSelector<T> : Control
         {
-            public AntagPrototype Antag { get; }
-            private readonly CheckBox _checkBox;
+            public T Proto { get; }
+            public bool Disabled => _lockStripe.Visible;
 
+            protected readonly RadioOptions<int> Options;
+            private StripeBack _lockStripe;
+            private Label _requirementsLabel;
+
+            protected RequirementsSelector(T proto)
+            {
+                Proto = proto;
+
+                Options = new RadioOptions<int>(RadioOptionsLayout.Horizontal)
+                {
+                    FirstButtonStyle = StyleBase.ButtonOpenRight,
+                    ButtonStyle = StyleBase.ButtonOpenBoth,
+                    LastButtonStyle = StyleBase.ButtonOpenLeft
+                };
+                //Override default radio option button width
+                Options.GenerateItem = GenerateButton;
+
+                Options.OnItemSelected += args => Options.Select(args.Id);
+
+                _requirementsLabel = new Label()
+                {
+                    Text = Loc.GetString("role-timer-locked"),
+                    Visible = true,
+                    HorizontalAlignment = HAlignment.Center,
+                    StyleClasses = { StyleBase.StyleClassLabelSubText },
+                };
+
+                _lockStripe = new StripeBack()
+                {
+                    Visible = false,
+                    HorizontalExpand = true,
+                    MouseFilter = MouseFilterMode.Stop,
+                    Children =
+                    {
+                        _requirementsLabel
+                    }
+                };
+
+                // Setup must be called after
+            }
+
+            /// <summary>
+            /// Actually adds the controls, must be called in the inheriting class' constructor.
+            /// </summary>
+            protected void Setup((string, int)[] items, string title, int titleSize, string? description, TextureRect? icon = null)
+            {
+                foreach (var (text, value) in items)
+                {
+                    Options.AddItem(Loc.GetString(text), value);
+                }
+
+                var titleLabel = new Label()
+                {
+                    Margin = new Thickness(5f, 0, 5f, 0),
+                    Text = title,
+                    MinSize = new Vector2(titleSize, 0),
+                    MouseFilter = MouseFilterMode.Stop,
+                    ToolTip = description
+                };
+
+                var container = new BoxContainer
+                {
+                    Orientation = LayoutOrientation.Horizontal,
+                };
+
+                if (icon != null)
+                    container.AddChild(icon);
+                container.AddChild(titleLabel);
+                container.AddChild(Options);
+                container.AddChild(_lockStripe);
+
+                AddChild(container);
+            }
+
+            public void LockRequirements(FormattedMessage requirements)
+            {
+                var tooltip = new Tooltip();
+                tooltip.SetMessage(requirements);
+                _lockStripe.TooltipSupplier = _ => tooltip;
+                _lockStripe.Visible = true;
+                Options.Visible = false;
+            }
+
+            // TODO: Subscribe to roletimers event. I am too lazy to do this RN But I doubt most people will notice fn
+            public void UnlockRequirements()
+            {
+                _lockStripe.Visible = false;
+                Options.Visible = true;
+            }
+
+            private Button GenerateButton(string text, int value)
+            {
+                return new Button
+                {
+                    Text = text,
+                    MinWidth = 90
+                };
+            }
+        }
+
+        private sealed class AntagPreferenceSelector : RequirementsSelector<AntagPrototype>
+        {
+            // 0 is yes and 1 is no
             public bool Preference
             {
-                get => _checkBox.Pressed;
-                set => _checkBox.Pressed = value;
+                get => Options.SelectedValue == 0;
+                set => Options.Select((value && !Disabled) ? 0 : 1);
             }
 
             public event Action<bool>? PreferenceChanged;
 
-            public AntagPreferenceSelector(AntagPrototype antag)
+            public AntagPreferenceSelector(AntagPrototype proto)
+                : base(proto)
             {
-                Antag = antag;
+                Options.OnItemSelected += args => PreferenceChanged?.Invoke(Preference);
 
-                _checkBox = new CheckBox {Text = Loc.GetString(antag.Name)};
-                _checkBox.OnToggled += OnCheckBoxToggled;
-
-                AddChild(new BoxContainer
+                var items = new[]
                 {
-                    Orientation = LayoutOrientation.Horizontal,
-                    Children =
-                    {
-                        _checkBox
-                    }
-                });
-            }
+                    ("humanoid-profile-editor-antag-preference-yes-button", 0),
+                    ("humanoid-profile-editor-antag-preference-no-button", 1)
+                };
+                var title = Loc.GetString(proto.Name);
+                var description = Loc.GetString(proto.Objective);
+                Setup(items, title, 250, description);
 
-            private void OnCheckBoxToggled(BaseButton.ButtonToggledEventArgs args)
-            {
-                PreferenceChanged?.Invoke(Preference);
+                // immediately lock requirements if they arent met.
+                // another function checks Disabled after creating the selector so this has to be done now
+                var requirements = IoCManager.Resolve<JobRequirementsManager>();
+                if (proto.Requirements != null && !requirements.CheckRoleTime(proto.Requirements, out var reason))
+                {
+                    LockRequirements(reason);
+                }
             }
         }
 
@@ -1356,7 +1461,7 @@ namespace Content.Client.Preferences.UI
             {
                 Trait = trait;
 
-                _checkBox = new CheckBox {Text = Loc.GetString(trait.Name)};
+                _checkBox = new CheckBox { Text = Loc.GetString(trait.Name) };
                 _checkBox.OnToggled += OnCheckBoxToggled;
 
                 if (trait.Description is { } desc)
