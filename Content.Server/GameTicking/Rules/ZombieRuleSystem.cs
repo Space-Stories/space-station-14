@@ -280,7 +280,7 @@ public sealed class ZombieRuleSystem : GameRuleSystem<ZombieRuleComponent>
                 prefList.Add(player);
         }
 
-        if (playerList.Count == 0)
+        if (prefList.Count == 0)
             return;
 
         var numInfected = Math.Max(1,
@@ -291,24 +291,12 @@ public sealed class ZombieRuleSystem : GameRuleSystem<ZombieRuleComponent>
         while (totalInfected < numInfected)
         {
             ICommonSession zombie;
-            if (prefList.Count == 0)
-            {
-                if (playerList.Count == 0)
-                {
-                    Log.Info("Insufficient number of players. stopping selection.");
-                    break;
-                }
-                zombie = _random.Pick(playerList);
-                Log.Info("Insufficient preferred patient 0, picking at random.");
-            }
-            else
-            {
-                zombie = _random.Pick(prefList);
-                Log.Info("Selected a patient 0.");
-            }
+
+            zombie = _random.Pick(prefList);
+            Log.Info("Selected a patient 0.");
 
             prefList.Remove(zombie);
-            playerList.Remove(zombie);
+
             if (!_mindSystem.TryGetMind(zombie, out var mindId, out var mind) ||
                 mind.OwnedEntity is not { } ownedEntity)
             {
