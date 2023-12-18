@@ -5,6 +5,7 @@ using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.StatusIcon;
+using Content.Shared.StatusIcon.Components;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
@@ -61,29 +62,32 @@ namespace Content.Client.HealthOverlay
 
             handle.UseShader(_shader);
 
-            var query = _entity.AllEntityQueryEnumerator<DamageableComponent, TransformComponent, SpriteComponent, MobStateComponent>();
-            while (query.MoveNext(out var entity, out var damageable, out var transform, out var sprite, out var mobState))
+            var query = _entity.AllEntityQueryEnumerator<StatusIconComponent, SpriteComponent, TransformComponent, MetaDataComponent>();
+            while (query.MoveNext(out var entity, out var comp, out var sprite, out var xform, out var meta))
             {
+                if (!_entity.TryGetComponent<DamageableComponent>(entity, out var damageable))
+                    continue;
+                if (!_entity.TryGetComponent<MobStateComponent>(entity, out var mobState))
+                    continue;
                 if (damageable.DamageContainerID != "Biological")
                     continue;
+
                 if (!_entity.TryGetComponent<MobThresholdsComponent>(entity, out _))
                     continue;
                 if (!_mobThreshold.TryGetThresholdForState(entity, MobState.Dead, out var deadThreshold))
                     continue;
                 if (!_mobThreshold.TryGetThresholdForState(entity, MobState.Critical, out var critThreshold))
                     critThreshold = deadThreshold;
-                if (!_entity.TryGetComponent<MetaDataComponent>(entity, out var meta))
-                    continue;
 
-                if (transform.MapID != args.MapId)
+                if (xform.MapID != args.MapId)
                     continue;
 
                 if ((meta.Flags & MetaDataFlags.InContainer) != 0)
                     continue;
 
-                var bounds = sprite.Bounds;
+                var bounds = comp.Bounds ?? sprite.Bounds;
 
-                var worldPos = _transform.GetWorldPosition(transform, xformQuery);
+                var worldPos = _transform.GetWorldPosition(xform, xformQuery);
 
                 if (!bounds.Translated(worldPos).Intersects(args.WorldAABB))
                     continue;
