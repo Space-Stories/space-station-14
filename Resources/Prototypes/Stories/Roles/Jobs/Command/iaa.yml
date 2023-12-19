@@ -16,6 +16,7 @@
   canBeAntag: false
   access:
     - Service
+    - Lawyer
     - Brig
     - Maintenance
     - Command
