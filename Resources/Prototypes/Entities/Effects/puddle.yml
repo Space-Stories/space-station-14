@@ -187,3 +187,4 @@
   - type: ExaminableSolution
     solution: puddle
   - type: BadDrink
+  - type: IgnoresFingerprints
