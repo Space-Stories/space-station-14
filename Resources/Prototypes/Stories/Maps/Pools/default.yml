@@ -10,6 +10,10 @@
   - StoriesPacked
   - StoriesMarathon
   - StoriesAtlas
+#  - StoriesEuropa
+  - StoriesMeta
+  - StoriesOrigin
+  - StoriesSaltern
 
 # Corvax Maps
 #  - StoriesAvrite
@@ -24,7 +28,5 @@
   - StoriesKettle
 
 # New Maps
-#  - StoriesEuropa
-  - StoriesMeta
-  - StoriesOrigin
-  - StoriesSaltern
+  - StoriesReach
+  - StoriesGemini

@@ -1,4 +1,4 @@
-using Content.Shared.Atmos.Miasma;
+using Content.Shared.Atmos.Rotting;
 using Content.Shared.Damage;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
