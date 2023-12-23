@@ -58,7 +58,7 @@ Alt-Click на корове с контейнером в руке. (мензур
 <Box>
 <GuideEntityEmbed Entity="Bucket"/>
 <GuideEntityEmbed Entity="MobCow"/>
-<GuideEntityEmbed Entity="ReagentContainerMilk"/>
+<GuideEntityEmbed Entity="DrinkMilkCarton"/>
 </Box>
 ## Как разделывать мясо:
 В большинстве случаев вы можете использовать нож непосредственно на мертвом существе. Лучше всего делать это в морозильной камере, так как результат получается... грязным.
