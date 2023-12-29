@@ -1,28 +1,28 @@
 <Document>
   
-  # Specialized Brute Chemicals
+  # Специализированные грубые химикаты
 
-  Nanotrasen's greatest scientists have synthesized three more specific brute chemicals! Each one heals a specific damage subtype.
+  Величайшие ученые Нанотрасена синтезировали три более специфических грубых химиката! Каждый из них лечит определенный подтип повреждений.
 
   <GuideReagentEmbed Reagent="Bruizine"/>
   <GuideReagentEmbed Reagent="Puncturase"/>
   <GuideReagentEmbed Reagent="Lacerinol"/>
 
-  # Razorium
+  # Бритвин
 
-  [color=red]USE CAUTION[/color] when using the aforementioned specialized brute chemicals. Should one mix together with a different type of brute chemical, the resulting mixture will create a dangerous chemical known as Razorium!
+  [color=red]ОСТОРОЖНО[/color] при использовании вышеупомянутых специализированных брутальных химикатов. Если смешать один из них с другим типом грубых-химикатов, то в результате получится опасное химическое вещество, известное как Бритвин!
   <GuideReagentEmbed Reagent="Razorium"/>
-  To avoid this, make sure the patient is done metabolizing one brute medication before giving them another. Keep an eye on the rate their health is changing.
+  Чтобы избежать этого, убедитесь, что пациент закончил метаболизм одного грубого препарата, прежде чем давать ему другой. Следите за тем, как меняется состояние здоровья пациента.
 
-  [bold]Some examples of mixtures that create Razorium are as follows:[/bold]
+  [bold]Некоторые примеры смесей, создающих Бритвин, следующие:[/bold]
 
-  Bicaridine and Puncturase
+  Бикаридин и Пунктураза
 
-  Puncturase and Lacerinol
+  Пунктураза и Лацеринол
 
-  Bruizine and Bicaridine
+  Бруизин и бикаридин
 
-  Lacerinol and Bruizine
+  Лацеринол и Бруизин
 
-  Please note that [bold]any[/bold] combination of these 4 chemicals will likely mix and create Razorium! Be careful when creating these chemicals, as they contain Bicaridine. Any leftover Bicaridine will likely mix to create Razorium!
+  Обратите внимание, что [bold]любая[/bold] комбинация этих 4 химикатов может смешаться и создать Бритвин! Будьте осторожны при создании этих химикатов, так как они содержат бикаридин. Любой остаток бикаридина может смешаться и создать Razorium!
 </Document>

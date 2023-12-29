@@ -1,9 +1,9 @@
 <Document>
   # Малые антагонисты
 
-  Most if not all Minor Antagonists are ghost-controlled roles that gives dead people new ways to cause chaos around the station. They are spawned by random events.
+  Большинство, если не все, второстепенные антагонисты - это управляемые призраками роли, которые дают мертвецам новые способы устроить хаос на станции. Они порождаются случайными событиями.
 
-  # Revenant
+  # Ревенант
 
   <Box>
     <GuideEntityEmbed Entity="MobRevenant" Caption=""/>
@@ -41,8 +41,8 @@
    <GuideEntityEmbed Entity="MobMouse" Caption="Обычная мышь"/>
    <GuideEntityEmbed Entity="MobRatServant" Caption="Слуга-крыса"/>
   </Box>
-  - Raise an Army of [color=#a4885c]Rat Servants[/color].
-  - Conjure a cloud of ammonia.
+  - Вырастите армию [color=#a4885c]слуг-крыс[/color].
+  - Вызвать облако аммиака.
 
   # Космический дракон
 
@@ -52,9 +52,9 @@
 
   Космический дракон - гигантский дракон, создающий разрывы в пространстве и поедающий экипаж.
 
-  ## Abilities
+  ## Способности
 
-  - Devour critical or dead victims.
+  - Пожирает мёртвых жертв, или находящихся в критическом состоянии.
 
   <Box>
     <GuideEntityEmbed Entity="MobCarp" Caption=""/>
