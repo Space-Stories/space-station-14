@@ -11,6 +11,15 @@
       "name": "nuclearbomb_deployed"
     },
     {
+      "name": "nukefestive",
+      "delays": [
+        [
+          0.25,
+          0.25
+        ]
+      ]
+    },
+    {
       "name": "nuclearbomb_timing",
       "delays": [
         [
