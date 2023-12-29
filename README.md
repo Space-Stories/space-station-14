@@ -1,37 +1,33 @@
-<p align="center"> <img alt="Space Station 14" width="880" height="300" src="https://raw.githubusercontent.com/space-wizards/asset-dump/de329a7898bb716b9d5ba9a0cd07f38e61f1ed05/github-logo.svg" /></p>
+<p align="center"> <img alt="Space Station 14" width="880" height="300" src="https://i.imgur.com/JyKfh0D.png" /></p>
 
-Space Station 14 is a remake of SS13 that runs on [Robust Toolbox](https://github.com/space-wizards/RobustToolbox), our homegrown engine written in C#.
+Space Station 14 - это ремейк SS13, работающий на [Robust Toolbox](https://github.com/space-wizards/RobustToolbox), движке, написанном на C#.
 
-This is the primary repo for Space Station 14. To prevent people forking RobustToolbox, a "content" pack is loaded by the client and server. This content pack contains everything needed to play the game on one specific server.
+Это репозиторий русскоязычного сервера по Space Station 14 - Space Stories, целью которого является помошь в разработке и тестировании игрового билда. Данный репозиторий основан на билде [space-wizards/space-station-14](https://github.com/space-wizards/space-station-14)
 
-If you want to host or create content for SS14, this is the repo you need. It contains both RobustToolbox and the content pack for development of new content packs.
+## Ссылки
 
-## Links
+[Wiki](https://spacestories.club/) | [Discord](https://discord.gg/space-stories/) | [Steam](https://store.steampowered.com/app/1255460/Space_Station_14/) | [Клиент без Steam](https://spacestation14.io/about/nightlies/)
 
-[Website](https://spacestation14.io/) | [Discord](https://discord.ss14.io/) | [Forum](https://forum.spacestation14.io/) | [Steam](https://store.steampowered.com/app/1255460/Space_Station_14/) | [Standalone Download](https://spacestation14.io/about/nightlies/)
+## Лицензия
 
-## Documentation/Wiki
+Весь код созданный вкладчиками [Space Wizards Federation](https://github.com/space-wizards) имеет лицензию [MIT](https://github.com/MetalSage/space-station-14/blob/master/LICENSE.TXT), код написанный вкладчиками [данного](https://github.com/MetalSage/space-station-14) репозитория имеет [свою лицензию](https://github.com/MetalSage/space-station-14/blob/master/LICENSE.md)
 
-Our [docs site](https://docs.spacestation14.io/) has documentation on SS14s content, engine, game design and more. We also have lots of resources for new contributors to the project.
+Большинство ассетов лицензировано под [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/), если не указано иное. Лицензия и авторские права на ассеты указаны в файле метаданных. [Пример](https://github.com/MetalSage/space-station-14/blob/master/Resources/Textures/Objects/Tools/crowbar.rsi/meta.json).
 
-## Contributing
+Обратите внимание, что некоторые ассеты лицензированы под некоммерческой [CC-BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) или аналогичной некоммерческой лицензией и должны быть удалены, если вы хотите использовать этот проект в коммерческих целях.
 
-We are happy to accept contributions from anybody. Get in Discord if you want to help. We've got a [list of issues](https://github.com/space-wizards/space-station-14-content/issues) that need to be done and anybody can pick them up. Don't be afraid to ask for help either!
+## Документация
 
-We are not currently accepting translations of the game on our main repository. If you would like to translate the game into another language consider creating a fork or contributing to a fork.
+На официальном сайте с [документацией](https://docs.spacestation14.com) имеется вся необходимая информация о контенте SS14, движке, дизайне игры и многом другом. Также имеется много информации для начинающих разработчиков.
 
-## Building
+## Вклад
 
-1. Clone this repo.
-2. Run `RUN_THIS.py` to init submodules and download the engine.
-3. Compile the solution.
+В случае если вы хотите добавить новый контент будет лучше, если сначала вы предложите его в основной [репозиторий](https://github.com/space-wizards/space-station-14) или обсудите его необходимость на нашем сервере [Discord](https://discord.gg/space-stories/).
 
-[More detailed instructions on building the project.](https://docs.spacestation14.com/en/general-development/setup.html)
+## Сборка
 
-## License
+1. Клонируйте этот репозиторий.
+2. Запустите `RUN_THIS.py` для инициализации подмодулей и загрузки движка.
+3. Скомпилируйте проект `dotnet build` для сборки в дебаг режиме, или `dotnet build --configuration Release` для полноценой сборки, аналогичной той, что стоят на наших серверах.
 
-All code for the content repository is licensed under [MIT](https://github.com/space-wizards/space-station-14/blob/master/LICENSE.TXT).
-
-Most assets are licensed under [CC-BY-SA 3.0](https://creativecommons.org/licenses/by-sa/3.0/) unless stated otherwise. Assets have their license and the copyright in the metadata file. [Example](https://github.com/space-wizards/space-station-14/blob/master/Resources/Textures/Objects/Tools/crowbar.rsi/meta.json).
-
-Note that some assets are licensed under the non-commercial [CC-BY-NC-SA 3.0](https://creativecommons.org/licenses/by-nc-sa/3.0/) or similar non-commercial licenses and will need to be removed if you wish to use this project commercially.
+[Более подробные инструкции по компиляции проекта.](https://docs.spacestation14.com/en/general-development/setup.html)
