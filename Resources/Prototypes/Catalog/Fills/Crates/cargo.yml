@@ -111,6 +111,15 @@
     - id: Bola
       prob: 0.5
       orGroup: Weapons
+    - id: WeaponShotgunHandmade
+      prob: 0.01
+      orGroup: Weapons
+    - id: WeaponFlareGun
+      prob: 0.01
+      orGroup: Weapons
+    - id: Bola
+      prob: 0.01
+      orGroup: Weapons
     #clothing
     - id: ClothingUniformJumpsuitFamilyGuy
       prob: 0.05

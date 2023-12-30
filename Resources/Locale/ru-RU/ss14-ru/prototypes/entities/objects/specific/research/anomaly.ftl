@@ -18,3 +18,5 @@ ent-AnomalyLocatorWide = { ent-AnomalyLocatorWideUnpowered }
 ent-AnomalyLocatorWideEmpty = { ent-AnomalyLocatorWide }
     .suffix = Пустой
     .desc = { ent-AnomalyLocatorWide.desc }
+ent-WeaponGauntletGorilla = перчатка Г.О.Р.И.Л.Л.А.
+    .desc = Надежное исследовательское оборудование. При использовании ядра аномалии один удар может запустить аномальные объекты в воздух.
