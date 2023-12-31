@@ -21,8 +21,6 @@
           availableJobs:
             #service
             Captain: [ 1, 1 ]
-            JediNt: [ 1, 1 ] # Stories-Jedi
-            IAA: [ 1, 1 ] # Corvax-IAA
             HeadOfPersonnel: [ 1, 1 ]
             Bartender: [ 1, 2 ]
             Botanist: [ 2, 3 ]
@@ -30,33 +28,29 @@
             Janitor: [ 2, 3 ]
             Chaplain: [ 1, 1 ]
             Librarian: [ 1, 1 ]
-            #Lawyer: [ 2, 2 ] # Corvax-IAA
+            #Lawyer: [ 2, 2 ]
             ServiceWorker: [ 1, 1 ]
             #engineering
             ChiefEngineer: [ 1, 1 ]
             AtmosphericTechnician: [ 2, 2 ]
-            SeniorEngineer: [ 1, 1 ]
-            StationEngineer: [ 2, 3 ]
+            StationEngineer: [ 3, 4 ]
             TechnicalAssistant: [ 4, 4 ]
             #medical
             ChiefMedicalOfficer: [ 1, 1 ]
-            SeniorPhysician: [ 1, 1 ]
             Paramedic: [ 1, 1 ]
             Chemist: [ 1, 2 ]
-            MedicalDoctor: [ 3, 3 ]
+            MedicalDoctor: [ 4, 4 ]
             MedicalIntern: [ 4, 4 ]
             #science
             ResearchDirector: [ 1, 1 ]
-            SeniorResearcher: [ 1, 1 ]
-            Scientist: [ 3, 4 ]
+            Scientist: [ 4, 5 ]
             ResearchAssistant: [ 4, 4 ]
             Borg: [ 2, 2 ]
             #security
             HeadOfSecurity: [ 1, 1 ]
             Warden: [ 1, 1 ]
-            SeniorOfficer: [ 1, 1 ]
             Detective: [ 1, 1 ]
-            SecurityOfficer: [ 3, 4 ]
+            SecurityOfficer: [ 4, 5 ]
             SecurityCadet: [ 4, 4 ]
             #supply
             Quartermaster: [ 1, 1 ]
@@ -67,4 +61,10 @@
             Clown: [ 1, 1 ]
             Mime: [ 1, 1 ]
             Musician: [ 1, 1 ]
-
+            #stories
+            IAA: [ 1, 1 ]
+            JediNt: [ 1, 1 ]
+            SeniorEngineer: [ 1, 1 ]
+            SeniorPhysician: [ 1, 1 ]
+            SeniorResearcher: [ 1, 1 ]
+            SeniorOfficer: [ 1, 1 ]

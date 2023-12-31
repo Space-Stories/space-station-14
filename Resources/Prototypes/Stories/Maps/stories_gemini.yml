@@ -21,15 +21,13 @@
             #service
             Captain: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]
-            IAA: [ 1, 1 ] # Corvax-IAA
-            JediNt: [ 1, 1 ] # Stories-Jedi
             Bartender: [ 1, 2 ]
             Botanist: [ 3, 4 ]
             Chef: [ 2, 3 ]
             Janitor: [ 4, 4 ]
             Chaplain: [ 1, 2 ]
             Librarian: [ 1, 2 ]
-            Lawyer: [ 2, 3 ]
+            #Lawyer: [ 2, 3 ]
             Zookeeper: [ 1, 1 ]
             ServiceWorker: [ 4, 4 ]
             #engineering
@@ -63,3 +61,10 @@
             Clown: [ 1, 2 ]
             Mime: [ 1, 2 ]
             Musician: [ 1, 2 ]
+            #stories
+            IAA: [ 1, 1 ]
+            JediNt: [ 1, 1 ]
+            SeniorEngineer: [ 1, 1 ]
+            SeniorPhysician: [ 1, 1 ]
+            SeniorResearcher: [ 1, 1 ]
+            SeniorOfficer: [ 1, 1 ]

@@ -13,7 +13,7 @@
             !type:NanotrasenNameGenerator
             prefixCreator: 'TG'
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Shuttles/emergency_courser.yml
+          emergencyShuttlePath: /Maps/Shuttles/emergency_meta.yml
         - type: StationJobs
           overflowJobs:
             - Passenger
@@ -21,8 +21,6 @@
             #service
             Captain: [ 1, 1 ]
             HeadOfPersonnel: [ 1, 1 ]
-            IAA: [ 1, 1 ] # Corvax-IAA
-            JediNt: [ 1, 1 ] # Stories-Jedi
             Bartender: [ 2, 2 ]
             Botanist: [ 2, 3 ]
             Chef: [ 2, 2 ]
@@ -32,31 +30,27 @@
             ServiceWorker: [ 2, 2 ]
             #engineering
             ChiefEngineer: [ 1, 1 ]
-            SeniorEngineer: [ 1, 1 ]
             AtmosphericTechnician: [ 3, 3 ]
-            StationEngineer: [ 4, 6 ]
+            StationEngineer: [ 5, 7 ]
             TechnicalAssistant: [ 3, 6 ]
             #medical
             ChiefMedicalOfficer: [ 1, 1 ]
-            SeniorPhysician: [ 1, 1 ]
             Chemist: [ 3, 3 ]
-            MedicalDoctor: [ 4, 4 ]
+            MedicalDoctor: [ 5, 5 ]
             MedicalIntern: [ 3, 6 ]
             Paramedic: [ 1, 1 ]
             #science
             ResearchDirector: [ 1, 1 ]
-            SeniorResearcher: [ 1, 1 ]        
-            Scientist: [ 4, 6 ]
-            ResearchAssistant: [ 3, 6 ] 
+            Scientist: [ 5, 7 ]
+            ResearchAssistant: [ 3, 6 ]
             Borg: [ 2, 2 ]
             #security
             HeadOfSecurity: [ 1, 1 ]
             Warden: [ 1, 1 ]
-            SeniorOfficer: [ 1, 1 ]
-            SecurityOfficer: [ 4, 6 ]
+            SecurityOfficer: [ 5, 7 ]
             Detective: [ 1, 1 ]
             SecurityCadet: [ 3, 6 ]
-            #Lawyer: [ 2, 2 ] # Corvax-IAA
+            #Lawyer: [ 2, 2 ]
             #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 3, 3 ]
@@ -66,3 +60,10 @@
             Clown: [ 1, 1 ]
             Mime: [ 1, 1 ]
             Musician: [ 1, 1 ]
+            #stories
+            IAA: [ 1, 1 ]
+            JediNt: [ 1, 1 ]
+            SeniorEngineer: [ 1, 1 ]
+            SeniorPhysician: [ 1, 1 ]
+            SeniorResearcher: [ 1, 1 ]
+            SeniorOfficer: [ 1, 1 ]
