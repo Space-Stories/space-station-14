@@ -1,6 +1,6 @@
 - type: entity
   name: световой меч
-  parent: BaseItem
+  parent: EnergySword
   id: LightSaberJediNt
   description: Особенное оружие, созданное сколь для элегантного боя, сколь и для церемонний, его работа связана с кайбер-кристаллом внутри.
   components:
@@ -10,13 +10,6 @@
   - type: EnergySword
     colorOptions:
       - White
-    litDamageBonus:
-        types:
-            Slash: 15
-            Heat: 15
-            Structural: 4
-            Blunt: -4.5
-    litDisarmMalus: 0.6
   - type: Sprite
     sprite: Objects/Weapons/Melee/e_sword.rsi
     layers:
@@ -26,37 +19,6 @@
         visible: false
         shader: unshaded
         map: [ "blade" ]
-  - type: MeleeWeapon
-    wideAnimationRotation: -135
-    attackRate: 1
-    soundHit:
-      path: /Audio/Weapons/eblade1.ogg
-    damage:
-      types:
-        Blunt: 4.5
-  - type: Item
-    size: Small
-    sprite: Objects/Weapons/Melee/e_sword-inhands.rsi
-  - type: UseDelay
-    delay: 1.0
-  - type: PointLight
-    enabled: false
-    radius: 2
-    energy: 2
-    color: white
-    netsync: false
-  - type: Appearance
-  - type: ToggleableLightVisuals
-    spriteLayer: blade
-    inhandVisuals:
-      left:
-      - state: inhand-left-blade
-        shader: unshaded
-      right:
-      - state: inhand-right-blade
-        shader: unshaded
-  - type: DisarmMalus
-    malus: 0
   - type: Reflect
     enabled: false
     reflectProb: 0.50
@@ -81,14 +43,7 @@
         - FlyingMobLayer
         restitution: 0.3
         friction: 0.2
-  - type: Sharp
   - type: LightSaber
-  - type: DamageOtherOnHit
-    soundHit:
-      path: /Audio/Weapons/eblade1.ogg
-    damage:
-      types:
-        Blunt: -4.5
   - type: DamageContacts
     soundHit:
       path: /Audio/Weapons/eblade1.ogg
