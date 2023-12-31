@@ -16,7 +16,7 @@ public sealed partial class ThiefRuleComponent : Component
     /// Add a Pacified comp to thieves
     /// </summary>
     [DataField]
-    public bool PacifistThieves = true;
+    public bool PacifistThieves = false;
 
     /// <summary>
     /// A chance for this mode to be added to the game.
