@@ -82,19 +82,19 @@ public abstract class SharedStunSystem : EntitySystem
         switch (args.NewMobState)
         {
             case MobState.Alive:
-            {
-                break;
-            }
+                {
+                    break;
+                }
             case MobState.Critical:
-            {
-                _statusEffect.TryRemoveStatusEffect(uid, "Stun");
-                break;
-            }
+                {
+                    _statusEffect.TryRemoveStatusEffect(uid, "Stun");
+                    break;
+                }
             case MobState.Dead:
-            {
-                _statusEffect.TryRemoveStatusEffect(uid, "Stun");
-                break;
-            }
+                {
+                    _statusEffect.TryRemoveStatusEffect(uid, "Stun");
+                    break;
+                }
             case MobState.Invalid:
             default:
                 return;
@@ -114,7 +114,10 @@ public abstract class SharedStunSystem : EntitySystem
 
     private void OnKnockShutdown(EntityUid uid, KnockedDownComponent component, ComponentShutdown args)
     {
-        _standingState.Stand(uid);
+        // Stories-Crawling-Start
+        if (!_standingState.CanCrawl(uid))
+            _standingState.Stand(uid);
+        // Stories-Crawling-End
     }
 
     private void OnStandAttempt(EntityUid uid, KnockedDownComponent component, StandAttemptEvent args)
@@ -238,7 +241,7 @@ public abstract class SharedStunSystem : EntitySystem
             return;
 
         // Set it to half the help interval so helping is actually useful...
-        knocked.HelpTimer = knocked.HelpInterval/2f;
+        knocked.HelpTimer = knocked.HelpInterval / 2f;
 
         _statusEffect.TryRemoveTime(uid, "KnockedDown", TimeSpan.FromSeconds(knocked.HelpInterval));
         _audio.PlayPredicted(knocked.StunAttemptSound, uid, args.User);

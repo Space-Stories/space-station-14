@@ -12,6 +12,8 @@ using Content.Server.Station.Systems;
 using Content.Shared.ActionBlocker;
 using Content.Shared.CCVar;
 using Content.Shared.Chat;
+using Content.Shared.Damage;
+using Content.Shared.Damage.Prototypes;
 using Content.Shared.Database;
 using Content.Shared.Ghost;
 using Content.Shared.Humanoid;
@@ -56,6 +58,8 @@ public sealed partial class ChatSystem : SharedChatSystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedInteractionSystem _interactionSystem = default!;
     [Dependency] private readonly ReplacementAccentSystem _wordreplacement = default!;
+    [Dependency] private readonly DamageableSystem _damageable = default!;
+    [Dependency] private readonly IPrototypeManager _prototype = default!;
 
     public const int VoiceRange = 10; // how far voice goes in world units
     public const int WhisperClearRange = 2; // how far whisper goes while still being understandable, in world units
@@ -247,6 +251,14 @@ public sealed partial class ChatSystem : SharedChatSystem
             }
         }
 
+        // Stories-Crit-Speech
+        if (desiredType == InGameICChatType.Speak && _mobStateSystem.IsCritical(source))
+        {
+            SendEntityWhisper(source, message, range, null, nameOverride, hideLog, ignoreActionBlocker);
+            return;
+        }
+        // Stories-Crit-Speech
+
         // Otherwise, send whatever type.
         switch (desiredType)
         {
@@ -423,7 +435,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         RaiseLocalEvent(source, ev, true);
 
         // To avoid logging any messages sent by entities that are not players, like vendors, cloning, etc.
-		// Also doesn't log if hideLog is true.
+        // Also doesn't log if hideLog is true.
         if (!HasComp<ActorComponent>(source) || hideLog == true)
             return;
 
@@ -518,6 +530,11 @@ public sealed partial class ChatSystem : SharedChatSystem
         }
 
         _replay.RecordServerMessage(new ChatMessage(ChatChannel.Whisper, message, wrappedMessage, GetNetEntity(source), null, MessageRangeHideChatForReplay(range)));
+
+        // Stories-Crit-Speech-Start
+        if (_mobStateSystem.IsCritical(source) && _prototype.TryIndex<DamageTypePrototype>("Asphyxiation", out var asphyxiation))
+            _damageable.TryChangeDamage(source, new(asphyxiation, 20), true, false);
+        // Stories-Crit-Speech-End
 
         var ev = new EntitySpokeEvent(source, message, originalMessage, channel, obfuscatedMessage);
         RaiseLocalEvent(source, ev, true);
@@ -625,7 +642,8 @@ public sealed partial class ChatSystem : SharedChatSystem
 
     #region Utility
 
-    private enum MessageRangeCheckResult {
+    private enum MessageRangeCheckResult
+    {
         Disallowed,
         HideChat,
         Full
@@ -808,7 +826,7 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         foreach (var player in _playerManager.Sessions)
         {
-            if (player.AttachedEntity is not {Valid: true} playerEntity)
+            if (player.AttachedEntity is not { Valid: true } playerEntity)
                 continue;
 
             var transformEntity = xforms.GetComponent(playerEntity);
