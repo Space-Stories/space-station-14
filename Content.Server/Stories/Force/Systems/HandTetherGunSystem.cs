@@ -20,7 +20,7 @@ public sealed class HandTetherGunSystem : SharedTetherGunSystem
     }
     private void OnHandTetherGunEvent(EntityUid uid, ForceSensitiveComponent comp, HandTetherGunEvent args)
     {
-        if (args.Handled || _useDelay.ActiveDelay(args.Performer)) return;
+        if (args.Handled) return;
 
         foreach (var item in _hands.EnumerateHeld(args.Performer))
             if (TryComp<MetaDataComponent>(item, out var meta) && meta.EntityPrototype != null && meta.EntityPrototype.ID == "HandTetherGun" && TryComp<TetherGunComponent>(item, out var tether)) { StopTether(item, tether); Del(item); return; }

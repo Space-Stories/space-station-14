@@ -96,12 +96,6 @@
     sprite: Clothing/Eyes/Hud/medonion.rsi
   - type: Clothing
     sprite: Clothing/Eyes/Hud/medonion.rsi
-  - type: ShowHealthBars
-    damageContainers: 
-    - Biological
-  - type: ShowHealthIcons
-    damageContainers: 
-    - Biological
   - type: ShowHungerIcons
   - type: ShowHealthIcons
   - type: ShowHealthBar
@@ -116,12 +110,6 @@
     sprite: Clothing/Eyes/Hud/medonionbeer.rsi
   - type: Clothing
     sprite: Clothing/Eyes/Hud/medonionbeer.rsi
-  - type: ShowHealthBars
-    damageContainers: 
-    - Biological
-  - type: ShowHealthIcons
-    damageContainers: 
-    - Biological
   - type: ShowHungerIcons
   - type: ShowThirstIcons
   - type: ShowHealthIcons
@@ -152,13 +140,6 @@
   - type: Clothing
     sprite: Clothing/Eyes/Hud/medsecengi.rsi
   - type: ShowSecurityIcons
-  - type: ShowHealthBars
-    damageContainers: 
-    - Biological
-    - Inorganic
-  - type: ShowHealthIcons
-    damageContainers: 
-    - Biological
   - type: ShowSyndicateIcons
 
 - type: entity
@@ -172,13 +153,6 @@
   - type: Clothing
     sprite: Clothing/Eyes/Hud/omni.rsi
   - type: ShowSecurityIcons
-  - type: ShowHealthBars
-    damageContainers: 
-    - Biological
-    - Inorganic
-  - type: ShowHealthIcons
-    damageContainers: 
-    - Biological
   - type: ShowHungerIcons
   - type: ShowThirstIcons
   - type: ShowHealthIcons

@@ -72,7 +72,7 @@ public sealed class ForceProtectiveBubbleSystem : EntitySystem
     private void OnMarkerShutdown(EntityUid uid, ForceProtectiveBubbleComponent comp, ComponentShutdown? args = null)
     {
         if (comp.StopProtectiveBubbleActionEntity != null) _actions.RemoveAction(uid, comp.StopProtectiveBubbleActionEntity);
-    
+
         comp.PlayingStream = _audio.Stop(comp.PlayingStream);
 
         var reflect = EnsureComp<ReflectComponent>(uid);
@@ -100,8 +100,6 @@ public sealed class ForceProtectiveBubbleSystem : EntitySystem
         args.Handled = true;
         var user = args.Performer;
         if (!TryComp<ForceSensitiveComponent>(user, out var ninja))
-            return;
-        if (_useDelay.ActiveDelay(user))
             return;
 
         EnsureComp<ForceProtectiveBubbleComponent>(user);

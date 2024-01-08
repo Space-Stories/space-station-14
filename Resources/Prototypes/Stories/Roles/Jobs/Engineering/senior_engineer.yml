@@ -14,7 +14,7 @@
       department: Engineering
       time: 216000 # 60 hrs
     - !type:RoleTimeRequirement
-      role: JobStationChiefEngineer
+      role: JobChiefEngineer
       time: 10800 #3 hrs
   startingGear: SeniorEngineerGear
   icon: "JobIconSeniorEngineer"

@@ -17,7 +17,7 @@
       department: Security
       time: 216000 # 60 hrs
     - !type:RoleTimeRequirement
-      role: JobStationHeadOfSecurity
+      role: JobHeadOfSecurity
       time: 10800 #3 hrs
   startingGear: SeniorOfficerGear
   icon: "JobIconSeniorOfficer"
