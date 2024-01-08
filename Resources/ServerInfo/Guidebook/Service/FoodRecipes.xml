@@ -74,5 +74,11 @@
 <GuideEntityEmbed Entity="FoodPieApple"/>
 <GuideEntityEmbed Entity="FoodTacoBeef"/>
 </Box>
+<Box>
+<GuideEntityEmbed Entity="FoodMealCubancarp"/>
+<GuideEntityEmbed Entity="FoodPieBananaCream"/>
+<GuideEntityEmbed Entity="FoodMealFriesCarrot"/>
+<GuideEntityEmbed Entity="FoodBakedPancake"/>
+</Box>
 
 </Document>

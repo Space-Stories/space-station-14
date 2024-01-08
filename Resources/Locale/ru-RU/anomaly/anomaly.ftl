@@ -21,19 +21,23 @@ anomaly-scanner-particle-unstable = - [color=plum]Нестабильный ти�
 anomaly-scanner-particle-containment = - [color=goldenrod]Сдерживающий тип:[/color] { $type }
 anomaly-scanner-pulse-timer = Время до следующего импульса: [color=gray]{ $time }[/color]
 anomaly-gorilla-core-slot-name = Ядро аномалии
-anomaly-gorilla-charge-none = Внутри него нет [bold]ядра аномалии[/bold].
+anomaly-gorilla-charge-none = Внутри нет [bold]ядра аномалии[/bold].
 anomaly-gorilla-charge-limit =
-    В нем есть [color={ $count ->
-        [3] зеленый
-        [2] желтый
-        [1] оранжевый
-        [0] красный
-       *[other] фиолетовый
+    { $count ->
+        [one] Остался
+       *[other] Осталось
+    } [color={ $count ->
+        [3] green
+        [2] yellow
+        [1] orange
+        [0] red
+       *[other] purple
     }]{ $count } { $count ->
         [one] заряд
-       *[other] заряды
-    }[/color] остаток.
-anomaly-gorilla-charge-infinite = У него [color=gold]бесконечные заряды[/color]. [italic]Пока...[/italic]
+        [few] заряда
+       *[other] зарядов
+    }[/color].
+anomaly-gorilla-charge-infinite = Осталось [color=gold]бесконечное количество зарядов[/color]. [italic]Пока что...[/italic]
 anomaly-sync-connected = Аномалия успешно привязана
 anomaly-sync-disconnected = Соединение с аномалией было потеряно!
 anomaly-sync-no-anomaly = Отсутствует аномалия в пределах диапазона.
