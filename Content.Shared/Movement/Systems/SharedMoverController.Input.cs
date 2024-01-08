@@ -149,7 +149,7 @@ namespace Content.Shared.Movement.Systems
 
         private void SetDiagonalMovement(bool value) => DiagonalMovementEnabled = value;
 
-        protected virtual void HandleShuttleInput(EntityUid uid, ShuttleButtons button, ushort subTick, bool state) {}
+        protected virtual void HandleShuttleInput(EntityUid uid, ShuttleButtons button, ushort subTick, bool state) { }
 
         private void OnAutoParentChange(EntityUid uid, AutoOrientComponent component, ref EntParentChangedMessage args)
         {

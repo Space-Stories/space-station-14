@@ -29,3 +29,15 @@
 - type: stationGoal
   id: StationGoalColonization
   text: station-goal-colonization
+
+- type: stationGoal
+  id: StationGoalTesla
+  text: station-goal-tesla
+
+- type: stationGoal
+  id: StationGoalBotany
+  text: station-goal-botany
+
+- type: stationGoal
+  id: StationGoalArtifactsBank
+  text: station-goal-artifacts-bank

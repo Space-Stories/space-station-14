@@ -21,8 +21,6 @@
           availableJobs:
             Captain: [ 1, 1 ]
             HeadOfSecurity: [ 1, 1 ]
-            IAA: [ 1, 1 ] # Corvax-IAA
-            JediNt: [ 1, 1 ] # Stories-Jedi
             SecurityOfficer: [ 1, 3 ]
             CargoTechnician: [ 1, 2 ]
             Bartender: [ 1, 1 ]

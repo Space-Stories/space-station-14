@@ -60,7 +60,9 @@
     state: pda-spengineer
 
 - type: entity
-  parent: HeadOfSPPDA
+  parent:
+    - HeadOfSPPDA
+    - BaseMedicalPDA
   id: SpacePrisonMedicPDA
   name: space prison medic PDA
   description: Blue to hide the stains of passenger blood.

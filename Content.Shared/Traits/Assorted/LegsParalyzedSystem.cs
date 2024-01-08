@@ -19,18 +19,16 @@ public sealed class LegsParalyzedSystem : EntitySystem
         SubscribeLocalEvent<LegsParalyzedComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<LegsParalyzedComponent, BuckleChangeEvent>(OnBuckleChange);
         SubscribeLocalEvent<LegsParalyzedComponent, ThrowPushbackAttemptEvent>(OnThrowPushbackAttempt);
-        SubscribeLocalEvent<LegsParalyzedComponent, UpdateCanMoveEvent>(OnUpdateCanMoveEvent);
-    }
-
-    private void OnStartup(EntityUid uid, LegsParalyzedComponent component, ComponentStartup args)
-    {
-        // TODO: In future probably must be surgery related wound
-        _movementSpeedModifierSystem.ChangeBaseSpeed(uid, 0, 0, 20);
+        // Stories-Crawling line deletion
     }
 
     private void OnShutdown(EntityUid uid, LegsParalyzedComponent component, ComponentShutdown args)
     {
-        _standingSystem.Stand(uid);
+        // Stories-Crawling-Start
+        if (!_standingSystem.CanCrawl(uid))
+            _standingSystem.Stand(uid);
+        // Stories-Crawling-End
+
         _bodySystem.UpdateMovementSpeed(uid);
     }
 
@@ -42,13 +40,14 @@ public sealed class LegsParalyzedSystem : EntitySystem
         }
         else
         {
-            _standingSystem.Down(args.BuckledEntity);
+            _standingSystem.Down(args.BuckledEntity, canStandUp: false /* Stories-Crawling */);
         }
     }
 
-    private void OnUpdateCanMoveEvent(EntityUid uid, LegsParalyzedComponent component, UpdateCanMoveEvent args)
+    private void OnStartup(EntityUid uid, LegsParalyzedComponent component, ComponentStartup args)
     {
-        args.Cancel();
+        // TODO: In future probably must be surgery related wound
+        _movementSpeedModifierSystem.ChangeBaseSpeed(uid, 0.7f, 0.7f, 20);
     }
 
     private void OnThrowPushbackAttempt(EntityUid uid, LegsParalyzedComponent component, ThrowPushbackAttemptEvent args)

@@ -2,31 +2,19 @@
   id: StoriesDefaultMapPool
   maps:
   - StoriesAspid
+  - StoriesAtlas
   - StoriesBagel
   - StoriesBarratry
+  - StoriesBox      # Space Prison
   - StoriesCluster
   - StoriesCore
-  - StoriesOmega
-  - StoriesPacked
+  - StoriesFland    # Space Prison
+  - StoriesGemini
+  - StoriesKettle   # Space Prison
   - StoriesMarathon
-  - StoriesAtlas
-#  - StoriesEuropa
   - StoriesMeta
+  - StoriesOmega
   - StoriesOrigin
   - StoriesSaltern
-
-# Corvax Maps
-#  - StoriesAvrite
-#  - StoriesDelta
-#  - CorvaxGate
-#  - CorvaxGelta
-#  - CorvaxSpectrum
-
-# Space Prison Maps
-  - StoriesBox
-  - StoriesFland
-  - StoriesKettle
-
-# New Maps
+  - StoriesPacked
   - StoriesReach
-  - StoriesGemini

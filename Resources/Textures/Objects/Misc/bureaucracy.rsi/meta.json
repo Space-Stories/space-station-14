@@ -225,7 +225,13 @@
       "name": "paper_stamp-hos"
     },
     {
+      "name": "paper_stamp-hosp"
+    },
+    {
       "name": "paper_stamp-ok"
+    },
+    {
+      "name": "paper_stamp-psychologist"
     },
     {
       "name": "paper_stamp-mime"
