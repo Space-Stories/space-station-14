@@ -92,6 +92,7 @@
         Blunt: 10
         Structural: 10
   - type: RandomHumanoidAppearance
+  - type: TTS # Stories-TTS
 
 - type: entity
   parent:
@@ -184,3 +185,5 @@
     - ShoesRequiredStepTriggerImmune
     # let mind transfer on gib work
     - MindTransferTarget
+  - type: TTS # Stories-TTS
+    voice: sentrybot
