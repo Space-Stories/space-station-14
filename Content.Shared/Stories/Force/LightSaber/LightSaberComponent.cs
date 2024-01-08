@@ -2,7 +2,7 @@ using Robust.Shared.GameStates;
 
 namespace Content.Shared.SpaceStories.Force.LightSaber;
 
-[RegisterComponent]
+[RegisterComponent, AutoGenerateComponentState]
 public sealed partial class LightSaberComponent : Component
 {
     /// <summary>

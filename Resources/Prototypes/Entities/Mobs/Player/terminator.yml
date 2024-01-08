@@ -47,7 +47,7 @@
   - type: Flammable
     damage:
       types:
-        Heat: 2.0
+        Heat: 6.0
   # slightly wider thresholds
   - type: Temperature
     heatDamageThreshold: 390
@@ -92,6 +92,7 @@
         Blunt: 10
         Structural: 10
   - type: RandomHumanoidAppearance
+  - type: TTS # Stories-TTS
 
 - type: entity
   parent:
@@ -175,9 +176,14 @@
         Structural: 5
   - type: Puller
     needsHands: false
+  - type: Prying
+    pryPowered: true
+    force: true
   - type: Tag
     tags:
     - DoorBumpOpener
     - ShoesRequiredStepTriggerImmune
     # let mind transfer on gib work
     - MindTransferTarget
+  - type: TTS # Stories-TTS
+    voice: sentrybot

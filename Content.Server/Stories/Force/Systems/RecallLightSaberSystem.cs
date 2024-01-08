@@ -23,7 +23,8 @@ public sealed class RecallLightSaberSystem : EntitySystem
     }
     private void OnRecallKatana(EntityUid uid, ForceSensitiveComponent comp, RecallLightSaberEvent args)
     {
-        if (args.Handled || comp.LightSaber == null || _useDelay.ActiveDelay(args.Performer)) return;
+        if (args.Handled || comp.LightSaber == null)
+            return;
 
         var coords = _transform.GetWorldPosition(comp.LightSaber.Value);
         var distance = (_transform.GetWorldPosition(uid) - coords).Length();

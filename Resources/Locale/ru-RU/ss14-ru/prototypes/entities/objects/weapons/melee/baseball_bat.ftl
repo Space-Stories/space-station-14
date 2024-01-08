@@ -1,5 +1,5 @@
 ent-BaseBallBat = бейсбольная бита
     .desc = Прочная бейсбольная бита.
-ent-WeaponMeleeKnockbackStick = палка для отбивания ударов
-    .desc = А потом он захлебнулся.
+ent-WeaponMeleeKnockbackStick = палка отдачи
+    .desc = И вдруг он засплифил.
     .suffix = НЕ МАППИТЬ

@@ -1,7 +1,7 @@
 namespace Content.Shared.SpaceStories.Force.ForceSensitive;
 using Content.Shared.Actions;
 
-[RegisterComponent]
+[RegisterComponent, AutoGenerateComponentState]
 public sealed partial class ForceSensitiveComponent : Component
 {
     [Dependency] private IEntityManager _entityManager;

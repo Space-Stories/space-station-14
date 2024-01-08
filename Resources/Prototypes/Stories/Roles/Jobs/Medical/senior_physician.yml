@@ -14,7 +14,7 @@
       department: Medical
       time: 216000 # 60 hrs
     - !type:RoleTimeRequirement
-      role: JobStationChiefMedicalOfficer
+      role: JobChiefMedicalOfficer
       time: 10800 #3 hrs
   startingGear: SeniorPhysicianGear
   icon: "JobIconSeniorPhysician"
