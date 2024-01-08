@@ -16,6 +16,8 @@ ent-ActionOpenUplinkImplant = Открыть аплинк
     .desc = Открывает аплинк Синдиката, скрытый под вашей кожей.
 ent-ActionActivateEmpImplant = Активировать ЭМИ
     .desc = Вызывает небольшой ЭМ импульс вокруг вас.
+ent-ActionActivateScramImplant = УДРАТЬ!
+    .desc = Случайным образом телепортирует вас на большое расстояние.
 ent-ActionActivateDnaScramblerImplant = Перемешать ДНК
     .desc = Меняет ваше имя и внешность случайным образом.
 ent-ActionToggleSuitPiece = Переключить элементы костюма
@@ -62,3 +64,7 @@ ent-ActionSpafEvols = [color=blue]Эволюция[/color]
     .desc = Потратьте 70 единиц еды, чтобы эволюционировать во взрослую особь
 ent-ActionSpafDevour = [color=lime]Поглощение[/color]
     .desc = Съешьте свою жертву, чтобы насытиться
+ent-ActionFireStarter = Поджечь
+    .desc = Поджигает противников в радиусе вокруг вас.
+ent-ActionToggleEyes = Открыть/закрыть глаза
+    .desc = Закройте глаза, чтобы защитить их, или откройте, чтобы насладиться яркими цветами.
