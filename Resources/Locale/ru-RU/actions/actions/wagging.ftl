@@ -1,4 +1,4 @@
-action-name-toggle-wagging = Wagging Tail
-action-description-toggle-wagging = Start or stop wagging tail.
-wagging-emote-start = starts wagging { POSS-ADJ($ent) } tail.
-wagging-emote-stop = stops wagging { POSS-ADJ($ent) } tail.
+action-name-toggle-wagging = Виляющий хвост
+action-description-toggle-wagging = Начинайте или прекращайте вилять хвостом.
+wagging-emote-start = начинает вилять хвостом.
+wagging-emote-stop = перестает вилять хвостом.
