@@ -45,6 +45,7 @@
   - HeadOfSecurity
   - ResearchDirector
   - Quartermaster
+  primary: false
 
 - type: department
   id: Engineering
@@ -102,3 +103,4 @@
   - Reporter
   - Zookeeper
   - Psychologist
+  primary: false
