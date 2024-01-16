@@ -7,7 +7,6 @@ job-name-senior-engineer = ведущий инженер
 job-name-senior-researcher = ведущий учёный
 job-name-senior-physician = ведущий врач
 job-name-senior-officer = инструктор СБ
-
 # Role timers - Make these alphabetical or I cut you
 JobHeadOfSpacePrison = глава космической тюрьмы
 JobSpacePrisonOfficer = офицер космической тюрьмы
