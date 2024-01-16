@@ -43,7 +43,3 @@
         Slash: 0.70
         Piercing: 0.70
         Heat: 0.80
-  - type: Storage
-    maxTotalWeight: 6
-  - type: Item
-    size: Small
