@@ -1,6 +1,6 @@
 ent-Paper = бумага
     .desc = Лист белой бумаги.
-ent-PaperScrap = комок бумаги
+ent-PaperScrap = обрывки бумаги
     .desc = Скомканный лист белой бумаги.
 ent-PaperOffice = офисная бумага
     .desc = Лист белой офисной бумаги.
