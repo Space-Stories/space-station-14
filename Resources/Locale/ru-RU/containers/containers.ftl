@@ -1,2 +1,2 @@
-container-verb-text-enter = Ввод
-container-verb-text-empty = Пустой
+container-verb-text-enter = Забраться
+container-verb-text-empty = Покинуть

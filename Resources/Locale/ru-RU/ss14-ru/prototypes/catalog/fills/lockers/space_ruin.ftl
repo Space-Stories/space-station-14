@@ -1,3 +1,3 @@
 ent-LockerOldAISat = шкаф
-    .suffix = шкаф со скафандрами NTSRA
+    .suffix = шкаф пустотный скафандр NTSRA
     .desc = { ent-LockerSyndicate.desc }
