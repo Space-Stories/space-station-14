@@ -13,6 +13,7 @@
   parent: ClothingBeltHoSPSheath
   suffix: Filled
   components:
-  - type: StorageFill
-    contents:
-      - id: HoSPSabre
+  - type: ContainerFill
+    containers:
+      item:
+      - HoSPSabre
