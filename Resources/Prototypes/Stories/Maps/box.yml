@@ -68,3 +68,7 @@
             SeniorPhysician: [ 1, 1 ]
             SeniorResearcher: [ 1, 1 ]
             SeniorOfficer: [ 1, 1 ]
+            HeadOfSpacePrison: [ 1, 1 ]
+            SpacePrisonOfficer: [ 3, 3 ]
+            SpacePrisonEngineer: [ 2, 2 ]
+            SpacePrisonMedic: [ 1, 1 ]
