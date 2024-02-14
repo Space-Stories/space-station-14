@@ -61,6 +61,15 @@
     - giggles!
     - giggling
     - giggled
+    - chortle
+    - chortle.
+    - chortle!
+    - chortles
+    - chortles.
+    - chortles!
+    - chortling
+    - chortling.
+    - chortling!
     - смеется
     - смеется.
     - смеется!
@@ -135,6 +144,14 @@
     - cries
     - cries.
     - cries!
+    - sob
+    - sob.
+    - sobs
+    - sobs.
+    - sobs!
+    - sobbing
+    - sobbing.
+    - sobbing!
     - плачет
     - плачет.
     - плачет!
@@ -302,3 +319,21 @@
   chatMessages: ["emote-deathgasp"]
   chatTriggers:
   - deathgasp
+
+- type: emote
+  id: Buzz
+  category: Vocal
+  chatMessages: [buzz!]
+  chatTriggers:
+    - buzzing
+    - buzzing!
+    - buzzing.
+    - buzz
+    - buzz.
+    - buzz!
+    - buzzed
+    - buzzed.
+    - buzzed!
+    - buzzes
+    - buzzes.
+    - buzzes!

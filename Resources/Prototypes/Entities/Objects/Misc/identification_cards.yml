@@ -646,6 +646,7 @@
     - JobIconServiceWorker
     - JobIconSecurityCadet
     - JobIconZookeeper
+    - JobIconVisitor
     - JobIconSeniorPhysician # Stories-Seniors
     - JobIconSeniorOfficer # Stories-Seniors
     - JobIconSeniorEngineer # Stories-Seniors
