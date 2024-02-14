@@ -1,6 +1,6 @@
 using Content.Shared.Popups;
 using Content.Shared.Inventory.Events;
-using Content.Server.Explosion.Components;
+using Content.Shared.Explosion.Components;
 using Content.Server.Explosion.EntitySystems;
 using Content.Shared.Emag.Systems;
 using Content.Server.NPC.Components;
