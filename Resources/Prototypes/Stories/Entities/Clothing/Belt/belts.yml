@@ -27,7 +27,7 @@
         - EnergySword
 
 - type: entity
-  parent: ClothingBeltStorageBase
+  parent: ClothingBeltSheath
   id: ClothingBeltHoSPSheath
   name: sabre sheath
   description: An ornate sheath designed to hold an officer's blade.
@@ -37,15 +37,18 @@
     state: sheath
   - type: Clothing
     sprite: Stories/Clothing/Belt/hosp_sheath.rsi
-  - type: Storage
-    maxSlots: 1
-    whitelist:
-      tags:
-        - HoSPSabre
+  - type: ItemSlots
+    slots:
+      item:
+        name: Sabre
+        insertVerbText: sheath-insert-verb
+        ejectVerbText: sheath-eject-verb
+        whitelist:
+          tags:
+          - HoSPSabre
   - type: ItemMapper
     mapLayers:
       sheath-sabre:
         whitelist:
           tags:
           - HoSPSabre
-  - type: Appearance
