@@ -1,31 +1,30 @@
 <Document>
-  # Поставки
-  Отдел снабжения, более известный как "карго", отвечает за обеспечение станции необходимыми ресурсами, такими как топливо и сырье. Однако они не ограничиваются простыми товарами и могут заказывать широкий спектр различных предметов за пределами станции. Суть в том, что именно карго должен доставлять остальным членам станции то, что им нужно.
+  # Cargo
+  The supply department, more commonly known simply as Cargo, is in charge of keeping the station stocked up on necessary resources, such as fuel and raw materials. Though, they are not restricted to simple goods, and can order a wide variety of different items from off-station. The point is, it's Cargo's job to get the rest of the station what they need.
 
-  ## Заказ
+  ## Ordering
   <Box>
     <GuideEntityEmbed Entity="ComputerCargoOrders"/>
   </Box>
-  Каждая операция начинается с [color=#a4885c]компьютера запроса груза[/color], с которого можно сделать заказ на конкретные товары. Для выполнения любого заказа требуется [color=#118C4F]спесо[/color], валюта станции. Чтобы сделать заказ, нажмите кнопку "запрос" рядом с тем, что вам нужно, введите соответствующую причину заказа и нажмите кнопку "одобрить", когда он появится в списке запросов.
+  Every transaction you make will begin at a [color=#a4885c]cargo request computer[/color], from which you can make orders for specific products. Making any order requires [color=#118C4F]spesos[/color], the currency of the station. To make an order, click the "request" button next to whatever you need, type an appropriate reason for why you're ordering it, and hit "approve" when it appears below the request list.
 
-  ## Пилотирование
-  Заказы доставляются на станцию с помощью [color=#a4885c]грузового шаттла[/color] - дистанционно пилотируемого космического корабля, который используется для покупки и продажи товаров. Чтобы переместить челнок, необходимо сначала найти [color=#a4885c]компьютер грузового челнока[/color].
+  ## Piloting
+  Orders are shipped to the station via the [color=#a4885c]Trade Station[/color], and then transported with the cargo shuttle, a remotely piloted shuttle that cargo uses to transport goods back and forth from the trade station. In order to move the shuttle, you must first find the [color=#a4885c]cargo shuttle computer[/color] either on the station, or the shuttle itself.
   <Box>
     <GuideEntityEmbed Entity="ComputerCargoShuttle"/>
   </Box>
-  После щелчка на компьютере должен появиться вид шаттла на радаре. Ниже приведены действия по управлению шаттлом туда и обратно:
+  After clicking the computer, you should see a radar view of the shuttle. Here are the steps for piloting the shuttle back and forth:
 
-  - Сначала отсоедините все шлюзы, подключенные к доку.
-  - Затем можно приступить к управлению шаттлом. Управление довольно простое: W и S - движение вперед и назад, A и D - поворот влево и вправо, а пробел - тормоз.
-  - Найдите кнопку, обозначающую торговый пункт. Нажмите на эту кнопку, и шаттл начнет движение к нему.
-  - После небольшой задержки снова появится возможность вернуться на станцию со сверхсветовой скоростью. После этого просто направьте шаттл обратно в грузовой док и заберите заказанные предметы.
+  - First, disconnect any airlocks that are connected to the dock.
+  - Then, you actually get to pilot the shuttle. The controls are fairly simple, with [color=#028ed9]"W"[/color] and [color=#028ed9]"S"[/color] being forward and backward, [color=#028ed9]"A"[/color] and [color=#028ed9]"D"[/color] being left and right, and [color=#028ed9]"Q"[/color] and [color=#028ed9]"E"[/color] being rotating left and right; and [color=#028ed9]"spacebar"[/color] being the brake and moving precicely by holding the [color=#028ed9]"spacebar"[/color] while doing other inputs.
+  - Then pilot the shuttle to the [textlink="Trade Station" link="TradeStation"].
 
-  ## Продажа
-  Вы хотите что-то заказать, но у вас нет на это денег? Вам нужно просто продать что-нибудь! Почти все на станции имеет экономическую стоимость, которую вам может озвучить [color=#a4885c]инструмент оценки[/color].
+  ## Selling
+  So, you want to order something, but don't have the money for it? You just need to sell something! Almost everything on the station has economic value, which an [color=#a4885c]appraisal tool[/color] can read out to you.
   <Box>
     <GuideEntityEmbed Entity="AppraisalTool"/>
     <GuideEntityEmbed Entity="CargoPallet"/>
   </Box>
-  Если вы нашли что-то стоящее, поместите это на один из грузовых поддонов шаттла. В следующий раз, когда шаттл будет отправлен на торговый пост, предмет будет продан, а деньги напрямую перечислены на банковский счет станции. Вы также можете заработать еще больше денег, выполняя задания [textlink="bounties" link="CargoBounties"] или продавая ценные предметы из [textlink="salvage" link="Salvage"].
+  After finding something worth selling, place it on the cargo shuttle, and then fly it to the [textlink="Trade Station" link="TradeStation"]. Then sell the item and collect the spesos from the terminal. You can also make even more money by completing [textlink="bounties" link="CargoBounties"] or selling valuable items from [textlink="salvage" link="Salvage"].
 
 </Document>

@@ -27,6 +27,8 @@ public sealed class StatusIconSystem : SharedStatusIconSystem
     /// <inheritdoc/>
     public override void Initialize()
     {
+        Subs.CVar(_configuration, CCVars.LocalStatusIconsEnabled, OnLocalStatusIconChanged, true);
+        Subs.CVar(_configuration, CCVars.GlobalStatusIconsEnabled, OnGlobalStatusIconChanged, true);
         _ghostQuery = GetEntityQuery<GhostComponent>();
         _spriteQuery = GetEntityQuery<SpriteComponent>();
 
