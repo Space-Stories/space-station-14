@@ -93542,15 +93542,6 @@ entities:
     - type: Transform
       pos: 7.601603,-3.2161803
       parent: 2
-- proto: FoodDonkpocketGondola
-  entities:
-  - uid: 22694
-    components:
-    - type: MetaData
-      name: гандона-покет
-    - type: Transform
-      pos: -23.589794,-5.442403
-      parent: 17675
 - proto: FoodDonutBungo
   entities:
   - uid: 22695
