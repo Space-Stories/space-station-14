@@ -1,0 +1,10 @@
+- type: entity
+  parent: BaseSign
+  id: chromakey
+  name: хромакей
+  components:
+  - type: Sprite
+    drawdepth: WallTops
+    sprite: Stories/Structures/Wallmount/chromakey.rsi
+    state: chromakey
+    snapCardinals: true

@@ -48,6 +48,13 @@
       - Security
       - Service
       - Theatre
+      - HeadOfSpacePrison
+      - EngineeringSP
+      - MedicalSP
+      - SecuritySP
+      - ServiceSP
+      - MaintSP
+      - PrisonerSP
       privilegedIdSlot:
         name: id-card-console-privileged-id
         ejectSound: /Audio/Machines/id_swipe.ogg

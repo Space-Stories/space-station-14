@@ -473,6 +473,43 @@
   description: Terminal for programming Nanotrasen employee ID cards to access parts of the station.
   components:
   - type: IdCardConsole
+    accessLevels:
+      - Armory
+      - Atmospherics
+      - Bar
+      - Brig
+      - Detective
+      - Captain
+      - Cargo
+      - Chapel
+      - Chemistry
+      - ChiefEngineer
+      - ChiefMedicalOfficer
+      - Command
+      - Engineering
+      - External
+      - HeadOfPersonnel
+      - HeadOfSecurity
+      - Hydroponics
+      - Janitor
+      - Kitchen
+      - Lawyer
+      - Maintenance
+      - Medical
+      - Quartermaster
+      - Research
+      - ResearchDirector
+      - Salvage
+      - Security
+      - Service
+      - Theatre
+      - HeadOfSpacePrison
+      - EngineeringSP
+      - MedicalSP
+      - SecuritySP
+      - ServiceSP
+      - MaintSP
+      - PrisonerSP
     privilegedIdSlot:
       name: id-card-console-privileged-id
       ejectSound: /Audio/Machines/id_swipe.ogg

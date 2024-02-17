@@ -15,15 +15,14 @@
   supervisors: job-supervisors-hosp
   canBeAntag: false
   access:
+  - Armory
   - Security
   - Brig
-  - Maintenance
-  - Service
+  - MaintSP
   - External
-  - Maintenance
-  - Engineering
-  - External
-  - Atmospherics
+  - ServiceSP
+  - EngineeringSP
+  - PrisonerSP
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]

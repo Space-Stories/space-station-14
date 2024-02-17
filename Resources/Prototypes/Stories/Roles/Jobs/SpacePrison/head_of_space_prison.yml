@@ -17,17 +17,18 @@
   supervisors: job-supervisors-centcom
   canBeAntag: false
   access:
-  - HeadOfSecurity
+  - Armory
+  - HeadOfSpacePrison
   - Command
   - Brig
   - Security
-  - Armory
-  - Maintenance
-  - Service
+  - MaintSP
+  - ServiceSP
   - External
-  - Detective
-  - Engineering
-  - Atmospherics
+  - EngineeringSP
+  - MedicalSP
+  - PrisonerSP
+  - SecuritySP
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]

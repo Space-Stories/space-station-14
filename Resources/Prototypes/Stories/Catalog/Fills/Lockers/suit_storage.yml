@@ -9,7 +9,9 @@
         - id: OxygenTankFilled
         - id: ClothingOuterHardsuitOfficerSP
         - id: ClothingMaskBreath
-
+  - type: AccessReader
+    access: [["SecuritySP"]]
+    
 - type: entity
   id: SuitStorageEngiSP
   parent: SuitStorageBase
@@ -22,7 +24,8 @@
         - id: ClothingShoesBootsMag
         - id: ClothingOuterHardsuitEngiSP
         - id: ClothingMaskBreath
-
+  - type: AccessReader
+    access: [["EngineeringSP"]]
 - type: entity
   id: SuitStorageWardenOfSP
   parent: SuitStorageBase
@@ -34,3 +37,5 @@
         - id: OxygenTankFilled
         - id: ClothingOuterHardsuitWardenOfSP
         - id: ClothingMaskBreath
+  - type: AccessReader
+    access: [["HeadOfSpacePrison"]]

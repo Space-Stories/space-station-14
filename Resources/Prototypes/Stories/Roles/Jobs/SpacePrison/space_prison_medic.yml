@@ -20,13 +20,11 @@
   access:
   - Security
   - Brig
-  - Maintenance
-  - Service
+  - MaintSP
+  - ServiceSP
   - External
-  - Maintenance
-  - Medical
-  - External
-  - Chemistry
+  - MedicalSP
+  - PrisonerSP
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]

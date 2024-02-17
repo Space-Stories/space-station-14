@@ -27,7 +27,7 @@
     stateDoorOpen: sp_open
     stateDoorClosed: sp_door
   - type: AccessReader
-    access: [["Security"]]
+    access: [["SecuritySP"]]
 
 #- type: entity
 #  id: LockerArmorySP
@@ -53,4 +53,4 @@
     stateDoorOpen: hosofsp_open
     stateDoorClosed: hosofsp_door
   - type: AccessReader
-    access: [["HeadOfSecurity"]]
+    access: [["HeadOfSpacePrison"]]

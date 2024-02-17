@@ -14,11 +14,13 @@
   access:
   - Security
   - Brig
-  - Maintenance
-  - Service
+  - MaintSP
+  - ServiceSP
   - External
-  - Engineering
-  - Atmospherics
+  - EngineeringSP
+  - SecuritySP
+  - MedicalSP
+  - PrisonerSP
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]

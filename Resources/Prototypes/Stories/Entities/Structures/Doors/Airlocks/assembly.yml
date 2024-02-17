@@ -1,0 +1,118 @@
+#SP ENGI
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblySpacePrisonEngineering
+  suffix: SpacePrison, Engineering
+  components:
+  - type: Sprite
+    sprite: Stories/Structures/Doors/Airlocks/SpacePrison/Standart/engineering.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblySpacePrisonEngineeringGlass
+  suffix: SpacePrison, Engineering, Glass
+  components:
+  - type: Sprite
+    sprite: Stories/Structures/Doors/Airlocks/SpacePrison/Glass/engineering.rsi
+    state: "assembly"
+    
+#SP Security
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblySpacePrisonSecurity
+  suffix: SpacePrison, Security
+  components:
+  - type: Sprite
+    sprite: Stories/Structures/Doors/Airlocks/SpacePrison/Standart/security.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblySpacePrisonSecurityGlass
+  suffix: SpacePrison, Security, Glass
+  components:
+  - type: Sprite
+    sprite: Stories/Structures/Doors/Airlocks/SpacePrison/Glass/security.rsi
+    state: "assembly"
+    
+#SP HOSP
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblySpacePrisonHOSP
+  suffix: SpacePrison, HOSP
+  components:
+  - type: Sprite
+    sprite: Stories/Structures/Doors/Airlocks/SpacePrison/Standart/hosp.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblySpacePrisonHOSPGlass
+  suffix: SpacePrison, HOSP, Glass
+  components:
+  - type: Sprite
+    sprite: Stories/Structures/Doors/Airlocks/SpacePrison/Glass/hosp.rsi
+    state: "assembly"
+    
+#SP Medical
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblySpacePrisonMedical
+  suffix: SpacePrison, Medical
+  components:
+  - type: Sprite
+    sprite: Stories/Structures/Doors/Airlocks/SpacePrison/Standart/medical.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblySpacePrisonMedicalGlass
+  suffix: SpacePrison, Medical, Glass
+  components:
+  - type: Sprite
+    sprite: Stories/Structures/Doors/Airlocks/SpacePrison/Glass/medical.rsi
+    state: "assembly"
+    
+#SP Service
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblySpacePrisonService
+  suffix: SpacePrison, Service
+  components:
+  - type: Sprite
+    sprite: Stories/Structures/Doors/Airlocks/SpacePrison/Standart/service.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblySpacePrisonServiceGlass
+  suffix: SpacePrison, Service, Glass
+  components:
+  - type: Sprite
+    sprite: Stories/Structures/Doors/Airlocks/SpacePrison/Glass/service.rsi
+    state: "assembly"
+    
+#SP Maint
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblySpacePrisonMaint
+  suffix: SpacePrison, Maint
+  components:
+  - type: Sprite
+    sprite: Stories/Structures/Doors/Airlocks/SpacePrison/Standart/maint.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblySpacePrisonMaintGlass
+  suffix: SpacePrison, Maint, Glass
+  components:
+  - type: Sprite
+    sprite: Stories/Structures/Doors/Airlocks/SpacePrison/Glass/maint.rsi
+    state: "assembly"

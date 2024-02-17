@@ -1,0 +1,38 @@
+- type: accessLevel
+  id: HeadOfSpacePrison
+  name: id-card-access-level-head-of-space-prison
+
+- type: accessLevel
+  id: EngineeringSP
+  name: id-card-access-level-engineering-space-prison
+
+- type: accessLevel
+  id: MedicalSP
+  name: id-card-access-level-medical-space-prison
+  
+- type: accessLevel
+  id: SecuritySP
+  name: id-card-access-level-security-space-prison
+ 
+- type: accessLevel
+  id: ServiceSP
+  name: id-card-access-level-service-space-prison
+  
+- type: accessLevel
+  id: MaintSP
+  name: id-card-access-level-maint-space-prison
+  
+- type: accessLevel
+  id: PrisonerSP
+  name: id-card-access-level-prisoner-space-prison
+  
+- type: accessGroup
+  id: SpacePrison
+  tags:
+  - SecuritySP
+  - ServiceSP
+  - MaintSP
+  - PrisonerSP
+  - MedicalSP
+  - EngineeringSP
+  - HeadOfSpacePrison

@@ -1,0 +1,106 @@
+#SP Engi
+- type: entity
+  parent: AirlockSpacePrisonEnginnering
+  id: AirlockSpacePrisonEnginneringLocked
+  suffix: SpacePrison, Engineering, Locked
+  components:
+  - type: AccessReader
+    access: [["EngineeringSP"]]
+    
+- type: entity
+  parent: AirlockSpacePrisonEnginneringGlass
+  id: AirlockSpacePrisonEnginneringGlassLocked
+  suffix: SpacePrison, Engineering, Glass, Locked
+  components:
+  - type: AccessReader
+    access: [["EngineeringSP"]]
+    
+#SP Security
+
+- type: entity
+  parent: AirlockSpacePrisonSecurity
+  id: AirlockSpacePrisonSecurityLocked
+  suffix: SpacePrison, Security, Locked
+  components:
+  - type: AccessReader
+    access: [["SecuritySP"]]
+    
+- type: entity
+  parent: AirlockSpacePrisonSecurityGlass
+  id: AirlockSpacePrisonSecurityGlassLocked
+  suffix: SpacePrison, Security, Glass, Locked
+  components:
+  - type: AccessReader
+    access: [["SecuritySP"]]
+    
+#SP Service
+
+- type: entity
+  parent: AirlockSpacePrisonService
+  id: AirlockSpacePrisonServiceLocked
+  suffix: SpacePrison, Service, Locked
+  components:
+  - type: AccessReader
+    access: [["ServiceSP"]]
+    
+- type: entity
+  parent: AirlockSpacePrisonServiceGlass
+  id: AirlockSpacePrisonServiceGlassLocked
+  suffix: SpacePrison, Service, Glass, Locked
+  components:
+  - type: AccessReader
+    access: [["ServiceSP"]]
+    
+#SP HOSP
+
+- type: entity
+  parent: AirlockSpacePrisonHOSP
+  id: AirlockSpacePrisonHOSPLocked
+  suffix: SpacePrison, HOSP, Locked
+  components:
+  - type: AccessReader
+    access: [["HeadOfSpacePrison"]]
+    
+- type: entity
+  parent: AirlockSpacePrisonHOSPGlass
+  id: AirlockSpacePrisonHOSPGlassLocked
+  suffix: SpacePrison, HOSP, Glass, Locked
+  components:
+  - type: AccessReader
+    access: [["HeadOfSpacePrison"]]
+    
+#SP Medical
+
+- type: entity
+  parent: AirlockSpacePrisonMedical
+  id: AirlockSpacePrisonMedicalLocked
+  suffix: SpacePrison, Medical, Locked
+  components:
+  - type: AccessReader
+    access: [["MedicalSP"]]
+    
+- type: entity
+  parent: AirlockSpacePrisonMedicalGlass
+  id: AirlockSpacePrisonMedicalGlassLocked
+  suffix: SpacePrison, Medical, Glass, Locked
+  components:
+  - type: AccessReader
+    access: [["MedicalSP"]]
+    
+#SP Maint
+
+- type: entity
+  parent: AirlockSpacePrisonMaint
+  id: AirlockSpacePrisonMaintLocked
+  suffix: SpacePrison, Maint, Locked
+  components:
+  - type: AccessReader
+    access: [["MaintSP"]]
+    
+- type: entity
+  parent: AirlockSpacePrisonMaintGlass
+  id: AirlockSpacePrisonMaintGlassLocked
+  suffix: SpacePrison, Maint, Glass, Locked
+  components:
+  - type: AccessReader
+    access: [["MaintSP"]]
