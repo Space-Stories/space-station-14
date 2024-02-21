@@ -1,0 +1,9 @@
+- type: airlockDepartments
+  id: DepartmentsSP
+  departments:
+    spengineering: SpacePrisonEngineering
+    spcommand: SpacePrisonCommand
+    spmaint: SpacePrisonMaint
+    spmedical: SpacePrisonMedical
+    spservice: SpacePrisonService
+    spsecurity: SpacePrisonSecurity
