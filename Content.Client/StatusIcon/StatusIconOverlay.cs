@@ -122,6 +122,9 @@ public sealed class StatusIconOverlay : Overlay
                         throw new NotImplementedException();
                 }
 
+                var curTime = _timing.RealTime;
+                var texture = _sprite.GetFrame(proto.Icon, curTime);
+
                 float yOffset;
                 float xOffset;
 
@@ -132,21 +135,27 @@ public sealed class StatusIconOverlay : Overlay
                 {
                     if (accOffsetL + texture.Height > sprite.Bounds.Height * EyeManager.PixelsPerMeter)
                         break;
-                    accOffsetL += texture.Height;
+                    if (proto.Layer == StatusIconLayer.Base)
+                    {
+                        accOffsetL += texture.Height;
+                        countL++;
+                    }
                     yOffset = (bounds.Height + sprite.Offset.Y) / 2f - (float) accOffsetL / EyeManager.PixelsPerMeter;
                     xOffset = -(bounds.Width + sprite.Offset.X) / 2f;
 
-                    countL++;
                 }
                 else
                 {
                     if (accOffsetR + texture.Height > sprite.Bounds.Height * EyeManager.PixelsPerMeter)
                         break;
-                    accOffsetR += texture.Height;
+                    if (proto.Layer == StatusIconLayer.Base)
+                    {
+                        accOffsetR += texture.Height;
+                        countR++;
+                    }
                     yOffset = (bounds.Height + sprite.Offset.Y) / 2f - (float) accOffsetR / EyeManager.PixelsPerMeter;
                     xOffset = (bounds.Width + sprite.Offset.X) / 2f - (float) texture.Width / EyeManager.PixelsPerMeter;
 
-                    countR++;
                 }
 
                 var position = new Vector2(xOffset, yOffset);

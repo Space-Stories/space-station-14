@@ -546,10 +546,8 @@ namespace Content.Client.Preferences.UI
             _jobCategories.Clear();
             var firstCategory = true;
 
-            var departments = _prototypeManager.EnumeratePrototypes<DepartmentPrototype>()
-                .OrderByDescending(department => department.Weight)
-                .ThenBy(department => Loc.GetString($"department-{department.ID}"))
-                .ToList();
+            var departments = _prototypeManager.EnumeratePrototypes<DepartmentPrototype>().ToArray();
+            Array.Sort(departments, DepartmentUIComparer.Instance);
 
             foreach (var department in departments)
             {
@@ -597,9 +595,8 @@ namespace Content.Client.Preferences.UI
 
                 var jobs = department.Roles.Select(jobId => _prototypeManager.Index<JobPrototype>(jobId))
                     .Where(job => job.SetPreference)
-                    .OrderByDescending(job => job.Weight)
-                    .ThenBy(job => job.LocalizedName)
-                    .ToList();
+                    .ToArray();
+                Array.Sort(jobs, JobUIComparer.Instance);
 
                 foreach (var job in jobs)
                 {
@@ -1452,6 +1449,62 @@ namespace Content.Client.Preferences.UI
                     Text = text,
                     MinWidth = 90
                 };
+            }
+        }
+
+        private sealed class JobPrioritySelector : RequirementsSelector<JobPrototype>
+        {
+            public JobPriority Priority
+            {
+                get => (JobPriority) Options.SelectedValue;
+                set => Options.SelectByValue((int) value);
+            }
+
+            public event Action<JobPriority>? PriorityChanged;
+
+            public JobPrioritySelector(JobPrototype proto, IPrototypeManager protoMan)
+                : base(proto)
+            {
+                Options.OnItemSelected += args => PriorityChanged?.Invoke(Priority);
+
+                var items = new[]
+                {
+                    ("humanoid-profile-editor-job-priority-high-button", (int) JobPriority.High),
+                    ("humanoid-profile-editor-job-priority-medium-button", (int) JobPriority.Medium),
+                    ("humanoid-profile-editor-job-priority-low-button", (int) JobPriority.Low),
+                    ("humanoid-profile-editor-job-priority-never-button", (int) JobPriority.Never),
+                };
+
+                var icon = new TextureRect
+                {
+                    TextureScale = new Vector2(2, 2),
+                    VerticalAlignment = VAlignment.Center
+                };
+                var jobIcon = protoMan.Index<StatusIconPrototype>(proto.Icon);
+                icon.Texture = jobIcon.Icon.Frame0();
+
+                Setup(items, proto.LocalizedName, 200, proto.LocalizedDescription, icon);
+            }
+        }
+
+        private void UpdateAntagPreferences()
+        {
+            foreach (var preferenceSelector in _antagPreferences)
+            {
+                var antagId = preferenceSelector.Proto.ID;
+                var preference = Profile?.AntagPreferences.Contains(antagId) ?? false;
+                preferenceSelector.Preference = preference;
+            }
+        }
+
+        private void UpdateTraitPreferences()
+        {
+            foreach (var preferenceSelector in _traitPreferences)
+            {
+                var traitId = preferenceSelector.Trait.ID;
+                var preference = Profile?.TraitPreferences.Contains(traitId) ?? false;
+
+                preferenceSelector.Preference = preference;
             }
         }
 
