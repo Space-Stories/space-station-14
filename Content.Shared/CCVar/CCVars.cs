@@ -374,12 +374,6 @@ namespace Content.Shared.CCVar
          */
 
         /// <summary>
-        /// URL of the Discord webhook which will relay all ban messages.
-        /// </summary>
-        public static readonly CVarDef<string> DiscordBanWebhook =
-            CVarDef.Create("discord.ban_webhook", string.Empty, CVar.SERVERONLY);
-
-        /// <summary>
         /// URL of the Discord webhook which will relay all ahelp messages.
         /// </summary>
         public static readonly CVarDef<string> DiscordAHelpWebhook =
@@ -712,8 +706,6 @@ namespace Content.Shared.CCVar
 
         public static readonly CVarDef<bool> CombatModeIndicatorsPointShow =
             CVarDef.Create("hud.combat_mode_indicators_point_show", true, CVar.ARCHIVE | CVar.CLIENTONLY);
-        public static readonly CVarDef<bool> HealthBarShow =
-            CVarDef.Create("hud.health_bar_show", false, CVar.CLIENTONLY);
 
         public static readonly CVarDef<bool> LoocAboveHeadShow =
             CVarDef.Create("hud.show_looc_above_head", true, CVar.ARCHIVE | CVar.CLIENTONLY);

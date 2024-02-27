@@ -7,6 +7,7 @@ using Content.Server.Chat.Managers;
 using Content.Server.Database;
 using Content.Server.GameTicking;
 using Content.Shared.CCVar;
+using Content.Shared.Stories.SCCVars;
 using Content.Shared.Database;
 using Content.Shared.Players;
 using Content.Shared.Players.PlayTimeTracking;
@@ -59,7 +60,7 @@ public sealed class BanManager : IBanManager, IPostInjectInit
         _playerManager.PlayerStatusChanged += OnPlayerStatusChanged;
 
         _netManager.RegisterNetMessage<MsgRoleBans>();
-        _config.OnValueChanged(CCVars.DiscordBanWebhook, OnWebhookChanged, true); // Stories-BanTrack
+        _config.OnValueChanged(SCCVars.DiscordBanWebhook, OnWebhookChanged, true); // Stories-BanTrack
         _config.OnValueChanged(CVars.GameHostName, OnServerNameChanged, true);
     }
     private void OnServerNameChanged(string obj)

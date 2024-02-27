@@ -208,6 +208,12 @@
         },
         {
             "name": "vials"
+        },
+        {
+            "name": "box_medical"
+        },
+        {
+            "name": "id"
         }
     ]
 }
