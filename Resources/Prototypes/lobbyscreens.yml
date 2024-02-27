@@ -35,6 +35,10 @@
   background: /Textures/LobbyScreens/blueprint.webp
 
 - type: lobbyBackground
+  id: Behonker
+  background: /Textures/LobbyScreens/behonker.webp
+
+- type: lobbyBackground
   id: Atmos
   background: /Textures/Stories/LobbyScreens/atmos.jpg
 

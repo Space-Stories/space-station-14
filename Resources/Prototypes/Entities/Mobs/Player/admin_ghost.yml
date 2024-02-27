@@ -71,6 +71,7 @@
       params:
         volume: -4
   - type: RadarConsole
+    followEntity: true
   - type: CargoOrderConsole
   - type: CrewMonitoringConsole
     snap: false
