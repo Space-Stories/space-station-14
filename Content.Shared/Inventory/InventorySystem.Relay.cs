@@ -39,10 +39,10 @@ public partial class InventorySystem
 
         // ComponentActivatedClientSystems
         SubscribeLocalEvent<InventoryComponent, RefreshEquipmentHudEvent<ShowSecurityIconsComponent>>(RelayInventoryEvent);
+        SubscribeLocalEvent<InventoryComponent, RefreshEquipmentHudEvent<ShowHealthBarsComponent>>(RelayInventoryEvent);
+        SubscribeLocalEvent<InventoryComponent, RefreshEquipmentHudEvent<ShowHealthIconsComponent>>(RelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, RefreshEquipmentHudEvent<ShowHungerIconsComponent>>(RelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, RefreshEquipmentHudEvent<ShowThirstIconsComponent>>(RelayInventoryEvent);
-        SubscribeLocalEvent<InventoryComponent, RefreshEquipmentHudEvent<ShowHealthIconsComponent>>(RelayInventoryEvent);
-        SubscribeLocalEvent<InventoryComponent, RefreshEquipmentHudEvent<ShowHealthBarComponent>>(RelayInventoryEvent);
         SubscribeLocalEvent<InventoryComponent, RefreshEquipmentHudEvent<ShowSyndicateIconsComponent>>(RelayInventoryEvent);
 
         SubscribeLocalEvent<InventoryComponent, GetVerbsEvent<EquipmentVerb>>(OnGetEquipmentVerbs);

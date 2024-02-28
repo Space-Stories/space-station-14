@@ -7,6 +7,7 @@ using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Popups;
 using Content.Server.Preferences.Managers;
 using Content.Server.Roles;
+using Content.Server.Roles.Jobs;
 using Content.Server.RoundEnd;
 using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
@@ -49,6 +50,7 @@ public sealed class ZombieRuleSystem : GameRuleSystem<ZombieRuleComponent>
     [Dependency] private readonly SharedRoleSystem _roles = default!;
     [Dependency] private readonly StationSystem _station = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly JobSystem _jobs = default!;
 
     public override void Initialize()
     {
@@ -271,7 +273,8 @@ public sealed class ZombieRuleSystem : GameRuleSystem<ZombieRuleComponent>
         var prefList = new List<ICommonSession>();
         foreach (var player in allPlayers)
         {
-            if (player.AttachedEntity == null || !HasComp<HumanoidAppearanceComponent>(player.AttachedEntity) || HasComp<ZombieImmuneComponent>(player.AttachedEntity))
+            if (player.AttachedEntity == null || !HasComp<HumanoidAppearanceComponent>(player.AttachedEntity) ||
+             HasComp<ZombieImmuneComponent>(player.AttachedEntity) || !_jobs.CanBeAntag(player))
                 continue;
 
             if (HasComp<InitialInfectedExemptComponent>(player.AttachedEntity))
@@ -284,7 +287,7 @@ public sealed class ZombieRuleSystem : GameRuleSystem<ZombieRuleComponent>
                 prefList.Add(player);
         }
 
-        if (prefList.Count == 0)
+        if (playerList.Count == 0)
             return;
 
         var numInfected = Math.Max(1,
@@ -295,12 +298,24 @@ public sealed class ZombieRuleSystem : GameRuleSystem<ZombieRuleComponent>
         while (totalInfected < numInfected)
         {
             ICommonSession zombie;
-
-            zombie = _random.Pick(prefList);
-            Log.Info("Selected a patient 0.");
+            if (prefList.Count == 0)
+            {
+                if (playerList.Count == 0)
+                {
+                    Log.Info("Insufficient number of players. stopping selection.");
+                    break;
+                }
+                zombie = _random.Pick(playerList);
+                Log.Info("Insufficient preferred patient 0, picking at random.");
+            }
+            else
+            {
+                zombie = _random.Pick(prefList);
+                Log.Info("Selected a patient 0.");
+            }
 
             prefList.Remove(zombie);
-
+            playerList.Remove(zombie);
             if (!_mindSystem.TryGetMind(zombie, out var mindId, out var mind) ||
                 mind.OwnedEntity is not { } ownedEntity)
             {

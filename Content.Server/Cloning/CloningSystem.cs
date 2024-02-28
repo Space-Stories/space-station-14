@@ -20,7 +20,6 @@ using Content.Shared.Emag.Systems;
 using Content.Shared.Examine;
 using Content.Shared.GameTicking;
 using Content.Shared.Humanoid;
-using Content.Shared.Humanoid.Prototypes;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 using Content.Shared.Mobs.Systems;
@@ -166,7 +165,7 @@ namespace Content.Server.Cloning
             if (!TryComp<HumanoidAppearanceComponent>(bodyToClone, out var humanoid))
                 return false; // whatever body was to be cloned, was not a humanoid
 
-            if (!_prototype.TryIndex<SpeciesPrototype>(humanoid.Species, out var speciesPrototype))
+            if (!_prototype.TryIndex(humanoid.Species, out var speciesPrototype))
                 return false;
 
             if (!TryComp<PhysicsComponent>(bodyToClone, out var physics))

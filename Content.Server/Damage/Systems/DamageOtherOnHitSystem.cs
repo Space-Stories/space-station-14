@@ -9,11 +9,8 @@ using Content.Shared.Database;
 using Content.Shared.Effects;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Throwing;
-using Robust.Shared.Audio;
-using Robust.Shared.Audio.Systems;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Player;
-using Content.Shared.Weapons.Melee.Events;
 
 namespace Content.Server.Damage.Systems
 {
@@ -26,7 +23,6 @@ namespace Content.Server.Damage.Systems
         [Dependency] private readonly SharedCameraRecoilSystem _sharedCameraRecoil = default!;
         [Dependency] private readonly SharedColorFlashEffectSystem _color = default!;
         [Dependency] private readonly ThrownItemSystem _thrownItem = default!;
-        [Dependency] private readonly SharedAudioSystem _audio = default!;
 
         public override void Initialize()
         {
@@ -36,12 +32,7 @@ namespace Content.Server.Damage.Systems
 
         private void OnDoHit(EntityUid uid, DamageOtherOnHitComponent component, ThrowDoHitEvent args)
         {
-            // SpaceStories GetMeleeDamageOnHitEvent - start
-            var ev = new GetMeleeDamageOnHitEvent(uid, new(component.Damage), new(), args.Target);
-            RaiseLocalEvent(uid, ref ev);
-
-            var dmg = _damageable.TryChangeDamage(args.Target, ev.Damage, component.IgnoreResistances, origin: args.Component.Thrower);
-            // SpaceStories GetMeleeDamageOnHitEvent - end
+            var dmg = _damageable.TryChangeDamage(args.Target, component.Damage, component.IgnoreResistances, origin: args.Component.Thrower);
 
             // Log damage only for mobs. Useful for when people throw spears at each other, but also avoids log-spam when explosions send glass shards flying.
             if (dmg != null && HasComp<MobStateComponent>(args.Target))
