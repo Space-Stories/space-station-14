@@ -190,6 +190,7 @@ namespace Content.Shared.Preferences
             // Corvax-TTS-Start
             var voiceId = random.Pick(prototypeManager
                 .EnumeratePrototypes<TTSVoicePrototype>()
+                .Where(x=>x.RoundStart)
                 .Where(o => CanHaveVoice(o, sex)).ToArray()
             ).ID;
             // Corvax-TTS-End
@@ -390,7 +391,8 @@ namespace Content.Shared.Preferences
             if (!_traitPreferences.SequenceEqual(other._traitPreferences)) return false;
             return Appearance.MemberwiseEquals(other.Appearance);
         }
-        public void EnsureValid(IConfigurationManager configManager, IPrototypeManager prototypeManager, string[] sponsorMarkings)
+
+        public void EnsureValid(IConfigurationManager configManager, IPrototypeManager prototypeManager, string[] sponsorPrototypes)
         {
             if (!prototypeManager.TryIndex<SpeciesPrototype>(Species, out var speciesPrototype) || speciesPrototype.RoundStart == false)
             {
@@ -465,7 +467,7 @@ namespace Content.Shared.Preferences
                 flavortext = FormattedMessage.RemoveMarkup(FlavorText);
             }
 
-            var appearance = HumanoidCharacterAppearance.EnsureValid(Appearance, Species, Sex, sponsorMarkings);
+            var appearance = HumanoidCharacterAppearance.EnsureValid(Appearance, Species, Sex, sponsorPrototypes);
 
             var prefsUnavailableMode = PreferenceUnavailable switch
             {
@@ -547,12 +549,6 @@ namespace Content.Shared.Preferences
             // Corvax-TTS-End
         }
 
-        public ICharacterProfile Validated(IConfigurationManager configManager, IPrototypeManager prototypeManager, string[] sponsorMarkings)
-        {
-            var profile = new HumanoidCharacterProfile(this);
-            profile.EnsureValid(configManager, prototypeManager, sponsorMarkings);
-            return profile;
-        }
         // Corvax-TTS-Start
         // MUST NOT BE PUBLIC, BUT....
         public static bool CanHaveVoice(TTSVoicePrototype voice, Sex sex)
@@ -560,6 +556,13 @@ namespace Content.Shared.Preferences
             return voice.RoundStart && sex == Sex.Unsexed || (voice.Sex == sex || voice.Sex == Sex.Unsexed);
         }
         // Corvax-TTS-End
+
+        public ICharacterProfile Validated(IConfigurationManager configManager, IPrototypeManager prototypeManager, string[] sponsorPrototypes)
+        {
+            var profile = new HumanoidCharacterProfile(this);
+            profile.EnsureValid(configManager, prototypeManager, sponsorPrototypes); // Corvax-Sponsors
+            return profile;
+        }
 
         // sorry this is kind of weird and duplicated,
         /// working inside these non entity systems is a bit wack

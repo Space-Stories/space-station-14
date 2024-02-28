@@ -202,7 +202,7 @@ namespace Content.Server.Preferences.Managers
                     foreach (var (_, profile) in prefs.Characters)
                     {
                         var allowedMarkings = _sponsors.TryGetInfo(session.UserId, out var sponsor) ? sponsor.AllowedMarkings : new string[]{};
-                        profile.EnsureValid(allowedMarkings);
+                        profile.EnsureValid(_cfg, _protos, allowedMarkings);
                     }
                     // Corvax-Sponsors-End
                     prefsData.Prefs = prefs;
@@ -224,6 +224,11 @@ namespace Content.Server.Preferences.Managers
             _cachedPlayerPrefs.Remove(session.UserId);
         }
 
+        public bool HavePreferencesLoaded(ICommonSession session)
+        {
+            return _cachedPlayerPrefs.ContainsKey(session.UserId);
+        }
+
         // Corvax-Sponsors-Start: Calculate total available users slots with sponsors
         private int GetMaxUserCharacterSlots(NetUserId userId)
         {
@@ -232,12 +237,6 @@ namespace Content.Server.Preferences.Managers
             return maxSlots + extraSlots;
         }
         // Corvax-Sponsors-End
-        
-        public bool HavePreferencesLoaded(ICommonSession session)
-        {
-            return _cachedPlayerPrefs.ContainsKey(session.UserId);
-        }
-
 
         /// <summary>
         /// Tries to get the preferences from the cache
@@ -280,18 +279,20 @@ namespace Content.Server.Preferences.Managers
             {
                 return await _db.InitPrefsAsync(userId, HumanoidCharacterProfile.Random());
             }
-
-            return SanitizePreferences(prefs);
+            // Corvax-Sponsors-Start
+            var allowedMarkings = _sponsors.TryGetInfo(userId, out var sponsor) ? sponsor.AllowedMarkings : new string[]{};
+            return SanitizePreferences(prefs, allowedMarkings);
+            // Corvax-Sponsors-End
         }
 
-        private PlayerPreferences SanitizePreferences(PlayerPreferences prefs)
+        private PlayerPreferences SanitizePreferences(PlayerPreferences prefs, string[] allowedMarkings)
         {
             // Clean up preferences in case of changes to the game,
             // such as removed jobs still being selected.
 
             return new PlayerPreferences(prefs.Characters.Select(p =>
             {
-                return new KeyValuePair<int, ICharacterProfile>(p.Key, p.Value.Validated(_cfg, _protos));
+                return new KeyValuePair<int, ICharacterProfile>(p.Key, p.Value.Validated(_cfg, _protos, allowedMarkings));
             }), prefs.SelectedCharacterIndex, prefs.AdminOOCColor);
         }
 
