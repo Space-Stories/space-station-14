@@ -1,12 +1,8 @@
 using Content.Shared.Damage.Components;
-using Robust.Shared.Audio;
-using Robust.Shared.Audio.Systems;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Timing;
-using Content.Shared.Weapons.Melee.Events;
-using Content.Shared.Weapons.Misc;
 
 namespace Content.Shared.Damage.Systems;
 
@@ -15,7 +11,6 @@ public sealed class DamageContactsSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
 
     public override void Initialize()
     {
@@ -68,16 +63,10 @@ public sealed class DamageContactsSystem : EntitySystem
         if (HasComp<DamagedByContactComponent>(otherUid))
             return;
 
-        if (!HasComp<TetheredComponent>(uid) && component.OnlyTethered)
-            return;
-
         if (component.IgnoreWhitelist?.IsValid(otherUid) ?? false)
             return;
 
         var damagedByContact = EnsureComp<DamagedByContactComponent>(otherUid);
-        var ev = new GetMeleeDamageContactEvent(otherUid, new(component.Damage), new(), uid);
-        RaiseLocalEvent(uid, ref ev);
-        damagedByContact.Damage = ev.Damage;
-        if (component.HitSound != null) _audio.PlayPredicted(component.HitSound, uid, otherUid);
+        damagedByContact.Damage = component.Damage;
     }
 }

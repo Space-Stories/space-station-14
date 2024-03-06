@@ -1,17 +1,11 @@
-using System.Linq;
 using Content.Shared.StatusIcon;
 using Content.Shared.StatusIcon.Components;
 using Robust.Client.GameObjects;
 using Robust.Client.Graphics;
 using Robust.Shared.Enums;
 using System.Numerics;
-using Robust.Client.ResourceManagement;
-using Robust.Client.Utility;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
-using Robust.Shared.Utility;
-using Robust.Shared.Graphics.RSI;
-using Serilog;
 
 namespace Content.Client.StatusIcon;
 
@@ -19,7 +13,6 @@ public sealed class StatusIconOverlay : Overlay
 {
     [Dependency] private readonly IEntityManager _entity = default!;
     [Dependency] private readonly IPrototypeManager _prototype = default!;
-    [Dependency] private readonly IResourceCache _resourceCache = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
 
     private readonly SpriteSystem _sprite;
@@ -68,9 +61,6 @@ public sealed class StatusIconOverlay : Overlay
             if (icons.Count == 0)
                 continue;
 
-            if (!_statusIcon.IsVisible(uid))
-                continue;
-
             var worldMatrix = Matrix3.CreateTranslation(worldPos);
             Matrix3.Multiply(scaleMatrix, worldMatrix, out var scaledWorld);
             Matrix3.Multiply(rotationMatrix, scaledWorld, out var matty);
@@ -82,45 +72,11 @@ public sealed class StatusIconOverlay : Overlay
             var accOffsetR = 0;
             icons.Sort();
 
-            Texture? texture = null;
             foreach (var proto in icons)
             {
-                switch (proto.Icon)
-                {
-                    case SpriteSpecifier.Rsi rsi:
-                        var rsiActual = _resourceCache.GetResource<RSIResource>("/Textures/" + rsi.RsiPath.ToString()).RSI;
 
-                        if (!rsiActual.TryGetState(rsi.RsiState, out var state))
-                        {
-                            return;
-                        }
-
-                        var frames = state.GetFrames(RsiDirection.South);
-                        var delays = state.GetDelays();
-                        var totalDelay = delays.Sum();
-                        var time = _timing.RealTime.TotalSeconds % totalDelay;
-                        var delaySum = 0f;
-
-                        for (var i = 0; i < delays.Length; i++)
-                        {
-                            var delay = delays[i];
-                            delaySum += delay;
-
-                            if (time > delaySum)
-                                continue;
-
-                            texture = frames[i];
-                            break;
-                        }
-
-                        texture ??= _sprite.Frame0(proto.Icon);
-                        break;
-                    case SpriteSpecifier.Texture spriteTexture:
-                        texture = spriteTexture.GetTexture(_resourceCache);
-                        break;
-                    default:
-                        throw new NotImplementedException();
-                }
+                var curTime = _timing.RealTime;
+                var texture = _sprite.GetFrame(proto.Icon, curTime);
 
                 float yOffset;
                 float xOffset;
@@ -132,21 +88,27 @@ public sealed class StatusIconOverlay : Overlay
                 {
                     if (accOffsetL + texture.Height > sprite.Bounds.Height * EyeManager.PixelsPerMeter)
                         break;
-                    accOffsetL += texture.Height;
+                    if (proto.Layer == StatusIconLayer.Base)
+                    {
+                        accOffsetL += texture.Height;
+                        countL++;
+                    }
                     yOffset = (bounds.Height + sprite.Offset.Y) / 2f - (float) accOffsetL / EyeManager.PixelsPerMeter;
                     xOffset = -(bounds.Width + sprite.Offset.X) / 2f;
 
-                    countL++;
                 }
                 else
                 {
                     if (accOffsetR + texture.Height > sprite.Bounds.Height * EyeManager.PixelsPerMeter)
                         break;
-                    accOffsetR += texture.Height;
+                    if (proto.Layer == StatusIconLayer.Base)
+                    {
+                        accOffsetR += texture.Height;
+                        countR++;
+                    }
                     yOffset = (bounds.Height + sprite.Offset.Y) / 2f - (float) accOffsetR / EyeManager.PixelsPerMeter;
                     xOffset = (bounds.Width + sprite.Offset.X) / 2f - (float) texture.Width / EyeManager.PixelsPerMeter;
 
-                    countR++;
                 }
 
                 var position = new Vector2(xOffset, yOffset);

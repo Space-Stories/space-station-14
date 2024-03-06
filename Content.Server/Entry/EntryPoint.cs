@@ -38,8 +38,8 @@ namespace Content.Server.Entry
 {
     public sealed class EntryPoint : GameServer
     {
-        public const string ConfigPresetsDir = "/ConfigPresets/"; // Stories-Officials-Shit-Fix
-        public const string ConfigPresetsDirBuild = $"{ConfigPresetsDir}Build/"; // Stories-Officials-Shit-Fix
+        internal const string ConfigPresetsDir = "/ConfigPresets/";
+        private const string ConfigPresetsDirBuild = $"{ConfigPresetsDir}Build/";
 
         private EuiManager _euiManager = default!;
         private IVoteManager _voteManager = default!;

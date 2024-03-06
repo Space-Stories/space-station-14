@@ -282,7 +282,7 @@ namespace Content.Client.Preferences.UI
                 IsDirty = true;
             };
 
-            _hairPicker.OnSlotAdd += delegate ()
+            _hairPicker.OnSlotAdd += delegate()
             {
                 if (Profile is null)
                     return;
@@ -302,7 +302,7 @@ namespace Content.Client.Preferences.UI
                 IsDirty = true;
             };
 
-            _facialHairPicker.OnSlotAdd += delegate ()
+            _facialHairPicker.OnSlotAdd += delegate()
             {
                 if (Profile is null)
                     return;
@@ -419,13 +419,16 @@ namespace Content.Client.Preferences.UI
             foreach (var antag in prototypeManager.EnumeratePrototypes<AntagPrototype>().OrderBy(a => Loc.GetString(a.Name)))
             {
                 if (!antag.SetPreference)
-                {
                     continue;
-                }
 
                 var selector = new AntagPreferenceSelector(antag);
                 _antagList.AddChild(selector);
                 _antagPreferences.Add(selector);
+                if (selector.Disabled)
+                {
+                    Profile = Profile?.WithAntagPreference(antag.ID, false);
+                    IsDirty = true;
+                }
 
                 selector.PreferenceChanged += preference =>
                 {
@@ -546,10 +549,8 @@ namespace Content.Client.Preferences.UI
             _jobCategories.Clear();
             var firstCategory = true;
 
-            var departments = _prototypeManager.EnumeratePrototypes<DepartmentPrototype>()
-                .OrderByDescending(department => department.Weight)
-                .ThenBy(department => Loc.GetString($"department-{department.ID}"))
-                .ToList();
+            var departments = _prototypeManager.EnumeratePrototypes<DepartmentPrototype>().ToArray();
+            Array.Sort(departments, DepartmentUIComparer.Instance);
 
             foreach (var department in departments)
             {
@@ -579,7 +580,7 @@ namespace Content.Client.Preferences.UI
 
                     category.AddChild(new PanelContainer
                     {
-                        PanelOverride = new StyleBoxFlat { BackgroundColor = Color.FromHex("#464966") },
+                        PanelOverride = new StyleBoxFlat {BackgroundColor = Color.FromHex("#464966")},
                         Children =
                         {
                             new Label
@@ -597,9 +598,8 @@ namespace Content.Client.Preferences.UI
 
                 var jobs = department.Roles.Select(jobId => _prototypeManager.Index<JobPrototype>(jobId))
                     .Where(job => job.SetPreference)
-                    .OrderByDescending(job => job.Weight)
-                    .ThenBy(job => job.LocalizedName)
-                    .ToList();
+                    .ToArray();
+                Array.Sort(jobs, JobUIComparer.Instance);
 
                 foreach (var job in jobs)
                 {
@@ -621,19 +621,15 @@ namespace Content.Client.Preferences.UI
                         foreach (var jobSelector in _jobPriorities)
                         {
                             // Sync other selectors with the same job in case of multiple department jobs
-                            if (jobSelector.Job == selector.Job)
+                            if (jobSelector.Proto == selector.Proto)
                             {
                                 jobSelector.Priority = priority;
                             }
-
-                            // Lower any other high priorities to medium.
-                            if (priority == JobPriority.High)
+                            else if (priority == JobPriority.High && jobSelector.Priority == JobPriority.High)
                             {
-                                if (jobSelector.Job != selector.Job && jobSelector.Priority == JobPriority.High)
-                                {
-                                    jobSelector.Priority = JobPriority.Medium;
-                                    Profile = Profile?.WithJobPriority(jobSelector.Job.ID, JobPriority.Medium);
-                                }
+                                // Lower any other high priorities to medium.
+                                jobSelector.Priority = JobPriority.Medium;
+                                Profile = Profile?.WithJobPriority(jobSelector.Proto.ID, JobPriority.Medium);
                             }
                         }
                     };
@@ -685,45 +681,45 @@ namespace Content.Client.Preferences.UI
             switch (skin)
             {
                 case HumanoidSkinColor.HumanToned:
+                {
+                    if (!_skinColor.Visible)
                     {
-                        if (!_skinColor.Visible)
-                        {
-                            _skinColor.Visible = true;
-                            _rgbSkinColorContainer.Visible = false;
-                        }
-
-                        var color = SkinColor.HumanSkinTone((int) _skinColor.Value);
-
-                        CMarkings.CurrentSkinColor = color;
-                        Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));//
-                        break;
+                        _skinColor.Visible = true;
+                        _rgbSkinColorContainer.Visible = false;
                     }
+
+                    var color = SkinColor.HumanSkinTone((int) _skinColor.Value);
+
+                    CMarkings.CurrentSkinColor = color;
+                    Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));//
+                    break;
+                }
                 case HumanoidSkinColor.Hues:
+                {
+                    if (!_rgbSkinColorContainer.Visible)
                     {
-                        if (!_rgbSkinColorContainer.Visible)
-                        {
-                            _skinColor.Visible = false;
-                            _rgbSkinColorContainer.Visible = true;
-                        }
-
-                        CMarkings.CurrentSkinColor = _rgbSkinColorSelector.Color;
-                        Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(_rgbSkinColorSelector.Color));
-                        break;
+                        _skinColor.Visible = false;
+                        _rgbSkinColorContainer.Visible = true;
                     }
+
+                    CMarkings.CurrentSkinColor = _rgbSkinColorSelector.Color;
+                    Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(_rgbSkinColorSelector.Color));
+                    break;
+                }
                 case HumanoidSkinColor.TintedHues:
+                {
+                    if (!_rgbSkinColorContainer.Visible)
                     {
-                        if (!_rgbSkinColorContainer.Visible)
-                        {
-                            _skinColor.Visible = false;
-                            _rgbSkinColorContainer.Visible = true;
-                        }
-
-                        var color = SkinColor.TintedHues(_rgbSkinColorSelector.Color);
-
-                        CMarkings.CurrentSkinColor = color;
-                        Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
-                        break;
+                        _skinColor.Visible = false;
+                        _rgbSkinColorContainer.Visible = true;
                     }
+
+                    var color = SkinColor.TintedHues(_rgbSkinColorSelector.Color);
+
+                    CMarkings.CurrentSkinColor = color;
+                    Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
+                    break;
+                }
             }
 
             IsDirty = true;
@@ -788,6 +784,7 @@ namespace Content.Client.Preferences.UI
             }
             UpdateGenderControls();
             UpdateTTSVoicesControls(); // Corvax-TTS
+            CMarkings.SetSex(newSex);
             IsDirty = true;
         }
 
@@ -870,7 +867,7 @@ namespace Content.Client.Preferences.UI
 
         private void UpdateFlavorTextEdit()
         {
-            if (_flavorTextEdit != null)
+            if(_flavorTextEdit != null)
             {
                 _flavorTextEdit.TextRope = new Rope.Leaf(Profile?.FlavorText ?? "");
             }
@@ -897,8 +894,7 @@ namespace Content.Client.Preferences.UI
                 {
                     sexes.Add(sex);
                 }
-            }
-            else
+            } else
             {
                 sexes.Add(Sex.Unsexed);
             }
@@ -925,41 +921,41 @@ namespace Content.Client.Preferences.UI
             switch (skin)
             {
                 case HumanoidSkinColor.HumanToned:
+                {
+                    if (!_skinColor.Visible)
                     {
-                        if (!_skinColor.Visible)
-                        {
-                            _skinColor.Visible = true;
-                            _rgbSkinColorContainer.Visible = false;
-                        }
-
-                        _skinColor.Value = SkinColor.HumanSkinToneFromColor(Profile.Appearance.SkinColor);
-
-                        break;
+                        _skinColor.Visible = true;
+                        _rgbSkinColorContainer.Visible = false;
                     }
+
+                    _skinColor.Value = SkinColor.HumanSkinToneFromColor(Profile.Appearance.SkinColor);
+
+                    break;
+                }
                 case HumanoidSkinColor.Hues:
+                {
+                    if (!_rgbSkinColorContainer.Visible)
                     {
-                        if (!_rgbSkinColorContainer.Visible)
-                        {
-                            _skinColor.Visible = false;
-                            _rgbSkinColorContainer.Visible = true;
-                        }
-
-                        // set the RGB values to the direct values otherwise
-                        _rgbSkinColorSelector.Color = Profile.Appearance.SkinColor;
-                        break;
+                        _skinColor.Visible = false;
+                        _rgbSkinColorContainer.Visible = true;
                     }
+
+                    // set the RGB values to the direct values otherwise
+                    _rgbSkinColorSelector.Color = Profile.Appearance.SkinColor;
+                    break;
+                }
                 case HumanoidSkinColor.TintedHues:
+                {
+                    if (!_rgbSkinColorContainer.Visible)
                     {
-                        if (!_rgbSkinColorContainer.Visible)
-                        {
-                            _skinColor.Visible = false;
-                            _rgbSkinColorContainer.Visible = true;
-                        }
-
-                        // set the RGB values to the direct values otherwise
-                        _rgbSkinColorSelector.Color = Profile.Appearance.SkinColor;
-                        break;
+                        _skinColor.Visible = false;
+                        _rgbSkinColorContainer.Visible = true;
                     }
+
+                    // set the RGB values to the direct values otherwise
+                    _rgbSkinColorSelector.Color = Profile.Appearance.SkinColor;
+                    break;
+                }
             }
 
         }
@@ -972,7 +968,7 @@ namespace Content.Client.Preferences.UI
             }
 
             CMarkings.SetData(Profile.Appearance.Markings, Profile.Species,
-                Profile.Appearance.SkinColor, Profile.Appearance.EyeColor
+                Profile.Sex, Profile.Appearance.SkinColor, Profile.Appearance.EyeColor
             );
         }
 
@@ -1063,11 +1059,11 @@ namespace Content.Client.Preferences.UI
 
             // hair color
             Color? hairColor = null;
-            if (Profile.Appearance.HairStyleId != HairStyles.DefaultHairStyle &&
+            if ( Profile.Appearance.HairStyleId != HairStyles.DefaultHairStyle &&
                 _markingManager.Markings.TryGetValue(Profile.Appearance.HairStyleId, out var hairProto)
             )
             {
-                if (_markingManager.CanBeApplied(Profile.Species, hairProto, _prototypeManager))
+                if (_markingManager.CanBeApplied(Profile.Species, Profile.Sex, hairProto, _prototypeManager))
                 {
                     if (_markingManager.MustMatchSkin(Profile.Species, HumanoidVisualLayers.Hair, out var _, _prototypeManager))
                     {
@@ -1081,7 +1077,7 @@ namespace Content.Client.Preferences.UI
             }
             if (hairColor != null)
             {
-                CMarkings.HairMarking = new(Profile.Appearance.HairStyleId, new List<Color>() { hairColor.Value });
+                CMarkings.HairMarking = new (Profile.Appearance.HairStyleId, new List<Color>() { hairColor.Value });
             }
             else
             {
@@ -1098,11 +1094,11 @@ namespace Content.Client.Preferences.UI
 
             // facial hair color
             Color? facialHairColor = null;
-            if (Profile.Appearance.FacialHairStyleId != HairStyles.DefaultFacialHairStyle &&
+            if ( Profile.Appearance.FacialHairStyleId != HairStyles.DefaultFacialHairStyle &&
                 _markingManager.Markings.TryGetValue(Profile.Appearance.FacialHairStyleId, out var facialHairProto)
             )
             {
-                if (_markingManager.CanBeApplied(Profile.Species, facialHairProto, _prototypeManager))
+                if (_markingManager.CanBeApplied(Profile.Species, Profile.Sex, facialHairProto, _prototypeManager))
                 {
                     if (_markingManager.MustMatchSkin(Profile.Species, HumanoidVisualLayers.Hair, out var _, _prototypeManager))
                     {
@@ -1116,7 +1112,7 @@ namespace Content.Client.Preferences.UI
             }
             if (facialHairColor != null)
             {
-                CMarkings.FacialHairMarking = new(Profile.Appearance.FacialHairStyleId, new List<Color>() { facialHairColor.Value });
+                CMarkings.FacialHairMarking = new (Profile.Appearance.FacialHairStyleId, new List<Color>() { facialHairColor.Value });
             }
             else
             {
@@ -1197,156 +1193,11 @@ namespace Content.Client.Preferences.UI
         {
             foreach (var prioritySelector in _jobPriorities)
             {
-                var jobId = prioritySelector.Job.ID;
+                var jobId = prioritySelector.Proto.ID;
 
                 var priority = Profile?.JobPriorities.GetValueOrDefault(jobId, JobPriority.Never) ?? JobPriority.Never;
 
                 prioritySelector.Priority = priority;
-            }
-        }
-
-        private sealed class JobPrioritySelector : Control
-        {
-            public JobPrototype Job { get; }
-            private readonly RadioOptions<int> _optionButton;
-
-            public JobPriority Priority
-            {
-                get => (JobPriority) _optionButton.SelectedValue;
-                set => _optionButton.SelectByValue((int) value);
-            }
-
-            public event Action<JobPriority>? PriorityChanged;
-
-            private StripeBack _lockStripe;
-            private Label _requirementsLabel;
-            private Label _jobTitle;
-
-            public JobPrioritySelector(JobPrototype job, IPrototypeManager prototypeManager)
-            {
-                Job = job;
-
-                _optionButton = new RadioOptions<int>(RadioOptionsLayout.Horizontal)
-                {
-                    FirstButtonStyle = StyleBase.ButtonOpenRight,
-                    ButtonStyle = StyleBase.ButtonOpenBoth,
-                    LastButtonStyle = StyleBase.ButtonOpenLeft
-                };
-                //Override default radio option button width
-                _optionButton.GenerateItem = GenerateButton;
-                // Text, Value
-                _optionButton.AddItem(Loc.GetString("humanoid-profile-editor-job-priority-high-button"), (int) JobPriority.High);
-                _optionButton.AddItem(Loc.GetString("humanoid-profile-editor-job-priority-medium-button"), (int) JobPriority.Medium);
-                _optionButton.AddItem(Loc.GetString("humanoid-profile-editor-job-priority-low-button"), (int) JobPriority.Low);
-                _optionButton.AddItem(Loc.GetString("humanoid-profile-editor-job-priority-never-button"), (int) JobPriority.Never);
-
-                _optionButton.OnItemSelected += args =>
-                {
-                    _optionButton.Select(args.Id);
-                    PriorityChanged?.Invoke(Priority);
-                };
-
-                var icon = new TextureRect
-                {
-                    TextureScale = new Vector2(2, 2),
-                    Stretch = TextureRect.StretchMode.KeepCentered
-                };
-
-                var jobIcon = prototypeManager.Index<StatusIconPrototype>(job.Icon);
-                icon.Texture = jobIcon.Icon.Frame0();
-
-                _requirementsLabel = new Label()
-                {
-                    Text = Loc.GetString("role-timer-locked"),
-                    Visible = true,
-                    HorizontalAlignment = HAlignment.Center,
-                    StyleClasses = { StyleBase.StyleClassLabelSubText },
-                };
-
-                _lockStripe = new StripeBack()
-                {
-                    Visible = false,
-                    HorizontalExpand = true,
-                    MouseFilter = MouseFilterMode.Stop,
-                    Children =
-                    {
-                        _requirementsLabel
-                    }
-                };
-
-                _jobTitle = new Label()
-                {
-                    Margin = new Thickness(5f, 0, 5f, 0),
-                    Text = job.LocalizedName,
-                    MinSize = new Vector2(200, 0),
-                    MouseFilter = MouseFilterMode.Stop
-                };
-
-                if (job.LocalizedDescription != null)
-                {
-                    _jobTitle.ToolTip = job.LocalizedDescription;
-                }
-
-                AddChild(new BoxContainer
-                {
-                    Orientation = LayoutOrientation.Horizontal,
-                    Children =
-                    {
-                        icon,
-                        _jobTitle,
-                        _optionButton,
-                        _lockStripe,
-                    }
-                });
-            }
-
-            public void LockRequirements(FormattedMessage requirements)
-            {
-                var tooltip = new Tooltip();
-                tooltip.SetMessage(requirements);
-                _lockStripe.TooltipSupplier = _ => tooltip;
-                _lockStripe.Visible = true;
-                _optionButton.Visible = false;
-            }
-
-            // TODO: Subscribe to roletimers event. I am too lazy to do this RN But I doubt most people will notice fn
-            public void UnlockRequirements()
-            {
-                _requirementsLabel.Visible = false;
-                _lockStripe.Visible = false;
-                _optionButton.Visible = true;
-            }
-
-            private Button GenerateButton(string text, int value)
-            {
-                var btn = new Button
-                {
-                    Text = text,
-                    MinWidth = 90
-                };
-                return btn;
-            }
-        }
-
-        private void UpdateAntagPreferences()
-        {
-            foreach (var preferenceSelector in _antagPreferences)
-            {
-                var antagId = preferenceSelector.Proto.ID;
-                var preference = Profile?.AntagPreferences.Contains(antagId) ?? false;
-
-                preferenceSelector.Preference = preference;
-            }
-        }
-
-        private void UpdateTraitPreferences()
-        {
-            foreach (var preferenceSelector in _traitPreferences)
-            {
-                var traitId = preferenceSelector.Trait.ID;
-                var preference = Profile?.TraitPreferences.Contains(traitId) ?? false;
-
-                preferenceSelector.Preference = preference;
             }
         }
 
@@ -1379,7 +1230,7 @@ namespace Content.Client.Preferences.UI
                     Text = Loc.GetString("role-timer-locked"),
                     Visible = true,
                     HorizontalAlignment = HAlignment.Center,
-                    StyleClasses = { StyleBase.StyleClassLabelSubText },
+                    StyleClasses = {StyleBase.StyleClassLabelSubText},
                 };
 
                 _lockStripe = new StripeBack()
@@ -1455,6 +1306,62 @@ namespace Content.Client.Preferences.UI
             }
         }
 
+        private sealed class JobPrioritySelector : RequirementsSelector<JobPrototype>
+        {
+            public JobPriority Priority
+            {
+                get => (JobPriority) Options.SelectedValue;
+                set => Options.SelectByValue((int) value);
+            }
+
+            public event Action<JobPriority>? PriorityChanged;
+
+            public JobPrioritySelector(JobPrototype proto, IPrototypeManager protoMan)
+                : base(proto)
+            {
+                Options.OnItemSelected += args => PriorityChanged?.Invoke(Priority);
+
+                var items = new[]
+                {
+                    ("humanoid-profile-editor-job-priority-high-button", (int) JobPriority.High),
+                    ("humanoid-profile-editor-job-priority-medium-button", (int) JobPriority.Medium),
+                    ("humanoid-profile-editor-job-priority-low-button", (int) JobPriority.Low),
+                    ("humanoid-profile-editor-job-priority-never-button", (int) JobPriority.Never),
+                };
+
+                var icon = new TextureRect
+                {
+                    TextureScale = new Vector2(2, 2),
+                    VerticalAlignment = VAlignment.Center
+                };
+                var jobIcon = protoMan.Index<StatusIconPrototype>(proto.Icon);
+                icon.Texture = jobIcon.Icon.Frame0();
+
+                Setup(items, proto.LocalizedName, 200, proto.LocalizedDescription, icon);
+            }
+        }
+
+        private void UpdateAntagPreferences()
+        {
+            foreach (var preferenceSelector in _antagPreferences)
+            {
+                var antagId = preferenceSelector.Proto.ID;
+                var preference = Profile?.AntagPreferences.Contains(antagId) ?? false;
+                preferenceSelector.Preference = preference;
+            }
+        }
+
+        private void UpdateTraitPreferences()
+        {
+            foreach (var preferenceSelector in _traitPreferences)
+            {
+                var traitId = preferenceSelector.Trait.ID;
+                var preference = Profile?.TraitPreferences.Contains(traitId) ?? false;
+
+                preferenceSelector.Preference = preference;
+            }
+        }
+
         private sealed class AntagPreferenceSelector : RequirementsSelector<AntagPrototype>
         {
             // 0 is yes and 1 is no
@@ -1507,7 +1414,7 @@ namespace Content.Client.Preferences.UI
             {
                 Trait = trait;
 
-                _checkBox = new CheckBox { Text = Loc.GetString(trait.Name) };
+                _checkBox = new CheckBox {Text = Loc.GetString(trait.Name)};
                 _checkBox.OnToggled += OnCheckBoxToggled;
 
                 if (trait.Description is { } desc)

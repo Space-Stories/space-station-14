@@ -151,7 +151,7 @@ public sealed class EntityHealthBarOverlay : Overlay
     {
         if (progress >= 1.0f)
         {
-            return SeaBlue;
+            return Lime;
         }
 
         if (!crit)
@@ -159,14 +159,18 @@ public sealed class EntityHealthBarOverlay : Overlay
             switch (progress)
             {
                 case > 0.90F:
-                    return SeaBlue;
+                    return LightGreen;
+                case > 0.75F:
+                    return Green;
                 case > 0.50F:
-                    return Violet;
-                case > 0.15F:
-                    return Ruber;
+                    return Orange;
+                case > 0.25F:
+                    return OrangeRed;
+                case > 0.10F:
+                    return Red;
             }
         }
 
-        return VividGamboge;
+        return Red;
     }
 }

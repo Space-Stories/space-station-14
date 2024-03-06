@@ -3,7 +3,6 @@ using Content.Server.Body.Systems;
 using Content.Server.Chat;
 using Content.Server.Chat.Systems;
 using Content.Server.Cloning;
-using Content.Server.Drone.Components;
 using Content.Server.Emoting.Systems;
 using Content.Server.Inventory;
 using Content.Server.Speech.EntitySystems;
@@ -214,7 +213,7 @@ namespace Content.Server.Zombies
                 if (args.User == entity)
                     continue;
 
-                if (!TryComp<MobStateComponent>(entity, out var mobState) || HasComp<DroneComponent>(entity))
+                if (!TryComp<MobStateComponent>(entity, out var mobState))
                     continue;
 
                 if (HasComp<ZombieComponent>(entity))
@@ -260,7 +259,7 @@ namespace Content.Server.Zombies
             foreach (var (layer, info) in zombiecomp.BeforeZombifiedCustomBaseLayers)
             {
                 _humanoidAppearance.SetBaseLayerColor(target, layer, info.Color);
-                _humanoidAppearance.SetBaseLayerId(target, layer, info.ID);
+                _humanoidAppearance.SetBaseLayerId(target, layer, info.Id);
             }
             if(TryComp<HumanoidAppearanceComponent>(target, out var appcomp))
             {
