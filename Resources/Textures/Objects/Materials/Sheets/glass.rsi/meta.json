@@ -142,6 +142,23 @@
       {
         "name": "ruglass-inhand-right",
         "directions": 4
+      },
+      {
+        "name": "cglass"
+      },
+      {
+        "name": "cglass_2"
+      },
+      {
+        "name": "cglass_3"
+      },
+      {
+        "name": "cglass-inhand-left",
+        "directions": 4
+      },
+      {
+        "name": "cglass-inhand-right",
+        "directions": 4
       }
   ]
 }
