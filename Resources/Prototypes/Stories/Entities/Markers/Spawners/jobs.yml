@@ -75,6 +75,18 @@
       - state: green
       - state: doctor
 
+- type: entity
+  id: SpawnPointPrisoner
+  parent: SpawnPointJobBaseStories
+  name: spprisoner
+  components:
+  - type: SpawnPoint
+    job_id: Prisoner
+  - type: Sprite
+    layers:
+      - state: green
+      - state: doctor
+
 - type: entity # Stories-Seniors
   id: SpawnPointSeniorOfficer
   parent: SpawnPointJobBase

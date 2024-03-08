@@ -3,6 +3,7 @@
   description: department-SpacePrison-description
   color: "#0036a2"
   roles:
+  - Prisoner
   - HeadOfSpacePrison
   - SpacePrisonOfficer
   - SpacePrisonEngineer

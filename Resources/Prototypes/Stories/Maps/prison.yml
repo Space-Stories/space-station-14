@@ -1,0 +1,22 @@
+- type: gameMap
+  id: SpacePrison
+  mapName: 'Space Prison'
+  mapPath: /Maps/Stories/prison.yml
+  minPlayers: 10
+  stations:
+    prison:
+      stationProto: StandardSpacePrisonStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: '{0} Resort {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: 'ST'
+        - type: StationJobs
+          availableJobs:
+            Prisoner: [ 5, 5 ]
+            HeadOfSpacePrison: [ 1, 1 ]
+            SpacePrisonOfficer: [ 3, 3 ]
+            SpacePrisonEngineer: [ 2, 2 ]
+            SpacePrisonMedic: [ 1, 1 ]
+
