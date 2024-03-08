@@ -1,0 +1,44 @@
+# ОКСИД АЗОТА КТ
+- type: entity
+  parent: NitrousOxideCanister
+  id: NitrousOxideCanisterSP
+  suffix: КТ
+  components:
+  - type: AccessReader
+    access: [["EngineeringSP"]]
+    
+# УГЛЕКИСЛЫЙ ГАЗ КТ
+- type: entity
+  parent: CarbonDioxideCanister
+  id: CarbonDioxideCanisterSP
+  suffix: КТ
+  components:
+  - type: AccessReader
+    access: [["EngineeringSP"]]
+    
+# ВОЗДУХ КТ
+- type: entity
+  parent: AirCanister
+  id: AirCanisterSP
+  suffix: КТ
+  components:
+  - type: AccessReader
+    access: [["EngineeringSP"]]
+    
+# КИСЛОРОД КТ
+- type: entity
+  parent: OxygenCanister
+  id: OxygenCanisterSP
+  suffix: КТ
+  components:
+  - type: AccessReader
+    access: [["EngineeringSP"]]
+    
+# АЗОТ КТ
+- type: entity
+  parent: NitrogenCanister
+  id: NitrogenCanisterSP
+  suffix: КТ
+  components:
+  - type: AccessReader
+    access: [["EngineeringSP"]]

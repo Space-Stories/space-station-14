@@ -3,6 +3,7 @@
   id: VendingMachineSPDrobe
   name: SPDrobe
   description: A vending machine for security and security-related clothing!
+  suffix: КТ
   components:
   - type: VendingMachine
     pack: SPDrobeInventory
@@ -22,4 +23,94 @@
     - state: panel
       map: ["enum.WiresVisualLayers.MaintenancePanel"]
   - type: AccessReader
-    access: [["Security"]]
+    access: [["SecuritySP"]]
+    
+# СБТЕХ КТ 
+- type: entity
+  parent: VendingMachineSec
+  id: VendingMachineSecSP
+  suffix: КТ
+  components:
+  - type: AccessReader
+    access: [["SecuritySP"]]
+
+# АЛКОМАТ КТ
+- type: entity
+  parent: VendingMachineBooze
+  id: VendingMachineBoozeSP
+  suffix: КТ
+  components:
+  - type: AccessReader
+    access: [["ServiceSP"]]
+    
+# УБОРШКАФ КТ
+- type: entity
+  parent: VendingMachineJaniDrobe
+  id: VendingMachineJaniDrobeSP
+  suffix: КТ
+  components:
+  - type: AccessReader
+    access: [["ServiceSP"]]
+    
+# МЕДШКАФ КТ
+- type: entity
+  parent: VendingMachineMediDrobe
+  id: VendingMachineMediDrobeSP
+  suffix: КТ
+  components:
+  - type: AccessReader
+    access: [["MedicalSP"]]
+    
+# НАНОМЕД КТ
+- type: entity
+  parent: VendingMachineMedical
+  id: VendingMachineMedicalSP
+  suffix: КТ
+  components:
+  - type: AccessReader
+    access: [["MedicalSP"]]
+    
+# НАНОМЕД КТ НАСТЕННЫЙ
+- type: entity
+  parent: VendingMachineWallMedical
+  id: VendingMachineWallMedicalSP
+  suffix: КТ
+  components:
+  - type: AccessReader
+    access: [["MedicalSP"]]
+    
+# ХИМКОМАТ КТ
+- type: entity
+  parent: VendingMachineChemicals
+  id: VendingMachineChemicalsSP
+  suffix: КТ
+  components:
+  - type: AccessReader
+    access: [["MedicalSP"]]
+    
+# ИНЖЕМАТ КТ
+- type: entity
+  parent: VendingMachineEngivend
+  id: VendingMachineEngivendSP
+  suffix: КТ
+  components:
+  - type: AccessReader
+    access: [["EngineeringSP"]]
+    
+# ИНЖЕШКАФ КТ
+- type: entity
+  parent: VendingMachineEngiDrobe
+  id: VendingMachineEngiDrobeSP
+  suffix: КТ
+  components:
+  - type: AccessReader
+    access: [["EngineeringSP"]]
+
+# АТМОСШКАФ КТ
+- type: entity
+  parent: VendingMachineAtmosDrobe
+  id: VendingMachineAtmosDrobeSP
+  suffix: КТ
+  components:
+  - type: AccessReader
+    access: [["EngineeringSP"]]

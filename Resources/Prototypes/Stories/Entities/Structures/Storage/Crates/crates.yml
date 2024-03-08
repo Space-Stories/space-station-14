@@ -1,0 +1,8 @@
+# МУСОРКА КТ
+- type: entity
+  parent: CrateTrashCartJani
+  id: CrateTrashCartJaniSP
+  suffix: КТ
+  components:
+  - type: AccessReader
+    access: [["ServiceSP"]]

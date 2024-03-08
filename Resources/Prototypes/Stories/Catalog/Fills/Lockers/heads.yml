@@ -5,6 +5,7 @@
   components:
   - type: StorageFill
     contents:
+      - id: HeadOfSPIDCard
       - id: WeaponDisabler
         prob: 0.5
       - id: DrinkVacuumFlask

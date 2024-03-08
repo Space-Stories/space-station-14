@@ -22,9 +22,10 @@
   - Brig
   - MaintSP
   - ServiceSP
-  - External
+  - ExternalSP
   - MedicalSP
   - PrisonerSP
+  - ShuttleSP
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]

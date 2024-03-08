@@ -1,0 +1,8 @@
+#ШКАФ МЕДИКА
+- type: entity
+  parent: LockerWallMedicalDoctorFilled
+  id: LockerWallMedicalDoctorFilledSP
+  suffix: КТ
+  components:
+  - type: AccessReader
+    access: [["MedicalSP"]]

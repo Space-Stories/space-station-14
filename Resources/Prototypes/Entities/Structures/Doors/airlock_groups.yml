@@ -52,13 +52,15 @@
   iconPriority: 70
   stylePaths:
     external:    Structures/Doors/Airlocks/Standard/external.rsi
-
+    spexternal: Stories/Structures/Doors/Airlocks/SpacePrison/Standart/external.rsi
+    
 - type: AirlockGroup
   id: ExternalGlass
   iconPriority: 60
   stylePaths:
     external:    Structures/Doors/Airlocks/Glass/external.rsi
-
+    spexternal: Stories/Structures/Doors/Airlocks/SpacePrison/Glass/external.rsi
+    
 - type: AirlockGroup
   id: Shuttle
   iconPriority: 50

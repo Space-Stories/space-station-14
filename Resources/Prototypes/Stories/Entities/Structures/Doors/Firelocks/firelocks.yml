@@ -1,0 +1,26 @@
+# Firelock SP
+- type: entity
+  id: FirelockSP
+  parent: Firelock
+  suffix: КТ
+  components:
+  - type: AccessReader
+    access: [["EngineeringSP"]]
+
+# Firelock Glass SP
+- type: entity
+  id: FirelockGlassSP
+  parent: FirelockGlass
+  suffix: КТ
+  components:
+  - type: AccessReader
+    access: [["EngineeringSP"]]
+    
+# Firelock edge SP
+- type: entity
+  id: FirelockEdgeSP
+  parent: FirelockEdge
+  suffix: КТ
+  components:
+  - type: AccessReader
+    access: [["EngineeringSP"]]

@@ -104,3 +104,39 @@
   components:
   - type: AccessReader
     access: [["MaintSP"]]
+    
+#SP External
+
+- type: entity
+  parent: AirlockSpacePrisonExternal
+  id: AirlockSpacePrisonExternalLocked
+  suffix: SpacePrison, External, Locked
+  components:
+  - type: AccessReader
+    access: [["ExternalSP"]]
+    
+- type: entity
+  parent: AirlockSpacePrisonExternalGlass
+  id: AirlockSpacePrisonExternalGlassLocked
+  suffix: SpacePrison, External, Glass, Locked
+  components:
+  - type: AccessReader
+    access: [["ExternalSP"]]
+    
+#SP Shuttle 
+
+- type: entity
+  parent: AirlockShuttle
+  id: AirlockSpacePrisonShuttleLocked
+  suffix: SpacePrison, Shuttle, Locked
+  components:
+  - type: AccessReader
+    access: [["ShuttleSP"]]
+    
+- type: entity
+  parent: AirlockGlassShuttle
+  id: AirlockSpacePrisonShuttleGlassLocked
+  suffix: SpacePrison, Shuttle, Glass, Locked
+  components:
+  - type: AccessReader
+    access: [["ShuttleSP"]]

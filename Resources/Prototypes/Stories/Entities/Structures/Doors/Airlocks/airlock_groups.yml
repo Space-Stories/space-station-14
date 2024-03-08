@@ -7,3 +7,4 @@
     spmedical: SpacePrisonMedical
     spservice: SpacePrisonService
     spsecurity: SpacePrisonSecurity
+    spexternal: SpacePrisonExternal

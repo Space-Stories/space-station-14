@@ -15,11 +15,11 @@
   supervisors: job-supervisors-hosp
   canBeAntag: false
   access:
-  - Armory
   - Security
   - Brig
   - MaintSP
-  - External
+  - ExternalSP
+  - ShuttleSP
   - ServiceSP
   - EngineeringSP
   - PrisonerSP

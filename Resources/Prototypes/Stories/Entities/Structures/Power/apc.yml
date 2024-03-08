@@ -1,0 +1,7 @@
+- type: entity
+  parent: APCBasic
+  id: APCSpacePrison
+  suffix: КТ, Базовый, 50kW
+  components:
+  - type: AccessReader
+    access: [["EngineeringSP"]]

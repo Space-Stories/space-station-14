@@ -1,5 +1,5 @@
 - type: entity
-  parent: ClothingOuterHardsuitBase
+  parent: ClothingOuterHardsuitEngineering
   id: ClothingOuterHardsuitEngiSP
   name: engineering sp hardsuit
   description: A special suit that protects against hazardous, low pressure environments. Has radiation shielding.
@@ -10,9 +10,21 @@
     sprite: Stories/Clothing/OuterClothing/Hardsuits/engisp.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitEngiSP
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.85
+        Slash: 0.85
+        Piercing: 0.85
+        Shock: 0.5
+        Caustic: 0.5
+        Radiation: 0.25
+  - type: ClothingSpeedModifier
+    walkModifier: 0.9
+    sprintModifier: 0.9
 
 - type: entity
-  parent: ClothingOuterHardsuitBase
+  parent: ClothingOuterHardsuitSecurity
   id: ClothingOuterHardsuitOfficerSP
   name: officer sp hardsuit
   description: A special suit that protects against hazardous, low pressure environments. Has an additional layer of armor.
@@ -23,9 +35,19 @@
     sprite: Stories/Clothing/OuterClothing/Hardsuits/securitysp.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitOfficerSP
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.55
+        Slash: 0.55
+        Piercing: 0.55
+        Caustic: 0.75
+  - type: ClothingSpeedModifier
+    walkModifier: 0.75
+    sprintModifier: 0.75
 
 - type: entity
-  parent: ClothingOuterHardsuitBase
+  parent: ClothingOuterHardsuitSecurityRed
   id: ClothingOuterHardsuitWardenOfSP
   name: warden of sp hardsuit
   description: A specialized riot suit geared to combat low pressure environments while maintaining agility.
@@ -36,3 +58,15 @@
     sprite: Stories/Clothing/OuterClothing/Hardsuits/wardenofsp.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitWardenOfSP
+  - type: Armor
+    modifiers:
+      coefficients:
+        Blunt: 0.55
+        Slash: 0.45
+        Piercing: 0.45
+        Shock: 0.75
+        Caustic: 0.5
+        Radiation: 0.5
+  - type: ClothingSpeedModifier
+    walkModifier: 0.8
+    sprintModifier: 0.8

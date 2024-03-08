@@ -25,7 +25,15 @@
 - type: accessLevel
   id: PrisonerSP
   name: id-card-access-level-prisoner-space-prison
-  
+
+- type: accessLevel
+  id: ShuttleSP
+  name: id-card-access-level-shuttle-space-prison
+
+- type: accessLevel
+  id: ExternalSP
+  name: id-card-access-level-external-space-prison
+
 - type: accessGroup
   id: SpacePrison
   tags:
@@ -36,3 +44,5 @@
   - MedicalSP
   - EngineeringSP
   - HeadOfSpacePrison
+  - ShuttleSP
+  - ExternalSP

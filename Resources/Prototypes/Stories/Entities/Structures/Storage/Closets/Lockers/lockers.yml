@@ -54,3 +54,39 @@
     stateDoorClosed: hosofsp_door
   - type: AccessReader
     access: [["HeadOfSpacePrison"]]
+
+# ШКАФ ХИМИКА КТ
+- type: entity
+  id: LockerChemistryFilledSP
+  parent: LockerChemistryFilled
+  suffix: КТ
+  components:
+  - type: AccessReader
+    access: [["MedicalSP"]]
+    
+# ШКАФ АТМОСА КТ
+- type: entity
+  id: LockerAtmosphericsFilledSP
+  parent: LockerAtmosphericsFilled
+  suffix: КТ
+  components:
+  - type: AccessReader
+    access: [["EngineeringSP"]]
+    
+# ЯЩИК ТОПЛИВА ДАМ КТ
+- type: entity
+  id: CrateEngineeringAMEJarSP
+  parent: CrateEngineeringAMEJar
+  suffix: КТ
+  components:
+  - type: AccessReader
+    access: [["EngineeringSP"]]
+    
+# ШКАФ СВАРОЧНОГО ОБОРУДОВАНИЯ КТ
+- type: entity
+  id: LockerWeldingSuppliesFilledSP
+  parent: LockerWeldingSuppliesFilled
+  suffix: КТ
+  components:
+  - type: AccessReader
+    access: [["EngineeringSP"]]

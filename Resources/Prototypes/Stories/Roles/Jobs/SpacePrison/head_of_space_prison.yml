@@ -19,12 +19,12 @@
   access:
   - Armory
   - HeadOfSpacePrison
-  - Command
   - Brig
   - Security
   - MaintSP
   - ServiceSP
-  - External
+  - ExternalSP
+  - ShuttleSP
   - EngineeringSP
   - MedicalSP
   - PrisonerSP

@@ -16,7 +16,8 @@
   - Brig
   - MaintSP
   - ServiceSP
-  - External
+  - ExternalSP
+  - ShuttleSP
   - EngineeringSP
   - SecuritySP
   - MedicalSP

@@ -132,3 +132,27 @@
     sprite: Stories/Structures/Doors/Airlocks/SpacePrison/Glass/maint.rsi
   - type: PaintableAirlock
     department: SpacePrisonMaint
+    
+#SP External
+
+- type: entity
+  parent: AirlockExternal
+  id: AirlockSpacePrisonExternal
+  suffix: SpacePrison, External
+  components:
+  - type: Sprite
+    sprite: Stories/Structures/Doors/Airlocks/SpacePrison/Standart/external.rsi
+  - type: PaintableAirlock
+    group: External
+    department: SpacePrisonExternal
+    
+- type: entity
+  parent: AirlockExternalGlass
+  id: AirlockSpacePrisonExternalGlass
+  suffix: SpacePrison, External, Glass
+  components:
+  - type: Sprite
+    sprite: Stories/Structures/Doors/Airlocks/SpacePrison/Glass/external.rsi
+  - type: PaintableAirlock
+    group: External
+    department: SpacePrisonExternal

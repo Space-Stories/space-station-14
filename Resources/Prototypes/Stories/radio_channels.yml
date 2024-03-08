@@ -3,4 +3,5 @@
   name: chat-radio-prison
   keycode: 'з'
   frequency: 1102
-  color: "#0036a2"
+  color: "#456CF2"
+  longRange: true

@@ -116,3 +116,24 @@
   - type: Sprite
     sprite: Stories/Structures/Doors/Airlocks/SpacePrison/Glass/maint.rsi
     state: "assembly"
+    
+#SP External
+
+- type: entity
+  parent: AirlockAssembly
+  id: AirlockAssemblySpacePrisonExternal
+  suffix: SpacePrison, External
+  components:
+  - type: Sprite
+    sprite: Stories/Structures/Doors/Airlocks/SpacePrison/Standart/external.rsi
+    state: "assembly"
+
+- type: entity
+  parent: AirlockAssemblyExternalGlass
+  id: AirlockAssemblySpacePrisonExternalGlass
+  suffix: SpacePrison, External, Glass
+  components:
+  - type: Sprite
+    sprite: Stories/Structures/Doors/Airlocks/SpacePrison/Glass/external.rsi
+    state: "assembly"
+    
