@@ -1,7 +1,7 @@
 - type: gameMap
   id: SpacePrison
   mapName: 'Space Prison'
-  mapPath: /Maps/Stories/prison.yml
+  mapPath: /Maps/Stories/SpacePrison/resort.yml
   minPlayers: 10
   stations:
     prison:

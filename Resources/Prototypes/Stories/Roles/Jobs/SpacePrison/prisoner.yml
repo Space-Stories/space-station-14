@@ -10,11 +10,8 @@
 - type: startingGear
   id: PrisonerGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitColorGrey
-    back: ClothingBackpackFilled
+    jumpsuit: ClothingUniformJumpsuitPrisoner
     shoes: ClothingShoesColorBlack
-    id: PassengerPDA
-    ears: ClothingHeadsetGrey
-  innerClothingSkirt: ClothingUniformJumpskirtColorGrey
-  satchel: ClothingBackpackSatchelFilled
-  duffelbag: ClothingBackpackDuffelFilled
+    id: PrisonerPDA
+  innerClothingSkirt: ClothingUniformJumpskirtPrisoner
+

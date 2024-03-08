@@ -1,0 +1,39 @@
+- type: entity
+  id: LockableButtonSecuritySP
+  suffix: SecuritySP
+  parent: LockableButton
+  components:
+  - type: AccessReader
+    access: [["SecuritySP"]]
+
+- type: entity
+  id: LockableButtonServiceSP
+  suffix: ServiceSP
+  parent: LockableButton
+  components:
+  - type: AccessReader
+    access: [["ServiceSP"]]
+    
+- type: entity
+  id: LockableButtonHOSP
+  suffix: HOSP
+  parent: LockableButton
+  components:
+  - type: AccessReader
+    access: [["HeadOfSpacePrison"]]
+    
+- type: entity
+  id: LockableButtonEngineeringSP
+  suffix: EngineeringSP
+  parent: LockableButton
+  components:
+  - type: AccessReader
+    access: [["EngineeringSP"]]
+    
+- type: entity
+  id: LockableButtonMedicalSP
+  suffix: MedicalSP
+  parent: LockableButton
+  components:
+  - type: AccessReader
+    access: [["MedicalSP"]]

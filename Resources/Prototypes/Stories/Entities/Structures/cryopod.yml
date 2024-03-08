@@ -1,0 +1,49 @@
+- type: entity
+  parent: CryogenicSleepUnitSpawnerLateJoin
+  id: CryogenicSleepUnitSpawnerLateJoinHOSP
+  suffix: HOSP, Spawner, LateJoin
+  components:
+    - type: ContainerSpawnPoint
+      containerId: storage
+      job: HeadOfSpacePrison
+      spawnType: JobLateJoin
+      
+- type: entity
+  parent: CryogenicSleepUnitSpawnerLateJoin
+  id: CryogenicSleepUnitSpawnerLateJoinPrisoner
+  suffix: Prisoner, Spawner, LateJoin
+  components:
+    - type: ContainerSpawnPoint
+      containerId: storage
+      job: Prisoner
+      spawnType: JobLateJoin
+
+- type: entity
+  parent: CryogenicSleepUnitSpawnerLateJoin
+  id: CryogenicSleepUnitSpawnerLateJoinSpacePrisonOfficer
+  suffix: SpacePrisonOfficer, Spawner, LateJoin
+  components:
+    - type: ContainerSpawnPoint
+      containerId: storage
+      job: SpacePrisonOfficer
+      spawnType: JobLateJoin
+      
+- type: entity
+  parent: CryogenicSleepUnitSpawnerLateJoin
+  id: CryogenicSleepUnitSpawnerLateJoinSpacePrisonMedic
+  suffix: SpacePrisonMedic, Spawner, LateJoin
+  components:
+    - type: ContainerSpawnPoint
+      containerId: storage
+      job: SpacePrisonMedic
+      spawnType: JobLateJoin
+      
+- type: entity
+  parent: CryogenicSleepUnitSpawnerLateJoin
+  id: CryogenicSleepUnitSpawnerLateJoinSpacePrisonEngineer
+  suffix: SpacePrisonEngineer, Spawner, LateJoin
+  components:
+    - type: ContainerSpawnPoint
+      containerId: storage
+      job: SpacePrisonEngineer
+      spawnType: JobLateJoin

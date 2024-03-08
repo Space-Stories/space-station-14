@@ -29,6 +29,7 @@
   - type: Access
     groups:
     - AllAccess
+    - SpacePrison
     tags:
     - NuclearOperative
     - SyndicateAgent

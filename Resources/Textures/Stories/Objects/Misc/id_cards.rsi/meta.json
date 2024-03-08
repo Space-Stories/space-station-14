@@ -11,13 +11,16 @@
       "name": "default"
     },
     {
-        "name": "idjedint"
+      "name": "idjedint"
     },
     {
       "name": "silver"
     },
 	{
       "name": "gold"
+    },
+	{
+      "name": "orange"
     },
     {
       "name": "idspofficer"
@@ -30,6 +33,9 @@
     },
     {
       "name": "idhosp"
+    },
+	{
+      "name": "idprisoner"
     },
     {
       "name": "idiaa"

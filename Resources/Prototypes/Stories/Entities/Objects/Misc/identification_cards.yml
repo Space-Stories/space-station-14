@@ -53,6 +53,19 @@
 
 - type: entity
   parent: HeadOfSPIDCard
+  id: PrisonerIDCard
+  name: ID карта заключенного
+  description: Карта, необходимая для доступа в различные области станции.
+  components:
+  - type: Sprite
+    layers:
+    - state: orange
+    - state: idprisoner
+  - type: PresetIdCard
+    job: Prisoner
+
+- type: entity
+  parent: HeadOfSPIDCard
   id: IAAIDCard
   name: internal affairs agent ID card
   components:

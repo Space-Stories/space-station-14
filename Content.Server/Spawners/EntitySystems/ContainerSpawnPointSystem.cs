@@ -1,4 +1,4 @@
-﻿using Content.Server.GameTicking;
+using Content.Server.GameTicking;
 using Content.Server.Spawners.Components;
 using Content.Server.Station.Systems;
 using Robust.Server.Containers;
@@ -45,6 +45,12 @@ public sealed class ContainerSpawnPointSystem : EntitySystem
             if (_gameTicker.RunLevel != GameRunLevel.InRound &&
                 spawnPoint.SpawnType == SpawnPointType.Job &&
                 (args.Job == null || spawnPoint.Job == args.Job.Prototype))
+            {
+                possibleContainers.Add((uid, spawnPoint, container, xform));
+            }
+
+            // LateJoin with Job condition
+            if (_gameTicker.RunLevel == GameRunLevel.InRound && spawnPoint.SpawnType == SpawnPointType.JobLateJoin && (spawnPoint.Job == null || spawnPoint.Job == args.Job.Prototype))
             {
                 possibleContainers.Add((uid, spawnPoint, container, xform));
             }

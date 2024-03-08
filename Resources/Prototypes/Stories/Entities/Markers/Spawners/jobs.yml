@@ -74,7 +74,7 @@
     layers:
       - state: green
       - state: doctor
-
+      
 - type: entity
   id: SpawnPointPrisoner
   parent: SpawnPointJobBaseStories

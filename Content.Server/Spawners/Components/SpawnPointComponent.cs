@@ -32,4 +32,5 @@ public enum SpawnPointType
     LateJoin,
     Job,
     Observer,
+    JobLateJoin,
 }

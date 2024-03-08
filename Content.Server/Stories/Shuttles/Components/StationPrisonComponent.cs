@@ -16,7 +16,7 @@ public sealed partial class StationPrisonComponent : Component
     public float ShuttleIndex;
 
     [DataField]
-    public ResPath Map = new("/Maps/Stories/prison.yml");
+    public ResPath Map = new("/Maps/Stories/SpacePrison/resort.yml");
 
     /// <summary>
     /// Centcomm entity that was loaded.
