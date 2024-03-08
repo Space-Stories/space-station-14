@@ -1,0 +1,11 @@
+- type: entity
+  id: BaseStationPrison
+  abstract: true
+  components:
+    - type: StationPrison
+
+- type: entity
+  id: BaseRepeatedStationArrivals
+  abstract: true
+  components:
+    - type: RepeatedStationArrivals

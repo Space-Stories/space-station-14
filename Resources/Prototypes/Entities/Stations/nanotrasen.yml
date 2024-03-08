@@ -15,9 +15,10 @@
     - BaseStationJobsSpawning
     - BaseStationRecords
     - BaseStationArrivals
-    - BaseStationGateway
+#    - BaseStationGateway Stories-Gateway-Off
     - BaseStationShuttles
     - BaseStationCentcomm
+    - BaseStationPrison
     - BaseStationEvacuation
     - BaseStationAlertLevels
     - BaseStationMagnet

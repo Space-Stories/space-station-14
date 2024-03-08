@@ -2,9 +2,9 @@
   id: StandardSpacePrisonStation
   parent:
     - BaseStation
+    # - BaseRepeatedStationArrivals
     - BaseStationJobsSpawning
     - BaseStationRecords
-    - BaseStationCentcomm
     - BaseStationAlertLevels
     - BaseStationSiliconLawCrewsimov
     - BaseStationAllEventsEligible

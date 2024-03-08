@@ -17,6 +17,9 @@
   id: JobJediNt
 
 - type: playTimeTracker
+  id: JobPrisoner
+
+- type: playTimeTracker
   id: JobSeniorEngineer
 
 - type: playTimeTracker
