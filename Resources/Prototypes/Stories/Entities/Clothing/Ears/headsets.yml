@@ -17,6 +17,19 @@
 
 - type: entity
   parent: ClothingHeadset
+  id: ClothingHeadsetPrisoner
+  name: гарнитура заключенного
+  description: Гарнитура, выдаваемая заключенным в тюрьмах.
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyPrisoner
+  - type: Sprite
+    sprite: Stories/Clothing/Ears/Headsets/prisoner.rsi
+
+- type: entity
+  parent: ClothingHeadset
   id: ClothingHeadsetIAA
   name: iaa headset
   description: A headset for internal affairs agent to hear the captain's last words.

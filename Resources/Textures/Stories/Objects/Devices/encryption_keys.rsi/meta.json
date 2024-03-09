@@ -13,8 +13,14 @@
     {
       "name": "prison_label"
     },
+	{
+      "name": "prisoner_label"
+    },
     {
       "name": "crypt_silver"
+    },
+	{
+      "name": "crypt_prisoner"
     },
     {
       "name": "nano_label"

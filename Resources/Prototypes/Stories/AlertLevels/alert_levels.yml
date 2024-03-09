@@ -1,0 +1,64 @@
+- type: alertLevels
+  id: prisonAlerts
+  defaultLevel: prison-first
+  levels:
+    prison-first:
+      announcement: alert-level-prison-first-announcement
+      color: LimeGreen
+      shuttleTime: 600
+    prison-second:
+      announcement: alert-level-prison-second-announcement
+      sound: /Audio/Announcements/Prison/prison_yellow.ogg
+      color: Gold
+      shuttleTime: 600
+    prison-violet:
+      announcement: alert-level-prison-violet-announcement
+      sound: /Audio/Announcements/Prison/prison_violet.ogg
+      color: Violet
+      emergencyLightColor: Violet
+      shuttleTime: 600
+    prison-third:
+      announcement: alert-level-prison-third-announcement
+      sound: /Audio/Announcements/Prison/prison_orange.ogg
+      color: DarkOrange
+      emergencyLightColor: DarkOrange
+      shuttleTime: 600
+    prison-fourth:
+      announcement: alert-level-prison-fourth-announcement
+      sound: /Audio/Announcements/Prison/prison_red.ogg
+      color: Red
+      shuttleTime: 600
+    prison-intel:
+      announcement: alert-level-prison-intel-announcement
+      sound:
+        path: /Audio/Announcements/Prison/prison_intel.ogg
+        params:
+          volume: -2
+      color: Turquoise
+      emergencyLightColor: Turquoise
+      forceEnableEmergencyLights: true
+      shuttleTime: 600
+    prison-wipe:
+      announcement: alert-level-prison-wipe-announcement
+      selectable: false
+      sound:
+        path: /Audio/Misc/delta.ogg
+        params:
+          volume: -3
+      disableSelection: true
+      color: MistyRose
+      emergencyLightColor: MistyRose
+      forceEnableEmergencyLights: true
+      shuttleTime: 600
+    prison-fifth:
+      announcement: alert-level-prison-fifth-announcement
+      selectable: false
+      sound:
+        path: /Audio/Misc/epsilon.ogg
+        params:
+          volume: -2
+      disableSelection: true
+      color: FireBrick
+      emergencyLightColor: Crimson
+      forceEnableEmergencyLights: true
+      shuttleTime: 600

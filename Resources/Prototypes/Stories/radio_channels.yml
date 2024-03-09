@@ -5,3 +5,10 @@
   frequency: 1102
   color: "#456CF2"
   longRange: true
+
+- type: radioChannel
+  id: Prisoner
+  name: chat-radio-prisoner
+  keycode: 'ж'
+  frequency: 1907
+  color: "#FF840A"

@@ -5,10 +5,11 @@
     # - BaseRepeatedStationArrivals
     - BaseStationJobsSpawning
     - BaseStationRecords
-    - BaseStationAlertLevels
+    - PrisonStationAlertLevels
     - BaseStationSiliconLawCrewsimov
     - BaseStationAllEventsEligible
     - BaseStationNanotrasen
   noSpawn: true
   components:
     - type: Transform
+

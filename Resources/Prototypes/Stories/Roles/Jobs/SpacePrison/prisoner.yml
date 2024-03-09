@@ -6,12 +6,14 @@
   startingGear: PrisonerGear
   icon: "JobIconPrisoner"
   supervisors: job-supervisors-everyone
-
+  antagonist: true
+  
 - type: startingGear
   id: PrisonerGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitPrisoner
     shoes: ClothingShoesColorBlack
     id: PrisonerPDA
+    ears: ClothingHeadsetPrisoner
   innerClothingSkirt: ClothingUniformJumpskirtPrisoner
 

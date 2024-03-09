@@ -9,3 +9,10 @@
   abstract: true
   components:
     - type: RepeatedStationArrivals
+
+- type: entity
+  id: PrisonStationAlertLevels
+  abstract: true
+  components:
+    - type: AlertLevel
+      alertLevelPrototype: prisonAlerts

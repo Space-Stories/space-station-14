@@ -25,9 +25,26 @@
   - type: EncryptionKey
     channels:
     - Prison
+    - Prisoner
     defaultChannel: Prison
   - type: Sprite
     sprite: Stories/Objects/Devices/encryption_keys.rsi
     layers:
     - state: crypt_prison
     - state: prison_label
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeyPrisoner
+  name: ключ шифрования заключенных
+  description: ключ шифрования, используемый заключенными в тюрьмах
+  components:
+  - type: EncryptionKey
+    channels:
+    - Prisoner
+    defaultChannel: Prisoner
+  - type: Sprite
+    sprite: Stories/Objects/Devices/encryption_keys.rsi
+    layers:
+    - state: crypt_prisoner
+    - state: prisoner_label
