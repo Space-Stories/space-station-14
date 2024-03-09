@@ -1,0 +1,21 @@
+- type: entity
+  name: коробка КПК заключенных
+  parent: BoxPDA
+  id: PrisonerPDABox
+  description: Коробка с КПК для заключенных
+  components:
+  - type: StorageFill
+    contents:
+      - id: PrisonerPDA
+        amount: 4
+      
+- type: entity
+  name: коробка гарнитур заключенных
+  parent: BoxHeadset
+  id: BoxHeadsetPrisoner
+  description: Коробка с гарнитурами для заключенных
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingHeadsetPrisoner
+        amount: 4
