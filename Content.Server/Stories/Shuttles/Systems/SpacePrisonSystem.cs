@@ -108,7 +108,7 @@ public sealed partial class SpacePrisonSystem : EntitySystem
 
         component.MapEntity = map;
         component.Entity = grid;
-        _shuttle.TryAddFTLDestination(mapId, false, out _);
+        _shuttle.TryAddFTLDestination(mapId, true, out _);
     }
 
    	private void OnPrisonInit(EntityUid uid, StationPrisonComponent component, ComponentInit args)
