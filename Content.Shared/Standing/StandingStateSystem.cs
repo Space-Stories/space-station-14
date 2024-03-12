@@ -143,6 +143,7 @@ namespace Content.Shared.Standing
             }
 
             standingState.Standing = true;
+            standingState.CanStandUp = true; // Stories-Crawling
             Dirty(uid, standingState);
             RaiseLocalEvent(uid, new StoodEvent(), false);
             _movementSpeedModifier.RefreshMovementSpeedModifiers(uid); // Stories-Crawling

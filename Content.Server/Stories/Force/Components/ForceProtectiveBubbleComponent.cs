@@ -5,7 +5,7 @@ using Robust.Shared.GameStates;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 using Robust.Shared.Prototypes;
 
-namespace Content.Server.SpaceStories.Force.Components;
+namespace Content.Server.Stories.Force.Components;
 
 [RegisterComponent]
 public sealed partial class ForceProtectiveBubbleComponent : Component

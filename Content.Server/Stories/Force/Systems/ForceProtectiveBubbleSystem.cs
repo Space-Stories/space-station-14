@@ -1,9 +1,9 @@
 using Content.Shared.Damage;
 using Content.Shared.Mobs;
 using Content.Server.Atmos.Components;
-using Content.Server.SpaceStories.Force.Components;
+using Content.Server.Stories.Force.Components;
 using Content.Shared.Weapons.Reflect;
-using Content.Shared.SpaceStories.Force.ForceSensitive;
+using Content.Shared.Stories.Force.ForceSensitive;
 using Content.Shared.Popups;
 using Content.Shared.Timing;
 using Content.Shared.Explosion;
@@ -12,7 +12,7 @@ using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
 using Content.Shared.Actions;
 
-namespace Content.Server.SpaceStories.Force.Systems;
+namespace Content.Server.Stories.Force.Systems;
 
 public sealed class ForceProtectiveBubbleSystem : EntitySystem
 {

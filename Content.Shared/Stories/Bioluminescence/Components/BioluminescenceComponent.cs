@@ -1,5 +1,5 @@
 using Content.Shared.Actions;
-namespace Content.Shared.SpaceStories.Bioluminescence;
+namespace Content.Shared.Stories.Bioluminescence;
 
 [RegisterComponent]
 public sealed partial class BioluminescenceComponent : Component

@@ -1,11 +1,11 @@
-using Content.Shared.SpaceStories.Force.ForceSensitive;
+using Content.Shared.Stories.Force.ForceSensitive;
 using Content.Shared.Actions;
 using Content.Shared.Popups;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Timing;
 using Robust.Shared.Timing;
 
-namespace Content.Shared.SpaceStories.Force.Systems;
+namespace Content.Shared.Stories.Force.Systems;
 
 public sealed class RecallLightSaberSystem : EntitySystem
 {

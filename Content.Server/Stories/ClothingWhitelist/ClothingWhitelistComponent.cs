@@ -3,7 +3,7 @@ using Robust.Shared.Audio;
 using Content.Server.NPC.Components;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Set;
 
-namespace Content.Server.SpaceStories.ClothingWhitelist;
+namespace Content.Server.Stories.ClothingWhitelist;
 
 [RegisterComponent]
 public sealed partial class ClothingWhitelistComponent : Component
