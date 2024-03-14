@@ -12,3 +12,15 @@
         path: /Audio/Announcements/centcomm.ogg
         params:
           volume: -4
+
+- type: entity
+  parent: ComputerComms
+  id: SpacePrisonComputerComms
+  name: консоль связи космической тюрьмы
+  description: Консоль, используемая для установки уровня угроз и объявлений на территории космической тюрьмы
+  components:
+    - type: AccessReader
+      access: [[ "SecuritySP" ]]
+    - type: CommunicationsConsole
+      title: comms-console-announcement-title-spaceprison
+      global: false
