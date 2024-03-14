@@ -1,10 +1,13 @@
 using Content.Server.DoAfter;
+using Content.Server.Mind;
 using Content.Server.Popups;
 using Content.Server.Stories.Lib;
 using Content.Shared.Body.Components;
 using Content.Shared.CCVar;
 using Content.Shared.Damage.Systems;
 using Content.Shared.DoAfter;
+using Content.Shared.Mind;
+using Content.Shared.Mind.Components;
 using Content.Shared.Mindshield.Components;
 using Content.Shared.Stories.Shadowling;
 using Robust.Shared.Configuration;
@@ -14,6 +17,7 @@ public sealed class ShadowlingEnthrallSystem : EntitySystem
 {
     [Dependency] private readonly StaminaSystem _stamina = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
+    [Dependency] private readonly MindSystem _mind = default!;
     [Dependency] private readonly DoAfterSystem _doAfter = default!;
     [Dependency] private readonly ShadowlingSystem _shadowling = default!;
     [Dependency] private readonly IConfigurationManager _config = default!;
@@ -55,8 +59,7 @@ public sealed class ShadowlingEnthrallSystem : EntitySystem
         // You cannot enthrall someone without mind
         var shadowlingEnthrallRequireMindAvailability = _config.GetCVar(CCVars.ShadowlingEnthrallRequireMindAvailability);
         if (
-            shadowlingEnthrallRequireMindAvailability &&
-            !_utils.IsInConsciousness(ev.Target)
+            shadowlingEnthrallRequireMindAvailability && !_mind.TryGetMind(ev.Target, out var mindId, out var mind)
         )
         {
             _popup.PopupEntity("Вы можете порабощать существ только в сознании", uid, uid);
