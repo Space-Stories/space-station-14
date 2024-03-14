@@ -7,7 +7,7 @@ using Content.Server.NPC.Components;
 using System.Linq;
 using Content.Server.NPC.Systems;
 
-namespace Content.Server.SpaceStories.ClothingWhitelist;
+namespace Content.Server.Stories.ClothingWhitelist;
 
 public sealed class ClothingWhitelistSystem : EntitySystem
 {

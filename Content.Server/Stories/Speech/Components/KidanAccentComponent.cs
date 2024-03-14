@@ -1,4 +1,4 @@
-﻿namespace Content.Server.SpaceStories.Speech.Components;
+﻿namespace Content.Server.Stories.Speech.Components;
 
 /// <summary>
 ///     Hiss!
