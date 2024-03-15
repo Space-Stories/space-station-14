@@ -51,7 +51,7 @@ public sealed class ShadowlingHatchSystem : EntitySystem
         solution.AddReagent("ShadowlingSmokeReagent", 100);
 
         var smokeEnt = Spawn("Smoke", transform.Coordinates);
-        _smoke.StartSmoke(smokeEnt, solution, 5, 7);
+        _smoke.StartSmoke(smokeEnt, solution, 15, 7);
         var oldMeta = MetaData(uid);
 
         var newNullableUid = _polymorph.PolymorphEntity(uid, ShadowlingPolymorph);
@@ -61,11 +61,11 @@ public sealed class ShadowlingHatchSystem : EntitySystem
 
         _meta.SetEntityName(newUid, oldMeta.EntityName);
 
-        _stun.TryStun(newUid, TimeSpan.FromSeconds(5), true);
+        _stun.TryStun(newUid, TimeSpan.FromSeconds(15), true);
         _standing.Down(newUid, dropHeldItems: false, canStandUp: false);
         _physics.SetBodyType(newUid, BodyType.Static);
 
-        var doAfter = new DoAfterArgs(EntityManager, newUid, 5, new ShadowlingHatchDoAfterEvent(), newUid)
+        var doAfter = new DoAfterArgs(EntityManager, newUid, 15, new ShadowlingHatchDoAfterEvent(), newUid)
         {
             RequireCanInteract = false,
         };

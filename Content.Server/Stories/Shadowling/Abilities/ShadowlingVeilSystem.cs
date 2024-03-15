@@ -15,6 +15,6 @@ public sealed class ShadowlingVeilSystem : EntitySystem
     private void OnVeilEvent(EntityUid performer, ShadowlingComponent component, ref ShadowlingVeilEvent ev)
     {
         ev.Handled = true;
-        _temporalLightOff.DisableLightsInRange(performer, 5f, TimeSpan.FromMinutes(2));
+        _temporalLightOff.DisableLightsInRange(performer, 10f, TimeSpan.FromMinutes(2));
     }
 }

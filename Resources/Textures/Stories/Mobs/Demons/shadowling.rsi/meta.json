@@ -12,7 +12,15 @@
         "directions": 4
       },
       {
-        "name": "shadowling_s",
+        "name": "shadowling",
+        "directions": 4
+      },
+      {
+        "name": "shadowling_ascended_overlay",
+        "directions": 4
+      },
+      {
+        "name": "shadowling_overlay",
         "directions": 4
       }
     ]

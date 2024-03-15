@@ -49,8 +49,8 @@ public sealed class ShadowlingAscendanceSystem : EntitySystem
         var solution = new Solution();
         solution.AddReagent("ShadowlingSmokeReagent", 100);
 
-        var smokeEnt = Spawn("Smoke", Transform(uid).Coordinates);
-        _smoke.StartSmoke(smokeEnt, solution, 5, 7);
+        // var smokeEnt = Spawn("Smoke", Transform(uid).Coordinates);
+        // _smoke.StartSmoke(smokeEnt, solution, 5, 7);
 
         var newNullableUid = _polymorph.PolymorphEntity(uid, ShadowlingAscendedPolymorph);
 

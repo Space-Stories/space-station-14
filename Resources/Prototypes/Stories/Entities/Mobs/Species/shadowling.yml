@@ -97,8 +97,9 @@
     drawdepth: Mobs
     sprite: Stories/Mobs/Demons/shadowling.rsi
     layers:
-    - map: ["enum.DamageStateVisualLayers.Base"]
-      state: shadowling_s
+    - state: shadowling
+    - state: shadowling_overlay
+      shader: unshaded
   - type: Body
     prototype: Shadowling
     requiredLegs: 2
@@ -121,7 +122,7 @@
     attackRate: 1
     damage:
       types:
-        Blunt: 5
+        Blunt: 10
   - type: MovementSpeedModifier
     baseWalkSpeed : 2.7
     baseSprintSpeed : 4.5

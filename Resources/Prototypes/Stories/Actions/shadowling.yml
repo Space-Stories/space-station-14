@@ -43,7 +43,7 @@
   noSpawn: true
   components:
   - type: InstantAction
-    useDelay: 15
+    useDelay: 10
     icon: { sprite: Stories/Actions/shadowling.rsi, state: veil }
     itemIconStyle: NoItem
     priority: -11
@@ -56,7 +56,7 @@
   noSpawn: true
   components:
   - type: InstantAction
-    useDelay: 90
+    useDelay: 45
     icon: { sprite: Stories/Actions/shadowling.rsi, state: shadow_walk }
     itemIconStyle: NoItem
     checkCanInteract: false
@@ -70,7 +70,7 @@
   noSpawn: true
   components:
   - type: InstantAction
-    useDelay: 25
+    useDelay: 90
     icon: { sprite: Stories/Actions/shadowling.rsi, state: icy_veins }
     itemIconStyle: NoItem
     priority: -11
@@ -83,7 +83,7 @@
   noSpawn: true
   components:
   - type: InstantAction
-    useDelay: 30
+    useDelay: 10
     icon: { sprite: Stories/Actions/shadowling.rsi, state: collective_mind }
     itemIconStyle: NoItem
     priority: -11
@@ -135,7 +135,7 @@
   noSpawn: true
   components:
   - type: EntityTargetAction
-    useDelay: 60
+    useDelay: 90
     icon: { sprite: Stories/Actions/shadowling.rsi, state: black_recuperation }
     itemIconStyle: NoItem
     priority: -11
@@ -160,7 +160,7 @@
   noSpawn: true
   components:
   - type: EntityTargetAction
-    useDelay: 45
+    useDelay: 60
     icon: { sprite: Stories/Actions/shadowling.rsi, state: hypnosis }
     itemIconStyle: NoItem
     range: 10
@@ -174,7 +174,7 @@
   noSpawn: true
   components:
   - type: EntityTargetAction
-    useDelay: 30
+    useDelay: 15
     icon: { sprite: Stories/Actions/shadowling.rsi, state: annihilate }
     itemIconStyle: NoItem
     range: 10
@@ -201,7 +201,7 @@
   noSpawn: true
   components:
   - type: InstantAction
-    useDelay: 10
+    useDelay: 30
     icon: { sprite: Stories/Actions/shadowling.rsi, state: lightning_storm }
     itemIconStyle: NoItem
     priority: -11

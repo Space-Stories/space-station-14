@@ -13,7 +13,7 @@
   - type: InputMover
   - type: MobMover
   - type: Tool
-    speed: 5
+    speed: 20
     qualities:
       - Prying
   - type: Prying
@@ -31,8 +31,9 @@
     drawdepth: Mobs
     sprite: Stories/Mobs/Demons/shadowling.rsi
     layers:
-    - map: ["enum.DamageStateVisualLayers.Base"]
-      state: shadowling_ascended
+    - state: shadowling_ascended
+    - state: shadowling_ascended_overlay
+      shader: unshaded
   - type: Fixtures
     fixtures:
       fix1:
@@ -51,7 +52,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      100000: Dead
+      10000: Dead
   - type: MeleeWeapon
     altDisarm: false
     angle: 0
@@ -59,7 +60,7 @@
       collection: AlienClaw
     damage:
       groups:
-        Brute: 50
+        Brute: 100
   - type: TypingIndicator
     proto: holo
   - type: Tag
@@ -93,3 +94,7 @@
     - ShadowlingMind
     globalReceive: true
   - type: Puller
+  - type: Access
+    enabled: true
+    groups:
+    - AllAccess

@@ -15,7 +15,7 @@ public sealed partial class ShadowlingComponent : SharedShadowlingComponent
     public TimeSpan ShadowWalkEndsAt = TimeSpan.Zero;
 
     [ViewVariables(VVAccess.ReadOnly), DataField("shadowWalkEndsIn", customTypeSerializer: typeof(TimeOffsetSerializer))]
-    public TimeSpan ShadowWalkEndsIn = TimeSpan.FromSeconds(3);
+    public TimeSpan ShadowWalkEndsIn = TimeSpan.FromSeconds(5);
 
     [ViewVariables(VVAccess.ReadOnly), DataField("grantedActions")]
     public Dictionary<string, EntityUid> GrantedActions = new();

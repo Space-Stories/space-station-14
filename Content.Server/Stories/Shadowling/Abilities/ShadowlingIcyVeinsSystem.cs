@@ -22,7 +22,7 @@ public sealed class ShadowlingIcyVeinsSystem : EntitySystem
         ev.Handled = true;
         var bodies = _shadowling.GetEntitiesAroundShadowling<BodyComponent>(uid, 7.5f);
         var solution = new Solution();
-        solution.AddReagent(IceOilPrototype, 10);
+        solution.AddReagent(IceOilPrototype, 4);
 
         foreach (var entity in bodies)
         {

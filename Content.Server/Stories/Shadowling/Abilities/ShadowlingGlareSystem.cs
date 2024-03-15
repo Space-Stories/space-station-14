@@ -24,6 +24,6 @@ public sealed class ShadowlingGlareSystem : EntitySystem
         ev.Handled = true;
 
         _flash.Flash(ev.Target, uid, null, 15000, 0.8f, false);
-        _stun.TryStun(ev.Target, TimeSpan.FromSeconds(10), false);
+        _stun.TryStun(ev.Target, TimeSpan.FromSeconds(5), false);
     }
 }
