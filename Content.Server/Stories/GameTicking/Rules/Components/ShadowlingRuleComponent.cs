@@ -29,6 +29,9 @@ public sealed partial class ShadowlingRuleComponent : Component
     [DataField]
     public Dictionary<string, EntityUid> Shadowlings = new();
 
+    [DataField]
+    public ProtoId<AntagPrototype> ShadowlingPrototypeId = "Shadowling";
+
     /// <summary>
     /// Min players needed for Shadowling gamemode to start.
     /// </summary>

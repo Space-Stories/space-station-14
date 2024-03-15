@@ -41,7 +41,7 @@
 
 ## Дополнительная информация:
 
-Стандартное давление для газового насоса составляет 1,325 кпа. Криоксадон работает при температуре менее 170 К, однако стандартной практикой является установка морозильной камеры на 100 К для более быстрого замораживания.
+The standard pressure for a gas pump is 100.325 kpa. Cryoxadone works at under 170K, but it is standard practice to set the freezer to 100K for faster freezing.
 
 <GuideReagentEmbed Reagent="Cryoxadone"/>
 <GuideReagentEmbed Reagent="Doxarubixadone"/>

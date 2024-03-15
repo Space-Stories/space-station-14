@@ -1,5 +1,6 @@
 using Content.Shared.Damage;
 using Content.Shared.Stories.Shadowling;
+using Robust.Shared.Audio;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 
 namespace Content.Server.Stories.Shadowling;
@@ -49,4 +50,7 @@ public sealed partial class ShadowlingComponent : SharedShadowlingComponent
 
     [ViewVariables(VVAccess.ReadWrite), DataField("debugDisableThrallsCountCheck")]
     public bool DebugDisableThrallsCountCheck = false;
+
+    [DataField]
+    public SoundSpecifier ShadowlingStartSound = new SoundPathSpecifier("/Audio/Ambience/Antag/headrev_start.ogg");
 }
