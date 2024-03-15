@@ -11,6 +11,8 @@ using Content.Server.Roles;
 using Content.Server.Stories.GameTicking.Rules.Components;
 using Content.Server.Stories.Shadowling;
 using Content.Shared.Chat;
+using Content.Server.Shuttles.Systems;
+using Content.Server.Station.Systems;
 using Content.Shared.Database;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Mind;
@@ -18,6 +20,7 @@ using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Roles;
 using Content.Shared.Stunnable;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 
@@ -36,6 +39,8 @@ public sealed class ShadowlingRuleSystem : GameRuleSystem<ShadowlingRuleComponen
     [Dependency] private readonly RoleSystem _role = default!;
     [Dependency] private readonly SharedStunSystem _stun = default!;
     [Dependency] private readonly ShadowlingSystem _shadowling = default!;
+    [Dependency] private readonly StationSystem _stationSystem = default!;
+    [Dependency] private readonly EmergencyShuttleSystem _emergencyShuttle = default!;
 
     [ValidatePrototypeId<AntagPrototype>]
     public const string ShadowlingAntagRole = "Shadowling";
@@ -113,11 +118,7 @@ public sealed class ShadowlingRuleSystem : GameRuleSystem<ShadowlingRuleComponen
 
     private void OnStartAttempt(RoundStartAttemptEvent ev)
     {
-        var query = AllEntityQuery<ShadowlingRuleComponent, GameRuleComponent>();
-        while (query.MoveNext(out var uid, out var comp, out var gameRule))
-        {
-            _antagSelection.AttemptStartGameRule(ev, uid, comp.MinPlayers, gameRule);
-        }
+        TryRoundStartAttempt(ev, Loc.GetString("roles-antag-rev-name"));
     }
 
     private void OnPlayerJobAssigned(RulePlayerJobsAssignedEvent ev)
@@ -125,38 +126,60 @@ public sealed class ShadowlingRuleSystem : GameRuleSystem<ShadowlingRuleComponen
         var query = QueryActiveRules();
         while (query.MoveNext(out _, out var comp, out _))
         {
-            _antagSelection.EligiblePlayers(ShadowlingAntagRole, comp.MaxShadowlings, comp.PlayersPerShadowling, null,
-                "shadowling-role-greeting", Color.FromName("red").ToHex(), out var chosen);
-            if (chosen.Count != 0)
-                GiveShadowling(chosen, comp);
-            else
-            {
-                _chatManager.SendAdminAnnouncement(Loc.GetString("shadowling-no-shadowlings"));
-            }
+            var eligiblePlayers = _antagSelection.GetEligiblePlayers(ev.Players, comp.ShadowlingPrototypeId);
+            
+            if (eligiblePlayers.Count == 0)
+                continue;
+
+            var shadowlingCount = _antagSelection.CalculateAntagCount(ev.Players.Length, comp.PlayersPerShadowling, comp.MaxShadowlings);
+
+            var shadowling = _antagSelection.ChooseAntags(shadowlingCount, eligiblePlayers);
+
+            GiveShadowling(shadowling, comp.ShadowlingPrototypeId, comp);
         }
     }
 
-    private void GiveShadowling(List<EntityUid> chosen, ShadowlingRuleComponent comp)
+    private void GiveShadowling(List<EntityUid> chosen, ProtoId<AntagPrototype> antagProto, ShadowlingRuleComponent comp)
+    {
+        foreach (var headRev in chosen)
+            GiveShadowling(headRev, antagProto, comp);
+    }
+    private void GiveShadowling(EntityUid chosen, ProtoId<AntagPrototype> antagProto, ShadowlingRuleComponent comp)
     {
         Log.Debug("GiveShadowling List: {0};", chosen);
-        foreach (var shadowling in chosen)
-        {
-            var inCharacterName = MetaData(shadowling).EntityName;
-            Log.Debug("GiveShadowling: {0};", inCharacterName);
-            if (_mind.TryGetMind(shadowling, out var mindId, out var mind))
-            {
-                if (!_role.MindHasRole<ShadowlingRoleComponent>(mindId))
-                {
-                    _role.MindAddRole(mindId, new ShadowlingRoleComponent { PrototypeId = ShadowlingAntagRole });
-                }
-                if (mind.Session != null)
-                {
-                    comp.Shadowlings.Add(inCharacterName, mindId);
-                }
-            }
+        // foreach (var shadowling in chosen)
+        // {
+        //     var inCharacterName = MetaData(shadowling).EntityName;
+        //     Log.Debug("GiveShadowling: {0};", inCharacterName);
+        //     if (_mind.TryGetMind(shadowling, out var mindId, out var mind))
+        //     {
+        //         if (!_role.MindHasRole<ShadowlingRoleComponent>(mindId))
+        //         {
+        //             _role.MindAddRole(mindId, new ShadowlingRoleComponent { PrototypeId = ShadowlingAntagRole });
+        //         }
+        //         if (mind.Session != null)
+        //         {
+        //             comp.Shadowlings.Add(inCharacterName, mindId);
+        //         }
+        //     }
 
-            EnsureComp<ShadowlingComponent>(shadowling);
+        //     EnsureComp<ShadowlingComponent>(shadowling);
+        // }
+        var inCharacterName = MetaData(chosen).EntityName;
+
+        if (!_mind.TryGetMind(chosen, out var mind, out _))
+            return;
+
+        if (!_role.MindHasRole<ShadowlingRoleComponent>(mind))
+        {
+            _role.MindAddRole(mind, new ShadowlingRoleComponent { PrototypeId = ShadowlingAntagRole });
         }
+
+        // comp.ShadowlingPrototypeId.Add(inCharacterName, mind);;
+        var shadowlingComp = EnsureComp<ShadowlingComponent>(chosen);
+        EnsureComp<ShadowlingComponent>(chosen);
+
+        _antagSelection.SendBriefing(chosen, Loc.GetString("head-rev-role-greeting"), Color.Black, shadowlingComp.ShadowlingStartSound);
     }
 
     /// <summary>
@@ -197,11 +220,7 @@ public sealed class ShadowlingRuleSystem : GameRuleSystem<ShadowlingRuleComponen
         {
             if (mind.OwnedEntity != null)
             {
-                var player = new List<EntityUid>
-                {
-                    mind.OwnedEntity.Value
-                };
-                GiveShadowling(player, shadowlingRule);
+                GiveShadowling(mindId, shadowlingRule.ShadowlingPrototypeId, shadowlingRule);
             }
             if (mind.Session != null)
             {
@@ -224,7 +243,7 @@ public sealed class ShadowlingRuleSystem : GameRuleSystem<ShadowlingRuleComponen
         }
 
         // If no Shadowlings are alive all Thralls will lose their Thrall status and rejoin Nanotrasen
-        if (_antagSelection.IsGroupDead(shadowlingsList, false))
+        if (IsGroupDead(shadowlingsList, false))
         {
             var thralls = AllEntityQuery<ShadowlingThrallComponent>();
             while (thralls.MoveNext(out var uid, out _))
@@ -281,5 +300,31 @@ public sealed class ShadowlingRuleSystem : GameRuleSystem<ShadowlingRuleComponen
         {
             _chatManager.ChatMessageToMany(ChatChannel.Visual, message, message, default, false, true, shadowlingsPlayers);
         }
+    }
+
+    private bool IsGroupDead(List<EntityUid> list, bool checkOffStation)
+    {
+        var dead = 0;
+        foreach (var entity in list)
+        {
+            if (TryComp<MobStateComponent>(entity, out var state))
+            {
+                if (state.CurrentState == MobState.Dead || state.CurrentState == MobState.Invalid)
+                {
+                    dead++;
+                }
+                else if (checkOffStation && _stationSystem.GetOwningStation(entity) == null && !_emergencyShuttle.EmergencyShuttleArrived)
+                {
+                    dead++;
+                }
+            }
+            //If they don't have the MobStateComponent they might as well be dead.
+            else
+            {
+                dead++;
+            }
+        }
+
+        return dead == list.Count || list.Count == 0;
     }
 }
