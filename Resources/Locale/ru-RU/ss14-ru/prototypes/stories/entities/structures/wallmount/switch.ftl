@@ -1,0 +1,15 @@
+ent-LockableButtonSecuritySP = { ent-LockableButton }
+    .suffix = Тюрьма, Безопасность
+    .desc = { ent-LockableButton.desc }
+ent-LockableButtonServiceSP = { ent-LockableButton }
+    .suffix = Тюрьма, Сервис
+    .desc = { ent-LockableButton.desc }
+ent-LockableButtonHOSP = { ent-LockableButton }
+    .suffix = Тюрьма, ГКТ
+    .desc = { ent-LockableButton.desc }
+ent-LockableButtonEngineeringSP = { ent-LockableButton }
+    .suffix = Тюрьма, Инженерный
+    .desc = { ent-LockableButton.desc }
+ent-LockableButtonMedicalSP = { ent-LockableButton }
+    .suffix = Тюрьма, Медицинский
+    .desc = { ent-LockableButton.desc }

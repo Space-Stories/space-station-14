@@ -47,8 +47,8 @@
 - type: entity
   parent: HeadOfSPPDA
   id: PrisonerPDA
-  name: КПК заключенного
-  description: Оранжевый кпк, который трудно отличить от одежды заключенного.
+  name: prisoner's PDA
+  description: An orange kpk that's hard to distinguish from the prisoner's clothing.
   components:
   - type: Pda
     id: PrisonerIDCard

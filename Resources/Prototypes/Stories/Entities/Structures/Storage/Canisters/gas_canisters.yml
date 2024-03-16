@@ -1,44 +1,44 @@
-# ОКСИД АЗОТА КТ
+# ОКСИД АЗОТА
 - type: entity
   parent: NitrousOxideCanister
   id: NitrousOxideCanisterSP
-  suffix: КТ
+  suffix: Prison
   components:
   - type: AccessReader
     access: [["EngineeringSP"]]
     
-# УГЛЕКИСЛЫЙ ГАЗ КТ
+# УГЛЕКИСЛЫЙ ГАЗ
 - type: entity
   parent: CarbonDioxideCanister
   id: CarbonDioxideCanisterSP
-  suffix: КТ
+  suffix: Prison
   components:
   - type: AccessReader
     access: [["EngineeringSP"]]
     
-# ВОЗДУХ КТ
+# ВОЗДУХ
 - type: entity
   parent: AirCanister
   id: AirCanisterSP
-  suffix: КТ
+  suffix: Prison
   components:
   - type: AccessReader
     access: [["EngineeringSP"]]
     
-# КИСЛОРОД КТ
+# КИСЛОРОД
 - type: entity
   parent: OxygenCanister
   id: OxygenCanisterSP
-  suffix: КТ
+  suffix: Prison
   components:
   - type: AccessReader
     access: [["EngineeringSP"]]
     
-# АЗОТ КТ
+# АЗОТ
 - type: entity
   parent: NitrogenCanister
   id: NitrogenCanisterSP
-  suffix: КТ
+  suffix: Prison
   components:
   - type: AccessReader
     access: [["EngineeringSP"]]

@@ -54,8 +54,7 @@
 - type: entity
   parent: HeadOfSPIDCard
   id: PrisonerIDCard
-  name: ID карта заключенного
-  description: Карта, необходимая для доступа в различные области станции.
+  name: prisoner ID card
   components:
   - type: Sprite
     layers:

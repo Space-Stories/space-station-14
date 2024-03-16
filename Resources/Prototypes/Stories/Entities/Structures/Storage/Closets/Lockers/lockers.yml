@@ -55,38 +55,38 @@
   - type: AccessReader
     access: [["HeadOfSpacePrison"]]
 
-# ШКАФ ХИМИКА КТ
+# ШКАФ ХИМИКА
 - type: entity
   id: LockerChemistryFilledSP
   parent: LockerChemistryFilled
-  suffix: КТ
+  suffix: Prison
   components:
   - type: AccessReader
     access: [["MedicalSP"]]
     
-# ШКАФ АТМОСА КТ
+# ШКАФ АТМОСА
 - type: entity
   id: LockerAtmosphericsFilledSP
   parent: LockerAtmosphericsFilled
-  suffix: КТ
+  suffix: Prison
   components:
   - type: AccessReader
     access: [["EngineeringSP"]]
     
-# ЯЩИК ТОПЛИВА ДАМ КТ
+# ЯЩИК ТОПЛИВА ДАМ
 - type: entity
   id: CrateEngineeringAMEJarSP
   parent: CrateEngineeringAMEJar
-  suffix: КТ
+  suffix: Prison
   components:
   - type: AccessReader
     access: [["EngineeringSP"]]
     
-# ШКАФ СВАРОЧНОГО ОБОРУДОВАНИЯ КТ
+# ШКАФ СВАРОЧНОГО ОБОРУДОВАНИЯ
 - type: entity
   id: LockerWeldingSuppliesFilledSP
   parent: LockerWeldingSuppliesFilled
-  suffix: КТ
+  suffix: Prison
   components:
   - type: AccessReader
     access: [["EngineeringSP"]]

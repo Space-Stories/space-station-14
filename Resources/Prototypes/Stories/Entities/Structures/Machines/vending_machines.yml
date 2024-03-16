@@ -3,7 +3,7 @@
   id: VendingMachineSPDrobe
   name: SPDrobe
   description: A vending machine for security and security-related clothing!
-  suffix: КТ
+  suffix: Prison
   components:
   - type: VendingMachine
     pack: SPDrobeInventory
@@ -25,92 +25,92 @@
   - type: AccessReader
     access: [["SecuritySP"]]
     
-# СБТЕХ КТ 
+# СБТЕХ
 - type: entity
   parent: VendingMachineSec
   id: VendingMachineSecSP
-  suffix: КТ
+  suffix: Prison
   components:
   - type: AccessReader
     access: [["SecuritySP"]]
 
-# АЛКОМАТ КТ
+# АЛКОМАТ
 - type: entity
   parent: VendingMachineBooze
   id: VendingMachineBoozeSP
-  suffix: КТ
+  suffix: Prison
   components:
   - type: AccessReader
     access: [["ServiceSP"]]
     
-# УБОРШКАФ КТ
+# УБОРШКАФ
 - type: entity
   parent: VendingMachineJaniDrobe
   id: VendingMachineJaniDrobeSP
-  suffix: КТ
+  suffix: Prison
   components:
   - type: AccessReader
     access: [["ServiceSP"]]
     
-# МЕДШКАФ КТ
+# МЕДШКАФ
 - type: entity
   parent: VendingMachineMediDrobe
   id: VendingMachineMediDrobeSP
-  suffix: КТ
+  suffix: Prison
   components:
   - type: AccessReader
     access: [["MedicalSP"]]
     
-# НАНОМЕД КТ
+# НАНОМЕД
 - type: entity
   parent: VendingMachineMedical
   id: VendingMachineMedicalSP
-  suffix: КТ
+  suffix: Prison
   components:
   - type: AccessReader
     access: [["MedicalSP"]]
     
-# НАНОМЕД КТ НАСТЕННЫЙ
+# НАНОМЕД
 - type: entity
   parent: VendingMachineWallMedical
   id: VendingMachineWallMedicalSP
-  suffix: КТ
+  suffix: Prison
   components:
   - type: AccessReader
     access: [["MedicalSP"]]
     
-# ХИМКОМАТ КТ
+# ХИМКОМАТ
 - type: entity
   parent: VendingMachineChemicals
   id: VendingMachineChemicalsSP
-  suffix: КТ
+  suffix: Prison
   components:
   - type: AccessReader
     access: [["MedicalSP"]]
     
-# ИНЖЕМАТ КТ
+# ИНЖЕМАТ
 - type: entity
   parent: VendingMachineEngivend
   id: VendingMachineEngivendSP
-  suffix: КТ
+  suffix: Prison
   components:
   - type: AccessReader
     access: [["EngineeringSP"]]
     
-# ИНЖЕШКАФ КТ
+# ИНЖЕШКАФ
 - type: entity
   parent: VendingMachineEngiDrobe
   id: VendingMachineEngiDrobeSP
-  suffix: КТ
+  suffix: Prison
   components:
   - type: AccessReader
     access: [["EngineeringSP"]]
 
-# АТМОСШКАФ КТ
+# АТМОСШКАФ
 - type: entity
   parent: VendingMachineAtmosDrobe
   id: VendingMachineAtmosDrobeSP
-  suffix: КТ
+  suffix: Prison
   components:
   - type: AccessReader
     access: [["EngineeringSP"]]

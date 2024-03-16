@@ -1,0 +1,15 @@
+ent-CryogenicSleepUnitSpawnerLateJoinHOSP = { ent-CryogenicSleepUnitSpawnerLateJoin }
+    .suffix = ГКТ, Спавнер, Позднее присоединение
+    .desc = { ent-CryogenicSleepUnitSpawnerLateJoin.desc }
+ent-CryogenicSleepUnitSpawnerLateJoinPrisoner = { ent-CryogenicSleepUnitSpawnerLateJoin }
+    .suffix = Заключёный, Спавнер, Позднее присоединение
+    .desc = { ent-CryogenicSleepUnitSpawnerLateJoin.desc }
+ent-CryogenicSleepUnitSpawnerLateJoinSpacePrisonOfficer = { ent-CryogenicSleepUnitSpawnerLateJoin }
+    .suffix = ОфицерКТ, Спавнер, Позднее присоединение
+    .desc = { ent-CryogenicSleepUnitSpawnerLateJoin.desc }
+ent-CryogenicSleepUnitSpawnerLateJoinSpacePrisonMedic = { ent-CryogenicSleepUnitSpawnerLateJoin }
+    .suffix = МедикКТ, Спавнер, Позднее присоединение
+    .desc = { ent-CryogenicSleepUnitSpawnerLateJoin.desc }
+ent-CryogenicSleepUnitSpawnerLateJoinSpacePrisonEngineer = { ent-CryogenicSleepUnitSpawnerLateJoin }
+    .suffix = ИнженерКТ, Спавнер, Позднее присоединение
+    .desc = { ent-CryogenicSleepUnitSpawnerLateJoin.desc }

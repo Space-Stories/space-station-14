@@ -1,0 +1,15 @@
+ent-NitrousOxideCanisterSP = { ent-NitrousOxideCanister }
+    .suffix = Тюрьма
+    .desc = { ent-NitrousOxideCanister.desc }
+ent-CarbonDioxideCanisterSP = { ent-CarbonDioxideCanister }
+    .suffix = Тюрьма
+    .desc = { ent-CarbonDioxideCanister.desc }
+ent-AirCanisterSP = { ent-AirCanister }
+    .suffix = Тюрьма
+    .desc = { ent-AirCanister.desc }
+ent-OxygenCanisterSP = { ent-OxygenCanister }
+    .suffix = Тюрьма
+    .desc = { ent-OxygenCanister.desc }
+ent-NitrogenCanisterSP = { ent-NitrogenCanister }
+    .suffix = Тюрьма
+    .desc = { ent-NitrogenCanister.desc }

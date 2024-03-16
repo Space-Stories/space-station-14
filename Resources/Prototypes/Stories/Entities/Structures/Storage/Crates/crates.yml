@@ -1,8 +1,8 @@
-# МУСОРКА КТ
+# МУСОРКА
 - type: entity
   parent: CrateTrashCartJani
   id: CrateTrashCartJaniSP
-  suffix: КТ
+  suffix: Prison
   components:
   - type: AccessReader
     access: [["ServiceSP"]]

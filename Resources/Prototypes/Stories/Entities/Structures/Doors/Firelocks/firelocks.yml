@@ -2,7 +2,7 @@
 - type: entity
   id: FirelockSP
   parent: Firelock
-  suffix: КТ
+  suffix: Prison
   components:
   - type: AccessReader
     access: [["EngineeringSP"]]
@@ -11,7 +11,7 @@
 - type: entity
   id: FirelockGlassSP
   parent: FirelockGlass
-  suffix: КТ
+  suffix: Prison
   components:
   - type: AccessReader
     access: [["EngineeringSP"]]
@@ -20,7 +20,7 @@
 - type: entity
   id: FirelockEdgeSP
   parent: FirelockEdge
-  suffix: КТ
+  suffix: Prison
   components:
   - type: AccessReader
     access: [["EngineeringSP"]]

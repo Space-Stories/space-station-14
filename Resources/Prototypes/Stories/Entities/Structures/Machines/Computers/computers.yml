@@ -16,8 +16,8 @@
 - type: entity
   parent: ComputerComms
   id: SpacePrisonComputerComms
-  name: консоль связи космической тюрьмы
-  description: Консоль, используемая для установки уровня угроз и объявлений на территории космической тюрьмы
+  name: space prison communications console
+  description: Console used to set the threat level and announcements on the space prison grounds
   components:
     - type: AccessReader
       access: [[ "SecuritySP" ]]

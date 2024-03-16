@@ -2,7 +2,7 @@
 - type: entity
   parent: LockerWallMedicalDoctorFilled
   id: LockerWallMedicalDoctorFilledSP
-  suffix: КТ
+  suffix: Prison
   components:
   - type: AccessReader
     access: [["MedicalSP"]]

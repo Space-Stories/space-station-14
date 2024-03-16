@@ -1,7 +1,7 @@
 - type: entity
   id: AirAlarmSP
   parent: AirAlarm
-  suffix: КТ
+  suffix: Prison
   components:
   - type: AccessReader
     access: [["EngineeringSP"]]
