@@ -50,7 +50,7 @@ public sealed class ContainerSpawnPointSystem : EntitySystem
             }
 
             // LateJoin with Job condition
-            if (_gameTicker.RunLevel == GameRunLevel.InRound && spawnPoint.SpawnType == SpawnPointType.JobLateJoin && (spawnPoint.Job == null || spawnPoint.Job == args.Job.Prototype))
+            if (_gameTicker.RunLevel == GameRunLevel.InRound && spawnPoint.SpawnType == SpawnPointType.JobLateJoin && (spawnPoint.Job == null || spawnPoint.Job == args.Job!.Prototype))
             {
                 possibleContainers.Add((uid, spawnPoint, container, xform));
             }
