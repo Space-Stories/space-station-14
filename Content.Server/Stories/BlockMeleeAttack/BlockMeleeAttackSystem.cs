@@ -24,7 +24,7 @@ using Robust.Shared.Containers;
 using Content.Shared.Weapons.Melee;
 using Content.Shared.Weapons.Melee.Events;
 
-namespace Content.Server.SpaceStories.BlockMeleeAttack;
+namespace Content.Server.Stories.BlockMeleeAttack;
 
 public sealed partial class BlockMeleeAttackSystem : EntitySystem
 {

@@ -1,12 +1,12 @@
-using Content.Shared.SpaceStories.Force.ForceSensitive;
+using Content.Shared.Stories.Force.ForceSensitive;
 using Content.Shared.Actions;
 using Content.Shared.Popups;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Timing;
-using Content.Shared.SpaceStories.Force.LightSaber;
+using Content.Shared.Stories.Force.LightSaber;
 using Content.Shared.Weapons.Misc;
 
-namespace Content.Shared.SpaceStories.Force.Systems;
+namespace Content.Shared.Stories.Force.Systems;
 
 public sealed class HandTetherGunSystem : SharedTetherGunSystem
 {

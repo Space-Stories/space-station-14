@@ -3,9 +3,9 @@ using Content.Shared.Popups;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Hands.EntitySystems;
-using Content.Shared.SpaceStories.Force.LightSaber;
+using Content.Shared.Stories.Force.LightSaber;
 
-namespace Content.Shared.SpaceStories.Force.ForceSensitive;
+namespace Content.Shared.Stories.Force.ForceSensitive;
 public sealed class ForceSensitiveSystem : EntitySystem
 {
     [Dependency] private readonly SharedPopupSystem _popup = default!;

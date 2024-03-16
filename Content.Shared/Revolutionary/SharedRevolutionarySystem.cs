@@ -1,8 +1,10 @@
+// edited by Space Stories
 using Content.Shared.Ghost;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Mindshield.Components;
 using Content.Shared.Popups;
 using Content.Shared.Revolutionary.Components;
+using Content.Shared.Stories.Mindshield;
 using Content.Shared.Stunnable;
 using Robust.Shared.GameStates;
 using Robust.Shared.Player;
@@ -18,33 +20,33 @@ public sealed class SharedRevolutionarySystem : EntitySystem
     {
         base.Initialize();
 
-        SubscribeLocalEvent<MindShieldComponent, MapInitEvent>(MindShieldImplanted);
         SubscribeLocalEvent<RevolutionaryComponent, ComponentGetStateAttemptEvent>(OnRevCompGetStateAttempt);
         SubscribeLocalEvent<HeadRevolutionaryComponent, ComponentGetStateAttemptEvent>(OnRevCompGetStateAttempt);
         SubscribeLocalEvent<RevolutionaryComponent, ComponentStartup>(DirtyRevComps);
         SubscribeLocalEvent<HeadRevolutionaryComponent, ComponentStartup>(DirtyRevComps);
         SubscribeLocalEvent<ShowRevIconsComponent, ComponentStartup>(DirtyRevComps);
+        SubscribeLocalEvent<HeadRevolutionaryComponent, MindShieldImplantedEvent>(HeadRevMindShieldImplanted);
+        SubscribeLocalEvent<RevolutionaryComponent, MindShieldImplantedEvent>(RevMindShieldImplanted);
     }
 
     /// <summary>
-    /// When the mindshield is implanted in the rev it will popup saying they were deconverted. In Head Revs it will remove the mindshield component.
+    /// When the mindshield is implanted in the head rev it will remove the mindshield component
     /// </summary>
-    private void MindShieldImplanted(EntityUid uid, MindShieldComponent comp, MapInitEvent init)
+    private void HeadRevMindShieldImplanted(EntityUid uid, HeadRevolutionaryComponent comp, MindShieldImplantedEvent ev)
     {
-        if (HasComp<HeadRevolutionaryComponent>(uid))
-        {
-            RemCompDeferred<MindShieldComponent>(uid);
-            return;
-        }
+        RemCompDeferred<MindShieldComponent>(uid);
+    }
 
-        if (HasComp<RevolutionaryComponent>(uid))
-        {
-            var stunTime = TimeSpan.FromSeconds(4);
-            var name = Identity.Entity(uid, EntityManager);
-            RemComp<RevolutionaryComponent>(uid);
-            _sharedStun.TryParalyze(uid, stunTime, true);
-            _popupSystem.PopupEntity(Loc.GetString("rev-break-control", ("name", name)), uid);
-        }
+    /// <summary>
+    /// When the mindshield is implanted in the rev it will popup saying they were deconverted
+    /// </summary>
+    private void RevMindShieldImplanted(EntityUid uid, RevolutionaryComponent comp, MindShieldImplantedEvent ev)
+    {
+        var stunTime = TimeSpan.FromSeconds(4);
+        var name = Identity.Entity(uid, EntityManager);
+        RemComp<RevolutionaryComponent>(uid);
+        _sharedStun.TryParalyze(uid, stunTime, true);
+        _popupSystem.PopupEntity(Loc.GetString("rev-break-control", ("name", name)), uid);
     }
 
     /// <summary>

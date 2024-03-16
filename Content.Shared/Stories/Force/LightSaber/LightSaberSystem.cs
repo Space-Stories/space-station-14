@@ -1,11 +1,11 @@
 using Content.Shared.Inventory.Events;
-using Content.Shared.SpaceStories.Force.ForceSensitive;
+using Content.Shared.Stories.Force.ForceSensitive;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Popups;
 using Content.Shared.Item;
 using Content.Shared.Weapons.Misc;
 
-namespace Content.Shared.SpaceStories.Force.LightSaber;
+namespace Content.Shared.Stories.Force.LightSaber;
 public sealed class LightSaberSystem : EntitySystem
 {
     [Dependency] private readonly ForceSensitiveSystem _force = default!;

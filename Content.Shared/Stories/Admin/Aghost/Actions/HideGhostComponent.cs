@@ -1,6 +1,6 @@
 using Content.Shared.Actions;
 
-namespace Content.Shared.SpaceStories.Admin;
+namespace Content.Shared.Stories.Admin;
 
 [RegisterComponent]
 public sealed partial class HideGhostComponent : Component

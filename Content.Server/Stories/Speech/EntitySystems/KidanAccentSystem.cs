@@ -1,9 +1,9 @@
 ﻿using System.Text.RegularExpressions;
-using Content.Server.SpaceStories.Speech.Components;
+using Content.Server.Stories.Speech.Components;
 using Content.Server.Speech;
 using Robust.Shared.Random;
 
-namespace Content.Server.SpaceStories.Speech.EntitySystems;
+namespace Content.Server.Stories.Speech.EntitySystems;
 
 public sealed class KidanAccentSystem : EntitySystem
 {

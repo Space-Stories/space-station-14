@@ -2,7 +2,7 @@ using Content.Shared.Actions;
 using Content.Shared.Ghost;
 using Content.Shared.Tag;
 
-namespace Content.Shared.SpaceStories.Admin;
+namespace Content.Shared.Stories.Admin;
 public sealed class HideGhostSystem : EntitySystem
 {
     [Dependency] private readonly SharedActionsSystem _actions = default!;

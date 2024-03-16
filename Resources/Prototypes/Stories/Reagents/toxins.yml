@@ -1,0 +1,22 @@
+- type: reagent
+  id: IceOil
+  name: reagent-name-iceoil
+  group: Toxins
+  desc: reagent-desc-iceoil
+  physicalDesc: reagent-physical-desc-nondescript
+  color: "#EBFF8E"
+  metabolisms:
+    Poison:
+      effects:
+      - !type:HealthChange
+        damage:
+          types:
+            Cold: 2.8
+      - !type:MovespeedModifier
+        walkSpeedModifier: 0.65
+        sprintSpeedModifier: 0.75
+      - !type:AdjustTemperature
+        conditions:
+        - !type:Temperature
+          min: 243.15
+        amount: -20000

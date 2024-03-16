@@ -1,0 +1,20 @@
+- type: reagent
+  id: ShadowlingSmokeReagent
+  name: reagent-name-shadowlingsmoke
+  group: Medicine
+  desc: reagent-desc-shadowlingsmoke
+  physicalDesc: reagent-physical-desc-nondescript
+  color: "#212529"
+  metabolisms:
+    Medicine:
+      effects:
+      - !type:HealthChange
+        damage:
+          groups:
+            Burn: -6
+            Toxin: -6
+            Airloss: -6
+            Brute: -6
+        conditions:
+        - !type:OrganType
+          type: Shadowling

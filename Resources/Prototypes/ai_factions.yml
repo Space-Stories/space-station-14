@@ -16,6 +16,7 @@
   - Xeno
   - Zombie
   - Revolutionary
+  - Shadowling # Stories-Shadowling
 
 - type: npcFaction
   id: Mouse
@@ -54,6 +55,7 @@
   - Xeno
   - PetsNT
   - Zombie
+  - Shadowling # Stories-Shadowling
 
 - type: npcFaction
   id: Xeno
@@ -83,3 +85,4 @@
   - Zombie
   - SimpleHostile
   - Dragon
+  - Shadowling # Stories-Shadowling
