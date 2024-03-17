@@ -1,13 +1,13 @@
 - type: alertLevels
   id: prisonAlerts
-  defaultLevel: prison-first
+  defaultLevel: prison-calm
   levels:
-    prison-first:
-      announcement: alert-level-prison-first-announcement
+    prison-calm:
+      announcement: alert-level-prison-calm-announcement
       color: LimeGreen
       shuttleTime: 600
-    prison-second:
-      announcement: alert-level-prison-second-announcement
+    prison-minimal:
+      announcement: alert-level-prison-minimal-announcement
       sound: /Audio/Announcements/Prison/prison_yellow.ogg
       color: Gold
       shuttleTime: 600
@@ -17,14 +17,14 @@
       color: Violet
       emergencyLightColor: Violet
       shuttleTime: 600
-    prison-third:
-      announcement: alert-level-prison-third-announcement
+    prison-elevated:
+      announcement: alert-level-prison-elevated-announcement
       sound: /Audio/Announcements/Prison/prison_orange.ogg
       color: DarkOrange
       emergencyLightColor: DarkOrange
       shuttleTime: 600
-    prison-fourth:
-      announcement: alert-level-prison-fourth-announcement
+    prison-military:
+      announcement: alert-level-prison-military-announcement
       sound: /Audio/Announcements/Prison/prison_red.ogg
       color: Red
       shuttleTime: 600
@@ -50,8 +50,8 @@
       emergencyLightColor: MistyRose
       forceEnableEmergencyLights: true
       shuttleTime: 600
-    prison-fifth:
-      announcement: alert-level-prison-fifth-announcement
+    prison-cleanup:
+      announcement: alert-level-prison-cleanup-announcement
       selectable: false
       sound:
         path: /Audio/Misc/epsilon.ogg
