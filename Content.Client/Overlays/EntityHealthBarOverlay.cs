@@ -1,3 +1,4 @@
+using Content.Client.StatusIcon;
 using Content.Shared.Damage;
 using Content.Shared.FixedPoint;
 using Content.Shared.Mobs;
@@ -28,6 +29,7 @@ public sealed class EntityHealthBarOverlay : Overlay
     public override OverlaySpace Space => OverlaySpace.WorldSpaceBelowFOV;
     public HashSet<string> DamageContainers = new();
     private readonly ShaderInstance _shader;
+    private readonly StatusIconSystem _statusIcon = default!;
 
     public EntityHealthBarOverlay(IEntityManager entManager)
     {
@@ -38,6 +40,7 @@ public sealed class EntityHealthBarOverlay : Overlay
         _mobThresholdSystem = _entManager.System<MobThresholdSystem>();
         _progressColor = _entManager.System<ProgressColorSystem>();
         _shader = _prototype.Index<ShaderPrototype>("unshaded").Instance();
+        _statusIcon = _entManager.System<StatusIconSystem>();
     }
 
     protected override void Draw(in OverlayDrawArgs args)
@@ -59,6 +62,9 @@ public sealed class EntityHealthBarOverlay : Overlay
             out var damageableComponent,
             out var spriteComponent))
         {
+            if (!_statusIcon.IsVisible(uid))
+                    continue;
+
             if (_entManager.TryGetComponent<MetaDataComponent>(uid, out var metaDataComponent) &&
                 metaDataComponent.Flags.HasFlag(MetaDataFlags.InContainer))
             {
