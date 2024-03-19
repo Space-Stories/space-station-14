@@ -17,7 +17,11 @@
   - Salvage
   - Maintenance
   - External
-
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: WeaponrySkill
+      
 - type: startingGear
   id: SalvageSpecialistGear
   equipment:

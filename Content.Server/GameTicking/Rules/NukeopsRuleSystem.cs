@@ -35,6 +35,7 @@ using Content.Shared.NukeOps;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
 using Content.Shared.Store;
+using Content.Shared.Stories.Weapons.Ranged.WeaponrySkill.Components;
 using Content.Shared.Tag;
 using Content.Shared.Zombies;
 using Robust.Server.Player;
@@ -704,6 +705,7 @@ public sealed class NukeopsRuleSystem : GameRuleSystem<NukeopsRuleComponent>
     {
         _metaData.SetEntityName(mob, name);
         EnsureComp<NukeOperativeComponent>(mob);
+        EnsureComp<WeaponrySkillComponent>(mob);
 
         if (profile != null)
             _humanoid.LoadProfile(mob, profile);

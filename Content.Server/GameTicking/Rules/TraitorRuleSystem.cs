@@ -14,6 +14,7 @@ using Content.Shared.Objectives.Components;
 using Content.Shared.PDA;
 using Content.Shared.Roles;
 using Content.Shared.Roles.Jobs;
+using Content.Shared.Stories.Weapons.Ranged.WeaponrySkill.Components;
 using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Prototypes;
@@ -198,6 +199,9 @@ public sealed class TraitorRuleSystem : GameRuleSystem<TraitorRuleComponent>
         // Change the faction
         _npcFaction.RemoveFaction(traitor, component.NanoTrasenFaction, false);
         _npcFaction.AddFaction(traitor, component.SyndicateFaction);
+
+        // Stories, give weapon skill
+        EnsureComp<WeaponrySkillComponent>(traitor);
 
         // Give traitors their objectives
         if (giveObjectives)
