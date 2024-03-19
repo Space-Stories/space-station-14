@@ -1,0 +1,67 @@
+- type: forcePreset
+  id: Debug
+  name: Hacker
+  side: Debug
+  volume: 500
+  maxVolume: 1000
+  componentsToAdd:
+  - type: Empire
+  - type: Store
+    balance:
+      SkillPoint: 9999
+    categories:
+    - Force
+    - ForceLight
+    - ForceDark
+    currencyWhitelist:
+    - SkillPoint
+  componentsToRemove:
+  - Flashable
+
+- type: forcePreset
+  id: Inquisitor
+  name: Иквизитор
+  side: Dark
+  volume: 190
+  alert: SithForceVolume
+  maxVolume: 200
+  passiveVolume: 15
+  componentsToAdd:
+  - type: Prying
+    speedModifier: 3
+    pryPowered: !type:Bool
+        true
+    force: !type:Bool
+      true
+    useSound:
+      path: /Audio/Items/crowbar.ogg
+  - type: Empire
+  - type: Store
+    balance:
+      SkillPoint: 20
+    categories:
+    - ForceDark
+    - Force
+    currencyWhitelist:
+    - SkillPoint
+  componentsToRemove:
+  - Flashable
+  - Strippable
+
+- type: forcePreset
+  id: Jedi
+  name: Джедай
+  side: Light
+  volume: 140
+  alert: JediNtForceVolume
+  maxVolume: 150
+  passiveVolume: 10
+  componentsToAdd:
+  - type: Store
+    balance:
+      SkillPoint: 10
+    categories:
+    - ForceLight
+    - Force
+    currencyWhitelist:
+    - SkillPoint

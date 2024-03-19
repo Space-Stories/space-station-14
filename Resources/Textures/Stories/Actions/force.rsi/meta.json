@@ -21,6 +21,66 @@
     },
     {
       "name": "sword"
+    },
+    {
+        "name": "flash"
+    },
+    {
+        "name": "steal"
+    },
+    {
+        "name": "forcewall"
+    },
+    {
+        "name": "trance"
+    },
+    {
+        "name": "healingtouch"
+    },
+    {
+        "name": "freedom"
+    },
+    {
+        "name": "strangle"
+    },
+    {
+        "name": "emp"
+    },
+    {
+        "name": "skill"
+    },
+    {
+        "name": "dash"
+    },
+    {
+        "name": "ignite"
+    },
+    {
+        "name": "hypnosis"
+    },
+    {
+      "name": "lightning"
+    },
+    {
+        "name": "sith"
+    },
+    {
+        "name": "pulse"
+    },
+    {
+        "name": "knock"
+    },
+    {
+        "name": "stopbullets"
+    },
+    {
+        "name": "lookup"
+    },
+    {
+        "name": "equip"
+    },
+    {
+        "name": "movement"
     }
   ]
 }

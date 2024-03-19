@@ -6,6 +6,13 @@ namespace Content.Shared.Roles
     [ImplicitDataDefinitionForInheritors]
     public abstract partial class JobSpecial
     {
-        public abstract void AfterEquip(EntityUid mob);
+        public virtual void AfterEquip(EntityUid mob) // SPACE STORIES - start
+        {
+            // in childs
+        }
+        public virtual void BeforeEquip(EntityUid mob)
+        {
+            // in childs
+        } // SPACE STORIES - end
     }
 }

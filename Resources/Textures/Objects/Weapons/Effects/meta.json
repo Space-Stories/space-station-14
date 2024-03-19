@@ -8,6 +8,20 @@
   },
   "states": [
     {
+        "name": "sith_shield",
+        "delays": [
+          [
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1,
+            0.1
+          ]
+        ]
+      },
+    {
       "name": "shield2",
       "delays": [
         [

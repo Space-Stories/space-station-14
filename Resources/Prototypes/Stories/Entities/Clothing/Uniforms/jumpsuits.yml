@@ -4,6 +4,9 @@
   name: роба джедая
   description: Свободная роба, носимая членами Ордена джедаев.
   components:
+  - type: Tag
+    tags:
+      - ForceRecallEquipment
   - type: ClothingSpeedModifier
     walkModifier: 1
     sprintModifier: 1.02
@@ -18,6 +21,9 @@
   name: униформа стража клинка
   description: Специальная униформа никак не повышающая точность владения мечом.
   components:
+  - type: Tag
+    tags:
+      - ForceRecallEquipment
   - type: Sprite
     sprite: Stories/Clothing/Uniforms/Jumpsuit/jedi_nt.rsi
   - type: Clothing
@@ -44,3 +50,17 @@
     sprite: Stories/Clothing/Uniforms/Jumpsuit/hosp.rsi
   - type: Clothing
     sprite: Stories/Clothing/Uniforms/Jumpsuit/hosp.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitSith
+  name: униформа инквизитора
+  description: Однажды на одной станции Галактической Империи...
+  components:
+  - type: Tag
+    tags:
+      - ForceRecallEquipment
+  - type: Sprite
+    sprite: Stories/Clothing/Uniforms/Jumpsuit/jumpsuit_sith.rsi
+  - type: Clothing
+    sprite: Stories/Clothing/Uniforms/Jumpsuit/jumpsuit_sith.rsi

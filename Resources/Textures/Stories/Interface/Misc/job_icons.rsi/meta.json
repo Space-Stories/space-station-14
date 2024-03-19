@@ -30,6 +30,12 @@
         },
         {
             "name": "ShadowlingsSlave"
+        },
+        {
+            "name": "Empire"
+        },
+        {
+            "name": "HypnotizedEmpire"
         }
     ]
 }

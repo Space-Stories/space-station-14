@@ -12,7 +12,7 @@ namespace Content.Server.Jobs
         [AlwaysPushInheritance]
         public ComponentRegistry Components { get; private set; } = new();
 
-        public override void AfterEquip(EntityUid mob)
+        public override void BeforeEquip(EntityUid mob) // SPACE STORIES
         {
             // now its a registry of components, still throws i bet.
             // TODO: This is hot garbage and probably needs an engine change to not be a POS.

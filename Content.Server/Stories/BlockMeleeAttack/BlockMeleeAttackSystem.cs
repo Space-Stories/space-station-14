@@ -1,30 +1,12 @@
 using Content.Shared.Damage;
-using Content.Shared.Damage.Prototypes;
-using Robust.Shared.Audio;
-using System.Diagnostics.CodeAnalysis;
-using System.Numerics;
-using Content.Shared.Administration.Logs;
-using Content.Shared.Audio;
-using Content.Shared.Database;
 using Content.Shared.Hands;
-using Content.Shared.Inventory;
-using Content.Shared.Inventory.Events;
 using Content.Shared.Popups;
-using Content.Shared.Projectiles;
-using Content.Shared.Weapons.Ranged.Components;
-using Content.Shared.Weapons.Ranged.Events;
-using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
-using Robust.Shared.Network;
-using Robust.Shared.Physics.Components;
-using Robust.Shared.Physics.Systems;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
-using Robust.Shared.Containers;
-using Content.Shared.Weapons.Melee;
-using Content.Shared.Weapons.Melee.Events;
+using Content.Shared.Item.ItemToggle.Components;
 
-namespace Content.Server.Stories.BlockMeleeAttack;
+namespace Content.Server.SpaceStories.BlockMeleeAttack;
 
 public sealed partial class BlockMeleeAttackSystem : EntitySystem
 {
@@ -36,16 +18,36 @@ public sealed partial class BlockMeleeAttackSystem : EntitySystem
 
     public override void Initialize()
     {
+        SubscribeLocalEvent<BlockMeleeAttackComponent, ItemToggledEvent>(ToggleReflect);
         SubscribeLocalEvent<BlockMeleeAttackUserComponent, DamageModifyEvent>(OnUserDamageModified);
         SubscribeLocalEvent<BlockMeleeAttackComponent, GotEquippedHandEvent>(OnReflectHandEquipped);
         SubscribeLocalEvent<BlockMeleeAttackComponent, GotUnequippedHandEvent>(OnReflectHandUnequipped);
-        // SubscribeLocalEvent<BlockingComponent, DamageModifyEvent>(OnDamageModified);
+        SubscribeLocalEvent<BlockMeleeAttackComponent, DamageModifyEvent>(OnDamage);
+    }
+    private void OnDamage(EntityUid uid, BlockMeleeAttackComponent component, DamageModifyEvent args)
+    {
+        if (args.Origin == null) return;
+        if (!component.Enabled) return;
+        if (args.Damage.GetTotal() <= 0) return;
+        if (args.Origin == uid) return;
+
+        if (!_random.Prob(component.BlockProb)) return;
+
+        args.Damage *= 0;
+        _popup.PopupEntity(Loc.GetString("Заблокировано!"), uid);
+        _audio.PlayPvs(component.BlockSound, uid);
+    }
+    private void ToggleReflect(EntityUid uid, BlockMeleeAttackComponent comp, ItemToggledEvent args)
+    {
+        comp.Enabled = args.Activated;
     }
 
     private void OnUserDamageModified(EntityUid uid, BlockMeleeAttackUserComponent component, DamageModifyEvent args)
     {
         if (TryComp<BlockMeleeAttackComponent>(component.BlockingItem, out var blocking))
         {
+            if (args.Origin == null) return;
+            if (!blocking.Enabled) return;
             if (args.Damage.GetTotal() <= 0) return;
             if (args.Origin == uid || args.Origin == component.BlockingItem) return;
 
@@ -70,15 +72,6 @@ public sealed partial class BlockMeleeAttackSystem : EntitySystem
     {
         if (component.User != null) RemComp<BlockMeleeAttackUserComponent>(component.User.Value);
     }
-
-    // private void OnDamageModified(EntityUid uid, BlockingComponent component, DamageModifyEvent args)
-    // {
-    //     var modifier = component.IsBlocking ? component.ActiveBlockDamageModifier : component.PassiveBlockDamageModifer;
-    //     if (modifier == null)
-    //     {
-    //         return;
-    //     }
-
-    //     args.Damage = DamageSpecifier.ApplyModifierSet(args.Damage, modifier);
-    // }
 }
+
+

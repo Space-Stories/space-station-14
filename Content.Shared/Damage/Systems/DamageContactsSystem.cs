@@ -1,8 +1,12 @@
 using Content.Shared.Damage.Components;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Timing;
+using Content.Shared.Weapons.Misc;
+using Content.Shared.Item;
+using Content.Shared.Item.ItemToggle.Components;
 
 namespace Content.Shared.Damage.Systems;
 
@@ -11,12 +15,14 @@ public sealed class DamageContactsSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
 
     public override void Initialize()
     {
         base.Initialize();
         SubscribeLocalEvent<DamageContactsComponent, StartCollideEvent>(OnEntityEnter);
         SubscribeLocalEvent<DamageContactsComponent, EndCollideEvent>(OnEntityExit);
+        SubscribeLocalEvent<ItemToggleDamageContactsComponent, ItemToggledEvent>(OnItemToggle); // SpaceStories
     }
 
     public override void Update(float frameTime)
@@ -63,10 +69,38 @@ public sealed class DamageContactsSystem : EntitySystem
         if (HasComp<DamagedByContactComponent>(otherUid))
             return;
 
+        if (!HasComp<TetheredComponent>(uid) && component.OnlyTethered) // SpaceStories
+            return;
+
         if (component.IgnoreWhitelist?.IsValid(otherUid) ?? false)
             return;
 
         var damagedByContact = EnsureComp<DamagedByContactComponent>(otherUid);
         damagedByContact.Damage = component.Damage;
+        if (component.HitSound != null) _audio.PlayPredicted(component.HitSound, uid, otherUid);
+    }
+    private void OnItemToggle(EntityUid uid, ItemToggleDamageContactsComponent itemToggleMelee, ItemToggledEvent args)
+    {
+        if (!TryComp(uid, out DamageContactsComponent? meleeWeapon))
+            return;
+
+        if (args.Activated)
+        {
+            if (itemToggleMelee.ActivatedDamage != null)
+            {
+                //Setting deactivated damage to the weapon's regular value before changing it.
+                itemToggleMelee.DeactivatedDamage ??= meleeWeapon.Damage;
+                meleeWeapon.Damage = itemToggleMelee.ActivatedDamage;
+            }
+
+            meleeWeapon.HitSound = itemToggleMelee.ActivatedSoundOnHit;
+        }
+        else
+        {
+            if (itemToggleMelee.DeactivatedDamage != null)
+                meleeWeapon.Damage = itemToggleMelee.DeactivatedDamage;
+
+            meleeWeapon.HitSound = itemToggleMelee.DeactivatedSoundOnHit;
+        }
     }
 }

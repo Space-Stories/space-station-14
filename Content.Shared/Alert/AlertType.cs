@@ -52,7 +52,10 @@ namespace Content.Shared.Alert
         SuitPower,
         BorgHealth,
         BorgCrit,
-        BorgDead
+        BorgDead,
+        ForceVolume, // SPACE STORIES!
+        SithForceVolume, // SPACE STORIES!
+        JediNtForceVolume // SPACE STORIES!
     }
 
 }

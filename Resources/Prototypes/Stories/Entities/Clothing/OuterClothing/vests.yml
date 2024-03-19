@@ -4,6 +4,9 @@
   name: утепленный бронежилет стража клинка
   description: Потому что, кто-то сказал, что бронежилеты могут быть утепленны.
   components:
+    - type: Tag
+      tags:
+        - ForceRecallEquipment
     - type: TemperatureProtection
       coefficient: 0.001
     - type: Sprite

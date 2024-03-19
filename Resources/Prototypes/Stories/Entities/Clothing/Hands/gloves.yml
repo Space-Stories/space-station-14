@@ -1,0 +1,16 @@
+- type: entity
+  parent: ClothingHandsGlovesColorBlack
+  id: ClothingHandsGlovesSith
+  name: перчатки инквизитора
+  description: Странные перчатки.
+  components:
+  - type: Tag
+    tags:
+      - ForceRecallEquipment
+  - type: Sprite
+    sprite: Stories/Clothing/Hands/Gloves/gloves_sith.rsi
+  - type: Clothing
+    sprite: Stories/Clothing/Hands/Gloves/gloves_sith.rsi
+  - type: Insulated
+  - type: Fiber
+    fiberMaterial: fibers-insulative

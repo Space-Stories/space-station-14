@@ -11,6 +11,8 @@ using Content.Shared.Mobs.Components;
 using Content.Shared.Throwing;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Player;
+using Content.Shared.Item;
+using Content.Shared.Item.ItemToggle.Components;
 
 namespace Content.Server.Damage.Systems
 {
@@ -28,6 +30,7 @@ namespace Content.Server.Damage.Systems
         {
             SubscribeLocalEvent<DamageOtherOnHitComponent, ThrowDoHitEvent>(OnDoHit);
             SubscribeLocalEvent<DamageOtherOnHitComponent, DamageExamineEvent>(OnDamageExamine);
+            SubscribeLocalEvent<ItemToggleDamageOtherOnHitComponent, ItemToggledEvent>(OnItemToggle); // SpaceStories
         }
 
         private void OnDoHit(EntityUid uid, DamageOtherOnHitComponent component, ThrowDoHitEvent args)
@@ -43,7 +46,7 @@ namespace Content.Server.Damage.Systems
                 _color.RaiseEffect(Color.Red, new List<EntityUid>() { args.Target }, Filter.Pvs(args.Target, entityManager: EntityManager));
             }
 
-            _guns.PlayImpactSound(args.Target, dmg, null, false);
+            _guns.PlayImpactSound(args.Target, dmg, component.HitSound, false); // Space Stories
             if (TryComp<PhysicsComponent>(uid, out var body) && body.LinearVelocity.LengthSquared() > 0f)
             {
                 var direction = body.LinearVelocity.Normalized();
@@ -60,6 +63,30 @@ namespace Content.Server.Damage.Systems
         private void OnDamageExamine(EntityUid uid, DamageOtherOnHitComponent component, ref DamageExamineEvent args)
         {
             _damageExamine.AddDamageExamine(args.Message, component.Damage, Loc.GetString("damage-throw"));
+        }
+        private void OnItemToggle(EntityUid uid, ItemToggleDamageOtherOnHitComponent itemToggleMelee, ItemToggledEvent args) // SpaceStories
+        {
+            if (!TryComp(uid, out DamageOtherOnHitComponent? meleeWeapon))
+                return;
+
+            if (args.Activated)
+            {
+                if (itemToggleMelee.ActivatedDamage != null)
+                {
+                    //Setting deactivated damage to the weapon's regular value before changing it.
+                    itemToggleMelee.DeactivatedDamage ??= meleeWeapon.Damage;
+                    meleeWeapon.Damage = itemToggleMelee.ActivatedDamage;
+                }
+
+                meleeWeapon.HitSound = itemToggleMelee.ActivatedSoundOnHit;
+            }
+            else
+            {
+                if (itemToggleMelee.DeactivatedDamage != null)
+                    meleeWeapon.Damage = itemToggleMelee.DeactivatedDamage;
+
+                meleeWeapon.HitSound = itemToggleMelee.DeactivatedSoundOnHit;
+            }
         }
     }
 }

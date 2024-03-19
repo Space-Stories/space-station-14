@@ -4,6 +4,9 @@
   name: полноразмерная гарнитура стража клинка
   description: Почему тут нет командной частоты?
   components:
+  - type: Tag
+    tags:
+      - ForceRecallEquipment
   - type: ContainerFill
     containers:
       key_slots:
