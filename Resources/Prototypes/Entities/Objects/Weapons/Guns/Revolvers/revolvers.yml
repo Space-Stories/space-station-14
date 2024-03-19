@@ -50,7 +50,8 @@
   - type: StaticPrice
     price: 500
   - type: RequiresWeaponrySkill
-  
+    additionalMaxAngle: 30
+    
 - type: entity
   name: Deckard
   parent: BaseWeaponRevolver

@@ -16,6 +16,7 @@ using Content.Shared.NPC.Prototypes;
 using Content.Shared.NPC.Systems;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
+using Content.Shared.Stories.Weapons.Ranged.WeaponrySkill.Components;
 using Robust.Server.GameObjects;
 using Robust.Server.Maps;
 using Robust.Server.Player;
@@ -277,6 +278,7 @@ public sealed class PiratesRuleSystem : GameRuleSystem<PiratesRuleComponent>
             return;
 
         SetOutfitCommand.SetOutfit(entity, GearId, EntityManager);
+        EnsureComp<WeaponrySkillComponent>(entity); // Stories
 
         var pirateRule = EntityQuery<PiratesRuleComponent>().FirstOrDefault();
         if (pirateRule == null)

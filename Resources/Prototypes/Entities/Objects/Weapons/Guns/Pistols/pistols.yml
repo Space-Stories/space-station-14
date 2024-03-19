@@ -66,6 +66,7 @@
   - type: StaticPrice
     price: 500
   - type: RequiresWeaponrySkill
+    additionalMaxAngle: 20
   
 - type: entity
   name: viper

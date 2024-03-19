@@ -31,6 +31,7 @@
   - type: StaticPrice
     price: 500
   - type: RequiresWeaponrySkill
+    additionalMaxAngle: 20
 
 - type: entity
   id: BaseWeaponPowerCell
@@ -67,6 +68,7 @@
     containers:
       gun_magazine: !type:ContainerSlot
   - type: RequiresWeaponrySkill
+    additionalMaxAngle: 20
 
 - type: entity
   id: BaseWeaponBatterySmall
@@ -86,7 +88,6 @@
     quickEquip: false
     slots:
     - Belt
-    - suitStorage
 
 - type: entity
   id: BaseWeaponPowerCellSmall
@@ -237,7 +238,6 @@
     fireCost: 62.5
   - type: StaticPrice
     price: 300
-  - type: WeaponrySkillTrainer
 
 - type: entity
   name: pulse pistol
@@ -448,6 +448,8 @@
     - type: GuideHelp
       guides:
       - Security
+    - type: RequiresWeaponrySkill
+      enabled: false
 
 - type: entity
   name: disabler SMG
@@ -511,7 +513,8 @@
     - type: ProjectileBatteryAmmoProvider
       proto: BulletDisablerPractice
       fireCost: 100
-    - type: WeaponrySkillTrainer
+    - type: RequiresWeaponrySkill
+      enabled: true
 
 - type: entity
   name: taser
@@ -548,6 +551,8 @@
     steps: 5
     zeroVisible: true
   - type: Appearance
+  - type: RequiresWeaponrySkill
+    enabled: false
 
 - type: entity
   name: antique laser pistol

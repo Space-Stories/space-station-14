@@ -103,8 +103,7 @@
     damage:
       types:
         Blunt: 2
-  - type: WeaponrySkillTrainer
-    givenPoints: 4
+  - type: BulletTrainer
 
 - type: entity
   id: BaseBulletRubber
