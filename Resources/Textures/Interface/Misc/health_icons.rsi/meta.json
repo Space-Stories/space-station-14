@@ -16,6 +16,10 @@
         },
         {
             "name": "state_dead"
+        },
+        {
+            "name": "state_critical",
+            "delays": [[0.5, 0.5]]
         }
     ]
 }
