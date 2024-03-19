@@ -24,3 +24,5 @@
     - type: NpcFactionMember
       factions:
         - SimpleHostile
+    - type: TTS
+      voice: illidan
