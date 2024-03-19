@@ -11,16 +11,22 @@
       "name": "default"
     },
     {
-        "name": "idjedint"
+      "name": "idjedint"
     },
     {
       "name": "silver"
+    },
+	{
+      "name": "future"
     },
     {
       "name": "idspofficer"
     },
     {
       "name": "idspengineer"
+    },
+	{
+      "name": "idchrono"
     },
     {
       "name": "idspmedic"

@@ -1,6 +1,16 @@
 - type: radioChannel
   id: Prison
   name: chat-radio-prison
-  keycode: 'з'
+  keycode: 'з' # Stories-Localization
   frequency: 1102
   color: "#0036a2"
+  # long range since otherwise it'd defeat the point of a handheld radio independent of telecomms
+
+- type: radioChannel
+  id: Future
+  name: chat-radio-future
+  keycode: 'б' # Stories-Localization
+  frequency: 9999
+  color: "#91E8E5"
+  # long range since otherwise it'd defeat the point of a handheld radio independent of telecomms
+  longRange: true

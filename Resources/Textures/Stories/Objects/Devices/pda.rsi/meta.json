@@ -37,6 +37,9 @@
     {
       "name": "pda-spmedic"
     },
+	{
+      "name": "pda-chrono"
+    },
     {
       "name": "pda-hosp"
     }
