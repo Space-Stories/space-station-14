@@ -6,7 +6,6 @@ using Content.Shared.Ghost;
 using Content.Shared.SpaceStories.Empire.Components;
 using Content.Client.Antag;
 using Content.Shared.SpaceStories.Conversion;
-using FastAccessors;
 
 namespace Content.Client.SpaceStories.Empire;
 public sealed class EmpireSystem : SharedStatusIconSystem
