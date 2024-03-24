@@ -85,7 +85,7 @@ namespace Content.Shared.Standing
 
             standingState.Standing = false;
             standingState.CanStandUp = canStandUp;
-            Dirty(uid, standingState); // Stories-Crawling
+            Dirty(uid, standingState);
             RaiseLocalEvent(uid, new DownedEvent(), false);
             _movementSpeedModifier.RefreshMovementSpeedModifiers(uid); // Stories-Crawling
 
