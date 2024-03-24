@@ -1867,7 +1867,7 @@ namespace Content.Shared.CCVar
         /// The time you must spend reading the rules, before the "Request" button is enabled
         /// </summary>
         public static readonly CVarDef<float> GhostRoleTime =
-            CVarDef.Create("ghost.role_time", 3f, CVar.REPLICATED | CVar.SERVER);
+            CVarDef.Create("ghost.role_time", 30f, CVar.REPLICATED | CVar.SERVER); // SPACE STORIES
 
         /*
          * Fire alarm
@@ -2048,7 +2048,7 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<bool> ShadowlingEnthrallRequireMindAvailability =
             CVarDef.Create("shadowling.enthrall_require_mind_availability", true, CVar.SERVERONLY); // Stories-Shadowlings
-        
+
         /*
          * DEBUG
          */

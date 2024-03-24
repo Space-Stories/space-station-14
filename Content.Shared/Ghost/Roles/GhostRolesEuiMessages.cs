@@ -37,6 +37,28 @@ namespace Content.Shared.Ghost.Roles
     }
 
     [NetSerializable, Serializable]
+    public sealed class GhostRoleAddRequestMessage : EuiMessageBase // SPACE STORIES
+    {
+        public uint Identifier { get; }
+
+        public GhostRoleAddRequestMessage(uint identifier)
+        {
+            Identifier = identifier;
+        }
+    }
+
+    [NetSerializable, Serializable]
+    public sealed class GhostRoleRemoveRequestMessage : EuiMessageBase // SPACE STORIES
+    {
+        public uint Identifier { get; }
+
+        public GhostRoleRemoveRequestMessage(uint identifier)
+        {
+            Identifier = identifier;
+        }
+    }
+
+    [NetSerializable, Serializable]
     public sealed class GhostRoleFollowRequestMessage : EuiMessageBase
     {
         public uint Identifier { get; }

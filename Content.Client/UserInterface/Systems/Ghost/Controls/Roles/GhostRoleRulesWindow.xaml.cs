@@ -14,8 +14,9 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles
     {
         [Dependency] private readonly IConfigurationManager _cfg = IoCManager.Resolve<IConfigurationManager>();
         private float _timer;
+        public Action? TimeOver; // SPACE STORIES
 
-        public GhostRoleRulesWindow(string rules, Action<BaseButton.ButtonEventArgs> requestAction)
+        public GhostRoleRulesWindow(string rules, Action action) // SPACE STORIES
         {
             RobustXamlLoader.Load(this);
             var ghostRoleTime = _cfg.GetCVar(CCVars.GhostRoleTime);
@@ -23,19 +24,20 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles
 
             if (ghostRoleTime > 0f)
             {
+                action.Invoke(); // SPACE STORIES
                 RequestButton.Text = Loc.GetString("ghost-roles-window-request-role-button-timer", ("time", $"{_timer:0.0}"));
                 TopBanner.SetMessage(FormattedMessage.FromMarkupPermissive(rules + "\n" + Loc.GetString("ghost-roles-window-rules-footer", ("time", ghostRoleTime))));
-                RequestButton.Disabled = true;
+                // RequestButton.Disabled = true; // SPACE STORIES
             }
 
-            RequestButton.OnPressed += requestAction;
+            // RequestButton.OnPressed += requestAction; // SPACE STORIES
         }
 
 
         protected override void FrameUpdate(FrameEventArgs args)
         {
             base.FrameUpdate(args);
-            if (!RequestButton.Disabled) return;
+            // if (!RequestButton.Disabled) return; // SPACE STORIES
             if (_timer > 0.0)
             {
                 _timer -= args.DeltaSeconds;
@@ -43,8 +45,9 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles
             }
             else
             {
-                RequestButton.Disabled = false;
+                // RequestButton.Disabled = false; // SPACE STORIES
                 RequestButton.Text = Loc.GetString("ghost-roles-window-request-role-button");
+                TimeOver?.Invoke(); // SPACE STORIES
             }
         }
     }
