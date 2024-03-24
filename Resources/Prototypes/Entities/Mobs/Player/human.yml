@@ -11,6 +11,7 @@
   name: syndicate agent
   suffix: Human, Base
   components:
+    - type: WeaponrySkill
     - type: Loadout
       prototypes: [SyndicateOperativeGearExtremelyBasic]
     - type: RandomMetadata
@@ -46,6 +47,7 @@
   components:
     - type: NukeOperative
     - type: RandomHumanoidAppearance
+    - type: WeaponrySkill
 
 - type: entity
   noSpawn: true
@@ -56,6 +58,7 @@
     - type: RandomHumanoidAppearance
       randomizeName: false
     - type: NukeOperative
+    - type: WeaponrySkill
     - type: Loadout
       prototypes: [SyndicateLoneOperativeGearFull]
     - type: RandomMetadata
@@ -81,6 +84,7 @@
     factions:
     - Syndicate
   - type: SpaceNinja
+  - type: WeaponrySkill
   - type: GenericAntag
     rule: Ninja
   - type: AutoImplant

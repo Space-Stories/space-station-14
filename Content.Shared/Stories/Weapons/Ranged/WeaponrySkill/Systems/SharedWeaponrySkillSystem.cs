@@ -1,6 +1,8 @@
 using Content.Shared.Hands;
+using Content.Shared.Popups;
 using Content.Shared.Projectiles;
 using Content.Shared.Stories.Weapons.Ranged.WeaponrySkill.Components;
+using Content.Shared.Weapons.Ranged.Components;
 using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Weapons.Ranged.Systems;
 
@@ -9,6 +11,7 @@ namespace Content.Shared.Stories.Weapons.Ranged.WeaponrySkill.Systems;
 public abstract class SharedWeaponrySkillSystem : EntitySystem
 {
     [Dependency] private readonly SharedGunSystem _gunSystem = default!;
+    [Dependency] private readonly SharedPopupSystem _popup = default!;
     public override void Initialize()
     {
         base.Initialize();
@@ -48,27 +51,33 @@ public abstract class SharedWeaponrySkillSystem : EntitySystem
         if (TryComp<WeaponrySkillComponent>(component.WeaponEquipee, out var weaponryComp) && weaponryComp.SkillObtained)
             return;
 
+        float skillModifier = 1;
+
+        if (weaponryComp != null)
+            skillModifier = (weaponryComp.PointsRequired - weaponryComp.PointsCount) * 0.01f;
+        
         args.MinAngle += component.AdditionalMinAngle;
         args.AngleDecay += component.AngleDecay;
-        args.AngleIncrease += component.AngleIncrease;
-        args.MaxAngle += component.AdditionalMaxAngle;
-        args.FireRate *= component.FireSpeedModifier;
+        args.AngleIncrease += component.AngleIncrease * skillModifier;
+        args.MaxAngle += component.AdditionalMaxAngle * skillModifier;
+        args.FireRate *= component.FireSpeedModifier + ((1 - skillModifier) * (1 - component.FireSpeedModifier));
 
     }
 
     private void OnShot(EntityUid uid, RequiresWeaponrySkillComponent component, GunShotEvent args)
     {
         EntityUid shooter = args.User;
-        TryTraining(component.GivenPoints, uid, shooter);
+        _gunSystem.RefreshModifiers(uid);
+        TryTraining(component.GivenPoints, shooter);
     }
 
     private void OnBulletHit(EntityUid uid, BulletTrainerComponent component, ProjectileHitEvent args)
     {
         EntityUid shooter = args.Shooter!.Value;
-        TryTraining(component.GivenPoints, null, shooter);
+        TryTraining(component.GivenPoints, shooter);
     }
 
-    private void TryTraining(float pointsGiven, EntityUid? weapon, EntityUid shooter)
+    private void TryTraining(float pointsGiven, EntityUid shooter)
     {
         // Checking if shooter have skill
         if (!HasComp<WeaponrySkillComponent>(shooter))
@@ -86,9 +95,10 @@ public abstract class SharedWeaponrySkillSystem : EntitySystem
         // Stop training and weaponry skill
         if (trainComp.PointsCount >= trainComp.PointsRequired)
         {
+            _popup.PopupEntity("Вы стали лучше обращаться с оружием", shooter, shooter, PopupType.Large);
             trainComp.SkillObtained = true;
-            if (weapon.HasValue)
-                _gunSystem.RefreshModifiers(weapon.Value);
+            if (_gunSystem.TryGetGun(shooter, out var weapon, out var gunComp))
+                _gunSystem.RefreshModifiers(weapon);
         }
     }
 }
