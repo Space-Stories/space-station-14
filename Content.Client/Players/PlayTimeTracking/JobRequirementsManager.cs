@@ -9,6 +9,7 @@ using Robust.Shared.Configuration;
 using Robust.Shared.Network;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
+using Content.Client.Corvax.Sponsors;
 
 namespace Content.Client.Players.PlayTimeTracking;
 
@@ -20,6 +21,7 @@ public sealed class JobRequirementsManager
     [Dependency] private readonly IEntityManager _entManager = default!;
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly IPrototypeManager _prototypes = default!;
+    [Dependency] private readonly SponsorsManager _sponsors = default!;
 
     private readonly Dictionary<string, TimeSpan> _roles = new();
     private readonly List<string> _roleBans = new();
@@ -86,6 +88,15 @@ public sealed class JobRequirementsManager
         {
             reason = FormattedMessage.FromUnformatted(Loc.GetString("role-ban"));
             return false;
+        }
+
+        _sponsors.TryGetInfo(out var sponsorData);
+
+        if (job.Requirements == null ||
+            !_cfg.GetCVar(CCVars.GameRoleTimers) ||
+            sponsorData?.RoleTimeBypass == true)
+        {
+            return true;
         }
 
         var player = _playerManager.LocalSession;
