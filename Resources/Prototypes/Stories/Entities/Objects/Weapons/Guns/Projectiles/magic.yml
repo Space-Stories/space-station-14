@@ -18,8 +18,8 @@
     soundHit:
       path: /Audio/Weapons/egloves.ogg
   - type: StunOnCollide
-    stunAmount: 3
-    knockdownAmount: 3
+    stunAmount: 2
+    knockdownAmount: 2
   - type: PushOnCollide
 
 

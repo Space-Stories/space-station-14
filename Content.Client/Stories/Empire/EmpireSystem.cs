@@ -5,8 +5,10 @@ using Robust.Client.Player;
 using Content.Shared.Ghost;
 using Content.Shared.SpaceStories.Empire.Components;
 using Content.Client.Antag;
+using Content.Shared.SpaceStories.Conversion;
+using FastAccessors;
 
-namespace Content.Client.Stories.Shadowling;
+namespace Content.Client.SpaceStories.Empire;
 public sealed class EmpireSystem : SharedStatusIconSystem
 {
     [Dependency] private readonly IPrototypeManager _prototype = default!;
@@ -32,7 +34,7 @@ public sealed class EmpireSystem : SharedStatusIconSystem
     {
         var ent = _player.LocalSession?.AttachedEntity;
 
-        if (HasComp<GhostComponent>(ent) && !visibleToGhost)
+        if (!HasComp<EmpireComponent>(ent) && !HasComp<GhostComponent>(ent))
             return;
 
         args.StatusIcons.Add(_prototype.Index<StatusIconPrototype>(antagStatusIcon));

@@ -2,6 +2,16 @@ using Content.Shared.SpaceStories.ForceUser.Actions.Events;
 using Content.Shared.SpaceStories.ForceUser;
 using Content.Server.SpaceStories.ForceUser.ProtectiveBubble.Components;
 using Content.Shared.Weapons.Melee.Events;
+using Content.Shared.Actions;
+using Content.Shared.Popups;
+using Content.Shared.Weapons.Ranged.Events;
+using Content.Shared.SpaceStories.Force.LightSaber;
+using Robust.Shared.Prototypes;
+using Content.Shared.Alert;
+using Robust.Shared.Serialization.Manager;
+using Content.Shared.SpaceStories.Force;
+using Content.Shared.Rounding;
+using Content.Shared.Damage;
 
 namespace Content.Server.SpaceStories.ForceUser.ProtectiveBubble.Systems;
 
@@ -33,10 +43,12 @@ public sealed partial class ProtectiveBubbleSystem
     private void OnInit(EntityUid uid, ProtectiveBubbleUserComponent component, ComponentInit args)
     {
         _actions.AddAction(uid, ref component.StopProtectiveBubbleActionEntity, out var act, component.StopProtectiveBubbleAction);
+        _alerts.ShowAlert(uid, AlertType.ProjectiveBubble, 0);
     }
     private void OnShutdown(EntityUid uid, ProtectiveBubbleUserComponent component, ComponentShutdown args)
     {
         _actions.RemoveAction(component.StopProtectiveBubbleActionEntity);
+        _alerts.ClearAlert(uid, AlertType.ProjectiveBubble);
     }
     private void OnStopProtectiveBubble(EntityUid uid, ProtectiveBubbleUserComponent comp, StopProtectiveBubbleEvent args)
     {

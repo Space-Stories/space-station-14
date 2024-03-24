@@ -3,7 +3,7 @@ using Content.Shared.Actions;
 using Content.Shared.Damage;
 using Content.Shared.SpaceStories.Force;
 using Content.Server.Weapons.Melee;
-
+using Content.Shared.Alert;
 namespace Content.Server.SpaceStories.ForceUser.ProtectiveBubble.Systems;
 
 public sealed partial class ProtectiveBubbleSystem : EntitySystem
@@ -15,6 +15,7 @@ public sealed partial class ProtectiveBubbleSystem : EntitySystem
     [Dependency] private readonly MeleeWeaponSystem _meleeWeapon = default!;
     [Dependency] private readonly IComponentFactory _factory = default!;
     [Dependency] private readonly ForceSystem _force = default!;
+    [Dependency] private readonly AlertsSystem _alerts = default!;
     public override void Initialize()
     {
         base.Initialize();

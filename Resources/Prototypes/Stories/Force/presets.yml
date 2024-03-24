@@ -22,10 +22,10 @@
   id: Inquisitor
   name: Иквизитор
   side: Dark
-  volume: 190
+  volume: 140
   alert: SithForceVolume
-  maxVolume: 200
-  passiveVolume: 15
+  maxVolume: 150
+  passiveVolume: 10
   componentsToAdd:
   - type: Prying
     speedModifier: 3

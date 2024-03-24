@@ -79,27 +79,6 @@
       event: !type:HandTetherGunEvent {}
 
 - type: entity
-  id: ActionPushBall
-  name: Силовой толчок
-  description: Создайте сильный толчок, который может сбить человека с ног. Полностью ослабевает пролетев 4 тайла.
-  components:
-  - type: WorldTargetAction
-    useDelay: 10
-    itemIconStyle: BigAction
-    checkCanAccess: false
-    range: 60
-    sound: !type:SoundPathSpecifier
-      path: /Audio/Magic/forcewall.ogg
-    icon:
-      sprite: Stories/Actions/force.rsi
-      state: push
-    event: !type:WorldTargetForceUserActionEvent
-      volume: 50
-      event: !type:ProjectileSpellEvent
-        prototype: JediPushBall
-        posData: !type:TargetCasterPos
-
-- type: entity
   id: ActionFlashArea
   name: Ослепление Силы
   description: Cоздайте при помощи телекинеза вспышки энергии, вызывая временную слепоту.
@@ -190,7 +169,7 @@
     sound: !type:SoundPathSpecifier
       path: /Audio/Magic/blink.ogg
     event: !type:WorldTargetForceUserActionEvent
-      volume: 25
+      volume: 50
       event: !type:ForceDashActionEvent
         strength: 20
 

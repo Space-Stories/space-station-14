@@ -55,6 +55,7 @@ namespace Content.Shared.Alert
         BorgDead,
         Stasis, // SPACE STORIES!
         ForceVolume, // SPACE STORIES!
+        ProjectiveBubble, // SPACE STORIES!
         SithForceVolume, // SPACE STORIES!
         JediNtForceVolume // SPACE STORIES!
     }

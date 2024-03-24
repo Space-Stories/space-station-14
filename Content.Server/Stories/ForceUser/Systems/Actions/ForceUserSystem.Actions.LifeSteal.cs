@@ -49,6 +49,8 @@ public sealed partial class ForceUserSystem
         if (dmg == null)
             return;
 
+        _force.TryRemoveVolume(user, dmg.GetTotal().Float());
+
         foreach (var group in args.HealGroups)
         {
             _damageable.TryChangeDamage(user, new DamageSpecifier(_proto.Index<DamageGroupPrototype>(group), dmg.GetTotal() * -2), true);

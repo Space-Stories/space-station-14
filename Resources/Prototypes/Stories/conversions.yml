@@ -1,0 +1,29 @@
+- type: conversion
+  id: HypnotizedEmpire
+  welcomeMessage: hypnosis-empire-role-greeting
+  goodbyeMessage: hypnosis-empire-role-goodbye
+  statusIcon: HypnotizedEmpireFaction
+  soundOnConvert:
+    path: /Audio/Ambience/Antag/starwars.ogg
+    params:
+      volume: -5
+  componentsOnConvert:
+    toAdd:
+    - type: HypnotizedEmpire
+    - type: Empire
+  rolesOnConvert:
+    toAdd:
+    - type: HypnotizedEmpireMemberRole
+      prototype: HypnotizedEmpireMember
+  componentsOnRevert:
+    toRemove:
+    - HypnotizedEmpire
+    - Empire
+  rolesOnRevert:
+    toRemove:
+    - HypnotizedEmpireMemberRole
+  statusIconWhitelist:
+    components:
+    - Empire
+  channels:
+  - Empire

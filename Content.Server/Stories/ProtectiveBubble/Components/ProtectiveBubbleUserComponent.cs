@@ -26,11 +26,10 @@ public sealed partial class ProtectiveBubbleUserComponent : Component
     public DamageSpecifier Regeneration = new()
     {
         DamageDict = {
-        { "Blunt", -1f },
-        { "Slash", -1f },
-        { "Piercing", -10f },
-        { "Heat", -1f },
-        { "Shock", -1f }
+        { "Blunt", -2.5f },
+        { "Slash", -2.5f },
+        { "Piercing", -5f },
+        { "Heat", -2.5f }
         }
     };
 }

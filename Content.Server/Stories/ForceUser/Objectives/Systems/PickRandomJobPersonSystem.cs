@@ -5,10 +5,12 @@ using Content.Shared.Mind;
 using Content.Shared.Objectives.Components;
 using Content.Shared.Roles.Jobs;
 using Robust.Shared.Configuration;
+using Content.Server.Chat.Managers;
 using Robust.Shared.Random;
 using Content.Shared.Popups;
 using Content.Server.Store.Systems;
 using Content.Shared.FixedPoint;
+using Content.Shared.Chat;
 
 namespace Content.Server.Objectives.Systems;
 
@@ -22,6 +24,7 @@ public sealed class PickRandomJobPersonSystem : EntitySystem
     [Dependency] private readonly SharedJobSystem _job = default!;
     [Dependency] private readonly SharedMindSystem _mind = default!;
     [Dependency] private readonly TargetObjectiveSystem _target = default!;
+    [Dependency] private readonly IChatManager _chatManager = default!;
 
     public override void Initialize()
     {
@@ -71,7 +74,7 @@ public sealed class PickRandomJobPersonSystem : EntitySystem
         {
             _store.TryAddCurrency(new Dictionary<string, FixedPoint2>
             { {"SkillPoint", 10} }, targetUid.Value);
-            _popup.PopupEntity("Вы чувствуете зло и оно нацелено на вас...", targetUid.Value, targetUid.Value, PopupType.LargeCaution);
+            _popup.PopupEntity("Вы чувствуете зло и оно нацелено на вас... Проверьте магазин навыков.", targetUid.Value, targetUid.Value, PopupType.LargeCaution);
         }
     }
 }

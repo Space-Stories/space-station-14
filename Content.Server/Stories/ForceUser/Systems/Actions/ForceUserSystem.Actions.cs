@@ -7,6 +7,7 @@ using Robust.Shared.Physics.Components;
 using Content.Shared.Physics;
 using Content.Shared.Mobs;
 using Content.Shared.SpaceStories.Empire.Components;
+using Content.Server.SpaceStories.ForceUser.ProtectiveBubble.Components;
 
 namespace Content.Server.SpaceStories.ForceUser;
 public sealed partial class ForceUserSystem
@@ -23,22 +24,9 @@ public sealed partial class ForceUserSystem
         SubscribeLocalEvent<ForceDashActionEvent>(OnDash);
 
         SubscribeLocalEvent<HypnosisTargetActionEvent>(OnHypnosis); // FIXME: Тут не должно быть этого - start
-        SubscribeLocalEvent<ForceUserComponent, MobStateChangedEvent>(OnMobState);
         SubscribeLocalEvent<ForceUserComponent, FrozeBulletsActionEvent>(OnFrozeBullets);
         SubscribeLocalEvent<ForceUserComponent, ForceShopActionEvent>(OnShop);
         SubscribeLocalEvent<ForceUserComponent, ForceLookUpActionEvent>(OnLookUp); // FIXME: Тут не должно быть этого - end
-    }
-
-    private void OnMobState(EntityUid uid, ForceUserComponent component, MobStateChangedEvent args)
-    {
-        if (args.NewMobState == MobState.Dead && component.Preset == "Inquisitor") // FIXME: HARD CODED
-        {
-            var ents = AllEntityQuery<HypnotizedEmpireComponent>();
-            while (ents.MoveNext(out var ent, out var comp))
-            {
-                _empireSystem.Dehypnotize(ent);
-            }
-        }
     }
     private void OnLookUp(EntityUid uid, ForceUserComponent component, ForceLookUpActionEvent args)
     {
@@ -95,7 +83,11 @@ public sealed partial class ForceUserSystem
 
             var foo = _xform.GetWorldPosition(ent, xformQuery) - worldPos;
             _throwing.TryThrow(ent, foo * 10, strength, args.Performer, 0);
-            _stun.TryParalyze(ent, TimeSpan.FromSeconds(args.StunTime), true);
+
+            if (_force.TryRemoveVolume(ent, _random.Next(10, 30)))
+                _popup.PopupEntity("Устоял!", ent);
+            else
+                _stun.TryParalyze(ent, TimeSpan.FromSeconds(args.StunTime), true);
         }
 
         args.Handled = true;
@@ -115,12 +107,12 @@ public sealed partial class ForceUserSystem
     private void OnHypnosis(HypnosisTargetActionEvent args)
     {
         if (args.Handled || _mobState.IsIncapacitated(args.Target) || HasComp<MindShieldComponent>(args.Target)) return;
-        _empireSystem.Hypnotize(args.Target);
+        _conversion.TryConvert(args.Target, "HypnotizedEmpire");
         args.Handled = true;
     }
     private void OnIgnite(IgniteTargetActionEvent args)
     {
-        if (args.Handled || _mobState.IsIncapacitated(args.Target)) return;
+        if (args.Handled || _mobState.IsIncapacitated(args.Target) || HasComp<ProtectedByProtectiveBubbleComponent>(args.Target)) return; // FIXME: Hardcode
 
         _flammable.AdjustFireStacks(args.Target, args.StackAmount);
         _flammable.Ignite(args.Target, args.Performer);

@@ -34,6 +34,7 @@ using Content.Shared.Interaction;
 using Content.Server.Beam;
 using Content.Server.SpaceStories.ForceUser.ProtectiveBubble.Systems;
 using Robust.Shared.Prototypes;
+using Content.Server.SpaceStories.Conversion;
 
 namespace Content.Server.SpaceStories.ForceUser;
 public sealed partial class ForceUserSystem : SharedForceUserSystem
@@ -77,6 +78,7 @@ public sealed partial class ForceUserSystem : SharedForceUserSystem
     [Dependency] private readonly SharedItemToggleSystem _toggleSystem = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedInteractionSystem _interaction = default!;
+    [Dependency] private readonly ConversionSystem _conversion = default!;
     public override void Initialize()
     {
         base.Initialize();

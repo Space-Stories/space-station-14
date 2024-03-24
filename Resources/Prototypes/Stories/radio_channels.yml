@@ -14,3 +14,11 @@
   color: "#91E8E5"
   # long range since otherwise it'd defeat the point of a handheld radio independent of telecomms
   longRange: true
+
+- type: radioChannel
+  id: Empire
+  name: Империя
+  keycode: 'г' # Stories-Localization
+  frequency: 1984
+  color: "#1b67a5"
+  longRange: true

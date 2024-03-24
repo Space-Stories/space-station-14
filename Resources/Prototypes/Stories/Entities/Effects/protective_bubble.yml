@@ -28,7 +28,7 @@
     thresholds:
     - trigger:
         !type:DamageTrigger
-        damage: 200
+        damage: 100
       behaviors:
       - !type:PlaySoundBehavior
         sound:
@@ -44,13 +44,12 @@
       - Alive
   - type: Damageable
     damageModifierSet: ProtectiveBubble
-    damageContainer: Brute
-  - type: PassiveDamage # Slight passive regen. Assuming one damage type, comes out to about 4 damage a minute.
-    allowedStates:
-      - Alive
-    damage:
-      types:
-        Blunt: 1
+  # - type: PassiveDamage # Slight passive regen. Assuming one damage type, comes out to about 4 damage a minute.
+  #   allowedStates:
+  #     - Alive
+  #   damage:
+  #     types:
+  #       Blunt: 1
   - type: Fixtures
     fixtures: # TODO: This needs a second fixture just for mob collisions.
       fix1:

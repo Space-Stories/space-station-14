@@ -1,17 +1,30 @@
 using Robust.Shared.Physics.Events;
 using Content.Server.SpaceStories.ForceUser.ProtectiveBubble.Components;
 using Content.Shared.Projectiles;
+using Content.Shared.Damage;
+using Content.Shared.Rounding;
+using SixLabors.ImageSharp.Processing;
+using Content.Shared.Alert;
 
 namespace Content.Server.SpaceStories.ForceUser.ProtectiveBubble.Systems;
 
 public sealed partial class ProtectiveBubbleSystem
 {
+    public const float MaxBubbleDamage = 100f; // TODO: Добавить возможность менять
     public void InitializeBubble()
     {
         SubscribeLocalEvent<ProtectiveBubbleComponent, EndCollideEvent>(OnEntityExit);
         SubscribeLocalEvent<ProtectiveBubbleComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<ProtectiveBubbleComponent, StartCollideEvent>(OnEntityEnter);
         SubscribeLocalEvent<ProtectiveBubbleComponent, PreventCollideEvent>(OnCollide);
+        SubscribeLocalEvent<ProtectiveBubbleComponent, DamageChangedEvent>(OnDamage);
+    }
+    private void OnDamage(EntityUid uid, ProtectiveBubbleComponent component, DamageChangedEvent args)
+    {
+        if (args.DamageDelta == null || component.User == null)
+            return;
+        var severity = ContentHelpers.RoundToLevels(MathF.Max(0f, args.Damageable.Damage.GetTotal().Float()), MaxBubbleDamage, 20);
+        _alerts.ShowAlert(component.User.Value, AlertType.ProjectiveBubble, (short) severity);
     }
     public void StartBubbleWithUser(string proto, EntityUid user)
     {

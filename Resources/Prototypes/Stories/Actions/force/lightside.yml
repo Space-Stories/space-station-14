@@ -5,13 +5,13 @@
   noSpawn: true
   components:
   - type: InstantAction
-    useDelay: 30
+    useDelay: 300
     icon:
       sprite: Stories/Actions/force.rsi
       state: shield
     itemIconStyle: NoItem
     event: !type:InstantForceUserActionEvent
-      volume: 50
+      volume: 100
       event: !type:CreateProtectiveBubbleEvent {}
 
 - type: entity
@@ -42,7 +42,7 @@
   noSpawn: true
   components:
   - type: InstantAction
-    useDelay: 30
+    useDelay: 180
     icon:
       sprite: Stories/Actions/force.rsi
       state: trance
@@ -74,7 +74,7 @@
   noSpawn: true
   components:
   - type: EntityTargetAction
-    useDelay: 10
+    useDelay: 60
     range: 1
     itemIconStyle: BigAction
     whitelist:
@@ -96,7 +96,28 @@
         volume: 25
         event: !type:InjectReagentsToTargetEvent
           solution:
-            maxVol: 5
+            maxVol: 7.5
             reagents:
             - ReagentId: Omnizine
-              Quantity: 5
+              Quantity: 7.5
+
+- type: entity
+  id: ActionPushBall
+  name: Силовой толчок
+  description: Создайте сильный толчок, который может сбить человека с ног. Полностью ослабевает пролетев 4 тайла.
+  components:
+  - type: WorldTargetAction
+    useDelay: 10
+    itemIconStyle: BigAction
+    checkCanAccess: false
+    range: 60
+    sound: !type:SoundPathSpecifier
+      path: /Audio/Magic/forcewall.ogg
+    icon:
+      sprite: Stories/Actions/force.rsi
+      state: push
+    event: !type:WorldTargetForceUserActionEvent
+      volume: 50
+      event: !type:ProjectileSpellEvent
+        prototype: JediPushBall
+        posData: !type:TargetCasterPos

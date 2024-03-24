@@ -146,7 +146,7 @@ public sealed partial class StrangledEvent : SimpleDoAfterEvent
     {
         DamageDict = new()
         {
-            { "Asphyxiation", 15 }
+            { "Asphyxiation", 7.5f }
         }
     };
 }
@@ -170,7 +170,7 @@ public sealed partial class LifeStolenEvent : SimpleDoAfterEvent
     {
         DamageDict = new()
         {
-            { "Cold", 15 }
+            { "Cold", 7.5f }
         }
     };
 

@@ -56,7 +56,7 @@
   description: Оттолкните всех вокруг вас.
   productAction: ActionRecliningPulse
   cost:
-    SkillPoint: 2
+    SkillPoint: 3
   categories:
   - ForceDark
   conditions:
@@ -82,7 +82,7 @@
   description: Вызывает легкое выгорание у врага.
   productAction: ActionIgniteTarget
   cost:
-    SkillPoint: 2
+    SkillPoint: 3
   categories:
   - ForceDark
   conditions:
@@ -95,7 +95,7 @@
   description: Направьте молнию из ваших рук в вашего врага.
   productAction: ActionLightningStrike
   cost:
-    SkillPoint: 2
+    SkillPoint: 3
   categories:
   - ForceDark
   conditions:

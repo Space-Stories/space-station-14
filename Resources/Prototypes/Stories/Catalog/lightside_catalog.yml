@@ -49,3 +49,16 @@
   conditions:
   - !type:ListingLimitedStockCondition
     stock: 1
+
+- type: listing
+  id: ActionPushBall
+  name: Силовой толчок
+  description: Создайте сильный толчок, который может сбить человека с ног. Полностью ослабевает пролетев 4 тайла.
+  productAction: ActionPushBall
+  cost:
+    SkillPoint: 3
+  categories:
+  - ForceLight
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1

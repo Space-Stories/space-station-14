@@ -34,8 +34,9 @@
       sprite: Stories/Actions/force.rsi
       state: steal
     event: !type:EntityTargetForceUserActionEvent
-      volume: 50
+      volume: 7.5
       event: !type:StealLifeTargetEvent
+        doAfterTime: 1
 
 - type: entity
   id: ActionSithGhost
@@ -47,9 +48,15 @@
     useDelay: 5
     itemIconStyle: BigAction
     icon: { sprite: Stories/Actions/force.rsi, state: sith }
-    event: !type:InstantForceUserActionEvent
-      volume: 100
-      event: !type:SithPolymorphEvent
+    event: !type:DoAfterUserEvent
+      hidden: false
+      needHand: false
+      delay: 3
+      breakOnDamage: true
+      breakOnMove: true
+      event: !type:InstantForceUserActionEvent
+        volume: 100
+        event: !type:SithPolymorphEvent
 
 - type: entity
   id: ActionFrozeBullets
@@ -65,18 +72,18 @@
       volume: 50
       event: !type:FrozeBulletsActionEvent
 
-- type: entity
-  id: ActionRejuvenate
-  name: Самовосстановление
-  description: Используйте телекинез, чтобы останавливать пули вокруг вас на протяжении 10 секунд.
-  noSpawn: true
-  components:
-  - type: InstantAction
-    useDelay: 180
-    icon: { sprite: Stories/Actions/force.rsi, state: stopbullets }
-    event: !type:InstantForceUserActionEvent
-      volume: 300
-      event: !type:RejuvenateActionEvent
+# - type: entity
+#   id: ActionRejuvenate
+#   name: Самовосстановление
+#   description: Используйте телекинез, чтобы останавливать пули вокруг вас на протяжении 10 секунд.
+#   noSpawn: true
+#   components:
+#   - type: InstantAction
+#     useDelay: 180
+#     icon: { sprite: Stories/Actions/force.rsi, state: stopbullets }
+#     event: !type:InstantForceUserActionEvent
+#       volume: 200
+#       event: !type:RejuvenateActionEvent
 
 - type: entity
   id: ActionRecliningPulse
@@ -86,14 +93,14 @@
   components:
   - type: InstantAction
     itemIconStyle: BigAction
-    useDelay: 10
+    useDelay: 30
     icon: { sprite: Stories/Actions/force.rsi, state: pulse }
     event: !type:InstantForceUserActionEvent
-      volume: 50
+      volume: 100
       event: !type:RecliningPulseEvent
-        strength: 10
+        strength: 15
         stun: 3
-        range: 3
+        range: 5
 
 - type: entity
   id: ActionStrangle
@@ -102,7 +109,7 @@
   noSpawn: true
   components:
   - type: EntityTargetAction
-    useDelay: 3
+    useDelay: 10
     range: 2
     itemIconStyle: BigAction
     whitelist:
@@ -116,8 +123,9 @@
       sprite: Stories/Actions/force.rsi
       state: strangle
     event: !type:EntityTargetForceUserActionEvent
-      volume: 25
+      volume: 7.5
       event: !type:StrangleTargetEvent
+        doAfterTime: 1
 
 - type: entity
   id: ActionLightningStrike
@@ -156,7 +164,7 @@
       sprite: Stories/Actions/force.rsi
       state: ignite
     event: !type:EntityTargetForceUserActionEvent
-      volume: 50
+      volume: 75
       event: !type:IgniteTargetActionEvent
         stackAmount: 3.1
 

@@ -1,19 +1,11 @@
 using Content.Shared.Actions;
 using Content.Shared.Popups;
-using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Weapons.Ranged.Events;
-using Content.Shared.Hands.EntitySystems;
 using Content.Shared.SpaceStories.Force.LightSaber;
-using Robust.Shared.Physics.Events;
-using Content.Shared.Weapons.Misc;
 using Robust.Shared.Prototypes;
-using Robust.Shared.Utility;
-using Content.Shared.FixedPoint;
 using Content.Shared.Alert;
 using Robust.Shared.Serialization.Manager;
-using Content.Shared.SpaceStories.ForceUser.Actions.Events;
 using Content.Shared.SpaceStories.Force;
-using Content.Shared.Mobs;
 using Content.Shared.Rounding;
 
 namespace Content.Shared.SpaceStories.ForceUser;
@@ -26,7 +18,6 @@ public abstract partial class SharedForceUserSystem : EntitySystem
     [Dependency] private readonly IComponentFactory _compFact = default!;
     [Dependency] private readonly ISerializationManager _seriMan = default!;
     [Dependency] private readonly AlertsSystem _alerts = default!;
-    [Dependency] private readonly SharedHandsSystem _hands = default!;
     private ISawmill _sawmill = default!;
     public override void Initialize()
     {
@@ -67,7 +58,6 @@ public abstract partial class SharedForceUserSystem : EntitySystem
                 continue;
 
             var comp = (Component) _compFact.GetComponent(name);
-            comp.Owner = uid;
             var temp = (object) comp;
             _seriMan.CopyTo(data.Component, ref temp);
             EntityManager.AddComponent(uid, (Component) temp!);

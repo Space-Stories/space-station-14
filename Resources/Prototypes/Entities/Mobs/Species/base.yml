@@ -236,6 +236,9 @@
   id: BaseMobSpeciesOrganic
   abstract: true
   components:
+  - type: Conversionable # SPACE STORIES
+    allowed:
+    - HypnotizedEmpire
   - type: Flashable
   - type: Barotrauma
     damage:

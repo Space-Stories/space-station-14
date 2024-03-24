@@ -5,6 +5,13 @@
   parent: MobHuman
   id: MobHumanSith
   components:
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - Empire
+  - type: ActiveRadio
+    channels:
+    - Empire
   - type: Stamina
     stunTime: 3
     decay: 6

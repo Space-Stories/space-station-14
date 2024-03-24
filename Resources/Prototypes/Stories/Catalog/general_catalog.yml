@@ -30,7 +30,7 @@
   description: Призовите вашу экипировку к себе. Если она не сможет настигнуть вас, то телепортируется к вам.
   productAction: ActionRecallEquipments
   cost:
-    SkillPoint: 3
+    SkillPoint: 2
   categories:
   - Force
   conditions:
@@ -55,19 +55,6 @@
   name: Телекинез
   description: Ваша рука сможет манипулировать гравитацией вокруг объектов. Левитируйте своим мечом, чтобы вести бой на расстоянии. Другим пользователям силы уворачиваются от этого.
   productAction: ActionTelekinesis
-  cost:
-    SkillPoint: 3
-  categories:
-  - Force
-  conditions:
-  - !type:ListingLimitedStockCondition
-    stock: 1
-
-- type: listing
-  id: ActionPushBall
-  name: Силовой толчок
-  description: Создайте сильный толчок, который может сбить человека с ног. Полностью ослабевает пролетев 4 тайла.
-  productAction: ActionPushBall
   cost:
     SkillPoint: 3
   categories:
@@ -108,7 +95,7 @@
   description: Создайте ЭМ импульс в небольшом радиусе.
   productAction: ActionEmp
   cost:
-    SkillPoint: 2
+    SkillPoint: 1
   categories:
   - Force
   conditions:
@@ -134,7 +121,7 @@
   description: Вскочите с огромной скоростью в нужную точку. Только не стену, пожалуйста.
   productAction: ActionForceDash
   cost:
-    SkillPoint: 2
+    SkillPoint: 3
   categories:
   - Force
   conditions:
