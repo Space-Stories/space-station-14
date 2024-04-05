@@ -1,8 +1,8 @@
 ---
 name: Сообщить о баге
-about: "..."
-title: ''
-labels: ''
+about: "Сообщите об баге, ошибке."
+title: 'Баг: '
+labels: 'Баг'
 assignees: ''
 
 ---
