@@ -52,3 +52,16 @@
         whitelist:
           tags:
           - HoSPSabre
+
+- type: entity
+  parent: ClothingBeltStorageBase
+  id: ClothingBeltSpacePrisonWebbing
+  name: space prison webbing
+  description: Cool blue webbing for security prison bros.
+  components:
+  - type: Sprite
+    sprite: Stories/Clothing/Belt/sp_webbing.rsi
+  - type: Clothing
+    sprite: Stories/Clothing/Belt/sp_webbing.rsi
+
+

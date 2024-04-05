@@ -30,7 +30,7 @@
 - type: startingGear
   id: SpacePrisonEngineerGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitSP
+    jumpsuit: ClothingUniformJumpsuitEngineeringSP
     back: ClothingBackpackEngineeringFilled
     shoes: ClothingShoesBootsJackSP
     id: SpacePrisonEngineerPDA

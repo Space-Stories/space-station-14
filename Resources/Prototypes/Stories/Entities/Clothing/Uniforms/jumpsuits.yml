@@ -44,3 +44,25 @@
     sprite: Stories/Clothing/Uniforms/Jumpsuit/hosp.rsi
   - type: Clothing
     sprite: Stories/Clothing/Uniforms/Jumpsuit/hosp.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitMedicalSP
+  name: space prison medical jumpsuit
+  description: A jumpsuit made of soft material, providing much healing.
+  components:
+  - type: Sprite
+    sprite: Stories/Clothing/Uniforms/Jumpsuit/medic_sp.rsi
+  - type: Clothing
+    sprite: Stories/Clothing/Uniforms/Jumpsuit/medic_sp.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitEngineeringSP
+  name: space prison engineering jumpsuit
+  description: A jumpsuit made of zipping material, providing much zapping.
+  components:
+  - type: Sprite
+    sprite: Stories/Clothing/Uniforms/Jumpsuit/officersp.rsi
+  - type: Clothing
+    sprite: Stories/Clothing/Uniforms/Jumpsuit/officersp.rsi

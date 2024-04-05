@@ -1,0 +1,31 @@
+- type: entity
+  id: MiningSpotBase
+  parent: BaseStructure
+  name: mining ore cluster
+  suffix: Red
+  description: Small ore cluster 
+  components:
+  - type: Sprite
+    noRot: true
+    sprite: Structures/Decoration/statues.rsi
+    state: venus_red
+    drawdepth: Mobs
+    offset: "0.0,0.5"
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: Rock
+  - type: RegenerateableResourceVein
+    entries:
+    - harvestables:
+      - BananiumOre1
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 100
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: WindowShatter
+      - !type:DoActsBehavior
+        acts: ["Breakage"]

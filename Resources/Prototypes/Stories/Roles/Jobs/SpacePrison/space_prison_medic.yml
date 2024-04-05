@@ -33,7 +33,7 @@
 - type: startingGear
   id: SpacePrisonMedicGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitSP
+    jumpsuit: ClothingUniformJumpsuitMedicalSP
     back: ClothingBackpackMedicalFilled
     shoes: ClothingShoesBootsJackSP
     id: SpacePrisonMedicPDA

@@ -12,3 +12,48 @@
     tags:
     - HamsterWearable
     - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatSpacePrisonCap
+  name: space prison cap
+  description: The law enforcement cap for the most law enforcement people
+  components:
+  - type: Sprite
+    sprite: Stories/Clothing/Head/Hats/sp_cap.rsi
+  - type: Clothing
+    sprite: Stories/Clothing/Head/Hats/sp_cap.rsi
+  - type: Tag
+    tags:
+    - HamsterWearable
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatHOSPUshanka
+  name: head of space prison ushanka
+  description: Idealno podhodit dlya Sibirskih zim. Agreed, tovarisch?
+  components:
+  - type: Sprite
+    sprite: Stories/Clothing/Head/Hats/hosp_ushanka.rsi
+  - type: Clothing
+    sprite: Stories/Clothing/Head/Hats/hosp_ushanka.rsi
+  - type: Tag
+    tags:
+    - HamsterWearable
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatHOSPCap
+  name: head of space prison cap
+  description: The law enforcement cap for the most laziest prison employee
+  components:
+  - type: Sprite
+    sprite: Stories/Clothing/Head/Hats/hosp_cap.rsi
+  - type: Clothing
+    sprite: Stories/Clothing/Head/Hats/hosp_cap.rsi
+  - type: Tag
+    tags:
+    - HamsterWearable
+    - WhitelistChameleon
