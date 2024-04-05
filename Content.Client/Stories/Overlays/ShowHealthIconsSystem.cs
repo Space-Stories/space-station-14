@@ -42,10 +42,15 @@ public sealed class ShowHealthIconsSystem : EquipmentHudSystem<ShowHealthIconsCo
         switch (mobStateComponent.CurrentState)
         {
             case MobState.Alive:
-            case MobState.Critical:
                 if (_prototypeMan.TryIndex<StatusIconPrototype>("HealthStateIconNormal", out var alive))
                 {
                     result.Add(alive);
+                }
+                break;
+            case MobState.Critical:
+                if (_prototypeMan.TryIndex<StatusIconPrototype>("HealthStateIconCritical", out var crit))
+                {
+                    result.Add(crit);
                 }
                 break;
             case MobState.Dead:

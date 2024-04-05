@@ -1,6 +1,7 @@
 using Content.Shared.Whitelist;
+using Content.Shared.NPC.Prototypes;
 using Robust.Shared.Audio;
-using Content.Server.NPC.Components;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.Set;
 
 namespace Content.Server.Stories.ClothingWhitelist;
@@ -11,16 +12,14 @@ public sealed partial class ClothingWhitelistComponent : Component
     [DataField("whitelist")]
     public EntityWhitelist? Whitelist;
 
-    [ViewVariables(VVAccess.ReadWrite),
-    DataField("factionsWhitelist", customTypeSerializer: typeof(PrototypeIdHashSetSerializer<NpcFactionPrototype>))]
-    public HashSet<string> FactionsWhitelist = new();
+    [DataField("factionsWhitelist"), ViewVariables(VVAccess.ReadWrite)]
+    public HashSet<ProtoId<NpcFactionPrototype>> FactionsWhitelist = new();
 
     [DataField("blacklist")]
     public EntityWhitelist? Blacklist;
 
-    [ViewVariables(VVAccess.ReadWrite),
-    DataField("factionsBlacklist", customTypeSerializer: typeof(PrototypeIdHashSetSerializer<NpcFactionPrototype>))]
-    public HashSet<string> FactionsBlacklist = new();
+    [DataField("factionsBlacklist"), ViewVariables(VVAccess.ReadWrite)]
+    public HashSet<ProtoId<NpcFactionPrototype>> FactionsBlacklist = new();
 
     [DataField("delay")]
     public float Delay = 3f;

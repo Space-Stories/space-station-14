@@ -1,4 +1,14 @@
 - type: damageModifierSet
+  id: ProtectiveBubble
+  coefficients:
+    Slash: 0.5
+    Piercing: 0.5
+    Cold: 0.5
+    Heat: 0.5
+    Blunt: 0.5
+    Caustic: 0.5
+
+- type: damageModifierSet
   id: Kidan
   coefficients:
     Cold: 1.3

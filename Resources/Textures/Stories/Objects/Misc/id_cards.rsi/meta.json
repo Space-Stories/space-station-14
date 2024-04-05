@@ -16,17 +16,23 @@
     {
       "name": "silver"
     },
-	{
+	  {
       "name": "gold"
     },
-	{
+	  {
       "name": "orange"
+    },
+    {
+      "name": "future"
     },
     {
       "name": "idspofficer"
     },
     {
       "name": "idspengineer"
+    },
+	{
+      "name": "idchrono"
     },
     {
       "name": "idspmedic"

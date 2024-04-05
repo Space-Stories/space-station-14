@@ -4,6 +4,9 @@
   name: полноразмерная гарнитура стража клинка
   description: Почему тут нет командной частоты?
   components:
+  - type: Tag
+    tags:
+      - ForceRecallEquipment
   - type: ContainerFill
     containers:
       key_slots:
@@ -30,3 +33,25 @@
     sprite: Stories/Clothing/Ears/Headsets/prison.rsi
   - type: Clothing
     sprite: Stories/Clothing/Ears/Headsets/prison.rsi
+
+- type: entity
+  parent: ClothingHeadset
+  id: ClothingHeadsetChronolegioneer
+  name: полноразмерная гарнитура будущего
+  description: Гарнитура из будушего, способная уловить большинство частот станции
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyFuture
+  - type: Sprite
+    sprite: Stories/Clothing/Ears/Headsets/chronolegioneer.rsi
+  - type: Clothing
+    sprite: Stories/Clothing/Ears/Headsets/chronolegioneer.rsi
+    
+- type: entity
+  parent: ClothingHeadsetChronolegioneer
+  id: ClothingHeadsetChronolegioneerUnremoveable
+  suffix: Неснимаемая
+  components:
+  - type: Unremoveable

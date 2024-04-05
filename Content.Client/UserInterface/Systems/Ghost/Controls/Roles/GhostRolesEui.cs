@@ -24,13 +24,19 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles
             {
                 if (_windowRules != null)
                     _windowRules.Close();
-                _windowRules = new GhostRoleRulesWindow(info.Rules, _ =>
+                _windowRules = new GhostRoleRulesWindow(info.Rules, // SPACE STORIES - start
+                () =>
+                {
+                    SendMessage(new GhostRoleAddRequestMessage(info.Identifier));
+                });
+                _windowRules.TimeOver += () =>
                 {
                     SendMessage(new GhostRoleTakeoverRequestMessage(info.Identifier));
-                });
+                };
                 _windowRulesId = info.Identifier;
                 _windowRules.OnClose += () =>
                 {
+                    SendMessage(new GhostRoleRemoveRequestMessage(info.Identifier));  // SPACE STORIES - end
                     _windowRules = null;
                 };
                 _windowRules.OpenCentered();

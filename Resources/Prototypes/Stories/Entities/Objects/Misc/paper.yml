@@ -1,0 +1,12 @@
+- type: entity
+  name: ручка будущего
+  parent: PenCentcom
+  id: PenFuture
+  description: Время бюрократии давно прошло
+  components:
+  - type: Sprite
+    sprite: Stories/Objects/Misc/bureaucracy.rsi
+    state: pen_future
+  - type: Item
+    sprite: Stories/Objects/Misc/bureaucracy.rsi
+    heldPrefix: pen_future

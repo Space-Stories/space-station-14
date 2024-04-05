@@ -14,6 +14,7 @@ using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 using Content.Shared.Mobs;
 using Content.Shared.Players;
+using Content.Shared.Random.Helpers;
 using Content.Shared.Roles;
 using JetBrains.Annotations;
 using Robust.Server.GameObjects;
@@ -62,6 +63,10 @@ namespace Content.Server.Ghost.Roles
             SubscribeLocalEvent<GhostRoleComponent, EntityUnpausedEvent>(OnUnpaused);
             SubscribeLocalEvent<GhostRoleMobSpawnerComponent, TakeGhostRoleEvent>(OnSpawnerTakeRole);
             SubscribeLocalEvent<GhostTakeoverAvailableComponent, TakeGhostRoleEvent>(OnTakeoverTakeRole);
+            SubscribeLocalEvent<GhostRoleMobSpawnerComponent, AddPotentialTakeoverEvent>(OnAdd); // SPACE STORIES
+            SubscribeLocalEvent<GhostTakeoverAvailableComponent, AddPotentialTakeoverEvent>(OnAdd); // SPACE STORIES
+            SubscribeLocalEvent<GhostRoleMobSpawnerComponent, RemovePotentialTakeoverEvent>(OnRemove); // SPACE STORIES
+            SubscribeLocalEvent<GhostTakeoverAvailableComponent, RemovePotentialTakeoverEvent>(OnRemove); // SPACE STORIES
             _playerManager.PlayerStatusChanged += PlayerStatusChanged;
         }
 
@@ -213,6 +218,24 @@ namespace Content.Server.Ghost.Roles
             CloseEui(player);
         }
 
+        public void AddPotentialTakeover(ICommonSession player, uint identifier) // SPACE STORIES
+        {
+            if (!_ghostRoles.TryGetValue(identifier, out var role))
+                return;
+
+            var ev = new AddPotentialTakeoverEvent(player);
+            RaiseLocalEvent(role, ref ev);
+        }
+
+        public void RemovePotentialTakeover(ICommonSession player, uint identifier) // SPACE STORIES
+        {
+            if (!_ghostRoles.TryGetValue(identifier, out var role))
+                return;
+
+            var ev = new RemovePotentialTakeoverEvent(player);
+            RaiseLocalEvent(role, ref ev);
+        }
+
         public void Follow(ICommonSession player, uint identifier)
         {
             if (!_ghostRoles.TryGetValue(identifier, out var role))
@@ -359,7 +382,9 @@ namespace Content.Server.Ghost.Roles
 
             EnsureComp<MindContainerComponent>(mob);
 
-            GhostRoleInternalCreateMindAndTransfer(args.Player, uid, mob, ghostRole);
+            var player = _random.Pick(ghostRole.PotentialTakeovers); // SPACE STORIES
+
+            GhostRoleInternalCreateMindAndTransfer(player, uid, mob, ghostRole); // SPACE STORIES
 
             if (++component.CurrentTakeovers < component.AvailableTakeovers)
             {
@@ -373,6 +398,46 @@ namespace Content.Server.Ghost.Roles
                 QueueDel(uid);
 
             args.TookRole = true;
+        }
+
+        private void OnAdd(EntityUid uid, GhostRoleMobSpawnerComponent component, ref AddPotentialTakeoverEvent args) // SPACE STORIES
+        {
+            if (!TryComp(uid, out GhostRoleComponent? ghostRole) ||
+                !CanTakeGhost(uid, ghostRole))
+            {
+                return;
+            }
+            ghostRole.PotentialTakeovers.Add(args.Player);
+        }
+
+        private void OnAdd(EntityUid uid, GhostTakeoverAvailableComponent component, ref AddPotentialTakeoverEvent args) // SPACE STORIES
+        {
+            if (!TryComp(uid, out GhostRoleComponent? ghostRole) ||
+                !CanTakeGhost(uid, ghostRole))
+            {
+                return;
+            }
+            ghostRole.PotentialTakeovers.Add(args.Player);
+        }
+
+        private void OnRemove(EntityUid uid, GhostRoleMobSpawnerComponent component, ref RemovePotentialTakeoverEvent args) // SPACE STORIES
+        {
+            if (!TryComp(uid, out GhostRoleComponent? ghostRole) ||
+                !CanTakeGhost(uid, ghostRole))
+            {
+                return;
+            }
+            ghostRole.PotentialTakeovers.Remove(args.Player);
+        }
+
+        private void OnRemove(EntityUid uid, GhostTakeoverAvailableComponent component, ref RemovePotentialTakeoverEvent args) // SPACE STORIES
+        {
+            if (!TryComp(uid, out GhostRoleComponent? ghostRole) ||
+                !CanTakeGhost(uid, ghostRole))
+            {
+                return;
+            }
+            ghostRole.PotentialTakeovers.Remove(args.Player);
         }
 
         private bool CanTakeGhost(EntityUid uid, GhostRoleComponent? component = null)
@@ -404,7 +469,9 @@ namespace Content.Server.Ghost.Roles
             if (ghostRole.MakeSentient)
                 MakeSentientCommand.MakeSentient(uid, EntityManager, ghostRole.AllowMovement, ghostRole.AllowSpeech);
 
-            GhostRoleInternalCreateMindAndTransfer(args.Player, uid, uid, ghostRole);
+            var player = _random.Pick(ghostRole.PotentialTakeovers); // SPACE STORIES
+
+            GhostRoleInternalCreateMindAndTransfer(player, uid, uid, ghostRole); // SPACE STORIES
             UnregisterGhostRole((uid, ghostRole));
 
             args.TookRole = true;

@@ -1,0 +1,11 @@
+- type: storeCategory
+  id: Force
+  name: Общие способности
+
+- type: storeCategory
+  id: ForceDark
+  name: Темная сторона
+
+- type: storeCategory
+  id: ForceLight
+  name: Светлая сторона

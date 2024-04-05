@@ -4,8 +4,6 @@ using Content.Server.EUI;
 using Content.Server.Flash;
 using Content.Server.GameTicking.Rules.Components;
 using Content.Server.Mind;
-using Content.Server.NPC.Components;
-using Content.Server.NPC.Systems;
 using Content.Server.Popups;
 using Content.Server.Revolutionary;
 using Content.Server.Revolutionary.Components;
@@ -23,8 +21,11 @@ using Content.Shared.Mindshield.Components;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Mobs.Systems;
+using Content.Shared.NPC.Prototypes;
+using Content.Shared.NPC.Systems;
 using Content.Shared.Revolutionary.Components;
 using Content.Shared.Roles;
+using Content.Shared.Stories.Weapons.Ranged.WeaponrySkill.Components;
 using Content.Shared.Stunnable;
 using Content.Shared.Zombies;
 using Robust.Shared.Prototypes;
@@ -191,6 +192,7 @@ public sealed class RevolutionaryRuleSystem : GameRuleSystem<RevolutionaryRuleCo
         _inventory.SpawnItemsOnEntity(chosen, comp.StartingGear);
         var revComp = EnsureComp<RevolutionaryComponent>(chosen);
         EnsureComp<HeadRevolutionaryComponent>(chosen);
+        EnsureComp<WeaponrySkillComponent>(chosen); // Stories
 
         _antagSelection.SendBriefing(chosen, Loc.GetString("head-rev-role-greeting"), Color.CornflowerBlue, revComp.RevStartSound);
     }

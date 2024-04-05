@@ -1,6 +1,6 @@
 using Robust.Shared.Physics;
 
-namespace Content.Server.Stories.BlockMeleeAttack;
+namespace Content.Server.SpaceStories.BlockMeleeAttack;
 
 [RegisterComponent]
 public sealed partial class BlockMeleeAttackUserComponent : Component

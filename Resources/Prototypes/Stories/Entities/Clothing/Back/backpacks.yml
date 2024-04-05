@@ -4,6 +4,9 @@
   name: рюкзак стража клинка
   description: Кажется, вы где-то это уже видели.
   components:
+  - type: Tag
+    tags:
+      - ForceRecallEquipment
   - type: Sprite
     sprite: Stories/Clothing/Back/Backpacks/jedi_nt.rsi
 

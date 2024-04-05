@@ -510,7 +510,7 @@ public abstract class SharedMindSystem : EntitySystem
     /// <summary>
     /// Returns a list of every living humanoid player's minds, except for a single one which is exluded.
     /// </summary>
-    public List<EntityUid> GetAliveHumansExcept(EntityUid exclude)
+    public List<EntityUid> GetAliveHumansExcept(EntityUid? exclude)
     {
         var mindQuery = EntityQuery<MindComponent>();
 

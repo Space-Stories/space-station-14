@@ -34,7 +34,7 @@
         - NamesFirstMilitaryLeader
         - NamesLastMilitary
     - type: InitialInfectedExempt
-
+    - type: WeaponrySkill
 
 ## ERT Leader
 
@@ -70,6 +70,7 @@
       - NamesFirstMilitaryLeader
       - NamesLastMilitary
     - type: InitialInfectedExempt
+    - type: WeaponrySkill
 
 - type: entity
   id: RandomHumanoidSpawnerERTLeaderEVA
@@ -96,6 +97,7 @@
     - type: Loadout
       prototypes: [ ERTLeaderGearEVA ]
     - type: InitialInfectedExempt
+    - type: WeaponrySkill
 
 - type: entity
   id: RandomHumanoidSpawnerERTLeaderEVALecter
@@ -118,6 +120,7 @@
     - type: Loadout
       prototypes: [ ERTLeaderGearEVALecter ]
     - type: InitialInfectedExempt
+    - type: WeaponrySkill
 
 ## ERT Janitor
 
@@ -153,6 +156,7 @@
     - type: Loadout
       prototypes: [ ERTJanitorGear ]
     - type: InitialInfectedExempt
+    - type: WeaponrySkill
 
 - type: entity
   id: RandomHumanoidSpawnerERTJanitorEVA
@@ -178,6 +182,7 @@
     - type: Loadout
       prototypes: [ ERTJanitorGearEVA ]
     - type: InitialInfectedExempt
+    - type: WeaponrySkill
 
 ## ERT Engineer
 
@@ -213,6 +218,7 @@
     - type: Loadout
       prototypes: [ ERTEngineerGear ]
     - type: InitialInfectedExempt
+    - type: WeaponrySkill
 
 - type: entity
   id: RandomHumanoidSpawnerERTEngineerEVA
@@ -238,6 +244,7 @@
     - type: Loadout
       prototypes: [ ERTEngineerGearEVA ]
     - type: InitialInfectedExempt
+    - type: WeaponrySkill
 
 ## ERT Security
 
@@ -273,6 +280,7 @@
     - type: Loadout
       prototypes: [ ERTSecurityGear ]
     - type: InitialInfectedExempt
+    - type: WeaponrySkill
 
 - type: entity
   id: RandomHumanoidSpawnerERTSecurityEVA
@@ -298,6 +306,7 @@
     - type: Loadout
       prototypes: [ ERTSecurityGearEVA ]
     - type: InitialInfectedExempt
+    - type: WeaponrySkill
 
 - type: entity
   id: RandomHumanoidSpawnerERTSecurityEVALecter
@@ -319,6 +328,7 @@
     - type: Loadout
       prototypes: [ ERTSecurityGearEVALecter ]
     - type: InitialInfectedExempt
+    - type: WeaponrySkill
 
 ## ERT Medic
 
@@ -354,6 +364,7 @@
     - type: Loadout
       prototypes: [ ERTMedicalGear ]
     - type: InitialInfectedExempt
+    - type: WeaponrySkill
 
 - type: entity
   id: RandomHumanoidSpawnerERTMedicalEVA
@@ -379,6 +390,7 @@
     - type: Loadout
       prototypes: [ ERTMedicalGearEVA ]
     - type: InitialInfectedExempt
+    - type: WeaponrySkill
 
 ## CBURN
 
@@ -409,6 +421,8 @@
       - NamesFirstMilitary
       - NamesLastMilitary
     - type: InitialInfectedExempt
+    - type: WeaponrySkill
+
 ## Central Command
 
 - type: entity
@@ -433,6 +447,7 @@
     - type: Loadout
       prototypes: [ CentcomGear ]
     - type: InitialInfectedExempt
+    - type: WeaponrySkill
 
 ## Syndicate
 
@@ -453,6 +468,7 @@
   components:
     - type: Loadout
       prototypes: [SyndicateOperativeGearExtremelyBasic]
+    - type: WeaponrySkill
 
 - type: entity
   id: RandomHumanoidSpawnerNukeOp
@@ -468,6 +484,7 @@
   id: NukeOp
   components:
     - type: NukeOperative
+    - type: WeaponrySkill
 
 - type: entity
   id: RandomHumanoidSpawnerCluwne

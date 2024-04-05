@@ -1,11 +1,11 @@
-using Content.Server.NPC.Components;
-using Content.Server.NPC.Systems;
 using Content.Server.Popups;
 using Content.Server.Radio.Components;
 using Content.Server.Stories.Lib;
 using Content.Server.Stunnable;
 using Content.Shared.IdentityManagement;
 using Content.Shared.Mindshield.Components;
+using Content.Shared.NPC.Prototypes;
+using Content.Shared.NPC.Systems;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Roles;

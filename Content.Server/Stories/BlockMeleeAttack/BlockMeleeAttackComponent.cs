@@ -5,7 +5,7 @@ using Robust.Shared.Physics.Collision.Shapes;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
-namespace Content.Server.Stories.BlockMeleeAttack;
+namespace Content.Server.SpaceStories.BlockMeleeAttack;
 
 /// <summary>
 /// This component goes on an item that you want to use to block
@@ -13,6 +13,8 @@ namespace Content.Server.Stories.BlockMeleeAttack;
 [RegisterComponent]
 public sealed partial class BlockMeleeAttackComponent : Component
 {
+    [DataField("enabled"), ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
+    public bool Enabled = true;
 
     [DataField("blockProb"), ViewVariables(VVAccess.ReadWrite), AutoNetworkedField]
     public float BlockProb = 0.5f;

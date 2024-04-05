@@ -107,6 +107,7 @@
     - DoorBumpOpener
     - Unimplantable # no brain to mindshield, no organic body to implant into
   - type: TTS # Stories-TTS
+  - type: WeaponrySkill
 
 - type: entity
   parent:

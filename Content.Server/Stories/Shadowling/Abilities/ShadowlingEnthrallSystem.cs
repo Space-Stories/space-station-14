@@ -81,10 +81,9 @@ public sealed class ShadowlingEnthrallSystem : EntitySystem
 
         var doAfter = new DoAfterArgs(EntityManager, ev.Performer, 5, new EnthrallDoAfterEvent(), ev.Performer, ev.Target)
         {
-            BreakOnUserMove = true,
+            BreakOnMove = true,
             BlockDuplicate = true,
             BreakOnDamage = true,
-            BreakOnTargetMove = true
         };
 
         _doAfter.TryStartDoAfter(doAfter);

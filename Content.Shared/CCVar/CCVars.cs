@@ -780,6 +780,12 @@ namespace Content.Shared.CCVar
             CVarDef.Create("admin.see_own_notes", false, CVar.ARCHIVE | CVar.REPLICATED | CVar.SERVER);
 
         /// <summary>
+        /// Should the server play a quick sound to the active admins whenever a new player joins?
+        /// </summary>
+        public static readonly CVarDef<bool> AdminNewPlayerJoinSound =
+            CVarDef.Create("admin.new_player_join_sound", false, CVar.SERVERONLY);
+
+        /// <summary>
         /// The amount of days before the note starts fading. It will slowly lose opacity until it reaches stale. Set to 0 to disable.
         /// </summary>
         public static readonly CVarDef<double> NoteFreshDays =
@@ -1861,7 +1867,7 @@ namespace Content.Shared.CCVar
         /// The time you must spend reading the rules, before the "Request" button is enabled
         /// </summary>
         public static readonly CVarDef<float> GhostRoleTime =
-            CVarDef.Create("ghost.role_time", 3f, CVar.REPLICATED | CVar.SERVER);
+            CVarDef.Create("ghost.role_time", 30f, CVar.REPLICATED | CVar.SERVER); // SPACE STORIES
 
         /*
          * Fire alarm
@@ -2042,7 +2048,7 @@ namespace Content.Shared.CCVar
         /// </summary>
         public static readonly CVarDef<bool> ShadowlingEnthrallRequireMindAvailability =
             CVarDef.Create("shadowling.enthrall_require_mind_availability", true, CVar.SERVERONLY); // Stories-Shadowlings
-        
+
         /*
          * DEBUG
          */

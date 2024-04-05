@@ -26,6 +26,13 @@
     state: state_dead
 
 - type: statusIcon
+  id: HealthStateIconCritical
+  parent: HealthStateIcon
+  icon:
+    sprite: /Textures/Interface/Misc/health_icons.rsi
+    state: state_critical
+
+- type: statusIcon
   id: HealthStateBar
   abstract: true
 
