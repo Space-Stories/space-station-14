@@ -1,12 +1,12 @@
-﻿"Changes: Sprites":
+﻿"Спрайты":
 - '**/*.rsi/*.png'
 
-"Changes: Map":
+"Маппинг":
 - 'Resources/Maps/*.yml'
 - 'Resources/Prototypes/Maps/*.yml'
 
-"Changes: UI":
+"UI":
 - '**/*.xaml*'
 
-"No C#":
-- all: ["!**/*.cs"]
+"C#":
+- all: ["**/*.cs"]
