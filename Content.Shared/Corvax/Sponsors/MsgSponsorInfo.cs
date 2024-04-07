@@ -19,7 +19,7 @@ public sealed class SponsorInfo
 
     [JsonPropertyName("priorityJoin")]
     public bool HavePriorityJoin { get; set; } = false;
-    
+
     [JsonPropertyName("extraSlots")]
     public int ExtraSlots { get; set; }
 
@@ -28,6 +28,12 @@ public sealed class SponsorInfo
 
     [JsonPropertyName("roleTimeBypass")]
     public bool RoleTimeBypass { get; set; } = false;
+
+    [JsonPropertyName("allowedAntags")]
+    public string[] AllowedAntags { get; set; } = Array.Empty<string>();
+
+    [JsonPropertyName("shopPreset")]
+    public string? ShopPreset { get; set; }
 }
 
 
@@ -39,7 +45,7 @@ public sealed class MsgSponsorInfo : NetMessage
     public override MsgGroups MsgGroup => MsgGroups.Command;
 
     public SponsorInfo? Info;
-    
+
     public override void ReadFromBuffer(NetIncomingMessage buffer, IRobustSerializer serializer)
     {
         var isSponsor = buffer.ReadBoolean();
