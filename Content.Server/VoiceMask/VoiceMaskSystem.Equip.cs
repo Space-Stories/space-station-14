@@ -25,6 +25,7 @@ public sealed partial class VoiceMaskSystem
         if (component.LastSetVoice != null)
             comp.VoiceId = component.LastSetVoice;
         // Corvax-TTS-End
+        comp.SpeechVerb = component.LastSpeechVerb;
 
         _actions.AddAction(user, ref component.ActionEntity, component.Action, uid);
     }
@@ -34,15 +35,23 @@ public sealed partial class VoiceMaskSystem
         RemComp<VoiceMaskComponent>(args.Equipee);
     }
 
-    private void TrySetLastKnownName(EntityUid maskWearer, string lastName)
+    private VoiceMaskerComponent? TryGetMask(EntityUid user)
     {
-        if (!HasComp<VoiceMaskComponent>(maskWearer)
-            || !_inventory.TryGetSlotEntity(maskWearer, MaskSlot, out var maskEntity)
-            || !TryComp<VoiceMaskerComponent>(maskEntity, out var maskComp))
-        {
-            return;
-        }
+        if (!HasComp<VoiceMaskComponent>(user) || !_inventory.TryGetSlotEntity(user, MaskSlot, out var maskEntity))
+            return null;
 
-        maskComp.LastSetName = lastName;
+        return CompOrNull<VoiceMaskerComponent>(maskEntity);
+    }
+
+    private void TrySetLastKnownName(EntityUid user, string name)
+    {
+        if (TryGetMask(user) is {} comp)
+            comp.LastSetName = name;
+    }
+
+    private void TrySetLastSpeechVerb(EntityUid user, string? verb)
+    {
+        if (TryGetMask(user) is {} comp)
+            comp.LastSpeechVerb = verb;
     }
 }

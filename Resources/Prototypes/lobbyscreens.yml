@@ -73,3 +73,6 @@
 - type: lobbyBackground
   id: Spaf
   background: /Textures/Stories/LobbyScreens/spaf.jpg
+
+  id: TerminalStation
+  background: /Textures/LobbyScreens/terminalstation.webp
