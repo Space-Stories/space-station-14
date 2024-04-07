@@ -15,3 +15,12 @@
     path: /Audio/Stories/Voice/Chrono/dagger.ogg
   exclaimSound:
     path: /Audio/Stories/Voice/Chrono/contact.ogg
+    
+- type: speechSounds
+  id: Vulpkanin
+  saySound:
+    path: /Audio/Stories/Voice/Vulpkanin/vulp.ogg
+  askSound:
+    path: /Audio/Stories/Voice/Vulpkanin/vulp_ask.ogg
+  exclaimSound:
+    path: /Audio/Stories/Voice/Vulpkanin/vulp_exclaim.ogg

@@ -24,3 +24,35 @@
       collection: KidanWigglesAtennae
     WavesAntennaeSharply:
       collection: KidanWavesAntennaeSharply
+
+- type: emoteSounds
+  id: MaleVulpkanin
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      collection: VulpkaninGrowls
+    Laugh:
+      collection: MaleLaugh
+    Growl:
+      collection: VulpkaninGrowls
+    Howl:
+      collection: VulpkaninHowl
+    Bark:
+      collection: VulpkaninBark
+
+- type: emoteSounds
+  id: FemaleVulpkanin
+  params:
+    variation: 0.125
+  sounds:
+    Scream:
+      collection: VulpkaninGrowls
+    Laugh:
+      collection: FemaleLaugh
+    Growl:
+      collection: VulpkaninGrowls
+    Howl:
+      collection: VulpkaninHowl
+    Bark:
+      collection: VulpkaninBark

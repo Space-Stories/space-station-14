@@ -69,3 +69,27 @@
     - резко машет антенками
     - резко машет антенками.
     - резко машет антенками!
+
+- type: emote
+  id: Howl
+  category: Vocal
+  chatMessages: [воит.]
+  chatTriggers:
+    - воет
+    - воет.
+    - воет!
+    - завывает
+    - завыл
+
+- type: emote
+  id: Bark
+  category: Vocal
+  chatMessages: [лает.]
+  chatTriggers:
+    - лает
+    - лает.
+    - лает!
+    - лайнул
+    - гавкает
+    - гавкнул
+    - издает гав

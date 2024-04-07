@@ -14,3 +14,10 @@
     Cold: 1.3
     Heat: 0.7
     Blunt: 0.8
+
+- type: damageModifierSet
+  id: Vulps
+  coefficients:
+    Heat: 1.2
+    Cold: 0.5
+    Poison: 0.9

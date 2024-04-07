@@ -1,0 +1,10 @@
+- type: entity
+  id: ActionToggleWaggingVulp
+  parent: ActionToggleWagging
+  components:
+    - type: InstantAction
+      icon: { sprite: Stories/Mobs/Customization/Vulpkanin/tail_markings.rsi, state: fluffy }
+      iconOn: { sprite: Stories/Mobs/Customization/Vulpkanin/tail_markings.rsi, state: fluffy }
+      itemIconStyle: NoItem
+      useDelay: 1 # emote spam
+      event: !type:ToggleActionEvent
