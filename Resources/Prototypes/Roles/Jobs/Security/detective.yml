@@ -31,7 +31,6 @@
   id: DetectiveGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitDetective
-    outerClothing: ClothingOuterVestDetective
     back: ClothingBackpackSecurityFilledDetective
     shoes: ClothingShoesBootsCombatFilled
     eyes: ClothingEyesGlassesSecurity
