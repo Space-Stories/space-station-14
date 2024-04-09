@@ -29,11 +29,8 @@ public sealed class SponsorInfo
     [JsonPropertyName("roleTimeBypass")]
     public bool RoleTimeBypass { get; set; } = false;
 
-    [JsonPropertyName("allowedAntags")]
+    [JsonPropertyName("allowed_antags")]
     public string[] AllowedAntags { get; set; } = Array.Empty<string>();
-
-    [JsonPropertyName("shopPreset")]
-    public string? ShopPreset { get; set; }
 }
 
 

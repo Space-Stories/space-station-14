@@ -163,8 +163,8 @@ public sealed class AntagSelectSystem : EntitySystem
         if (proto.GameStatus != GetGameStatus(uid) && proto.GameStatus != SponsorGameStatus.None)
             args.Cancel();
 
-        if (DebugUserIds.Contains(args.Session.UserId))
-            args.Uncancel();
+        // if (DebugUserIds.Contains(args.Session.UserId))
+        //     args.Uncancel();
     }
     public SponsorGameStatus GetGameStatus(EntityUid uid)
     {
