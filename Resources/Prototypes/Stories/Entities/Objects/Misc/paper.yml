@@ -10,3 +10,25 @@
   - type: Item
     sprite: Stories/Objects/Misc/bureaucracy.rsi
     heldPrefix: pen_future
+  
+- type: entity
+  name: printed paper
+  parent: Paper
+  id: PrintedPaper
+  description: 'A piece of printed paper.'
+  components:
+  - type: Sprite
+    layers:
+    - state: paper
+    - state: paper_words-blue
+      map: ["enum.PaperVisualLayers.Writing"]
+      visible: false
+    - state: paper_stamp-generic
+      map: ["enum.PaperVisualLayers.Stamp"]
+      visible: false
+  - type: PaperVisuals
+    headerImagePath: "/Textures/Stories/Interface/Paper/NanoTrasen-label_eng.png"
+    headerMargin: 0.0, 6.0, 0.0, 8.0
+    backgroundImagePath: "/Textures/Interface/Paper/paper_background_default.svg.96dpi.png"
+    backgroundModulate: "#f5f5f5"
+    backgroundPatchMargin: 16.0, 16.0, 16.0, 16.0
