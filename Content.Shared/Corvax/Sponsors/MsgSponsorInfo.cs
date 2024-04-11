@@ -30,7 +30,7 @@ public sealed class SponsorInfo
     public bool RoleTimeBypass { get; set; } = false;
 
     [JsonPropertyName("allowed_antags")]
-    public string[] AllowedAntags { get; set; } = Array.Empty<string>();
+    public string[]? AllowedAntags { get; set; } = Array.Empty<string>();
 }
 
 

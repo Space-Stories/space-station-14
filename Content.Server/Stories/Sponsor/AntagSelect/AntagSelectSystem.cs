@@ -127,7 +127,7 @@ public sealed class AntagSelectSystem : EntitySystem
         var uid = args.EntityUid;
         var proto = args.Prototype;
 
-        if (!_sponsorsManager.TryGetInfo(args.Session.UserId, out var sponsorData) || !sponsorData.AllowedAntags.Contains(proto.ID))
+        if (!_sponsorsManager.TryGetInfo(args.Session.UserId, out var sponsorData) || sponsorData.AllowedAntags != null && !sponsorData.AllowedAntags.Contains(proto.ID))
             args.Cancel();
 
         if (!_mind.TryGetMind(uid, out var mindId, out var mind))
