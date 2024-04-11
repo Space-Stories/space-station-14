@@ -1,14 +1,13 @@
 - type: gameMapPool
   id: StoriesDefaultMapPool
   maps:
-  - StoriesAspid    # Space Prison
   - StoriesAtlas
   - StoriesBagel
-  - StoriesBox
+  - StoriesBox     # Space Prison
   - StoriesCluster
   - StoriesCore
   - StoriesFland    # Space Prison
-  - StoriesGemini
+  - StoriesGemini # Не поддерживается
   - StoriesMarathon
   - StoriesMeta     # Space Prison
   - StoriesOmega
