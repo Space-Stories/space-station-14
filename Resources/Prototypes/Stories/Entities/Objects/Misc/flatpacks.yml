@@ -6,3 +6,15 @@
   components:
   - type: Flatpack
     entity: PrinterDoc
+  - type: Tag
+    tags: 
+    - Flatpack
+
+- type: entity
+  parent: PrinterDocFlatpack
+  id: PrinterDocSyndieFlatpack
+  name: syndie document printer flatpack
+  description: A flatpack used for constructing a document printer.
+  components:
+  - type: Flatpack
+    entity: PrinterDocSyndie

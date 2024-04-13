@@ -1,4 +1,7 @@
 - type: Tag
+  id: Flatpack
+
+- type: Tag
   id: StasisBattery
   
 - type: Tag

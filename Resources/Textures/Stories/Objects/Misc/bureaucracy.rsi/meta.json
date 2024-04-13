@@ -10,6 +10,21 @@
         {
             "name": "paper_stamp-hosp"
         },
+		{
+            "name": "paper"
+        },
+		{
+            "name": "paper-gray"
+        },
+		{
+            "name": "paper_words-blue"
+        },
+		{
+            "name": "paper-gray_words-red"
+        },
+		{
+            "name": "paper_stamp-generic"
+        },
         {
             "name": "stamp-hosp"
         },

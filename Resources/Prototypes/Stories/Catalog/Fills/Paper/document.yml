@@ -7,20 +7,20 @@
     - type: Paper
 
 - type: entity
+  parent: PrintedSyndiePaper
+  id: PrintedSyndieDocument
+  abstract: true
+  description: Bureaucratic unit. A document printed on a printer.
+  components:
+    - type: Paper
+
+- type: entity
   parent: PrintedDocument
   id: PrintedDocumentReportStation
   name: Report on the situation at the station
   components:
     - type: Paper
       content: doc-text-printer-report-station
-
-- type: entity
-  parent: PrintedDocument
-  id: PrintedDocumentReportOnEliminationOfViolations
-  name: Report on elimination of violations
-  components:
-    - type: Paper
-      content: doc-text-printer-report-on-elimination-of-violations
 
 - type: entity
   parent: PrintedDocument
@@ -37,14 +37,6 @@
   components:
     - type: Paper
       content: doc-text-printer-report-employee-performance
-
-- type: entity
-  parent: PrintedDocument
-  id: PrintedDocumentReportOnTheChaptersMeeting
-  name: Report on chapter meeting
-  components:
-    - type: Paper
-      content: doc-text-printer-report-on-the-chapters-meeting
 
 - type: entity
   parent: PrintedDocument
@@ -69,7 +61,7 @@
   name: Report on object Investigation
   components:
     - type: Paper
-      content: doc-text-printer-Report-study-object
+      content: doc-text-printer-report-study-object
 
 - type: entity
   parent: PrintedDocument
@@ -129,14 +121,6 @@
 
 - type: entity
   parent: PrintedDocument
-  id: PrintedDocumentAppeal
-  name: Appeal
-  components:
-    - type: Paper
-      content: doc-text-printer-appeal
-
-- type: entity
-  parent: PrintedDocument
   id: PrintedDocumentEvacuationShuttleRequest
   name: Evacuation Shuttle Request
   components:
@@ -158,14 +142,6 @@
   components:
     - type: Paper
       content: doc-text-printer-request-call-members-central-committee-dso
-
-- type: entity
-  parent: PrintedDocument
-  id: PrintedDocumentRequestRequestToEstablishThreatLevel
-  name: Request to establish threat level
-  components:
-    - type: Paper
-      content: doc-text-printer-request-to-establish-threat-level
 
 - type: entity
   parent: PrintedDocument
@@ -193,14 +169,6 @@
 
 - type: entity
   parent: PrintedDocument
-  id: PrintedDocumentRequestDocuments
-  name: Request for the provision of documents
-  components:
-    - type: Paper
-      content: doc-text-printer-request-documents
-
-- type: entity
-  parent: PrintedDocument
   id: PrintedDocumentRequestEuthanasia
   name: Request for euthanasia
   components:
@@ -214,22 +182,6 @@
   components:
     - type: Paper
       content: doc-text-printer-request-construction-work
-
-- type: entity
-  parent: PrintedDocument
-  id: PrintedDocumentRequestModernization
-  name: Request for modernization
-  components:
-    - type: Paper
-      content: doc-text-printer-request-modernization
-
-- type: entity
-  parent: PrintedDocument
-  id: PrintedDocumentComplaintViolationLaborRules
-  name: Complaint for violation of labor order
-  components:
-    - type: Paper
-      content: doc-text-printer-complaint-violation-labor-rules
 
 - type: entity
   parent: PrintedDocument
@@ -249,27 +201,11 @@
 
 - type: entity
   parent: PrintedDocument
-  id: PrintedDocumentPermissionToTravelInCaseOfThreat
-  name: Permission to travel in case of threat
-  components:
-    - type: Paper
-      content: doc-text-printer-permission-to-travel-in-case-of-threat
-
-- type: entity
-  parent: PrintedDocument
   id: PrintedDocumentSearchPermission
   name: Authorization to search
   components:
     - type: Paper
       content: doc-text-printer-search-permission
-
-- type: entity
-  parent: PrintedDocument
-  id: PrintedDocumentPermissionToCarryWeapons
-  name: Permission to carry weapons
-  components:
-    - type: Paper
-      content: doc-text-printer-permission-to-carry-weapons
 
 - type: entity
   parent: PrintedDocument
@@ -294,14 +230,6 @@
   components:
     - type: Paper
       content: doc-text-printer-construction-permit
-
-- type: entity
-  parent: PrintedDocument
-  id: PrintedDocumentPermissionToExtendMarriage
-  name: Permission to extend marriage
-  components:
-    - type: Paper
-      content: doc-text-printer-permission-to-extend-marriage
 
 - type: entity
   parent: PrintedDocument
@@ -374,14 +302,6 @@
   components:
     - type: Paper
       content: doc-text-printer-ordering-special-equipment
-
-- type: entity
-  parent: PrintedDocument
-  id: PrintedDocumentOrderPurchaseWeapons
-  name: Purchase order for armaments
-  components:
-    - type: Paper
-      content: doc-text-printer-order-purchase-weapons
 
 - type: entity
   parent: PrintedDocument
@@ -464,15 +384,7 @@
       content: doc-text-printer-statement-health
 
 - type: entity
-  parent: PrintedDocument
-  id: PrintedDocumentDecisionToStartTrial
-  name: Decision to start a trial
-  components:
-    - type: Paper
-      content: doc-text-printer-decision-to-start-trial
-
-- type: entity
-  parent: PrintedDocument
+  parent: PrintedSyndieDocument
   id: PrintedDocumentErrorLoadingFormHeader
   name: ERROR loading form header
   components:
@@ -480,7 +392,7 @@
       content: doc-text-printer-error-loading-form-header
 
 - type: entity
-  parent: PrintedDocument
+  parent: PrintedSyndieDocument
   id: PrintedDocumentNoticeOfLiquidation
   name: NOTICE OF LIQUIDIZATION
   components:
@@ -488,7 +400,7 @@
       content: doc-text-printer-notice-of-liquidation
 
 - type: entity
-  parent: PrintedDocument
+  parent: PrintedSyndieDocument
   id: PrintedDocumentBusinessDeal
   name: BUSINESS DEAL
   components:
@@ -496,7 +408,7 @@
       content: doc-text-printer-business-deal
 
 - type: entity
-  parent: PrintedDocument
+  parent: PrintedSyndieDocument
   id: PrintedDocumentNoteBeginningMilitaryActions
   name: NOTE BEGINNING MILITARY ACTIONS
   components:
@@ -504,7 +416,7 @@
       content: doc-text-printer-note-beginning-military-actions
 
 - type: entity
-  parent: PrintedDocument
+  parent: PrintedSyndieDocument
   id: PrintedDocumentReportAccomplishmentGoals
   name: REPORT ACCOMPLISHMENT GOALS
   components:
