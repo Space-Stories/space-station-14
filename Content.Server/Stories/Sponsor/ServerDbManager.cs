@@ -49,10 +49,10 @@ public sealed class SponsorDbManager : ISponsorDbManager
         {
             sponsor = new DbSponsorInfo()
             {
-                Tier = (int) reader[3],
+                Tier = (short) reader[3],
                 OOCColor = (string) reader[4],
                 HavePriorityJoin = (bool) reader[5],
-                ExtraSlots = (int) reader[6],
+                ExtraSlots = (short) reader[6],
                 RoleTimeBypass = (bool) reader[11],
                 AllowedAntags = (string[]) reader[12],
                 GhostSkin = (string) reader[13]
