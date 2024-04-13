@@ -17,19 +17,51 @@ using Content.Shared.Corvax.CCCVars;
 using Robust.Shared.Configuration;
 using Robust.Shared.ContentPack;
 using Prometheus;
+using Robust.Shared.Serialization;
+using Robust.Shared.Network;
+using System.Diagnostics.CodeAnalysis;
+using Content.Shared.Corvax.Sponsors;
 
 namespace Content.Server.Database;
 
 public interface ISponsorDbManager
 {
     void Init();
+    bool TryGetInfo(NetUserId userId, [NotNullWhen(true)] out DbSponsorInfo? sponsor);
 }
 public sealed class SponsorDbManager : ISponsorDbManager
 {
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     [Dependency] private readonly IResourceManager _res = default!;
     [Dependency] private readonly ILogManager _logMgr = default!;
-    private NpgsqlConnection _db = new();
+    private NpgsqlConnection? _db = null;
+
+    public bool TryGetInfo(NetUserId userId, [NotNullWhen(true)] out DbSponsorInfo? sponsor)
+    {
+        sponsor = null;
+
+        if (_db == null)
+            return false;
+
+        using NpgsqlCommand cmd = new NpgsqlCommand($"""SELECT * FROM partners WHERE partners.net_id = '{userId.UserId.ToString()}'""", _db);
+        using NpgsqlDataReader reader = cmd.ExecuteReader();
+
+        while (reader.Read())
+        {
+            sponsor = new DbSponsorInfo()
+            {
+                Tier = (int) reader[1],
+                OOCColor = (string) reader[4],
+                HavePriorityJoin = (bool) reader[5],
+                ExtraSlots = (int) reader[6],
+                RoleTimeBypass = (bool) reader[11],
+                AllowedAntags = (string[]) reader[14],
+                GhostSkin = (string) reader[15]
+            };
+            return true;
+        }
+        return false;
+    }
     public void Init()
     {
         var host = _cfg.GetCVar(CCCVars.SponsorsDatabasePgHost);
@@ -49,7 +81,7 @@ public sealed class SponsorDbManager : ISponsorDbManager
 
         _db = new NpgsqlConnection(connectionString);
         _db.Open();
-        Logger.DebugS("sponsordb.manager", $"Using Postgres \"{host}:{port}/{db}\"");
+        Logger.ErrorS("sponsordb.manager", $"Using Postgres \"{host}:{port}/{db}\"");
 
         using NpgsqlCommand cmd = new NpgsqlCommand("SELECT * FROM customers", _db);
         using NpgsqlCommand cmd1 = new NpgsqlCommand("""SELECT * FROM partners WHERE partners.ckey = 'doublechest'""", _db);
@@ -58,8 +90,7 @@ public sealed class SponsorDbManager : ISponsorDbManager
 
         while (reader.Read())
         {
-            Logger.Debug(reader[1] + "_");
+            Logger.Error(reader[1] + "_");
         }
     }
 }
-
