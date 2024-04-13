@@ -49,7 +49,7 @@ public sealed class SponsorDbManager : ISponsorDbManager
         {
             sponsor = new DbSponsorInfo()
             {
-                Tier = (int) reader[1],
+                Tier = (int) reader[3],
                 OOCColor = (string) reader[4],
                 HavePriorityJoin = (bool) reader[5],
                 ExtraSlots = (int) reader[6],
