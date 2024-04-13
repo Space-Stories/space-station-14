@@ -47,10 +47,6 @@ public sealed class SponsorDbManager : ISponsorDbManager
 
         while (reader.Read())
         {
-            foreach (var item in reader)
-            {
-                Logger.Error(item + "");
-            }
             sponsor = new DbSponsorInfo()
             {
                 Tier = (int) reader[1],
@@ -93,12 +89,11 @@ public sealed class SponsorDbManager : ISponsorDbManager
 
         while (reader.Read())
         {
-            foreach (var item in reader)
-            {
-                Logger.Error(item + "");
-            }
-
             Logger.Error(reader[1] + "_");
+            Logger.Error(reader[4] + "_");
+            Logger.Error(reader[5] + "_");
+            Logger.Error(reader[6] + "_");
+            Logger.Error(reader[15] + "_");
         }
     }
 }
