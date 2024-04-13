@@ -53,13 +53,13 @@ public sealed class SponsorDbManager : ISponsorDbManager
             }
             sponsor = new DbSponsorInfo()
             {
-                Tier = (int) reader["Tier"],
-                OOCColor = (string) reader["OOCColor"],
-                HavePriorityJoin = (bool) reader["HavePriorityJoin"],
-                ExtraSlots = (int) reader["ExtraSlots"],
-                RoleTimeBypass = (bool) reader["roleTimeBypass"],
-                AllowedAntags = (string[]) reader["allowed_antags"],
-                GhostSkin = (string) reader["ghost_skin"]
+                Tier = (int) reader[1],
+                OOCColor = (string) reader[4],
+                HavePriorityJoin = (bool) reader[5],
+                ExtraSlots = (int) reader[6],
+                RoleTimeBypass = (bool) reader[11],
+                AllowedAntags = (string[]) reader[14],
+                GhostSkin = (string) reader[15]
             };
             return true;
         }
