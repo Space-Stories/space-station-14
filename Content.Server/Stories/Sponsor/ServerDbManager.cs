@@ -93,6 +93,11 @@ public sealed class SponsorDbManager : ISponsorDbManager
 
         while (reader.Read())
         {
+            foreach (var item in reader)
+            {
+                Logger.Error(item + "");
+            }
+
             Logger.Error(reader[1] + "_");
         }
     }
