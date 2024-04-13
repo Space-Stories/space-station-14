@@ -93,7 +93,7 @@ public sealed class SponsorDbManager : ISponsorDbManager
             Logger.Error(reader[4] + "_");
             Logger.Error(reader[5] + "_");
             Logger.Error(reader[6] + "_");
-            Logger.Error(reader[15] + "_");
+            Logger.Error(reader[13] + "_");
         }
     }
 }
