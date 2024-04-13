@@ -54,8 +54,8 @@ public sealed class SponsorDbManager : ISponsorDbManager
                 HavePriorityJoin = (bool) reader[5],
                 ExtraSlots = (int) reader[6],
                 RoleTimeBypass = (bool) reader[11],
-                AllowedAntags = (string[]) reader[14],
-                GhostSkin = (string) reader[15]
+                AllowedAntags = (string[]) reader[12],
+                GhostSkin = (string) reader[13]
             };
             return true;
         }
