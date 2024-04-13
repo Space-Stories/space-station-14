@@ -52,7 +52,7 @@ public sealed class SponsorDbManager : ISponsorDbManager
         Logger.DebugS("sponsordb.manager", $"Using Postgres \"{host}:{port}/{db}\"");
 
         using NpgsqlCommand cmd = new NpgsqlCommand("SELECT * FROM customers", _db);
-        using NpgsqlCommand cmd1 = new NpgsqlCommand("SELECT * FROM partners WHERE partners.ckey = doublechest", _db);
+        using NpgsqlCommand cmd1 = new NpgsqlCommand("SELECT * FROM partners WHERE partners.ckey = 'doublechest'", _db);
 
         using NpgsqlDataReader reader = cmd1.ExecuteReader();
 
