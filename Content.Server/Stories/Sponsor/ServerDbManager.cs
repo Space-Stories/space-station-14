@@ -21,7 +21,6 @@ using Robust.Shared.Serialization;
 using Robust.Shared.Network;
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared.Corvax.Sponsors;
-
 namespace Content.Server.Database;
 
 public interface ISponsorDbManager
@@ -48,15 +47,19 @@ public sealed class SponsorDbManager : ISponsorDbManager
 
         while (reader.Read())
         {
+            foreach (var item in reader)
+            {
+                Logger.Error(item + "");
+            }
             sponsor = new DbSponsorInfo()
             {
-                Tier = (string) reader[1],
-                OOCColor = (string) reader[4],
-                HavePriorityJoin = (bool) reader[5],
-                ExtraSlots = (string) reader[6],
-                RoleTimeBypass = (bool) reader[11],
-                AllowedAntags = (string[]) reader[14],
-                GhostSkin = (string) reader[15]
+                Tier = (int) reader["Tier"],
+                OOCColor = (string) reader["OOCColor"],
+                HavePriorityJoin = (bool) reader["HavePriorityJoin"],
+                ExtraSlots = (int) reader["ExtraSlots"],
+                RoleTimeBypass = (bool) reader["roleTimeBypass"],
+                AllowedAntags = (string[]) reader["allowed_antags"],
+                GhostSkin = (string) reader["ghost_skin"]
             };
             return true;
         }
