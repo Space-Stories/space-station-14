@@ -15,6 +15,7 @@ using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Content.Server.Stories.Sponsor.AntagSelect;
 using Content.Shared.Stories.Sponsor.AntagSelect;
+using Content.Server.Database;
 
 namespace Content.Server.Stories.Sponsor.Commands;
 
@@ -23,6 +24,7 @@ public sealed class PickAntagCommand : IConsoleCommand
 {
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
+    [Dependency] private readonly ISponsorDbManager _db = default!;
     public string Command => "pickantag";
     public string Description => "Выдает роль.";
     public string Help => "Usage: pickantag dragon";
