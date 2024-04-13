@@ -13,7 +13,7 @@ public sealed class DbSponsorInfo
     public string? Tier { get; set; }
     public string? OOCColor { get; set; }
     public bool HavePriorityJoin { get; set; } = false;
-    public string ExtraSlots { get; set; }
+    public string? ExtraSlots { get; set; }
     public bool RoleTimeBypass { get; set; } = false;
     public string[]? AllowedAntags { get; set; } = Array.Empty<string>();
     public string? GhostSkin { get; set; }
