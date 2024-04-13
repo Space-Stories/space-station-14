@@ -48,7 +48,7 @@ public sealed class SponsorDbManager : ISponsorDbManager
         while (reader.Read())
         {
             DateTime? dateValue = (DateTime) reader[10];
-            if (dateValue != null && dateValue.Value < DateTime.Now)
+            if (dateValue != null && dateValue?.AddDays(30) < DateTime.Now)
             {
                 return false;
             }
