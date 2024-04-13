@@ -47,6 +47,8 @@ public sealed class SponsorDbManager : ISponsorDbManager
 
         while (reader.Read())
         {
+            DateTime? dateValue = (DateTime) reader[8];
+
             sponsor = new DbSponsorInfo()
             {
                 Tier = (short) reader[3],
