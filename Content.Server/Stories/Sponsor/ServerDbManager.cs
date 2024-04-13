@@ -50,9 +50,10 @@ public sealed class SponsorDbManager : ISponsorDbManager
             DateTime? dateValue = (DateTime) reader[8];
             if (dateValue != null && dateValue.Value.Subtract(DateTime.Now).TotalMinutes > 0)
             {
-                Logger.Error(dateValue + "_");
                 return false;
             }
+            if (dateValue != null)
+                Logger.Error(dateValue + "_");
 
             sponsor = new DbSponsorInfo()
             {
