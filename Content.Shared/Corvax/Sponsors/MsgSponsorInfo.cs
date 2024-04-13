@@ -10,10 +10,10 @@ namespace Content.Shared.Corvax.Sponsors;
 [Serializable, NetSerializable]
 public sealed class DbSponsorInfo
 {
-    public int? Tier { get; set; }
+    public string? Tier { get; set; }
     public string? OOCColor { get; set; }
     public bool HavePriorityJoin { get; set; } = false;
-    public int ExtraSlots { get; set; }
+    public string ExtraSlots { get; set; }
     public bool RoleTimeBypass { get; set; } = false;
     public string[]? AllowedAntags { get; set; } = Array.Empty<string>();
     public string? GhostSkin { get; set; }
