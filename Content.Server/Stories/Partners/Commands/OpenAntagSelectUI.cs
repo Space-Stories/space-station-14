@@ -29,8 +29,9 @@ public sealed class OpenAntagSelectCommand : IConsoleCommand
 
         if (_partnersManager.TryGetInfo(shell.Player.UserId, out var sponsor) && sponsor.AllowedAntags != null)
         {
-            rolePickerSystem.OpenUI(shell.Player);
-            rolePickerSystem.UpdateInterface(playerEntity, sponsor.AllowedAntags[0], [.. sponsor.AllowedAntags]);
+            Logger.Error("1");
+            var ui = rolePickerSystem.OpenUI(shell.Player);
+            rolePickerSystem.UpdateInterface(playerEntity, sponsor.AllowedAntags[0], [.. sponsor.AllowedAntags], ui);
         }
     }
 }

@@ -31,10 +31,14 @@ public sealed partial class RolePickerSystem
         SubscribeLocalEvent<AntagSelectedMessage>(OnSelectedMessage);
         SubscribeLocalEvent<PickAntagMessage>(OnPickMessage);
     }
-    public void OpenUI(ICommonSession session)
+    public PlayerBoundUserInterface? OpenUI(ICommonSession session)
     {
         if (session.AttachedEntity != null && _ui.TryGetUi(session.AttachedEntity.Value, AntagSelectUiKey.Key, out var ui))
+        {
             _ui.OpenUi(ui, session);
+            return ui;
+        }
+        return null;
     }
     public void CloseUI(ICommonSession session)
     {
