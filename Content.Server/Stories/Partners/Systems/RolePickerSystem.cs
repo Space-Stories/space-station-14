@@ -96,7 +96,7 @@ public sealed partial class RolePickerSystem : EntitySystem
             return false;
 
 
-        return false;
+        return true;
     }
     public bool CanPick(EntityUid uid, SponsorAntagPrototype prototype)
     {
