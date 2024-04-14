@@ -26,7 +26,6 @@ namespace Content.Server.Stories.Sponsor.AntagSelect;
 public sealed class AntagSelectSystem : EntitySystem
 {
     [ViewVariables] public Dictionary<string, int> IssuedSponsorRoles = new();
-    [ViewVariables] public HashSet<ICommonSession> TookRole = new();
     [Dependency] private readonly IPlayerManager _playerManager = default!;
     [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly MindSystem _mind = default!;
@@ -40,14 +39,7 @@ public sealed class AntagSelectSystem : EntitySystem
     [Dependency] private readonly RevolutionaryRuleSystem _revRule = default!;
     [Dependency] private readonly SponsorsManager _sponsorsManager = default!;
     [Dependency] private readonly IConsoleHost _host = default!;
-    [Dependency] private readonly ISponsorDbManager _db = default!;
-
-    public readonly HashSet<Guid> DebugUserIds = new()
-    {
-        new Guid("{ac8fc9b3-c28f-4f2a-ae1c-2c8241936afe}"),
-        new Guid("{cd2759b6-dc53-4a11-ba8d-b6c45a8bdc92}")
-    };
-
+    [Dependency] private readonly IPartnersManager _db = default!;
     public override void Initialize()
     {
         base.Initialize();
@@ -139,8 +131,6 @@ public sealed class AntagSelectSystem : EntitySystem
 
         if (!_mind.TryGetMind(uid, out var mindId, out var mind))
             args.Cancel();
-        else if (mind.Session != null && TookRole.Contains(mind.Session))
-            args.Cancel();
 
         if (IssuedSponsorRoles.TryGetValue(proto.ID, out var issued) && issued >= proto.MaxIssuance)
             args.Cancel();
@@ -170,8 +160,6 @@ public sealed class AntagSelectSystem : EntitySystem
         if (proto.GameStatus != GetGameStatus(uid) && proto.GameStatus != SponsorGameStatus.None)
             args.Cancel();
 
-        // if (DebugUserIds.Contains(args.Session.UserId))
-        //     args.Uncancel();
     }
     public SponsorGameStatus GetGameStatus(EntityUid uid)
     {
@@ -190,7 +178,6 @@ public sealed class AntagSelectSystem : EntitySystem
     public void OnRestart(RoundRestartCleanupEvent args)
     {
         IssuedSponsorRoles.Clear();
-        TookRole.Clear();
     }
     public void OnSelected(AntagSelectedMessage args)
     {

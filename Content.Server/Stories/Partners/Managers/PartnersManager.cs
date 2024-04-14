@@ -1,17 +1,3 @@
-using System.Collections.Immutable;
-using System.IO;
-using System.Net;
-using System.Text.Json;
-using System.Threading;
-using System.Threading.Tasks;
-using Content.Server.Administration.Logs;
-using Content.Shared.Administration.Logs;
-using Content.Shared.CCVar;
-using Content.Shared.Database;
-using Content.Shared.Preferences;
-using Microsoft.Data.Sqlite;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 using Npgsql;
 using Content.Shared.Corvax.CCCVars;
 using Robust.Shared.Configuration;
@@ -21,27 +7,25 @@ using Robust.Shared.Serialization;
 using Robust.Shared.Network;
 using System.Diagnostics.CodeAnalysis;
 using Content.Shared.Corvax.Sponsors;
+
 namespace Content.Server.Database;
 
-public interface ISponsorDbManager
+public interface IPartnersManager
 {
     void Init();
     bool TryGetInfo(NetUserId userId, [NotNullWhen(true)] out DbSponsorInfo? sponsor);
     void SetAntagPicked(NetUserId userId);
 }
-public sealed class SponsorDbManager : ISponsorDbManager
+public sealed class PartnersManager : IPartnersManager
 {
     [Dependency] private readonly IConfigurationManager _cfg = default!;
-    [Dependency] private readonly IResourceManager _res = default!;
-    [Dependency] private readonly ILogManager _logMgr = default!;
     private NpgsqlConnection? _db = null;
-
+    private ISawmill _sawmill = default!;
     public void SetAntagPicked(NetUserId userId)
     {
         using NpgsqlCommand cmd = new NpgsqlCommand($"""UPDATE partners SET "last_day_taking_antag" = {DateTime.Now.DayOfYear} WHERE partners.net_id = '{userId.UserId.ToString()}'""", _db);
         using NpgsqlDataReader reader = cmd.ExecuteReader();
     }
-
     public bool TryGetInfo(NetUserId userId, [NotNullWhen(true)] out DbSponsorInfo? sponsor)
     {
         sponsor = null;
@@ -56,12 +40,7 @@ public sealed class SponsorDbManager : ISponsorDbManager
         {
             DateTime? dateValue = (DateTime) reader[10];
             if (dateValue != null && dateValue?.AddDays(30) < DateTime.Now)
-            {
                 return false;
-            }
-
-            if (dateValue != null)
-                Logger.Error(dateValue + "_");
 
             sponsor = new DbSponsorInfo()
             {
@@ -80,6 +59,8 @@ public sealed class SponsorDbManager : ISponsorDbManager
     }
     public void Init()
     {
+        _sawmill = Logger.GetSawmill("partners");
+
         var host = _cfg.GetCVar(CCCVars.SponsorsDatabasePgHost);
         var port = _cfg.GetCVar(CCCVars.SponsorsDatabasePgPort);
         var db = _cfg.GetCVar(CCCVars.SponsorsDatabasePgDatabase);
@@ -97,20 +78,6 @@ public sealed class SponsorDbManager : ISponsorDbManager
 
         _db = new NpgsqlConnection(connectionString);
         _db.Open();
-        Logger.ErrorS("sponsordb.manager", $"Using Postgres \"{host}:{port}/{db}\"");
-
-        using NpgsqlCommand cmd = new NpgsqlCommand("SELECT * FROM customers", _db);
-        using NpgsqlCommand cmd1 = new NpgsqlCommand("""SELECT * FROM partners WHERE partners.ckey = 'doublechest'""", _db);
-
-        using NpgsqlDataReader reader = cmd1.ExecuteReader();
-
-        while (reader.Read())
-        {
-            Logger.Error(reader[1] + "_");
-            Logger.Error(reader[4] + "_");
-            Logger.Error(reader[5] + "_");
-            Logger.Error(reader[6] + "_");
-            Logger.Error(reader[13] + "_");
-        }
+        _sawmill.Debug($"Using Postgres \"{host}:{port}/{db}\"");
     }
 }

@@ -24,7 +24,7 @@ public sealed class PickAntagCommand : IConsoleCommand
 {
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
-    [Dependency] private readonly ISponsorDbManager _db = default!;
+    [Dependency] private readonly IPartnersManager _db = default!;
     public string Command => "pickantag";
     public string Description => "Выдает роль.";
     public string Help => "Usage: pickantag dragon";
@@ -63,7 +63,6 @@ public sealed class PickAntagCommand : IConsoleCommand
             if (!antagSelectSystem.IssuedSponsorRoles.TryAdd(antag, 1))
                 antagSelectSystem.IssuedSponsorRoles[antag] += 1;
 
-            antagSelectSystem.TookRole.Add(shell.Player);
             _db.SetAntagPicked(shell.Player.UserId);
         }
     }
