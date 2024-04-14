@@ -97,7 +97,7 @@ public sealed class PartnersManager : IPartnersManager
         }
         catch
         {
-            _sawmill.Info($"Load partner data: {userId.UserId.ToString()}");
+            _sawmill.Info($"Failed to load partner data: {userId.UserId.ToString()}");
         }
         return false;
     }
