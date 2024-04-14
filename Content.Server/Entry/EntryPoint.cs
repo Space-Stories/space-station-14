@@ -33,6 +33,7 @@ using Robust.Shared.ContentPack;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
+using Content.Server.Stories.Partners.Managers;
 
 namespace Content.Server.Entry
 {
@@ -47,7 +48,7 @@ namespace Content.Server.Entry
         private PlayTimeTrackingManager? _playTimeTracking;
         private IEntitySystemManager? _sysMan;
         private IServerDbManager? _dbManager;
-        private ISponsorDbManager? _sponsorDbManager;
+        private IPartnersManager? _partnersManager;
 
         /// <inheritdoc />
         public override void Init()
@@ -95,7 +96,7 @@ namespace Content.Server.Entry
                 _playTimeTracking = IoCManager.Resolve<PlayTimeTrackingManager>();
                 _sysMan = IoCManager.Resolve<IEntitySystemManager>();
                 _dbManager = IoCManager.Resolve<IServerDbManager>();
-                _sponsorDbManager = IoCManager.Resolve<ISponsorDbManager>();
+                _partnersManager = IoCManager.Resolve<IPartnersManager>(); // SPACE STORIES
 
                 logManager.GetSawmill("Storage").Level = LogLevel.Info;
                 logManager.GetSawmill("db.ef").Level = LogLevel.Info;
@@ -103,7 +104,7 @@ namespace Content.Server.Entry
                 IoCManager.Resolve<IAdminLogManager>().Initialize();
                 IoCManager.Resolve<IConnectionManager>().Initialize();
                 _dbManager.Init();
-                _sponsorDbManager.Init();
+                _partnersManager.Init(); // SPACE STORIES
                 IoCManager.Resolve<IServerPreferencesManager>().Init();
                 IoCManager.Resolve<INodeGroupFactory>().Initialize();
                 IoCManager.Resolve<ContentNetworkResourceManager>().Initialize();

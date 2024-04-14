@@ -1,5 +1,5 @@
 ﻿using Content.Client.Message;
-using Content.Shared.Stories.Sponsor.AntagSelect;
+using Content.Shared.Stories.Partners.Prototypes;
 
 namespace Content.Client.Stories.Sponsor.UI;
 

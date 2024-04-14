@@ -3,7 +3,7 @@ using Robust.Shared.Player;
 using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
 
-namespace Content.Shared.Stories.Sponsor.AntagSelect;
+namespace Content.Shared.Stories.Partners.Prototypes;
 
 [Prototype("sponsorAntag")]
 public sealed partial class SponsorAntagPrototype : IPrototype

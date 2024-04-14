@@ -4,9 +4,6 @@ antag-select-status =
     Минимальное кол-во игроков: { $min-players }
     Максимальное кол-во этой роли: { $max-role }
 
-# antag-select-mindshield =
-#     {"["}color=#ff0000]У вас установлена защита разума![/color]
-
 antag-traitor = Агент синдиката
 antag-thief = Вор
 antag-shadowling = Тенеморф
