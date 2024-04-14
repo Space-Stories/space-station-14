@@ -27,6 +27,7 @@ public interface ISponsorDbManager
 {
     void Init();
     bool TryGetInfo(NetUserId userId, [NotNullWhen(true)] out DbSponsorInfo? sponsor);
+    void SetAntagPicked(NetUserId userId);
 }
 public sealed class SponsorDbManager : ISponsorDbManager
 {
@@ -34,6 +35,12 @@ public sealed class SponsorDbManager : ISponsorDbManager
     [Dependency] private readonly IResourceManager _res = default!;
     [Dependency] private readonly ILogManager _logMgr = default!;
     private NpgsqlConnection? _db = null;
+
+    public void SetAntagPicked(NetUserId userId)
+    {
+        using NpgsqlCommand cmd = new NpgsqlCommand($"""UPDATE partners SET "last_day_taking_antag" = {DateTime.Now.DayOfYear} WHERE partners.net_id = '{userId.UserId.ToString()}'""", _db);
+        using NpgsqlDataReader reader = cmd.ExecuteReader();
+    }
 
     public bool TryGetInfo(NetUserId userId, [NotNullWhen(true)] out DbSponsorInfo? sponsor)
     {
@@ -52,6 +59,7 @@ public sealed class SponsorDbManager : ISponsorDbManager
             {
                 return false;
             }
+
             if (dateValue != null)
                 Logger.Error(dateValue + "_");
 
@@ -63,7 +71,8 @@ public sealed class SponsorDbManager : ISponsorDbManager
                 ExtraSlots = (short) reader[6],
                 RoleTimeBypass = (bool) reader[11],
                 AllowedAntags = (string[]) reader[12],
-                GhostSkin = (string) reader[13]
+                GhostSkin = (string) reader[13],
+                LastDayTakingAntag = (short) reader[14]
             };
             return true;
         }

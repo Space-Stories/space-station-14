@@ -20,6 +20,7 @@ using Content.Server.Ghost.Roles.Components;
 using Content.Server.Corvax.Sponsors;
 using Robust.Shared.Console;
 using Content.Shared.Stories.Sponsor.AntagSelect;
+using Content.Server.Database;
 
 namespace Content.Server.Stories.Sponsor.AntagSelect;
 public sealed class AntagSelectSystem : EntitySystem
@@ -39,6 +40,7 @@ public sealed class AntagSelectSystem : EntitySystem
     [Dependency] private readonly RevolutionaryRuleSystem _revRule = default!;
     [Dependency] private readonly SponsorsManager _sponsorsManager = default!;
     [Dependency] private readonly IConsoleHost _host = default!;
+    [Dependency] private readonly ISponsorDbManager _db = default!;
 
     public readonly HashSet<Guid> DebugUserIds = new()
     {
@@ -127,7 +129,7 @@ public sealed class AntagSelectSystem : EntitySystem
         var uid = args.EntityUid;
         var proto = args.Prototype;
 
-        if (!_sponsorsManager.TryGetInfo(args.Session.UserId, out var sponsorData) || sponsorData.AllowedAntags != null && !sponsorData.AllowedAntags.Contains(proto.ID))
+        if (!_db.TryGetInfo(args.Session.UserId, out var sponsorData) || sponsorData.AllowedAntags != null && !sponsorData.AllowedAntags.Contains(proto.ID) || sponsorData.LastDayTakingAntag == DateTime.Now.DayOfYear)
             args.Cancel();
 
         if (!_mind.TryGetMind(uid, out var mindId, out var mind))

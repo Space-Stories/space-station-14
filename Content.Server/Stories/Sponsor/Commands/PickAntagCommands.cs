@@ -64,6 +64,7 @@ public sealed class PickAntagCommand : IConsoleCommand
                 antagSelectSystem.IssuedSponsorRoles[antag] += 1;
 
             antagSelectSystem.TookRole.Add(shell.Player);
+            _db.SetAntagPicked(shell.Player.UserId);
         }
     }
 }

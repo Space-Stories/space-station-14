@@ -17,6 +17,7 @@ public sealed class DbSponsorInfo
     public bool RoleTimeBypass { get; set; } = false;
     public string[]? AllowedAntags { get; set; } = Array.Empty<string>();
     public string? GhostSkin { get; set; }
+    public int LastDayTakingAntag { get; set; }
 }
 
 [Serializable, NetSerializable]
