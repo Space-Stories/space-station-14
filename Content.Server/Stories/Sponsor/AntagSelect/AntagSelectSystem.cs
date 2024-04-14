@@ -93,10 +93,12 @@ public sealed class AntagSelectSystem : EntitySystem
         RaiseLocalEvent(role, ref ev);
         var ev1 = new TakeGhostRoleEvent(mind.Session);
         RaiseLocalEvent(role, ref ev1);
+        args.RoleTaken = true;
     }
     private void OnRev(MakeHeadRevEvent args)
     {
         _revRule.OnHeadRevAdmin(args.EntityUid);
+        args.RoleTaken = true;
     }
     private void OnShadowling(MakeShadowlingEvent args)
     {
@@ -107,6 +109,7 @@ public sealed class AntagSelectSystem : EntitySystem
             comp = Comp<ShadowlingRuleComponent>(ruleEntity);
         }
         _shadowlingRule.GiveShadowling(args.EntityUid, comp);
+        args.RoleTaken = true;
     }
     private void OnThief(MakeThiefEvent args)
     {
@@ -117,11 +120,13 @@ public sealed class AntagSelectSystem : EntitySystem
             comp = Comp<ThiefRuleComponent>(ruleEntity);
         }
         _thief.MakeThief(args.EntityUid, comp, false);
+        args.RoleTaken = true;
     }
     private void OnTraitor(MakeTraitorEvent args)
     {
         var traitorRuleComponent = _traitorRule.StartGameRule();
         _traitorRule.MakeTraitor(args.EntityUid, traitorRuleComponent, giveUplink: true, giveObjectives: true);
+        args.RoleTaken = true;
     }
     // Antags - end
     private void OnCanPick(CanPickAttemptEvent args) // TODO: Сделать лучше.
