@@ -10,7 +10,7 @@
         <RichTextLabel Name="TopBanner" VerticalExpand="True"/>
         <controls:StripeBack>
             <PanelContainer>
-                <Label Name="RequestButton" Text="{Loc 'ghost-roles-window-request-role-button'}" Align="Center" Margin="0 3 0 3"/>
+                <Label Name="RequestButton" Text="{Loc 'stories-ghost-roles-window-request-role-button'}" Align="Center" Margin="0 3 0 3"/>
             </PanelContainer>
         </controls:StripeBack>
     </BoxContainer>

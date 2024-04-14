@@ -1,7 +1,7 @@
 - type: gameMap
   id: StoriesCluster
   mapName: 'Cluster'
-  mapPath: /Maps/Stories/cluster.yml
+  mapPath: /Maps/cluster.yml # /Maps/Stories/cluster.yml
   minPlayers: 0
   maxPlayers: 35
   stations:

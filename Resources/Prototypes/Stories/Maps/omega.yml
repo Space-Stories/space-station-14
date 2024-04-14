@@ -1,7 +1,7 @@
 ﻿- type: gameMap
   id: StoriesOmega
   mapName: 'Omega'
-  mapPath: /Maps/Stories/omega.yml
+  mapPath: /Maps/omega.yml # /Maps/Stories/omega.yml
   minPlayers: 0
   maxPlayers: 35
   stations:

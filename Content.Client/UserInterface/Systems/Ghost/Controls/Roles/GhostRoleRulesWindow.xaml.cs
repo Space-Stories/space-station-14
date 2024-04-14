@@ -25,8 +25,8 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles
             if (ghostRoleTime > 0f)
             {
                 action.Invoke(); // SPACE STORIES
-                RequestButton.Text = Loc.GetString("ghost-roles-window-request-role-button-timer", ("time", $"{_timer:0.0}"));
-                TopBanner.SetMessage(FormattedMessage.FromMarkupPermissive(rules + "\n" + Loc.GetString("ghost-roles-window-rules-footer", ("time", ghostRoleTime))));
+                RequestButton.Text = Loc.GetString("stories-ghost-roles-window-request-role-button-timer", ("time", $"{_timer:0.0}"));
+                TopBanner.SetMessage(FormattedMessage.FromMarkupPermissive(rules + "\n" + Loc.GetString("stories-ghost-roles-window-rules-footer", ("time", ghostRoleTime))));
                 // RequestButton.Disabled = true; // SPACE STORIES
             }
 
@@ -41,12 +41,12 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles
             if (_timer > 0.0)
             {
                 _timer -= args.DeltaSeconds;
-                RequestButton.Text = Loc.GetString("ghost-roles-window-request-role-button-timer", ("time", $"{_timer:0.0}"));
+                RequestButton.Text = Loc.GetString("stories-ghost-roles-window-request-role-button-timer", ("time", $"{_timer:0.0}"));
             }
             else
             {
                 // RequestButton.Disabled = false; // SPACE STORIES
-                RequestButton.Text = Loc.GetString("ghost-roles-window-request-role-button");
+                RequestButton.Text = Loc.GetString("stories-ghost-roles-window-request-role-button");
                 TimeOver?.Invoke(); // SPACE STORIES
             }
         }
