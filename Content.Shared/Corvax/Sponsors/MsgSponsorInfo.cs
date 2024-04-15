@@ -7,6 +7,18 @@ using Robust.Shared.Utility;
 
 namespace Content.Shared.Corvax.Sponsors;
 
+[Serializable, NetSerializable]
+public sealed class DbSponsorInfo
+{
+    public int? Tier { get; set; }
+    public string? OOCColor { get; set; }
+    public bool HavePriorityJoin { get; set; } = false;
+    public int ExtraSlots { get; set; }
+    public bool RoleTimeBypass { get; set; } = false;
+    public string[]? AllowedAntags { get; set; } = Array.Empty<string>();
+    public string? GhostSkin { get; set; }
+    public int LastDayTakingAntag { get; set; }
+}
 
 [Serializable, NetSerializable]
 public sealed class SponsorInfo
@@ -19,7 +31,7 @@ public sealed class SponsorInfo
 
     [JsonPropertyName("priorityJoin")]
     public bool HavePriorityJoin { get; set; } = false;
-    
+
     [JsonPropertyName("extraSlots")]
     public int ExtraSlots { get; set; }
 
@@ -28,6 +40,9 @@ public sealed class SponsorInfo
 
     [JsonPropertyName("roleTimeBypass")]
     public bool RoleTimeBypass { get; set; } = false;
+
+    [JsonPropertyName("allowed_antags")]
+    public string[]? AllowedAntags { get; set; } = Array.Empty<string>();
 }
 
 
@@ -39,7 +54,7 @@ public sealed class MsgSponsorInfo : NetMessage
     public override MsgGroups MsgGroup => MsgGroups.Command;
 
     public SponsorInfo? Info;
-    
+
     public override void ReadFromBuffer(NetIncomingMessage buffer, IRobustSerializer serializer)
     {
         var isSponsor = buffer.ReadBoolean();

@@ -127,7 +127,7 @@ public sealed class ShadowlingRuleSystem : GameRuleSystem<ShadowlingRuleComponen
         while (query.MoveNext(out _, out var comp, out _))
         {
             var eligiblePlayers = _antagSelection.GetEligiblePlayers(ev.Players, comp.ShadowlingPrototypeId);
-            
+
             if (eligiblePlayers.Count == 0)
                 continue;
 
@@ -135,16 +135,16 @@ public sealed class ShadowlingRuleSystem : GameRuleSystem<ShadowlingRuleComponen
 
             var shadowling = _antagSelection.ChooseAntags(shadowlingCount, eligiblePlayers);
 
-            GiveShadowling(shadowling, comp.ShadowlingPrototypeId, comp);
+            GiveShadowling(shadowling, comp);
         }
     }
 
-    private void GiveShadowling(List<EntityUid> chosen, ProtoId<AntagPrototype> antagProto, ShadowlingRuleComponent comp)
+    private void GiveShadowling(List<EntityUid> chosen, ShadowlingRuleComponent comp)
     {
         foreach (var headRev in chosen)
-            GiveShadowling(headRev, antagProto, comp);
+            GiveShadowling(headRev, comp);
     }
-    private void GiveShadowling(EntityUid chosen, ProtoId<AntagPrototype> antagProto, ShadowlingRuleComponent comp)
+    public void GiveShadowling(EntityUid chosen, ShadowlingRuleComponent comp)
     {
         Log.Debug("GiveShadowling List: {0};", chosen);
         // foreach (var shadowling in chosen)
@@ -220,7 +220,7 @@ public sealed class ShadowlingRuleSystem : GameRuleSystem<ShadowlingRuleComponen
         {
             if (mind.OwnedEntity != null)
             {
-                GiveShadowling(mindId, shadowlingRule.ShadowlingPrototypeId, shadowlingRule);
+                GiveShadowling(mindId, shadowlingRule);
             }
             if (mind.Session != null)
             {
