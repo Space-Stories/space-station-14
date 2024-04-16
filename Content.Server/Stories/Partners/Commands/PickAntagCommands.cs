@@ -60,8 +60,8 @@ public sealed class PickAntagCommand : IConsoleCommand
 
         if (ev1.RoleTaken)
         {
-            if (!antagSelectSystem.IssuedSponsorRoles.TryAdd(antag, 1))
-                antagSelectSystem.IssuedSponsorRoles[antag] += 1;
+            if (!antagSelectSystem.IssuedSponsorRoles.TryAdd(proto.Key, 1))
+                antagSelectSystem.IssuedSponsorRoles[proto.Key] += 1;
 
             _db.SetAntagPicked(shell.Player.UserId);
         }

@@ -10,6 +10,9 @@ public sealed partial class SponsorAntagPrototype : IPrototype
 {
     [ViewVariables][IdDataField] public string ID { get; private set; } = default!;
 
+    [DataField("key")]
+    public string Key = "antag"; // Key, ключ или же простым языком группа по котороый будет ограничена роль.
+
     [DataField("earliestStart")]
     public int EarliestStart = 5;
 

@@ -132,7 +132,7 @@ public sealed class AntagSelectSystem : EntitySystem
         if (!_mind.TryGetMind(uid, out var mindId, out var mind))
             args.Cancel();
 
-        if (IssuedSponsorRoles.TryGetValue(proto.ID, out var issued) && issued >= proto.MaxIssuance)
+        if (IssuedSponsorRoles.TryGetValue(proto.Key, out var issued) && issued >= proto.MaxIssuance)
             args.Cancel();
 
         var playerCount = _playerManager.PlayerCount;
@@ -228,7 +228,7 @@ public sealed class AntagSelectSystem : EntitySystem
     }
     public FormattedMessage GetStatus(SponsorAntagPrototype proto)
     {
-        IssuedSponsorRoles.TryGetValue(proto.ID, out var roles);
+        IssuedSponsorRoles.TryGetValue(proto.Key, out var roles);
 
         var currentTime = GameTicker.RoundDuration();
 
