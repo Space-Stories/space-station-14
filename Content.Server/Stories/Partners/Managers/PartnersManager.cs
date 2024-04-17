@@ -75,9 +75,12 @@ public sealed class PartnersManager : IPartnersManager
             Username = user,
             Password = pass
         }.ConnectionString;
-
-        _db = new NpgsqlConnection(connectionString);
-        _db.Open();
-        _sawmill.Debug($"Using Postgres \"{host}:{port}/{db}\"");
+        try
+        {
+            _db = new NpgsqlConnection(connectionString);
+            _db.Open();
+            _sawmill.Debug($"Using Postgres \"{host}:{port}/{db}\"");
+        }
+        catch { }
     }
 }

@@ -2,6 +2,7 @@ using System.Globalization;
 using System.Linq;
 using System.Numerics;
 using Content.Server.Administration.Managers;
+using Content.Server.Database;
 using Content.Server.Ghost;
 using Content.Server.Spawners.Components;
 using Content.Server.Speech.Components;
@@ -27,6 +28,7 @@ namespace Content.Server.GameTicking
     {
         [Dependency] private readonly IAdminManager _adminManager = default!;
         [Dependency] private readonly SharedJobSystem _jobs = default!;
+        [Dependency] private readonly IPartnersManager _partners = default!;
 
         [ValidatePrototypeId<EntityPrototype>]
         public const string ObserverPrototypeName = "MobObserver";
@@ -331,7 +333,12 @@ namespace Content.Server.GameTicking
             }
 
             var name = GetPlayerProfile(player).Name;
-            var ghost = SpawnObserverMob();
+
+            EntityUid ghost;  // STORIES - start
+            if (_partners.TryGetInfo(player.UserId, out var sponsor))
+                ghost = Spawn(sponsor.GhostSkin, GetObserverSpawnPoint());
+            else ghost = SpawnObserverMob();  // STORIES - end
+
             _metaData.SetEntityName(ghost, name);
             _ghost.SetCanReturnToBody(ghost, false);
             _mind.TransferTo(mind.Value, ghost);

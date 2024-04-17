@@ -277,7 +277,10 @@ namespace Content.Server.GameTicking
             var xformQuery = GetEntityQuery<TransformComponent>();
             var coords = _transform.GetMoverCoordinates(position, xformQuery);
 
-            var ghost = Spawn(ObserverPrototypeName, coords);
+            EntityUid ghost;  // STORIES - start
+            if (mind.Session != null && _partners.TryGetInfo(mind.Session.UserId, out var sponsor))
+                ghost = Spawn(sponsor.GhostSkin, coords);
+            else ghost = Spawn(ObserverPrototypeName, coords);  // STORIES - end
 
             // Try setting the ghost entity name to either the character name or the player name.
             // If all else fails, it'll default to the default entity prototype name, "observer".
