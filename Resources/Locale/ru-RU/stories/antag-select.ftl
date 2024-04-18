@@ -2,7 +2,7 @@ antag-select-status =
     Минимальное время раунда: { $earliest-start } мин.
     Максимальное время раунда: { $latest-start } мин.
     Минимальное кол-во игроков: { $min-players }
-    Максимальное кол-во этой роли: { $max-role }
+    Максимальное кол-во этих ролей: { $max-role }
 
 # antag-select-mindshield =
 #     {"["}color=#ff0000]У вас установлена защита разума![/color]
