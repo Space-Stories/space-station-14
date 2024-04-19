@@ -9,7 +9,7 @@ using Robust.Shared.Player;
 
 namespace Content.Server.Traitor.Uplink.Commands
 {
-    [AdminCommand(AdminFlags.Admin)]
+    [AdminCommand(AdminFlags.Debug)] // Stories
     public sealed class AddUplinkCommand : IConsoleCommand
     {
         [Dependency] private readonly IConfigurationManager _cfgManager = default!;

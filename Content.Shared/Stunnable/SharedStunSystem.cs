@@ -108,7 +108,10 @@ public abstract class SharedStunSystem : EntitySystem
 
     private void OnKnockShutdown(EntityUid uid, KnockedDownComponent component, ComponentShutdown args)
     {
-        _standingState.Stand(uid);
+        // Stories-Crawling-Start
+        if (!_standingState.CanCrawl(uid))
+            _standingState.Stand(uid);
+        // Stories-Crawling-End
     }
 
     private void OnStandAttempt(EntityUid uid, KnockedDownComponent component, StandAttemptEvent args)

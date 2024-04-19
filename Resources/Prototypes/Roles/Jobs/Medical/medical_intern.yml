@@ -4,9 +4,11 @@
   description: job-description-intern
   playTimeTracker: JobMedicalIntern
   requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 7200 #2 hrs # Stories-RoleTime
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 54000 # 15 hrs
+      time: 36000 #10 hrs # Corvax-RoleTime
       inverted: true # stop playing intern if you're good at med!
   startingGear: MedicalInternGear
   icon: "JobIconMedicalIntern"

@@ -2,6 +2,7 @@
             xmlns:changelog="clr-namespace:Content.Client.Changelog"
             xmlns:ui="clr-namespace:Content.Client.Voting.UI"
             xmlns:ui1="clr-namespace:Content.Client.Options.UI"
+            xmlns:cc="clr-namespace:Content.Client.Administration.UI.CustomControls"
             Title="{Loc 'ui-escape-title'}"
             Resizable="False">
 
@@ -14,5 +15,8 @@
         <Button Access="Public" Name="WikiButton" Text="{Loc 'ui-escape-wiki'}" />
         <Button Access="Public" Name="DisconnectButton" Text="{Loc 'ui-escape-disconnect'}" />
         <Button Access="Public" Name="QuitButton" Text="{Loc 'ui-escape-quit'}" />
+        <!-- SPACE STORIES - start -->
+        <cc:CommandButton Command="openantagselect" Text="{Loc 'ui-escape-antagselect'}" StyleClasses="ButtonColorRed" />
+        <!-- SPACE STORIES - end-->
     </BoxContainer>
 </ui1:EscapeMenu>

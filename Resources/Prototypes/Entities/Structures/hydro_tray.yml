@@ -80,10 +80,9 @@
         acts: ["Destruction"]
   - type: Machine
     board: HydroponicsTrayMachineCircuitboard
+  - type: TTS # Corvax-TTS
+    voice: fact_core
   - type: WiresPanel
-  - type: Wires
-    boardName: wires-board-name-hydroponicstray
-    layoutId: HydroponicsTray
   - type: AmbientSound
     volume: -9
     range: 5

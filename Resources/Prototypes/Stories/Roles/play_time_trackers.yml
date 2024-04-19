@@ -1,0 +1,29 @@
+- type: playTimeTracker
+  id: JobHeadOfSpacePrison
+
+- type: playTimeTracker
+  id: JobSpacePrisonOfficer
+
+- type: playTimeTracker
+  id: JobSpacePrisonEngineer
+
+- type: playTimeTracker
+  id: JobSpacePrisonMedic
+
+- type: playTimeTracker
+  id: JobIAA
+
+- type: playTimeTracker
+  id: JobJediNt
+
+- type: playTimeTracker
+  id: JobSeniorEngineer
+
+- type: playTimeTracker
+  id: JobSeniorOfficer
+
+- type: playTimeTracker
+  id: JobSeniorPhysician
+
+- type: playTimeTracker
+  id: JobSeniorResearcher

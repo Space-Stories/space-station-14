@@ -4,12 +4,14 @@ using Content.Server.Discord;
 using Content.Server.GameTicking.Events;
 using Content.Server.Ghost;
 using Content.Server.Maps;
+using Content.Server.Voting.Managers;
 using Content.Shared.CCVar;
 using Content.Shared.Database;
 using Content.Shared.GameTicking;
 using Content.Shared.Mind;
 using Content.Shared.Players;
 using Content.Shared.Preferences;
+using Content.Shared.Voting;
 using JetBrains.Annotations;
 using Prometheus;
 using Robust.Server.Maps;
@@ -27,6 +29,7 @@ namespace Content.Server.GameTicking
     {
         [Dependency] private readonly DiscordWebhook _discord = default!;
         [Dependency] private readonly ITaskManager _taskManager = default!;
+        [Dependency] private readonly IVoteManager _vote = default!;
 
         private static readonly Counter RoundNumberMetric = Metrics.CreateCounter(
             "ss14_round_number",
@@ -262,6 +265,7 @@ namespace Content.Server.GameTicking
             AnnounceRound();
             UpdateInfoText();
             SendRoundStartedDiscordMessage();
+            RaiseLocalEvent(new RoundStartedEvent(RoundId)); // Corvax
 
 #if EXCEPTION_TOLERANCE
             }
@@ -484,6 +488,8 @@ namespace Content.Server.GameTicking
                 UpdateInfoText();
 
                 ReqWindowAttentionAll();
+                _vote.CreateStandardVote(null, StandardVoteType.Map); // Stories-AutoVote
+                _vote.CreateStandardVote(null, StandardVoteType.Preset); // Stories-AutoVote
             }
         }
 

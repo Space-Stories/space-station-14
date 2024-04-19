@@ -173,6 +173,8 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
             profile = HumanoidCharacterProfile.RandomWithSpecies(speciesId);
         }
 
+        DoJobSpecials(job, entity.Value, false); // SPACE STORIES
+
         if (prototype?.StartingGear != null)
         {
             var startingGear = _prototypeManager.Index<StartingGearPrototype>(prototype.StartingGear);
@@ -196,14 +198,16 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
         return entity.Value;
     }
 
-    private void DoJobSpecials(JobComponent? job, EntityUid entity)
+    private void DoJobSpecials(JobComponent? job, EntityUid entity, bool equipped = true)  // SPACE STORIES
     {
         if (!_prototypeManager.TryIndex(job?.Prototype ?? string.Empty, out JobPrototype? prototype))
             return;
 
         foreach (var jobSpecial in prototype.Special)
         {
-            jobSpecial.AfterEquip(entity);
+            if (equipped)  // SPACE STORIES - start
+                jobSpecial.AfterEquip(entity);
+            else jobSpecial.BeforeEquip(entity);  // SPACE STORIES - end
         }
     }
 

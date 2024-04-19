@@ -108,7 +108,7 @@
 - type: entity
   parent: BasePDA
   id: BaseMedicalPDA
-  abstract: true
+  abstract: true # Stories-ERT-Health-Analyzer
   components:
   - type: HealthAnalyzer
     scanDelay: 1
@@ -811,7 +811,9 @@
     id: ERTJanitorIDCard
 
 - type: entity
-  parent: ERTLeaderPDA
+  parent:
+    - ERTLeaderPDA
+    - BaseMedicalPDA # Stories-ERT-Health-Analyzer
   id: ERTMedicPDA
   name: ERT Medic PDA
   suffix: Medic

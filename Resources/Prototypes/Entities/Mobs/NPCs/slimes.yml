@@ -123,6 +123,8 @@
     speechSounds: Slime
   - type: TypingIndicator
     proto: slime
+  - type: TTS # Corvax-TTS
+    voice: ziggs
 
 - type: entity
   name: blue slime

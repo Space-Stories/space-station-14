@@ -1,0 +1,13 @@
+- type: antag
+  id: EmpireMember
+  name: Имперец
+  antagonist: true
+  setPreference: false
+  objective: Выполняйте приказы императора.
+
+- type: antag
+  id: HypnotizedEmpireMember
+  name: Гипнотизированный Имперец
+  antagonist: true
+  setPreference: false
+  objective: Выполняйте приказы императора.

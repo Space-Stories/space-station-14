@@ -12,6 +12,8 @@ using Content.Server.Station.Systems;
 using Content.Shared.ActionBlocker;
 using Content.Shared.CCVar;
 using Content.Shared.Chat;
+using Content.Shared.Damage;
+using Content.Shared.Damage.Prototypes;
 using Content.Shared.Database;
 using Content.Shared.Ghost;
 using Content.Shared.Humanoid;
@@ -57,11 +59,14 @@ public sealed partial class ChatSystem : SharedChatSystem
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly SharedInteractionSystem _interactionSystem = default!;
     [Dependency] private readonly ReplacementAccentSystem _wordreplacement = default!;
+    [Dependency] private readonly DamageableSystem _damageable = default!;
+    [Dependency] private readonly IPrototypeManager _prototype = default!;
 
     public const int VoiceRange = 10; // how far voice goes in world units
     public const int WhisperClearRange = 2; // how far whisper goes while still being understandable, in world units
     public const int WhisperMuffledRange = 5; // how far whisper goes at all, in world units
     public const string DefaultAnnouncementSound = "/Audio/Announcements/announce.ogg";
+    public const string CentComAnnouncementSound = "/Audio/Announcements/centcomm.ogg"; // Corvax-Announcements
 
     private bool _loocEnabled = true;
     private bool _deadLoocEnabled;
@@ -239,6 +244,14 @@ public sealed partial class ChatSystem : SharedChatSystem
             }
         }
 
+        // Stories-Crit-Speech
+        if (desiredType == InGameICChatType.Speak && _mobStateSystem.IsCritical(source))
+        {
+            SendEntityWhisper(source, message, range, null, nameOverride, hideLog, ignoreActionBlocker);
+            return;
+        }
+        // Stories-Crit-Speech
+
         // Otherwise, send whatever type.
         switch (desiredType)
         {
@@ -308,7 +321,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     /// <param name="colorOverride">Optional color for the announcement message</param>
     public void DispatchGlobalAnnouncement(
         string message,
-        string sender = "Central Command",
+        string sender = "Центральное командование",
         bool playSound = true,
         SoundSpecifier? announcementSound = null,
         Color? colorOverride = null
@@ -318,6 +331,7 @@ public sealed partial class ChatSystem : SharedChatSystem
         _chatManager.ChatMessageToAll(ChatChannel.Radio, message, wrappedMessage, default, false, true, colorOverride);
         if (playSound)
         {
+            if (sender == Loc.GetString("admin-announce-announcer-default")) announcementSound = new SoundPathSpecifier(CentComAnnouncementSound); // Corvax-Announcements: Support custom alert sound from admin panel
             _audio.PlayGlobal(announcementSound?.GetSound() ?? DefaultAnnouncementSound, Filter.Broadcast(), true, AudioParams.Default.WithVolume(-2f));
         }
         _adminLogger.Add(LogType.Chat, LogImpact.Low, $"Global station announcement from {sender}: {message}");
@@ -334,7 +348,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     public void DispatchStationAnnouncement(
         EntityUid source,
         string message,
-        string sender = "Central Command",
+        string sender = "Центральное командование",
         bool playDefaultSound = true,
         SoundSpecifier? announcementSound = null,
         Color? colorOverride = null)
@@ -412,7 +426,7 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         SendInVoiceRange(ChatChannel.Local, message, wrappedMessage, source, range);
 
-        var ev = new EntitySpokeEvent(source, message, null, null);
+        var ev = new EntitySpokeEvent(source, message, originalMessage, null, null);
         RaiseLocalEvent(source, ev, true);
 
         // To avoid logging any messages sent by entities that are not players, like vendors, cloning, etc.
@@ -507,7 +521,12 @@ public sealed partial class ChatSystem : SharedChatSystem
 
         _replay.RecordServerMessage(new ChatMessage(ChatChannel.Whisper, message, wrappedMessage, GetNetEntity(source), null, MessageRangeHideChatForReplay(range)));
 
-        var ev = new EntitySpokeEvent(source, message, channel, obfuscatedMessage);
+        // Stories-Crit-Speech-Start
+        if (_mobStateSystem.IsCritical(source) && _prototype.TryIndex<DamageTypePrototype>("Asphyxiation", out var asphyxiation))
+            _damageable.TryChangeDamage(source, new(asphyxiation, 20), true, false);
+        // Stories-Crit-Speech-End
+
+        var ev = new EntitySpokeEvent(source, message, originalMessage, channel, obfuscatedMessage);
         RaiseLocalEvent(source, ev, true);
         if (!hideLog)
             if (originalMessage == message)
@@ -706,7 +725,7 @@ public sealed partial class ChatSystem : SharedChatSystem
     private string SanitizeInGameICMessage(EntityUid source, string message, out string? emoteStr, bool capitalize = true, bool punctuate = false, bool capitalizeTheWordI = true)
     {
         var newMessage = message.Trim();
-        newMessage = SanitizeMessageReplaceWords(newMessage);
+        newMessage = ReplaceWords(newMessage);
 
         if (capitalize)
             newMessage = SanitizeMessageCapital(newMessage);
@@ -915,6 +934,7 @@ public sealed class EntitySpokeEvent : EntityEventArgs
 {
     public readonly EntityUid Source;
     public readonly string Message;
+    public readonly string OriginalMessage;
     public readonly string? ObfuscatedMessage; // not null if this was a whisper
 
     /// <summary>
@@ -923,10 +943,11 @@ public sealed class EntitySpokeEvent : EntityEventArgs
     /// </summary>
     public RadioChannelPrototype? Channel;
 
-    public EntitySpokeEvent(EntityUid source, string message, RadioChannelPrototype? channel, string? obfuscatedMessage)
+    public EntitySpokeEvent(EntityUid source, string message, string originalMessage, RadioChannelPrototype? channel, string? obfuscatedMessage)
     {
         Source = source;
         Message = message;
+        OriginalMessage = originalMessage; // Corvax-TTS: Spec symbol sanitize
         Channel = channel;
         ObfuscatedMessage = obfuscatedMessage;
     }

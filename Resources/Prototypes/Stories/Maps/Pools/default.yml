@@ -1,0 +1,17 @@
+- type: gameMapPool
+  id: StoriesDefaultMapPool
+  maps:
+  - StoriesAtlas
+  - StoriesBagel
+  - StoriesBox     # Space Prison
+  - StoriesCluster
+  - StoriesCore
+  - StoriesFland    # Space Prison
+  - StoriesGemini # Не поддерживается
+  - StoriesMarathon
+  - StoriesMeta     # Space Prison
+  - StoriesOmega
+  - StoriesOrigin
+  - StoriesSaltern
+  - StoriesPacked
+  - StoriesReach

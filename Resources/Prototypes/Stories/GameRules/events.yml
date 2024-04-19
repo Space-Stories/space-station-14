@@ -1,0 +1,12 @@
+- type: entity
+  parent: BaseGameRule
+  id: SithSpawn
+  noSpawn: true
+  components:
+    # - type: StationEvent
+    #   weight: 20
+    #   duration: 1
+    #   earliestStart: 30
+    #   reoccurrenceDelay: 600 # Один ситх на одну смену
+    #   minimumPlayers: 40
+    - type: SithSpawnRule

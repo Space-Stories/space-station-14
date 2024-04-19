@@ -1,0 +1,12 @@
+- type: entity
+  id: LockerJediNtFilled
+  suffix: Filled
+  parent: LockerJediNt
+  components:
+  - type: StorageFill
+    contents:
+      - id: ClothingUniformJumpsuitJedi
+      - id: ClothingShoesBootsJackJedi
+      - id: ClothingOuterCoatJedi
+      - id: ClothingHeadsetJediNtAlt
+      - id: ClothingBeltJedi

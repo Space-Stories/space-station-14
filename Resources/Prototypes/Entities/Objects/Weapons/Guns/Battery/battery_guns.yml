@@ -30,6 +30,8 @@
   - type: Appearance
   - type: StaticPrice
     price: 500
+  - type: RequiresWeaponrySkill
+    additionalMaxAngle: 20
 
 - type: entity
   id: BaseWeaponPowerCell
@@ -65,6 +67,8 @@
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot
+  - type: RequiresWeaponrySkill
+    additionalMaxAngle: 20
 
 - type: entity
   id: BaseWeaponBatterySmall
@@ -84,7 +88,6 @@
     quickEquip: false
     slots:
     - Belt
-    - suitStorage
 
 - type: entity
   id: BaseWeaponPowerCellSmall
@@ -228,7 +231,7 @@
   name: practice laser rifle
   parent: WeaponLaserCarbine
   id: WeaponLaserCarbinePractice
-  description: This modified laser rifle fires harmless beams in the 40-watt range, for target practice.
+  description: This modified laser rifle fires nearly harmless beams in the 40-watt range, for target practice.
   components:
   - type: HitscanBatteryAmmoProvider
     proto: RedLaserPractice
@@ -445,6 +448,8 @@
     - type: GuideHelp
       guides:
       - Security
+    - type: RequiresWeaponrySkill
+      enabled: false
 
 - type: entity
   name: disabler SMG
@@ -488,7 +493,7 @@
   name: practice disabler
   parent: WeaponDisabler
   id: WeaponDisablerPractice
-  description: A self-defense weapon that exhausts organic targets, weakening them until they collapse. This one has been undertuned for cadets.
+  description: A self-defense weapon that exhausts organic targets, weakening them until they collapse. This one has been undertuned for cadets making it mostly harmless.
   components:
     - type: Sprite
       sprite: Objects/Weapons/Guns/Battery/practice_disabler.rsi
@@ -508,6 +513,8 @@
     - type: ProjectileBatteryAmmoProvider
       proto: BulletDisablerPractice
       fireCost: 100
+    - type: RequiresWeaponrySkill
+      enabled: true
 
 - type: entity
   name: taser
@@ -544,6 +551,8 @@
     steps: 5
     zeroVisible: true
   - type: Appearance
+  - type: RequiresWeaponrySkill
+    enabled: false
 
 - type: entity
   name: antique laser pistol

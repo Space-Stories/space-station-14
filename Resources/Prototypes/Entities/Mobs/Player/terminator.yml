@@ -106,6 +106,8 @@
     - FootstepSound
     - DoorBumpOpener
     - Unimplantable # no brain to mindshield, no organic body to implant into
+  - type: TTS # Stories-TTS
+  - type: WeaponrySkill
 
 - type: entity
   parent:
@@ -201,3 +203,5 @@
     - MindTransferTarget
     # its just metal so no implants
     - Unimplantable
+  - type: TTS # Stories-TTS
+    voice: sentrybot

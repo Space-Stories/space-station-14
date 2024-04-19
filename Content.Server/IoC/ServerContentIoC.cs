@@ -5,6 +5,10 @@ using Content.Server.Administration.Notes;
 using Content.Server.Afk;
 using Content.Server.Chat.Managers;
 using Content.Server.Connection;
+using Content.Server.Corvax.DiscordAuth;
+using Content.Server.Corvax.JoinQueue;
+using Content.Server.Corvax.Sponsors;
+using Content.Server.Corvax.TTS;
 using Content.Server.Database;
 using Content.Server.Discord;
 using Content.Server.EUI;
@@ -34,6 +38,7 @@ namespace Content.Server.IoC
             IoCManager.Register<IMoMMILink, MoMMILink>();
             IoCManager.Register<IServerPreferencesManager, ServerPreferencesManager>();
             IoCManager.Register<IServerDbManager, ServerDbManager>();
+            IoCManager.Register<IPartnersManager, PartnersManager>();
             IoCManager.Register<RecipeManager, RecipeManager>();
             IoCManager.Register<INodeGroupFactory, NodeGroupFactory>();
             IoCManager.Register<IConnectionManager, ConnectionManager>();
@@ -54,6 +59,10 @@ namespace Content.Server.IoC
             IoCManager.Register<IAdminLogManager, AdminLogManager>();
             IoCManager.Register<PlayTimeTrackingManager>();
             IoCManager.Register<UserDbDataManager>();
+            IoCManager.Register<SponsorsManager>(); // Corvax-Sponsors
+            IoCManager.Register<JoinQueueManager>(); // Corvax-Queue
+            IoCManager.Register<DiscordAuthManager>(); // Corvax-DiscordAuth
+            IoCManager.Register<TTSManager>(); // Corvax-TTS
             IoCManager.Register<ServerInfoManager>();
             IoCManager.Register<PoissonDiskSampler>();
             IoCManager.Register<DiscordWebhook>();

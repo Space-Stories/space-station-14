@@ -38,7 +38,9 @@
   color: "#334E6D"
   roles:
   - Captain
+  - IAA # Stories-IAA
   - CentralCommandOfficial
+  - HeadOfSpacePrison # Stories-SpacePrison
   - ChiefEngineer
   - ChiefMedicalOfficer
   - HeadOfPersonnel
@@ -55,6 +57,7 @@
   roles:
   - AtmosphericTechnician
   - ChiefEngineer
+  - SeniorEngineer # Stories-Seniors
   - StationEngineer
   - TechnicalAssistant
 
@@ -69,6 +72,7 @@
   - MedicalIntern
   - Psychologist
   - Paramedic
+  - SeniorPhysician # Stories-Seniors
 
 - type: department
   id: Security
@@ -79,8 +83,10 @@
   - HeadOfSecurity
   - SecurityCadet
   - SecurityOfficer
+  - SeniorOfficer # Stories-Seniors
   - Detective
   - Warden
+  - JediNt # Stories-Jedi
 
 - type: department
   id: Science
@@ -89,6 +95,7 @@
   roles:
   - ResearchDirector
   - Scientist
+  - SeniorResearcher # Stories-Seniors
   - ResearchAssistant
 
 - type: department

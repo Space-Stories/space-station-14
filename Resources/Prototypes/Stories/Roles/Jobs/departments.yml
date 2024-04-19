@@ -1,0 +1,9 @@
+- type: department
+  id: SpacePrison
+  description: department-SpacePrison-description
+  color: "#0036a2"
+  roles:
+  - HeadOfSpacePrison
+  - SpacePrisonOfficer
+  - SpacePrisonEngineer
+  - SpacePrisonMedic

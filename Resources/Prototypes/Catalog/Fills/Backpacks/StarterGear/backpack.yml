@@ -73,7 +73,7 @@
       #- name: TelescopicBaton
 - type: entity
   noSpawn: true
-  parent: ClothingBackpackEngineering
+  parent: ClothingBackpackCE # Corvax-Resprite
   id: ClothingBackpackChiefEngineerFilled
   components:
   - type: StorageFill
@@ -263,6 +263,7 @@
         - id: BoxZiptie
         - id: CrowbarRed
         - id: MagazineMagnum
+        - id: PinpointerNuclear # Stories-Balance
 
 - type: entity
   noSpawn: true
@@ -278,6 +279,7 @@
         - id: BoxZiptie
         - id: CrowbarRed
         - id: MagazinePistol
+        - id: PinpointerNuclear # Stories-Balance
 
 - type: entity
   noSpawn: true

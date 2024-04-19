@@ -2,6 +2,7 @@ using Content.Shared.Actions;
 using Content.Shared.MouseRotator;
 using Content.Shared.Movement.Components;
 using Content.Shared.Popups;
+using Content.Shared.Standing; // Stories-Crawling
 using Robust.Shared.Network;
 using Robust.Shared.Timing;
 
@@ -13,6 +14,7 @@ public abstract class SharedCombatModeSystem : EntitySystem
     [Dependency] private   readonly INetManager _netMan = default!;
     [Dependency] private   readonly SharedActionsSystem _actionsSystem = default!;
     [Dependency] private   readonly SharedPopupSystem _popup = default!;
+    [Dependency] private readonly StandingStateSystem _standing = default!; // Stories-Crawling
 
     public override void Initialize()
     {
@@ -85,7 +87,7 @@ public abstract class SharedCombatModeSystem : EntitySystem
         if (!component.ToggleMouseRotator || IsNpc(entity))
             return;
 
-        SetMouseRotatorComponents(entity, value);
+        SetMouseRotatorComponents(entity, value && !_standing.IsDown(entity)); // Stories-Crawling
     }
 
     private void SetMouseRotatorComponents(EntityUid uid, bool value)

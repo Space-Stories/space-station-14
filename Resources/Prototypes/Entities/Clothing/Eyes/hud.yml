@@ -27,8 +27,6 @@
     damageContainers:
     - Biological
   - type: ShowHealthIcons
-    damageContainers:
-    - Biological
   - type: Tag
     tags:
     - HudMedical
@@ -114,8 +112,6 @@
     damageContainers:
     - Biological
   - type: ShowHealthIcons
-    damageContainers:
-    - Biological
   - type: ShowHungerIcons
 
 - type: entity
@@ -132,8 +128,6 @@
     damageContainers:
     - Biological
   - type: ShowHealthIcons
-    damageContainers:
-    - Biological
   - type: ShowHungerIcons
   - type: ShowThirstIcons
 
@@ -154,6 +148,7 @@
   - type: ShowHealthBars
     damageContainers:
     - Biological
+  - type: ShowHealthIcons
 
 - type: entity
   parent: ClothingEyesBase
@@ -171,8 +166,6 @@
     - Biological
     - Inorganic
   - type: ShowHealthIcons
-    damageContainers:
-    - Biological
   - type: ShowSyndicateIcons
 
 - type: entity
@@ -191,8 +184,6 @@
     - Biological
     - Inorganic
   - type: ShowHealthIcons
-    damageContainers:
-    - Biological
   - type: ShowHungerIcons
   - type: ShowThirstIcons
   - type: ShowSyndicateIcons

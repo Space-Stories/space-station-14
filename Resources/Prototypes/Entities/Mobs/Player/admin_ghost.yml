@@ -16,6 +16,7 @@
     context: "aghost"
   - type: Ghost
     canInteract: true
+  - type: HideGhost
   - type: GhostHearing
   - type: Hands
   - type: Puller
@@ -64,7 +65,11 @@
   - type: SolarControlConsole # look ma i AM the computer!
   - type: CommunicationsConsole
     title: comms-console-announcement-title-centcom
-    color: "#228b22"
+    global: true
+    sound:
+      path: /Audio/Announcements/centcomm.ogg
+      params:
+        volume: -4
   - type: RadarConsole
     followEntity: true
   - type: CargoOrderConsole
@@ -99,8 +104,8 @@
   noSpawn: true
   components:
   - type: InstantAction
-    icon: { sprite: Structures/Machines/parts.rsi, state: box_0 }
-    iconOn: Structures/Machines/parts.rsi/box_2.png
+    icon: Stories/Interface/AdminActions/solar.png # Stories-Resprite
+    iconOn: Stories/Interface/AdminActions/solar.png # Stories-Resprite
     keywords: [ "AI", "console", "interface" ]
     priority: -10
     event: !type:ToggleIntrinsicUIEvent { key: enum.SolarControlConsoleUiKey.Key }
@@ -112,8 +117,8 @@
   noSpawn: true
   components:
   - type: InstantAction
-    icon: { sprite: Structures/Machines/parts.rsi, state: box_0 }
-    iconOn: Structures/Machines/parts.rsi/box_2.png
+    icon: Stories/Interface/AdminActions/communications.png # Stories-Resprite
+    iconOn: Stories/Interface/AdminActions/communications.png # Stories-Resprite
     keywords: [ "AI", "console", "interface" ]
     priority: -10
     event: !type:ToggleIntrinsicUIEvent { key: enum.CommunicationsConsoleUiKey.Key }
@@ -125,8 +130,8 @@
   noSpawn: true
   components:
   - type: InstantAction
-    icon: { sprite: Structures/Machines/parts.rsi, state: box_0 }
-    iconOn: Structures/Machines/parts.rsi/box_2.png
+    icon: Stories/Interface/AdminActions/radar.png # Stories-Resprite
+    iconOn: Stories/Interface/AdminActions/radar.png # Stories-Resprite
     keywords: [ "AI", "console", "interface" ]
     priority: -10
     event: !type:ToggleIntrinsicUIEvent { key: enum.RadarConsoleUiKey.Key }
@@ -138,8 +143,8 @@
   noSpawn: true
   components:
   - type: InstantAction
-    icon: { sprite: Structures/Machines/parts.rsi, state: box_0 }
-    iconOn: Structures/Machines/parts.rsi/box_2.png
+    icon: Stories/Interface/AdminActions/cargo.png # Stories-Resprite
+    iconOn: Stories/Interface/AdminActions/cargo.png # Stories-Resprite
     keywords: [ "AI", "console", "interface" ]
     priority: -10
     event: !type:ToggleIntrinsicUIEvent { key: enum.CargoConsoleUiKey.Orders }
@@ -151,8 +156,8 @@
   noSpawn: true
   components:
   - type: InstantAction
-    icon: { sprite: Structures/Machines/parts.rsi, state: box_0 }
-    iconOn: Structures/Machines/parts.rsi/box_2.png
+    icon: Stories/Interface/AdminActions/monitoring.png # Stories-Resprite
+    iconOn: Stories/Interface/AdminActions/monitoring.png # Stories-Resprite
     keywords: [ "AI", "console", "interface" ]
     priority: -10
     event: !type:ToggleIntrinsicUIEvent { key: enum.CrewMonitoringUIKey.Key }
@@ -164,8 +169,20 @@
   noSpawn: true
   components:
   - type: InstantAction
-    icon: { sprite: Structures/Machines/parts.rsi, state: box_0 }
-    iconOn: Structures/Machines/parts.rsi/box_2.png
+    icon: Stories/Interface/AdminActions/records.png # Stories-Resprite
+    iconOn: Stories/Interface/AdminActions/records.png # Stories-Resprite
     keywords: [ "AI", "console", "interface" ]
     priority: -10
     event: !type:ToggleIntrinsicUIEvent { key: enum.GeneralStationRecordConsoleKey.Key }
+
+- type: entity
+  id: ActionHideGhost
+  name: Hide ghost
+  description: Remove all ways to see your presence
+  noSpawn: true
+  components:
+  - type: InstantAction
+    icon: Stories/Interface/AdminActions/hide_ghost.png
+    iconOn: Stories/Interface/AdminActions/hide_ghost.png
+    event: !type:HideGhostEvent
+    priority: -10

@@ -686,10 +686,13 @@ public abstract class SharedMeleeWeaponSystem : EntitySystem
                 new CollisionRay(position, castAngle.ToWorldVec(),
                     AttackMask), range, ignore, false).ToList();
 
-            if (res.Count != 0)
+            for (var a = 0; a < res.Count; a++) // Space Stories - start
             {
-                resSet.Add(res[0].HitEntity);
-            }
+                if (Transform(ignore).ChildEntities.Contains(res[a].HitEntity)) // Мне просто нужно, чтобы он не бил своих детей, но его удары проходили дальше.
+                    continue;
+                resSet.Add(res[a].HitEntity);
+                break;
+            }  // Space Stories - end
         }
 
         return resSet;

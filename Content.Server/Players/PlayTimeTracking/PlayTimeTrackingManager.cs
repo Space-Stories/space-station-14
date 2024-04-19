@@ -346,6 +346,27 @@ public sealed class PlayTimeTrackingManager
         AddTimeToTracker(id, PlayTimeTrackingShared.TrackerOverall, time);
     }
 
+    public void ReduceTimeToTracker(ICommonSession id, string tracker, TimeSpan time)
+    {
+        if (!_playTimeData.TryGetValue(id, out var data) || !data.Initialized)
+            throw new InvalidOperationException("Play time info is not yet loaded for this player!");
+
+        ReduceTimeToTracker(data, tracker, time);
+    }
+
+    private static void ReduceTimeToTracker(PlayTimeData data, string tracker, TimeSpan time)
+    {
+        ref var timer = ref CollectionsMarshal.GetValueRefOrAddDefault(data.TrackerTimes, tracker, out _);
+        timer -= time;
+
+        data.DbTrackersDirty.Add(tracker);
+    }
+
+    public void ReduceTimeToOverallPlaytime(ICommonSession id, TimeSpan time)
+    {
+        ReduceTimeToTracker(id, PlayTimeTrackingShared.TrackerOverall, time);
+    }
+
     public TimeSpan GetOverallPlaytime(ICommonSession id)
     {
         return GetPlayTimeForTracker(id, PlayTimeTrackingShared.TrackerOverall);

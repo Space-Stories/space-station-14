@@ -20,6 +20,12 @@ namespace Content.Server.Ghost.Roles.UI
                 case GhostRoleTakeoverRequestMessage req:
                     EntitySystem.Get<GhostRoleSystem>().Takeover(Player, req.Identifier);
                     break;
+                case GhostRoleAddRequestMessage req: // SPACE STORIES - start
+                    EntitySystem.Get<GhostRoleSystem>().AddPotentialTakeover(Player, req.Identifier);
+                    break;
+                case GhostRoleRemoveRequestMessage req:
+                    EntitySystem.Get<GhostRoleSystem>().RemovePotentialTakeover(Player, req.Identifier);
+                    break; // SPACE STORIES - end
                 case GhostRoleFollowRequestMessage req:
                     EntitySystem.Get<GhostRoleSystem>().Follow(Player, req.Identifier);
                     break;

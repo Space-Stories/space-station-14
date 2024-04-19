@@ -1,0 +1,9 @@
+- type: npcFaction
+  id: Shadowling
+  hostile:
+  - NanoTrasen
+  - Syndicate
+  - Passive
+  - PetsNT
+  - Zombie
+  - Revolutionary

@@ -127,6 +127,7 @@
       - state: watercooler-2-1
         map: ["enum.SolutionContainerLayers.Fill"]
         visible: false
+  - type: Appearance
   - type: SolutionContainerVisuals
     maxFillLevels: 4
     fillBaseName: watercooler-2-
@@ -207,13 +208,13 @@
       sprite: Structures/Storage/tanks.rsi
       layers:
         - state: generictank-1
-        - state: watertank-2-1
+        - state: generictank-1-1 # Corvax-Resprite
           map: ["enum.SolutionContainerLayers.Fill"]
           visible: false
     - type: Appearance
     - type: SolutionContainerVisuals
       maxFillLevels: 5
-      fillBaseName: watertank-2-
+      fillBaseName: generictank-1- # Corvax-Resprite
     - type: ExaminableSolution
       solution: tank
 

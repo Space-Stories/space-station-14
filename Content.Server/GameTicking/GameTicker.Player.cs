@@ -33,8 +33,8 @@ namespace Content.Server.GameTicking
 
             if (_mind.TryGetMind(session.UserId, out var mindId, out var mind))
             {
-                if (args.NewStatus != SessionStatus.Disconnected)
-                {
+                if (args.OldStatus == SessionStatus.Connecting && args.NewStatus == SessionStatus.Connected)
+				{
                     mind.Session = session;
                     _pvsOverride.AddSessionOverride(GetNetEntity(mindId.Value), session);
                 }
@@ -60,7 +60,7 @@ namespace Content.Server.GameTicking
 
                     // Make the player actually join the game.
                     // timer time must be > tick length
-                    Timer.Spawn(0, () => _playerManager.JoinGame(args.Session));
+                    // Timer.Spawn(0, args.Session.JoinGame); // Corvax-Queue: Moved to `JoinQueueManager`
 
                     var record = await _dbManager.GetPlayerRecordByUserId(args.Session.UserId);
                     var firstConnection = record != null &&
@@ -134,8 +134,9 @@ namespace Content.Server.GameTicking
                         _pvsOverride.ClearOverride(GetNetEntity(mindId!.Value));
                         mind.Session = null;
                     }
-
-                    _userDb.ClientDisconnected(session);
+                    
+                    if (_playerGameStatuses.ContainsKey(args.Session.UserId)) // Corvax-Queue: Delete data only if player was in game
+                        _userDb.ClientDisconnected(session);
                     break;
                 }
             }

@@ -63,6 +63,8 @@
   name: thruster
   parent: [ BaseThruster, ConstructibleMachine ]
   components:
+  - type: Thruster
+    enabled: true # Stories-Thruster
   - type: Machine
     board: ThrusterMachineCircuitboard
   - type: Destructible
@@ -145,6 +147,7 @@
     requireSpace: false
     thrust: 2000
     machinePartThrust: Manipulator
+    enabled: true # Stories-Thruster
   - type: Sprite
     # Listen I'm not the biggest fan of the sprite but it was the most appropriate thing I could find.
     sprite: Structures/Shuttles/gyroscope.rsi

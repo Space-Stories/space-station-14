@@ -1,4 +1,5 @@
 using Content.Client.Interactable.Components;
+using Content.Client.StatusIcon;
 using Content.Shared.Stealth;
 using Content.Shared.Stealth.Components;
 using Robust.Client.GameObjects;
@@ -21,6 +22,7 @@ public sealed class StealthSystem : SharedStealthSystem
         SubscribeLocalEvent<StealthComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<StealthComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<StealthComponent, BeforePostShaderRenderEvent>(OnShaderRender);
+        SubscribeLocalEvent<StealthComponent, StatusIconVisibleEvent>(OnStatusIconVisible);
     }
 
     public override void SetEnabled(EntityUid uid, bool value, StealthComponent? component = null)
@@ -91,6 +93,13 @@ public sealed class StealthSystem : SharedStealthSystem
 
         visibility = MathF.Max(0, visibility);
         args.Sprite.Color = new Color(visibility, visibility, 1, 1);
+    }
+
+    private void OnStatusIconVisible(EntityUid uid, StealthComponent comp, ref StatusIconVisibleEvent args)
+    {
+        // no sechud seing invisible ninjas
+        if (comp.Enabled)
+            args.Visible = false;
     }
 }
 

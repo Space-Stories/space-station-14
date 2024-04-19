@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using Content.Server.Administration.Logs;
+using Content.Server.Database;
 using Content.Server.GameTicking;
 using Content.Server.Mind.Commands;
 using Content.Shared.Database;
@@ -26,6 +27,8 @@ public sealed class MindSystem : SharedMindSystem
     [Dependency] private readonly SharedGhostSystem _ghosts = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
     [Dependency] private readonly PvsOverrideSystem _pvsOverride = default!;
+
+    [Dependency] private readonly IPartnersManager _partners = default!;  // STORIES
 
     public override void Initialize()
     {
@@ -99,7 +102,11 @@ public sealed class MindSystem : SharedMindSystem
                 return;
             }
 
-            var ghost = Spawn(GameTicker.ObserverPrototypeName, spawnPosition);
+            EntityUid ghost;  // STORIES - start
+            if (mind.Session != null && _partners.TryGetInfo(mind.Session.UserId, out var sponsor))
+                ghost = Spawn(sponsor.GhostSkin, spawnPosition);
+            else ghost = Spawn(GameTicker.ObserverPrototypeName, spawnPosition);  // STORIES - end
+
             var ghostComponent = Comp<GhostComponent>(ghost);
             _ghosts.SetCanReturnToBody(ghostComponent, false);
 
@@ -247,7 +254,10 @@ public sealed class MindSystem : SharedMindSystem
                 ? _gameTicker.GetObserverSpawnPoint().ToMap(EntityManager, _transform)
                 : _transform.GetMapCoordinates(mind.OwnedEntity.Value);
 
-            entity = Spawn(GameTicker.ObserverPrototypeName, position);
+            if (mind.Session != null && _partners.TryGetInfo(mind.Session.UserId, out var sponsor)) // STORIES - start
+                entity = Spawn(sponsor.GhostSkin, position);
+            else entity = Spawn(GameTicker.ObserverPrototypeName, position);  // STORIES - end
+
             component = EnsureComp<MindContainerComponent>(entity.Value);
             var ghostComponent = Comp<GhostComponent>(entity.Value);
             _ghosts.SetCanReturnToBody(ghostComponent, false);

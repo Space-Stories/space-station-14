@@ -176,7 +176,6 @@ public sealed class HumanoidAppearanceSystem : SharedHumanoidAppearanceSystem
         }
 
         markings.EnsureSpecies(profile.Species, profile.Appearance.SkinColor, _markingManager, _prototypeManager);
-        markings.EnsureSexes(profile.Sex, _markingManager);
         markings.EnsureDefault(
             profile.Appearance.SkinColor,
             profile.Appearance.EyeColor,

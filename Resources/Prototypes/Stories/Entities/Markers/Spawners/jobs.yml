@@ -1,0 +1,124 @@
+# JediNt
+
+- type: entity
+  id: SpawnPointJediNt
+  parent: SpawnPointJobBase
+  name: jedint
+  components:
+  - type: SpawnPoint
+    job_id: JediNt
+  - type: Sprite
+    layers:
+      - state: green
+      - state: hos
+
+# Base
+
+- type: entity
+  id: SpawnPointJobBaseStories
+  parent: MarkerBase
+  abstract: true
+  suffix: Job Spawn
+  components:
+  - type: SpawnPoint
+    spawn_type: Job
+  - type: Sprite
+    sprite: Stories/Markers/jobs.rsi
+
+# Space Prison
+
+- type: entity
+  id: SpawnPointHeadOfSpacePrison
+  parent: SpawnPointJobBaseStories
+  name: headofsp
+  components:
+  - type: SpawnPoint
+    job_id: HeadOfSpacePrison
+  - type: Sprite
+    layers:
+      - state: green
+      - state: hos
+
+- type: entity
+  id: SpawnPointSpacePrisonOfficer
+  parent: SpawnPointJobBaseStories
+  name: spofficer
+  components:
+  - type: SpawnPoint
+    job_id: SpacePrisonOfficer
+  - type: Sprite
+    layers:
+      - state: green
+      - state: security_officer
+
+- type: entity
+  id: SpawnPointSpacePrisonEngineer
+  parent: SpawnPointJobBaseStories
+  name: spengineer
+  components:
+  - type: SpawnPoint
+    job_id: SpacePrisonEngineer
+  - type: Sprite
+    layers:
+      - state: green
+      - state: engineer
+
+- type: entity
+  id: SpawnPointSpacePrisonMedic
+  parent: SpawnPointJobBaseStories
+  name: spmedic
+  components:
+  - type: SpawnPoint
+    job_id: SpacePrisonMedic
+  - type: Sprite
+    layers:
+      - state: green
+      - state: doctor
+
+- type: entity # Stories-Seniors
+  id: SpawnPointSeniorOfficer
+  parent: SpawnPointJobBase
+  name: seniorofficer
+  components:
+  - type: SpawnPoint
+    job_id: SeniorOfficer
+  - type: Sprite
+    layers:
+      - state: green
+      - state: seniorofficer
+
+- type: entity # Stories-Seniors
+  id: SpawnPointSeniorResearcher
+  parent: SpawnPointJobBase
+  name: seniorresearcher
+  components:
+  - type: SpawnPoint
+    job_id: SeniorResearcher
+  - type: Sprite
+    layers:
+      - state: green
+      - state: seniorresearcher
+
+- type: entity # Stories-Seniors
+  id: SpawnPointSeniorPhysician
+  parent: SpawnPointJobBase
+  name: seniorphysician
+  components:
+  - type: SpawnPoint
+    job_id: SeniorPhysician
+  - type: Sprite
+    layers:
+      - state: green
+      - state: seniorphysician
+
+- type: entity # Stories-Seniors
+  id: SpawnPointSeniorEngineer
+  parent: SpawnPointJobBase
+  name: seniorengineer
+  components:
+  - type: SpawnPoint
+    job_id: SeniorEngineer
+  - type: Sprite
+    layers:
+      - state: green
+      - state: seniorengineer

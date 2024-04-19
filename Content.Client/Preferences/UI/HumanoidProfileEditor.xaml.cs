@@ -71,6 +71,8 @@ namespace Content.Client.Preferences.UI
         private Button _saveButton => CSaveButton;
         private OptionButton _sexButton => CSexButton;
         private OptionButton _genderButton => CPronounsButton;
+        private OptionButton _voiceButton => CVoiceButton; // Corvax-TTS
+        private Button _voicePlayButton => CVoicePlayButton; // Corvax-TTS
         private Slider _skinColor => CSkin;
         private OptionButton _clothingButton => CClothingButton;
         private OptionButton _backpackButton => CBackpackButton;
@@ -176,6 +178,14 @@ namespace Content.Client.Preferences.UI
             };
 
             #endregion Gender
+
+            // Corvax-TTS-Start
+            #region Voice
+
+            InitializeVoice();
+
+            #endregion
+            // Corvax-TTS-End
 
             #region Species
 
@@ -797,6 +807,7 @@ namespace Content.Client.Preferences.UI
                     break;
             }
             UpdateGenderControls();
+            UpdateTTSVoicesControls(); // Corvax-TTS
             CMarkings.SetSex(newSex);
             IsDirty = true;
         }
@@ -806,6 +817,14 @@ namespace Content.Client.Preferences.UI
             Profile = Profile?.WithGender(newGender);
             IsDirty = true;
         }
+
+        // Corvax-TTS-Start
+        private void SetVoice(string newVoice)
+        {
+            Profile = Profile?.WithVoice(newVoice);
+            IsDirty = true;
+        }
+        // Corvax-TTS-End
 
         private void SetSpecies(string newSpecies)
         {
@@ -1195,6 +1214,7 @@ namespace Content.Client.Preferences.UI
             UpdateTraitPreferences();
             UpdateMarkings();
             RebuildSpriteView();
+            UpdateTTSVoicesControls(); // Corvax-TTS
             UpdateHairPickers();
             UpdateCMarkingsHair();
             UpdateCMarkingsFacialHair();

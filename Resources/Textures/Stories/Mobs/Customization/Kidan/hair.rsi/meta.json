@@ -1,0 +1,39 @@
+{
+    "version": 1,
+    "license": "CC-BY-SA-3.0",
+    "copyright": "https://github.com/ss220-space/Paradise/tree/master220/icons/mob/species/kidan",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "broken_pull_horns",
+            "directions": 4
+        },
+        {
+            "name": "bull_horns_s",
+            "directions": 4
+        },
+        {
+            "name": "curled_horns_s",
+            "directions": 4
+        },
+        {
+            "name": "hawk_horns_s",
+            "directions": 4
+        },
+        {
+            "name": "hollow_horns_s",
+            "directions": 4
+        },
+        {
+            "name": "tall_horns_s",
+            "directions": 4
+        },
+        {
+            "name": "wide_horns_s",
+            "directions": 4
+        }
+    ]
+}

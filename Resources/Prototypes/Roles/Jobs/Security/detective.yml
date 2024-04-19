@@ -6,7 +6,10 @@
   requirements:
   - !type:DepartmentTimeRequirement
     department: Security
-    time: 54000 # 15 hours
+    time: 72000 #20 hrs # Stories-RoleTime
+  - !type:DepartmentTimeRequirement
+    department: Civilian
+    time: 18000 #5 hrs
   startingGear: DetectiveGear
   icon: "JobIconDetective"
   supervisors: job-supervisors-hos
@@ -20,6 +23,9 @@
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+      - type: WeaponrySkill
 
 - type: startingGear
   id: DetectiveGear

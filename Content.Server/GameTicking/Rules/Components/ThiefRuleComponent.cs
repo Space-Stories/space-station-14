@@ -27,7 +27,7 @@ public sealed partial class ThiefRuleComponent : Component
     /// Add a Pacified comp to thieves
     /// </summary>
     [DataField]
-    public bool PacifistThieves = true;
+    public bool PacifistThieves = false;
 
     [DataField]
     public ProtoId<AntagPrototype> ThiefPrototypeId = "Thief";

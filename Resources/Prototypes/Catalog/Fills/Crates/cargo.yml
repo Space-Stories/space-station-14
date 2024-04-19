@@ -1,8 +1,6 @@
 - type: entity
   id: CrateCargoLuxuryHardsuit
   parent: CratePirate
-  name: luxury mining hardsuit crate
-  description: Finally, a hardsuit Quartermasters could call their own. Centcomm has heard you, now stop asking.
   components:
   - type: StorageFill
     contents:
@@ -57,9 +55,6 @@
     - id: TrashBananaPeel
       prob: 0.1
       orGroup: Junk
-    - id: TrashBananaPeelExplosive
-      prob: 0.001
-      orGroup: Junk
     - id: FoodTinBeansTrash
       prob: 0.1
       orGroup: Junk
@@ -74,50 +69,23 @@
       orGroup: Junk
     #canisters
     - id: AirCanister
-      prob: 0.001
-      orGroup: Canister
-    - id: AmmoniaCanister
-      prob: 0.001
-      orGroup: Canister
-    - id: CarbonDioxideCanister
-      prob: 0.001
+      prob: 0.5
       orGroup: Canister
     - id: FrezonCanister
-      prob: 0.001
+      prob: 0.01
       orGroup: Canister
     - id: NitrogenCanister
-      prob: 0.001
-      orGroup: Canister
-    - id: NitrousOxideCanister
-      prob: 0.001
+      prob: 0.5
       orGroup: Canister
     - id: OxygenCanister
-      prob: 0.001
-      orGroup: Canister
-    - id: PlasmaCanister
-      prob: 0.001
-      orGroup: Canister
-    - id: TritiumCanister
-      prob: 0.001
+      prob: 0.5
       orGroup: Canister
     - id: WaterVaporCanister
-      prob: 0.001
+      prob: 0.25
       orGroup: Canister
     #weapons
-    - id: WeaponPulseCarbine
-      prob: 0.0001
-      orGroup: Weapons
-    - id: WeaponRifleAk
-      prob: 0.0001
-      orGroup: Weapons
-    - id: Throngler
-      prob: 0.0001
-      orGroup: Weapons
-    - id: WeaponLauncherPirateCannon
-      prob: 0.001
-      orGroup: Weapons
     - id: WeaponPistolCHIMP
-      prob: 0.001
+      prob: 0.1
       orGroup: Weapons
     - id: WeaponSniperMosin
       prob: 0.01
@@ -126,16 +94,22 @@
       prob: 0.001
       orGroup: Weapons
     - id: Sledgehammer
-      prob: 0.001
+      prob: 0.25
       orGroup: Weapons
     - id: WeaponMeleeToolboxRobust
-      prob: 0.01
+      prob: 0.1
       orGroup: Weapons
     - id: ThrowingStar
-      prob: 0.01
+      prob: 0.2
       orGroup: Weapons
-    - id: WeaponLaserGun
-      prob: 0.001
+    - id: WeaponShotgunHandmade
+      prob: 0.025
+      orGroup: Weapons
+    - id: WeaponFlareGun
+      prob: 0.1
+      orGroup: Weapons
+    - id: Bola
+      prob: 0.5
       orGroup: Weapons
     - id: WeaponShotgunHandmade
       prob: 0.01
@@ -151,7 +125,7 @@
       orGroup: Weapons
     - id: Shovel
       prob: 0.01
-      orGroup: Weapons
+      orGroup: Weapons  
     - id: WeaponWaterPistol
       prob: 0.01
       orGroup: Weapons
@@ -165,17 +139,11 @@
     - id: ClothingUniformJumpsuitFamilyGuy
       prob: 0.05
       orGroup: Clothes
-    - id: ClothingOuterHardsuitCBURN
-      prob: 0.001
-      orGroup: Clothes
     - id: ClothingOuterHardsuitBasic
-      prob: 0.001
+      prob: 0.005
       orGroup: Clothes
     - id: ClothingBackpackERTClown
-      prob: 0.001
-      orGroup: Clothes
-    - id: ClothingNeckCloakAdmin
-      prob: 0.01
+      prob: 0.0001
       orGroup: Clothes
     - id: ClothingOuterFlannelBlue
       prob: 0.01
@@ -193,16 +161,16 @@
       prob: 0.01
       orGroup: Clothes
     - id: ClothingOuterArmorReflective
-      prob: 0.01
+      prob: 0.005
       orGroup: Clothes
     - id: ClothingUniformJumpskirtSyndieFormalDress
-      prob: 0.01
+      prob: 0.0001
       orGroup: Clothes
     - id: ClothingNeckCloakNanotrasen
-      prob: 0.01
+      prob: 0.0001
       orGroup: Clothes
     - id: ClothingUniformJumpsuitNanotrasen
-      prob: 0.01
+      prob: 0.001
       orGroup: Clothes
     - id: ClothingShoesSnakeskinBoots
       prob: 0.01
@@ -217,7 +185,7 @@
       prob: 0.01
       orGroup: Clothes
     - id: ClothingMaskGasMerc
-      prob: 0.01
+      prob: 0.001
       orGroup: Clothes
     - id: ClothingHeadHatCardborg
       prob: 0.01
@@ -258,28 +226,22 @@
       orGroup: Swag
     - id: ClothingEyesGlassesGarGiga
       prob: 0.01
-      orGroup: Swag
+      orGroup: Swag   
     - id: ClothingEyesGlassesGarOrange
       prob: 0.01
-      orGroup: Swag
-    - id: ClothingHeadHatChameleon
-      prob: 0.01
-      orGroup: Swag
-    - id: ClothingBeltChampion
-      prob: 0.01
-      orGroup: Swag
+      orGroup: Swag      
     #plushies
     - id: PlushieRGBee
       prob: 0.01
       orGroup: Plushies
     - id: PlushieGhost
-      prob: 0.01
+      prob: 0.0001
       orGroup: Plushies
     - id: PlushieHampter
       prob: 0.01
       orGroup: Plushies
     - id: PlushieGhostRevenant
-      prob: 0.01
+      prob: 0.00001
       orGroup: Plushies
     - id: PlushiePenguin
       prob: 0.01
@@ -310,7 +272,7 @@
       prob: 0.01
       orGroup: Useful
     - id: Omnitool
-      prob: 0.001
+      prob: 0.0001
       orGroup: Useful
     - id: SoapOmega
       prob: 0.001
@@ -319,7 +281,7 @@
       prob: 0.01
       orGroup: Useful
     - id: MechVim
-      prob: 0.01
+      prob: 0.001
       orGroup: Useful
     - id: Chainsaw
       prob: 0.001
@@ -347,9 +309,6 @@
       prob: 0.01
       orGroup: NotUseful
     - id: MobHamsterHamlet
-      prob: 0.01
-      orGroup: NotUseful
-    - id: MobLaserRaptor
       prob: 0.01
       orGroup: NotUseful
     - id: DrinkNothing
@@ -387,4 +346,4 @@
       orGroup: NotUseful
     - id: WeakKudzu
       prob: 0.01
-      orGroup: NotUseful
+      orGroup: NotUseful   

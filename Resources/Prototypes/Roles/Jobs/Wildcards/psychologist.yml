@@ -16,10 +16,10 @@
   id: PsychologistGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitPsychologist
-    back: ClothingBackpackMedicalFilled
+    back: ClothingBackpackPsychologistFilled
     shoes: ClothingShoesLeather
     id: PsychologistPDA
     ears: ClothingHeadsetMedical
-  innerClothingSkirt: ClothingUniformJumpsuitPsychologist
-  satchel: ClothingBackpackSatchelMedicalFilled
-  duffelbag: ClothingBackpackDuffelMedicalFilled
+  innerClothingSkirt: ClothingUniformJumpskirtPsychologist # Corvax-Resprite
+  satchel: ClothingBackpackSatchelPsychologistFilled
+  duffelbag: ClothingBackpackDuffelPsychologistFilled

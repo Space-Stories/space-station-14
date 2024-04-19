@@ -1,7 +1,7 @@
 ﻿# Non-fungible apes, anyone?
 - type: nameIdentifierGroup
   id: Monkey
-  prefix: MK
+  prefix: МК
 
 - type: nameIdentifierGroup
   id: Kobold
@@ -9,7 +9,7 @@
 
 - type: nameIdentifierGroup
   id: Holoparasite
-  prefix: HOLO
+  prefix: ГОЛО
 
 - type: nameIdentifierGroup
   id: MMI
@@ -19,7 +19,7 @@
 
 - type: nameIdentifierGroup
   id: PositronicBrain
-  prefix: PB
+  prefix: ПМ
   minValue: 10
   maxValue: 99
 

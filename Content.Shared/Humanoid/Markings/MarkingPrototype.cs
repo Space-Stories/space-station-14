@@ -20,6 +20,10 @@ namespace Content.Shared.Humanoid.Markings
         [DataField("speciesRestriction")]
         public List<string>? SpeciesRestrictions { get; private set; }
 
+        // Corvax-Sponsors-Start
+        [DataField("sponsorOnly")]
+        public bool SponsorOnly = false;
+        // Corvax-Sponsors-End
         [DataField("sexRestriction")]
         public Sex? SexRestriction { get; private set; }
 

@@ -19,11 +19,19 @@ namespace Content.Shared.Ghost
         {
             base.Initialize();
             SubscribeLocalEvent<GhostComponent, UseAttemptEvent>(OnAttempt);
-            SubscribeLocalEvent<GhostComponent, InteractionAttemptEvent>(OnAttempt);
+            SubscribeLocalEvent<GhostComponent, InteractionAttemptEvent>(OnInt); // SPACE STORIES
             SubscribeLocalEvent<GhostComponent, EmoteAttemptEvent>(OnAttempt);
             SubscribeLocalEvent<GhostComponent, DropAttemptEvent>(OnAttempt);
             SubscribeLocalEvent<GhostComponent, PickupAttemptEvent>(OnAttempt);
         }
+        private void OnInt(EntityUid uid, GhostComponent component, InteractionAttemptEvent args) // SPACE STORIES - start
+        {
+            if (args.Uid == args.Target)
+                return;
+
+            if (!component.CanGhostInteract)
+                args.Cancel();
+        } // SPACE STORIES - end
 
         private void OnAttempt(EntityUid uid, GhostComponent component, CancellableEntityEventArgs args)
         {
@@ -50,6 +58,12 @@ namespace Content.Shared.Ghost
         public void SetCanReturnToBody(GhostComponent component, bool value)
         {
             component.CanReturnToBody = value;
+        }
+
+        public void SetColor(GhostComponent component, Color value)
+        {
+            component.color = value;
+            Dirty(component);
         }
     }
 
