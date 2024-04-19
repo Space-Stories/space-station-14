@@ -32,7 +32,7 @@ public sealed class PartnersManager : IPartnersManager
 
         if (_db == null)
             return false;
-
+        try {
         using NpgsqlCommand cmd = new NpgsqlCommand($"""SELECT * FROM partners WHERE partners.net_id = '{userId.UserId.ToString()}'""", _db);
         using NpgsqlDataReader reader = cmd.ExecuteReader();
 
@@ -55,6 +55,7 @@ public sealed class PartnersManager : IPartnersManager
             };
             return true;
         }
+        } catch {}
         return false;
     }
     public void Init()
