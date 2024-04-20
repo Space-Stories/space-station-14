@@ -79,11 +79,11 @@ namespace Content.Server.Ghost.Roles
             switch (args.NewMobState)
             {
                 case MobState.Alive:
-                {
-                    if (!ghostRole.Taken)
-                        RegisterGhostRole((component, ghostRole));
-                    break;
-                }
+                    {
+                        if (!ghostRole.Taken)
+                            RegisterGhostRole((component, ghostRole));
+                        break;
+                    }
                 case MobState.Critical:
                 case MobState.Dead:
                     UnregisterGhostRole((component, ghostRole));
@@ -105,11 +105,11 @@ namespace Content.Server.Ghost.Roles
 
         public void OpenEui(ICommonSession session)
         {
-            if (session.AttachedEntity is not {Valid: true} attached ||
+            if (session.AttachedEntity is not { Valid: true } attached ||
                 !EntityManager.HasComponent<GhostComponent>(attached))
                 return;
 
-            if(_openUis.ContainsKey(session))
+            if (_openUis.ContainsKey(session))
                 CloseEui(session);
 
             var eui = _openUis[session] = new GhostRolesEui();
@@ -273,7 +273,7 @@ namespace Content.Server.Ghost.Roles
                 if (metaQuery.GetComponent(uid).EntityPaused)
                     continue;
 
-                roles.Add(new GhostRoleInfo {Identifier = id, Name = role.RoleName, Description = role.RoleDescription, Rules = role.RoleRules, Requirements = role.Requirements});
+                roles.Add(new GhostRoleInfo { Identifier = id, Name = role.RoleName, Description = role.RoleDescription, Rules = role.RoleRules, Requirements = role.Requirements });
             }
 
             return roles.ToArray();
@@ -396,6 +396,7 @@ namespace Content.Server.Ghost.Roles
                 QueueDel(uid);
 
             args.TookRole = true;
+            ghostRole.PotentialTakeovers.Clear(); // Stories
         }
 
         private void OnAdd(EntityUid uid, GhostRoleMobSpawnerComponent component, ref AddPotentialTakeoverEvent args) // SPACE STORIES
@@ -473,6 +474,7 @@ namespace Content.Server.Ghost.Roles
             UnregisterGhostRole((uid, ghostRole));
 
             args.TookRole = true;
+            ghostRole.PotentialTakeovers.Clear(); // Stories
         }
     }
 
@@ -484,7 +486,7 @@ namespace Content.Server.Ghost.Roles
         public string Help => $"{Command}";
         public void Execute(IConsoleShell shell, string argStr, string[] args)
         {
-            if(shell.Player != null)
+            if (shell.Player != null)
                 EntitySystem.Get<GhostRoleSystem>().OpenEui(shell.Player);
             else
                 shell.WriteLine("You can only open the ghost roles UI on a client.");
