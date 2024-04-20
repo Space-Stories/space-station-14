@@ -19,7 +19,7 @@ public interface IPartnersManager
 public sealed class PartnersManager : IPartnersManager
 {
     [Dependency] private readonly IConfigurationManager _cfg = default!;
-    private NpgsqlConnection? _db = null;
+    private NpgsqlConnection _db = default!;
     private ISawmill _sawmill = default!;
     public void SetAntagPicked(NetUserId userId)
     {
@@ -30,32 +30,39 @@ public sealed class PartnersManager : IPartnersManager
     {
         sponsor = null;
 
-        if (_db == null)
+        if (_db.FullState == System.Data.ConnectionState.Closed || _db.FullState == System.Data.ConnectionState.Broken)
             return false;
-        try {
-        using NpgsqlCommand cmd = new NpgsqlCommand($"""SELECT * FROM partners WHERE partners.net_id = '{userId.UserId.ToString()}'""", _db);
-        using NpgsqlDataReader reader = cmd.ExecuteReader();
 
-        while (reader.Read())
+        try
         {
-            DateTime? dateValue = (DateTime) reader[10];
-            if (dateValue != null && dateValue?.AddDays(30) < DateTime.Now)
-                return false;
+            using NpgsqlCommand cmd = new NpgsqlCommand($"""SELECT * FROM partners WHERE partners.net_id = '{userId.UserId.ToString()}'""", _db);
+            using NpgsqlDataReader reader = cmd.ExecuteReader();
 
-            sponsor = new DbSponsorInfo()
+            while (reader.Read())
             {
-                Tier = (short) reader[3],
-                OOCColor = (string) reader[4],
-                HavePriorityJoin = (bool) reader[5],
-                ExtraSlots = (short) reader[6],
-                RoleTimeBypass = (bool) reader[11],
-                AllowedAntags = (string[]) reader[12],
-                GhostSkin = (string) reader[13],
-                LastDayTakingAntag = (short) reader[14]
-            };
-            return true;
+                DateTime? dateValue = (DateTime) reader[10];
+                if (dateValue != null && dateValue?.AddDays(30) < DateTime.Now)
+                    return false;
+
+                sponsor = new DbSponsorInfo()
+                {
+                    Tier = (short) reader[3],
+                    OOCColor = (string) reader[4],
+                    HavePriorityJoin = (bool) reader[5],
+                    ExtraSlots = (short) reader[6],
+                    RoleTimeBypass = (bool) reader[11],
+                    AllowedAntags = (string[]) reader[12],
+                    GhostSkin = (string) reader[13],
+                    LastDayTakingAntag = (short) reader[14]
+                };
+                return true;
+            }
         }
-        } catch {}
+        catch (Exception e)
+        {
+            _sawmill.Error($"Error while getting partner info: {e}");
+            return false;
+        }
         return false;
     }
     public void Init()
