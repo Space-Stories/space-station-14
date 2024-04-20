@@ -23,11 +23,16 @@ public sealed class PartnersManager : IPartnersManager
     private ISawmill _sawmill = default!;
     public void SetAntagPicked(NetUserId userId)
     {
+        if (_db.FullState == System.Data.ConnectionState.Closed || _db.FullState == System.Data.ConnectionState.Broken)
+            return;
+
         using NpgsqlCommand cmd = new NpgsqlCommand($"""UPDATE partners SET "last_day_taking_antag" = {DateTime.Now.DayOfYear} WHERE partners.net_id = '{userId.UserId.ToString()}'""", _db);
         using NpgsqlDataReader reader = cmd.ExecuteReader();
     }
     public bool TryGetInfo(NetUserId userId, [NotNullWhen(true)] out DbSponsorInfo? sponsor)
     {
+        Init();
+
         sponsor = null;
 
         if (_db.FullState == System.Data.ConnectionState.Closed || _db.FullState == System.Data.ConnectionState.Broken)
