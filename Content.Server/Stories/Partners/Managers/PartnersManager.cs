@@ -31,7 +31,7 @@ public sealed class PartnersManager : IPartnersManager
     }
     public bool TryGetInfo(NetUserId userId, [NotNullWhen(true)] out DbSponsorInfo? sponsor)
     {
-        Init();
+        // Init();
 
         sponsor = null;
 
@@ -45,20 +45,20 @@ public sealed class PartnersManager : IPartnersManager
 
             while (reader.Read())
             {
-                DateTime? dateValue = (DateTime) reader[10];
+                DateTime? dateValue = (DateTime)reader[10];
                 if (dateValue != null && dateValue?.AddDays(30) < DateTime.Now)
                     return false;
 
                 sponsor = new DbSponsorInfo()
                 {
-                    Tier = (short) reader[3],
-                    OOCColor = (string) reader[4],
-                    HavePriorityJoin = (bool) reader[5],
-                    ExtraSlots = (short) reader[6],
-                    RoleTimeBypass = (bool) reader[11],
-                    AllowedAntags = (string[]) reader[12],
-                    GhostSkin = (string) reader[13],
-                    LastDayTakingAntag = (short) reader[14]
+                    Tier = (short)reader[3],
+                    OOCColor = (string)reader[4],
+                    HavePriorityJoin = (bool)reader[5],
+                    ExtraSlots = (short)reader[6],
+                    RoleTimeBypass = (bool)reader[11],
+                    AllowedAntags = (string[])reader[12],
+                    GhostSkin = (string)reader[13],
+                    LastDayTakingAntag = (short)reader[14]
                 };
                 return true;
             }
