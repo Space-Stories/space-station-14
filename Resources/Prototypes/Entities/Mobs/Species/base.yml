@@ -193,15 +193,15 @@
   - type: Strippable
   - type: UserInterface
     interfaces:
-      - key: enum.AntagSelectUiKey.Key # Stories-Sponsor
+      enum.AntagSelectUiKey.Key: # Stories-Sponsor
         type: AntagSelectBoundUserInterface # Stories-Sponsor
-      - key: enum.StoreUiKey.Key # SpaceStories Немного магазина во всех нас. // TODO: Убрать отсюда
+      enum.StoreUiKey.Key: # SpaceStories Немного магазина во всех нас. // TODO: Убрать отсюда
         type: StoreBoundUserInterface # ! Это нужно, чтобы пользователи силы могли открывать свой магазин навыков.
-      - key: enum.VoiceMaskUIKey.Key
+      enum.VoiceMaskUIKey.Key:
         type: VoiceMaskBoundUserInterface
-      - key: enum.HumanoidMarkingModifierKey.Key
+      enum.HumanoidMarkingModifierKey.Key:
         type: HumanoidMarkingModifierBoundUserInterface
-      - key: enum.StrippingUiKey.Key
+      enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
   - type: Puller
   - type: Speech
@@ -380,5 +380,5 @@
     requiredLegs: 2
   - type: UserInterface
     interfaces:
-      - key: enum.HumanoidMarkingModifierKey.Key # sure, this can go here too
+      enum.HumanoidMarkingModifierKey.Key: # sure, this can go here too
         type: HumanoidMarkingModifierBoundUserInterface
