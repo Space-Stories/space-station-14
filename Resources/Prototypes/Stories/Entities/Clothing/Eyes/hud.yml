@@ -1,5 +1,5 @@
 - type: entity
-  parent: ClothingEyesBase
+  parent: [ClothingEyesBase, ShowSecurityIcons]
   id: ClothingEyesHudChrono
   name: визор будущего
   description: Визор и будущего, способный показать практически что угодно.
@@ -8,7 +8,6 @@
     sprite: Stories/Clothing/Eyes/Hud/chrono.rsi
   - type: Clothing
     sprite: Stories/Clothing/Eyes/Hud/chrono.rsi
-  - type: ShowSecurityIcons
   - type: ShowHealthBars
     damageContainers:
     - Biological
@@ -16,7 +15,7 @@
   - type: ShowHealthIcons
   - type: ShowHungerIcons
   - type: ShowThirstIcons
-  
+
 - type: entity
   parent: ClothingEyesHudChrono
   id: ClothingEyesHudChronoUnremoveable
