@@ -77,8 +77,8 @@
     softness: 1
   - type: UserInterface
     interfaces:
-      enum.StoreUiKey.Key:
-        type: StoreBoundUserInterface
+    - key: enum.StoreUiKey.Key
+      type: StoreBoundUserInterface
   - type: Visibility
     layer: 2 #ghost vis layer
   - type: Store

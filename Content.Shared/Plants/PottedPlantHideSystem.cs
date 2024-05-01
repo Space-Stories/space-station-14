@@ -31,7 +31,7 @@ namespace Content.Shared.Plants
             if (args.Handled)
                 return;
 
-            Rustle(uid, component, args.User);
+            Rustle(uid, component);
             args.Handled = _stashSystem.TryHideItem(uid, args.User, args.Used);
         }
 
@@ -40,24 +40,24 @@ namespace Content.Shared.Plants
             if (args.Handled)
                 return;
 
-            Rustle(uid, component, args.User);
+            Rustle(uid, component);
 
             var gotItem = _stashSystem.TryGetItem(uid, args.User);
             if (!gotItem)
             {
                 var msg = Loc.GetString("potted-plant-hide-component-interact-hand-got-no-item-message");
-                _popupSystem.PopupClient(msg, uid, args.User);
+                _popupSystem.PopupEntity(msg, uid, args.User);
             }
 
             args.Handled = gotItem;
         }
 
-        private void Rustle(EntityUid uid, PottedPlantHideComponent? component = null, EntityUid? user = null)
+        private void Rustle(EntityUid uid, PottedPlantHideComponent? component = null)
         {
             if (!Resolve(uid, ref component))
                 return;
 
-            _audio.PlayPredicted(component.RustleSound, uid, user, AudioParams.Default.WithVariation(0.25f));
+            _audio.PlayPvs(component.RustleSound, uid, AudioParams.Default.WithVariation(0.25f));
         }
     }
 }

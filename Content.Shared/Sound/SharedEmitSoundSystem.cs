@@ -1,10 +1,7 @@
-using Content.Shared.Audio;
 using Content.Shared.Hands;
-using Content.Shared.Hands.Components;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Maps;
-using Content.Shared.Mobs;
 using Content.Shared.Popups;
 using Content.Shared.Sound.Components;
 using Content.Shared.Throwing;
@@ -31,8 +28,7 @@ public abstract class SharedEmitSoundSystem : EntitySystem
     [Dependency] private readonly INetManager _netMan = default!;
     [Dependency] private readonly ITileDefinitionManager _tileDefMan = default!;
     [Dependency] protected readonly IRobustRandom Random = default!;
-    [Dependency] private   readonly SharedAmbientSoundSystem _ambient = default!;
-    [Dependency] private   readonly SharedAudioSystem _audioSystem = default!;
+    [Dependency] private readonly SharedAudioSystem _audioSystem = default!;
     [Dependency] protected readonly SharedPopupSystem Popup = default!;
 
     public override void Initialize()
@@ -48,20 +44,6 @@ public abstract class SharedEmitSoundSystem : EntitySystem
         SubscribeLocalEvent<EmitSoundOnInteractUsingComponent, InteractUsingEvent>(OnEmitSoundOnInteractUsing);
 
         SubscribeLocalEvent<EmitSoundOnCollideComponent, StartCollideEvent>(OnEmitSoundOnCollide);
-
-        SubscribeLocalEvent<SoundWhileAliveComponent, MobStateChangedEvent>(OnMobState);
-    }
-
-    private void OnMobState(Entity<SoundWhileAliveComponent> entity, ref MobStateChangedEvent args)
-    {
-        // Disable this component rather than removing it because it can be brought back to life.
-        if (TryComp<SpamEmitSoundComponent>(entity, out var comp))
-        {
-            comp.Enabled = args.NewMobState == MobState.Alive;
-            Dirty(entity.Owner, comp);
-        }
-
-        _ambient.SetAmbience(entity.Owner, args.NewMobState != MobState.Dead);
     }
 
     private void OnEmitSpawnOnInit(EntityUid uid, EmitSoundOnSpawnComponent component, MapInitEvent args)

@@ -59,9 +59,11 @@
         types:
           Heat: 5
       coldDamage: {}
-      coldDamageThreshold: 0
+      ColdDamageThreshold: 0
     - type: Flammable
       fireSpread: true
+      cold:
+        types: {}
       damage:
         types:
           Heat: 5
@@ -144,9 +146,11 @@
         types:
           Heat: 5
       coldDamage: {}
-      coldDamageThreshold: 0
+      ColdDamageThreshold: 0
     - type: Flammable
       fireSpread: true
+      cold:
+        types: {}
       damage:
         types:
           Heat: 5

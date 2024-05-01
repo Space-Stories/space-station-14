@@ -1,80 +1,74 @@
 <Document>
-  # Space Ninja
+# Космический ниндзя
 
-  The [color=#66FF00]Space Ninja[/color] is a ghost role randomly available mid-late game. If you pick it you will be given your gear, your objectives and the greeting.
+Космический ниндзя - это роль призрака, случайным образом появляющаяся в середине и конце игры. Выбрав ее, вы получите снаряжение, цели и приветствие.
 
-  You are a ninja, but in space. [color=#66FF00]The Spider Clan[/color] has sent you to the station to wreak all kinds of havoc, and you are equipped to keep it silent-but-deadly.
+Вы - ниндзя, но в космосе. Клан Пауков отправил вас на станцию, чтобы вы устроили там всевозможные беспорядки: от вскрытия оружейной комнаты и убийства всей станции до войны с клоуном и сражений в клетках ярости.
 
-  Whether you mercilessly pick off the station's crew one by one, or assassinate the clown over and over, your discipline has taught you that [color=#66FF00]your objectives must be at least attempted[/color]. For honor!
+# Оборудование
 
-  # Equipment
+Вы начинаете с имплантатом микробомбы, так что если вас убьют или вы совершите сеппуку, то оставите после себя красивый кратер, а все ваше ценное снаряжение останется вне вражеских рук.
 
-  You begin implanted with a [color=#a4885c]death acidifier[/color], so if you are KIA or decide to commit seppuku you will leave behind one final gift to the janitor and all your precious equipment is kept out of enemy hands.
+В вашей сумке полно инструментов для более тонких диверсий, а также ящик для выживания, если вам нужно перекусить.
 
-  Your bag is full of tools for more subtle sabotage, along with a survival box if you need a snack.
+У вас есть реактивный ранец и пинпоинтер, который позволит вам найти станцию.
 
-  You have a [color=#a4885c]jetpack[/color] and [color=#a4885c]pinpointer[/color] that will let you find the station.
+<GuideEntityEmbed Entity="PinpointerStation" Caption="станционный пинпоинтер"/>
 
-  <GuideEntityEmbed Entity="PinpointerStation" Caption="station pinpointer"/>
+## Костюм ниндзи
 
-  ## Ninja Suit
+<GuideEntityEmbed Entity="ClothingOuterSuitSpaceNinja" Captain="костюм ниндзя"/>
 
-  <GuideEntityEmbed Entity="ClothingOuterSuitSpaceNinja" Captain="ninja suit"/>
+Самым важным предметом является костюм, без него ни одна из ваших способностей не будет работать.
+Для работы костюма требуется энергия, его внутреннюю батарею можно заменить, щелкнув на ней **на лучшую**.
+Текущий заряд можно узнать, осмотрев костюм, или по оповещению о милой батарейке в правом верхнем углу экрана.
 
-  Your single most important item is [color=#66FF00]your suit[/color], without it none of your abilities would work.
-  Your suit requires power to function. Its [color=#a4885c]internal battery[/color] can be replaced by clicking on it with another one, and [color=#a4885c]higher capacity batteries[/color] mean a [color=#a4885c]highly effective ninja[/color].
-  You can see the current charge by examining the suit or in a sweet battery alert at the top right of your screen.
+Если у вас закончилась энергия и вам нужно подзарядить батарею, просто используйте перчатки, чтобы отключить ЛКП, подстанцию или СМЭС.
 
-  If you run out of power and need to recharge your battery, just use your gloves to drain an APC, substation or a SMES.
+## Перчатки ниндзя
 
-  ## Ninja Gloves
+<GuideEntityEmbed Entity="ClothingHandsGlovesSpaceNinja" Caption="перчатки ниндзя"/>
 
-  <GuideEntityEmbed Entity="ClothingHandsGlovesSpaceNinja" Caption="ninja gloves"/>
+Эти плохие мальчики - ваш хлеб с маслом.
 
-  [color=#66FF00]These bad boys are your bread and butter.[/color]
+Они изолированы, поэтому вы можете спокойно работать с проводами. Очевидно, что они блокируют отпечатки пальцев на предметах, к которым вы прикасаетесь.
 
-  They are made from [color=#a4885c]insulated nanomachines[/color] to assist you in gracefully breaking and entering into your destination without leaving behind fingerprints.
+У вас есть действие, чтобы переключить перчатки. Когда перчатки включены, они позволяют вам использовать специальные способности, которые срабатывают при взаимодействии с предметами пустой рукой и при отключенном боевом режиме.
 
-  You have an action to toggle gloves. When the gloves are turned on, they allow you to use [color=#a4885c]special abilities[/color], which are triggered by interacting with things with an empty hand and with combat mode disabled.
+Способности перчаток включают в себя:
+- Открывать неограниченное количество дверей.
+- Вытягивание энергии из трансформаторов, таких как ЛКП, подстанции или СМЭС. Чем выше напряжение, тем эффективнее отбор энергии.
+- Вы можете ударить любого моба током, оглушив его и нанеся легкий урон.
+- Вы можете загрузить технологии с научно-исследовательского сервера для одной из своих целей.
+- Вы можете взломать консоль связи, чтобы вызвать угрозу.
 
-  Your glove abilities include:
-  - Emagging an unlimited number of doors.
-  - Draining power from transformers such as APCs, substations or SMESes. The higher the voltage, the more efficient the draining is.
-  - You can shock any mob, stunning and slightly damaging them.
-  - You can download technologies from a R&D server for one of your objectives.
-  - You can hack a communications console to call in a threat.
+## Энергетическая катана
 
-  ## Energy Katana
+<GuideEntityEmbed Entity="EnergyKatana" Captain="энергетическая катана"/>
 
-  <GuideEntityEmbed Entity="EnergyKatana" Captain="energy katana"/>
+Наносит большой урон и может быть вызван по желанию, затрачивая энергию костюма пропорционально расстоянию телепортации.
+Когда оружие находится в руках, вы можете телепортироваться в любое место, которое можете видеть, то есть в большинство дверей и окон, но не за сплошные стены.
+Количество зарядов ограничено, они медленно регенерируются, поэтому имейте в запасе пару зарядов на случай, если вам понадобится быстро скрыться.
 
-  You have sworn yourself to the [color=#66FF00]sword[/color] and refuse to use firearms.
-  Deals a lot of damage and can be recalled at will, costing suit power proportional to the distance teleported.
+## Взрывчатка клана пауков
 
-  While in hand you can [color=#a4885c]teleport[/color] to anywhere that you can see, meaning most doors and windows, but not past solid walls.
-  This has a limited number of charges which regenerate slowly, so keep a charge or two spare incase you need a quick getaway.
+<GuideEntityEmbed Entity="SpiderCharge" Caption="взрывчатка клана пауков"/>
 
-  ## Spider Clan Charge
+Модифицированная взрывчатка C-4. Создает большой взрыв, но должен быть заряжен в зоне поражения.
+Для взрыва выбирается случайная область на карте, которая является одной из ваших целей. Его нельзя активировать вручную, достаточно просто прикрепить его к стене или чему-либо еще.
+После установки его нельзя снять.
 
-  <GuideEntityEmbed Entity="SpiderCharge" Caption="spider clan charge"/>
+## Ботинки ниндзя
 
-  [color=#66FF00]A modified C-4 explosive[/color], you start with this in your pocket. Creates a large explosion but must be armed in your target area.
-  A random area on the map is selected for you to blow up, which is one of your [color=#a4885c]objectives[/color].
+Специальные носки, позволяющие двигаться очень быстро.
+Энергия не требуется.
 
-  It can't be activated manually, simply plant it on a wall or a particularly ugly piece of furniture.
-  Can't be unstuck once planted.
+# Задачи
 
-  ## Ninja Shoes
-
-  Special [color=#a4885c]noslips[/color] that keep you agile, swift and upright.
-  Energy not required.
-
-  # Objectives
-
-  - Download X research nodes: Use your gloves on an R&D server with a number of unlocked technologies
-  - Doorjack X doors on the station: Use your gloves to emag a number of doors.
-  - Detonate the spider clan charge: Plant your spider clan charge at a random location and watch it go boom.
-  - Call in a threat: Use your gloves on a communications console.
-  - Survive: Don't die.
+- Загрузить X исследовательских узлов: Используйте перчатки на научно-исследовательском сервере с рядом разблокированных технологий.
+- Взломать X дверей на станции: Используйте перчатки для взлома нескольких дверей.
+- Взорвать взрывчатка клана пауков: Заложите заряд клана пауков в случайном месте и посмотрите, как он взорвется.
+- Вызвать угрозу: Используйте перчатки на консоли связи.
+- Выжить: Не умирайте.
 
 </Document>

@@ -55,7 +55,6 @@
     denySound:
       path: /Audio/Machines/airlock_deny.ogg
   - type: Weldable
-    fuel: 10
     time: 10
   - type: Airlock
     openUnlitVisible: true # Corvax-Resprite-Airlocks
@@ -80,8 +79,8 @@
     alwaysRandomize: true
   - type: UserInterface
     interfaces:
-      enum.WiresUiKey.Key:
-        type: WiresBoundUserInterface
+    - key: enum.WiresUiKey.Key
+      type: WiresBoundUserInterface
   - type: Airtight
   - type: Occluder
   - type: Damageable

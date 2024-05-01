@@ -239,8 +239,8 @@
     - type: AtmosDevice
     - type: UserInterface
       interfaces:
-        enum.ThermomachineUiKey.Key:
-          type: GasThermomachineBoundUserInterface
+      - key: enum.ThermomachineUiKey.Key
+        type: GasThermomachineBoundUserInterface
     - type: ActivatableUI
       inHandsOnly: false
       key: enum.ThermomachineUiKey.Key
@@ -304,6 +304,7 @@
   suffix: Enabled
   components:
   - type: GasThermoMachine
+    enabled: true
   - type: ApcPowerReceiver
     powerDisabled: false
 
@@ -348,6 +349,7 @@
   suffix: Enabled
   components:
   - type: GasThermoMachine
+    enabled: true
   - type: ApcPowerReceiver
     powerDisabled: false
 
@@ -457,8 +459,7 @@
     solutions:
       tank:
         maxVol: 400
-  - type: MixableSolution
-    solution: tank
+        canMix: true
   - type: DrainableSolution
     solution: tank
   - type: ExaminableSolution

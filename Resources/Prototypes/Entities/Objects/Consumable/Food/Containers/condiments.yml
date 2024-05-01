@@ -32,6 +32,7 @@
     size: Tiny
   - type: Drink
     solution: food
+    refillable: false
   - type: Openable
     sound:
       collection: packetOpenSounds
@@ -522,7 +523,7 @@
 # Shakers
 
 - type: entity
-  parent: BaseFoodCondiment
+  parent: BaseFoodCondimentBottle
   id: BaseFoodShaker
   abstract: true
   name: empty shaker
@@ -560,8 +561,6 @@
         acts: [ "Destruction" ]
   - type: Sprite
     state: shaker-empty
-  - type: RefillableSolution
-    solution: food
 
 - type: entity
   parent: BaseFoodShaker

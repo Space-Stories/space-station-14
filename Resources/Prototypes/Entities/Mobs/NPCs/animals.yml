@@ -902,8 +902,9 @@
         maxVol: 250
   - type: Udder
     reagentId: MilkGoat
-    quantityPerUpdate: 25
-    growthDelay: 20
+    targetSolution: udder
+    quantity: 25
+    updateRate: 20
   - type: Wooly
   - type: Food
     solution: wool
@@ -1077,8 +1078,8 @@
     - id: FoodMeat
   - type: UserInterface
     interfaces:
-      enum.StrippingUiKey.Key:
-        type: StrippableBoundUserInterface
+    - key: enum.StrippingUiKey.Key
+      type: StrippableBoundUserInterface
   - type: DamageStateVisuals
     states:
       Alive:
@@ -1169,8 +1170,8 @@
   - type: Strippable
   - type: UserInterface
     interfaces:
-      enum.StrippingUiKey.Key:
-        type: StrippableBoundUserInterface
+    - key: enum.StrippingUiKey.Key
+      type: StrippableBoundUserInterface
   - type: Sprite
     drawdepth: Mobs
     layers:
@@ -1325,10 +1326,9 @@
 
 - type: entity
   name: kobold
-  id: MobBaseKobold
+  id: MobKobold
   parent: MobBaseAncestor
   description: Cousins to the sentient race of lizard people, kobolds blend in with their natural habitat and are as nasty as monkeys; ready to pull out your hair and stab you to death.
-  abstract: true
   components:
   - type: NameIdentifier
     group: Kobold
@@ -1422,22 +1422,6 @@
     spawned:
     - id: FoodMeat
       amount: 2
-  - type: AlwaysRevolutionaryConvertible
-  - type: GhostTakeoverAvailable
-  - type: SentienceTarget
-    flavorKind: station-event-random-sentience-flavor-kobold
-  - type: GhostRole
-    prob: 0.1
-    makeSentient: true
-    name: ghost-role-information-kobold-name
-    description: ghost-role-information-kobold-description
-
-- type: entity
-  name: kobold
-  id: MobKobold
-  parent: MobBaseKobold
-  description: Cousins to the sentient race of lizard people, kobolds blend in with their natural habitat and are as nasty as monkeys; ready to pull out your hair and stab you to death.
-  components:
   - type: Clumsy
     clumsyDamage:
       types:
@@ -1447,39 +1431,15 @@
         Burn: 3
     clumsySound:
       path: /Audio/Voice/Reptilian/reptilian_scream.ogg
-
-- type: entity
-  id: MobBaseSyndicateKobold
-  parent: MobBaseKobold
-  suffix: syndicate base
-  components:
-  - type: MobThresholds
-    thresholds:
-      0: Alive
-      75: Critical
-      200: Dead
-  - type: NpcFactionMember
-    factions:
-    - Syndicate
-  - type: Loadout
-    prototypes: [SyndicateOperativeGearMonkey]
-
-- type: entity
-  id: MobKoboldSyndicateAgent
-  parent: MobBaseSyndicateKobold
-  suffix: syndicate agent
-  components:
-    # make the player a traitor once its taken
-  - type: AutoTraitor
-    giveUplink: false
-    giveObjectives: false
-
-- type: entity
-  id: MobKoboldSyndicateAgentNukeops # Reinforcement exclusive to nukeops uplink
-  parent: MobBaseSyndicateKobold
-  suffix: NukeOps
-  components:
-  - type: NukeOperative
+  - type: AlwaysRevolutionaryConvertible
+  - type: GhostTakeoverAvailable
+  - type: SentienceTarget
+    flavorKind: station-event-random-sentience-flavor-kobold
+  - type: GhostRole
+    prob: 0.1
+    makeSentient: true
+    name: ghost-role-information-kobold-name
+    description: ghost-role-information-kobold-description
 
 - type: entity
   name: guidebook monkey
@@ -2325,8 +2285,8 @@
   - type: Strippable
   - type: UserInterface
     interfaces:
-      enum.StrippingUiKey.Key:
-        type: StrippableBoundUserInterface
+    - key: enum.StrippingUiKey.Key
+      type: StrippableBoundUserInterface
   - type: DamageStateVisuals
     states:
       Alive:
@@ -2400,8 +2360,8 @@
   - type: Strippable
   - type: UserInterface
     interfaces:
-      enum.StrippingUiKey.Key:
-        type: StrippableBoundUserInterface
+    - key: enum.StrippingUiKey.Key
+      type: StrippableBoundUserInterface
   - type: DamageStateVisuals
     states:
       Alive:
@@ -2464,8 +2424,8 @@
   - type: Strippable
   - type: UserInterface
     interfaces:
-      enum.StrippingUiKey.Key:
-        type: StrippableBoundUserInterface
+    - key: enum.StrippingUiKey.Key
+      type: StrippableBoundUserInterface
   - type: DamageStateVisuals
     states:
       Alive:
@@ -2541,8 +2501,8 @@
   - type: Strippable
   - type: UserInterface
     interfaces:
-      enum.StrippingUiKey.Key:
-        type: StrippableBoundUserInterface
+    - key: enum.StrippingUiKey.Key
+      type: StrippableBoundUserInterface
   - type: DamageStateVisuals
     states:
       Alive:
@@ -2690,8 +2650,8 @@
   - type: Strippable
   - type: UserInterface
     interfaces:
-      enum.StrippingUiKey.Key:
-        type: StrippableBoundUserInterface
+    - key: enum.StrippingUiKey.Key
+      type: StrippableBoundUserInterface
   - type: DamageStateVisuals
     states:
       Alive:
@@ -2773,16 +2733,6 @@
   - type: NpcFactionMember
     factions:
     - Syndicate
-  - type: MeleeWeapon
-    damage:
-      types:
-        Piercing: 10
-        Structural: 10
-  - type: Insulated
-  - type: Tag
-    tags:
-      - DoorBumpOpener
-  - type: MovementAlwaysTouching
 
 - type: entity
   name: space cat
@@ -2899,8 +2849,8 @@
   - type: Strippable
   - type: UserInterface
     interfaces:
-      enum.StrippingUiKey.Key:
-        type: StrippableBoundUserInterface
+    - key: enum.StrippingUiKey.Key
+      type: StrippableBoundUserInterface
   - type: DamageStateVisuals
     states:
       Alive:
@@ -2956,8 +2906,8 @@
   - type: Strippable
   - type: UserInterface
     interfaces:
-      enum.StrippingUiKey.Key:
-        type: StrippableBoundUserInterface
+    - key: enum.StrippingUiKey.Key
+      type: StrippableBoundUserInterface
   - type: DamageStateVisuals
     states:
       Alive:
@@ -3049,8 +2999,8 @@
   - type: Strippable
   - type: UserInterface
     interfaces:
-      enum.StrippingUiKey.Key:
-        type: StrippableBoundUserInterface
+    - key: enum.StrippingUiKey.Key
+      type: StrippableBoundUserInterface
   - type: DamageStateVisuals
     states:
       Alive:
@@ -3166,8 +3116,8 @@
   - type: Strippable
   - type: UserInterface
     interfaces:
-      enum.StrippingUiKey.Key:
-        type: StrippableBoundUserInterface
+    - key: enum.StrippingUiKey.Key
+      type: StrippableBoundUserInterface
   - type: DamageStateVisuals
     states:
       Alive:
@@ -3230,8 +3180,8 @@
     bloodMaxVolume: 60
   - type: UserInterface
     interfaces:
-      enum.StrippingUiKey.Key:
-        type: StrippableBoundUserInterface
+    - key: enum.StrippingUiKey.Key
+      type: StrippableBoundUserInterface
   - type: DamageStateVisuals
     states:
       Alive:

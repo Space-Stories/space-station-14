@@ -262,6 +262,9 @@
   id: CannonBall
 
 - type: Tag
+  id: CannonRestrict
+
+- type: Tag
   id: CannotSuicide
 
 - type: Tag
@@ -519,9 +522,6 @@
 
 - type: Tag
   id: DoorElectronics
-
-- type: Tag
-  id: DoorElectronicsConfigurator
 
 - type: Tag
   id: DrinkBottle
@@ -1177,7 +1177,7 @@
 
 - type: Tag
   id: SuitEVA
-
+  
 - type: Tag
   id: Sunglasses
 
@@ -1234,9 +1234,6 @@
 
 - type: Tag
   id: TrashBag
-
-- type: Tag
-  id: Truncheon
 
 - type: Tag
   id: Unimplantable

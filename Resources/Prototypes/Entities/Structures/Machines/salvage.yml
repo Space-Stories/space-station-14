@@ -28,8 +28,8 @@
   - type: ActivatableUIRequiresPower
   - type: UserInterface
     interfaces:
-      enum.SalvageMagnetUiKey.Key:
-        type: SalvageMagnetBoundUserInterface
+    - key: enum.SalvageMagnetUiKey.Key
+      type: SalvageMagnetBoundUserInterface
   - type: Transform
     noRot: false
   - type: Appearance
@@ -52,6 +52,7 @@
   description: Locates salvage.
   components:
   - type: SalvageMagnet
+    offsetRadiusMax: 32
   - type: ApcPowerReceiver
     powerLoad: 1000
 

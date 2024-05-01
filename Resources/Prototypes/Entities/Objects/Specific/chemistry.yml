@@ -25,8 +25,7 @@
     solutions:
       beaker:
         maxVol: 50
-  - type: MixableSolution
-    solution: beaker
+        canMix: true
   - type: FitsInDispenser
     solution: beaker
   - type: RefillableSolution
@@ -41,12 +40,10 @@
     solution: beaker
   - type: SolutionTransfer
     canChangeTransferAmount: true
-  - type: SolutionItemStatus
-    solution: beaker
   - type: UserInterface
     interfaces:
-      enum.TransferAmountUiKey.Key:
-        type: TransferAmountBoundUserInterface
+    - key: enum.TransferAmountUiKey.Key
+      type: TransferAmountBoundUserInterface
   - type: Drink
     solution: beaker
   - type: Appearance
@@ -120,8 +117,7 @@
     solutions:
       beaker:
         maxVol: 50
-  - type: MixableSolution
-    solution: beaker
+        canMix: true
   - type: FitsInDispenser
     solution: beaker
   - type: RefillableSolution
@@ -138,8 +134,8 @@
     canChangeTransferAmount: true
   - type: UserInterface
     interfaces:
-      enum.TransferAmountUiKey.Key:
-        type: TransferAmountBoundUserInterface
+    - key: enum.TransferAmountUiKey.Key
+      type: TransferAmountBoundUserInterface
   - type: Drink
     solution: beaker
   - type: Appearance
@@ -204,6 +200,7 @@
     solutions:
       beaker:
         maxVol: 100
+        canMix: true
   - type: Appearance
   - type: SolutionContainerVisuals
     maxFillLevels: 6
@@ -247,6 +244,7 @@
     solutions:
       beaker:
         maxVol: 1000
+        canMix: true
 
 - type: entity
   name: dropper
@@ -276,8 +274,8 @@
     solution: dropper
   - type: UserInterface
     interfaces:
-      enum.TransferAmountUiKey.Key:
-        type: TransferAmountBoundUserInterface
+    - key: enum.TransferAmountUiKey.Key
+      type: TransferAmountBoundUserInterface
   - type: Spillable
     solution: injector
   - type: Item
@@ -477,6 +475,7 @@
       behaviors:
       - !type:SpillBehavior
         solution: food
+        transferForensics: true
       - !type:DoActsBehavior
         acts: [ "Destruction" ]
   - type: Tag

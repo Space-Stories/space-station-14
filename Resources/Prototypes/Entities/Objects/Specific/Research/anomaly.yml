@@ -13,7 +13,7 @@
     inHandsOnly: true
   - type: UserInterface
     interfaces:
-      enum.AnomalyScannerUiKey.Key:
+      - key: enum.AnomalyScannerUiKey.Key
         type: AnomalyScannerBoundUserInterface
   - type: AnomalyScanner
   - type: GuideHelp

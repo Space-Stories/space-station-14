@@ -20,6 +20,7 @@
     - CivilianServices
   - type: ApcPowerReceiver
     powerLoad: 200
+    priority: Low
   - type: ExtensionCableReceiver
   - type: WiresPanel
   - type: WiresVisuals
@@ -83,8 +84,8 @@
   - type: ActivatableUIRequiresPower
   - type: UserInterface
     interfaces:
-      enum.ResearchClientUiKey.Key:
-        type: ResearchClientBoundUserInterface
+    - key: enum.ResearchClientUiKey.Key
+      type: ResearchClientBoundUserInterface
   - type: Appearance
   - type: GenericVisualizer
     visuals:

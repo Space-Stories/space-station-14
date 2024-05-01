@@ -117,7 +117,8 @@ namespace Content.Client.UserInterface.Systems.Alerts.Controls
         protected override void Dispose(bool disposing)
         {
             base.Dispose(disposing);
-            _entityManager.QueueDeleteEntity(_spriteViewEntity);
+
+            _entityManager.DeleteEntity(_spriteViewEntity);
         }
     }
 

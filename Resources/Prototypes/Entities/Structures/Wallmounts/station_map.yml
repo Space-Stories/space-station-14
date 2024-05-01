@@ -59,6 +59,7 @@
         board: !type:Container
     - type: ApcPowerReceiver
       powerLoad: 200
+      priority: Low
     - type: WallMount
       arc: 360
     - type: ExtensionCableReceiver
@@ -86,7 +87,7 @@
               acts: [ "Destruction" ]
     - type: UserInterface
       interfaces:
-        enum.StationMapUiKey.Key:
+        - key: enum.StationMapUiKey.Key
           type: StationMapBoundUserInterface
 
 - type: entity

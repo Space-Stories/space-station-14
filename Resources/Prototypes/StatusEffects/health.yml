@@ -1,34 +1,158 @@
 - type: statusIcon
-  id: HealthIcon
+  id: HealthStateIcon
   abstract: true
-  priority: 3
-  locationPreference: Left # Corvax-TypingIndicator
-  isShaded: true
+  priority: 2
+  locationPreference: Left
 
 - type: statusIcon
-  parent: HealthIcon
-  id: HealthIconFine
+  id: HealthStateIconNormal
+  parent: HealthStateIcon
   icon:
     sprite: /Textures/Interface/Misc/health_icons.rsi
-    state: Fine
+    state: state_normal
 
 - type: statusIcon
-  id: HealthIconCritical
-  parent: HealthIcon
+  id: HealthStateIconDefib
+  parent: HealthStateIcon
   icon:
     sprite: /Textures/Interface/Misc/health_icons.rsi
-    state: Critical
+    state: state_defib
 
 - type: statusIcon
-  id: HealthIconDead
-  parent: HealthIcon
+  id: HealthStateIconDead
+  parent: HealthStateIcon
   icon:
     sprite: /Textures/Interface/Misc/health_icons.rsi
-    state: Dead
+    state: state_dead
 
 - type: statusIcon
-  id: HealthIconRotting
-  parent: HealthIcon
+  id: HealthStateIconCritical
+  parent: HealthStateIcon
   icon:
     sprite: /Textures/Interface/Misc/health_icons.rsi
-    state: Rotting
+    state: state_critical
+
+- type: statusIcon
+  id: HealthStateBar
+  abstract: true
+
+- type: statusIcon
+  id: HealthStateBar0
+  parent: HealthStateIcon
+  icon:
+    sprite: /Textures/Interface/Misc/health_bar.rsi
+    state: health_0
+- type: statusIcon
+  id: HealthStateBar1
+  parent: HealthStateIcon
+  icon:
+    sprite: /Textures/Interface/Misc/health_bar.rsi
+    state: health_1
+- type: statusIcon
+  id: HealthStateBar2
+  parent: HealthStateIcon
+  icon:
+    sprite: /Textures/Interface/Misc/health_bar.rsi
+    state: health_2
+- type: statusIcon
+  id: HealthStateBar3
+  parent: HealthStateIcon
+  icon:
+    sprite: /Textures/Interface/Misc/health_bar.rsi
+    state: health_3
+- type: statusIcon
+  id: HealthStateBar4
+  parent: HealthStateIcon
+  icon:
+    sprite: /Textures/Interface/Misc/health_bar.rsi
+    state: health_4
+- type: statusIcon
+  id: HealthStateBar5
+  parent: HealthStateIcon
+  icon:
+    sprite: /Textures/Interface/Misc/health_bar.rsi
+    state: health_5
+- type: statusIcon
+  id: HealthStateBar6
+  parent: HealthStateIcon
+  icon:
+    sprite: /Textures/Interface/Misc/health_bar.rsi
+    state: health_6
+- type: statusIcon
+  id: HealthStateBar7
+  parent: HealthStateIcon
+  icon:
+    sprite: /Textures/Interface/Misc/health_bar.rsi
+    state: health_7
+- type: statusIcon
+  id: HealthStateBar8
+  parent: HealthStateIcon
+  icon:
+    sprite: /Textures/Interface/Misc/health_bar.rsi
+    state: health_8
+- type: statusIcon
+  id: HealthStateBar9
+  parent: HealthStateIcon
+  icon:
+    sprite: /Textures/Interface/Misc/health_bar.rsi
+    state: health_9
+- type: statusIcon
+  id: HealthStateBar10
+  parent: HealthStateIcon
+  icon:
+    sprite: /Textures/Interface/Misc/health_bar.rsi
+    state: health_10
+- type: statusIcon
+  id: HealthStateBar11
+  parent: HealthStateIcon
+  icon:
+    sprite: /Textures/Interface/Misc/health_bar.rsi
+    state: health_11
+- type: statusIcon
+  id: HealthStateBar12
+  parent: HealthStateIcon
+  icon:
+    sprite: /Textures/Interface/Misc/health_bar.rsi
+    state: health_12
+- type: statusIcon
+  id: HealthStateBar13
+  parent: HealthStateIcon
+  icon:
+    sprite: /Textures/Interface/Misc/health_bar.rsi
+    state: health_13
+- type: statusIcon
+  id: HealthStateBar14
+  parent: HealthStateIcon
+  icon:
+    sprite: /Textures/Interface/Misc/health_bar.rsi
+    state: health_14
+- type: statusIcon
+  id: HealthStateBar15
+  parent: HealthStateIcon
+  icon:
+    sprite: /Textures/Interface/Misc/health_bar.rsi
+    state: health_15
+- type: statusIcon
+  id: HealthStateBar16
+  parent: HealthStateIcon
+  icon:
+    sprite: /Textures/Interface/Misc/health_bar.rsi
+    state: health_16
+- type: statusIcon
+  id: HealthStateBar17
+  parent: HealthStateIcon
+  icon:
+    sprite: /Textures/Interface/Misc/health_bar.rsi
+    state: health_17
+- type: statusIcon
+  id: HealthStateBar18
+  parent: HealthStateIcon
+  icon:
+    sprite: /Textures/Interface/Misc/health_bar.rsi
+    state: health_18
+- type: statusIcon
+  id: HealthStateBar19
+  parent: HealthStateIcon
+  icon:
+    sprite: /Textures/Interface/Misc/health_bar.rsi
+    state: health_19

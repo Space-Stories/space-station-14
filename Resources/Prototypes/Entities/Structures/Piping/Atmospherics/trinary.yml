@@ -53,7 +53,7 @@
     - type: PipeColorVisuals
     - type: UserInterface
       interfaces:
-        enum.GasFilterUiKey.Key:
+        - key: enum.GasFilterUiKey.Key
           type: GasFilterBoundUserInterface
     - type: GasFilter
       enabled: false
@@ -64,6 +64,9 @@
     - type: Construction
       graph: GasTrinary
       node: filter
+      conditions:
+        - !type:TileNotBlocked
+        - !type:NoUnstackableInTile
     - type: AmbientSound
       enabled: false
       volume: -9
@@ -138,7 +141,7 @@
     - type: PipeColorVisuals
     - type: UserInterface
       interfaces:
-        enum.GasMixerUiKey.Key:
+        - key: enum.GasMixerUiKey.Key
           type: GasMixerBoundUserInterface
     - type: GasMixer
       enabled: false

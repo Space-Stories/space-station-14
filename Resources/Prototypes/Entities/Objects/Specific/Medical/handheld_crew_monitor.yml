@@ -20,7 +20,7 @@
     closeOnHandDeselect: false
   - type: UserInterface
     interfaces:
-      enum.CrewMonitoringUIKey.Key:
+      - key: enum.CrewMonitoringUIKey.Key
         type: CrewMonitoringBoundUserInterface
   - type: CrewMonitoringConsole
   - type: DeviceNetwork

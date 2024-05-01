@@ -58,9 +58,11 @@
         types:
           Heat: 5
       coldDamage: {}
-      coldDamageThreshold: 0
+      ColdDamageThreshold: 0
     - type: Flammable
       fireSpread: true #If you walk into incredibly dense, flaming vines, you can expect to burn.
+      cold:
+        types: {}
       damage:
         types:
           Heat: 3
@@ -73,12 +75,11 @@
         methods: [Touch]
         effects:
         - !type:HealthChange
-          scaleByQuantity: true
+          scaled: true
           damage:
             types:
               Heat: 10
     - type: AtmosExposed
-    - type: Kudzu
       growthTickChance: 0.3
       spreadChance: 0.4
     - type: SpeedModifierContacts
@@ -234,6 +235,7 @@
       damage:
        types:
          Heat: 3
+      growthTickChance: 0.3
     - type: AtmosExposed
     - type: SpeedModifierContacts
       walkSpeedModifier: 0.3

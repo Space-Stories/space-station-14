@@ -1177,6 +1177,7 @@
   description: New Sandy-Cat plastic sword! Comes with realistic sound and full color! Looks almost like the real thing!
   components:
     - type: EnergySword
+      isSharp: false
       colorOptions:
         - DodgerBlue
     - type: ItemToggle
@@ -1310,7 +1311,9 @@
   components:
     - type: Sprite
       sprite: Objects/Fun/rubber_hammer.rsi
-      state: icon
+      layers:
+        - state: icon
+          shader: unshaded
     - type: WeaponRandom
       damageBonus:
           types:

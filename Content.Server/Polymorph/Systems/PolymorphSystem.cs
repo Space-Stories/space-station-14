@@ -118,12 +118,10 @@ public sealed partial class PolymorphSystem : EntitySystem
 
     private void OnPolymorphActionEvent(Entity<PolymorphableComponent> ent, ref PolymorphActionEvent args)
     {
-        if (!_proto.TryIndex(args.ProtoId, out var prototype) || args.Handled)
+        if (!_proto.TryIndex(args.ProtoId, out var prototype))
             return;
 
         PolymorphEntity(ent, prototype.Configuration);
-
-        args.Handled = true;
     }
 
     private void OnRevertPolymorphActionEvent(Entity<PolymorphedEntityComponent> ent,
@@ -199,7 +197,7 @@ public sealed partial class PolymorphSystem : EntitySystem
 
         var targetTransformComp = Transform(uid);
 
-        var child = Spawn(configuration.Entity, _transform.GetMapCoordinates(uid, targetTransformComp), rotation: _transform.GetWorldRotation(uid));
+        var child = Spawn(configuration.Entity, targetTransformComp.Coordinates);
 
         MakeSentientCommand.MakeSentient(child, EntityManager);
 

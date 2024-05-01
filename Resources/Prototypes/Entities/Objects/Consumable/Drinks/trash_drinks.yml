@@ -5,7 +5,6 @@
   parent: BaseItem
   abstract: true
   description: An empty bottle.
-  suffix: Empty
   components:
   - type: Sprite
     state: icon
@@ -25,8 +24,6 @@
     damage:
       types:
         Blunt: 0
-  - type: MixableSolution
-    solution: drink
   - type: Spillable
     solution: drink
   - type: FitsInDispenser
@@ -39,8 +36,8 @@
     solution: drink
   - type: UserInterface
     interfaces:
-      enum.TransferAmountUiKey.Key:
-        type: TransferAmountBoundUserInterface
+    - key: enum.TransferAmountUiKey.Key
+      type: TransferAmountBoundUserInterface
   - type: DamageOnLand
     damage:
       types:
@@ -96,7 +93,6 @@
   parent: BaseItem
   abstract: true
   description: An empty carton.
-  suffix: Empty
   components:
   - type: Sprite
     state: icon
@@ -104,8 +100,6 @@
     solutions:
       drink:
         maxVol: 50
-  - type: MixableSolution
-    solution: drink
   - type: SolutionTransfer
     canChangeTransferAmount: true
     maxTransferAmount: 5
@@ -122,8 +116,8 @@
     solution: drink
   - type: UserInterface
     interfaces:
-      enum.TransferAmountUiKey.Key:
-        type: TransferAmountBoundUserInterface
+    - key: enum.TransferAmountUiKey.Key
+      type: TransferAmountBoundUserInterface
   - type: Damageable
     damageContainer: Inorganic
   - type: Destructible

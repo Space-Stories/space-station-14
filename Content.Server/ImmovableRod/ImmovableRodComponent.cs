@@ -1,4 +1,3 @@
-using Content.Shared.Damage;
 using Robust.Shared.Audio;
 
 namespace Content.Server.ImmovableRod;
@@ -37,16 +36,4 @@ public sealed partial class ImmovableRodComponent : Component
     /// </summary>
     [DataField("destroyTiles")]
     public bool DestroyTiles = true;
-
-    /// <summary>
-    ///     If true, this will gib & delete bodies
-    /// </summary>
-    [DataField]
-    public bool ShouldGib = true;
-
-    /// <summary>
-    ///     Damage done, if not gibbing
-    /// </summary>
-    [DataField]
-    public DamageSpecifier? Damage;
 }

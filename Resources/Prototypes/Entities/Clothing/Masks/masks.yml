@@ -15,10 +15,7 @@
     tags:
     - HamsterWearable
     - WhitelistChameleon
-  - type: HideLayerClothing
-    slots:
-    - Snout
-    hideOnToggle: true
+    - HidesNose
 
 - type: entity
   parent: ClothingMaskGas
@@ -180,8 +177,6 @@
     materialComposition:
       Steel: 50
       Plastic: 100
-  - type: StaticPrice
-    price: 12.5 # increases in price after decomposed into raw materials
 
 - type: entity
   parent: ClothingMaskBase
@@ -200,9 +195,7 @@
     tags:
     - ClownMask
     - WhitelistChameleon
-  - type: HideLayerClothing
-    slots:
-    - Snout
+    - HidesNose
 
 - type: entity
   parent: ClothingMaskClownBase
@@ -213,9 +206,7 @@
     - ClownMask
     - HamsterWearable
     - WhitelistChameleon
-  - type: HideLayerClothing
-    slots:
-    - Snout
+    - HidesNose
 
 - type: entity
   parent: ClothingMaskClown
@@ -242,9 +233,9 @@
     sprite: Clothing/Mask/joy.rsi
   - type: BreathMask
   - type: IdentityBlocker
-  - type: HideLayerClothing
-    slots:
-    - Snout
+  - type: Tag
+    tags:
+    - HidesNose
 
 - type: entity
   parent: ClothingMaskBase
@@ -262,9 +253,7 @@
     tags:
     - HamsterWearable
     - WhitelistChameleon
-  - type: HideLayerClothing
-    slots:
-    - Snout
+    - HidesNose
 
 - type: entity
   parent: ClothingMaskPullableBase
@@ -278,7 +267,7 @@
     sprite: Clothing/Mask/sterile.rsi
   - type: IngestionBlocker
   - type: Item
-    size: Tiny
+    storedRotation: -90
   - type: IdentityBlocker
     coverage: MOUTH
 
@@ -315,10 +304,9 @@
   - type: BreathMask
   - type: IngestionBlocker
   - type: IdentityBlocker
-  - type: HideLayerClothing
-    slots:
-    - Snout
-    hideOnToggle: true
+  - type: Tag
+    tags:
+    - HidesNose
 
 - type: entity
   parent: ClothingMaskClownBase
@@ -348,11 +336,8 @@
   - type: Tag
     tags:
     - WhitelistChameleon
-  - type: HideLayerClothing
-    slots:
-    - Hair
-    - Snout
-    hideOnToggle: true
+    - HidesHair
+    - HidesNose
 
 - type: entity
   parent: ClothingMaskGasExplorer
@@ -378,11 +363,8 @@
   - type: Tag
     tags:
     - WhitelistChameleon
-  - type: HideLayerClothing
-    slots:
-    - Hair
-    - Snout
-    hideOnToggle: true
+    - HidesHair
+    - HidesNose
 
 - type: entity
   parent: ClothingMaskGasERT
@@ -417,9 +399,7 @@
     tags:
     - HamsterWearable
     - WhitelistChameleon
-  - type: HideLayerClothing
-    slots:
-    - Snout
+    - HidesNose
   - type: IdentityBlocker
 
 - type: entity
@@ -434,9 +414,9 @@
     sprite: Clothing/Mask/fox.rsi
   - type: BreathMask
   - type: IdentityBlocker
-  - type: HideLayerClothing
-    slots:
-    - Snout
+  - type: Tag
+    tags:
+    - HidesNose
 
 - type: entity
   parent: ClothingMaskBase
@@ -450,9 +430,9 @@
     sprite: Clothing/Mask/bee.rsi
   - type: BreathMask
   - type: IdentityBlocker
-  - type: HideLayerClothing
-    slots:
-    - Snout
+  - type: Tag
+    tags:
+    - HidesNose
 
 - type: entity
   parent: ClothingMaskBase
@@ -466,9 +446,9 @@
     sprite: Clothing/Mask/bear.rsi
   - type: BreathMask
   - type: IdentityBlocker
-  - type: HideLayerClothing
-    slots:
-    - Snout
+  - type: Tag
+    tags:
+    - HidesNose
 
 - type: entity
   parent: ClothingMaskBase
@@ -482,9 +462,9 @@
     sprite: Clothing/Mask/raven.rsi
   - type: BreathMask
   - type: IdentityBlocker
-  - type: HideLayerClothing
-    slots:
-    - Snout
+  - type: Tag
+    tags:
+    - HidesNose
 
 - type: entity
   parent: ClothingMaskBase
@@ -498,9 +478,9 @@
     sprite: Clothing/Mask/jackal.rsi
   - type: BreathMask
   - type: IdentityBlocker
-  - type: HideLayerClothing
-    slots:
-    - Snout
+  - type: Tag
+    tags:
+    - HidesNose
 
 - type: entity
   parent: ClothingMaskBase
@@ -514,9 +494,9 @@
     sprite: Clothing/Mask/bat.rsi
   - type: BreathMask
   - type: IdentityBlocker
-  - type: HideLayerClothing
-    slots:
-    - Snout
+  - type: Tag
+    tags:
+    - HidesNose
 
 - type: entity
   parent: ClothingMaskBase

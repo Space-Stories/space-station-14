@@ -22,11 +22,9 @@ public sealed partial class TrayScannerComponent : Component
 public sealed class TrayScannerState : ComponentState
 {
     public bool Enabled;
-    public float Range;
 
-    public TrayScannerState(bool enabled, float range)
+    public TrayScannerState(bool enabled)
     {
         Enabled = enabled;
-        Range = range;
     }
 }

@@ -38,10 +38,10 @@
         ents: []
   - type: UserInterface
     interfaces:
-      enum.StorageUiKey.Key:
-        type: StorageBoundUserInterface
+    - key: enum.StorageUiKey.Key
+      type: StorageBoundUserInterface
   - type: StaticPrice
-    price: 70
+    price: 80
 
 - type: entity
   abstract: true

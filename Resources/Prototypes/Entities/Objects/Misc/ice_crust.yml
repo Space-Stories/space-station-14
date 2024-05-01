@@ -48,5 +48,6 @@
         types:
           Heat: 5
       coldDamage: {}
-      coldDamageThreshold: 0
+      ColdDamageThreshold: 0
     - type: FrictionContacts
+      

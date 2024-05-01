@@ -37,7 +37,7 @@
         - state: lung-l-slime
         - state: lung-r-slime
     - type: Lung
-      alert: LowNitrogen
+      Alert: LowNitrogen
     - type: Metabolizer
       removeEmpty: true
       solutionOnBody: false

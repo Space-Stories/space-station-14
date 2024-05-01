@@ -118,7 +118,8 @@ namespace Content.Server.Atmos.EntitySystems
             if (!Resolve(uid, ref component))
                 return;
 
-            _userInterface.CloseUi(uid, GasAnalyzerUiKey.Key, user);
+            if (user != null && TryComp<ActorComponent>(user, out var actor))
+                _userInterface.TryClose(uid, GasAnalyzerUiKey.Key, actor.PlayerSession);
 
             component.Enabled = false;
             Dirty(uid, component);
@@ -131,6 +132,8 @@ namespace Content.Server.Atmos.EntitySystems
         /// </summary>
         private void OnDisabledMessage(EntityUid uid, GasAnalyzerComponent component, GasAnalyzerDisableMessage message)
         {
+            if (message.Session.AttachedEntity is not {Valid: true})
+                return;
             DisableAnalyzer(uid, component);
         }
 
@@ -139,7 +142,10 @@ namespace Content.Server.Atmos.EntitySystems
             if (!Resolve(uid, ref component, false))
                 return;
 
-            _userInterface.OpenUi(uid, GasAnalyzerUiKey.Key, user);
+            if (!TryComp<ActorComponent>(user, out var actor))
+                return;
+
+            _userInterface.TryOpen(uid, GasAnalyzerUiKey.Key, actor.PlayerSession);
         }
 
         /// <summary>
@@ -163,7 +169,7 @@ namespace Content.Server.Atmos.EntitySystems
                 // Check if position is out of range => don't update and disable
                 if (!component.LastPosition.Value.InRange(EntityManager, _transform, userPos, SharedInteractionSystem.InteractionRange))
                 {
-                    if (component.User is { } userId && component.Enabled)
+                    if(component.User is { } userId && component.Enabled)
                         _popup.PopupEntity(Loc.GetString("gas-analyzer-shutoff"), userId, userId);
                     DisableAnalyzer(uid, component, component.User);
                     return false;
@@ -176,13 +182,13 @@ namespace Content.Server.Atmos.EntitySystems
             var tileMixture = _atmo.GetContainingMixture(uid, true);
             if (tileMixture != null)
             {
-                gasMixList.Add(new GasMixEntry(Loc.GetString("gas-analyzer-window-environment-tab-label"), tileMixture.Volume, tileMixture.Pressure, tileMixture.Temperature,
+                gasMixList.Add(new GasMixEntry(Loc.GetString("gas-analyzer-window-environment-tab-label"), tileMixture.Pressure, tileMixture.Temperature,
                     GenerateGasEntryArray(tileMixture)));
             }
             else
             {
                 // No gases were found
-                gasMixList.Add(new GasMixEntry(Loc.GetString("gas-analyzer-window-environment-tab-label"), 0f, 0f, 0f));
+                gasMixList.Add(new GasMixEntry(Loc.GetString("gas-analyzer-window-environment-tab-label"), 0f, 0f));
             }
 
             var deviceFlipped = false;
@@ -203,8 +209,8 @@ namespace Content.Server.Atmos.EntitySystems
                 {
                     foreach (var mixes in ev.GasMixtures)
                     {
-                        if (mixes.Item2 != null)
-                            gasMixList.Add(new GasMixEntry(mixes.Item1, mixes.Item2.Volume, mixes.Item2.Pressure, mixes.Item2.Temperature, GenerateGasEntryArray(mixes.Item2)));
+                        if(mixes.Value != null)
+                            gasMixList.Add(new GasMixEntry(mixes.Key, mixes.Value.Pressure, mixes.Value.Temperature, GenerateGasEntryArray(mixes.Value)));
                     }
 
                     deviceFlipped = ev.DeviceFlipped;
@@ -217,16 +223,7 @@ namespace Content.Server.Atmos.EntitySystems
                         foreach (var pair in node.Nodes)
                         {
                             if (pair.Value is PipeNode pipeNode)
-                            {
-                                // check if the volume is zero for some reason so we don't divide by zero
-                                if (pipeNode.Air.Volume == 0f)
-                                    continue;
-                                // only display the gas in the analyzed pipe element, not the whole system
-                                var pipeAir = pipeNode.Air.Clone();
-                                pipeAir.Multiply(pipeNode.Volume / pipeNode.Air.Volume);
-                                pipeAir.Volume = pipeNode.Volume;
-                                gasMixList.Add(new GasMixEntry(pair.Key, pipeAir.Volume, pipeAir.Pressure, pipeAir.Temperature, GenerateGasEntryArray(pipeAir)));
-                            }
+                                gasMixList.Add(new GasMixEntry(pair.Key, pipeNode.Air.Pressure, pipeNode.Air.Temperature, GenerateGasEntryArray(pipeNode.Air)));
                         }
                     }
                 }
@@ -236,7 +233,7 @@ namespace Content.Server.Atmos.EntitySystems
             if (gasMixList.Count == 0)
                 return false;
 
-            _userInterface.ServerSendUiMessage(uid, GasAnalyzerUiKey.Key,
+            _userInterface.TrySendUiMessage(uid, GasAnalyzerUiKey.Key,
                 new GasAnalyzerUserMessage(gasMixList.ToArray(),
                     component.Target != null ? Name(component.Target.Value) : string.Empty,
                     GetNetEntity(component.Target) ?? NetEntity.Invalid,
@@ -289,9 +286,9 @@ namespace Content.Server.Atmos.EntitySystems
 public sealed class GasAnalyzerScanEvent : EntityEventArgs
 {
     /// <summary>
-    /// The string is for the name (ex "pipe", "inlet", "filter"), GasMixture for the corresponding gas mix. Add all mixes that should be reported when scanned.
+    /// Key is the mix name (ex "pipe", "inlet", "filter"), value is the pipe direction and GasMixture. Add all mixes that should be reported when scanned.
     /// </summary>
-    public List<(string, GasMixture?)>? GasMixtures;
+    public Dictionary<string, GasMixture?>? GasMixtures;
 
     /// <summary>
     /// If the device is flipped. Flipped is defined as when the inline input is 90 degrees CW to the side input

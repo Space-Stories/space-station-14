@@ -88,17 +88,9 @@ namespace Content.Server.Popups
                 RaiseNetworkEvent(new PopupEntityEvent(message, type, GetNetEntity(uid)), actor.PlayerSession);
         }
 
-        public override void PopupClient(string? message, EntityUid? recipient, PopupType type = PopupType.Small)
-        {
-        }
-
         public override void PopupClient(string? message, EntityUid uid, EntityUid? recipient, PopupType type = PopupType.Small)
         {
             // do nothing duh its for client only
-        }
-
-        public override void PopupClient(string? message, EntityCoordinates coordinates, EntityUid? recipient, PopupType type = PopupType.Small)
-        {
         }
 
         public override void PopupEntity(string? message, EntityUid uid, ICommonSession recipient, PopupType type = PopupType.Small)
@@ -133,11 +125,6 @@ namespace Content.Server.Popups
                 // With no recipient, send to everyone (in PVS range)
                 RaiseNetworkEvent(new PopupEntityEvent(message, type, GetNetEntity(uid)));
             }
-        }
-
-        public override void PopupPredicted(string? recipientMessage, string? othersMessage, EntityUid uid, EntityUid? recipient, PopupType type = PopupType.Small)
-        {
-            PopupPredicted(othersMessage, uid, recipient, type);
         }
     }
 }

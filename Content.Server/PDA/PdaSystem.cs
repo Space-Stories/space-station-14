@@ -41,7 +41,6 @@ namespace Content.Server.PDA
             SubscribeLocalEvent<PdaComponent, LightToggleEvent>(OnLightToggle);
 
             // UI Events:
-            SubscribeLocalEvent<PdaComponent, BoundUIOpenedEvent>(OnPdaOpen);
             SubscribeLocalEvent<PdaComponent, PdaRequestUpdateInterfaceMessage>(OnUiMessage);
             SubscribeLocalEvent<PdaComponent, PdaToggleFlashlightMessage>(OnUiMessage);
             SubscribeLocalEvent<PdaComponent, PdaShowRingtoneMessage>(OnUiMessage);
@@ -146,7 +145,7 @@ namespace Content.Server.PDA
             if (!Resolve(uid, ref pda, false))
                 return;
 
-            if (!_ui.HasUi(uid, PdaUiKey.Key))
+            if (!_ui.TryGetUi(uid, PdaUiKey.Key, out var ui))
                 return;
 
             var address = GetDeviceNetAddress(uid);
@@ -183,15 +182,7 @@ namespace Content.Server.PDA
                 hasInstrument,
                 address);
 
-            _ui.SetUiState(uid, PdaUiKey.Key, state);
-        }
-
-        private void OnPdaOpen(Entity<PdaComponent> ent, ref BoundUIOpenedEvent args)
-        {
-            if (!PdaUiKey.Key.Equals(args.UiKey))
-                return;
-
-            UpdatePdaUi(ent.Owner, ent.Comp);
+            _ui.SetUiState(ui, state);
         }
 
         private void OnUiMessage(EntityUid uid, PdaComponent pda, PdaRequestUpdateInterfaceMessage msg)
@@ -217,7 +208,7 @@ namespace Content.Server.PDA
                 return;
 
             if (HasComp<RingerComponent>(uid))
-                _ringer.ToggleRingerUI(uid, msg.Actor);
+                _ringer.ToggleRingerUI(uid, msg.Session);
         }
 
         private void OnUiMessage(EntityUid uid, PdaComponent pda, PdaShowMusicMessage msg)
@@ -226,7 +217,7 @@ namespace Content.Server.PDA
                 return;
 
             if (TryComp<InstrumentComponent>(uid, out var instrument))
-                _instrument.ToggleInstrumentUi(uid, msg.Actor, instrument);
+                _instrument.ToggleInstrumentUi(uid, msg.Session, instrument);
         }
 
         private void OnUiMessage(EntityUid uid, PdaComponent pda, PdaShowUplinkMessage msg)
@@ -236,7 +227,7 @@ namespace Content.Server.PDA
 
             // check if its locked again to prevent malicious clients opening locked uplinks
             if (TryComp<StoreComponent>(uid, out var store) && IsUnlocked(uid))
-                _store.ToggleUi(msg.Actor, uid, store);
+                _store.ToggleUi(msg.Session.AttachedEntity!.Value, uid, store);
         }
 
         private void OnUiMessage(EntityUid uid, PdaComponent pda, PdaLockUplinkMessage msg)

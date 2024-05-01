@@ -106,6 +106,7 @@
   - type: SolutionTransfer
     canChangeTransferAmount: true
   - type: Drink
+    isOpen: true
     solution: beaker
 
 - type: artifactEffect
@@ -214,8 +215,8 @@
   permanentComponents:
   - type: UserInterface
     interfaces:
-        enum.SignalLinkerUiKey.Key:
-          type: SignalPortSelectorBoundUserInterface
+      - key: enum.SignalLinkerUiKey.Key
+        type: SignalPortSelectorBoundUserInterface
   - type: ToolTileCompatible
   - type: Tool
     qualities:

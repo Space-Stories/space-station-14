@@ -292,11 +292,11 @@
     - !type:JunctionPostGen
       width: 1
       entities:
-        - AirlockGlass
+        - AirlockHydroGlassLocked
 
     - !type:JunctionPostGen
       entities:
-        - AirlockGlass
+        - AirlockHydroGlassLocked
 
     - !type:AutoCablingPostGen
 

@@ -104,7 +104,6 @@
       - id: ClothingBeltPlant
       - id: PlantBag ##Some maps don't have nutrivend
       - id: BoxMouthSwab
-      - id: Dropper
       - id: HandLabeler
       - id: ClothingUniformOveralls
       - id: ClothingHeadHatTrucker

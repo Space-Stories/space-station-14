@@ -61,14 +61,14 @@ namespace Content.Server.Access.Systems
 
         private void AfterUIOpen(EntityUid uid, AgentIDCardComponent component, AfterActivatableUIOpenEvent args)
         {
-            if (!_uiSystem.HasUi(uid, AgentIDCardUiKey.Key))
+            if (!_uiSystem.TryGetUi(uid, AgentIDCardUiKey.Key, out var ui))
                 return;
 
             if (!TryComp<IdCardComponent>(uid, out var idCard))
                 return;
 
             var state = new AgentIDCardBoundUserInterfaceState(idCard.FullName ?? "", idCard.JobTitle ?? "", component.Icons);
-            _uiSystem.SetUiState(uid, AgentIDCardUiKey.Key, state);
+            _uiSystem.SetUiState(ui, state, args.Session);
         }
 
         private void OnJobChanged(EntityUid uid, AgentIDCardComponent comp, AgentIDCardJobChangedMessage args)

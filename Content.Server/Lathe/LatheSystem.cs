@@ -226,10 +226,11 @@ namespace Content.Server.Lathe
             if (!Resolve(uid, ref component))
                 return;
 
+            var ui = _uiSys.GetUi(uid, LatheUiKey.Key);
             var producing = component.CurrentRecipe ?? component.Queue.FirstOrDefault();
 
             var state = new LatheUpdateState(GetAvailableRecipes(uid, component), component.Queue, producing);
-            _uiSys.SetUiState(uid, LatheUiKey.Key, state);
+            _uiSys.SetUiState(ui, state);
         }
 
         private void OnGetRecipes(EntityUid uid, TechnologyDatabaseComponent component, LatheGetRecipesEvent args)
@@ -336,10 +337,10 @@ namespace Content.Server.Lathe
                     else
                         break;
                 }
-                if (count > 0)
+                if (count > 0 && args.Session.AttachedEntity != null)
                 {
                     _adminLogger.Add(LogType.Action, LogImpact.Low,
-                        $"{ToPrettyString(args.Actor):player} queued {count} {recipe.Name} at {ToPrettyString(uid):lathe}");
+                        $"{ToPrettyString(args.Session.AttachedEntity.Value):player} queued {count} {recipe.Name} at {ToPrettyString(uid):lathe}");
                 }
             }
             TryStartProducing(uid, component);
