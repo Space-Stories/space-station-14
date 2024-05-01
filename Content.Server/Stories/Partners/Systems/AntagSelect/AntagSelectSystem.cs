@@ -14,34 +14,32 @@ using Robust.Shared.Random;
 using Robust.Shared.Utility;
 using Content.Server.GameTicking.Rules;
 using Content.Server.GameTicking.Rules.Components;
+using Content.Server.Stories.GameTicking.Rules;
+using Content.Server.Stories.GameTicking.Rules.Components;
 using Content.Server.Ghost.Roles.Components;
 using Content.Server.Corvax.Sponsors;
 using Robust.Shared.Console;
 using Content.Shared.Stories.Sponsor.AntagSelect;
 using Content.Server.Database;
-using Content.Server.Antag;
 
 namespace Content.Server.Stories.Sponsor.AntagSelect;
 public sealed class AntagSelectSystem : EntitySystem
 {
     [ViewVariables] public Dictionary<string, int> IssuedSponsorRoles = new();
     [Dependency] private readonly IPlayerManager _playerManager = default!;
-    [Dependency] private readonly UserInterfaceSystem _ui = default!;
+    [Dependency] private readonly UserInterfaceSystem _uiSystem = default!;
     [Dependency] private readonly MindSystem _mind = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] public readonly GameTicker GameTicker = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedRoleSystem _role = default!;
-    [Dependency] private readonly AntagSelectionSystem _antag = default!;
     [Dependency] private readonly ThiefRuleSystem _thief = default!;
     [Dependency] private readonly TraitorRuleSystem _traitorRule = default!;
+    [Dependency] private readonly ShadowlingRuleSystem _shadowlingRule = default!;
     [Dependency] private readonly RevolutionaryRuleSystem _revRule = default!;
     [Dependency] private readonly SponsorsManager _sponsorsManager = default!;
     [Dependency] private readonly IConsoleHost _host = default!;
     [Dependency] private readonly IPartnersManager _db = default!;
-    private const string DefaultRevsRule = "Revolutionary";
-    private const string DefaultThiefRule = "Thief";
-    private const string DefaultTraitorRule = "Traitor";
     public override void Initialize()
     {
         base.Initialize();
@@ -91,28 +89,35 @@ public sealed class AntagSelectSystem : EntitySystem
     }
     private void OnRev(MakeHeadRevEvent args)
     {
-        _antag.ForceMakeAntag<RevolutionaryRuleComponent>(args.Player, DefaultRevsRule);
+        _revRule.OnHeadRevAdmin(args.EntityUid);
         args.RoleTaken = true;
     }
     private void OnShadowling(MakeShadowlingEvent args)
     {
-        // var comp = EntityQuery<ShadowlingRuleComponent>().FirstOrDefault();
-        // if (comp == null)
-        // {
-        //     GameTicker.StartGameRule("Shadowling", out var ruleEntity);
-        //     comp = Comp<ShadowlingRuleComponent>(ruleEntity);
-        // }
-        // _shadowlingRule.GiveShadowling(args.EntityUid, comp);
+        var comp = EntityQuery<ShadowlingRuleComponent>().FirstOrDefault();
+        if (comp == null)
+        {
+            GameTicker.StartGameRule("Shadowling", out var ruleEntity);
+            comp = Comp<ShadowlingRuleComponent>(ruleEntity);
+        }
+        _shadowlingRule.GiveShadowling(args.EntityUid, comp);
         args.RoleTaken = true;
     }
     private void OnThief(MakeThiefEvent args)
     {
-        _antag.ForceMakeAntag<ThiefRuleComponent>(args.Player, DefaultThiefRule);
+        var comp = EntityQuery<ThiefRuleComponent>().FirstOrDefault();
+        if (comp == null)
+        {
+            GameTicker.StartGameRule("Thief", out var ruleEntity);
+            comp = Comp<ThiefRuleComponent>(ruleEntity);
+        }
+        _thief.MakeThief(args.EntityUid, comp, false);
         args.RoleTaken = true;
     }
     private void OnTraitor(MakeTraitorEvent args)
     {
-        _antag.ForceMakeAntag<TraitorRuleComponent>(args.Player, DefaultTraitorRule);
+        var traitorRuleComponent = _traitorRule.StartGameRule();
+        _traitorRule.MakeTraitor(args.EntityUid, traitorRuleComponent, giveUplink: true, giveObjectives: true);
         args.RoleTaken = true;
     }
     // Antags - end
@@ -168,8 +173,7 @@ public sealed class AntagSelectSystem : EntitySystem
     }
     public void OnPick(PickAntagMessage args)
     {
-        if (_mind.TryGetMind(GetEntity(args.Entity), out var mindId, out var mind))
-            _host.ExecuteCommand(mind.Session, "pickantag " + args.Antag);
+        _host.ExecuteCommand(args.Session, "pickantag " + args.Antag);
     }
     public void OnRestart(RoundRestartCleanupEvent args)
     {
@@ -179,19 +183,23 @@ public sealed class AntagSelectSystem : EntitySystem
     {
         UpdateAntagInterface(GetEntity(args.Entity), args.Antag);
     }
-    public void UpdateAntagInterface(EntityUid uid, string antag, BoundUserInterface? ui = null)
+    public void UpdateAntagInterface(EntityUid uid, string antag, PlayerBoundUserInterface? ui = null)
     {
+        if (ui == null && !_uiSystem.TryGetUi(uid, AntagSelectUiKey.Key, out ui))
+            return;
+
         if (!_proto.TryIndex<SponsorAntagPrototype>(antag, out var proto))
             return;
 
         var status = GetStatus(proto);
-        _ui.SetUiState(
-            uid,
-            AntagSelectUiKey.Key,
-            new SelectedAntagInterfaceState(antag, CanPick(uid, antag), status));
+
+        _uiSystem.SetUiState(ui, new SelectedAntagInterfaceState(antag, CanPick(uid, antag), status));
     }
-    public void UpdateInterface(EntityUid uid, string antag, HashSet<string> antags, BoundUserInterface? ui = null)
+    public void UpdateInterface(EntityUid uid, string antag, HashSet<string> antags, PlayerBoundUserInterface? ui = null)
     {
+        if (ui == null && !_uiSystem.TryGetUi(uid, AntagSelectUiKey.Key, out ui))
+            return;
+
         if (!_proto.TryIndex<SponsorAntagPrototype>(antag, out var proto))
             return;
 
@@ -199,10 +207,8 @@ public sealed class AntagSelectSystem : EntitySystem
             return;
 
         var status = GetStatus(proto);
-        _ui.SetUiState(
-            uid,
-            AntagSelectUiKey.Key,
-            new AntagSelectInterfaceState(antags, antag, CanPick(uid, antag), status));
+
+        _uiSystem.SetUiState(ui, new AntagSelectInterfaceState(antags, antag, CanPick(uid, antag), status));
     }
     public bool CanPick(EntityUid uid, string antag)
     {

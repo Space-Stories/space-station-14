@@ -7,7 +7,7 @@
   components:
   - type: UserInterface
     interfaces:
-      enum.AntagSelectUiKey.Key: # Stories-Sponsor
+      - key: enum.AntagSelectUiKey.Key # Stories-Sponsor
         type: AntagSelectBoundUserInterface # Stories-Sponsor
   - type: CargoSellBlacklist
   - type: Sprite

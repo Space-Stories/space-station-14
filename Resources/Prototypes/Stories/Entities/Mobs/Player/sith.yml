@@ -21,13 +21,13 @@
     needsHands: false
   - type: UserInterface
     interfaces:
-      enum.StoreUiKey.Key: # SpaceStories Немного магазина во всех нас.
+      - key: enum.StoreUiKey.Key # SpaceStories Немного магазина во всех нас.
         type: StoreBoundUserInterface # ! Это нужно, чтобы пользователи силы могли открывать свой магазин навыков.
-      enum.VoiceMaskUIKey.Key:
+      - key: enum.VoiceMaskUIKey.Key
         type: VoiceMaskBoundUserInterface
-      enum.HumanoidMarkingModifierKey.Key:
+      - key: enum.HumanoidMarkingModifierKey.Key
         type: HumanoidMarkingModifierBoundUserInterface
-      enum.StrippingUiKey.Key:
+      - key: enum.StrippingUiKey.Key
         type: StrippableBoundUserInterface
   - type: StatusEffects
     allowed:

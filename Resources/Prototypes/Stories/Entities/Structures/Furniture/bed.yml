@@ -1,0 +1,31 @@
+- type: entity
+  parent: Bed
+  id: BedStorage
+  suffix: With storage
+  components:
+    - type: Storage
+      capacity: 20
+    - type: ContainerContainer
+      containers:
+        storagebase: !type:Container
+    - type: UserInterface
+      interfaces:
+      - key: enum.StorageUiKey.Key
+        type: StorageBoundUserInterface
+
+
+- type: entity
+  parent: Mattress
+  id: MatressStorage
+  suffix: With storage
+  components:
+    - type: Storage
+      capacity: 20
+    - type: ContainerContainer
+      containers:
+        storagebase: !type:Container
+    - type: UserInterface
+      interfaces:
+      - key: enum.StorageUiKey.Key
+        type: StorageBoundUserInterface
+

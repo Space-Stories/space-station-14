@@ -10,7 +10,6 @@ namespace Content.Client.Preferences.UI;
 public sealed partial class HumanoidProfileEditor
 {
     [Dependency] private readonly SponsorsManager _sponsorsMgr = default!;
-    [Dependency] private readonly IEntityManager _entMan = default!;
 
     private IRobustRandom _random = default!;
     private TTSSystem _ttsSys = default!;
@@ -73,7 +72,7 @@ public sealed partial class HumanoidProfileEditor
 
     private void PlayTTS()
     {
-        if (Profile is null)
+        if (_previewDummy is null || Profile is null)
             return;
 
         _ttsSys.RequestGlobalTTS(_random.Pick(_sampleText), Profile.Voice);

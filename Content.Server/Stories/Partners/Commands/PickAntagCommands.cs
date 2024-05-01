@@ -51,9 +51,11 @@ public sealed class PickAntagCommand : IConsoleCommand
         if (proto.Event == null)
             return;
 
+        if (uiSystem.TryGetUi(playerEntity, AntagSelectUiKey.Key, out var ui))
+            uiSystem.CloseUi(ui, shell.Player);
+
         var ev1 = proto.Event;
         ev1.EntityUid = playerEntity;
-        ev1.Player = shell.Player;
         _entityManager.EventBus.RaiseLocalEvent(playerEntity, (object) ev1, true);
 
         if (ev1.RoleTaken)

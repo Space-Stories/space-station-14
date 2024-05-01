@@ -1,6 +1,6 @@
-# - type: entity
-#   id: Shadowling
-#   parent: BaseGameRule
-#   noSpawn: true
-#   components:
-#   - type: ShadowlingRule
+- type: entity
+  id: Shadowling
+  parent: BaseGameRule
+  noSpawn: true
+  components:
+  - type: ShadowlingRule

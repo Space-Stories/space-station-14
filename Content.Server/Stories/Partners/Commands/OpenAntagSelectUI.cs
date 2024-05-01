@@ -33,9 +33,10 @@ public sealed class OpenAntagSelectCommand : IConsoleCommand
 
         if (_db.TryGetInfo(shell.Player.UserId, out var sponsor) && sponsor.AllowedAntags != null)
         {
-            uiSystem.OpenUi(playerEntity, AntagSelectUiKey.Key, shell.Player);
+            if (uiSystem.TryGetUi(playerEntity, AntagSelectUiKey.Key, out var ui))
+                uiSystem.OpenUi(ui, shell.Player);
             var random = _random.Pick(sponsor.AllowedAntags);
-            antagSelectSystem.UpdateInterface(playerEntity, random, [.. sponsor.AllowedAntags]);
+            antagSelectSystem.UpdateInterface(playerEntity, random, [.. sponsor.AllowedAntags], ui);
         }
     }
 }

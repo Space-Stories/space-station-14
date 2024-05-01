@@ -1,4 +1,4 @@
-﻿- type: entity
+﻿﻿- type: entity
   name: basic slime
   id: BaseMobAdultSlimes
   parent: [ SimpleMobBase, MobCombat ]
@@ -131,6 +131,8 @@
   - type: HTN
     rootTask:
       task: SimpleHostileCompound
+  - type: TTS # Corvax-TTS
+    voice: Chen
 
 - type: entity
   name: geras
