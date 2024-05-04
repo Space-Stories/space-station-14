@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Diagnostics.CodeAnalysis;
+using System.Threading.Tasks;
 using Content.Server.Chat.Systems;
 using Content.Shared.Stories.CCCVars;
 using Content.Shared.Stories.TTS;
@@ -69,6 +70,16 @@ public sealed partial class TTSSystem : EntitySystem
         RaiseNetworkEvent(new PlayTTSEvent(soundData), Filter.SinglePlayer(args.SenderSession));
     }
 
+    private bool GetVoicePrototype(string voiceId, [NotNullWhen(true)] out TTSVoicePrototype? voicePrototype)
+    {
+        if (!_prototypeManager.TryIndex(voiceId, out voicePrototype))
+        {
+            return _prototypeManager.TryIndex("father_grigori", out voicePrototype);
+        }
+
+        return true;
+    }
+
     private async void OnEntitySpoke(EntityUid uid, TTSComponent component, EntitySpokeEvent args)
     {
         var voiceId = component.VoicePrototypeId;
@@ -81,7 +92,7 @@ public sealed partial class TTSSystem : EntitySystem
         RaiseLocalEvent(uid, voiceEv);
         voiceId = voiceEv.VoiceId;
 
-        if (!_prototypeManager.TryIndex<TTSVoicePrototype>(voiceId, out var protoVoice))
+        if (!GetVoicePrototype(voiceId, out var protoVoice))
             return;
 
         if (args.ObfuscatedMessage != null)

@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using Content.Shared.Stories.CCCVars;
 using Prometheus;
 using Robust.Shared.Configuration;
+using System.Collections.Specialized;
+using System.Web;
 
 namespace Content.Server.Stories.TTS;
 
@@ -52,7 +54,12 @@ public sealed class TTSManager
             ResetCache();
         }, true);
         _cfg.OnValueChanged(CCCVars.TTSApiUrl, v => _apiUrl = v, true);
-        _cfg.OnValueChanged(CCCVars.TTSApiToken, v => _apiToken = v, true);
+        _cfg.OnValueChanged(CCCVars.TTSApiToken, v =>
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new System.Net.Http.Headers.AuthenticationHeaderValue("Bearer", v);
+            _apiToken = v;
+        },
+        true);
     }
 
     /// <summary>
@@ -68,15 +75,14 @@ public sealed class TTSManager
         if (_cache.TryGetValue(cacheKey, out var data))
         {
             ReusedCount.Inc();
-            _sawmill.Verbose($"Use cached sound for '{text}' speech by '{speaker}' speaker");
+            _sawmill.Debug($"Use cached sound for '{text}' speech by '{speaker}' speaker");
             return data;
         }
 
-        _sawmill.Verbose($"Generate new audio for '{text}' speech by '{speaker}' speaker");
+        _sawmill.Debug($"Generate new audio for '{text}' speech by '{speaker}' speaker");
 
         var body = new GenerateVoiceRequest
         {
-            ApiToken = _apiToken,
             Text = text,
             Speaker = speaker,
         };
@@ -86,7 +92,12 @@ public sealed class TTSManager
         {
             var timeout = _cfg.GetCVar(CCCVars.TTSApiTimeout);
             var cts = new CancellationTokenSource(TimeSpan.FromSeconds(timeout));
-            var response = await _httpClient.PostAsJsonAsync(_apiUrl, body, cts.Token);
+
+            var requestUrl = $"{_apiUrl}" + ToQueryString(new NameValueCollection() {
+                { "speaker", speaker },
+                { "text", text },
+                { "ext", "ogg" }});
+            var response = await _httpClient.GetAsync(requestUrl, cts.Token);
             if (!response.IsSuccessStatusCode)
             {
                 if (response.StatusCode == HttpStatusCode.TooManyRequests)
@@ -99,8 +110,7 @@ public sealed class TTSManager
                 return null;
             }
 
-            var json = await response.Content.ReadFromJsonAsync<GenerateVoiceResponse>(cancellationToken: cts.Token);
-            var soundData = Convert.FromBase64String(json.Results.First().Audio);
+            var soundData = await response.Content.ReadAsByteArrayAsync();
 
             _cache.Add(cacheKey, soundData);
             _cacheKeysSeq.Add(cacheKey);
@@ -130,6 +140,17 @@ public sealed class TTSManager
         }
     }
 
+    private static string ToQueryString(NameValueCollection nvc)
+    {
+        var array = (
+            from key in nvc.AllKeys
+            from value in nvc.GetValues(key) ?? Array.Empty<string>()
+            select $"{key}={HttpUtility.UrlEncode(value)}"
+            ).ToArray();
+
+        return "?" + string.Join("&", array);
+    }
+
     public void ResetCache()
     {
         _cache.Clear();
@@ -150,33 +171,14 @@ public sealed class TTSManager
         public GenerateVoiceRequest()
         {
         }
-
-        [JsonPropertyName("api_token")]
-        public string ApiToken { get; set; } = "";
+        [JsonPropertyName("speaker")]
+        public string Speaker { get; set; } = "";
 
         [JsonPropertyName("text")]
         public string Text { get; set; } = "";
 
-        [JsonPropertyName("speaker")]
-        public string Speaker { get; set; } = "";
-
-        [JsonPropertyName("ssml")]
-        public bool SSML { get; private set; } = true;
-
-        [JsonPropertyName("word_ts")]
-        public bool WordTS { get; private set; } = false;
-
-        [JsonPropertyName("put_accent")]
-        public bool PutAccent { get; private set; } = true;
-
-        [JsonPropertyName("put_yo")]
-        public bool PutYo { get; private set; } = false;
-
-        [JsonPropertyName("sample_rate")]
-        public int SampleRate { get; private set; } = 24000;
-
-        [JsonPropertyName("format")]
-        public string Format { get; private set; } = "ogg";
+        [JsonPropertyName("ext")]
+        public string Extension { get; } = "ogg";
     }
 
     private struct GenerateVoiceResponse
