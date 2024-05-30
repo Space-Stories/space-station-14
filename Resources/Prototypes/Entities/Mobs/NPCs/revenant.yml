@@ -40,8 +40,6 @@
   - type: Examiner
   - type: NoSlip
   - type: Actions
-  - type: TTS # Corvax-TTS
-    voice: twitch
   - type: Eye
     drawFov: false
     visMask:

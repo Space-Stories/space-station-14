@@ -44,8 +44,8 @@
   - type: Examiner
   - type: NoSlip
   - type: Actions
-  - type: TTS # Stories-TTS
-    voice: twitch
+  # - type: TTS # Stories-TTS
+  #   voice: twitch
   - type: Eye
     drawFov: false
     visMask:

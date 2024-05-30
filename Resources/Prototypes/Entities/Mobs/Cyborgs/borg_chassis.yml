@@ -220,8 +220,6 @@
     access: [["Medical"], ["Command"], ["Research"]]
   - type: Inventory
     templateId: borgDutch
-  - type: TTS # Corvax-TTS
-    voice: adventure_core
 
 - type: entity
   id: BorgChassisService

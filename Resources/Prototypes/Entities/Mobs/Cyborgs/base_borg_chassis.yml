@@ -209,8 +209,6 @@
     - DoorBumpOpener
     - CanPilot
   - type: Emoting
-  - type: TTS # Corvax-TTS
-    voice: adventure_core
   - type: GuideHelp
     guides:
       - Cyborgs

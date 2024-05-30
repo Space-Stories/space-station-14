@@ -50,8 +50,6 @@ namespace Content.Client.Preferences.UI
         private Button _saveButton => CSaveButton;
         private OptionButton _sexButton => CSexButton;
         private OptionButton _genderButton => CPronounsButton;
-        private OptionButton _voiceButton => CVoiceButton; // Corvax-TTS
-        private Button _voicePlayButton => CVoicePlayButton; // Corvax-TTS
         private Slider _skinColor => CSkin;
         private OptionButton _spawnPriorityButton => CSpawnPriorityButton;
         private SingleMarkingPicker _hairPicker => CHairStylePicker;
@@ -148,14 +146,6 @@ namespace Content.Client.Preferences.UI
             };
 
             #endregion Gender
-
-            // Corvax-TTS-Start
-            #region Voice
-
-            InitializeVoice();
-
-            #endregion
-            // Corvax-TTS-End
 
             #region Species
 
@@ -256,7 +246,7 @@ namespace Content.Client.Preferences.UI
                 SetDirty();
             };
 
-            _hairPicker.OnSlotAdd += delegate ()
+            _hairPicker.OnSlotAdd += delegate()
             {
                 if (Profile is null)
                     return;
@@ -276,7 +266,7 @@ namespace Content.Client.Preferences.UI
                 SetDirty();
             };
 
-            _facialHairPicker.OnSlotAdd += delegate ()
+            _facialHairPicker.OnSlotAdd += delegate()
             {
                 if (Profile is null)
                     return;
@@ -484,7 +474,7 @@ namespace Content.Client.Preferences.UI
                 var dict = new Dictionary<string, GuideEntry>();
                 dict.Add(DefaultSpeciesGuidebook, guideRoot);
                 //TODO: Don't close the guidebook if its already open, just go to the correct page
-                guidebookController.ToggleGuidebook(dict, includeChildren: true, selected: page);
+                guidebookController.ToggleGuidebook(dict, includeChildren:true, selected: page);
             }
         }
 
@@ -563,7 +553,7 @@ namespace Content.Client.Preferences.UI
 
                     category.AddChild(new PanelContainer
                     {
-                        PanelOverride = new StyleBoxFlat { BackgroundColor = Color.FromHex("#464966") },
+                        PanelOverride = new StyleBoxFlat {BackgroundColor = Color.FromHex("#464966")},
                         Children =
                         {
                             new Label
@@ -672,45 +662,45 @@ namespace Content.Client.Preferences.UI
             switch (skin)
             {
                 case HumanoidSkinColor.HumanToned:
+                {
+                    if (!_skinColor.Visible)
                     {
-                        if (!_skinColor.Visible)
-                        {
-                            _skinColor.Visible = true;
-                            _rgbSkinColorContainer.Visible = false;
-                        }
-
-                        var color = SkinColor.HumanSkinTone((int) _skinColor.Value);
-
-                        CMarkings.CurrentSkinColor = color;
-                        Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));//
-                        break;
+                        _skinColor.Visible = true;
+                        _rgbSkinColorContainer.Visible = false;
                     }
+
+                    var color = SkinColor.HumanSkinTone((int) _skinColor.Value);
+
+                    CMarkings.CurrentSkinColor = color;
+                    Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));//
+                    break;
+                }
                 case HumanoidSkinColor.Hues:
+                {
+                    if (!_rgbSkinColorContainer.Visible)
                     {
-                        if (!_rgbSkinColorContainer.Visible)
-                        {
-                            _skinColor.Visible = false;
-                            _rgbSkinColorContainer.Visible = true;
-                        }
-
-                        CMarkings.CurrentSkinColor = _rgbSkinColorSelector.Color;
-                        Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(_rgbSkinColorSelector.Color));
-                        break;
+                        _skinColor.Visible = false;
+                        _rgbSkinColorContainer.Visible = true;
                     }
+
+                    CMarkings.CurrentSkinColor = _rgbSkinColorSelector.Color;
+                    Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(_rgbSkinColorSelector.Color));
+                    break;
+                }
                 case HumanoidSkinColor.TintedHues:
+                {
+                    if (!_rgbSkinColorContainer.Visible)
                     {
-                        if (!_rgbSkinColorContainer.Visible)
-                        {
-                            _skinColor.Visible = false;
-                            _rgbSkinColorContainer.Visible = true;
-                        }
-
-                        var color = SkinColor.TintedHues(_rgbSkinColorSelector.Color);
-
-                        CMarkings.CurrentSkinColor = color;
-                        Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
-                        break;
+                        _skinColor.Visible = false;
+                        _rgbSkinColorContainer.Visible = true;
                     }
+
+                    var color = SkinColor.TintedHues(_rgbSkinColorSelector.Color);
+
+                    CMarkings.CurrentSkinColor = color;
+                    Profile = Profile.WithCharacterAppearance(Profile.Appearance.WithSkinColor(color));
+                    break;
+                }
             }
 
             IsDirty = true;
@@ -766,7 +756,6 @@ namespace Content.Client.Preferences.UI
                     break;
             }
             UpdateGenderControls();
-            UpdateTTSVoicesControls(); // Corvax-TTS
             CMarkings.SetSex(newSex);
             SetDirty();
         }
@@ -776,14 +765,6 @@ namespace Content.Client.Preferences.UI
             Profile = Profile?.WithGender(newGender);
             SetDirty();
         }
-
-        // Corvax-TTS-Start
-        private void SetVoice(string newVoice)
-        {
-            Profile = Profile?.WithVoice(newVoice);
-            IsDirty = true;
-        }
-        // Corvax-TTS-End
 
         private void SetSpecies(string newSpecies)
         {
@@ -838,7 +819,7 @@ namespace Content.Client.Preferences.UI
 
         private void UpdateFlavorTextEdit()
         {
-            if (_flavorTextEdit != null)
+            if(_flavorTextEdit != null)
             {
                 _flavorTextEdit.TextRope = new Rope.Leaf(Profile?.FlavorText ?? "");
             }
@@ -865,8 +846,7 @@ namespace Content.Client.Preferences.UI
                 {
                     sexes.Add(sex);
                 }
-            }
-            else
+            } else
             {
                 sexes.Add(Sex.Unsexed);
             }
@@ -893,41 +873,41 @@ namespace Content.Client.Preferences.UI
             switch (skin)
             {
                 case HumanoidSkinColor.HumanToned:
+                {
+                    if (!_skinColor.Visible)
                     {
-                        if (!_skinColor.Visible)
-                        {
-                            _skinColor.Visible = true;
-                            _rgbSkinColorContainer.Visible = false;
-                        }
-
-                        _skinColor.Value = SkinColor.HumanSkinToneFromColor(Profile.Appearance.SkinColor);
-
-                        break;
+                        _skinColor.Visible = true;
+                        _rgbSkinColorContainer.Visible = false;
                     }
+
+                    _skinColor.Value = SkinColor.HumanSkinToneFromColor(Profile.Appearance.SkinColor);
+
+                    break;
+                }
                 case HumanoidSkinColor.Hues:
+                {
+                    if (!_rgbSkinColorContainer.Visible)
                     {
-                        if (!_rgbSkinColorContainer.Visible)
-                        {
-                            _skinColor.Visible = false;
-                            _rgbSkinColorContainer.Visible = true;
-                        }
-
-                        // set the RGB values to the direct values otherwise
-                        _rgbSkinColorSelector.Color = Profile.Appearance.SkinColor;
-                        break;
+                        _skinColor.Visible = false;
+                        _rgbSkinColorContainer.Visible = true;
                     }
+
+                    // set the RGB values to the direct values otherwise
+                    _rgbSkinColorSelector.Color = Profile.Appearance.SkinColor;
+                    break;
+                }
                 case HumanoidSkinColor.TintedHues:
+                {
+                    if (!_rgbSkinColorContainer.Visible)
                     {
-                        if (!_rgbSkinColorContainer.Visible)
-                        {
-                            _skinColor.Visible = false;
-                            _rgbSkinColorContainer.Visible = true;
-                        }
-
-                        // set the RGB values to the direct values otherwise
-                        _rgbSkinColorSelector.Color = Profile.Appearance.SkinColor;
-                        break;
+                        _skinColor.Visible = false;
+                        _rgbSkinColorContainer.Visible = true;
                     }
+
+                    // set the RGB values to the direct values otherwise
+                    _rgbSkinColorSelector.Color = Profile.Appearance.SkinColor;
+                    break;
+                }
             }
 
         }
@@ -1030,7 +1010,7 @@ namespace Content.Client.Preferences.UI
 
             // hair color
             Color? hairColor = null;
-            if (Profile.Appearance.HairStyleId != HairStyles.DefaultHairStyle &&
+            if ( Profile.Appearance.HairStyleId != HairStyles.DefaultHairStyle &&
                 _markingManager.Markings.TryGetValue(Profile.Appearance.HairStyleId, out var hairProto)
             )
             {
@@ -1048,7 +1028,7 @@ namespace Content.Client.Preferences.UI
             }
             if (hairColor != null)
             {
-                CMarkings.HairMarking = new(Profile.Appearance.HairStyleId, new List<Color>() { hairColor.Value });
+                CMarkings.HairMarking = new (Profile.Appearance.HairStyleId, new List<Color>() { hairColor.Value });
             }
             else
             {
@@ -1065,7 +1045,7 @@ namespace Content.Client.Preferences.UI
 
             // facial hair color
             Color? facialHairColor = null;
-            if (Profile.Appearance.FacialHairStyleId != HairStyles.DefaultFacialHairStyle &&
+            if ( Profile.Appearance.FacialHairStyleId != HairStyles.DefaultFacialHairStyle &&
                 _markingManager.Markings.TryGetValue(Profile.Appearance.FacialHairStyleId, out var facialHairProto)
             )
             {
@@ -1083,7 +1063,7 @@ namespace Content.Client.Preferences.UI
             }
             if (facialHairColor != null)
             {
-                CMarkings.FacialHairMarking = new(Profile.Appearance.FacialHairStyleId, new List<Color>() { facialHairColor.Value });
+                CMarkings.FacialHairMarking = new (Profile.Appearance.FacialHairStyleId, new List<Color>() { facialHairColor.Value });
             }
             else
             {
@@ -1140,7 +1120,6 @@ namespace Content.Client.Preferences.UI
             UpdateAntagPreferences();
             UpdateTraitPreferences();
             UpdateMarkings();
-            UpdateTTSVoicesControls(); // Corvax-TTS
             UpdateHairPickers();
             UpdateCMarkingsHair();
             UpdateCMarkingsFacialHair();
@@ -1206,7 +1185,7 @@ namespace Content.Client.Preferences.UI
             {
                 Trait = trait;
 
-                _checkBox = new CheckBox { Text = Loc.GetString(trait.Name) };
+                _checkBox = new CheckBox {Text = Loc.GetString(trait.Name)};
                 _checkBox.OnToggled += OnCheckBoxToggled;
 
                 if (trait.Description is { } desc)

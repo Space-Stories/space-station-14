@@ -756,8 +756,6 @@
     attributes:
       proper: true
       gender: female
-  - type: TTS # Corvax-TTS
-    voice: ziggs
 
 - type: entity
   name: Pun Pun

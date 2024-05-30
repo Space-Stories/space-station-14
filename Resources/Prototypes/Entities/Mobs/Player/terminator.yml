@@ -106,7 +106,7 @@
     - FootstepSound
     - DoorBumpOpener
     - Unimplantable # no brain to mindshield, no organic body to implant into
-  - type: TTS # Stories-TTS
+  # - type: TTS # Stories-TTS
   - type: WeaponrySkill
 
 - type: entity
@@ -198,10 +198,9 @@
   - type: Tag
     tags:
     - DoorBumpOpener
-    - ShoesRequiredStepTriggerImmune
     # let mind transfer on gib work
     - MindTransferTarget
     # its just metal so no implants
     - Unimplantable
-  - type: TTS # Stories-TTS
-    voice: sentrybot
+  # - type: TTS # Stories-TTS
+  #   voice: sentrybot

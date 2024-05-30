@@ -8,7 +8,6 @@ using Content.Server.Connection;
 using Content.Server.Corvax.DiscordAuth;
 using Content.Server.Corvax.JoinQueue;
 using Content.Server.Corvax.Sponsors;
-using Content.Server.Corvax.TTS;
 using Content.Server.Database;
 using Content.Server.Discord;
 using Content.Server.EUI;
@@ -63,7 +62,6 @@ namespace Content.Server.IoC
             IoCManager.Register<SponsorsManager>(); // Corvax-Sponsors
             IoCManager.Register<JoinQueueManager>(); // Corvax-Queue
             IoCManager.Register<DiscordAuthManager>(); // Corvax-DiscordAuth
-            IoCManager.Register<TTSManager>(); // Corvax-TTS
             IoCManager.Register<ServerInfoManager>();
             IoCManager.Register<PoissonDiskSampler>();
             IoCManager.Register<DiscordWebhook>();
