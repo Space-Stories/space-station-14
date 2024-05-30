@@ -105,30 +105,35 @@ public sealed class CanPickAttemptEvent(EntityUid uid, ICommonSession session, S
 public interface ISponsorMakeAntagEvent
 {
     public EntityUid EntityUid { get; set; }
+    public ICommonSession? Player { get; set; }
     public bool RoleTaken { get; set; }
 }
 
 public sealed class MakeTraitorEvent : EntityEventArgs, ISponsorMakeAntagEvent
 {
     public EntityUid EntityUid { get; set; }
+    public ICommonSession? Player { get; set; }
     public bool RoleTaken { get; set; } = false;
 }
 
 public sealed class MakeThiefEvent : EntityEventArgs, ISponsorMakeAntagEvent
 {
     public EntityUid EntityUid { get; set; }
+    public ICommonSession? Player { get; set; }
     public bool RoleTaken { get; set; } = false;
 }
 
 public sealed class MakeShadowlingEvent : EntityEventArgs, ISponsorMakeAntagEvent
 {
     public EntityUid EntityUid { get; set; }
+    public ICommonSession? Player { get; set; }
     public bool RoleTaken { get; set; } = false;
 }
 
 public sealed class MakeHeadRevEvent : EntityEventArgs, ISponsorMakeAntagEvent
 {
     public EntityUid EntityUid { get; set; }
+    public ICommonSession? Player { get; set; }
     public bool RoleTaken { get; set; } = false;
 }
 
@@ -136,6 +141,7 @@ public sealed class MakeHeadRevEvent : EntityEventArgs, ISponsorMakeAntagEvent
 public sealed partial class MakeGhostRoleAntagEvent : EntityEventArgs, ISponsorMakeAntagEvent
 {
     public EntityUid EntityUid { get; set; }
+    public ICommonSession? Player { get; set; }
     public bool RoleTaken { get; set; } = false;
 
     [DataField("gameRule")]
