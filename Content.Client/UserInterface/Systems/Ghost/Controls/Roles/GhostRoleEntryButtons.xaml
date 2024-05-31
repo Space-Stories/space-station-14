@@ -2,7 +2,7 @@
               Orientation="Horizontal">
     <Button Name="RequestButton"
             Access="Public"
-            Text="{Loc 'ghost-roles-window-request'}"
+            Text="{Loc 'ghost-roles-window-request-role-button'}"
             StyleClasses="OpenRight"
             HorizontalAlignment="Left"
             SetWidth="300"/>

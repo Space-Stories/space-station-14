@@ -1,7 +1,6 @@
 ﻿using Content.Server.Ghost.Roles.Raffles;
 using Content.Server.Mind.Commands;
 using Content.Shared.Roles;
-using Robust.Shared.Player;
 
 namespace Content.Server.Ghost.Roles.Components
 {
@@ -9,9 +8,6 @@ namespace Content.Server.Ghost.Roles.Components
     [Access(typeof(GhostRoleSystem))]
     public sealed partial class GhostRoleComponent : Component
     {
-        [ViewVariables(VVAccess.ReadWrite)]
-        public HashSet<ICommonSession> PotentialTakeovers = new(); // SPACE STORIES
-
         [DataField("name")] private string _roleName = "Unknown";
 
         [DataField("description")] private string _roleDescription = "Unknown";
