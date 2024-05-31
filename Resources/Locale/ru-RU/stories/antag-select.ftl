@@ -16,4 +16,5 @@ antag-headrev = Глава революции
 antag-inquisitor = Инквизитор
 antag-dragon = Космический дракон
 antag-terminator = Экстерминатор
+ui-escape-antagselect = Выбор антагониста
 

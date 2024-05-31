@@ -6,9 +6,16 @@ namespace Content.Server.Ghost.Roles.UI
 {
     public sealed class GhostRolesEui : BaseEui
     {
+        private readonly GhostRoleSystem _ghostRoleSystem;
+
+        public GhostRolesEui()
+        {
+            _ghostRoleSystem = IoCManager.Resolve<IEntitySystemManager>().GetEntitySystem<GhostRoleSystem>();
+        }
+
         public override GhostRolesEuiState GetNewState()
         {
-            return new(EntitySystem.Get<GhostRoleSystem>().GetGhostRolesInfo());
+            return new(_ghostRoleSystem.GetGhostRolesInfo(Player));
         }
 
         public override void HandleMessage(EuiMessageBase msg)
@@ -17,17 +24,14 @@ namespace Content.Server.Ghost.Roles.UI
 
             switch (msg)
             {
-                case GhostRoleTakeoverRequestMessage req:
-                    EntitySystem.Get<GhostRoleSystem>().Takeover(Player, req.Identifier);
+                case RequestGhostRoleMessage req:
+                    _ghostRoleSystem.Request(Player, req.Identifier);
                     break;
-                case GhostRoleAddRequestMessage req: // SPACE STORIES - start
-                    EntitySystem.Get<GhostRoleSystem>().AddPotentialTakeover(Player, req.Identifier);
+                case FollowGhostRoleMessage req:
+                    _ghostRoleSystem.Follow(Player, req.Identifier);
                     break;
-                case GhostRoleRemoveRequestMessage req:
-                    EntitySystem.Get<GhostRoleSystem>().RemovePotentialTakeover(Player, req.Identifier);
-                    break; // SPACE STORIES - end
-                case GhostRoleFollowRequestMessage req:
-                    EntitySystem.Get<GhostRoleSystem>().Follow(Player, req.Identifier);
+                case LeaveGhostRoleRaffleMessage req:
+                    _ghostRoleSystem.LeaveRaffle(Player, req.Identifier);
                     break;
             }
         }
@@ -36,7 +40,7 @@ namespace Content.Server.Ghost.Roles.UI
         {
             base.Closed();
 
-            EntitySystem.Get<GhostRoleSystem>().CloseEui(Player);
+            _ghostRoleSystem.CloseEui(Player);
         }
     }
 }

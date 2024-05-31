@@ -43,12 +43,12 @@ public sealed partial class ProtectiveBubbleSystem
     private void OnInit(EntityUid uid, ProtectiveBubbleUserComponent component, ComponentInit args)
     {
         _actions.AddAction(uid, ref component.StopProtectiveBubbleActionEntity, out var act, component.StopProtectiveBubbleAction);
-        _alerts.ShowAlert(uid, AlertType.ProjectiveBubble, 0);
+        _alerts.ShowAlert(uid, "ProjectiveBubble", 0);
     }
     private void OnShutdown(EntityUid uid, ProtectiveBubbleUserComponent component, ComponentShutdown args)
     {
         _actions.RemoveAction(component.StopProtectiveBubbleActionEntity);
-        _alerts.ClearAlert(uid, AlertType.ProjectiveBubble);
+        _alerts.ClearAlert(uid, "ProjectiveBubble");
     }
     private void OnStopProtectiveBubble(EntityUid uid, ProtectiveBubbleUserComponent comp, StopProtectiveBubbleEvent args)
     {

@@ -21,7 +21,7 @@ public sealed partial class ForceUserComponent : Component
     public string Preset = "Debug";
     public string Name() => _proto.TryIndex<ForcePresetPrototype>(Preset, out var proto) ? proto.Name : "Debug";
     public ForceSide Side() => _proto.TryIndex<ForcePresetPrototype>(Preset, out var proto) ? proto.Side : ForceSide.Debug;
-    public AlertType AlertType() => _proto.TryIndex<ForcePresetPrototype>(Preset, out var proto) ? proto.AlertType : Alert.AlertType.ForceVolume;
+    public string AlertType() => _proto.TryIndex<ForcePresetPrototype>(Preset, out var proto) ? proto.AlertType : "ForceVolume";
 
     [DataField("lightsaber"), AutoNetworkedField]
     public EntityUid? LightSaber { get; set; } = null;

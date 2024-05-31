@@ -12,6 +12,21 @@ namespace Content.Shared.Ghost.Roles
         public string Description { get; set; }
         public string Rules { get; set; }
         public HashSet<JobRequirement>? Requirements { get; set; }
+
+        /// <inheritdoc cref="GhostRoleKind"/>
+        public GhostRoleKind Kind { get; set; }
+
+        /// <summary>
+        /// if <see cref="Kind"/> is <see cref="GhostRoleKind.RaffleInProgress"/>, specifies how many players are currently
+        /// in the raffle for this role.
+        /// </summary>
+        public uint RafflePlayerCount { get; set; }
+
+        /// <summary>
+        /// if <see cref="Kind"/> is <see cref="GhostRoleKind.RaffleInProgress"/>, specifies when raffle finishes.
+        /// </summary>
+        public TimeSpan RaffleEndTime { get; set; }
+
     }
 
     [NetSerializable, Serializable]
@@ -26,46 +41,62 @@ namespace Content.Shared.Ghost.Roles
     }
 
     [NetSerializable, Serializable]
-    public sealed class GhostRoleTakeoverRequestMessage : EuiMessageBase
+    public sealed class RequestGhostRoleMessage : EuiMessageBase
     {
         public uint Identifier { get; }
 
-        public GhostRoleTakeoverRequestMessage(uint identifier)
+        public RequestGhostRoleMessage(uint identifier)
         {
             Identifier = identifier;
         }
     }
 
     [NetSerializable, Serializable]
-    public sealed class GhostRoleAddRequestMessage : EuiMessageBase // SPACE STORIES
+    public sealed class FollowGhostRoleMessage : EuiMessageBase
     {
         public uint Identifier { get; }
 
-        public GhostRoleAddRequestMessage(uint identifier)
+        public FollowGhostRoleMessage(uint identifier)
         {
             Identifier = identifier;
         }
     }
 
     [NetSerializable, Serializable]
-    public sealed class GhostRoleRemoveRequestMessage : EuiMessageBase // SPACE STORIES
+    public sealed class LeaveGhostRoleRaffleMessage : EuiMessageBase
     {
         public uint Identifier { get; }
 
-        public GhostRoleRemoveRequestMessage(uint identifier)
+        public LeaveGhostRoleRaffleMessage(uint identifier)
         {
             Identifier = identifier;
         }
     }
 
+    /// <summary>
+    /// Determines whether a ghost role is a raffle role, and if it is, whether it's running.
+    /// </summary>
     [NetSerializable, Serializable]
-    public sealed class GhostRoleFollowRequestMessage : EuiMessageBase
+    public enum GhostRoleKind
     {
-        public uint Identifier { get; }
+        /// <summary>
+        /// Role is not a raffle role and can be taken immediately.
+        /// </summary>
+        FirstComeFirstServe,
 
-        public GhostRoleFollowRequestMessage(uint identifier)
-        {
-            Identifier = identifier;
-        }
+        /// <summary>
+        /// Role is a raffle role, but raffle hasn't started yet.
+        /// </summary>
+        RaffleReady,
+
+        /// <summary>
+        ///  Role is raffle role and currently being raffled, but player hasn't joined raffle.
+        /// </summary>
+        RaffleInProgress,
+
+        /// <summary>
+        /// Role is raffle role and currently being raffled, and player joined raffle.
+        /// </summary>
+        RaffleJoined
     }
 }

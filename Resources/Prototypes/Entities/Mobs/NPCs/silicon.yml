@@ -108,6 +108,7 @@
   - type: TypingIndicator
     proto: robot
   - type: ZombieImmune
+  - type: StepTriggerImmune
 
 - type: entity
   parent: MobSiliconBase

@@ -1,6 +1,10 @@
 - type: emote
   id: Grumble
+  name: Ворчать
   category: Vocal
+  whitelist:
+    components:
+    - KidanAccent
   chatMessages: [ворчит.]
   chatTriggers:
     - grumble
@@ -18,7 +22,11 @@
 
 - type: emote
   id: Moan
+  name: Стон
   category: Vocal
+  whitelist:
+    components:
+    - KidanAccent
   chatMessages: [стонет.]
   chatTriggers:
     - moan
@@ -34,6 +42,10 @@
 - type: emote
   id: WigglesAntennae
   category: Vocal
+  whitelist:
+    components:
+    - KidanAccent
+  name: Шевелить усиками
   chatMessages: [шевелит антенками.]
   chatTriggers:
     - waves antennae
@@ -58,6 +70,10 @@
 - type: emote
   id: WavesAntennaeSharply
   category: Vocal
+  whitelist:
+    components:
+    - KidanAccent
+  name: Резко шевелить усиками
   chatMessages: [резко машет антенками.]
   chatTriggers:
     - waves antennae sharply

@@ -77,3 +77,7 @@
 - type: lobbyBackground
   id: TerminalStation
   background: /Textures/LobbyScreens/terminalstation.webp
+
+- type: lobbyBackground
+  id: JustAWeekAway
+  background: /Textures/LobbyScreens/justaweekaway.webp

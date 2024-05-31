@@ -6,7 +6,7 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading;
 using System.Threading.Tasks;
-using Content.Shared.Stories.CCCVars;
+using Content.Shared.Corvax.CCCVars;
 using Prometheus;
 using Robust.Shared.Configuration;
 using System.Collections.Specialized;

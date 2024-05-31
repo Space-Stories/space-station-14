@@ -1,25 +1,24 @@
-﻿using Content.Shared.Bed.Sleep;
+﻿﻿using Content.Shared.Bed.Sleep;
 using Content.Shared.CombatMode.Pacification;
-using Content.Shared.Damage;
 using Content.Shared.Damage.ForceSay;
 using Content.Shared.Emoting;
 using Content.Shared.Hands;
-using Content.Shared.Humanoid;
 using Content.Shared.Interaction;
 using Content.Shared.Interaction.Events;
 using Content.Shared.Inventory.Events;
 using Content.Shared.Item;
 using Content.Shared.Mobs.Components;
-using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Events;
 using Content.Shared.Pointing;
-using Content.Shared.Movement.Systems;
+using Content.Shared.Projectiles;
 using Content.Shared.Pulling.Events;
 using Content.Shared.Speech;
 using Content.Shared.Standing;
 using Content.Shared.Strip.Components;
 using Content.Shared.Throwing;
+using Content.Shared.Weapons.Ranged.Components;
 using Robust.Shared.Physics.Components;
+using Robust.Shared.Physics.Events;
 
 namespace Content.Shared.Mobs.Systems;
 
@@ -47,7 +46,7 @@ public partial class MobStateSystem
         SubscribeLocalEvent<MobStateComponent, TryingToSleepEvent>(OnSleepAttempt);
         SubscribeLocalEvent<MobStateComponent, CombatModeShouldHandInteractEvent>(OnCombatModeShouldHandInteract);
         SubscribeLocalEvent<MobStateComponent, AttemptPacifiedAttackEvent>(OnAttemptPacifiedAttack);
-        SubscribeLocalEvent<MobStateComponent, RefreshMovementSpeedModifiersEvent>(OnRefreshMovementSpeedModifiers);
+        SubscribeLocalEvent<MobStateComponent, PreventCollideEvent>(OnPreventCollide);
     }
 
     private void OnStateExitSubscribers(EntityUid target, MobStateComponent component, MobState state)
@@ -88,11 +87,7 @@ public partial class MobStateSystem
         switch (state)
         {
             case MobState.Alive:
-                // Stories-Crawling-Start
-                if (!_standing.CanCrawl(target))
-                    _standing.Stand(target);
-                // Stories-Crawling-End
-
+                _standing.Stand(target);
                 _appearance.SetData(target, MobStateVisuals.State, MobState.Alive);
                 break;
             case MobState.Critical:
@@ -142,10 +137,6 @@ public partial class MobStateSystem
             RemCompDeferred<AllowNextCritSpeechComponent>(uid);
             return;
         }
-        // Stories-Crit-Speech-Start
-        if (component.CurrentState == MobState.Critical)
-            return;
-        // Stories-Crit-Speech-End
 
         CheckAct(uid, component, args);
     }
@@ -155,12 +146,8 @@ public partial class MobStateSystem
         switch (component.CurrentState)
         {
             case MobState.Dead:
-                args.Cancel();
-                break;
             case MobState.Critical:
-                if (args is not UpdateCanMoveEvent || !HasComp<HumanoidAppearanceComponent>(target))
-                    args.Cancel();
-
+                args.Cancel();
                 break;
         }
     }
@@ -192,30 +179,19 @@ public partial class MobStateSystem
         args.Cancelled = true;
     }
 
-    private void OnRefreshMovementSpeedModifiers(EntityUid uid, MobStateComponent component, ref RefreshMovementSpeedModifiersEvent ev)
+    private void OnPreventCollide(Entity<MobStateComponent> ent, ref PreventCollideEvent args)
     {
-        if (!HasComp<HumanoidAppearanceComponent>(uid))
+        if (args.Cancelled)
             return;
 
-        switch (component.CurrentState)
+        if (IsAlive(ent, ent))
+            return;
+
+        var other = args.OtherEntity;
+        if (HasComp<ProjectileComponent>(other) &&
+            CompOrNull<TargetedProjectileComponent>(other)?.Target != ent.Owner)
         {
-            case MobState.Critical:
-                if (!TryComp<DamageableComponent>(uid, out var damageable))
-                    return;
-
-                // Stories-Crawling-Start
-                if (!TryComp<MovementSpeedModifierComponent>(uid, out var speed))
-                    return;
-
-                if (!_mobThreshold.TryGetPercentageForState(uid, MobState.Dead, damageable.TotalDamage, out var percentage))
-                    return;
-
-                var sprintSpeedModifier = (1 - (float) percentage) * 2 * 0.15f * speed.BaseSprintSpeed;
-                var walkSpeedModifier = (1 - (float) percentage) * 2 * 0.15f * speed.BaseWalkSpeed;
-
-                ev.ModifySpeed(sprintSpeedModifier, walkSpeedModifier);
-                // Stories-Crawling-End
-                break;
+            args.Cancelled = true;
         }
     }
 

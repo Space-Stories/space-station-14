@@ -1,4 +1,5 @@
-﻿using Content.Server.Mind.Commands;
+﻿using Content.Server.Ghost.Roles.Raffles;
+using Content.Server.Mind.Commands;
 using Content.Shared.Roles;
 using Robust.Shared.Player;
 
@@ -43,7 +44,7 @@ namespace Content.Server.Ghost.Roles.Components
             set
             {
                 _roleName = value;
-                EntitySystem.Get<GhostRoleSystem>().UpdateAllEui();
+                IoCManager.Resolve<IEntityManager>().System<GhostRoleSystem>().UpdateAllEui();
             }
         }
 
@@ -55,7 +56,7 @@ namespace Content.Server.Ghost.Roles.Components
             set
             {
                 _roleDescription = value;
-                EntitySystem.Get<GhostRoleSystem>().UpdateAllEui();
+                IoCManager.Resolve<IEntityManager>().System<GhostRoleSystem>().UpdateAllEui();
             }
         }
 
@@ -67,7 +68,7 @@ namespace Content.Server.Ghost.Roles.Components
             set
             {
                 _roleRules = value;
-                EntitySystem.Get<GhostRoleSystem>().UpdateAllEui();
+                IoCManager.Resolve<IEntityManager>().System<GhostRoleSystem>().UpdateAllEui();
             }
         }
 
@@ -91,5 +92,12 @@ namespace Content.Server.Ghost.Roles.Components
         [ViewVariables(VVAccess.ReadWrite)]
         [DataField("reregister")]
         public bool ReregisterOnGhost { get; set; } = true;
+
+        /// <summary>
+        /// If set, ghost role is raffled, otherwise it is first-come-first-serve.
+        /// </summary>
+        [DataField("raffle")]
+        [Access(typeof(GhostRoleSystem), Other = AccessPermissions.ReadWriteExecute)] // FIXME Friends
+        public GhostRoleRaffleConfig? RaffleConfig { get; set; }
     }
 }

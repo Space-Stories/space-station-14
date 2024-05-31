@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using System.Threading.Tasks;
 using Content.Server.Chat.Systems;
-using Content.Shared.Stories.CCCVars;
+using Content.Shared.Corvax.CCCVars;
 using Content.Shared.Stories.TTS;
 using Content.Shared.GameTicking;
 using Robust.Shared.Configuration;

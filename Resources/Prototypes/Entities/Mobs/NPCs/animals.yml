@@ -16,6 +16,7 @@
   - type: Speech
     speechSounds: Squeak
     speechVerb: SmallMob
+    allowedEmotes: ['Squeak']
   - type: Fixtures
     fixtures:
       fix1:
@@ -432,6 +433,9 @@
   - type: Speech
     speechVerb: Moth
     speechSounds: Squeak
+    allowedEmotes: ['Chitter', 'Squeak']
+  - type: FaxableObject
+    insertingState: inserting_mothroach
   - type: MothAccent
   - type: Sprite
     sprite: Mobs/Animals/mothroach.rsi
@@ -815,6 +819,7 @@
   - type: Speech
     speechVerb: Arachnid
     speechSounds: Arachnid
+    allowedEmotes: ['Click', 'Chitter']
   - type: DamageStateVisuals
     states:
       Alive:
@@ -1150,6 +1155,8 @@
     templateId: monkey
     speciesId: monkey
   - type: InventorySlots
+  - type: Deathgasp
+    prototype: MonkeyDeathgasp
   - type: Cuffable
   - type: RotationVisuals
     defaultRotation: 90
@@ -1302,6 +1309,8 @@
     makeSentient: true
     name: ghost-role-information-monkey-name
     description: ghost-role-information-monkey-description
+    raffle:
+      settings: default
   - type: GhostTakeoverAvailable
   - type: Loadout
     prototypes: [SyndicateOperativeGearMonkey]
@@ -1340,9 +1349,9 @@
     speechVerb: Reptilian
   - type: Vocal
     sounds:
-      Male: UnisexReptilian
-      Female: UnisexReptilian
-      Unsexed: UnisexReptilian
+      Male: MaleReptilian
+      Female: FemaleReptilian
+      Unsexed: MaleReptilian
   - type: TypingIndicator
     proto: lizard
   - type: InteractionPopup
@@ -1508,6 +1517,7 @@
   - type: Speech
     speechSounds: Squeak
     speechVerb: SmallMob
+    allowedEmotes: ['Squeak']
   - type: Sprite
     drawdepth: SmallMobs
     sprite: Mobs/Animals/mouse.rsi
@@ -1536,6 +1546,8 @@
     rootTask:
       task: MouseCompound
   - type: Physics
+  - type: FaxableObject
+    insertingState: inserting_mouse
   - type: Fixtures
     fixtures:
       fix1:
@@ -1720,6 +1732,41 @@
         Base: dead-2
       Dead:
         Base: splat-2
+
+- type: entity
+  name: cancer mouse
+  description: Toxic. Squeak!
+  parent: MobMouse
+  id: MobMouseCancer
+  components:
+  - type: Sprite
+    color: LightGreen
+  - type: PointLight
+    color: LightGreen
+    radius: 5
+    energy: 5
+    netsync: false
+  - type: RadiationSource
+    intensity: 0.3
+  - type: Bloodstream
+    bloodReagent: UnstableMutagen
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        reagents:
+        - ReagentId: UncookedAnimalProteins
+          Quantity: 3
+        - ReagentId: Uranium
+          Quantity: 10
+  - type: Butcherable
+    spawned:
+    - id: FoodMeatRat
+      amount: 1
+    - id: SheetUranium1
+      amount: 1
+  - type: Damageable
+    damageContainer: Biological
+    damageModifierSet: Zombie
 
 - type: entity
   name: lizard #Weh
@@ -2156,6 +2203,7 @@
       0: Alive
       90: Dead
   - type: MeleeWeapon
+    altDisarm: false
     angle: 0
     animation: WeaponArcBite
     soundHit:
@@ -2194,6 +2242,7 @@
   - type: Speech
     speechVerb: Arachnid
     speechSounds: Arachnid
+    allowedEmotes: ['Click', 'Chitter']
   - type: Vocal
     sounds:
       Male: UnisexArachnid
@@ -2247,6 +2296,8 @@
       makeSentient: true
       name: ghost-role-information-giant-spider-name
       description: ghost-role-information-giant-spider-description
+      raffle:
+        settings: short
     - type: GhostTakeoverAvailable
 
 - type: entity
@@ -2278,6 +2329,7 @@
     - type: Spider
       webPrototype: SpiderWebClown
     - type: MeleeWeapon
+      altDisarm: false
       angle: 0
       animation: WeaponArcBite
       soundHit:
@@ -2293,6 +2345,18 @@
     - type: Bloodstream
       bloodMaxVolume: 150
       bloodReagent: Laughter
+
+- type: entity
+  name: wizard spider
+  parent: MobGiantSpider
+  id: MobGiantSpiderWizard
+  description: This spider looks a little magical
+  suffix: Wizard
+  components:
+  - type: Accentless
+    removes:
+    - type: ReplacementAccent
+      accent: xeno  #let this wizard speak
 
 - type: entity
   name: possum
@@ -2482,7 +2546,7 @@
     interactFailureString: petting-failure-generic
     interactSuccessSpawn: EffectHearts
     interactSuccessSound:
-      path: /Audio/Animals/fox_squeak.ogg
+      collection: Fox
   - type: Grammar
     attributes:
       gender: epicene
@@ -2715,6 +2779,11 @@
     interactSuccessSound:
       path: /Audio/Animals/cat_meow.ogg
   - type: MeleeWeapon
+    altDisarm: false
+    angle: 0
+    animation: WeaponArcBite
+    soundHit:
+      path: /Audio/Effects/bite.ogg
     damage:
       types:
         Piercing: 5
@@ -2766,23 +2835,28 @@
     allowMovement: true
     description: ghost-role-information-SyndiCat-description
     rules: ghost-role-information-SyndiCat-rules
+    raffle:
+      settings: default
   - type: GhostTakeoverAvailable
   - type: AutoImplant
     implants:
     - MicroBombImplant
+  - type: ExplosionResistance
+    damageCoefficient: 0.2
   - type: NpcFactionMember
     factions:
     - Syndicate
   - type: MeleeWeapon
+    altDisarm: false
+    angle: 0
+    animation: WeaponArcBite
+    soundHit:
+      path: /Audio/Effects/bite.ogg
     damage:
       types:
-        Piercing: 10
-        Structural: 10
-  - type: Insulated
-  - type: Tag
-    tags:
-      - DoorBumpOpener
-  - type: MovementAlwaysTouching
+        Slash: 6
+        Piercing: 6
+        Structural: 15
 
 - type: entity
   name: space cat
@@ -2803,7 +2877,13 @@
   - type: Temperature
     heatDamageThreshold: 423
     coldDamageThreshold: 0
+  - type: Tag
+    tags:
+      - DoorBumpOpener
+  - type: MovementAlwaysTouching
   - type: PressureImmunity
+  - type: StepTriggerImmune
+  - type: Insulated
   - type: InteractionPopup
     successChance: 0.7
     interactSuccessString: petting-success-space-cat
@@ -2999,6 +3079,7 @@
   - type: Speech
     speechVerb: SmallMob
     speechSounds: Squeak
+    allowedEmotes: ['Squeak']
   - type: Sprite
     drawdepth: SmallMobs
     sprite: Mobs/Animals/hamster.rsi
@@ -3015,6 +3096,8 @@
   - type: Item
     size: Tiny
   - type: Physics
+  - type: FaxableObject
+    insertingState: inserting_hamster
   - type: Fixtures
     fixtures:
       fix1:
