@@ -694,7 +694,6 @@ namespace Content.Server.Ghost.Roles
                 QueueDel(uid);
 
             args.TookRole = true;
-            ghostRole.PotentialTakeovers.Clear(); // Stories
         }
 
         private bool CanTakeGhost(EntityUid uid, GhostRoleComponent? component = null)
@@ -730,7 +729,6 @@ namespace Content.Server.Ghost.Roles
             UnregisterGhostRole((uid, ghostRole));
 
             args.TookRole = true;
-            ghostRole.PotentialTakeovers.Clear(); // Stories
         }
 
         private void OnVerb(EntityUid uid, GhostRoleMobSpawnerComponent component, GetVerbsEvent<Verb> args)

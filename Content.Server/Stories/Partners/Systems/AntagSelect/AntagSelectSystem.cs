@@ -20,6 +20,7 @@ using Robust.Shared.Console;
 using Content.Shared.Stories.Sponsor.AntagSelect;
 using Content.Server.Database;
 using Content.Server.Antag;
+using Content.Server.Stories.Shadowling;
 
 namespace Content.Server.Stories.Sponsor.AntagSelect;
 public sealed class AntagSelectSystem : EntitySystem
@@ -83,8 +84,6 @@ public sealed class AntagSelectSystem : EntitySystem
 
         var role = _random.Pick(spawners);
 
-        var ev = new AddPotentialTakeoverEvent(mind.Session);
-        RaiseLocalEvent(role, ref ev);
         var ev1 = new TakeGhostRoleEvent(mind.Session);
         RaiseLocalEvent(role, ref ev1);
         args.RoleTaken = true;
@@ -96,13 +95,8 @@ public sealed class AntagSelectSystem : EntitySystem
     }
     private void OnShadowling(MakeShadowlingEvent args)
     {
-        // var comp = EntityQuery<ShadowlingRuleComponent>().FirstOrDefault();
-        // if (comp == null)
-        // {
-        //     GameTicker.StartGameRule("Shadowling", out var ruleEntity);
-        //     comp = Comp<ShadowlingRuleComponent>(ruleEntity);
-        // }
-        // _shadowlingRule.GiveShadowling(args.EntityUid, comp);
+        EnsureComp<ShadowlingComponent>(args.EntityUid); // FIXME: upstream hardcode
+
         args.RoleTaken = true;
     }
     private void OnThief(MakeThiefEvent args)
