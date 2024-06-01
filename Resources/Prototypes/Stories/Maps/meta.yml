@@ -1,6 +1,6 @@
 - type: gameMap
   id: StoriesMeta
-  mapName: '[КТ] Meta Station'
+  mapName: 'Meta Station'
   mapPath: /Maps/Stories/meta.yml
   minPlayers: 50
   stations:
@@ -50,7 +50,7 @@
             SecurityOfficer: [ 5, 7 ]
             Detective: [ 1, 1 ]
             SecurityCadet: [ 3, 6 ]
-            #Lawyer: [ 2, 2 ]
+            IAA: [ 1, 1 ]
             #supply
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 3, 3 ]
@@ -60,14 +60,5 @@
             Clown: [ 1, 1 ]
             Mime: [ 1, 1 ]
             Musician: [ 1, 1 ]
-            #stories
-            IAA: [ 1, 1 ]
+            #stories content
             JediNt: [ 1, 1 ]
-            SeniorEngineer: [ 1, 1 ]
-            SeniorPhysician: [ 1, 1 ]
-            SeniorResearcher: [ 1, 1 ]
-            SeniorOfficer: [ 1, 1 ]
-            HeadOfSpacePrison: [ 1, 1 ]
-            SpacePrisonOfficer: [ 3, 3 ]
-            SpacePrisonEngineer: [ 2, 2 ]
-            SpacePrisonMedic: [ 1, 1 ]
