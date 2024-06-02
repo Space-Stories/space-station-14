@@ -243,7 +243,6 @@
   - type: Conversionable # SPACE STORIES
     allowed:
     - HypnotizedEmpire
-  - type: Flashable
   - type: Barotrauma
     damage:
       types:

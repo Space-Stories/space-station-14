@@ -290,7 +290,7 @@ public sealed class BanManager : IBanManager, IPostInjectInit
         return $"Pardoned ban with id {banId}";
     }
 
-    public async void WebhookUpdateRoleBans(NetUserId? target, string? targetUsername, NetUserId? banningAdmin, (IPAddress, int)? addressRange, ImmutableArray<byte>? hwid, IReadOnlyCollection<string> roles, uint? minutes, NoteSeverity severity, string reason, DateTimeOffset timeOfBan)
+    public async void WebhookUpdateRoleBans(NetUserId? target, string? targetUsername, NetUserId? banningAdmin, (IPAddress, int)? addressRange, ImmutableArray<byte>? hwid, string role, uint? minutes, NoteSeverity severity, string reason, DateTimeOffset timeOfBan)
     {
         _systems.TryGetEntitySystem(out GameTicker? ticker);
         int? roundId = ticker == null || ticker.RoundId == 0 ? null : ticker.RoundId;
@@ -317,7 +317,7 @@ public sealed class BanManager : IBanManager, IPostInjectInit
             null,
             "plug");
 
-        SendWebhook(await GenerateJobBanPayload(banDef, roles, minutes));
+        SendWebhook(await GenerateJobBanPayload(banDef, role, minutes));
     }
     public HashSet<ProtoId<JobPrototype>>? GetJobBans(NetUserId playerUserId)
     {
@@ -342,12 +342,7 @@ public sealed class BanManager : IBanManager, IPostInjectInit
 
     public void SendRoleBans(ICommonSession pSession)
     {
-        if (!_cachedRoleBans.TryGetValue(pSession.UserId, out var roleBans))
-        {
-            _sawmill.Error($"Tried to send rolebans for {pSession.Name} but none cached?");
-            return;
-        }
-
+        var roleBans = _cachedRoleBans.GetValueOrDefault(pSession.UserId) ?? new HashSet<ServerRoleBanDef>();
         var bans = new MsgRoleBans()
         {
             Bans = roleBans.Select(o => o.Role).ToList()
@@ -384,7 +379,7 @@ public sealed class BanManager : IBanManager, IPostInjectInit
             return;
         }
     }
-    private async Task<WebhookPayload> GenerateJobBanPayload(ServerRoleBanDef banDef, IReadOnlyCollection<string> roles, uint? minutes = null)
+    private async Task<WebhookPayload> GenerateJobBanPayload(ServerRoleBanDef banDef, string roles, uint? minutes = null)
     {
         var hwidString = banDef.HWId != null
 ? string.Concat(banDef.HWId.Value.Select(x => x.ToString("x2")))

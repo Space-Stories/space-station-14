@@ -1,3 +1,4 @@
+using System.Numerics;
 using Content.Server.GameTicking;
 using Content.Server.GameTicking.Events;
 using Content.Server.Shuttles.Components;
@@ -73,7 +74,7 @@ public sealed class RepeatedArrivalsSystem : EntitySystem
         foreach (var (ent, xform) in toDump)
         {
             var rotation = xform.LocalRotation;
-            _transform.SetCoordinates(ent, new EntityCoordinates(args.FromMapUid!.Value, args.FTLFrom.Transform(xform.LocalPosition)));
+            _transform.SetCoordinates(ent, new EntityCoordinates(args.FromMapUid!.Value, Vector2.Transform(xform.LocalPosition, args.FTLFrom)));
             _transform.SetWorldRotation(ent, args.FromRotation + rotation);
         }
     }
