@@ -4,7 +4,9 @@ using Content.Server.Administration.Managers;
 using Content.Server.Afk;
 using Content.Server.Afk.Events;
 using Content.Server.GameTicking;
+using Content.Server.GameTicking.Events;
 using Content.Server.Mind;
+using Content.Server.Station.Events;
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
 using Content.Shared.Mobs;
@@ -52,6 +54,9 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
         SubscribeLocalEvent<UnAFKEvent>(OnUnAFK);
         SubscribeLocalEvent<MobStateChangedEvent>(OnMobStateChanged);
         SubscribeLocalEvent<PlayerJoinedLobbyEvent>(OnPlayerJoinedLobby);
+        SubscribeLocalEvent<StationJobsGetCandidatesEvent>(OnStationJobsGetCandidates);
+        SubscribeLocalEvent<IsJobAllowedEvent>(OnIsJobAllowed);
+        SubscribeLocalEvent<GetDisallowedJobsEvent>(OnGetDisallowedJobs);
         _adminManager.OnPermsChanged += AdminPermsChanged;
     }
 
@@ -176,6 +181,22 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
         _tracking.QueueSendTimers(ev.PlayerSession);
     }
 
+    private void OnStationJobsGetCandidates(ref StationJobsGetCandidatesEvent ev)
+    {
+        RemoveDisallowedJobs(ev.Player, ev.Jobs);
+    }
+
+    private void OnIsJobAllowed(ref IsJobAllowedEvent ev)
+    {
+        if (!IsAllowed(ev.Player, ev.JobId))
+            ev.Cancelled = true;
+    }
+
+    private void OnGetDisallowedJobs(ref GetDisallowedJobsEvent ev)
+    {
+        ev.Jobs.UnionWith(GetDisallowedJobs(ev.Player));
+    }
+
     public bool IsAllowed(ICommonSession player, string role)
     {
         _sponsors.TryGetInfo(player.UserId, out var sponsorData);
@@ -195,12 +216,12 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
         return JobRequirements.TryRequirementsMet(job, playTimes, out _, EntityManager, _prototypes);
     }
 
-    public HashSet<string> GetDisallowedJobs(ICommonSession player)
+    public HashSet<ProtoId<JobPrototype>> GetDisallowedJobs(ICommonSession player)
     {
         _sponsors.TryGetInfo(player.UserId, out var sponsorData);
 
-        var roles = new HashSet<string>();
-        if (!_cfg.GetCVar(CCVars.GameRoleTimers) ||
+        var roles = new HashSet<ProtoId<JobPrototype>>();
+        if (!_cfg.GetCVar(CCVars.GameRoleTimers)) ||
             sponsorData?.RoleTimeBypass == true)
             return roles;
 
@@ -230,7 +251,7 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
         return roles;
     }
 
-    public void RemoveDisallowedJobs(NetUserId userId, ref List<string> jobs)
+    public void RemoveDisallowedJobs(NetUserId userId, List<ProtoId<JobPrototype>> jobs)
     {
         _sponsors.TryGetInfo(userId, out var sponsorData);
 
@@ -250,7 +271,7 @@ public sealed class PlayTimeTrackingSystem : EntitySystem
         {
             var job = jobs[i];
 
-            if (!_prototypes.TryIndex<JobPrototype>(job, out var jobber) ||
+            if (!_prototypes.TryIndex(job, out var jobber) ||
                 jobber.Requirements == null ||
                 jobber.Requirements.Count == 0)
                 continue;
