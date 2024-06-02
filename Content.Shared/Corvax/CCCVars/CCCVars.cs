@@ -17,7 +17,7 @@ public sealed class CCCVars
     /// URL of the TTS server API.
     /// </summary>
     public static readonly CVarDef<bool> TTSEnabled =
-        CVarDef.Create("tts.enabled", false, CVar.ARCHIVE);
+        CVarDef.Create("tts.enabled", false, CVar.SERVER | CVar.REPLICATED | CVar.ARCHIVE);
 
     /// <summary>
     /// URL of the TTS server API.

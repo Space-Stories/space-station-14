@@ -39,7 +39,7 @@
     gloves: ClothingHandsGlovesCombat
     ears: ClothingHeadsetPrison
     belt: ClothingBeltSecurityFilled
-    pocket1: WeaponPistolMk58Nonlethal
+    pocket1: WeaponPistolMk58
   innerclothingskirt: ClothingUniformJumpskirtSP
   satchel: ClothingBackpackSatchelSpacePrisonFilled
   duffelbag: ClothingBackpackDuffelSpacePrisonFilled
