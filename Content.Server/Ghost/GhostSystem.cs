@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Numerics;
+using Content.Server.Database;
 using Content.Server.GameTicking;
 using Content.Server.Ghost.Components;
 using Content.Server.Mind;
@@ -30,6 +31,7 @@ namespace Content.Server.Ghost
     public sealed class GhostSystem : SharedGhostSystem
     {
         [Dependency] private readonly SharedActionsSystem _actions = default!;
+        [Dependency] private readonly IPartnersManager _partners = default!;
         [Dependency] private readonly SharedEyeSystem _eye = default!;
         [Dependency] private readonly FollowerSystem _followerSystem = default!;
         [Dependency] private readonly IGameTiming _gameTiming = default!;
@@ -448,7 +450,10 @@ namespace Content.Server.Ghost
                 return null;
             }
 
-            var ghost = SpawnAtPosition(GameTicker.ObserverPrototypeName, spawnPosition.Value);
+            _partners.TryGetInfo(mind.Comp.UserId, out var sponsorInfo); // STORIES - start
+            var proto = sponsorInfo == null || sponsorInfo.GhostSkin == null ? GameTicker.ObserverPrototypeName : sponsorInfo.GhostSkin;
+
+            var ghost = SpawnAtPosition(proto, spawnPosition.Value); // STORIES - end
             var ghostComponent = Comp<GhostComponent>(ghost);
 
             // Try setting the ghost entity name to either the character name or the player name.

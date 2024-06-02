@@ -13,7 +13,7 @@ namespace Content.Server.Database;
 public interface IPartnersManager
 {
     void Init();
-    bool TryGetInfo(NetUserId userId, [NotNullWhen(true)] out DbSponsorInfo? sponsor);
+    bool TryGetInfo(NetUserId? userId, [NotNullWhen(true)] out DbSponsorInfo? sponsor);
     void SetAntagPicked(NetUserId userId);
 }
 public sealed class PartnersManager : IPartnersManager
@@ -29,18 +29,21 @@ public sealed class PartnersManager : IPartnersManager
         using NpgsqlCommand cmd = new NpgsqlCommand($"""UPDATE partners SET "last_day_taking_antag" = {DateTime.Now.DayOfYear} WHERE partners.net_id = '{userId.UserId.ToString()}'""", _db);
         using NpgsqlDataReader reader = cmd.ExecuteReader();
     }
-    public bool TryGetInfo(NetUserId userId, [NotNullWhen(true)] out DbSponsorInfo? sponsor)
+    public bool TryGetInfo(NetUserId? userId, [NotNullWhen(true)] out DbSponsorInfo? sponsor)
     {
         // Init();
 
         sponsor = null;
+
+        if (userId == null)
+            return false;
 
         if (_db.FullState == System.Data.ConnectionState.Closed || _db.FullState == System.Data.ConnectionState.Broken)
             return false;
 
         try
         {
-            using NpgsqlCommand cmd = new NpgsqlCommand($"""SELECT * FROM partners WHERE partners.net_id = '{userId.UserId.ToString()}'""", _db);
+            using NpgsqlCommand cmd = new NpgsqlCommand($"""SELECT * FROM partners WHERE partners.net_id = '{userId.Value.UserId.ToString()}'""", _db);
             using NpgsqlDataReader reader = cmd.ExecuteReader();
 
             while (reader.Read())
