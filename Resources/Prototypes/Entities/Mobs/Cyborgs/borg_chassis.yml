@@ -3,7 +3,7 @@
   parent: BaseBorgChassisNT
   components:
   - type: TTS # Stories-TTS
-    voice: TrainingRobot
+    voice: glados
   - type: Sprite
     layers:
     - state: robot

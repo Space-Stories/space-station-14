@@ -81,7 +81,7 @@
   - type: Machine
     board: HydroponicsTrayMachineCircuitboard
   - type: TTS # Stories-TTS
-    voice: TrainingRobot
+    voice: glados
   - type: WiresPanel
   - type: AmbientSound
     volume: -9

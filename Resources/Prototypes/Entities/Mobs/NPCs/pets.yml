@@ -760,7 +760,7 @@
       proper: true
       gender: female
   - type: TTS # Stories-TTS
-    voice: Dryad
+    voice: charlotte
 
 - type: entity
   name: Pun Pun

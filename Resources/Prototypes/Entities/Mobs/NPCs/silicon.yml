@@ -4,7 +4,7 @@
   id: MobSiliconBase
   components:
   - type: TTS # Stories-TTS
-    voice: Robold
+    voice: glados
   - type: LagCompensation
   - type: Reactive
     groups:

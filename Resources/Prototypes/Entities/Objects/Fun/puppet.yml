@@ -19,7 +19,7 @@
   - type: TypingIndicator
     proto: robot
   - type: TTS # Stories-TTS
-    voice: Meepo
+    voice: papich
   - type: Actions
   - type: MobState
     allowedStates:
@@ -43,4 +43,4 @@
     layers:
     - state: icon
   - type: TTS # Stories-TTS
-    voice: Zibb
+    voice: papich

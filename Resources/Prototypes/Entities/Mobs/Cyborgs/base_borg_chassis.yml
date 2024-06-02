@@ -213,7 +213,7 @@
     - CanPilot
   - type: Emoting
   - type: TTS # Stories-TTS
-    voice: TrainingRobot
+    voice: glados
   - type: GuideHelp
     guides:
       - Cyborgs

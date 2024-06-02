@@ -41,7 +41,7 @@
   - type: NoSlip
   - type: Actions
   - type: TTS # Stories-TTS
-    voice: Kelthuzad
+    voice: papich
   - type: Eye
     drawFov: false
     visMask:

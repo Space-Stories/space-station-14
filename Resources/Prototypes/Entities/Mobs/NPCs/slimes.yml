@@ -6,7 +6,7 @@
   description: It looks so much like jelly. I wonder what it tastes like?
   components:
   - type: TTS # Stories-TTS
-    voice: Chen
+    voice: charlotte
   - type: Sprite
     drawdepth: Mobs
     sprite: Mobs/Aliens/slimes.rsi

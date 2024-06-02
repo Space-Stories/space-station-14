@@ -55,7 +55,7 @@
   - type: TypingIndicator
     proto: robot
   - type: TTS # Stories-TTS
-    voice: TrainingRobot
+    voice: glados
   - type: Speech
     speechVerb: Robotic
     speechSounds: Pai
