@@ -57,7 +57,6 @@
   id: ActionGhostBoo
   name: Boo!
   description: Scare your crew members because of boredom!
-  noSpawn: true
   components:
   - type: InstantAction
     icon: Interface/Actions/scream.png
@@ -69,7 +68,6 @@
   id: ActionToggleLighting
   name: Toggle All Lighting
   description: Toggle all light rendering to better observe dark areas.
-  noSpawn: true
   components:
   - type: InstantAction
     icon: Interface/VerbIcons/light.svg.192dpi.png
@@ -81,7 +79,6 @@
   id: ActionToggleFov
   name: Toggle FoV
   description: Toggles field-of-view in order to see what players see.
-  noSpawn: true
   components:
   - type: InstantAction
     icon: Interface/VerbIcons/vv.svg.192dpi.png
@@ -93,7 +90,6 @@
   id: ActionToggleGhosts
   name: Toggle Ghosts
   description: Toggle the visibility of other ghosts.
-  noSpawn: true
   components:
   - type: InstantAction
     icon: { sprite: Mobs/Ghosts/ghost_human.rsi, state: icon }
@@ -105,7 +101,6 @@
   id: ActionToggleGhostHearing
   name: Toggle Ghost Hearing
   description: Toggle between hearing all messages and hearing only radio & nearby messages.
-  noSpawn: true
   components:
   - type: InstantAction
     checkCanInteract: false

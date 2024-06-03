@@ -84,7 +84,6 @@
       0: Alive
       60: Critical
       120: Dead
-  - type: Flashable
   - type: Blindable
   - type: RotationVisuals
     defaultRotation: 90

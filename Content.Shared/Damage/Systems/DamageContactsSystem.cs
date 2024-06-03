@@ -1,4 +1,5 @@
 using Content.Shared.Damage.Components;
+using Content.Shared.Whitelist;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
@@ -15,6 +16,7 @@ public sealed class DamageContactsSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
+    [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
 
     public override void Initialize()
@@ -67,6 +69,9 @@ public sealed class DamageContactsSystem : EntitySystem
         var otherUid = args.OtherEntity;
 
         if (HasComp<DamagedByContactComponent>(otherUid))
+            return;
+
+        if (_whitelistSystem.IsWhitelistFail(component.IgnoreWhitelist, otherUid))
             return;
 
         if (!HasComp<TetheredComponent>(uid) && component.OnlyTethered) // SpaceStories

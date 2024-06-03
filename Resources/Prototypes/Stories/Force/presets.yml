@@ -15,8 +15,6 @@
     - ForceDark
     currencyWhitelist:
     - SkillPoint
-  componentsToRemove:
-  - Flashable
 
 - type: forcePreset
   id: Inquisitor
@@ -45,7 +43,6 @@
     currencyWhitelist:
     - SkillPoint
   componentsToRemove:
-  - Flashable
   - Strippable
 
 - type: forcePreset
