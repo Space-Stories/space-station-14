@@ -101,6 +101,15 @@ public sealed class JobRequirementsManager : ISharedPlaytimeManager
             return false;
         }
 
+        _sponsors.TryGetInfo(out var sponsorData);
+
+        if (job.Requirements == null ||
+            !_cfg.GetCVar(CCVars.GameRoleTimers) ||
+            sponsorData?.RoleTimeBypass == true)
+        {
+            return true;
+        }
+
         if (!CheckWhitelist(job, out reason))
             return false;
 
