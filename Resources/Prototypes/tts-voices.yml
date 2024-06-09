@@ -79,8 +79,8 @@
   name: Добакин
   description: Голос начинающего диктора Добакина
   sex: Male
-  speaker: dbkn2
-  id: dbkn2
+  speaker: dbkn
+  id: dbkn
 
 - type: ttsVoice
   name: Хреноид
