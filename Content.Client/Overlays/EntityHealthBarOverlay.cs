@@ -1,4 +1,3 @@
-using Content.Client.StatusIcon;
 using System.Numerics;
 using Content.Client.StatusIcon;
 using Content.Client.UserInterface.Systems;
@@ -45,7 +44,6 @@ public sealed class EntityHealthBarOverlay : Overlay
         _mobThresholdSystem = _entManager.System<MobThresholdSystem>();
         _statusIconSystem = _entManager.System<StatusIconSystem>();
         _progressColor = _entManager.System<ProgressColorSystem>();
-        _statusIcon = _entManager.System<StatusIconSystem>();
     }
 
     protected override void Draw(in OverlayDrawArgs args)

@@ -103,8 +103,7 @@ public sealed class JobRequirementsManager : ISharedPlaytimeManager
 
         _sponsors.TryGetInfo(out var sponsorData);
 
-        if (job.Requirements == null ||
-            !_cfg.GetCVar(CCVars.GameRoleTimers) ||
+        if (!_cfg.GetCVar(CCVars.GameRoleTimers) ||
             sponsorData?.RoleTimeBypass == true)
         {
             return true;

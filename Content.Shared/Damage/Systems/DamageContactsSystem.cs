@@ -77,13 +77,11 @@ public sealed class DamageContactsSystem : EntitySystem
         if (!HasComp<TetheredComponent>(uid) && component.OnlyTethered) // SpaceStories
             return;
 
-        if (component.IgnoreWhitelist?.IsValid(otherUid) ?? false)
-            return;
-
         var damagedByContact = EnsureComp<DamagedByContactComponent>(otherUid);
         damagedByContact.Damage = component.Damage;
         if (component.HitSound != null) _audio.PlayPredicted(component.HitSound, uid, otherUid);
     }
+
     private void OnItemToggle(EntityUid uid, ItemToggleDamageContactsComponent itemToggleMelee, ItemToggledEvent args)
     {
         if (!TryComp(uid, out DamageContactsComponent? meleeWeapon))

@@ -1,6 +1,7 @@
 ﻿<Control xmlns="https://spacestation14.io"
          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-         xmlns:ui="clr-namespace:Content.Client.Options.UI">
+         xmlns:ui="clr-namespace:Content.Client.Options.UI"
+         xmlns:s="clr-namespace:Content.Client.Stylesheets">
     <BoxContainer Orientation="Vertical">
         <BoxContainer Orientation="Vertical" Margin="8 8 8 8" VerticalExpand="True">
             <Label Text="{Loc 'ui-options-volume-label'}"
@@ -13,6 +14,7 @@
                 <ui:OptionSlider Name="SliderVolumeAmbience" Title="{Loc 'ui-options-ambience-volume'}" />
                 <ui:OptionSlider Name="SliderVolumeLobby" Title="{Loc 'ui-options-lobby-volume'}" />
                 <ui:OptionSlider Name="SliderVolumeInterface" Title="{Loc 'ui-options-interface-volume'}" />
+                <ui:OptionSlider Name="SliderVolumeTtsVolume" Title="{Loc 'ui-options-tts-volume'}" /> <!-- Stories-TTS -->
                 <ui:OptionSlider Name="SliderMaxAmbienceSounds" Title="{Loc 'ui-options-ambience-max-sounds'}"
                                  Margin="0 0 0 8" />
                 <CheckBox Name="LobbyMusicCheckBox" Text="{Loc 'ui-options-lobby-music'}" />

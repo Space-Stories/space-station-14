@@ -48,7 +48,6 @@
       nameSegments:
         - NamesFirstMilitaryLeader
         - NamesLastMilitary
-    - type: InitialInfectedExempt
     - type: WeaponrySkill
 
 ## ERT Leader
@@ -85,7 +84,6 @@
       nameSegments:
       - NamesFirstMilitaryLeader
       - NamesLastMilitary
-    - type: InitialInfectedExempt
     - type: WeaponrySkill
 
 - type: entity
@@ -112,7 +110,6 @@
         settings: short
     - type: Loadout
       prototypes: [ ERTLeaderGearEVA ]
-    - type: InitialInfectedExempt
     - type: WeaponrySkill
 
 - type: entity
@@ -135,7 +132,6 @@
         settings: short
     - type: Loadout
       prototypes: [ ERTLeaderGearEVALecter ]
-    - type: InitialInfectedExempt
     - type: WeaponrySkill
 
 ## ERT Chaplain
@@ -232,7 +228,6 @@
       - NamesLastMilitary
     - type: Loadout
       prototypes: [ ERTJanitorGear ]
-    - type: InitialInfectedExempt
     - type: WeaponrySkill
 
 - type: entity
@@ -259,7 +254,6 @@
         settings: short
     - type: Loadout
       prototypes: [ ERTJanitorGearEVA ]
-    - type: InitialInfectedExempt
     - type: WeaponrySkill
 
 ## ERT Engineer
@@ -296,7 +290,6 @@
       - NamesLastMilitary
     - type: Loadout
       prototypes: [ ERTEngineerGear ]
-    - type: InitialInfectedExempt
     - type: WeaponrySkill
 
 - type: entity
@@ -323,7 +316,6 @@
         settings: short
     - type: Loadout
       prototypes: [ ERTEngineerGearEVA ]
-    - type: InitialInfectedExempt
     - type: WeaponrySkill
 
 ## ERT Security
@@ -360,7 +352,6 @@
       - NamesLastMilitary
     - type: Loadout
       prototypes: [ ERTSecurityGear ]
-    - type: InitialInfectedExempt
     - type: WeaponrySkill
 
 - type: entity
@@ -387,7 +378,6 @@
         settings: short
     - type: Loadout
       prototypes: [ ERTSecurityGearEVA ]
-    - type: InitialInfectedExempt
     - type: WeaponrySkill
 
 - type: entity
@@ -410,7 +400,6 @@
         settings: short
     - type: Loadout
       prototypes: [ ERTSecurityGearEVALecter ]
-    - type: InitialInfectedExempt
     - type: WeaponrySkill
 
 ## ERT Medic
@@ -447,7 +436,6 @@
       - NamesLastMilitary
     - type: Loadout
       prototypes: [ ERTMedicalGear ]
-    - type: InitialInfectedExempt
     - type: WeaponrySkill
 
 - type: entity
@@ -474,7 +462,6 @@
         settings: short
     - type: Loadout
       prototypes: [ ERTMedicalGearEVA ]
-    - type: InitialInfectedExempt
     - type: WeaponrySkill
 
 ## CBURN
@@ -506,7 +493,6 @@
       nameSegments:
       - NamesFirstMilitary
       - NamesLastMilitary
-    - type: InitialInfectedExempt
     - type: WeaponrySkill
 
 ## Central Command
@@ -533,7 +519,6 @@
         settings: default
     - type: Loadout
       prototypes: [ CentcomGear ]
-    - type: InitialInfectedExempt
     - type: WeaponrySkill
 
 ## Syndicate

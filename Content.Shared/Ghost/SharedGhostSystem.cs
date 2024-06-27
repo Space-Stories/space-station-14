@@ -30,7 +30,7 @@ namespace Content.Shared.Ghost
                 return;
 
             if (!component.CanGhostInteract)
-                args.Cancel();
+                args.Cancelled = true;
         } // SPACE STORIES - end
 
         private void OnAttemptInteract(Entity<GhostComponent> ent, ref InteractionAttemptEvent args)
