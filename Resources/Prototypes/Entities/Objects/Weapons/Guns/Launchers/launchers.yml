@@ -362,7 +362,7 @@
     whitelist:
       tags:
         - CartridgeRocket
-    proto: MeteorLarge
+    proto: MeteorMedium
 
 - type: entity
   name: immovable rod launcher

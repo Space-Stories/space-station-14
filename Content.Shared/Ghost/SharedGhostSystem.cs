@@ -19,7 +19,7 @@ namespace Content.Shared.Ghost
         {
             base.Initialize();
             SubscribeLocalEvent<GhostComponent, UseAttemptEvent>(OnAttempt);
-            SubscribeLocalEvent<GhostComponent, InteractionAttemptEvent>(OnInt); // SPACE STORIES
+            SubscribeLocalEvent<GhostComponent, InteractionAttemptEvent>(OnAttemptInteract);
             SubscribeLocalEvent<GhostComponent, EmoteAttemptEvent>(OnAttempt);
             SubscribeLocalEvent<GhostComponent, DropAttemptEvent>(OnAttempt);
             SubscribeLocalEvent<GhostComponent, PickupAttemptEvent>(OnAttempt);
@@ -32,6 +32,12 @@ namespace Content.Shared.Ghost
             if (!component.CanGhostInteract)
                 args.Cancel();
         } // SPACE STORIES - end
+
+        private void OnAttemptInteract(Entity<GhostComponent> ent, ref InteractionAttemptEvent args)
+        {
+            if (!ent.Comp.CanGhostInteract)
+                args.Cancelled = true;
+        }
 
         private void OnAttempt(EntityUid uid, GhostComponent component, CancellableEntityEventArgs args)
         {

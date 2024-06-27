@@ -19,6 +19,7 @@ public sealed class StealthSystem : SharedStealthSystem
         base.Initialize();
 
         _shader = _protoMan.Index<ShaderPrototype>("Stealth").InstanceUnique();
+
         SubscribeLocalEvent<StealthComponent, ComponentShutdown>(OnShutdown);
         SubscribeLocalEvent<StealthComponent, ComponentStartup>(OnStartup);
         SubscribeLocalEvent<StealthComponent, BeforePostShaderRenderEvent>(OnShaderRender);
@@ -102,4 +103,3 @@ public sealed class StealthSystem : SharedStealthSystem
             args.Visible = false;
     }
 }
-
