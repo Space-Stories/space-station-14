@@ -190,6 +190,8 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
 
         var jobLoadout = LoadoutSystem.GetJobPrototype(prototype?.ID);
 
+        DoJobSpecials(job, entity.Value, false); // Stories (Нужно, чтобы стражу клинка выдались компоненты силы до одежды с мечом для привязки меча к нему)
+
         if (_prototypeManager.TryIndex(jobLoadout, out RoleLoadoutPrototype? roleProto))
         {
             RoleLoadout? loadout = null;
@@ -232,14 +234,14 @@ public sealed class StationSpawningSystem : SharedStationSpawningSystem
         return entity.Value;
     }
 
-    private void DoJobSpecials(JobComponent? job, EntityUid entity)
+    private void DoJobSpecials(JobComponent? job, EntityUid entity, bool equipped = true) // Stories
     {
         if (!_prototypeManager.TryIndex(job?.Prototype ?? string.Empty, out JobPrototype? prototype))
             return;
 
         foreach (var jobSpecial in prototype.Special)
         {
-            jobSpecial.AfterEquip(entity);
+            if (equipped) jobSpecial.AfterEquip(entity); else jobSpecial.BeforeEquip(entity); // Stories
         }
     }
 
