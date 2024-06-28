@@ -12,3 +12,6 @@
   equipment:
     id: PassengerPDA
     ears: ClothingHeadsetGrey
+  #storage:
+    #back:
+    #- Stuff

@@ -4,7 +4,6 @@ using Robust.Shared.Prototypes;
 using Robust.Client.Player;
 using Content.Shared.Ghost;
 using Content.Shared.SpaceStories.Empire.Components;
-using Content.Client.Antag;
 using Content.Shared.SpaceStories.Conversion;
 
 namespace Content.Client.SpaceStories.Empire;

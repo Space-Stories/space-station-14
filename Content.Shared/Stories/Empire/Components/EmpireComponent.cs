@@ -6,7 +6,7 @@ using Content.Shared.Antag;
 namespace Content.Shared.SpaceStories.Empire.Components;
 
 [RegisterComponent, NetworkedComponent]
-public sealed partial class EmpireComponent : Component, IAntagStatusIconComponent
+public sealed partial class EmpireComponent : Component
 {
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public ProtoId<StatusIconPrototype> StatusIcon { get; set; } = "EmpireFaction";
