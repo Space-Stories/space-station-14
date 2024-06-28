@@ -1,8 +1,0 @@
-- type: entity
-  parent: ClothingBackpackDuffel
-  id: ClothingBackpackDuffelSpacePrison
-  name: space prison officer's duffel bag
-  description: A large duffel bag for holding extra security related goods.
-  components:
-  - type: Sprite
-    sprite: Stories/Clothing/Back/Duffels/sp.rsi

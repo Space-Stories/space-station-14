@@ -1,0 +1,41 @@
+- type: job
+  id: PRISONOfficer
+  name: офицер тюрьмы
+  description: Ограждать станцию от преступного элемента - это ваша наивысшая миссия на смену, не подведите.
+  playTimeTracker: JobSpacePrisonOfficer
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 18000 # 5 hours
+  startingGear: PRISONOfficerGear
+  icon: "JobIconSpacePrisonOfficer"
+  supervisors: job-supervisors-hosp
+  canBeAntag: false
+  access:
+  - Prisoner
+  - Prison
+  - PrisonBrig
+  - Security
+  - Brig
+  - Maintenance
+  - External
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: PRISONOfficerGear
+  equipment:
+    jumpsuit: PRISONClothingUniformJumpsuit
+    # back: PRISONClothingBackpackFilled
+    shoes: PRISONClothingShoesBootsJack
+    # eyes: PRISONClothingEyesGlasses
+    head: PRISONClothingHeadHatSoft
+    # outerClothing: PRISONClothingOuterVestArmor
+    id: PRISONPDAOfficer
+    # gloves: ClothingHandsGlovesColorBlack
+    ears: PRISONClothingHeadset
+    # belt: ClothingBeltSecurityFilled
+    # pocket1: WeaponPistolMk58
+  # satchel: PRISONClothingBackpackSatchelFilled
+  # duffelbag: PRISONClothingBackpackDuffelFilled

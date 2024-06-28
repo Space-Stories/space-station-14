@@ -50,8 +50,8 @@
     gloves: ClothingHandsGlovesCombat
     neck: ClothingNeckMantleJediNt
   # innerclothingskirt: ClothingUniformJumpskirtSP
-  # satchel: ClothingBackpackSatchelSpacePrisonFilled
-  # duffelbag: ClothingBackpackDuffelSpacePrisonFilled
+  # satchel: PRISONClothingBackpackSatchelFilled
+  # duffelbag: PRISONClothingBackpackDuffelFilled
 
 - type: startingGear
   id: JediGear
@@ -68,5 +68,5 @@
     # gloves: ClothingHandsGlovesCombat
     # neck: ClothingNeckMantleJediNt
   # innerclothingskirt: ClothingUniformJumpskirtSP
-  # satchel: ClothingBackpackSatchelSpacePrisonFilled
-  # duffelbag: ClothingBackpackDuffelSpacePrisonFilled
+  # satchel: PRISONClothingBackpackSatchelFilled
+  # duffelbag: PRISONClothingBackpackDuffelFilled

@@ -1,1 +1,1 @@
-job-supervisors-hosp = главе космической тюрьмы
+job-supervisors-hosp = главе тюрьмы
