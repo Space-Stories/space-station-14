@@ -1,5 +1,5 @@
+using Content.Shared.Coordinates;
 using Content.Shared.Hands;
-using Content.Shared.Projectiles;
 using Content.Shared.Stories.Weapons.Ranged.WeaponrySkill.Components;
 using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Weapons.Ranged.Systems;
@@ -15,9 +15,6 @@ public abstract class SharedWeaponrySkillSystem : EntitySystem
 
         SubscribeLocalEvent<RequiresWeaponrySkillComponent, GotEquippedHandEvent>(OnEquip);
         SubscribeLocalEvent<RequiresWeaponrySkillComponent, GotUnequippedHandEvent>(OnUnequip);
-
-        SubscribeLocalEvent<RequiresWeaponrySkillComponent, GunShotEvent>(OnShot);
-        SubscribeLocalEvent<BulletTrainerComponent, ProjectileHitEvent>(OnBulletHit);
 
         SubscribeLocalEvent<RequiresWeaponrySkillComponent, GunRefreshModifiersEvent>(OnGunRefresh);
 
@@ -45,7 +42,7 @@ public abstract class SharedWeaponrySkillSystem : EntitySystem
         if (!component.Enabled)
             return;
 
-        if (TryComp<WeaponrySkillComponent>(component.WeaponEquipee, out var weaponryComp) && weaponryComp.SkillObtained)
+        if (HasComp<WeaponrySkillComponent>(component.WeaponEquipee))
             return;
 
         args.MinAngle += component.AdditionalMinAngle;
@@ -54,41 +51,5 @@ public abstract class SharedWeaponrySkillSystem : EntitySystem
         args.MaxAngle += component.AdditionalMaxAngle;
         args.FireRate *= component.FireSpeedModifier;
 
-    }
-
-    private void OnShot(EntityUid uid, RequiresWeaponrySkillComponent component, GunShotEvent args)
-    {
-        EntityUid shooter = args.User;
-        TryTraining(component.GivenPoints, uid, shooter);
-    }
-
-    private void OnBulletHit(EntityUid uid, BulletTrainerComponent component, ProjectileHitEvent args)
-    {
-        EntityUid shooter = args.Shooter!.Value;
-        TryTraining(component.GivenPoints, null, shooter);
-    }
-
-    private void TryTraining(float pointsGiven, EntityUid? weapon, EntityUid shooter)
-    {
-        // Checking if shooter have skill
-        if (!HasComp<WeaponrySkillComponent>(shooter))
-        {
-            EnsureComp<WeaponrySkillComponent>(shooter, out var shootComp);
-            shootComp.SkillObtained = false;
-        }
-
-        if (!TryComp<WeaponrySkillComponent>(shooter, out var trainComp) || trainComp.SkillObtained)
-            return;
-
-        // Adding training points after shoot
-        trainComp.PointsCount += pointsGiven;
-
-        // Stop training and weaponry skill
-        if (trainComp.PointsCount >= trainComp.PointsRequired)
-        {
-            trainComp.SkillObtained = true;
-            if (weapon.HasValue)
-                _gunSystem.RefreshModifiers(weapon.Value);
-        }
-    }
+    }  
 }

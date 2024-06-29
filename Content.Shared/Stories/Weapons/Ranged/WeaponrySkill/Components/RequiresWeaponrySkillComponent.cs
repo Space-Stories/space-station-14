@@ -24,15 +24,11 @@ public sealed partial class RequiresWeaponrySkillComponent : Component
 
     // Degree decaying per second
     [ViewVariables(VVAccess.ReadWrite), DataField("angleDecay"), AutoNetworkedField]
-    public Angle AngleDecay = Angle.FromDegrees(5);
+    public Angle AngleDecay = Angle.FromDegrees(6);
 
     // Firerate decrease
     [ViewVariables(VVAccess.ReadWrite), DataField("fireSpeedModifier"), AutoNetworkedField]
     public float FireSpeedModifier = 0.7f;
-
-    // How many points this weapon gives
-    [ViewVariables(VVAccess.ReadWrite), DataField("givenPoints")]
-    public float GivenPoints = 0.4f;
 
     // if enabled
     [ViewVariables(VVAccess.ReadWrite), DataField("enabled")]
