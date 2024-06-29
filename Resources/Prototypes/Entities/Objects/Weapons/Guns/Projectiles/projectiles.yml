@@ -103,7 +103,6 @@
     damage:
       types:
         Blunt: 1
-  - type: BulletTrainer
 
 - type: entity
   id: BaseBulletIncendiary

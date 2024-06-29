@@ -49,8 +49,7 @@
       gun_chamber: !type:ContainerSlot
   - type: StaticPrice
     price: 500
-  - type: RequiresWeaponrySkill
-  
+
 - type: entity
   name: AKMS
   parent: BaseWeaponRifle

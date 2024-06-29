@@ -318,7 +318,6 @@
           visible: false
     - type: PointLight
       color: "#dd200b"
-    - type: WeaponrySkill
     - type: BorgChassis
       maxModules: 3
       moduleWhitelist:

@@ -19,8 +19,7 @@
     containers:
       ballistic-ammo: !type:Container
         ents: []
-  - type: RequiresWeaponrySkill
-  
+
 - type: entity
   name: china lake
   parent: [BaseWeaponLauncher, BaseGunWieldable]

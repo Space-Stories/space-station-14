@@ -61,8 +61,7 @@
     price: 500
   - type: UseDelay
     delay: 1
-  - type: RequiresWeaponrySkill
-  
+
 - type: entity
   name: L6 SAW
   id: WeaponLightMachineGunL6
