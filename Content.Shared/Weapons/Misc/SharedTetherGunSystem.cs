@@ -153,6 +153,9 @@ public abstract partial class SharedTetherGunSystem : EntitySystem
 
     private void OnTetherActivate(EntityUid uid, TetherGunComponent component, ActivateInWorldEvent args)
     {
+        if (!args.Complex)
+            return;
+
         StopTether(uid, component);
     }
 
@@ -226,7 +229,7 @@ public abstract partial class SharedTetherGunSystem : EntitySystem
         _blocker.UpdateCanMove(target);
 
         // Invisible tether entity
-        var tether = Spawn("TetherEntity", Transform(target).MapPosition);
+        var tether = Spawn("TetherEntity", TransformSystem.GetMapCoordinates(target));
         var tetherPhysics = Comp<PhysicsComponent>(tether);
         component.TetherEntity = tether;
         _physics.WakeBody(tether);

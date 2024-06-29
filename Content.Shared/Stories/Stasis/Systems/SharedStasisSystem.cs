@@ -46,7 +46,7 @@ public abstract class SharedStasisSystem : EntitySystem
         SubscribeLocalEvent<InStasisComponent, UpdateCanMoveEvent>(OnMoveAttempt);
         SubscribeLocalEvent<InStasisComponent, StandAttemptEvent>(OnAttempt);
         SubscribeLocalEvent<InStasisComponent, DownAttemptEvent>(OnAttempt);
-        SubscribeLocalEvent<InStasisComponent, InteractionAttemptEvent>(OnAttempt);
+        SubscribeLocalEvent<InStasisComponent, InteractionAttemptEvent>(OnInteractAttempt);
         SubscribeLocalEvent<InStasisComponent, UseAttemptEvent>(OnAttempt);
         SubscribeLocalEvent<InStasisComponent, ThrowAttemptEvent>(OnAttempt);
         SubscribeLocalEvent<InStasisComponent, DropAttemptEvent>(OnAttempt);
@@ -65,6 +65,11 @@ public abstract class SharedStasisSystem : EntitySystem
 
         SubscribeLocalEvent<StasisStorageComponent, ContainerIsInsertingAttemptEvent>(OnContained);
         SubscribeLocalEvent<StasisStorageComponent, ContainerIsRemovingAttemptEvent>(OnContainRemoved);
+    }
+
+    private void OnInteractAttempt(EntityUid uid, InStasisComponent stasised, InteractionAttemptEvent args)
+    {
+        args.Cancelled = true;
     }
 
     private void OnStasisAdded(EntityUid uid, InStasisComponent stasised, EntityEventArgs args)
@@ -94,7 +99,7 @@ public abstract class SharedStasisSystem : EntitySystem
         if (HasComp<StasisImmunityComponent>(args.Uid))
             return;
 
-        args.Cancel();
+        args.Cancelled = true;
     }
 
     private void OnMoveAttempt(EntityUid uid, InStasisComponent component, UpdateCanMoveEvent args)

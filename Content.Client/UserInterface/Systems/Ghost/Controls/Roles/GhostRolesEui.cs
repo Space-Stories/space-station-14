@@ -20,23 +20,28 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles
         {
             _window = new GhostRolesWindow();
 
-            _window.OnRoleRequested += info =>
+            _window.OnRoleRequestButtonClicked += info =>
             {
-                if (_windowRules != null)
-                    _windowRules.Close();
-                _windowRules = new GhostRoleRulesWindow(info.Rules, // SPACE STORIES - start
-                () =>
+                _windowRules?.Close();
+
+                if (info.Kind == GhostRoleKind.RaffleJoined)
                 {
-                    SendMessage(new GhostRoleAddRequestMessage(info.Identifier));
+                    SendMessage(new LeaveGhostRoleRaffleMessage(info.Identifier));
+                    return;
+                }
+
+                _windowRules = new GhostRoleRulesWindow(info.Rules, _ =>
+                {
+                    SendMessage(new RequestGhostRoleMessage(info.Identifier));
+
+                    // if raffle role, close rules window on request, otherwise do
+                    // old behavior of waiting for the server to close it
+                    if (info.Kind != GhostRoleKind.FirstComeFirstServe)
+                        _windowRules?.Close();
                 });
-                _windowRules.TimeOver += () =>
-                {
-                    SendMessage(new GhostRoleTakeoverRequestMessage(info.Identifier));
-                };
                 _windowRulesId = info.Identifier;
                 _windowRules.OnClose += () =>
                 {
-                    SendMessage(new GhostRoleRemoveRequestMessage(info.Identifier));  // SPACE STORIES - end
                     _windowRules = null;
                 };
                 _windowRules.OpenCentered();
@@ -44,7 +49,7 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles
 
             _window.OnRoleFollow += info =>
             {
-                SendMessage(new GhostRoleFollowRequestMessage(info.Identifier));
+                SendMessage(new FollowGhostRoleMessage(info.Identifier));
             };
 
             _window.OnClose += () =>
@@ -70,7 +75,8 @@ namespace Content.Client.UserInterface.Systems.Ghost.Controls.Roles
         {
             base.HandleState(state);
 
-            if (state is not GhostRolesEuiState ghostState) return;
+            if (state is not GhostRolesEuiState ghostState)
+                return;
             _window.ClearEntries();
 
             var entityManager = IoCManager.Resolve<IEntityManager>();

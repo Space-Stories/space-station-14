@@ -1,6 +1,6 @@
 ent-SheetPrinter = { ent-Paper }
-    .suffix = Полная
+    .suffix = Полный
     .desc = { ent-Paper.desc }
 ent-SheetPrinter1 = { ent-SheetPrinter }
-    .suffix = Одна
+    .suffix = Один
     .desc = { ent-SheetPrinter.desc }

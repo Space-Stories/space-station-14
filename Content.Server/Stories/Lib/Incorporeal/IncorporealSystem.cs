@@ -72,7 +72,7 @@ public sealed class IncorporealSystem : EntitySystem
     private void OnInteractionAttemptEvent(EntityUid uid, IncorporealComponent shadowling, ref InteractionAttemptEvent args)
     {
         _popup.PopupEntity("Вы не можете взаимодействовать с вещами без тела!", uid, uid);
-        args.Cancel();
+        args.Cancelled = true;
     }
 
     public void MakeIncorporeal(EntityUid uid)

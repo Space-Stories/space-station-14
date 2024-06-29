@@ -7,3 +7,10 @@
   requirements:
   - !type:OverallPlaytimeRequirement
     time: 54000 # 15h Stories-RoleTime
+
+- type: startingGear
+  id: ThiefGear
+  storage:
+    back:
+    - ToolboxThief
+    - ClothingHandsChameleonThief

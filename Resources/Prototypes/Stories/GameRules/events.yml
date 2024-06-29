@@ -1,12 +1,13 @@
 - type: entity
-  parent: BaseGameRule
   id: SithSpawn
+  parent: BaseGameRule
   noSpawn: true
   components:
-    # - type: StationEvent
-    #   weight: 20
-    #   duration: 1
-    #   earliestStart: 30
-    #   reoccurrenceDelay: 600 # Один ситх на одну смену
-    #   minimumPlayers: 40
-    - type: SithSpawnRule
+  # - type: StationEvent
+  #   earliestStart: 45
+  #   weight: 5
+  #   minimumPlayers: 20
+  #   reoccurrenceDelay: 30
+  #   duration: 1
+  - type: LoadMapRule
+    mapPath: /Maps/Shuttles/TIE.yml

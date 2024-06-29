@@ -4,6 +4,8 @@ using Content.Server.Database;
 using Content.Shared.GameTicking;
 using Content.Shared.Humanoid;
 using Content.Shared.Preferences;
+using Content.Shared.Preferences.Loadouts;
+using Content.Shared.Preferences.Loadouts.Effects;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using Robust.Shared.Configuration;
@@ -31,45 +33,28 @@ namespace Content.IntegrationTests.Tests.Preferences
   - Aaliyah
 
 - type: dataset
-  id: sqlite_test_names_last_male
+  id: sqlite_test_names_last
   values:
-  - Ackerley
-
-- type: dataset
-  id: sqlite_test_names_last_female
-  values:
-  - Ackerla";  // Corvax-LastnameGender
+  - Ackerley";
 
         private static HumanoidCharacterProfile CharlieCharlieson()
         {
-            return new(
-                "Charlie Charlieson",
-                "The biggest boy around.",
-                "Human",
-                "Eugene", // Corvax-TTS
-                21,
-                Sex.Male,
-                Gender.Epicene,
-                new HumanoidCharacterAppearance(
+            return new()
+            {
+                Name = "Charlie Charlieson",
+                FlavorText = "The biggest boy around.",
+                Species = "Human",
+                Age = 21,
+                Voice = "Eugene", // Stories-TTS
+                Appearance = new(
                     "Afro",
                     Color.Aqua,
                     "Shaved",
                     Color.Aquamarine,
                     Color.Azure,
                     Color.Beige,
-                    new ()
-                ),
-                ClothingPreference.Jumpskirt,
-                BackpackPreference.Backpack,
-                SpawnPriorityPreference.None,
-                new Dictionary<string, JobPriority>
-                {
-                    {SharedGameTicker.FallbackOverflowJob, JobPriority.High}
-                },
-                PreferenceUnavailableMode.StayInLobby,
-                new List<string> (),
-                new List<string>()
-            );
+                    new ())
+            };
         }
 
         private static ServerDbSqlite GetDb(RobustIntegrationTest.ServerIntegrationInstance server)

@@ -1,4 +1,4 @@
-using Content.Shared.Corvax.TTS;
+using Content.Shared.Stories.TTS;
 using Content.Shared.Humanoid.Markings;
 using Content.Shared.Humanoid.Prototypes;
 using Robust.Shared.Enums;
@@ -47,13 +47,13 @@ public sealed partial class HumanoidAppearanceComponent : Component
     [DataField(required: true), AutoNetworkedField]
     public ProtoId<SpeciesPrototype> Species { get; set; }
 
-    // Corvax-TTS-Start
+    // Stories-TTS-Start
     /// <summary>
     ///     Current voice. Used for correct cloning.
     /// </summary>
     [DataField("voice")]
     public ProtoId<TTSVoicePrototype> Voice { get; set; } = SharedHumanoidAppearanceSystem.DefaultVoice;
-    // Corvax-TTS-End
+    // Stories-TTS-End
 
     /// <summary>
     ///     The initial profile and base layers to apply to this humanoid.
@@ -91,6 +91,12 @@ public sealed partial class HumanoidAppearanceComponent : Component
     /// </summary>
     [ViewVariables(VVAccess.ReadOnly)]
     public Color? CachedFacialHairColor;
+
+    /// <summary>
+    ///     Which layers of this humanoid that should be hidden on equipping a corresponding item..
+    /// </summary>
+    [DataField]
+    public HashSet<HumanoidVisualLayers> HideLayersOnEquip = [HumanoidVisualLayers.Hair];
 }
 
 [DataDefinition]

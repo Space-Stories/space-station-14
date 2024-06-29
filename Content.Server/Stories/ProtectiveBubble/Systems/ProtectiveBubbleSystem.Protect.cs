@@ -24,7 +24,7 @@ public sealed partial class ProtectiveBubbleSystem
         if (args.DamageDelta == null || component.User == null)
             return;
         var severity = ContentHelpers.RoundToLevels(MathF.Max(0f, args.Damageable.Damage.GetTotal().Float()), MaxBubbleDamage, 20);
-        _alerts.ShowAlert(component.User.Value, AlertType.ProjectiveBubble, (short) severity);
+        _alerts.ShowAlert(component.User.Value, "ProjectiveBubble", (short) severity);
     }
     public void StartBubbleWithUser(string proto, EntityUid user)
     {

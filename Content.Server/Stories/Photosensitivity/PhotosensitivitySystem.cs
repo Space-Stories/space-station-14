@@ -51,11 +51,11 @@ public sealed partial class PhotosensitivitySystem : EntitySystem
 
                 Vector2 srcLocal = sourceTrs.ParentUid == grid.Owner
                     ? sourceTrs.LocalPosition
-                    : gridTrs.InvLocalMatrix.Transform(source);
+                    : Vector2.Transform(source, gridTrs.InvLocalMatrix); 
 
                 Vector2 dstLocal = destTrs.ParentUid == grid.Owner
                     ? destTrs.LocalPosition
-                    : gridTrs.InvLocalMatrix.Transform(destination);
+                    : Vector2.Transform(destination, gridTrs.InvLocalMatrix);
 
                 Vector2i sourceGrid = new(
                     (int) Math.Floor(srcLocal.X / grid.Comp.TileSize),

@@ -2,8 +2,8 @@
   id: StoriesAtlas
   mapName: Atlas
   mapPath: /Maps/Stories/atlas.yml
-  minPlayers: 0
-  maxPlayers: 35
+  minPlayers: 5
+  maxPlayers: 20
   stations:
     Atlas:
       stationProto: StandardNanotrasenStation
@@ -57,3 +57,5 @@
             Clown: [ 1, 1 ]
             Mime: [ 1, 1 ]
             Musician: [ 1, 1 ]
+            #stories content
+            JediNt: [ 1, 1 ]

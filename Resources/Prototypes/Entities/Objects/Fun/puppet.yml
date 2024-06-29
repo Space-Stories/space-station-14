@@ -18,8 +18,8 @@
   - type: Muted
   - type: TypingIndicator
     proto: robot
-  - type: TTS # Corvax-TTS
-    voice: ziggs
+  - type: TTS # Stories-TTS
+    voice: papich
   - type: Actions
   - type: MobState
     allowedStates:
@@ -42,5 +42,5 @@
     sprite: Objects/Fun/mrdips.rsi
     layers:
     - state: icon
-  - type: TTS # Corvax-TTS
-    voice: ziggs
+  - type: TTS # Stories-TTS
+    voice: papich

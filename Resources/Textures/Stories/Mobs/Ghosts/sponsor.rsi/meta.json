@@ -1,0 +1,31 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "by Space Stories",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+    "name": "tier1",
+    "directions": 4
+    },
+    {
+    "name": "tier2",
+    "directions": 4
+    },
+    {
+    "name": "tier3",
+    "directions": 4
+    },
+    {
+    "name": "tier4",
+    "directions": 4
+    },
+    {
+    "name": "tier5",
+    "directions": 4
+    }
+  ]
+}

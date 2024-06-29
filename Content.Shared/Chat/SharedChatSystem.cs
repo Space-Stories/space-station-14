@@ -15,13 +15,13 @@ public abstract class SharedChatSystem : EntitySystem
     public const char LocalPrefix = '>';
     public const char ConsolePrefix = '/';
     public const char DeadPrefix = '\\';
-    public const char LOOCPrefix = '(';
+    public const char LOOCPrefix = '_'; // Stories-Localization
     public const char OOCPrefix = '[';
-    public const char EmotesPrefix = '%';
+    public const char EmotesPrefix = '%'; // Stories-Localization
     public const char EmotesAltPrefix = '*';
     public const char AdminPrefix = ']';
     public const char WhisperPrefix = ',';
-    public const char DefaultChannelKey = 'р';
+    public const char DefaultChannelKey = 'р'; // Stories-Localization
 
     [ValidatePrototypeId<RadioChannelPrototype>]
     public const string CommonChannel = "Common";
@@ -152,8 +152,14 @@ public abstract class SharedChatSystem : EntitySystem
         if (string.IsNullOrEmpty(message))
             return message;
         // Capitalize first letter
-        message = char.ToUpper(message[0]) + message.Remove(0, 1);
+        message = OopsConcat(char.ToUpper(message[0]).ToString(), message.Remove(0, 1));
         return message;
+    }
+
+    private static string OopsConcat(string a, string b)
+    {
+        // This exists to prevent Roslyn being clever and compiling something that fails sandbox checks.
+        return a + b;
     }
 
     public string SanitizeMessageCapitalizeTheWordI(string message, string theWordI = "i")

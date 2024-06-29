@@ -19,7 +19,7 @@ public sealed partial class ForcePresetPrototype : IPrototype
     public ForceSide Side { get; private set; } = ForceSide.Debug;
 
     [DataField("alert")]
-    public AlertType AlertType { get; private set; }
+    public string AlertType { get; private set; }
 
     #region ForceComponent
     [DataField("volume")] public float Volume = 200f;

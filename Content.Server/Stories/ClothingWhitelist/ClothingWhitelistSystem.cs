@@ -5,6 +5,7 @@ using Content.Shared.Emag.Systems;
 using Content.Shared.NPC.Prototypes;
 using Content.Shared.NPC.Components;
 using Content.Shared.NPC.Systems;
+using Content.Shared.Whitelist;
 using Content.Server.Explosion.EntitySystems;
 using System.Linq;
 
@@ -14,6 +15,8 @@ public sealed class ClothingWhitelistSystem : EntitySystem
 {
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly TriggerSystem _trigger = default!;
+    [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
+
     public override void Initialize()
     {
         base.Initialize();
@@ -25,8 +28,8 @@ public sealed class ClothingWhitelistSystem : EntitySystem
 
     private void OnEquipped(EntityUid uid, ClothingWhitelistComponent comp, GotEquippedEvent args)
     {
-        if (comp.Blacklist != null && !comp.Blacklist.IsValid(args.Equipee) || comp.Blacklist == null)
-            if (comp.Whitelist != null && comp.Whitelist.IsValid(args.Equipee)) return;
+        if (comp.Blacklist != null && !_whitelistSystem.IsWhitelistFail(comp.Blacklist, args.Equipee) || comp.Blacklist == null)
+            if (comp.Whitelist != null && _whitelistSystem.IsWhitelistFail(comp.Whitelist, args.Equipee)) return;
 
         if (TryComp<NpcFactionMemberComponent>(args.Equipee, out var npc))
         {

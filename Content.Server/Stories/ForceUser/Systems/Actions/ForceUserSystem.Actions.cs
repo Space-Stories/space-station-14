@@ -8,6 +8,7 @@ using Content.Shared.Physics;
 using Content.Shared.Mobs;
 using Content.Shared.SpaceStories.Empire.Components;
 using Content.Server.SpaceStories.ForceUser.ProtectiveBubble.Components;
+using Content.Shared.Store.Components;
 
 namespace Content.Server.SpaceStories.ForceUser;
 public sealed partial class ForceUserSystem

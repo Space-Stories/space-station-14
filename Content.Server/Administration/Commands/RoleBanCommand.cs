@@ -88,7 +88,7 @@ public sealed class RoleBanCommand : IConsoleCommand
 
         _bans.CreateRoleBan(targetUid, located.Username, shell.Player?.UserId, null, targetHWid, job, minutes, severity, reason, DateTimeOffset.UtcNow);
         HashSet<string>? roles = new() { job }; // Stories-BanWebhook
-        _bans.WebhookUpdateRoleBans(targetUid, located.Username, shell.Player?.UserId, null, targetHWid, roles, minutes, severity, reason, DateTimeOffset.UtcNow); // Stories-BanWebhook
+        _bans.WebhookUpdateRoleBans(targetUid, located.Username, shell.Player?.UserId, null, targetHWid, job, minutes, severity, reason, DateTimeOffset.UtcNow); // Stories-BanWebhook
     }
 
     public CompletionResult GetCompletion(IConsoleShell shell, string[] args)

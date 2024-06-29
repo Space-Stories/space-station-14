@@ -647,10 +647,6 @@
     - JobIconSecurityCadet
     - JobIconZookeeper
     - JobIconVisitor
-    - JobIconSeniorPhysician # Stories-Seniors
-    - JobIconSeniorOfficer # Stories-Seniors
-    - JobIconSeniorEngineer # Stories-Seniors
-    - JobIconSeniorResearcher # Stories-Seniors
   - type: ActivatableUI
     key: enum.AgentIDCardUiKey.Key
     inHandsOnly: true
@@ -662,9 +658,9 @@
     default: PassengerIDCard
   - type: UserInterface
     interfaces:
-      - key: enum.AgentIDCardUiKey.Key
+      enum.AgentIDCardUiKey.Key:
         type: AgentIDCardBoundUserInterface
-      - key: enum.ChameleonUiKey.Key
+      enum.ChameleonUiKey.Key:
         type: ChameleonBoundUserInterface
 
 - type: entity
@@ -806,7 +802,7 @@
   - type: Unremoveable
 
 - type: entity
-  parent: IDCardStandard
+  parent: EngineeringIDCard
   id: SeniorEngineerIDCard
   name: senior engineer ID card
   components:
@@ -814,11 +810,9 @@
     layers:
     - state: default
     - state: idseniorengineer
-  - type: PresetIdCard # Stories-Seniors
-    job: SeniorEngineer # Stories-Seniors
 
 - type: entity
-  parent: IDCardStandard
+  parent: ResearchIDCard
   id: SeniorResearcherIDCard
   name: senior researcher ID card
   components:
@@ -826,11 +820,9 @@
     layers:
     - state: default
     - state: idseniorresearcher
-  - type: PresetIdCard # Stories-Seniors
-    job: SeniorResearcher # Stories-Seniors
 
 - type: entity
-  parent: IDCardStandard
+  parent: MedicalIDCard
   id: SeniorPhysicianIDCard
   name: senior physician ID card
   components:
@@ -838,11 +830,9 @@
     layers:
     - state: default
     - state: idseniorphysician
-  - type: PresetIdCard # Stories-Seniors
-    job: SeniorPhysician # Stories-Seniors
 
 - type: entity
-  parent: IDCardStandard
+  parent: SecurityIDCard
   id: SeniorOfficerIDCard
   name: senior officer ID card
   components:
@@ -850,5 +840,30 @@
     layers:
     - state: default
     - state: idseniorofficer
-  - type: PresetIdCard # Stories-Seniors
-    job: SeniorOfficer # Stories-Seniors
+
+- type: entity
+  parent: IDCardStandard
+  id: UniversalIDCard
+  name: universal ID card
+  suffix: Admin
+  description: An ID card that gives you access beyond your wildest dreams.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/id_cards.rsi
+    layers:
+    - state: admin
+    - state: idadmin
+  - type: Clothing
+    sprite: Objects/Misc/id_cards.rsi
+  - type: Item
+    heldPrefix: green
+  - type: IdCard
+    jobTitle: Universal
+    jobIcon: JobIconAdmin
+  - type: Access
+    groups:
+    - AllAccess
+    tags:
+    - CentralCommand
+    - NuclearOperative
+    - SyndicateAgent

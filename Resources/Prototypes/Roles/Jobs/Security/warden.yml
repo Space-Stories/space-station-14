@@ -23,23 +23,15 @@
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
-  - !type:AddComponentSpecial
-    components:
-      - type: WeaponrySkill
 
 - type: startingGear
   id: WardenGear
   equipment:
-    head: ClothingHeadHatWarden
-    jumpsuit: ClothingUniformJumpsuitWarden
-    back: ClothingBackpackSecurityFilled
-    shoes: ClothingShoesBootsCombatFilled
     eyes: ClothingEyesGlassesSecurity
-    outerClothing: ClothingOuterCoatWarden
     id: WardenPDA
-    ears: ClothingHeadsetAltSecurity # Stories-SpacePrison
-    belt: ClothingBeltSecurityFilled
+    ears: ClothingHeadsetSecurity
     pocket1: WeaponPistolMk58
-  innerClothingSkirt: ClothingUniformJumpskirtWarden
-  satchel: ClothingBackpackSatchelSecurityFilled
-  duffelbag: ClothingBackpackDuffelSecurityFilled
+  storage:
+    back:
+    - Flash
+    - MagazinePistol

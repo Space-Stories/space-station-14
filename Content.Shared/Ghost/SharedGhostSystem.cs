@@ -19,10 +19,24 @@ namespace Content.Shared.Ghost
         {
             base.Initialize();
             SubscribeLocalEvent<GhostComponent, UseAttemptEvent>(OnAttempt);
-            SubscribeLocalEvent<GhostComponent, InteractionAttemptEvent>(OnAttempt);
+            SubscribeLocalEvent<GhostComponent, InteractionAttemptEvent>(OnAttemptInteract);
             SubscribeLocalEvent<GhostComponent, EmoteAttemptEvent>(OnAttempt);
             SubscribeLocalEvent<GhostComponent, DropAttemptEvent>(OnAttempt);
             SubscribeLocalEvent<GhostComponent, PickupAttemptEvent>(OnAttempt);
+        }
+        private void OnInt(EntityUid uid, GhostComponent component, InteractionAttemptEvent args) // SPACE STORIES - start
+        {
+            if (args.Uid == args.Target)
+                return;
+
+            if (!component.CanGhostInteract)
+                args.Cancelled = true;
+        } // SPACE STORIES - end
+
+        private void OnAttemptInteract(Entity<GhostComponent> ent, ref InteractionAttemptEvent args)
+        {
+            if (!ent.Comp.CanGhostInteract)
+                args.Cancelled = true;
         }
 
         private void OnAttempt(EntityUid uid, GhostComponent component, CancellableEntityEventArgs args)
@@ -130,6 +144,12 @@ namespace Content.Shared.Ghost
             Target = target;
         }
     }
+
+    /// <summary>
+    /// A client to server request for their ghost to be warped to the most followed entity.
+    /// </summary>
+    [Serializable, NetSerializable]
+    public sealed class GhostnadoRequestEvent : EntityEventArgs;
 
     /// <summary>
     /// A client to server request for their ghost to return to body

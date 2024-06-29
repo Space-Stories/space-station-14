@@ -4,6 +4,7 @@
   - BaseMob
   - MobDamageable
   - MobCombat
+  - StripableInventoryBase
   id: BaseMobSpecies
   abstract: true
   components:
@@ -140,6 +141,7 @@
     - TemporaryBlindness
     - Pacified
     - StaminaModifier
+    - Flashed
   - type: Reflect
     enabled: false
     reflectProb: 0
@@ -149,9 +151,8 @@
   - type: Identity
   - type: IdExaminable
   - type: Hands
+  - type: ComplexInteraction
   - type: Internals
-  - type: Inventory
-  - type: InventorySlots
   - type: FloatingVisuals
   - type: Climbing
   - type: Cuffable
@@ -190,16 +191,17 @@
     - NanoTrasen
   - type: CreamPied
   - type: Stripping
-  - type: Strippable
   - type: UserInterface
     interfaces:
-      - key: enum.StoreUiKey.Key # SpaceStories Немного магазина во всех нас. // TODO: Убрать отсюда
+      enum.AntagSelectUiKey.Key: # Stories-Sponsor
+        type: AntagSelectBoundUserInterface # Stories-Sponsor
+      enum.StoreUiKey.Key: # SpaceStories Немного магазина во всех нас. // TODO: Убрать отсюда
         type: StoreBoundUserInterface # ! Это нужно, чтобы пользователи силы могли открывать свой магазин навыков.
-      - key: enum.VoiceMaskUIKey.Key
+      enum.VoiceMaskUIKey.Key:
         type: VoiceMaskBoundUserInterface
-      - key: enum.HumanoidMarkingModifierKey.Key
+      enum.HumanoidMarkingModifierKey.Key:
         type: HumanoidMarkingModifierBoundUserInterface
-      - key: enum.StrippingUiKey.Key
+      enum.StrippingUiKey.Key:
         type: StrippableBoundUserInterface
   - type: Puller
   - type: Speech
@@ -239,7 +241,6 @@
   - type: Conversionable # SPACE STORIES
     allowed:
     - HypnotizedEmpire
-  - type: Flashable
   - type: Barotrauma
     damage:
       types:
@@ -254,24 +255,7 @@
         Heat: -0.07
       groups:
         Brute: -0.07
-  # Organs
-  - type: StatusEffects
-    allowed:
-    - Stun
-    - KnockedDown
-    - SlowedDown
-    - Stutter
-    - SeeingRainbows
-    - Electrocution
-    - ForcedSleep
-    - TemporaryBlindness
-    - Drunk
-    - SlurredSpeech
-    - RatvarianLanguage
-    - PressureImmunity
-    - Muted
-    - Pacified
-    - StaminaModifier
+
   - type: Blindable
   # Other
   - type: Temperature
@@ -312,11 +296,11 @@
 - type: entity
   save: false
   id: BaseSpeciesDummy
+  parent: InventoryBase
   abstract: true
   components:
   - type: Hands
-  - type: Inventory
-  - type: InventorySlots
+  - type: ComplexInteraction
   - type: ContainerContainer
   - type: Icon
     sprite: Mobs/Species/Human/parts.rsi
@@ -378,5 +362,5 @@
     requiredLegs: 2
   - type: UserInterface
     interfaces:
-      - key: enum.HumanoidMarkingModifierKey.Key # sure, this can go here too
+      enum.HumanoidMarkingModifierKey.Key: # sure, this can go here too
         type: HumanoidMarkingModifierBoundUserInterface

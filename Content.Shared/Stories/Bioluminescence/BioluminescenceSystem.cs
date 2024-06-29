@@ -24,8 +24,6 @@ public sealed class BioluminescenceSystem : EntitySystem
 
         EntityUid? act = null;
         _actions.AddAction(uid, ref act, "TurnBioluminescenceAction", uid, action);
-
-        Dirty(uid, component);
     }
 
     private void TurnBioluminescence(EntityUid uid, BioluminescenceComponent component, TurnBioluminescenceEvent _)

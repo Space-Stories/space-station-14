@@ -6,11 +6,13 @@ namespace Content.Server.VoiceMask;
 [RegisterComponent]
 public sealed partial class VoiceMaskerComponent : Component
 {
-    [ViewVariables(VVAccess.ReadWrite)] public string LastSetName = "Неизвестный";
-    [ViewVariables(VVAccess.ReadWrite)] public string? LastSetVoice; // Corvax-TTS
+    [ViewVariables(VVAccess.ReadWrite)] public string LastSetName = "Unknown";
 
     [DataField]
     public ProtoId<SpeechVerbPrototype>? LastSpeechVerb;
+
+    [DataField]
+    public string? LastSetVoice; // Stories-TTS
 
     [DataField]
     public EntProtoId Action = "ActionChangeVoiceMask";

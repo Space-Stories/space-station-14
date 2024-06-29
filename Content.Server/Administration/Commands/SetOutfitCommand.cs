@@ -15,7 +15,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Server.Administration.Commands
 {
-    [AdminCommand(AdminFlags.Admin)]
+    [AdminCommand(AdminFlags.Debug)] // Stories
     public sealed class SetOutfitCommand : IConsoleCommand
     {
         [Dependency] private readonly IEntityManager _entities = default!;
@@ -97,7 +97,7 @@ namespace Content.Server.Administration.Commands
                 foreach (var slot in slots)
                 {
                     invSystem.TryUnequip(target, slot.Name, true, true, false, inventoryComponent);
-                    var gearStr = startingGear.GetGear(slot.Name, profile);
+                    var gearStr = startingGear.GetGear(slot.Name);
                     if (gearStr == string.Empty)
                     {
                         continue;

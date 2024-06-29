@@ -1,2 +1,2 @@
-ent-PrinterDocMachineCircuitboard = бумажный принтер (машинная плата)
-    .desc = Печатная плата бумажного принтера
+ent-PrinterDocMachineCircuitboard = принтер документов (машинная плата)
+    .desc = Машинная плата принтера документов.

@@ -84,6 +84,15 @@
       prob: 0.25
       orGroup: Canister
     #weapons
+    - id: WeaponPulseCarbine
+      prob: 0.0001
+      orGroup: Weapons
+    - id: WeaponRifleAk
+      prob: 0.0001
+      orGroup: Weapons
+    - id: WeaponLauncherPirateCannon
+      prob: 0.001
+      orGroup: Weapons
     - id: WeaponPistolCHIMP
       prob: 0.1
       orGroup: Weapons
@@ -125,7 +134,7 @@
       orGroup: Weapons
     - id: Shovel
       prob: 0.01
-      orGroup: Weapons  
+      orGroup: Weapons
     - id: WeaponWaterPistol
       prob: 0.01
       orGroup: Weapons
@@ -134,6 +143,9 @@
       orGroup: Weapons
     - id: WeaponTurretXeno
       prob: 0.01
+      orGroup: Weapons
+    - id: WeaponRifleFoam
+      prob: 0.03
       orGroup: Weapons
     #clothing
     - id: ClothingUniformJumpsuitFamilyGuy
@@ -226,10 +238,10 @@
       orGroup: Swag
     - id: ClothingEyesGlassesGarGiga
       prob: 0.01
-      orGroup: Swag   
+      orGroup: Swag
     - id: ClothingEyesGlassesGarOrange
       prob: 0.01
-      orGroup: Swag      
+      orGroup: Swag
     #plushies
     - id: PlushieRGBee
       prob: 0.01
@@ -346,4 +358,13 @@
       orGroup: NotUseful
     - id: WeakKudzu
       prob: 0.01
-      orGroup: NotUseful   
+      orGroup: NotUseful
+    - id: MagazineFoamBox
+      prob: 0.001
+      orGroup: NotUseful
+    - id: BoxDonkSoftBox
+      prob: 0.008
+      orGroup: NotUseful
+    - id: GrenadeFoamDart
+      prob: 0.001
+      orGroup: NotUseful

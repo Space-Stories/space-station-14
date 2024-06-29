@@ -1,4 +1,5 @@
 using Content.Shared.Damage.Components;
+using Content.Shared.Whitelist;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
@@ -15,6 +16,7 @@ public sealed class DamageContactsSystem : EntitySystem
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
+    [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
 
     public override void Initialize()
@@ -69,16 +71,17 @@ public sealed class DamageContactsSystem : EntitySystem
         if (HasComp<DamagedByContactComponent>(otherUid))
             return;
 
-        if (!HasComp<TetheredComponent>(uid) && component.OnlyTethered) // SpaceStories
+        if (_whitelistSystem.IsWhitelistFail(component.IgnoreWhitelist, otherUid))
             return;
 
-        if (component.IgnoreWhitelist?.IsValid(otherUid) ?? false)
+        if (!HasComp<TetheredComponent>(uid) && component.OnlyTethered) // SpaceStories
             return;
 
         var damagedByContact = EnsureComp<DamagedByContactComponent>(otherUid);
         damagedByContact.Damage = component.Damage;
         if (component.HitSound != null) _audio.PlayPredicted(component.HitSound, uid, otherUid);
     }
+
     private void OnItemToggle(EntityUid uid, ItemToggleDamageContactsComponent itemToggleMelee, ItemToggledEvent args)
     {
         if (!TryComp(uid, out DamageContactsComponent? meleeWeapon))

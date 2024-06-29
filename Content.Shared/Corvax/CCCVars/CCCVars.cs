@@ -17,7 +17,7 @@ public sealed class CCCVars
     /// URL of the TTS server API.
     /// </summary>
     public static readonly CVarDef<bool> TTSEnabled =
-        CVarDef.Create("tts.enabled", false, CVar.SERVERONLY | CVar.ARCHIVE);
+        CVarDef.Create("tts.enabled", false, CVar.SERVER | CVar.REPLICATED | CVar.ARCHIVE);
 
     /// <summary>
     /// URL of the TTS server API.
@@ -49,7 +49,7 @@ public sealed class CCCVars
     public static readonly CVarDef<int> TTSMaxCache =
         CVarDef.Create("tts.max_cache", 250, CVar.SERVERONLY | CVar.ARCHIVE);
 
-    /**
+    /*
      * Sponsors
      */
 
@@ -58,6 +58,21 @@ public sealed class CCCVars
     /// </summary>
     public static readonly CVarDef<string> SponsorsApiUrl =
         CVarDef.Create("sponsor.api_url", "", CVar.SERVERONLY);
+
+        public static readonly CVarDef<string> SponsorsDatabasePgHost =
+            CVarDef.Create("sponsor.pg_host", "localhost", CVar.SERVERONLY);
+
+        public static readonly CVarDef<int> SponsorsDatabasePgPort =
+            CVarDef.Create("sponsor.pg_port", 5432, CVar.SERVERONLY);
+
+        public static readonly CVarDef<string> SponsorsDatabasePgDatabase =
+            CVarDef.Create("sponsor.pg_database", "ss14", CVar.SERVERONLY);
+
+        public static readonly CVarDef<string> SponsorsDatabasePgUsername =
+            CVarDef.Create("sponsor.pg_username", "postgres", CVar.SERVERONLY);
+
+        public static readonly CVarDef<string> SponsorsDatabasePgPassword =
+            CVarDef.Create("sponsor.pg_password", "", CVar.SERVERONLY | CVar.CONFIDENTIAL);
 
     /*
      * Queue

@@ -94,7 +94,9 @@ public sealed class BanManager : IBanManager, IPostInjectInit
 
     public HashSet<string>? GetRoleBans(NetUserId playerUserId)
     {
-        return _cachedRoleBans.TryGetValue(playerUserId, out var roleBans) ? roleBans.Select(banDef => banDef.Role).ToHashSet() : null;
+        return _cachedRoleBans.TryGetValue(playerUserId, out var roleBans)
+            ? roleBans.Select(banDef => banDef.Role).ToHashSet()
+            : null;
     }
 
     private async Task CacheDbRoleBans(NetUserId userId, IPAddress? address = null, ImmutableArray<byte>? hwId = null)
@@ -288,7 +290,7 @@ public sealed class BanManager : IBanManager, IPostInjectInit
         return $"Pardoned ban with id {banId}";
     }
 
-    public async void WebhookUpdateRoleBans(NetUserId? target, string? targetUsername, NetUserId? banningAdmin, (IPAddress, int)? addressRange, ImmutableArray<byte>? hwid, IReadOnlyCollection<string> roles, uint? minutes, NoteSeverity severity, string reason, DateTimeOffset timeOfBan)
+    public async void WebhookUpdateRoleBans(NetUserId? target, string? targetUsername, NetUserId? banningAdmin, (IPAddress, int)? addressRange, ImmutableArray<byte>? hwid, string role, uint? minutes, NoteSeverity severity, string reason, DateTimeOffset timeOfBan)
     {
         _systems.TryGetEntitySystem(out GameTicker? ticker);
         int? roundId = ticker == null || ticker.RoundId == 0 ? null : ticker.RoundId;
@@ -315,15 +317,15 @@ public sealed class BanManager : IBanManager, IPostInjectInit
             null,
             "plug");
 
-        SendWebhook(await GenerateJobBanPayload(banDef, roles, minutes));
+        SendWebhook(await GenerateJobBanPayload(banDef, role, minutes));
     }
-    public HashSet<string>? GetJobBans(NetUserId playerUserId)
+    public HashSet<ProtoId<JobPrototype>>? GetJobBans(NetUserId playerUserId)
     {
         if (!_cachedRoleBans.TryGetValue(playerUserId, out var roleBans))
             return null;
         return roleBans
             .Where(ban => ban.Role.StartsWith(JobPrefix, StringComparison.Ordinal))
-            .Select(ban => ban.Role[JobPrefix.Length..])
+            .Select(ban => new ProtoId<JobPrototype>(ban.Role[JobPrefix.Length..]))
             .ToHashSet();
     }
     #endregion
@@ -340,12 +342,7 @@ public sealed class BanManager : IBanManager, IPostInjectInit
 
     public void SendRoleBans(ICommonSession pSession)
     {
-        if (!_cachedRoleBans.TryGetValue(pSession.UserId, out var roleBans))
-        {
-            _sawmill.Error($"Tried to send rolebans for {pSession.Name} but none cached?");
-            return;
-        }
-
+        var roleBans = _cachedRoleBans.GetValueOrDefault(pSession.UserId) ?? new HashSet<ServerRoleBanDef>();
         var bans = new MsgRoleBans()
         {
             Bans = roleBans.Select(o => o.Role).ToList()
@@ -382,7 +379,7 @@ public sealed class BanManager : IBanManager, IPostInjectInit
             return;
         }
     }
-    private async Task<WebhookPayload> GenerateJobBanPayload(ServerRoleBanDef banDef, IReadOnlyCollection<string> roles, uint? minutes = null)
+    private async Task<WebhookPayload> GenerateJobBanPayload(ServerRoleBanDef banDef, string roles, uint? minutes = null)
     {
         var hwidString = banDef.HWId != null
 ? string.Concat(banDef.HWId.Value.Select(x => x.ToString("x2")))
