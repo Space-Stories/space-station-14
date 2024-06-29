@@ -30,7 +30,6 @@
   - type: Appearance
   - type: StaticPrice
     price: 500
-  - type: RequiresWeaponrySkill
 
 - type: entity
   id: BaseWeaponPowerCell
@@ -66,7 +65,6 @@
   - type: ContainerContainer
     containers:
       gun_magazine: !type:ContainerSlot
-  - type: RequiresWeaponrySkill
 
 - type: entity
   id: BaseWeaponBatterySmall
@@ -237,7 +235,6 @@
     fireCost: 62.5
   - type: StaticPrice
     price: 300
-  - type: WeaponrySkillTrainer
 
 - type: entity
   name: pulse pistol
@@ -511,7 +508,6 @@
     - type: ProjectileBatteryAmmoProvider
       proto: BulletDisablerPractice
       fireCost: 100
-    - type: WeaponrySkillTrainer
 
 - type: entity
   name: taser

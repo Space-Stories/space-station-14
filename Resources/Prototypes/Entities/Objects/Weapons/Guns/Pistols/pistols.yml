@@ -66,8 +66,7 @@
   - type: Appearance
   - type: StaticPrice
     price: 500
-  - type: RequiresWeaponrySkill
-  
+
 - type: entity
   name: viper
   parent: BaseWeaponPistol

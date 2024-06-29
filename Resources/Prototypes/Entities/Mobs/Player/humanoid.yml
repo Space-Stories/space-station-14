@@ -48,7 +48,7 @@
       nameSegments:
         - NamesFirstMilitaryLeader
         - NamesLastMilitary
-    - type: WeaponrySkill
+
 
 ## ERT Leader
 
@@ -84,7 +84,6 @@
       nameSegments:
       - NamesFirstMilitaryLeader
       - NamesLastMilitary
-    - type: WeaponrySkill
 
 - type: entity
   id: RandomHumanoidSpawnerERTLeaderEVA
@@ -110,7 +109,6 @@
         settings: short
     - type: Loadout
       prototypes: [ ERTLeaderGearEVA ]
-    - type: WeaponrySkill
 
 - type: entity
   id: RandomHumanoidSpawnerERTLeaderEVALecter
@@ -132,7 +130,6 @@
         settings: short
     - type: Loadout
       prototypes: [ ERTLeaderGearEVALecter ]
-    - type: WeaponrySkill
 
 ## ERT Chaplain
 
@@ -228,7 +225,6 @@
       - NamesLastMilitary
     - type: Loadout
       prototypes: [ ERTJanitorGear ]
-    - type: WeaponrySkill
 
 - type: entity
   id: RandomHumanoidSpawnerERTJanitorEVA
@@ -254,7 +250,6 @@
         settings: short
     - type: Loadout
       prototypes: [ ERTJanitorGearEVA ]
-    - type: WeaponrySkill
 
 ## ERT Engineer
 
@@ -290,7 +285,6 @@
       - NamesLastMilitary
     - type: Loadout
       prototypes: [ ERTEngineerGear ]
-    - type: WeaponrySkill
 
 - type: entity
   id: RandomHumanoidSpawnerERTEngineerEVA
@@ -316,7 +310,6 @@
         settings: short
     - type: Loadout
       prototypes: [ ERTEngineerGearEVA ]
-    - type: WeaponrySkill
 
 ## ERT Security
 
@@ -352,7 +345,6 @@
       - NamesLastMilitary
     - type: Loadout
       prototypes: [ ERTSecurityGear ]
-    - type: WeaponrySkill
 
 - type: entity
   id: RandomHumanoidSpawnerERTSecurityEVA
@@ -378,7 +370,6 @@
         settings: short
     - type: Loadout
       prototypes: [ ERTSecurityGearEVA ]
-    - type: WeaponrySkill
 
 - type: entity
   id: RandomHumanoidSpawnerERTSecurityEVALecter
@@ -400,7 +391,6 @@
         settings: short
     - type: Loadout
       prototypes: [ ERTSecurityGearEVALecter ]
-    - type: WeaponrySkill
 
 ## ERT Medic
 
@@ -436,7 +426,6 @@
       - NamesLastMilitary
     - type: Loadout
       prototypes: [ ERTMedicalGear ]
-    - type: WeaponrySkill
 
 - type: entity
   id: RandomHumanoidSpawnerERTMedicalEVA
@@ -462,7 +451,6 @@
         settings: short
     - type: Loadout
       prototypes: [ ERTMedicalGearEVA ]
-    - type: WeaponrySkill
 
 ## CBURN
 
@@ -493,7 +481,6 @@
       nameSegments:
       - NamesFirstMilitary
       - NamesLastMilitary
-    - type: WeaponrySkill
 
 ## Central Command
 
@@ -519,7 +506,6 @@
         settings: default
     - type: Loadout
       prototypes: [ CentcomGear ]
-    - type: WeaponrySkill
 
 ## Syndicate
 
@@ -542,7 +528,6 @@
       randomizeName: false
     - type: Loadout
       prototypes: [SyndicateOperativeGearExtremelyBasic]
-    - type: WeaponrySkill
 
 - type: entity
   id: RandomHumanoidSpawnerNukeOp
@@ -560,7 +545,6 @@
     - type: RandomHumanoidAppearance
       randomizeName: false
     - type: NukeOperative
-    - type: WeaponrySkill
 
 - type: entity
   id: RandomHumanoidSpawnerCluwne

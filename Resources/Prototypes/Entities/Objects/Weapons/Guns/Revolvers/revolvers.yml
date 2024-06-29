@@ -49,8 +49,7 @@
       path: /Audio/Weapons/Guns/MagIn/revolver_magin.ogg
   - type: StaticPrice
     price: 500
-  - type: RequiresWeaponrySkill
-  
+
 - type: entity
   name: Deckard
   parent: BaseWeaponRevolver

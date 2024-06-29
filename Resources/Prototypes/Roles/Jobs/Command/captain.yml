@@ -33,7 +33,6 @@
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
-      - type: WeaponrySkill
 
 - type: startingGear
   id: CaptainGear

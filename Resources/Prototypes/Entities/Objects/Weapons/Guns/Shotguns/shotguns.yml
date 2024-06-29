@@ -42,8 +42,7 @@
         ents: []
   - type: StaticPrice
     price: 500
-  - type: RequiresWeaponrySkill
-  
+
 - type: entity
   name: Bulldog
   # Don't parent to BaseWeaponShotgun because it differs significantly
