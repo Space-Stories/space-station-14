@@ -16,6 +16,12 @@
   extendedAccess:
   - Kitchen
   - Hydroponics
+    # Stories Skills
+  special:
+  - !type:AddComponentSpecial
+      - type: Skills
+        skills:
+          Guns: 0.5
 
 - type: startingGear
   id: BartenderGear

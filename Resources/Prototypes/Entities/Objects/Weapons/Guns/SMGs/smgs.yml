@@ -5,6 +5,23 @@
   description: A rooty tooty point and shooty.
   abstract: true
   components:
+   # Stories - start
+  - type: ShotToSkills
+    skills:
+      Guns: 0.01
+  - type: SkillsAffectShots
+    minAngle: 90
+    maxAngle: 90
+    skills:
+      Guns: 0.5
+  - type: ShotRequiresSkills
+    skills:
+      Guns: 0.4
+  - type: ExploreToSkills
+    seconds: 10
+    skills:
+      Guns: 0.1
+   # Stories - end
   - type: Sprite
   - type: Item
     size: Large
@@ -84,6 +101,11 @@
   id: WeaponSubMachineGunC20r
   description: A firearm that is often used by the infamous nuclear operatives. Uses .35 auto ammo.
   components:
+  # Stories - start
+  - type: ShotRequiresSkills
+    skills:
+      Guns: 1.0
+  # Stories - end
   - type: Sprite
     sprite: Objects/Weapons/Guns/SMGs/c20r.rsi
     layers:

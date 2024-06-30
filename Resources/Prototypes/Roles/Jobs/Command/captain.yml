@@ -33,6 +33,11 @@
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
+    # Stories Skills
+      - type: Skills
+        skills:
+          Guns: 0.5
+          EnergyGuns: 1.0
 
 - type: startingGear
   id: CaptainGear

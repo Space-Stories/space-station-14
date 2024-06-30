@@ -21,6 +21,13 @@
   - Service
   - Detective
   special:
+  # Stories Skills
+  - !type:AddComponentSpecial
+    components:
+    - type: Skills
+      skills:
+        Guns: 1.0
+        EnergyGuns: 1.0
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
 

@@ -31,6 +31,9 @@
     implants: [ MindShieldImplant ]
   - !type:AddComponentSpecial
     components:
+    - type: Skills
+      skills:
+        Melee: 1.0
     - type: Force
     - type: ForceUser
       preset: Jedi

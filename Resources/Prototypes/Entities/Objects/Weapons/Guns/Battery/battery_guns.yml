@@ -3,6 +3,23 @@
   parent: BaseItem
   abstract: true
   components:
+   # Stories - start
+  - type: ShotToSkills
+    skills:
+      EnergyGuns: 0.01
+  - type: SkillsAffectShots
+    minAngle: 180
+    maxAngle: 180
+    skills:
+      EnergyGuns: 1.0
+  - type: ShotRequiresSkills
+    skills:
+      EnergyGuns: 0.1
+  - type: ExploreToSkills
+    seconds: 10
+    skills:
+      EnergyGuns: 0.1
+   # Stories - end
   - type: Sprite
   - type: Item
     size: Huge
@@ -230,6 +247,11 @@
   id: WeaponLaserCarbinePractice
   description: This modified laser rifle fires nearly harmless beams in the 40-watt range, for target practice.
   components:
+   # Stories - start
+  - type: ShotRequiresSkills
+    skills:
+      EnergyGuns: 0.0
+   # Stories - end
   - type: HitscanBatteryAmmoProvider
     proto: RedLaserPractice
     fireCost: 62.5
@@ -490,6 +512,11 @@
   id: WeaponDisablerPractice
   description: A self-defense weapon that exhausts organic targets, weakening them until they collapse. This one has been undertuned for cadets making it mostly harmless.
   components:
+   # Stories - start
+    - type: ShotRequiresSkills
+      skills:
+        EnergyGuns: 0.0
+   # Stories - end
     - type: Sprite
       sprite: Objects/Weapons/Guns/Battery/practice_disabler.rsi
       layers:

@@ -5,6 +5,23 @@
   description: A rooty tooty point and shooty.
   abstract: true
   components:
+   # Stories - start
+  - type: ShotToSkills
+    skills:
+      Guns: 0.02
+  - type: SkillsAffectShots
+    minAngle: 180
+    maxAngle: 180
+    skills:
+      Guns: 1.0
+  - type: ShotRequiresSkills
+    skills:
+      Guns: 0.5
+  - type: ExploreToSkills
+    seconds: 10
+    skills:
+      Guns: 0.1
+   # Stories - end
   - type: Sprite
   - type: Clothing
     sprite: Objects/Weapons/Guns/Launchers/china_lake.rsi
@@ -26,6 +43,11 @@
   id: WeaponLauncherChinaLake
   description: PLOOP
   components:
+  # Stories - start
+  - type: ShotRequiresSkills
+    skills:
+      Guns: 1.0
+  # Stories - end
   - type: Sprite
     sprite: Objects/Weapons/Guns/Launchers/china_lake.rsi
     layers:

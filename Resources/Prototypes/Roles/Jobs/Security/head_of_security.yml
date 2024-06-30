@@ -38,6 +38,11 @@
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
+  # Stories Skills
+      - type: Skills
+        skills:
+          Guns: 1.0
+          EnergyGuns: 1.0
 
 - type: startingGear
   id: HoSGear
