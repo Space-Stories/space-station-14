@@ -57,7 +57,6 @@
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
-      - type: WeaponrySkill
 
 - type: startingGear
   id: HoPGear
@@ -67,3 +66,6 @@
     gloves: ClothingHandsGlovesHop
     ears: ClothingHeadsetAltCommand
     belt: BoxFolderClipboard
+  storage:
+    back:
+    - Flash

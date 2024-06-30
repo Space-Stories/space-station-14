@@ -18,8 +18,10 @@ using Content.Server.Info;
 using Content.Server.IoC;
 using Content.Server.Maps;
 using Content.Server.NodeContainer.NodeGroups;
+using Content.Server.Players;
 using Content.Server.Players.JobWhitelist;
 using Content.Server.Players.PlayTimeTracking;
+using Content.Server.Players.RateLimiting;
 using Content.Server.Preferences.Managers;
 using Content.Server.ServerInfo;
 using Content.Server.ServerUpdates;
@@ -73,7 +75,6 @@ namespace Content.Server.Entry
             factory.RegisterIgnore(IgnoredComponents.List);
 
             prototypes.RegisterIgnore("parallax");
-            prototypes.RegisterIgnore("guideEntry");
 
             ServerContentIoC.Register();
 
@@ -120,6 +121,7 @@ namespace Content.Server.Entry
                 _updateManager.Initialize();
                 _playTimeTracking.Initialize();
                 IoCManager.Resolve<JobWhitelistManager>().Initialize();
+                IoCManager.Resolve<PlayerRateLimitManager>().Initialize();
             }
         }
 

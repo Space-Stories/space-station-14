@@ -47,4 +47,3 @@
     - Belt
   - type: UseDelay
     delay: 1
-  - type: RequiresWeaponrySkill

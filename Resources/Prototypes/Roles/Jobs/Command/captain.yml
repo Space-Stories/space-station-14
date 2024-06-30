@@ -33,7 +33,6 @@
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
-      - type: WeaponrySkill
 
 - type: startingGear
   id: CaptainGear
@@ -43,3 +42,7 @@
     gloves: ClothingHandsGlovesCaptain
     id: CaptainPDA
     ears: ClothingHeadsetAltCommand
+  storage:
+    back:
+    - Flash
+    # - StationCharter

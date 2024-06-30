@@ -1,0 +1,12 @@
+ent-SheetPrinter = { ent-Paper }
+    .suffix = Полный
+    .desc = { ent-Paper.desc }
+ent-SheetPrinter1 = { ent-SheetPrinter }
+    .suffix = Один
+    .desc = { ent-SheetPrinter.desc }
+ent-InkPrinter = чернила
+    .suffix = Полный
+    .desc = { ent-SheetOtherBase.desc }
+ent-InkPrinter1 = { ent-InkPrinter }
+    .suffix = Один
+    .desc = { ent-InkPrinter.desc }
