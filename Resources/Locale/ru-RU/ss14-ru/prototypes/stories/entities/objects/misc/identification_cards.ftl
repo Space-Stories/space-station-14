@@ -1,11 +1,3 @@
-ent-PRISONIDCardHeadOfPrison = ID карта главы тюрьмы
-    .desc = { ent-IDCardStandard.desc }
-ent-PRISONIDCardOfficer = ID карта офицера космической тюрьмы
-    .desc = { ent-PRISONIDCardHeadOfPrison.desc }
-ent-PRISONIDCardEngineer = ID карта инженера космической тюрьмы
-    .desc = { ent-PRISONIDCardHeadOfPrison.desc }
-ent-PRISONIDCardMedic = ID карта медика космической тюрьмы
-    .desc = { ent-PRISONIDCardHeadOfPrison.desc }
 ent-IAAIDCard = ID карта агента внутрених дел
     .desc = { ent-PRISONIDCardHeadOfPrison.desc }
 ent-JediNtIDCard = ID карта стража клинка
