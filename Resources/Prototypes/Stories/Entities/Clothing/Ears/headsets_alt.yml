@@ -4,35 +4,18 @@
   name: полноразмерная гарнитура стража клинка
   description: Почему тут нет командной частоты?
   components:
-  - type: Tag
-    tags:
-      - ForceRecallEquipment
-  - type: ContainerFill
-    containers:
-      key_slots:
-      - EncryptionKeyCommon
-      - EncryptionKeySecurity
-  - type: Sprite
-    sprite: Stories/Clothing/Ears/Headsets/jedi_nt.rsi
-  - type: Clothing
-    sprite: Stories/Clothing/Ears/Headsets/jedi_nt.rsi
-
-- type: entity
-  parent: ClothingHeadsetAlt
-  id: ClothingHeadsetPrisonAlt
-  name: Space prison over-ear headset
-  components:
-  - type: ContainerFill
-    containers:
-      key_slots:
-      - EncryptionKeyPrison
-      - EncryptionKeyCommon
-      - EncryptionKeySecurity
-      - EncryptionKeyCommand
-  - type: Sprite
-    sprite: Stories/Clothing/Ears/Headsets/prison.rsi
-  - type: Clothing
-    sprite: Stories/Clothing/Ears/Headsets/prison.rsi
+    - type: Tag
+      tags:
+        - ForceRecallEquipment
+    - type: ContainerFill
+      containers:
+        key_slots:
+          - EncryptionKeyCommon
+          - EncryptionKeySecurity
+    - type: Sprite
+      sprite: Stories/Clothing/Ears/Headsets/jedi_nt.rsi
+    - type: Clothing
+      sprite: Stories/Clothing/Ears/Headsets/jedi_nt.rsi
 
 - type: entity
   parent: ClothingHeadset
@@ -40,18 +23,18 @@
   name: полноразмерная гарнитура будущего
   description: Гарнитура из будушего, способная уловить большинство частот станции
   components:
-  - type: ContainerFill
-    containers:
-      key_slots:
-      - EncryptionKeyFuture
-  - type: Sprite
-    sprite: Stories/Clothing/Ears/Headsets/chronolegioneer.rsi
-  - type: Clothing
-    sprite: Stories/Clothing/Ears/Headsets/chronolegioneer.rsi
-    
+    - type: ContainerFill
+      containers:
+        key_slots:
+          - EncryptionKeyFuture
+    - type: Sprite
+      sprite: Stories/Clothing/Ears/Headsets/chronolegioneer.rsi
+    - type: Clothing
+      sprite: Stories/Clothing/Ears/Headsets/chronolegioneer.rsi
+
 - type: entity
   parent: ClothingHeadsetChronolegioneer
   id: ClothingHeadsetChronolegioneerUnremoveable
   suffix: Неснимаемая
   components:
-  - type: Unremoveable
+    - type: Unremoveable

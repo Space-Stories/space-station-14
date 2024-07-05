@@ -1,0 +1,56 @@
+- type: entity
+  parent: IDCardStandard
+  id: PRISONIDCardHeadOfPrison
+  name: ID карта начальника тюрьмы
+  description: Карта, необходимая для доступа в различные области станции.
+  components:
+    - type: Sprite
+      sprite: Stories/Objects/Misc/id_cards.rsi
+      layers:
+        - state: silver_sp
+        - state: idhosp
+    - type: PresetIdCard
+      job: PRISONHeadOfPrison
+    - type: Clothing
+      slots:
+        - idcard
+      sprite: Stories/Objects/Misc/id_cards.rsi
+
+- type: entity
+  parent: PRISONIDCardHeadOfPrison
+  id: PRISONIDCardOfficer
+  name: ID карта офицера тюрьмы
+  description: Карта, необходимая для доступа в различные области станции.
+  components:
+    - type: Sprite
+      layers:
+        - state: default_sp
+        - state: idspofficer
+    - type: PresetIdCard
+      job: PRISONOfficer
+
+- type: entity
+  parent: PRISONIDCardHeadOfPrison
+  id: PRISONIDCardEngineer
+  name: ID карта инженера тюрьмы
+  description: Карта, необходимая для доступа в различные области станции.
+  components:
+    - type: Sprite
+      layers:
+        - state: default_sp
+        - state: idspengineer
+    - type: PresetIdCard
+      job: PRISONEngineer
+
+- type: entity
+  parent: PRISONIDCardHeadOfPrison
+  id: PRISONIDCardMedic
+  name: ID карта врача тюрьмы
+  description: Карта, необходимая для доступа в различные области станции.
+  components:
+    - type: Sprite
+      layers:
+        - state: default_sp
+        - state: idspmedic
+    - type: PresetIdCard
+      job: PRISONMedic

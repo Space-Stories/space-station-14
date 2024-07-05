@@ -1,22 +1,5 @@
 - type: entity
   parent: ClothingHeadset
-  id: ClothingHeadsetPrison
-  name: Space prison headset
-  description: A headset used by space prison employees.
-  components:
-  - type: ContainerFill
-    containers:
-      key_slots:
-      - EncryptionKeyPrison
-      - EncryptionKeyCommon
-      - EncryptionKeySecurity
-  - type: Sprite
-    sprite: Stories/Clothing/Ears/Headsets/prison.rsi
-  - type: Clothing
-    sprite: Stories/Clothing/Ears/Headsets/prison.rsi
-
-- type: entity
-  parent: ClothingHeadset
   id: ClothingHeadsetIAA
   name: iaa headset
   description: A headset for internal affairs agent to hear the captain's last words.
@@ -24,6 +7,6 @@
     - type: ContainerFill
       containers:
         key_slots:
-        - EncryptionKeyIAA
+          - EncryptionKeyIAA
     - type: Sprite
       sprite: Clothing/Ears/Headsets/servicesecurity.rsi

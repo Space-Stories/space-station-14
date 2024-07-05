@@ -1,7 +1,7 @@
 - type: entity
   noSpawn: true
-  parent: ClothingBackpackSatchelSpacePrison
-  id: ClothingBackpackSatchelSpacePrisonFilled
+  parent: PRISONClothingBackpackSatchel
+  id: PRISONClothingBackpackSatchelFilled
   components:
   - type: StorageFill
     contents:

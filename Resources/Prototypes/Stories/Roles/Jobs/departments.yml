@@ -1,9 +1,9 @@
 - type: department
-  id: SpacePrison
-  description: department-SpacePrison-description
-  color: "#0036a2"
+  id: Prison
+  description: Содержите заключенных и охраняйте тюрьму.
+  color: "#e99844"
   roles:
-  - HeadOfSpacePrison
-  - SpacePrisonOfficer
-  - SpacePrisonEngineer
-  - SpacePrisonMedic
+  - PRISONHeadOfPrison
+  - PRISONEngineer
+  - PRISONMedic
+  - PRISONOfficer

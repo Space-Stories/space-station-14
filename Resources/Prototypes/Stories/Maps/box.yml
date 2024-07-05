@@ -1,6 +1,6 @@
 - type: gameMap
   id: StoriesBox
-  mapName: 'Box Station'
+  mapName: '[КТ] Box Station'
   mapPath: /Maps/Stories/box.yml
   minPlayers: 50
   maxPlayers: 70
@@ -8,6 +8,11 @@
     Boxstation:
       stationProto: StandardNanotrasenStation
       components:
+        - type: StationPrison
+          gameMap: StoriesPrison
+          whitelist:
+            components:
+            - PrisonShuttle
         - type: StationNameSetup
           mapNameTemplate: '{0} Box Station {1}'
           nameGenerator:
@@ -64,4 +69,8 @@
             Musician: [ 1, 1 ]
             #stories content
             JediNt: [ 1, 1 ]
+            PRISONHeadOfPrison: [ 1, 1 ]
+            PRISONOfficer: [ 4, 4 ]
+            PRISONMedic: [ 1, 1 ]
+            PRISONEngineer: [ 1, 1 ]
 

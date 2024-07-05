@@ -168,10 +168,11 @@ public sealed partial class ShuttleConsoleSystem : SharedShuttleConsoleSystem
     {
         if (!_tags.HasTag(user, "CanPilot") ||
             !TryComp<ShuttleConsoleComponent>(uid, out var component) ||
-            !this.IsPowered(uid, EntityManager) ||
-            !Transform(uid).Anchored ||
+            // !this.IsPowered(uid, EntityManager) || Stories
+            // !Transform(uid).Anchored || Stories
             !_blocker.CanInteract(user, uid))
         {
+            Logger.Error("111");
             return false;
         }
 

@@ -1,15 +1,4 @@
 - type: entity
-  parent: ClothingEyesGlassesSecurity
-  id: ClothingEyesGlassesSpacePrison
-  name: space prison officer's sunglasses
-  description: Strangely ancient technology used to help provide rudimentary eye cover. Enhanced shielding blocks many flashes. Often worn by budget security officers.
-  components:
-  - type: Sprite
-    sprite: Stories/Clothing/Eyes/Glasses/secglassessp.rsi
-  - type: Clothing
-    sprite: Stories/Clothing/Eyes/Glasses/secglassessp.rsi
-
-- type: entity
   parent: ClothingEyesBase
   id: ClothingEyesNightvision
   name: прибор ночного видения

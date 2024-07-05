@@ -3,10 +3,15 @@
 
 - type: Tag
   id: StasisBattery
-  
+
 - type: Tag
   id: StasisCage
-  
+
 - type: Tag
   id: ForceRecallEquipment
 
+- type: Tag
+  id: PRISONSabre
+
+- type: Tag
+  id: Prison

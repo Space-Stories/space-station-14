@@ -3,8 +3,7 @@
   name: chat-radio-prison
   keycode: 'з' # Stories-Localization
   frequency: 1102
-  color: "#0036a2"
-  # long range since otherwise it'd defeat the point of a handheld radio independent of telecomms
+  color: "#e99844"
 
 - type: radioChannel
   id: Future

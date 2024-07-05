@@ -1,0 +1,232 @@
+- type: roleLoadout
+  id: JobPRISONOfficer
+  groups:
+  - PRISONGloves
+  - PRISONOuterClothing
+  - PRISONBackpack
+  - PRISONHead
+  - PRISONBelt
+  - PRISONShoes
+  - SurvivalSecurity
+  - Trinkets
+
+- type: roleLoadout
+  id: JobPRISONHeadOfPrison
+  groups:
+  - PRISONGloves
+  - PRISONBackpack
+  - PRISONHeadOfPrisonHead
+  - PRISONShoes
+  - SurvivalSecurity
+  - Trinkets
+
+- type: roleLoadout
+  id: JobPRISONMedic
+  groups:
+  - MedicalDoctorHead
+  - MedicalMask
+  - MedicalGloves
+  - MedicalBackpack
+  - MedicalDoctorOuterClothing
+  - MedicalShoes
+  - Glasses
+  - SurvivalMedical
+  - Trinkets
+
+- type: roleLoadout
+  id: JobPRISONEngineer
+  groups:
+  - StationEngineerHead
+  - StationEngineerBackpack
+  - StationEngineerOuterClothing
+  - StationEngineerShoes
+  - SurvivalExtended
+  - Trinkets
+
+- type: loadoutEffectGroup
+  id: Prison
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: Prison
+      time: 36000 # 10 hour
+
+# ГОЛОВА - начальник
+
+- type: loadoutGroup
+  id: PRISONHeadOfPrisonHead
+  name: Начальник тюрьмы, голова
+  minLimit: 0
+  loadouts:
+  - PRISONCapHeadOfPrison
+  - PRISONUshankaHeadOfPrison
+
+- type: loadout
+  id: PRISONUshankaHeadOfPrison
+  equipment: PRISONUshankaHeadOfPrison
+
+- type: startingGear
+  id: PRISONUshankaHeadOfPrison
+  equipment:
+    head: PRISONClothingHeadHatUshanka
+
+- type: loadout
+  id: PRISONCapHeadOfPrison
+  equipment: PRISONCapHeadOfPrison
+
+- type: startingGear
+  id: PRISONCapHeadOfPrison
+  equipment:
+    head: PRISONClothingHeadHatCapHeadOfPrison
+
+# ПЕРЧАТКИ
+
+- type: loadoutGroup
+  id: PRISONGloves
+  name: Тюрьма, перчатки
+  minLimit: 0
+  loadouts:
+  - PRISONGloves
+  - PRISONCombatGloves
+
+- type: loadout
+  id: PRISONGloves
+  equipment: BlackGloves
+
+- type: startingGear
+  id: BlackGloves
+  equipment:
+    gloves: ClothingHandsGlovesColorBlack
+
+- type: loadout
+  id: PRISONCombatGloves
+  equipment: CombatBlackGloves
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: Prison
+
+- type: startingGear
+  id: CombatBlackGloves
+  equipment:
+    gloves: ClothingHandsGlovesCombat
+
+# БРОНЕЖИЛЕТ
+
+- type: loadoutGroup
+  id: PRISONOuterClothing
+  name: Тюрьма, верхняя одежда
+  loadouts:
+  - PRISONArmorVest
+
+- type: loadout
+  id: PRISONArmorVest
+  equipment: PRISONArmorVest
+
+- type: startingGear
+  id: PRISONArmorVest
+  equipment:
+    outerClothing: PRISONClothingOuterVestArmor
+
+# РЮКЗАК
+
+- type: loadoutGroup
+  id: PRISONBackpack
+  name: Тюрьма, рюкзак
+  loadouts:
+  - PRISONBackpack
+  - PRISONSatchel
+  - PRISONDuffel
+
+- type: loadout
+  id: PRISONDuffel
+  equipment: PRISONDuffel
+
+- type: startingGear
+  id: PRISONDuffel
+  equipment:
+    back: PRISONClothingBackpackDuffel
+
+- type: loadout
+  id: PRISONSatchel
+  equipment: PRISONSatchel
+
+- type: startingGear
+  id: PRISONSatchel
+  equipment:
+    back: PRISONClothingBackpackSatchel
+
+- type: loadout
+  id: PRISONBackpack
+  equipment: PRISONBackpack
+
+- type: startingGear
+  id: PRISONBackpack
+  equipment:
+    back: PRISONClothingBackpack
+
+# ГОЛОВА
+
+- type: loadoutGroup
+  id: PRISONHead
+  name: Тюрьма, голова
+  minLimit: 0
+  loadouts:
+  - PRISONCap
+  - PRISONBeret
+
+- type: loadout
+  id: PRISONBeret
+  equipment: PRISONBeret
+
+- type: startingGear
+  id: PRISONBeret
+  equipment:
+    head: PRISONClothingHeadHatBeret
+
+- type: loadout
+  id: PRISONCap
+  equipment: PRISONCap
+
+- type: startingGear
+  id: PRISONCap
+  equipment:
+    head: PRISONClothingHeadHatSoft
+
+# ОБУВЬ
+
+- type: loadoutGroup
+  id: PRISONShoes
+  name: Тюрьма, обувь
+  loadouts:
+  - CombatBoots
+  - JackBoots
+  - SecurityWinterBoots
+  - PRISONJackBoots
+
+- type: loadout
+  id: PRISONJackBoots
+  equipment: PRISONJackBoots
+
+- type: startingGear
+  id: PRISONJackBoots
+  equipment:
+    shoes: PRISONClothingShoesBootsJack
+
+# ПОЯС
+
+- type: loadoutGroup
+  id: PRISONBelt
+  name: Тюрьма, пояс
+  loadouts:
+  - SecurityBelt
+  - PRISONWebbing
+
+- type: loadout
+  id: PRISONWebbing
+  equipment: PRISONWebbing
+
+- type: startingGear
+  id: PRISONWebbing
+  equipment:
+    belt: PRISONClothingBeltWebbing
