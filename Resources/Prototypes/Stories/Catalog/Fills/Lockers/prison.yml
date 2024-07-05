@@ -5,12 +5,12 @@
   components:
     - type: StorageFill
       contents:
-        - id: PRISONHandheldShuttleConsole
+        # - id: PRISONHandheldShuttleConsole
         - id: PRISONClothingHeadHatUshanka
         - id: PRISONClothingHeadHatCapHeadOfPrison
         - id: ClothingMaskGasSwat
         - id: PRISONClothingOuterHardsuitHeadOfPrison
-        - id: PRISONClothingBeltSheathFilled
+        # - id: PRISONClothingBeltSheathFilled
         - id: WeaponDisabler
         - id: DrinkVacuumFlask
         - id: ClothingBeltSecurityFilled

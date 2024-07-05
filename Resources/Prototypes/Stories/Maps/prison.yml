@@ -1,0 +1,22 @@
+- type: gameMap
+  id: StoriesPrison
+  mapName: 'Prison'
+  mapPath: /Maps/Stories/prison.yml
+  minPlayers: 1
+  maxPlayers: 1000
+  stations:
+    Prison:
+      stationProto: PrisonStation
+      components:
+        - type: StationNameSetup
+          mapNameTemplate: '{0} Prison {1}'
+          nameGenerator:
+            !type:NanotrasenNameGenerator
+            prefixCreator: 'TG'
+        - type: StationJobs
+          availableJobs:
+            PRISONHeadOfPrison: [ 1, 1 ]
+            PRISONOfficer: [ 4, 4 ]
+            PRISONMedic: [ 1, 1 ]
+            PRISONEngineer: [ 1, 1 ]
+

@@ -1,6 +1,6 @@
 - type: job
   id: PRISONHeadOfPrison
-  name: глава тюрьмы
+  name: начальник космической тюрьмы
   description: Охраняйте это место используя все возможное и невозможно, иначе на свободу вырвутся самые опасные обитатели вселенной.
   playTimeTracker: JobHeadOfSpacePrison
   requirements:
@@ -8,7 +8,7 @@
       role: JobWarden
       time: 18000 # 5 hours
     - !type:DepartmentTimeRequirement
-      department: SpacePrison
+      department: Prison
       time: 18000 # 5 hours
   weight: 10
   startingGear: PRISONHeadOfPrisonGear
@@ -31,22 +31,19 @@
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
-  - !type:AddComponentSpecial
-    components:
-      - type: CommandStaff
 
 - type: startingGear
   id: PRISONHeadOfPrisonGear
+  storage:
+    back:
+    - WeaponPistolMk58
+    - Flash
+    - MagazinePistol
   equipment:
     jumpsuit: PRISONClothingUniformJumpsuitHeadOfPrison
-    # back: PRISONClothingBackpackFilled
-    shoes: PRISONClothingShoesBootsJack
-    # outerClothing: PRISONClothingOuterCoatHeadOfPrison
-    # eyes: PRISONClothingEyesGlasses
     id: PRISONPDAHeadOfPrison
-    # gloves: ClothingHandsGlovesCombat
     ears: PRISONClothingHeadsetAlt
-    # belt: PRISONClothingBeltSheathFilled
-    # pocket1: WeaponPistolMk58
-  # satchel: PRISONClothingBackpackSatchelFilled
-  # duffelbag: PRISONClothingBackpackDuffelFilled
+    outerClothing: PRISONClothingOuterCoatHeadOfPrison
+    eyes: PRISONClothingEyesGlasses
+    belt: PRISONClothingBeltSheathFilled
+

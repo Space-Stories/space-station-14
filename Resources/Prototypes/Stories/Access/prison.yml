@@ -1,6 +1,6 @@
 - type: accessLevel
   id: HeadOfPrison
-  name: Глава тюрьмы
+  name: Начальник тюрьмы
 
 - type: accessLevel
   id: PrisonBrig

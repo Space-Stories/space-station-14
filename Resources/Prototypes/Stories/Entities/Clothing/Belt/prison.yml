@@ -28,7 +28,7 @@
 - type: entity
   parent: ClothingBeltSecurity
   id: PRISONClothingBeltWebbing
-  name: РПС сотрудников тюрьмы
+  name: РПС сотрудника тюрьмы
   description: Уникальный, универсальный разгрузочный жилет с ремнями и поясом, может вмещать снаряжение сотрудников тюрьмы.
   components:
     - type: Sprite

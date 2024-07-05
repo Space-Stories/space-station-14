@@ -2,7 +2,7 @@
 
 - type: entity
   parent: AirlockGlass
-  name: стеклянный шлюз главы тюрьмы
+  name: стеклянный шлюз начальника тюрьмы
   description: Он открывается, он закрывается, и он может вас раздавить.
   id: PRISONAirlockGlassLockedHeadOfPrison
   suffix: HeadOfPrison, Locked
@@ -15,7 +15,7 @@
 
 - type: entity
   parent: Airlock
-  name: шлюз главы тюрьмы
+  name: шлюз начальника тюрьмы
   description: Он открывается, он закрывается, и он может вас раздавить.
   id: PRISONAirlockLockedHeadOfPrison
   suffix: HeadOfPrison, Locked

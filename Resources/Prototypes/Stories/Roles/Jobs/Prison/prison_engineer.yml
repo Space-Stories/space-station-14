@@ -1,6 +1,6 @@
 - type: job
   id: PRISONEngineer
-  name: инженер тюрьмы
+  name: инженер космической тюрьмы
   description: Обслуживайте тюрьму, ибо сбежавшие зеки придут за вами в первую очередь.
   playTimeTracker: JobSpacePrisonEngineer
   requirements:
@@ -12,8 +12,8 @@
       time: 18000 # 5 hours
   startingGear: PRISONEngineerGear
   icon: "JobIconSpacePrisonEngineer"
-  supervisors: job-supervisors-hosp
-  # canBeAntag: false
+  supervisors: начальник тюрьмы
+  canBeAntag: false
   access:
   - Prison
   - PrisonEng
@@ -30,12 +30,6 @@
   id: PRISONEngineerGear
   equipment:
     jumpsuit: PRISONClothingUniformJumpsuitEngi
-    # back: ClothingBackpackEngineeringFilled
-    shoes: ClothingShoesBootsWork
     id: PRISONPDAEngineer
-    eyes: ClothingEyesGlassesMeson
-    belt: ClothingBeltUtilityEngineering
     ears: PRISONClothingHeadsetEngi
-  # gloves: ClothingHandsGlovesColorYellow
-  # satchel: ClothingBackpackSatchelEngineeringFilled
-  # duffelbag: ClothingBackpackDuffelEngineeringFilled
+    belt: ClothingBeltUtilityEngineering

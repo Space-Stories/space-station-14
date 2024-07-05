@@ -1,14 +1,17 @@
 - type: entity
-  id: StandardSpacePrisonStation
+  id: PrisonStation
   parent:
     - BaseStation
     - BaseStationJobsSpawning
     - BaseStationRecords
-    - BaseStationCentcomm
-    - BaseStationAlertLevels
     - BaseStationSiliconLawCrewsimov
-    - BaseStationAllEventsEligible
     - BaseStationNanotrasen
+    - BaseStationAlertLevels
   noSpawn: true
   components:
     - type: Transform
+    - type: GridSpawn
+      groups:
+        prison:
+          paths:
+          - /Maps/Stories/Shuttles/prison.yml

@@ -2,7 +2,7 @@
   parent: ClothingOuterHardsuitEngineering
   id: PRISONClothingOuterHardsuitEngi
   name: скафандр инженера тюрьмы
-  description: Это защищает от космоса.
+  description: Специальный костюм, защищающий от опасной среды с низким давлением. Имеет радиационную защиту.
   components:
     - type: Sprite
       sprite: Stories/Clothing/OuterClothing/Hardsuits/engisp.rsi
@@ -14,8 +14,8 @@
 - type: entity
   parent: ClothingOuterHardsuitSecurity
   id: PRISONClothingOuterHardsuitOfficer
-  name: скафандр персонала тюрьмы
-  description: Это защищает от космоса.
+  name: скафандр офицера тюрьмы
+  description: Специальный костюм, защищающий от опасной среды с низким давлением. Имеет дополнительный слой брони.
   components:
     - type: Sprite
       sprite: Stories/Clothing/OuterClothing/Hardsuits/securitysp.rsi
@@ -28,7 +28,7 @@
   parent: ClothingOuterHardsuitMedical
   id: PRISONClothingOuterHardsuitMedic
   name: скафандр врача тюрьмы
-  description: Это защищает от космоса.
+  description: Специальный костюм, защищающий от опасной среды с низким давлением. Создан из облегчённых материалов для удобства передвижения.
   components:
     - type: Sprite
       sprite: Stories/Clothing/OuterClothing/Hardsuits/medicsp.rsi
@@ -41,7 +41,7 @@
   parent: ClothingOuterHardsuitSecurityRed
   id: PRISONClothingOuterHardsuitHeadOfPrison
   name: скафандр начальника тюрьмы
-  description: Это защищает от космоса.
+  description: Специальный костюм, защищающий от опасной среды с низким давлением. Имеет дополнительный слой брони.
   components:
     - type: Sprite
       sprite: Stories/Clothing/OuterClothing/Hardsuits/hospsp.rsi

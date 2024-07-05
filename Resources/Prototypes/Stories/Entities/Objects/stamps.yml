@@ -1,12 +1,12 @@
 - type: entity
-  name: печать главы тюрьмы
+  name: печать начальника тюрьмы
   description: Печать из резины, для проставления печатей на важных документах.
   parent: RubberStampBase
   id: PRISONRubberStamp
   suffix: DO NOT MAP
   components:
     - type: Stamp
-      stampedName: Глава тюрьмы
+      stampedName: Начальник тюрьмы
       stampedColor: "#0036A2"
       stampState: "paper_stamp-hosp"
     - type: Sprite

@@ -29,7 +29,7 @@ public sealed class SpawnPointSystem : EntitySystem
 
         while ( points.MoveNext(out var uid, out var spawnPoint, out var xform))
         {
-            if (args.Station != null) // && _stationSystem.GetOwningStation(uid, xform) != args.Station)
+            if (args.Station != null && _stationSystem.GetOwningStation(uid, xform) != args.Station)
                 continue;
 
             if (_gameTicker.RunLevel == GameRunLevel.InRound && spawnPoint.SpawnType == SpawnPointType.LateJoin)

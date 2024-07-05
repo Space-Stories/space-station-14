@@ -1,7 +1,7 @@
 - type: entity
   parent: ClothingHeadBaseButcherable
   id: PRISONClothingHeadHatCapHeadOfPrison
-  name: фуражка главы тюрьмы
+  name: фуражка начальника тюрьмы
   description: Прочная форменная фуражка начальника тюрьмы. Напоминает рядовым офицерам, кто здесь главный.
   components:
     - type: Sprite
@@ -37,7 +37,7 @@
 
 - type: entity
   parent: ClothingHeadBase
-  id: ClothingHeadHatBeretSP
+  id: PRISONClothingHeadHatBeret
   name: берет тюрьмы
   description: Берет - любимый головной убор заключенного. Из него делаются бинты.
   components:

@@ -1,13 +1,4 @@
-- type: entity
-  noSpawn: true
-  parent: PRISONClothingBackpack
-  id: PRISONClothingBackpackFilled
-  components:
-  - type: StorageFill
-    contents:
-      - id: BoxSurvivalSecurity
-      - id: Flash
-      - id: MagazinePistol
+# TODO: Устрарело. Удалить все что ниже.
 
 - type: entity
   noSpawn: true

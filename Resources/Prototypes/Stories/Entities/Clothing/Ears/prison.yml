@@ -52,7 +52,7 @@
 - type: entity
   parent: ClothingHeadsetAlt
   id: PRISONClothingHeadsetAlt
-  name: полноразмерная гарнитура главы тюрьмы
+  name: полноразмерная гарнитура начальника тюрьмы
   description: Нужна, чтобы сообщить капитану о побеге клоуна.
   components:
     - type: ContainerFill

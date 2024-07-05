@@ -1,6 +1,6 @@
 - type: gameMap
   id: StoriesMarathon
-  mapName: 'Marathon Station'
+  mapName: '[КТ] Marathon Station'
   mapPath: /Maps/Stories/marathon.yml
   minPlayers: 35
   maxPlayers: 70
@@ -8,6 +8,11 @@
     Marathon:
       stationProto: StandardNanotrasenStation
       components:
+        - type: StationPrison
+          gameMap: StoriesPrison
+          whitelist:
+            components:
+            - PrisonShuttle
         - type: StationNameSetup
           mapNameTemplate: '{0} Marathon Station {1}'
           nameGenerator:

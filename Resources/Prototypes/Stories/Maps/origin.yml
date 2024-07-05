@@ -1,12 +1,17 @@
 - type: gameMap
   id: StoriesOrigin
-  mapName: 'Origin'
+  mapName: '[КТ] Origin'
   mapPath: /Maps/Stories/origin.yml
   minPlayers: 50
   stations:
     Origin:
       stationProto: StandardNanotrasenStation
       components:
+        - type: StationPrison
+          gameMap: StoriesPrison
+          whitelist:
+            components:
+            - PrisonShuttle
         - type: StationNameSetup
           mapNameTemplate: '{0} Origin {1}'
           nameGenerator:

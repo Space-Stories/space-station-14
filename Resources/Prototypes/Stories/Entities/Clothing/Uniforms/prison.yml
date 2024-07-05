@@ -34,7 +34,7 @@
 - type: entity
   parent: ClothingUniformBase
   id: PRISONClothingUniformJumpsuitHeadOfPrison
-  name: комбинезон главы тюрьмы
+  name: комбинезон начальника тюрьмы
   description: Комбинезон из прочного материала, обеспечивающий надежную защиту.
   components:
     - type: Sprite

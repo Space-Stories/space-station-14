@@ -17,3 +17,13 @@
           state: generic_keys_sp
     - type: Computer
       board: ShuttleConsoleCircuitboard # Пофиг.
+
+- type: entity
+  parent: PRISONComputerShuttle
+  id: PRISONComputerShuttlePrison
+  name: консоль управления шаттлом тюрьмы
+  description: Используется для пилотирования корабля или побега с тюрьмы.
+  components:
+    - type: DroneConsole
+      components:
+        - type: PrisonShuttle
