@@ -1,4 +1,11 @@
 - type: radioChannel
+  id: PrisonStation
+  name: Тюрьма-Станция
+  keycode: 'p' # Stories-Localization
+  frequency: 1101
+  color: "#e96044"
+
+- type: radioChannel
   id: Prison
   name: chat-radio-prison
   keycode: 'з' # Stories-Localization

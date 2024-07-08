@@ -211,7 +211,7 @@ public sealed class StationSystem : EntitySystem
     /// <summary>
     /// Retrieves a filter for everything in a particular station or near its member grids.
     /// </summary>
-    public Filter GetInStation(StationDataComponent dataComponent, float range = 32f)
+    public Filter GetInStation(StationDataComponent dataComponent, float range = 256f) // Stories. Маппил, а оказалось, что консоль связи должна быть не дальше 32. Увеличим.
     {
         // Could also use circles if you wanted.
         var bounds = new ValueList<Box2>(dataComponent.Grids.Count);

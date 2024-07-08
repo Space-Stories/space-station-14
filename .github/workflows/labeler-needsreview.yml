@@ -10,7 +10,7 @@ jobs:
     steps:
     - uses: actions-ecosystem/action-add-labels@v1
       with:
-        labels: "PR: Нужна проверка"
+        labels: "Status: Needs Review"
     - uses: actions-ecosystem/action-remove-labels@v1
       with:
-        labels: "PR: Нужны изменения"
+        labels: "Status: Awaiting Changes"
