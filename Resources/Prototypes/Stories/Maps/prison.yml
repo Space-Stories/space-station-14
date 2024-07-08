@@ -15,8 +15,9 @@
             prefixCreator: 'TG'
         - type: StationJobs
           availableJobs:
-            PRISONHeadOfPrison: [ 1, 1 ]
-            PRISONOfficer: [ 4, 4 ]
-            PRISONMedic: [ 1, 1 ]
-            PRISONEngineer: [ 1, 1 ]
+            PRISONHeadOfPrison: [ 1, 0 ]
+            PRISONOfficer: [ 4, 0 ]
+            PRISONMedic: [ 1, 0 ]
+            PRISONEngineer: [ 1, 0 ]
+            PRISONPrisoner: [ 5, 0 ]
 

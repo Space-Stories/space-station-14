@@ -1,0 +1,18 @@
+- type: entity
+  name: рация тюрьма-станция
+  description: Рация для связи тюрьмы и станции. Есть у начальника тюрьмы, капитана, смотрителя, ГСБ.
+  parent: RadioHandheld
+  id: PRISONRadioHandheld
+  components:
+  - type: RadioMicrophone
+    broadcastChannel: PrisonStation
+  - type: RadioSpeaker
+    channels:
+    - PrisonStation
+  - type: Sprite
+    sprite: Objects/Devices/communication.rsi
+    layers:
+    - state: radio
+  - type: Item
+    sprite: Objects/Devices/communication.rsi
+    heldPrefix: radio

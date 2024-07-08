@@ -1,4 +1,16 @@
 - type: entity
+  id: PRISONSpawnPointPrisoner
+  parent: SpawnPointJobBase
+  name: prisoner
+  components:
+  - type: SpawnPoint
+    job_id: PRISONPrisoner
+  - type: Sprite
+    layers:
+      - state: green
+      - state: prisoner
+
+- type: entity
   id: PRISONSpawnPointHeadOfPrison
   parent: SpawnPointJobBaseStories
   name: headofsp

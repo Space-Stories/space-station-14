@@ -3,15 +3,8 @@
   parent:
     - BaseStation
     - BaseStationJobsSpawning
-    - BaseStationRecords
-    - BaseStationSiliconLawCrewsimov
     - BaseStationNanotrasen
     - BaseStationAlertLevels
   noSpawn: true
   components:
     - type: Transform
-    - type: GridSpawn
-      groups:
-        prison:
-          paths:
-          - /Maps/Stories/Shuttles/prison.yml
