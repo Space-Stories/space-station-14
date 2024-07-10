@@ -1,67 +1,14 @@
 - type: entity
-  parent: IDCardStandard
-  id: HeadOfSPIDCard
-  name: head of space prison ID card
-  components:
-  - type: Sprite
-    sprite: Stories/Objects/Misc/id_cards.rsi
-    layers:
-    - state: default
-    - state: idhosp
-  - type: PresetIdCard
-    job: HeadOfSpacePrison
-  - type: Clothing
-    slots:
-    - idcard
-    sprite: Stories/Objects/Misc/id_cards.rsi
-
-- type: entity
-  parent: HeadOfSPIDCard
-  id: SpacePrisonOfficerIDCard
-  name: space prison officer ID card
-  components:
-  - type: Sprite
-    layers:
-    - state: default
-    - state: idspofficer
-  - type: PresetIdCard
-    job: SpacePrisonOfficer
-
-- type: entity
-  parent: HeadOfSPIDCard
-  id: SpacePrisonEngineerIDCard
-  name: space prison engineer ID card
-  components:
-  - type: Sprite
-    layers:
-    - state: default
-    - state: idspengineer
-  - type: PresetIdCard
-    job: SpacePrisonEngineer
-
-- type: entity
-  parent: HeadOfSPIDCard
-  id: SpacePrisonMedicIDCard
-  name: space prison medic ID card
-  components:
-  - type: Sprite
-    layers:
-    - state: default
-    - state: idspmedic
-  - type: PresetIdCard
-    job: SpacePrisonMedic
-
-- type: entity
-  parent: HeadOfSPIDCard
+  parent: PRISONIDCardHeadOfPrison
   id: IAAIDCard
   name: internal affairs agent ID card
   components:
-  - type: Sprite
-    layers:
-    - state: silver
-    - state: idiaa
-  - type: PresetIdCard
-    job: IAA
+    - type: Sprite
+      layers:
+        - state: silver
+        - state: idiaa
+    - type: PresetIdCard
+      job: IAA
 
 - type: entity
   parent: IDCardStandard
@@ -69,33 +16,33 @@
   name: ID карта стража клинка
   description: Карта, необходимая для доступа в различные области станции.
   components:
-  - type: Sprite
-    layers:
-    - state: silver
-    - state: idjedint
-      sprite: Stories/Objects/Misc/id_cards.rsi
-  - type: Item
-    heldPrefix: blue
-  - type: PresetIdCard
-    job: JediNt
-    
+    - type: Sprite
+      layers:
+        - state: silver
+        - state: idjedint
+          sprite: Stories/Objects/Misc/id_cards.rsi
+    - type: Item
+      heldPrefix: blue
+    - type: PresetIdCard
+      job: JediNt
+
 - type: entity
   parent: IDCardStandard
   id: ChronoIDCard
   name: ID карта будущего
   description: Карта, необходимая исключительно для конспирации
   components:
-  - type: Sprite
-    sprite: Stories/Objects/Misc/id_cards.rsi
-    layers:
-    - state: future
-    - state: idchrono
-  - type: Item
-    heldPrefix: blue
-  - type: IdCard
-    jobTitle: сотрудник будущего
-    jobIcon: JobIconFuture
-  - type: Access
-    tags:
-    - CentralCommand
-    - SyndicateAgent
+    - type: Sprite
+      sprite: Stories/Objects/Misc/id_cards.rsi
+      layers:
+        - state: future
+        - state: idchrono
+    - type: Item
+      heldPrefix: blue
+    - type: IdCard
+      jobTitle: сотрудник будущего
+      jobIcon: JobIconFuture
+    - type: Access
+      tags:
+        - CentralCommand
+        - SyndicateAgent

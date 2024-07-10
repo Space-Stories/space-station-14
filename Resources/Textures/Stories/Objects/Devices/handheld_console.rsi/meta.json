@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "doublechest (discord)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+        "name": "shuttle_sp",
+        "directions": 1,
+        "delays": [
+            [
+                0.4,
+                0.4
+            ]
+        ]
+    }
+  ]
+}

@@ -1,36 +1,63 @@
 - type: entity
-  id: SuitStorageOfficerSP
+  name: хранилище скафандра офицера тюрьмы
+  description: Необычное высокотехнологичное хранилище, предназначенное для хранения космических скафандров.
+  id: PRISONSuitStorageOfficer
   parent: SuitStorageBase
-  suffix: SP Officer
+  suffix: Officer
   components:
   - type: StorageFill
     contents:
-        - id: NitrogenTankFilled
         - id: OxygenTankFilled
-        - id: ClothingOuterHardsuitOfficerSP
+        - id: PRISONClothingOuterHardsuitOfficer
         - id: ClothingMaskBreath
-
-- type: entity
-  id: SuitStorageEngiSP
-  parent: SuitStorageBase
-  suffix: SP Engineer
-  components:
-  - type: StorageFill
-    contents:
-        - id: NitrogenTankFilled
-        - id: OxygenTankFilled
         - id: ClothingShoesBootsMag
-        - id: ClothingOuterHardsuitEngiSP
-        - id: ClothingMaskBreath
+  - type: AccessReader
+    access: [["PrisonBrig"]]
 
 - type: entity
-  id: SuitStorageWardenOfSP
+  name: хранилище скафандра врача тюрьмы
+  description: Необычное высокотехнологичное хранилище, предназначенное для хранения космических скафандров.
+  id: PRISONSuitStorageMed
   parent: SuitStorageBase
-  suffix: WardenOfSP
+  suffix: Med
   components:
   - type: StorageFill
     contents:
-        - id: NitrogenTankFilled
         - id: OxygenTankFilled
-        - id: ClothingOuterHardsuitWardenOfSP
+        - id: PRISONClothingOuterHardsuitMedic
         - id: ClothingMaskBreath
+        - id: ClothingShoesBootsMag
+  - type: AccessReader
+    access: [["PrisonMed"]]
+
+- type: entity
+  name: хранилище скафандра инженера тюрьмы
+  description: Необычное высокотехнологичное хранилище, предназначенное для хранения космических скафандров.
+  id: PRISONSuitStorageEngi
+  parent: SuitStorageBase
+  suffix: Engi
+  components:
+  - type: StorageFill
+    contents:
+        - id: OxygenTankFilled
+        - id: PRISONClothingOuterHardsuitEngi
+        - id: ClothingMaskBreath
+        - id: ClothingShoesBootsMag
+  - type: AccessReader
+    access: [["PrisonEng"]]
+
+- type: entity
+  name: хранилище скафандра начальника тюрьмы
+  description: Необычное высокотехнологичное хранилище, предназначенное для хранения космических скафандров.
+  id: PRISONSuitStorageHeadOfPrison
+  parent: SuitStorageBase
+  suffix: HeadOfPrison
+  components:
+  - type: StorageFill
+    contents:
+        - id: OxygenTankFilled
+        - id: PRISONClothingOuterHardsuitHeadOfPrison
+        - id: ClothingMaskBreath
+        - id: ClothingShoesBootsMag
+  - type: AccessReader
+    access: [["HeadOfPrison"]]

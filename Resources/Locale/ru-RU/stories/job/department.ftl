@@ -1,1 +1,1 @@
-department-SpacePrison = Космическая Тюрьма
+department-Prison = Космическая Тюрьма

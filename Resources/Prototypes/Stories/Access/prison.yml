@@ -1,0 +1,23 @@
+- type: accessLevel
+  id: HeadOfPrison
+  name: Начальник тюрьмы
+
+- type: accessLevel
+  id: PrisonBrig
+  name: Бриг тюрьмы
+
+- type: accessLevel
+  id: Prison
+  name: Тюрьма
+
+- type: accessLevel
+  id: PrisonMed
+  name: Медицинский тюрьма
+
+- type: accessLevel
+  id: PrisonEng
+  name: Инженерный тюрьма
+
+- type: accessLevel
+  id: Prisoner
+  name: Заключенный

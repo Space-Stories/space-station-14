@@ -47,15 +47,6 @@
       sprite: Stories/Clothing/Shoes/Boots/jedi_nt.rsi
 
 - type: entity
-  parent: ClothingShoesBootsJack
-  id: ClothingShoesBootsJackSP
-  components:
-    - type: Sprite
-      sprite: Stories/Clothing/Shoes/Boots/jackboots_sp.rsi
-    - type: Clothing
-      sprite: Stories/Clothing/Shoes/Boots/jackboots_sp.rsi
-
-- type: entity
   parent: ClothingShoesBootsMag
   id: ClothingShoesBootsChrono
   name: сапоги будущего

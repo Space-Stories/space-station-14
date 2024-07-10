@@ -1,41 +1,54 @@
 - type: entity
-  parent: ClothingOuterHardsuitBase
-  id: ClothingOuterHardsuitEngiSP
-  name: engineering sp hardsuit
-  description: A special suit that protects against hazardous, low pressure environments. Has radiation shielding.
+  parent: ClothingOuterHardsuitEngineering
+  id: PRISONClothingOuterHardsuitEngi
+  name: скафандр инженера тюрьмы
+  description: Специальный костюм, защищающий от опасной среды с низким давлением. Имеет радиационную защиту.
   components:
-  - type: Sprite
-    sprite: Stories/Clothing/OuterClothing/Hardsuits/engisp.rsi
-  - type: Clothing
-    sprite: Stories/Clothing/OuterClothing/Hardsuits/engisp.rsi
-  - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHelmetHardsuitEngiSP
+    - type: Sprite
+      sprite: Stories/Clothing/OuterClothing/Hardsuits/engisp.rsi
+    - type: Clothing
+      sprite: Stories/Clothing/OuterClothing/Hardsuits/engisp.rsi
+    - type: ToggleableClothing
+      clothingPrototype: PRISONClothingHeadHelmetHardsuitEngi
 
 - type: entity
-  parent: ClothingOuterHardsuitBase
-  id: ClothingOuterHardsuitOfficerSP
-  name: officer sp hardsuit
-  description: A special suit that protects against hazardous, low pressure environments. Has an additional layer of armor.
+  parent: ClothingOuterHardsuitSecurity
+  id: PRISONClothingOuterHardsuitOfficer
+  name: скафандр офицера тюрьмы
+  description: Специальный костюм, защищающий от опасной среды с низким давлением. Имеет дополнительный слой брони.
   components:
-  - type: Sprite
-    sprite: Stories/Clothing/OuterClothing/Hardsuits/securitysp.rsi
-  - type: Clothing
-    sprite: Stories/Clothing/OuterClothing/Hardsuits/securitysp.rsi
-  - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHelmetHardsuitOfficerSP
+    - type: Sprite
+      sprite: Stories/Clothing/OuterClothing/Hardsuits/securitysp.rsi
+    - type: Clothing
+      sprite: Stories/Clothing/OuterClothing/Hardsuits/securitysp.rsi
+    - type: ToggleableClothing
+      clothingPrototype: PRISONClothingHeadHelmetHardsuitOfficer
 
 - type: entity
-  parent: ClothingOuterHardsuitBase
-  id: ClothingOuterHardsuitWardenOfSP
-  name: warden of sp hardsuit
-  description: A specialized riot suit geared to combat low pressure environments while maintaining agility.
+  parent: ClothingOuterHardsuitMedical
+  id: PRISONClothingOuterHardsuitMedic
+  name: скафандр врача тюрьмы
+  description: Специальный костюм, защищающий от опасной среды с низким давлением. Создан из облегчённых материалов для удобства передвижения.
   components:
-  - type: Sprite
-    sprite: Stories/Clothing/OuterClothing/Hardsuits/wardenofsp.rsi
-  - type: Clothing
-    sprite: Stories/Clothing/OuterClothing/Hardsuits/wardenofsp.rsi
-  - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHelmetHardsuitWardenOfSP
+    - type: Sprite
+      sprite: Stories/Clothing/OuterClothing/Hardsuits/medicsp.rsi
+    - type: Clothing
+      sprite: Stories/Clothing/OuterClothing/Hardsuits/medicsp.rsi
+    - type: ToggleableClothing
+      clothingPrototype: PRISONClothingHeadHelmetHardsuitMedic
+
+- type: entity
+  parent: ClothingOuterHardsuitSecurityRed
+  id: PRISONClothingOuterHardsuitHeadOfPrison
+  name: скафандр начальника тюрьмы
+  description: Специальный костюм, защищающий от опасной среды с низким давлением. Имеет дополнительный слой брони.
+  components:
+    - type: Sprite
+      sprite: Stories/Clothing/OuterClothing/Hardsuits/hospsp.rsi
+    - type: Clothing
+      sprite: Stories/Clothing/OuterClothing/Hardsuits/hospsp.rsi
+    - type: ToggleableClothing
+      clothingPrototype: PRISONClothingHeadHelmetHardsuitHeadOfPrison
 
 #Chronolegioneer
 - type: entity
@@ -44,39 +57,39 @@
   name: скафандр будущего
   description: Скафандр, созданный благодаря технологиям будущего, защищающий владельца от большинства повреждений
   components:
-  - type: Sprite
-    sprite: Stories/Clothing/OuterClothing/Hardsuits/chronolegioneer.rsi
-  - type: Clothing
-    sprite: Stories/Clothing/OuterClothing/Hardsuits/chronolegioneer.rsi
-  - type: PressureProtection
-    highPressureMultiplier: 0.02
-    lowPressureMultiplier: 1000
-  - type: TemperatureProtection
-    coefficient: 0.001
-  - type: ExplosionResistance
-    damageCoefficient: 0.05
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.05
-        Slash: 0.05
-        Piercing: 0.05
-        Heat: 0.05
-        Cold: 0.05
-        Radiation: 0.05
-        Caustic: 0.05
-  - type: ClothingSpeedModifier
-    walkModifier: 0.70
-    sprintModifier: 0.70
-  - type: HeldSpeedModifier
-  - type: NoStasis
-  - type: BlinkActionGiver
-  - type: ToggleableClothing
-    clothingPrototype: ClothingHeadHelmetHardsuitChronolegioneer
+    - type: Sprite
+      sprite: Stories/Clothing/OuterClothing/Hardsuits/chronolegioneer.rsi
+    - type: Clothing
+      sprite: Stories/Clothing/OuterClothing/Hardsuits/chronolegioneer.rsi
+    - type: PressureProtection
+      highPressureMultiplier: 0.02
+      lowPressureMultiplier: 1000
+    - type: TemperatureProtection
+      coefficient: 0.001
+    - type: ExplosionResistance
+      damageCoefficient: 0.05
+    - type: Armor
+      modifiers:
+        coefficients:
+          Blunt: 0.05
+          Slash: 0.05
+          Piercing: 0.05
+          Heat: 0.05
+          Cold: 0.05
+          Radiation: 0.05
+          Caustic: 0.05
+    - type: ClothingSpeedModifier
+      walkModifier: 0.70
+      sprintModifier: 0.70
+    - type: HeldSpeedModifier
+    - type: NoStasis
+    - type: BlinkActionGiver
+    - type: ToggleableClothing
+      clothingPrototype: ClothingHeadHelmetHardsuitChronolegioneer
 
 - type: entity
   parent: ClothingOuterHardsuitChronolegioneer
   id: ClothingOuterHardsuitChronolegioneerUnremoveable
   suffix: Неснимаемый
   components:
-  - type: Unremoveable
+    - type: Unremoveable

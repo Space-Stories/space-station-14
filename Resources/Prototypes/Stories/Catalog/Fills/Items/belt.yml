@@ -2,18 +2,8 @@
   parent: ClothingBeltJedi
   id: ClothingBeltJediFilled
   components:
-  - type: StorageFill
-    contents:
-      - id: Handcuffs
-        amount: 3
-      - id: Flash
-
-- type: entity
-  id: ClothingBeltHoSPSheathFilled
-  parent: ClothingBeltHoSPSheath
-  suffix: Filled
-  components:
-  - type: ContainerFill
-    containers:
-      item:
-      - HoSPSabre
+    - type: StorageFill
+      contents:
+        - id: Handcuffs
+          amount: 3
+        - id: Flash

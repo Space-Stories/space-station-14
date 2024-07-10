@@ -1,0 +1,18 @@
+- type: job
+  id: PRISONPrisoner
+  name: заключенный космической тюрьмы
+  playTimeTracker: JobPrisoner
+  description: Как я сюда попал?
+  startingGear: PRISONPrisoner
+  icon: "JobIconPRISONPrisoner"
+  supervisors: job-supervisors-everyone
+  canBeAntag: true
+  access:
+  - Prisoner
+
+- type: startingGear
+  id: PRISONPrisoner
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitPrisoner
+    shoes: ClothingShoesColorBlack
+

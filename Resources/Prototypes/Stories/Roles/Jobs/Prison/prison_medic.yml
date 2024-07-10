@@ -1,0 +1,31 @@
+- type: job
+  id: PRISONMedic
+  name: медик космической тюрьмы
+  description: Лечите самых опасных преступников космических просторов.
+  playTimeTracker: JobSpacePrisonMedic
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 18000 # 5 hours
+    - !type:DepartmentTimeRequirement
+      department: Medical
+      time: 18000 # 5 hours
+  startingGear: PRISONMedicGear
+  icon: "JobIconSpacePrisonMedic"
+  supervisors: начальник тюрьмы
+  canBeAntag: false
+  access:
+  - Prison
+  - PrisonMed
+  - Maintenance
+  - Medical
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: PRISONMedicGear
+  equipment:
+    jumpsuit: PRISONClothingUniformJumpsuitMedic
+    id: PRISONPDAMedic
+    ears: PRISONClothingHeadsetMedic
