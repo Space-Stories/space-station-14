@@ -13,6 +13,7 @@
 - type: startingGear
   id: PRISONPrisoner
   equipment:
+    id: PRISONIDCardPrisoner
     jumpsuit: ClothingUniformJumpsuitPrisoner
     shoes: ClothingShoesColorBlack
 
