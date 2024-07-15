@@ -21,5 +21,4 @@
             PRISONOfficer: [ 8, 8 ]
             PRISONMedic: [ 1, 1 ]
             PRISONEngineer: [ 1, 1 ]
-            PRISONPrisoner: [ -1, -1 ]
-
+            PRISONPrisoner: [ 8, 8 ]
