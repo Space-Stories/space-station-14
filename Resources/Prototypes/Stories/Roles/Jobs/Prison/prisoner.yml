@@ -9,6 +9,10 @@
   canBeAntag: true
   access:
   - Prisoner
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: Prisoner
 
 - type: startingGear
   id: PRISONPrisoner
