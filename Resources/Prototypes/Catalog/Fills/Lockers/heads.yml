@@ -301,6 +301,7 @@
       - id: BoxEncryptionKeySecurity
       - id: HoloprojectorSecurity
       - id: BookSecretDocuments
+      - id: BookSpaceLaw
       - id: PRISONRadioHandheld # Stories
 
 - type: entity
@@ -345,6 +346,7 @@
       - id: BoxEncryptionKeySecurity
       - id: HoloprojectorSecurity
       - id: BookSecretDocuments
+      - id: BookSpaceLaw
       - id: PRISONRadioHandheld # Stories
 
 - type: entity

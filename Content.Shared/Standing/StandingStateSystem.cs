@@ -49,7 +49,10 @@ namespace Content.Shared.Standing
         }
         // Stories-Crawling-End
 
-        public bool Down(EntityUid uid, bool playSound = true, bool dropHeldItems = true, bool canStandUp = true,
+        public bool Down(EntityUid uid,
+            bool playSound = true,
+            bool dropHeldItems = true,
+            bool force = false,
             StandingStateComponent? standingState = null,
             AppearanceComponent? appearance = null,
             HandsComponent? hands = null)
@@ -72,19 +75,22 @@ namespace Content.Shared.Standing
                 RaiseLocalEvent(uid, new DropHandItemsEvent(), false);
             }
 
-            // Stories-Crawling-Start
-            if (!standingState.Standing)
-                return true;
-            // Stories-Crawling-End
+            if (!force)
+            {
+                // Stories-Crawling-Start
+                if (!standingState.Standing)
+                    return true;
+                // Stories-Crawling-End
 
-            var msg = new DownAttemptEvent();
-            RaiseLocalEvent(uid, msg, false);
+                var msg = new DownAttemptEvent();
+                RaiseLocalEvent(uid, msg, false);
 
-            if (msg.Cancelled)
-                return false;
+                if (msg.Cancelled)
+                    return false;
+            }
 
             standingState.Standing = false;
-            standingState.CanStandUp = canStandUp;
+            standingState.CanStandUp = true;
             Dirty(uid, standingState);
             RaiseLocalEvent(uid, new DownedEvent(), false);
             _movementSpeedModifier.RefreshMovementSpeedModifiers(uid); // Stories-Crawling
