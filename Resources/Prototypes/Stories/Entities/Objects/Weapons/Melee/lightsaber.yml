@@ -151,8 +151,6 @@
       path: /Audio/Weapons/ebladehum.ogg
       params:
         volume: 3
-  - type: ItemToggleDisarmMalus
-    activatedDisarmMalus: 0.7
   - type: MeleeWeapon
     wideAnimationRotation: -135
     attackRate: 1.5

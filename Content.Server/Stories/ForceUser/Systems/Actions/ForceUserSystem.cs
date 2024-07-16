@@ -75,7 +75,7 @@ public sealed partial class ForceUserSystem : SharedForceUserSystem
     [Dependency] private readonly SmokeSystem _smoke = default!;
     [Dependency] private readonly SharedMapSystem _map = default!;
     [Dependency] private readonly PullToSystem _pullTo = default!;
-    [Dependency] private readonly SharedItemToggleSystem _toggleSystem = default!;
+    [Dependency] private readonly ItemToggleSystem _toggleSystem = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedInteractionSystem _interaction = default!;
     [Dependency] private readonly ConversionSystem _conversion = default!;

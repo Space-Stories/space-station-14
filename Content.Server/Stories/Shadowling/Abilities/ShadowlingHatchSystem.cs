@@ -62,7 +62,7 @@ public sealed class ShadowlingHatchSystem : EntitySystem
         _meta.SetEntityName(newUid, oldMeta.EntityName);
 
         _stun.TryStun(newUid, TimeSpan.FromSeconds(15), true);
-        _standing.Down(newUid, dropHeldItems: false, canStandUp: false);
+        _standing.Down(newUid, dropHeldItems: false);
         _physics.SetBodyType(newUid, BodyType.Static);
 
         var doAfter = new DoAfterArgs(EntityManager, newUid, 15, new ShadowlingHatchDoAfterEvent(), newUid)
