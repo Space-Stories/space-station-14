@@ -148,6 +148,7 @@ public sealed partial class PrisonSystem : EntitySystem
 
         args.AddLine(Loc.GetString(winString));
         args.AddLine(Loc.GetString($"{winString}-desc"));
+        args.AddLine("\n");
     }
     public void FTLToBeacon(EntityUid shuttleUid, EntityUid beaconUid, ShuttleComponent? component = null)
     {
