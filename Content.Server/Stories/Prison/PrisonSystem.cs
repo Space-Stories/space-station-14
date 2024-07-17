@@ -16,6 +16,12 @@ using Content.Server.DeviceNetwork.Components;
 using Content.Shared.DeviceNetwork;
 using Content.Server.DeviceNetwork.Systems;
 using Content.Shared.Mobs.Components;
+using Content.Shared.StatusEffect;
+using Content.Shared.CombatMode.Pacification;
+using Content.Shared.Mobs.Systems;
+using Robust.Server.Player;
+using Content.Shared.Mind;
+using Content.Server.Mind;
 
 namespace Content.Server.Stories.Prison;
 
@@ -30,7 +36,16 @@ public sealed partial class PrisonSystem : EntitySystem
     [Dependency] private readonly SharedTransformSystem _xform = default!;
     [Dependency] private readonly IGameTiming _timing = default!;
     [Dependency] private readonly DeviceNetworkSystem _deviceNetwork = default!;
+    [Dependency] private readonly IPlayerManager _player = default!;
+    [Dependency] private readonly MindSystem _mind = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly MobStateSystem _mobState = default!;
+    [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
+    private const string PacifiedKey = "Pacified";
+    /// <summary>
+    /// Процент сбежавших зеков для их полной победы.
+    /// </summary>
+    private const float EscapedPrisonersPercent = 0.5f;
     private ISawmill _sawmill = default!;
     public const float ShuttleTransferTime = 120f;
     public override void Initialize()
@@ -38,8 +53,14 @@ public sealed partial class PrisonSystem : EntitySystem
         _sawmill = Logger.GetSawmill("prison");
         SubscribeLocalEvent<StationPrisonComponent, MapInitEvent>(OnStationInit);
         SubscribeLocalEvent<PrisonShuttleComponent, MapInitEvent>(OnShuttleInit);
+        SubscribeLocalEvent<PrisonerComponent, ComponentInit>(OnPrisonerInit);
 
         SubscribeLocalEvent<RoundEndTextAppendEvent>(OnRoundEndText);
+    }
+    private void OnPrisonerInit(EntityUid uid, PrisonerComponent component, ComponentInit args)
+    {
+        // Rooooooooooooooooooooundstart пацифизм на время, чтобы не было РДМ побегов за 5 секунд.
+        _statusEffects.TryAddStatusEffect<PacifiedComponent>(uid, PacifiedKey, TimeSpan.FromSeconds(component.PacifiedTime), false);
     }
     public override void Update(float frameTime)
     {
@@ -103,51 +124,52 @@ public sealed partial class PrisonSystem : EntitySystem
     {
         // FIXME: Hardcoded
 
+        var prisonGrid = EnsurePrisonGrid();
         MapId? prisonMap = null;
+        HashSet<EntityUid> prisoners = new();
+        HashSet<EntityUid> alivePrisoners = new();
+        HashSet<EntityUid> escapedPrisoners = new();
 
-        var queryPrisons = EntityQueryEnumerator<PrisonComponent>();
-        while (queryPrisons.MoveNext(out var uid, out var prison))
-        {
-            if (TryComp<StationDataComponent>(uid, out var station))
-            {
-                var grid = _station.GetLargestGrid(station);
-                if (grid.HasValue)
-                    prisonMap = Transform(grid.Value).MapID;
-            }
-        }
-
-        int prisoners = 0;
-        int alivePrisoners = 0;
-        int escapedPrisoners = 0;
+        if (prisonGrid != null)
+            prisonMap = Transform(prisonGrid.Value).MapID;
 
         var query = EntityQueryEnumerator<PrisonerComponent, MobStateComponent, TransformComponent>();
         while (query.MoveNext(out var uid, out var prisoner, out var mobState, out var xform))
         {
-            prisoners++;
-
-            if (mobState.CurrentState == Shared.Mobs.MobState.Alive)
-                alivePrisoners++;
-
-            if (prisonMap != null && xform.MapID != prisonMap)
-                escapedPrisoners++;
+            prisoners.Add(uid);
+            if (_mobState.IsAlive(uid, mobState))
+                alivePrisoners.Add(uid);
+            if (Transform(uid).MapID != prisonMap)
+                escapedPrisoners.Add(uid);
         }
 
         string winString;
 
-        if (prisoners == 0)
+        if (prisoners.Count == 0)
             winString = "prison-no-prisoners";
-        else if (alivePrisoners == 0)
+        else if (alivePrisoners.Count == 0)
             winString = "prisoner-dead";
-        else if (escapedPrisoners > 0 && escapedPrisoners >= alivePrisoners / 2)
+        else if (escapedPrisoners.Count > 0 && escapedPrisoners.Count >= prisoners.Count * EscapedPrisonersPercent)
             winString = "prisoner-major";
-        else if (escapedPrisoners > 0)
+        else if (escapedPrisoners.Count > 0)
             winString = "prisoner-minor";
-        else if (alivePrisoners == prisoners)
+        else if (alivePrisoners.Count == prisoners.Count)
             winString = "prison-major";
         else winString = "prison-minor";
 
         args.AddLine(Loc.GetString(winString));
         args.AddLine(Loc.GetString($"{winString}-desc"));
+        args.AddLine(Loc.GetString("prison-escaped"));
+        foreach (var entityUid in escapedPrisoners)
+        {
+            if (!_mind.TryGetMind(entityUid, out _, out var mind) || mind.OriginalOwnerUserId == null)
+                continue;
+
+            if (!_player.TryGetPlayerData(mind.OriginalOwnerUserId.Value, out var data))
+                continue;
+            // nukeops-list-name-user некорректно.
+            args.AddLine(Loc.GetString("nukeops-list-name-user", ("name", MetaData(entityUid).EntityName), ("user", data.UserName)));
+        }
         args.AddLine("\n");
     }
     public void FTLToBeacon(EntityUid shuttleUid, EntityUid beaconUid, ShuttleComponent? component = null)
