@@ -51,9 +51,9 @@ public sealed class SpawnPointSystem : EntitySystem
             // TODO: Refactor gameticker spawning code so we don't have to do this!
             var points2 = EntityQueryEnumerator<SpawnPointComponent, TransformComponent>();
 
-            if (points2.MoveNext(out var spawnPoint, out var xform))
+            if (points2.MoveNext(out var spawnPointUid, out var spawnPoint, out var xform)) // Stories
             {
-                possiblePositions.Add(xform.Coordinates);
+                if (spawnPoint.SpawnType == SpawnPointType.LateJoin && _stationSystem.GetOwningStation(spawnPointUid, xform) == args.Station) possiblePositions.Add(xform.Coordinates); // Stories. Лучше спавнить в позднем присоед., чем вообще в любой точке.
             }
             else
             {
