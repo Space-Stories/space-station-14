@@ -2,6 +2,11 @@
   id: EmpireFaction
   priority: 12
   locationPreference: Right
+  showTo:
+    components:
+    - ShowAntagIcons
+    - Empire
+    - HypnotizedEmpire
   icon:
     sprite: /Textures/Stories/Interface/Misc/job_icons.rsi
     state: Empire
@@ -10,6 +15,11 @@
   id: HypnotizedEmpireFaction
   priority: 12
   locationPreference: Right
+  showTo:
+    components:
+    - ShowAntagIcons
+    - Empire
+    - HypnotizedEmpire
   icon:
     sprite: /Textures/Stories/Interface/Misc/job_icons.rsi
     state: HypnotizedEmpire

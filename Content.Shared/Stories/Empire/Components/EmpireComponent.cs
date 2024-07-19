@@ -10,6 +10,4 @@ public sealed partial class EmpireComponent : Component
 {
     [DataField, ViewVariables(VVAccess.ReadWrite)]
     public ProtoId<StatusIconPrototype> StatusIcon { get; set; } = "EmpireFaction";
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public bool IconVisibleToGhost { get; set; } = true;
 }

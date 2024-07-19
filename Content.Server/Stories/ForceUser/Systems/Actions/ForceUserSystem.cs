@@ -34,7 +34,7 @@ using Content.Shared.Interaction;
 using Content.Server.Beam;
 using Content.Server.SpaceStories.ForceUser.ProtectiveBubble.Systems;
 using Robust.Shared.Prototypes;
-using Content.Server.SpaceStories.Conversion;
+using Content.Server.Stories.Conversion;
 
 namespace Content.Server.SpaceStories.ForceUser;
 public sealed partial class ForceUserSystem : SharedForceUserSystem
