@@ -108,7 +108,7 @@ public sealed partial class ForceUserSystem
     private void OnHypnosis(HypnosisTargetActionEvent args)
     {
         if (args.Handled || _mobState.IsIncapacitated(args.Target) || HasComp<MindShieldComponent>(args.Target)) return;
-        _conversion.TryConvert(args.Target, "HypnotizedEmpire");
+        _conversion.TryConvert(args.Target, "HypnotizedEmpire", args.Performer); // FIXME: Hardcode. Исправим в обновлении инквизитора.
         args.Handled = true;
     }
     private void OnIgnite(IgniteTargetActionEvent args)
