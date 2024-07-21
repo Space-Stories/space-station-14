@@ -44,7 +44,7 @@
       ActionShadowlingBlindnessSmoke: 5
       ActionShadowlingSonicScreech: 3
       ActionShadowlingBlackRecuperation: 9
-      ActionShadowlingAscendance: 0
+      ActionShadowlingAscendance: 15
   - type: Photosensitivity
   - type: NoSlip
   - type: MovementAlwaysTouching
