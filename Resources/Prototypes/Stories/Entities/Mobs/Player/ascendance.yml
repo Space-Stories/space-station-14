@@ -40,7 +40,6 @@
   - type: NpcFactionMember
     factions:
     - SimpleHostile
-  - type: Hands
   - type: Sprite
     drawdepth: Mobs
     sprite: Stories/Mobs/Demons/shadowling.rsi
