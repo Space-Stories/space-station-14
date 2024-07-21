@@ -1,6 +1,25 @@
-# - type: entity
-#   id: Shadowling
-#   parent: BaseGameRule
-#   noSpawn: true
-#   components:
-#   - type: ShadowlingRule
+- type: entity
+  id: Shadowling
+  parent: BaseGameRule
+  components:
+  - type: GameRule
+    minPlayers: 15
+  - type: ShadowlingRule
+  - type: AntagSelection
+    definitions:
+    - prefRoles: [ Shadowling ]
+      max: 3
+      playerRatio: 15
+      briefing:
+        text: shadowling-role-greeting
+        color: DarkRed
+        sound: "/Audio/Ambience/Antag/ling_alert.ogg"
+      components:
+      - type: Shadowling
+        actions:
+          ActionShadowlingHatch: 0
+      mindComponents:
+      - type: RoleBriefing
+        briefing: shadowling-briefing
+      - type: ShadowlingRole
+        prototype: Shadowling

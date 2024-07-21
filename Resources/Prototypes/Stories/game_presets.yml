@@ -1,12 +1,13 @@
 - type: gamePreset
-  id: Shadowlings
+  id: Shadowling
   alias:
     - shadowling
-    - shadowlings
-  name: Тенеморфы | БЕТА |
-  description: " Тени на станции...
-    | БЕТА | Возможны баги и недоработки. Просьба сразу нам о них сообщать."
+  name: Тенеморфы
+  description: На станции обитают тенеморфы.
   showInVote: false
   rules:
     - Shadowling
+    - SubGamemodesRule
     - BasicStationEventScheduler
+    - GameRuleMeteorScheduler
+    - BasicRoundstartVariation

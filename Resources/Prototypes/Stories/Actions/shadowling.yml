@@ -20,7 +20,13 @@
     icon: { sprite: Stories/Actions/shadowling.rsi, state: enthrall }
     itemIconStyle: NoItem
     priority: -11
-    event: !type:ShadowlingEnthrallEvent {}
+    event: !type:DoAfterTargetEvent
+      hidden: false
+      needHand: true
+      delay: 5
+      breakOnDamage: true
+      breakOnMove: true
+      event: !type:ShadowlingEnthrallEvent {}
 
 - type: entity
   id: ActionShadowlingGlare
@@ -61,7 +67,8 @@
     itemIconStyle: NoItem
     checkCanInteract: false
     priority: -11
-    event: !type:ShadowlingShadowWalkEvent {}
+    event: !type:PolymorphActionEvent
+      protoId: ShadowlingGhost
 
 - type: entity
   id: ActionShadowlingIcyVeins
@@ -74,7 +81,21 @@
     icon: { sprite: Stories/Actions/shadowling.rsi, state: icy_veins }
     itemIconStyle: NoItem
     priority: -11
-    event: !type:ShadowlingIcyVeinsEvent {}
+    event: !type:InjectReagentsInRangeEvent
+      injectToPerformer: false
+      range: 7.5
+      solutionTarget: chemicals
+      solution:
+        reagents:
+        - ReagentId: IceOil
+          Quantity: 8
+      whitelist:
+        components:
+        - Body
+      blacklist:
+        components:
+        - Shadowling
+        - ShadowlingThrall
 
 - type: entity
   id: ActionShadowlingCollectiveMind
@@ -165,7 +186,7 @@
     itemIconStyle: NoItem
     range: 10
     priority: -11
-    event: !type:ShadowlingHypnosisEvent {}
+    event: !type:ShadowlingEnthrallEvent {}
 
 - type: entity
   id: ActionShadowlingAnnihilate
@@ -192,7 +213,8 @@
     itemIconStyle: NoItem
     priority: -11
     checkCanInteract: false
-    event: !type:ShadowlingPlaneShiftEvent {}
+    event: !type:PolymorphActionEvent
+      protoId: ShadowlingGhost
 
 - type: entity
   id: ActionShadowlingLightningStorm

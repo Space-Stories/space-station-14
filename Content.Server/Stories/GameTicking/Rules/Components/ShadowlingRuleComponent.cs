@@ -1,0 +1,38 @@
+using Robust.Shared.Audio;
+
+namespace Content.Server.Stories.GameTicking.Rules.Components;
+
+[RegisterComponent, Access(typeof(ShadowlingRuleSystem))]
+public sealed partial class ShadowlingRuleComponent : Component
+{
+    [DataField]
+    public ShadowlingWinType WinType = ShadowlingWinType.Lost;
+
+    [DataField]
+    public LocId AscendanceAnnouncement = "shadowling-ascendance-announcement";
+
+    [DataField]
+    public Color AscendanceAnnouncementColor = Color.Red;
+
+    [DataField]
+    public SoundSpecifier? AscendanceGlobalSound = null;
+
+    [DataField]
+    public TimeSpan RoundEndTime = TimeSpan.FromMinutes(3);
+}
+
+public enum ShadowlingWinType : byte
+{
+    /// <summary>
+    ///     Тенеморфы превознились.
+    /// </summary>
+    Won,
+    /// <summary>
+    ///     Тенеморфы выжили.
+    /// </summary>
+    Stalemate,
+    /// <summary>
+    ///     Все тенеморфы мертвы.
+    /// </summary>
+    Lost
+}

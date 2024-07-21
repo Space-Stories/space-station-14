@@ -2,16 +2,16 @@ using Content.Shared.Mindshield.Components;
 
 namespace Content.Shared.Stories.Mindshield;
 
-public sealed class SharedMindShieldSystem : EntitySystem
+public sealed partial class MindShieldSystem : EntitySystem
 {
     [Dependency] private readonly IEntityManager _entityManager = default!;
     public override void Initialize()
     {
         base.Initialize();
-        SubscribeLocalEvent<MindShieldComponent, MapInitEvent>(MindShieldImplanted);
+        SubscribeLocalEvent<MindShieldComponent, ComponentInit>(MindShieldImplanted);
     }
 
-    private void MindShieldImplanted(EntityUid uid, MindShieldComponent comp, MapInitEvent init)
+    private void MindShieldImplanted(EntityUid uid, MindShieldComponent comp, ComponentInit init)
     {
         var ev = new MindShieldImplantedEvent(uid, comp);
         _entityManager.EventBus.RaiseLocalEvent(uid, ref ev, true);
@@ -19,4 +19,4 @@ public sealed class SharedMindShieldSystem : EntitySystem
 }
 
 [ByRefEvent]
-public readonly record struct MindShieldImplantedEvent(EntityUid Uid, MindShieldComponent MindShield);
+public readonly record struct MindShieldImplantedEvent(EntityUid EntityUid, MindShieldComponent Component);

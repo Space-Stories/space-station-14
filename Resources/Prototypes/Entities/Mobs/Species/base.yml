@@ -238,6 +238,7 @@
   - type: Conversionable # SPACE STORIES
     allowed:
     - HypnotizedEmpire
+    - ShadowlingThrall
   - type: Barotrauma
     damage:
       types:

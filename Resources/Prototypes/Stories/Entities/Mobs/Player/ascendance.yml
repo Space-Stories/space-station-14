@@ -7,20 +7,34 @@
   description: Если вы его видите, то вам следует бежать
   components:
   - type: Shadowling
-    ascended: true
+    actions:
+      # ActionShadowlingHatch: 0
+      # ActionShadowlingShadowWalk: 0
+      ActionShadowlingPlaneShift: 0
+      ActionShadowlingGlare: 0
+      ActionShadowlingVeil: 0
+      ActionShadowlingIcyVeins: 0
+      ActionShadowlingCollectiveMind: 0
+      ActionShadowlingRapidReHatch: 0
+      # ActionShadowlingEnthrall: 0
+      ActionShadowlingHypnosis: 0
+      ActionShadowlingBlindnessSmoke: 0
+      ActionShadowlingSonicScreech: 0
+      ActionShadowlingBlackRecuperation: 0
+      ActionShadowlingLightningStorm: 0
+      ActionShadowlingAnnihilate: 0
+      # ActionShadowlingAscendance: 0
+  - type: NameIdentifier
+    group: GenericNumber
   - type: Insulated
   - type: CombatMode
+  - type: Destructible
+    thresholds: []
   - type: InputMover
   - type: MobMover
-  - type: Tool
-    speed: 20
-    qualities:
-      - Prying
   - type: Prying
-    pryPowered: !type:Bool
-      true
-    force: !type:Bool
-      true
+    pryPowered: true
+    force: true
     useSound:
       path: /Audio/Items/crowbar.ogg
   - type: NpcFactionMember
@@ -52,7 +66,7 @@
   - type: MobThresholds
     thresholds:
       0: Alive
-      10000: Dead
+      1000: Dead
   - type: MeleeWeapon
     altDisarm: false
     angle: 0
@@ -89,6 +103,10 @@
   - type: MovementSpeedModifier
     baseWalkSpeed : 8
     baseSprintSpeed : 8
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - ShadowlingMind
   - type: ActiveRadio
     channels:
     - ShadowlingMind

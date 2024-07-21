@@ -2174,12 +2174,6 @@ namespace Content.Shared.CCVar
         public static readonly CVarDef<bool> GatewayGeneratorEnabled =
             CVarDef.Create("gateway.generator_enabled", true);
 
-        /// <summary>
-        /// If it's enabled then shadowling will not be able to enthrall someone without mind
-        /// </summary>
-        public static readonly CVarDef<bool> ShadowlingEnthrallRequireMindAvailability =
-            CVarDef.Create("shadowling.enthrall_require_mind_availability", true, CVar.SERVERONLY); // Stories-Shadowlings
-
         // Clippy!
         public static readonly CVarDef<string> TippyEntity =
             CVarDef.Create("tippy.entity", "Tippy", CVar.SERVER | CVar.REPLICATED);

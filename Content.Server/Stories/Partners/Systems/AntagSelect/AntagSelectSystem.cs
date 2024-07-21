@@ -21,6 +21,7 @@ using Content.Shared.Stories.Sponsor.AntagSelect;
 using Content.Server.Database;
 using Content.Server.Antag;
 using Content.Server.Stories.Shadowling;
+using Content.Shared.Stories.Shadowling;
 
 namespace Content.Server.Stories.Sponsor.AntagSelect;
 public sealed class AntagSelectSystem : EntitySystem
