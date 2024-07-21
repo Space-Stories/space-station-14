@@ -4,9 +4,11 @@
   parent:
   - BaseMob
   - MobDamageable
+  - MobCombat
   id: BaseMobShadowling
   abstract: true
   components:
+  - type: ComplexInteraction
   - type: Destructible
     thresholds:
     - trigger:
