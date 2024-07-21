@@ -15,6 +15,13 @@
         color: DarkRed
         sound: "/Audio/Ambience/Antag/ling_alert.ogg"
       components:
+      - type: IntrinsicRadioReceiver
+      - type: IntrinsicRadioTransmitter
+        channels:
+        - ShadowlingMind
+      - type: ActiveRadio
+        channels:
+        - ShadowlingMind
       - type: Shadowling
         actions:
           ActionShadowlingHatch: 0
