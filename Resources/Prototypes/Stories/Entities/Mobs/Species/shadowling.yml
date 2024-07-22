@@ -8,13 +8,14 @@
   id: BaseMobShadowling
   abstract: true
   components:
+  - type: ThermalVision
   - type: ComplexInteraction
   - type: Destructible
     thresholds:
     - trigger:
         !type:DamageTypeTrigger
         damageType: Heat
-        damage: 120
+        damage: 240
       behaviors:
       - !type:SpawnEntitiesBehavior
         spawnInContainer: true

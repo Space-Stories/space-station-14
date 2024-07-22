@@ -8,6 +8,7 @@
     text: thrall-role-goodbye
     color: Red
   components:
+  - type: ThermalVision
   - type: ShadowlingThrall
   mindComponents:
   - type: RoleBriefing

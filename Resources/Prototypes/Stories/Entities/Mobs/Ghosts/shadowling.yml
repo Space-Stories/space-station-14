@@ -6,6 +6,7 @@
   - MobDamageable
   description: Очень страшный.
   components:
+  - type: ThermalVision
   - type: MobState
     allowedStates:
     - Alive
@@ -64,7 +65,6 @@
     drawFov: false
     visMask:
       - Normal
-      - Ghost
   - type: ContentEye
     maxZoom: 1.2, 1.2
   - type: DoAfter
