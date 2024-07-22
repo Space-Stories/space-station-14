@@ -34,6 +34,7 @@ public sealed partial class ShadowlingSystem : EntitySystem
 {
     [Dependency] private readonly SmokeSystem _smoke = default!;
     [Dependency] private readonly StandingStateSystem _standing = default!;
+    [Dependency] private readonly HandheldLightSystem _handheldLight = default!;
     [Dependency] private readonly DoAfterSystem _doAfter = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly RoundEndSystem _roundEnd = default!;

@@ -5,6 +5,7 @@ using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.Reagent;
 using Content.Shared.Damage.Components;
 using Content.Shared.DoAfter;
+using Content.Shared.Light.Components;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
 using Content.Shared.Polymorph;
@@ -12,6 +13,7 @@ using Content.Shared.Rejuvenate;
 using Content.Shared.Silicons.Borgs.Components;
 using Content.Shared.Stories.Conversion;
 using Content.Shared.Stories.Shadowling;
+using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Map;
 using Robust.Shared.Player;
@@ -171,9 +173,12 @@ public sealed partial class ShadowlingSystem
         if (args.Handled)
             return;
 
-        foreach (var (ent, comp) in _entityLookup.GetEntitiesInRange<PoweredLightComponent>(_xform.GetMapCoordinates(uid), 10f)) // FIXME: Hardcode
+        foreach (var (ent, _) in _entityLookup.GetEntitiesInRange<PointLightComponent>(_xform.GetMapCoordinates(uid), 10f)) // FIXME: Hardcode
         {
-            _poweredLight.TryDestroyBulb(ent, comp);
+            if (HasComp<PoweredLightComponent>(ent))
+                _poweredLight.TryDestroyBulb(ent);
+            else if (TryComp<HandheldLightComponent>(ent, out var comp))
+                _handheldLight.TurnOff((ent, comp));
         }
 
         args.Handled = true;
@@ -216,12 +221,6 @@ public sealed partial class ShadowlingSystem
     }
     private void OnCollectiveEvent(EntityUid uid, ShadowlingComponent component, ShadowlingCollectiveMindEvent args)
     {
-        // "ActionShadowlingBlindnessSmoke"; // 3 thralls
-        // "ActionShadowlingDrainThralls"; // 5 thralls
-        // "ActionShadowlingSonicScreech"; // 7 thralls
-        // "ActionShadowlingBlackRecuperation"; // 9 thralls
-        // "ActionShadowlingAscendance"; // 15 thralls
-
         if (args.Handled)
             return;
 
