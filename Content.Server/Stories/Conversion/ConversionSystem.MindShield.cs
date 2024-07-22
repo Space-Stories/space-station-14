@@ -21,7 +21,7 @@ public sealed partial class ConversionSystem
     {
         foreach (var (key, conversion) in component.ActiveConversions)
         {
-            Revert(uid, _prototype.Index(conversion.Prototype));
+            DoRevert(uid, _prototype.Index(conversion.Prototype));
         }
     }
 }

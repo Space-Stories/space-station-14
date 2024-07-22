@@ -26,15 +26,14 @@ public sealed partial class ConversionSystem
 
         return entities;
     }
-    public bool TryGetConversion(EntityUid uid, [NotNullWhen(true)] out ConversionData? data, ProtoId<ConversionPrototype> prototype, ConversionableComponent? component = null)
+    public bool TryGetConversion(EntityUid uid, string id, [NotNullWhen(true)] out ConversionData? conversion, ConversionableComponent? component = null)
     {
-        if (Resolve(uid, ref component) && component.ActiveConversions.TryGetValue(prototype.Id, out var conversion))
-        {
-            data = conversion;
-            return true;
-        }
-        data = null;
-        return false;
+        conversion = null;
+
+        if (!Resolve(uid, ref component))
+            return false;
+
+        return component.ActiveConversions.TryGetValue(id, out conversion);
     }
     public bool TryRevert(EntityUid target, ProtoId<ConversionPrototype> prototype, EntityUid? performer = null, ConversionableComponent? component = null)
     {
@@ -47,10 +46,10 @@ public sealed partial class ConversionSystem
         if (!CanRevert(target, prototype, performer, component))
             return false;
 
-        Revert(target, proto, performer, component);
+        DoRevert(target, proto, performer, component);
         return true;
     }
-    public void Revert(EntityUid target, ConversionPrototype proto, EntityUid? performer = null, ConversionableComponent? component = null)
+    private void DoRevert(EntityUid target, ConversionPrototype proto, EntityUid? performer = null, ConversionableComponent? component = null)
     {
         if (!Resolve(target, ref component))
             return;
@@ -60,6 +59,10 @@ public sealed partial class ConversionSystem
 
         if (!_mind.TryGetMind(target, out var mindId, out var mind))
             return;
+
+        // До удаления компонентов, чтобы эти компоненты могли его обработать.
+        var ev = new RevertedEvent(target, performer, data);
+        RaiseLocalEvent(target, (object) ev, true);
 
         if (proto.EndBriefing != null)
             _antag.SendBriefing(target, Loc.GetString(proto.EndBriefing.Value.Text ?? ""), proto.EndBriefing.Value.Color, proto.EndBriefing.Value.Sound);
@@ -76,8 +79,6 @@ public sealed partial class ConversionSystem
 
         component.ActiveConversions.Remove(proto.ID);
 
-        var ev = new RevertedEvent(target, performer, proto);
-        RaiseLocalEvent(target, (object)ev, true);
         Dirty(target, component);
     }
     public bool TryConvert(EntityUid target, ProtoId<ConversionPrototype> prototype, EntityUid? performer = null, ConversionableComponent? component = null)
@@ -85,22 +86,16 @@ public sealed partial class ConversionSystem
         if (!Resolve(target, ref component, false))
             return false;
 
-        Logger.Error("1");
-
         if (!_prototype.TryIndex(prototype, out var proto))
             return false;
-
-        Logger.Error("2");
 
         if (!CanConvert(target, prototype, performer, component))
             return false;
 
-        Logger.Error("3");
-
-        Convert(target, proto, performer, component);
+        DoConvert(target, proto, performer, component);
         return true;
     }
-    public void Convert(EntityUid target, ConversionPrototype proto, EntityUid? performer = null, ConversionableComponent? component = null)
+    private void DoConvert(EntityUid target, ConversionPrototype proto, EntityUid? performer = null, ConversionableComponent? component = null)
     {
         if (!Resolve(target, ref component))
             return;
@@ -132,7 +127,7 @@ public sealed partial class ConversionSystem
         component.ActiveConversions.Add(proto.ID, conversion);
 
         var ev = new ConvertedEvent(target, performer, conversion);
-        RaiseLocalEvent(target, (object)ev, true);
+        RaiseLocalEvent(target, (object) ev, true);
         Dirty(target, component);
     }
     public void MindRemoveRoles(EntityUid mindId, ComponentRegistry components, MindComponent? mind = null, bool silent = false)
