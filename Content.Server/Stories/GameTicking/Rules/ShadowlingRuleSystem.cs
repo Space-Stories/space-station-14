@@ -36,6 +36,8 @@ using Content.Server.GameTicking.Rules;
 using Robust.Server.Audio;
 using Robust.Shared.Player;
 using Content.Server.GameTicking;
+using Robust.Shared.Console;
+using Content.Server.Nuke;
 
 namespace Content.Server.Stories.GameTicking.Rules;
 
@@ -54,7 +56,7 @@ public sealed class ShadowlingRuleSystem : GameRuleSystem<ShadowlingRuleComponen
     [Dependency] private readonly RoleSystem _role = default!;
     [Dependency] private readonly SharedStunSystem _stun = default!;
     [Dependency] private readonly StationSystem _stationSystem = default!;
-    [Dependency] private readonly EmergencyShuttleSystem _emergencyShuttle = default!;
+    [Dependency] private readonly NukeSystem _nuke = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
     public override void Initialize()
     {
@@ -89,7 +91,7 @@ public sealed class ShadowlingRuleSystem : GameRuleSystem<ShadowlingRuleComponen
             var announcementString = Loc.GetString(component.AscendanceAnnouncement);
             _chat.DispatchGlobalAnnouncement(announcementString, colorOverride: component.AscendanceAnnouncementColor);
             _audio.PlayGlobal(component.AscendanceGlobalSound, Filter.Broadcast(), true);
-            _roundEnd.RequestRoundEnd(component.RoundEndTime, null, false);
+            _roundEnd.EndRound(component.RoundEndTime);
         }
     }
     protected override void AppendRoundEndText(EntityUid uid, ShadowlingRuleComponent component, GameRuleComponent gameRule, ref RoundEndTextAppendEvent args)

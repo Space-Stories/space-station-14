@@ -18,7 +18,7 @@ public sealed partial class ShadowlingRuleComponent : Component
     public SoundSpecifier? AscendanceGlobalSound = new SoundPathSpecifier("/Audio/Stories/Misc/purple_code.ogg");
 
     [DataField]
-    public TimeSpan RoundEndTime = TimeSpan.FromMinutes(3);
+    public TimeSpan RoundEndTime = TimeSpan.FromMinutes(4);
 }
 
 public enum ShadowlingWinType : byte

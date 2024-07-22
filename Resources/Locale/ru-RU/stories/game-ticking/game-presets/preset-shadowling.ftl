@@ -1,6 +1,6 @@
-shadowling-ascendance-announcement = Сканерами дальнего действия было зафиксировано превознесение тенеморфа, к вам будет отправлен экстренный эвакуационный шаттл.
+shadowling-ascendance-announcement = Сканерами дальнего действия было зафиксировано превознесение тенеморфа. Спасибо, что выбрали NanoTrasen!
 
-shadowling-list-name-user = - [color=White]{ $name }[/color] ([color=gray]{ $user }[/color])
+shadowling-list-name-user = - [color=DarkRed]{ $name }[/color] ([color=gray]{ $user }[/color])
 shadowling-count = { $initialCount ->
         [one] Тенеморф был один:
        *[other] Тенеморфов было { $initialCount }:
