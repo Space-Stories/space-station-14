@@ -42,6 +42,7 @@ public abstract class SharedConversionSystem : EntitySystem
             return false;
 
         var ev = new ConvertAttemptEvent(target, performer, proto);
+        RaiseLocalEvent(target, (object) ev);
 
         return !ev.Cancelled;
     }
@@ -56,6 +57,7 @@ public abstract class SharedConversionSystem : EntitySystem
         var proto = _prototype.Index(prototype);
 
         var ev = new RevertAttemptEvent(target, performer, proto);
+        RaiseLocalEvent(target, (object) ev);
 
         return !ev.Cancelled;
     }
