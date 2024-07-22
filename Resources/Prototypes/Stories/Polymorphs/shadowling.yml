@@ -1,4 +1,17 @@
 - type: polymorph
+  id: AscendanceGhost
+  configuration:
+    entity: MobAscendanceGhost
+    duration: 5
+    forced: true
+    transferDamage: true
+    transferName: true
+    inventory: Drop
+    allowRepeatedMorphs: true
+    revertOnCrit: true
+    revertOnDeath: true
+
+- type: polymorph
   id: ShadowlingGhost
   configuration:
     entity: MobShadowlingGhost

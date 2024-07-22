@@ -214,7 +214,7 @@
     priority: -11
     checkCanInteract: false
     event: !type:PolymorphActionEvent
-      protoId: ShadowlingGhost
+      protoId: AscendanceGhost
 
 - type: entity
   id: ActionShadowlingLightningStorm
