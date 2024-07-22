@@ -30,10 +30,12 @@ public sealed partial class ConversionSystem : SharedConversionSystem
         {
             foreach (var (key, conversion) in comp.ActiveConversions)
             {
+                if (conversion.EndTime == null)
+                    continue;
                 if (conversion.EndTime > _timing.CurTime)
                     continue;
                 var proto = _prototype.Index(conversion.Prototype);
-                Revert(uid, proto);
+                DoRevert(uid, proto);
             }
         }
     }
