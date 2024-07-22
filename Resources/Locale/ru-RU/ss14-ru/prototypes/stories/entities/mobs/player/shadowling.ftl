@@ -1,2 +1,2 @@
-ent-MobShadowling = Урист МакШэдоулинг
+ent-MobShadowling = Тенеморф
     .desc = { ent-BaseMobShadowling.desc }
