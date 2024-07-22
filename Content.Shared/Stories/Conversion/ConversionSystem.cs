@@ -1,3 +1,4 @@
+using Content.Shared.Mobs.Components;
 using Content.Shared.Whitelist;
 using Robust.Shared.Prototypes;
 
@@ -25,6 +26,11 @@ public abstract class SharedConversionSystem : EntitySystem
             return false;
 
         var proto = _prototype.Index(prototype);
+
+        if (TryComp<MobStateComponent>(target, out var mobState) &&
+            proto.AllowedMobStates != null &&
+            !proto.AllowedMobStates.Contains(mobState.CurrentState))
+            return false;
 
         if (_entityWhitelist.IsWhitelistFail(proto.Whitelist, target))
             return false;
