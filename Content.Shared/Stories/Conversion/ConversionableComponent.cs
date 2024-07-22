@@ -31,9 +31,9 @@ public sealed class ConvertedEvent(EntityUid target, EntityUid? performer, Conve
     public readonly EntityUid? Performer = performer;
     public readonly ConversionData Data = data;
 }
-public sealed class RevertedEvent(EntityUid target, EntityUid? performer, ConversionPrototype prototype) : HandledEntityEventArgs
+public sealed class RevertedEvent(EntityUid target, EntityUid? performer, ConversionData data) : HandledEntityEventArgs
 {
     public readonly EntityUid Target = target;
     public readonly EntityUid? Performer = performer;
-    public readonly ConversionPrototype Prototype = prototype;
+    public readonly ConversionData Data = data;
 }

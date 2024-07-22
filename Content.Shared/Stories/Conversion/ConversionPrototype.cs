@@ -1,3 +1,4 @@
+using Content.Shared.Mobs;
 using Content.Shared.StatusIcon;
 using Content.Shared.Whitelist;
 using Robust.Shared.Audio;
@@ -32,6 +33,9 @@ public sealed partial class ConversionPrototype : IPrototype
     #endregion
 
     #region Whitelist
+    [DataField]
+    public HashSet<MobState>? AllowedMobStates = [MobState.Alive];
+
     [DataField]
     public EntityWhitelist? Whitelist;
 
