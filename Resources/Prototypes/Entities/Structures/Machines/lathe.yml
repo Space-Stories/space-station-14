@@ -430,7 +430,6 @@
     - BoozeDispenserMachineCircuitboard
     - SodaDispenserMachineCircuitboard
     - SpaceHeaterMachineCircuitBoard
-    - PrinterDocMachineCircuitboard # Corvax-Printer
     dynamicRecipes:
       - ThermomachineFreezerMachineCircuitBoard
       - HellfireFreezerMachineCircuitBoard
