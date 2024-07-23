@@ -1,14 +1,5 @@
 - type: entity
   parent: ClothingNeckBase
-  id: ClothingNeckCloakHoSP
-  name: head of space prison cloak
-  description: An exquisite gray cloak fitting for those who can assert dominance over wrongdoers. Take a stab at being civil in prosecution!
-  components:
-  - type: Sprite
-    sprite: Stories/Clothing/Neck/Cloaks/hosp.rsi
-
-- type: entity
-  parent: ClothingNeckBase
   id: ClothingNeckCloakSith
   name: плащ инквизитора
   description: Невероятное произведение искусства объединяющие в себе прочность и легкость. Заряжен неведомой энергией.

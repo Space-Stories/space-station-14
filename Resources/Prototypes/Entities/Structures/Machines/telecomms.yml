@@ -80,7 +80,7 @@
       - EncryptionKeySecurity
       - EncryptionKeyService
       - EncryptionKeyCommand
-      - EncryptionKeyPrison
+      - PRISONEncryptionKey
 
 - type: entity
   parent: TelecomServer

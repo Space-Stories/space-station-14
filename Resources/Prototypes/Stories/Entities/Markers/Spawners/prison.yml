@@ -1,0 +1,59 @@
+- type: entity
+  id: PRISONSpawnPointPrisoner
+  parent: SpawnPointJobBase
+  name: prisoner
+  components:
+  - type: SpawnPoint
+    job_id: PRISONPrisoner
+  - type: Sprite
+    layers:
+      - state: green
+      - state: prisoner
+
+- type: entity
+  id: PRISONSpawnPointHeadOfPrison
+  parent: SpawnPointJobBaseStories
+  name: headofsp
+  components:
+  - type: SpawnPoint
+    job_id: PRISONHeadOfPrison
+  - type: Sprite
+    layers:
+      - state: green
+      - state: hos
+
+- type: entity
+  id: PRISONSpawnPointOfficer
+  parent: SpawnPointJobBaseStories
+  name: spofficer
+  components:
+  - type: SpawnPoint
+    job_id: PRISONOfficer
+  - type: Sprite
+    layers:
+      - state: green
+      - state: security_officer
+
+- type: entity
+  id: PRISONSpawnPointEngineer
+  parent: SpawnPointJobBaseStories
+  name: spengineer
+  components:
+  - type: SpawnPoint
+    job_id: PRISONEngineer
+  - type: Sprite
+    layers:
+      - state: green
+      - state: engineer
+
+- type: entity
+  id: PRISONSpawnPointMedic
+  parent: SpawnPointJobBaseStories
+  name: spmedic
+  components:
+  - type: SpawnPoint
+    job_id: PRISONMedic
+  - type: Sprite
+    layers:
+      - state: green
+      - state: doctor

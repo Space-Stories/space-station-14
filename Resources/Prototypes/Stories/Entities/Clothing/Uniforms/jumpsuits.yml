@@ -4,16 +4,16 @@
   name: роба джедая
   description: Свободная роба, носимая членами Ордена джедаев.
   components:
-  - type: Tag
-    tags:
-      - ForceRecallEquipment
-  - type: ClothingSpeedModifier
-    walkModifier: 1
-    sprintModifier: 1.02
-  - type: Sprite
-    sprite: Stories/Clothing/Uniforms/Jumpsuit/jedi.rsi
-  - type: Clothing
-    sprite: Stories/Clothing/Uniforms/Jumpsuit/jedi.rsi
+    - type: Tag
+      tags:
+        - ForceRecallEquipment
+    - type: ClothingSpeedModifier
+      walkModifier: 1
+      sprintModifier: 1.02
+    - type: Sprite
+      sprite: Stories/Clothing/Uniforms/Jumpsuit/jedi.rsi
+    - type: Clothing
+      sprite: Stories/Clothing/Uniforms/Jumpsuit/jedi.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -21,35 +21,13 @@
   name: униформа стража клинка
   description: Специальная униформа никак не повышающая точность владения мечом.
   components:
-  - type: Tag
-    tags:
-      - ForceRecallEquipment
-  - type: Sprite
-    sprite: Stories/Clothing/Uniforms/Jumpsuit/jedi_nt.rsi
-  - type: Clothing
-    sprite: Stories/Clothing/Uniforms/Jumpsuit/jedi_nt.rsi
-
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitSP
-  name: space prison officer's jumpsuit
-  description: A jumpsuit made of strong material, providing robust protection.
-  components:
-  - type: Sprite
-    sprite: Stories/Clothing/Uniforms/Jumpsuit/officersp.rsi
-  - type: Clothing
-    sprite: Stories/Clothing/Uniforms/Jumpsuit/officersp.rsi
-
-- type: entity
-  parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitHoSP
-  name: space prison warden jumpsuit
-  description: A jumpsuit made of strong material, providing robust protection.
-  components:
-  - type: Sprite
-    sprite: Stories/Clothing/Uniforms/Jumpsuit/hosp.rsi
-  - type: Clothing
-    sprite: Stories/Clothing/Uniforms/Jumpsuit/hosp.rsi
+    - type: Tag
+      tags:
+        - ForceRecallEquipment
+    - type: Sprite
+      sprite: Stories/Clothing/Uniforms/Jumpsuit/jedi_nt.rsi
+    - type: Clothing
+      sprite: Stories/Clothing/Uniforms/Jumpsuit/jedi_nt.rsi
 
 - type: entity
   parent: ClothingUniformBase
@@ -57,10 +35,10 @@
   name: униформа инквизитора
   description: Однажды на одной станции Галактической Империи...
   components:
-  - type: Tag
-    tags:
-      - ForceRecallEquipment
-  - type: Sprite
-    sprite: Stories/Clothing/Uniforms/Jumpsuit/jumpsuit_sith.rsi
-  - type: Clothing
-    sprite: Stories/Clothing/Uniforms/Jumpsuit/jumpsuit_sith.rsi
+    - type: Tag
+      tags:
+        - ForceRecallEquipment
+    - type: Sprite
+      sprite: Stories/Clothing/Uniforms/Jumpsuit/jumpsuit_sith.rsi
+    - type: Clothing
+      sprite: Stories/Clothing/Uniforms/Jumpsuit/jumpsuit_sith.rsi

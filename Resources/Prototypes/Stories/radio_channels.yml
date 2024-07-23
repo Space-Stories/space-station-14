@@ -1,10 +1,16 @@
 - type: radioChannel
+  id: PrisonStation
+  name: Тюрьма-Станция
+  keycode: 'p' # Stories-Localization
+  frequency: 1101
+  color: "#e96044"
+
+- type: radioChannel
   id: Prison
   name: chat-radio-prison
   keycode: 'з' # Stories-Localization
   frequency: 1102
-  color: "#0036a2"
-  # long range since otherwise it'd defeat the point of a handheld radio independent of telecomms
+  color: "#e99844"
 
 - type: radioChannel
   id: Future

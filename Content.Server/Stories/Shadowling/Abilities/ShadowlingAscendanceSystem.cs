@@ -58,7 +58,7 @@ public sealed class ShadowlingAscendanceSystem : EntitySystem
             return;
 
         _stun.TryStun(newUid, TimeSpan.FromSeconds(5), true);
-        _standing.Down(newUid, dropHeldItems: false, canStandUp: false);
+        _standing.Down(newUid, dropHeldItems: false);
         _physics.SetBodyType(newUid, BodyType.Static);
 
         var doAfter = new DoAfterArgs(EntityManager, newUid, 5, new ShadowlingAscendanceDoAfterEvent(), newUid)
@@ -68,7 +68,7 @@ public sealed class ShadowlingAscendanceSystem : EntitySystem
         _doAfter.TryStartDoAfter(doAfter);
 
         var announcementString = "Сканерами дальнего действия было зафиксировано превознесение тенеморфа, к вам будет отправлен экстренный эвакуационный шаттл.";
-        
+
         _chat.DispatchGlobalAnnouncement(announcementString, playSound: true, colorOverride: Color.Red);
         _audio.PlayGlobal("/Audio/Stories/Misc/tear_of_veil.ogg", Filter.Broadcast(), true, AudioParams.Default.WithVolume(-2f));
         _roundEnd.RequestRoundEnd(TimeSpan.FromMinutes(3), newUid, false);

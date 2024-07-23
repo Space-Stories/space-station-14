@@ -216,7 +216,7 @@
     sprite: Objects/Weapons/Guns/Rifles/foam_rifle.rsi
   - type: Item
     sprite: Objects/Weapons/Guns/Rifles/foam_rifle_inhand_64x.rsi
-  - type: BallisticAmmoProvider    
+  - type: BallisticAmmoProvider
     whitelist:
       tags:
       - BulletFoam
@@ -233,3 +233,4 @@
     soundEmpty:
       path: /Audio/Weapons/Guns/Empty/empty.ogg
     clumsyProof: true
+  - type: PacifismAllowedGun

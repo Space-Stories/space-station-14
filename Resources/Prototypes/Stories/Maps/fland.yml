@@ -1,12 +1,17 @@
 - type: gameMap
   id: StoriesFland
-  mapName: 'Fland Installation'
+  mapName: '[КТ] Fland Installation'
   mapPath: /Maps/Stories/fland.yml
   minPlayers: 70
   stations:
     Fland:
       stationProto: StandardNanotrasenStation
       components:
+        - type: StationPrison
+          gameMap: StoriesPrison
+          whitelist:
+            components:
+            - PrisonShuttle
         - type: StationNameSetup
           mapNameTemplate: '{0} Fland Installation {1}'
           nameGenerator:

@@ -4,54 +4,27 @@
   name: ремень джедая
   description: Повесьте на него свой меч.
   components:
-  - type: Tag
-    tags:
-      - ForceRecallEquipment
-  - type: ClothingSpeedModifier
-    walkModifier: 1
-    sprintModifier: 1.02
-  - type: Sprite
-    sprite: Stories/Clothing/Belt/jedi_belt.rsi
-    state: icon
-  - type: Clothing
-    sprite: Stories/Clothing/Belt/jedi_belt.rsi
-  - type: Storage
-    maxSlots: 5
-    whitelist:
+    - type: Tag
       tags:
-        - CigPack
-        - Radio
-      components:
-        - FlashOnTrigger
-        - Flash
-        - Welder
-        - Flash
-        - Handcuff
-        - EnergySword
-
-- type: entity
-  parent: ClothingBeltSheath
-  id: ClothingBeltHoSPSheath
-  name: sabre sheath
-  description: An ornate sheath designed to hold an officer's blade.
-  components:
-  - type: Sprite
-    sprite: Stories/Clothing/Belt/hosp_sheath.rsi
-    state: sheath
-  - type: Clothing
-    sprite: Stories/Clothing/Belt/hosp_sheath.rsi
-  - type: ItemSlots
-    slots:
-      item:
-        name: Sabre
-        insertVerbText: sheath-insert-verb
-        ejectVerbText: sheath-eject-verb
-        whitelist:
-          tags:
-          - HoSPSabre
-  - type: ItemMapper
-    mapLayers:
-      sheath-sabre:
-        whitelist:
-          tags:
-          - HoSPSabre
+        - ForceRecallEquipment
+    - type: ClothingSpeedModifier
+      walkModifier: 1
+      sprintModifier: 1.02
+    - type: Sprite
+      sprite: Stories/Clothing/Belt/jedi_belt.rsi
+      state: icon
+    - type: Clothing
+      sprite: Stories/Clothing/Belt/jedi_belt.rsi
+    - type: Storage
+      maxSlots: 5
+      whitelist:
+        tags:
+          - CigPack
+          - Radio
+        components:
+          - FlashOnTrigger
+          - Flash
+          - Welder
+          - Flash
+          - Handcuff
+          - EnergySword

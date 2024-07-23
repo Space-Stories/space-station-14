@@ -16,9 +16,9 @@
 
 - type: entity
   parent: ClothingOuterArmorBasic
-  id: ClothingOuterVestArmorSP
-  name: armor vest
-  description: A slim Type I armored vest that provides decent protection against most types of damage.
+  id: PRISONClothingOuterVestArmor
+  name: бронежилет
+  description: Тонкий бронежилет типа I, обеспечивающий достойную защиту от большинства видов повреждений.
   components:
     - type: Sprite
       sprite: Stories/Clothing/OuterClothing/Vests/armor_sp.rsi

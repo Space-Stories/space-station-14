@@ -1,29 +1,20 @@
 - type: conversion
   id: HypnotizedEmpire
-  welcomeMessage: hypnosis-empire-role-greeting
-  goodbyeMessage: hypnosis-empire-role-goodbye
   statusIcon: HypnotizedEmpireFaction
-  soundOnConvert:
-    path: /Audio/Ambience/Antag/starwars.ogg
-    params:
-      volume: -5
-  componentsOnConvert:
-    toAdd:
+  briefing:
+    text: hypnosis-empire-role-greeting
+    color: Red
+    sound:
+      path: /Audio/Ambience/Antag/starwars.ogg
+      params:
+        volume: -5
+  endBriefing:
+    text: hypnosis-empire-role-goodbye
+    color: Red
+  components:
     - type: HypnotizedEmpire
-    - type: Empire
-  rolesOnConvert:
-    toAdd:
+  mindComponents:
     - type: HypnotizedEmpireMemberRole
       prototype: HypnotizedEmpireMember
-  componentsOnRevert:
-    toRemove:
-    - HypnotizedEmpire
-    - Empire
-  rolesOnRevert:
-    toRemove:
-    - HypnotizedEmpireMemberRole
-  statusIconWhitelist:
-    components:
-    - Empire
   channels:
-  - Empire
+    - Empire

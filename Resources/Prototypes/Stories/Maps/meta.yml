@@ -1,12 +1,17 @@
 - type: gameMap
   id: StoriesMeta
-  mapName: 'Meta Station'
+  mapName: '[КТ] Meta Station'
   mapPath: /Maps/Stories/meta.yml
   minPlayers: 50
   stations:
     Meta:
       stationProto: StandardNanotrasenStation
       components:
+        - type: StationPrison
+          gameMap: StoriesPrison
+          whitelist:
+            components:
+            - PrisonShuttle
         - type: StationNameSetup
           mapNameTemplate: '{0} Meta Station {1}'
           nameGenerator:

@@ -31,9 +31,9 @@
 
 - type: entity
   parent: ClothingOuterStorageBase
-  id: ClothingOuterCoatHoSP
-  name: head of space prison trenchcoat
-  description: A rugged canvas trenchcoat, designed and created by TX Fabrication Corp. Wearing it makes you feel for the plight of the Tibetans.
+  id: PRISONClothingOuterCoatHeadOfPrison
+  name: пальто начальника тюрьмы
+  description: Прочное холщовое пальто, разработанное и созданное компанией TX Fabrication Corp. Его ношение заставляет сочувствовать судьбе тибетцев.
   components:
   - type: Sprite
     sprite: Stories/Clothing/OuterClothing/Coats/hosp.rsi

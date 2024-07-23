@@ -1,18 +1,4 @@
 - type: entity
-  name: head of space prison rubber stamp
-  parent: RubberStampBase
-  id: RubberStampHoSP
-  suffix: DO NOT MAP
-  components:
-    - type: Stamp
-      stampedName: stamp-component-stamped-name-hosp
-      stampedColor: "#0036A2"
-      stampState: "paper_stamp-hosp"
-    - type: Sprite
-      sprite: Objects/Misc/bureaucracy.rsi
-      state: stamp-hosp
-
-- type: entity
   name: law office's rubber stamp
   parent: RubberStampBase
   id: RubberStampIAA

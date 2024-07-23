@@ -1,5 +1,12 @@
 - type: statusIcon
   parent: JobIcon
+  id: JobIconPRISONPrisoner
+  icon:
+    sprite: /Textures/Stories/Interface/Misc/job_icons.rsi
+    state: prisoner
+
+- type: statusIcon
+  parent: JobIcon
   id: JobIconHeadOfSpacePrison
   icon:
     sprite: /Textures/Stories/Interface/Misc/job_icons.rsi

@@ -110,7 +110,7 @@
       - EncryptionKeySecurity
       - EncryptionKeyCommand
       - EncryptionKeyCommon
-      - EncryptionKeyPrison # Stories-SpacePrison
+      - PRISONEncryptionKey # Stories-SpacePrison
   - type: Sprite
     sprite: Clothing/Ears/Headsets/security.rsi
   - type: Clothing

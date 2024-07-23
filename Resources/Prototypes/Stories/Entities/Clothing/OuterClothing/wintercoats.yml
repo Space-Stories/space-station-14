@@ -1,9 +1,0 @@
-- type: entity
-  parent: ClothingOuterWinterCoat
-  id: ClothingOuterWinterSP
-  name: space prison winter coat
-  components:
-  - type: Sprite
-    sprite: Stories/Clothing/OuterClothing/WinterCoats/coatsp.rsi
-  - type: Clothing
-    sprite: Stories/Clothing/OuterClothing/WinterCoats/coatsp.rsi

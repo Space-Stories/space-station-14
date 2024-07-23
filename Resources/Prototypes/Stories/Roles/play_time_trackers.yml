@@ -1,4 +1,7 @@
 - type: playTimeTracker
+  id: JobPrisoner
+
+- type: playTimeTracker
   id: JobHeadOfSpacePrison
 
 - type: playTimeTracker

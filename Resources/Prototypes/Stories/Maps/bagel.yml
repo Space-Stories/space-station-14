@@ -1,6 +1,6 @@
 - type: gameMap
   id: StoriesBagel
-  mapName: 'Bagel Station'
+  mapName: '[КТ] Bagel Station'
   mapPath: /Maps/Stories/bagel.yml
   minPlayers: 40
   maxPlayers: 76
@@ -8,6 +8,11 @@
     Bagel:
       stationProto: StandardNanotrasenStation
       components:
+        - type: StationPrison
+          gameMap: StoriesPrison
+          whitelist:
+            components:
+            - PrisonShuttle
         - type: StationNameSetup
           mapNameTemplate: '{0} Bagel Station {1}'
           nameGenerator:

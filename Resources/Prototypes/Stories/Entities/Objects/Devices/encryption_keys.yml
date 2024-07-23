@@ -6,58 +6,41 @@
   components:
     - type: EncryptionKey
       channels:
-      - Common
-      - Command
-      - Security
+        - Common
+        - Command
+        - Security
       defaultChannel: Command
     - type: Sprite
       sprite: Stories/Objects/Devices/encryption_keys.rsi
       layers:
-      - state: crypt_silver
-      - state: nano_label
+        - state: crypt_silver
+        - state: nano_label
 
-- type: entity
-  parent: EncryptionKey
-  id: EncryptionKeyPrison
-  name: space prison encryption key
-  description: An encryption key
-  components:
-  - type: EncryptionKey
-    channels:
-    - Prison
-    defaultChannel: Prison
-  - type: Sprite
-    sprite: Stories/Objects/Devices/encryption_keys.rsi
-    layers:
-    - state: crypt_prison
-    - state: prison_label
-    
 - type: entity
   parent: EncryptionKey
   id: EncryptionKeyFuture
   name: ключ шифрования будущего
   description: Ключ шифрования из будущего
   components:
-  - type: EncryptionKey
-    channels:
-    - Common
-    - Command
-    - Engineering
-    - Medical
-    - Science
-    - Security
-    - Service
-    - Supply
-    - Prison
-    - Freelance
-    - Binary
-    - Handheld
-    - CentCom
-    - Chitine
-    - Future
-    
-  - type: Sprite
-    sprite: Stories/Objects/Devices/encryption_keys.rsi
-    layers:
-    - state: crypt_prison
-    - state: nano_label
+    - type: EncryptionKey
+      channels:
+        - Common
+        - Command
+        - Engineering
+        - Medical
+        - Science
+        - Security
+        - Service
+        - Supply
+        - Prison
+        - Freelance
+        - Binary
+        - Handheld
+        - CentCom
+        - Chitine
+        - Future
+    - type: Sprite
+      sprite: Stories/Objects/Devices/encryption_keys.rsi
+      layers:
+        - state: crypt_prison
+        - state: nano_label
