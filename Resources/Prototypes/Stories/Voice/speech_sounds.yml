@@ -6,12 +6,3 @@
     path: /Audio/Stories/Voice/Kidan/speak2.ogg
   exclaimSound:
     path: /Audio/Stories/Voice/Kidan/speak3.ogg
-
-- type: speechSounds
-  id: Chrono
-  saySound:
-    path: /Audio/Stories/Voice/Chrono/contact.ogg
-  askSound:
-    path: /Audio/Stories/Voice/Chrono/dagger.ogg
-  exclaimSound:
-    path: /Audio/Stories/Voice/Chrono/contact.ogg

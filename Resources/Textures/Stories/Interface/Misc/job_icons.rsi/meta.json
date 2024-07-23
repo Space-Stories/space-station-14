@@ -28,17 +28,6 @@
         {
             "name": "IAA"
         },
-		{
-			"name": "Future",
-			  "delays": [
-				[
-				  0.2,
-				  0.2,
-				  0.2,
-				  0.2
-				]
-			  ]
-		},
         {
             "name": "Shadowlings"
         },

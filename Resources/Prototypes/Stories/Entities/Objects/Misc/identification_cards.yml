@@ -25,24 +25,3 @@
       heldPrefix: blue
     - type: PresetIdCard
       job: JediNt
-
-- type: entity
-  parent: IDCardStandard
-  id: ChronoIDCard
-  name: ID карта будущего
-  description: Карта, необходимая исключительно для конспирации
-  components:
-    - type: Sprite
-      sprite: Stories/Objects/Misc/id_cards.rsi
-      layers:
-        - state: future
-        - state: idchrono
-    - type: Item
-      heldPrefix: blue
-    - type: IdCard
-      jobTitle: сотрудник будущего
-      jobIcon: JobIconFuture
-    - type: Access
-      tags:
-        - CentralCommand
-        - SyndicateAgent

@@ -28,26 +28,3 @@
       borderColor: "#6f6192"
     - type: Icon
       state: pda-lawyer
-
-- type: entity
-  parent: AdminPDA
-  id: ChronoPDA
-  name: КПК будущего
-  description: Мощный квантовый компьютер, замаскированный под обычный кпк для конспирации.
-  components:
-  - type: Sprite
-    sprite: Stories/Objects/Devices/pda.rsi
-  - type: Pda
-    id: ChronoIDCard
-    state: pda-chrono
-    penSlot:
-      startingItem: PenFuture
-      whitelist:
-        tags:
-        - Write
-  - type: PdaBorderColor
-    borderColor: "#dee4e7"
-    accentVColor: "#59bcee"
-  - type: Icon
-    sprite: Stories/Objects/Devices/pda.rsi
-    state: pda-chrono
