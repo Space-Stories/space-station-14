@@ -31,6 +31,7 @@
   - Nukeops
   - Extended
   - Survival
+  - Shadowling
 
 - type: sponsorAntag
   id: shadowling
@@ -43,10 +44,7 @@
   allowedGamePresets:
   - AllAtOnce
   - Secret
-  - Traitor
-  - Extended
-  - Survival
-  - Shadowlings
+  - Shadowling
 
 - type: sponsorAntag
   id: headrev
@@ -191,7 +189,7 @@
   - Revolutionary
   - Zombie
   - Pirates
-  - Shadowlings
+  - Shadowling
 
 - type: sponsorAntag
   id: thiefDEBUG
@@ -216,7 +214,7 @@
   - Revolutionary
   - Zombie
   - Pirates
-  - Shadowlings
+  - Shadowling
 
 - type: sponsorAntag
   id: shadowlingDEBUG
@@ -241,7 +239,7 @@
   - Revolutionary
   - Zombie
   - Pirates
-  - Shadowlings
+  - Shadowling
 
 - type: sponsorAntag
   id: headrevDEBUG
@@ -266,7 +264,7 @@
   - Revolutionary
   - Zombie
   - Pirates
-  - Shadowlings
+  - Shadowling
 
 - type: sponsorAntag
   id: spaceninjaDEBUG
@@ -290,7 +288,7 @@
   - Revolutionary
   - Zombie
   - Pirates
-  - Shadowlings
+  - Shadowling
   event: !type:MakeGhostRoleAntagEvent
     gameRule: NinjaSpawn
     spawnerId: SpawnPointGhostSpaceNinja
@@ -317,7 +315,7 @@
   - Revolutionary
   - Zombie
   - Pirates
-  - Shadowlings
+  - Shadowling
   event: !type:MakeGhostRoleAntagEvent
     gameRule: LoneOpsSpawn
     spawnerId: SpawnPointLoneNukeOperative
@@ -344,7 +342,7 @@
   - Revolutionary
   - Zombie
   - Pirates
-  - Shadowlings
+  - Shadowling
   event: !type:MakeGhostRoleAntagEvent
     gameRule: SithSpawn
     spawnerId: SpawnPointGhostSith
@@ -374,7 +372,7 @@
   - Revolutionary
   - Zombie
   - Pirates
-  - Shadowlings
+  - Shadowling
 
 # - type: sponsorAntag
 #   id: terminatorDEBUG
@@ -401,4 +399,4 @@
 #   - Revolutionary
 #   - Zombie
 #   - Pirates
-#   - Shadowlings
+#   - Shadowling
