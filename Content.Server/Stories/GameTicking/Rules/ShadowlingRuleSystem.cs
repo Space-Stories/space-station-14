@@ -62,13 +62,9 @@ public sealed class ShadowlingRuleSystem : GameRuleSystem<ShadowlingRuleComponen
     {
         base.Initialize();
         SubscribeLocalEvent<ShadowlingWorldAscendanceEvent>(OnWorldAscendance);
-        SubscribeLocalEvent<ShadowlingComponent, MobStateChangedEvent>(OnMobStateChanged);
     }
-    private void OnMobStateChanged(EntityUid uid, ShadowlingComponent component, MobStateChangedEvent args)
+    private void CheckWin()
     {
-        if (args.NewMobState != MobState.Dead)
-            return;
-
         var query = QueryActiveRules();
         while (query.MoveNext(out var ruleUid, out _, out var comp, out _))
         {
@@ -97,6 +93,8 @@ public sealed class ShadowlingRuleSystem : GameRuleSystem<ShadowlingRuleComponen
     protected override void AppendRoundEndText(EntityUid uid, ShadowlingRuleComponent component, GameRuleComponent gameRule, ref RoundEndTextAppendEvent args)
     {
         base.AppendRoundEndText(uid, component, gameRule, ref args);
+
+        CheckWin();
 
         var winText = Loc.GetString($"shadowling-{component.WinType.ToString().ToLower()}");
         args.AddLine(winText);

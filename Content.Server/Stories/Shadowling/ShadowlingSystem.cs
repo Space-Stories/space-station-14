@@ -28,6 +28,7 @@ using Content.Server.Chemistry.Containers.EntitySystems;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Humanoid;
 using Content.Shared.Stories.Conversion;
+using Content.Shared.Mobs;
 
 namespace Content.Server.Stories.Shadowling;
 public sealed partial class ShadowlingSystem : EntitySystem
@@ -69,6 +70,16 @@ public sealed partial class ShadowlingSystem : EntitySystem
         SubscribeLocalEvent<ShadowlingComponent, ShotAttemptedEvent>(OnShotAttempted);
         SubscribeLocalEvent<ShadowlingThrallComponent, ConvertedEvent>(OnThrallConverted);
         SubscribeLocalEvent<ShadowlingThrallComponent, RevertedEvent>(OnThrallReverted);
+
+        SubscribeLocalEvent<ShadowlingComponent, MobStateChangedEvent>(OnMobStateChanged);
+    }
+    private void OnMobStateChanged(EntityUid uid, ShadowlingComponent comp, MobStateChangedEvent args)
+    {
+        if (args.NewMobState == MobState.Dead)
+            foreach (var ent in _conversion.GetEntitiesConvertedBy(uid, ShadowlingThrallConversion))
+            {
+                _conversion.TryRevert(ent, ShadowlingThrallConversion);
+            }
     }
     private void OnShotAttempted(EntityUid uid, ShadowlingComponent comp, ref ShotAttemptedEvent args)
     {
@@ -102,6 +113,9 @@ public sealed partial class ShadowlingSystem : EntitySystem
             appearance.EyeColor = comp.OldEyeColor;
             Dirty(uid, appearance);
         }
+
+        if (args.Data.Owner != null)
+            RefreshActions(GetEntity(args.Data.Owner.Value));
 
         args.Handled = true;
     }
