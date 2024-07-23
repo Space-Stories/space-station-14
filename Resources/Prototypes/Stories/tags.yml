@@ -1,13 +1,4 @@
 - type: Tag
-  id: Flatpack
-
-- type: Tag
-  id: StasisBattery
-
-- type: Tag
-  id: StasisCage
-
-- type: Tag
   id: ForceRecallEquipment
 
 - type: Tag
