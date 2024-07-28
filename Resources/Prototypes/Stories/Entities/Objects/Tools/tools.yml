@@ -84,3 +84,31 @@
     sprite: Stories/Objects/Tools/rcd_chrono.rsi
   - type: RCD
     delay: 0.25
+
+
+
+
+
+- type: entity
+  id: RCDAtmos
+  name: Атмос РСУ
+  parent: RCD
+  description: Как РСУ, только для любителей ставить трубы.
+  components:
+  - type: RCD
+    availablePrototypes:
+    - Deconstruct
+    - HalfPipe
+    - Pipe
+    - TPipe
+    - PipeBend
+    - PipeFourway
+    - Scrubber
+    - Port
+    - Injector
+    - Vent
+    - GasFilter
+    - GasMixer
+    - GasPump
+    - Valve
+    - GasPrePump

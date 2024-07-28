@@ -1,0 +1,224 @@
+- type: rcd
+  id: HalfPipe
+  category: WallsAndFlooring
+  name: Половина трубы
+  sprite: /Textures/Stories/Interface/Radial/RPD/pipe_14.png
+  mode: ConstructObject
+  prototype: GasPipeHalf
+  cost: 1
+  delay: 2
+  collisionMask: InteractImpassable
+  rules:
+  - MustBuildOnSubfloor
+  rotation: User
+  fx: EffectRCDConstruct1
+
+
+
+
+- type: rcd
+  id: Pipe
+  category: WallsAndFlooring
+  name: Труба
+  sprite: /Textures/Stories/Interface/Radial/RPD/pipe.png
+  mode: ConstructObject
+  prototype: GasPipeStraight
+  cost: 1
+  delay: 2
+  collisionMask: InteractImpassable
+  rules:
+  - MustBuildOnSubfloor
+  rotation: User
+  fx: EffectRCDConstruct1
+
+
+
+
+- type: rcd
+  id: TPipe
+  category: WallsAndFlooring
+  name: Т-образная труба
+  sprite: /Textures/Stories/Interface/Radial/RPD/pipe_4.png
+  mode: ConstructObject
+  prototype: GasPipeTjunction
+  cost: 1
+  delay: 2
+  collisionMask: InteractImpassable
+  rules:
+  - MustBuildOnSubfloor
+  rotation: User
+  fx: EffectRCDConstruct1
+
+
+
+
+- type: rcd
+  id: PipeBend
+  category: WallsAndFlooring
+  name: Угловая труба
+  sprite: /Textures/Stories/Interface/Radial/RPD/pipe_3.png
+  mode: ConstructObject
+  prototype: GasPipeBend
+  cost: 1
+  delay: 2
+  collisionMask: InteractImpassable
+  rules:
+  - MustBuildOnSubfloor
+  rotation: User
+  fx: EffectRCDConstruct1
+
+
+- type: rcd
+  id: PipeFourway
+  category: WallsAndFlooring
+  name: Четверная труба
+  sprite: /Textures/Stories/Interface/Radial/RPD/pipe_2.png
+  mode: ConstructObject
+  prototype: GasPipeFourway
+  cost: 2
+  delay: 2
+  collisionMask: InteractImpassable
+  rules:
+  - MustBuildOnSubfloor
+  rotation: User
+  fx: EffectRCDConstruct1
+
+
+###############
+- type: rcd
+  id: Scrubber
+  category: WallsAndFlooring
+  name: Скруббер
+  sprite: /Textures/Stories/Interface/Radial/RPD/pipe_13.png
+  mode: ConstructObject
+  prototype: GasVentScrubber
+  cost: 3
+  delay: 2
+  collisionMask: InteractImpassable
+  rotation: User
+  fx: EffectRCDConstruct1
+
+
+
+
+- type: rcd
+  id: Port
+  category: WallsAndFlooring
+  name: Соединительный порт
+  sprite: /Textures/Stories/Interface/Radial/RPD/pipe_8.png
+  mode: ConstructObject
+  prototype: GasPort
+  cost: 3
+  delay: 2
+  collisionMask: InteractImpassable
+  rotation: User
+  fx: EffectRCDConstruct1
+
+
+
+- type: rcd
+  id: Injector
+  category: WallsAndFlooring
+  name: Инжектор
+  sprite: /Textures/Stories/Interface/Radial/RPD/pipe_9.png
+  mode: ConstructObject
+  prototype: GasOutletInjector
+  cost: 3
+  delay: 2
+  collisionMask: InteractImpassable
+  rotation: User
+  fx: EffectRCDConstruct1
+
+
+- type: rcd
+  id: Vent
+  category: WallsAndFlooring
+  name: Вентиляция
+  sprite: /Textures/Stories/Interface/Radial/RPD/pipe_12.png
+  mode: ConstructObject
+  prototype: GasVentPump
+  cost: 3
+  delay: 2
+  collisionMask: InteractImpassable
+  rotation: User
+  fx: EffectRCDConstruct1
+
+
+
+- type: rcd
+  id: GasFilter
+  category: WallsAndFlooring
+  name: Газовый фильтр
+  sprite: /Textures/Stories/Interface/Radial/RPD/pipe_11.png
+  mode: ConstructObject
+  prototype: GasFilter
+  cost: 3
+  delay: 2
+  collisionMask: InterecatImpassable
+  rotation: User
+  fx: EffectRCDConstruct1
+
+
+
+- type: rcd
+  id: GasMixer
+  category: WallsAndFlooring
+  name: Газовый смеситель
+  sprite: /Textures/Stories/Interface/Radial/RPD/pipe_10.png
+  mode: ConstructObject
+  prototype: GasMixer
+  cost: 3
+  delay: 2
+  collisionMask: InteractImpassable
+  rotation: User
+  fx: EffectRCDConstruct1
+
+
+
+- type: rcd
+  id: GasPump
+  category: WallsAndFlooring
+  name: Объемный газовый насос
+  sprite: /Textures/Stories/Interface/Radial/RPD/pipe_5.png
+  mode: ConstructObject
+  prototype: GasVolumePump
+  cost: 2
+  delay: 2
+  collisionMask: InteractImpassable
+  rotation: User
+  fx: EffectRCDConstruct1
+
+
+- type: rcd
+  id: Valve
+  category: WallsAndFlooring
+  name: Ручной клапан
+  sprite: /Textures/Stories/Interface/Radial/RPD/pipe_7.png
+  mode: ConstructObject
+  prototype: GasValve
+  cost: 2
+  delay: 2
+  collisionMask: InteractImpassable
+  rotation: User
+  fx: EffectRCDConstruct1
+
+
+- type: rcd
+  id: GasPrePump
+  category: WallsAndFlooring
+  name: Газовый насос
+  sprite: /Textures/Stories/Interface/Radial/RPD/pipe_6.png
+  mode: ConstructObject
+  prototype: GasPressurePump
+  cost: 2
+  delay: 2
+  collisionMask: InteractImpassable
+  rotation: User
+  fx: EffectRCDConstruct1
+
+
+
+
+
+
+
