@@ -16,9 +16,10 @@
   extendedAccess:
   - Kitchen
   - Hydroponics
-    # Stories Skills
+  # Stories Skills
   special:
   - !type:AddComponentSpecial
+    components:
       - type: Skills
         skills:
           Guns: 0.5
