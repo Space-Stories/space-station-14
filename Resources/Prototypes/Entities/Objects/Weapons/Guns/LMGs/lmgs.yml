@@ -5,7 +5,7 @@
   description: A rooty tooty point and shooty.
   abstract: true
   components:
-   # Stories - start
+  # Stories - start
   - type: ShotToSkills
     skills:
       Guns: 0.01
@@ -16,12 +16,12 @@
       Guns: 1.0
   - type: ShotRequiresSkills
     skills:
-      Guns: 0.5
+      Guns: 1.0
   - type: ExploreToSkills
     seconds: 10
     skills:
       Guns: 0.1
-   # Stories - end
+  # Stories - end
   - type: Sprite
   - type: Item
     size: Huge
@@ -85,11 +85,6 @@
   parent: BaseWeaponLightMachineGun
   description: A rather traditionally made LMG with a pleasantly lacquered wooden pistol grip. Uses .30 rifle ammo.
   components:
-  # Stories - start
-  - type: ShotRequiresSkills
-    skills:
-      Guns: 1.0
-  # Stories - end
   - type: Sprite
     sprite: Objects/Weapons/Guns/LMGs/l6.rsi
     layers:

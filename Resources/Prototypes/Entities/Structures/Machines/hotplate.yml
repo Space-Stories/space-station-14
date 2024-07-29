@@ -33,6 +33,11 @@
   name: hotplate
   description: "The descendent of the microwaves, our newest invention in beaker heating technology: the hotplate!"
   components:
+  # Stories skills - start
+  - type: GettingInteractedRequiresSkills
+    skills:
+      Medicine: 0.5
+  # Stories skills - end
   - type: Sprite
     sprite: Structures/Machines/hotplate.rsi
     drawdepth: SmallObjects

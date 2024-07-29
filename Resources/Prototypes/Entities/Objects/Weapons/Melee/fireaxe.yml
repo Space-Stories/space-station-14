@@ -4,6 +4,24 @@
   id: FireAxe
   description: Truly, the weapon of a madman. Who would think to fight fire with an axe?
   components:
+  # Stories skills - start
+  - type: ExploreToSkills
+    seconds: 10
+    skills:
+      Melee: 0.2
+  - type: HitToSkills
+    skills:
+      Melee: 0.05
+  - type: SkillsAffectAttackRate
+    skills:
+      Melee: 0.9
+    multiplier: 1
+  - type: SkillsAffectDamage
+    skills:
+      Melee: 0.5
+    heavyAttackMultiplier: 1
+    lightAttackMultiplier: 1
+  # Stories skills - end
   - type: Tag
     tags:
     - FireAxe

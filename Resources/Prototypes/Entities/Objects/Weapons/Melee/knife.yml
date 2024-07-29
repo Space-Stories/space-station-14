@@ -3,6 +3,27 @@
   id: BaseKnife
   abstract: true
   components:
+  # Stories skills - start
+  - type: ExploreToSkills
+    seconds: 10
+    skills:
+      Melee: 0.1
+  - type: HitToSkills
+    skills:
+      Melee: 0.01
+  - type: SkillsAffectAttackRate
+    skills:
+      Melee: 0.9
+    # Мастер будет иметь в два раза больше скорость.
+    multiplier: 1
+  - type: SkillsAffectDamage
+    skills:
+      Melee: 0.5
+    # Мастер будет иметь обычный урон.
+    heavyAttackMultiplier: 0.5
+    # Мастер будет иметь в два раза больше урона.
+    lightAttackMultiplier: 1
+  # Stories skills - end
   - type: Tag
     tags:
     - Knife

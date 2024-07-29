@@ -5,6 +5,10 @@
   description: A very loud & dangerous sword with a beam made of pure, concentrated plasma. Cuts through unarmored targets like butter.
   components:
    # Stories - start
+  - type: ExploreToSkills
+    seconds: 10
+    skills:
+      Melee: 0.4
   - type: HitRequiresSkills
     skills:
       Melee: 1.0

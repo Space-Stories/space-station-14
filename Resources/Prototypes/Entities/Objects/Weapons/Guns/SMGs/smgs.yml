@@ -5,7 +5,7 @@
   description: A rooty tooty point and shooty.
   abstract: true
   components:
-   # Stories - start
+  # Stories - start
   - type: ShotToSkills
     skills:
       Guns: 0.01
@@ -13,15 +13,12 @@
     minAngle: 90
     maxAngle: 90
     skills:
-      Guns: 0.5
-  - type: ShotRequiresSkills
-    skills:
-      Guns: 0.4
+      Guns: 0.99
   - type: ExploreToSkills
     seconds: 10
     skills:
       Guns: 0.1
-   # Stories - end
+  # Stories - end
   - type: Sprite
   - type: Item
     size: Large
@@ -122,7 +119,7 @@
     maxAngle: -16
   - type: Gun
     minAngle: 21
-    maxAngle: 32 
+    maxAngle: 32
     shotsPerBurst: 5
     availableModes:
     - SemiAuto

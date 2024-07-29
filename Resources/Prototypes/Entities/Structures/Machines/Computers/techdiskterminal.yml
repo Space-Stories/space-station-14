@@ -4,6 +4,15 @@
   name: tech disk terminal
   description: A terminal used to print out technology disks.
   components:
+  # Stories skills - start
+  - type: ExploreToSkills
+    seconds: 10
+    skills:
+      Science: 0.1
+  - type: ActivatableUIRequiresSkills
+    skills:
+      Science: 1.0
+  # Stories skills - end
   - type: Sprite
     noRot: true
     sprite: Structures/Machines/tech_disk_printer.rsi
