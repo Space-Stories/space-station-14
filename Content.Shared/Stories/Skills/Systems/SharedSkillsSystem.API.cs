@@ -2,16 +2,19 @@ using Robust.Shared.Utility;
 using Content.Shared.Popups;
 using Content.Shared.FixedPoint;
 using System.Linq;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Stories.Skills;
 
 public abstract partial class SharedSkillsSystem
 {
-    public void AddExpToSkill(EntityUid uid, FixedPoint2 amount, string skill, bool popup = true)
+    // TODO: Лучше интегрировать SkillPrototype.
+    public void Add(EntityUid uid, FixedPoint2 amount, ProtoId<SkillPrototype> skill, bool popup = true)
     {
         DebugTools.Assert(amount >= MinExp && amount <= MaxExp);
 
         var comp = EnsureComp<SkillsComponent>(uid);
+        var proto = _prototype.Index(skill);
 
         if (comp.Skills.TryGetValue(skill, out var cur) && cur >= MaxExp)
             return;
@@ -19,27 +22,13 @@ public abstract partial class SharedSkillsSystem
         if (comp.AnySkills)
             return;
 
-        // // Получение модификатора для получаемого опыта.
-        // // К примеру, если опыт > 0.6, то модификатор 0.1.
-        // // Наверное, это надо и Reduce методу.
-
-        // // Ближайший модификатор к текущему значению.
-        // var nearest = comp.SkillsModifiers.Keys.AsEnumerable().OrderBy(x => Math.Abs((long) x - (long) cur)).First();
-        // // Сам модификатор.
-        // var modifier = comp.SkillsModifiers[nearest];
-        // // Ключ, который заключен в nearest служит так же минимальным значением опыта для операции.
-        // if (cur >= nearest)
-        //     amount *= modifier;
-
-
         // Добавляем модификатор. Предполагаем, что словарь отсортирован по возрастанию.
-        // TODO: Сортировка словаря перед операцией.
-        for (var i = comp.SkillsModifiers.Count - 1; i >= 0; i--)
+        for (var i = proto.Modifiers.Count - 1; i >= 0; i--)
         {
-            var key = comp.SkillsModifiers.ElementAt(i).Key;
+            var key = proto.Modifiers.ElementAt(i).Key;
             if (cur >= key)
             {
-                amount *= comp.SkillsModifiers.ElementAt(i).Value;
+                amount *= proto.Modifiers.ElementAt(i).Value;
                 break;
             }
         }
@@ -52,14 +41,16 @@ public abstract partial class SharedSkillsSystem
                 comp.Skills[skill] += amount;
             else comp.Skills[skill] = MaxExp;
 
+        Dirty(uid, comp);
+
         if (!popup)
             return;
 
         if (comp.Skills.TryGetValue(skill, out var current) && current >= MaxExp)
-            _popup.PopupEntity(Loc.GetString("skill-exp-full", ("skill", Loc.GetString($"skill-{skill}"))), uid, uid, PopupType.Small);
-        else _popup.PopupEntity(Loc.GetString("skill-exp-added", ("skill", Loc.GetString($"skill-{skill}")), ("amount", amount)), uid, uid, PopupType.Small);
+            _popup.PopupClient(Loc.GetString("skill-exp-full", ("skill", Loc.GetString($"skill-{skill}"))), uid, uid, PopupType.Small);
+        else _popup.PopupClient(Loc.GetString("skill-exp-added", ("skill", Loc.GetString($"skill-{skill}")), ("amount", amount)), uid, uid, PopupType.Small);
     }
-    public void SetExpInSkill(EntityUid uid, FixedPoint2 amount, string skill, bool popup = true)
+    public void Set(EntityUid uid, FixedPoint2 amount, string skill, bool popup = true)
     {
         DebugTools.Assert(amount >= MinExp && amount <= MaxExp);
 
@@ -72,14 +63,16 @@ public abstract partial class SharedSkillsSystem
         if (!comp.Skills.TryAdd(skill, amount))
             comp.Skills[skill] = amount;
 
+        Dirty(uid, comp);
+
         if (!popup)
             return;
 
         if (comp.Skills.TryGetValue(skill, out var current) && current >= MaxExp)
-            _popup.PopupEntity(Loc.GetString("skill-exp-full", ("skill", Loc.GetString($"skill-{skill}"))), uid, uid, PopupType.Small);
-        else _popup.PopupEntity(Loc.GetString("skill-exp-setted", ("skill", Loc.GetString($"skill-{skill}")), ("amount", amount)), uid, uid, PopupType.Small);
+            _popup.PopupClient(Loc.GetString("skill-exp-full", ("skill", Loc.GetString($"skill-{skill}"))), uid, uid, PopupType.Small);
+        else _popup.PopupClient(Loc.GetString("skill-exp-setted", ("skill", Loc.GetString($"skill-{skill}")), ("amount", amount)), uid, uid, PopupType.Small);
     }
-    public void ReduceExpFromSkill(EntityUid uid, FixedPoint2 amount, string skill, bool popup = true)
+    public void Reduce(EntityUid uid, FixedPoint2 amount, string skill, bool popup = true)
     {
         DebugTools.Assert(amount >= MinExp && amount <= MaxExp);
 
@@ -92,10 +85,12 @@ public abstract partial class SharedSkillsSystem
         if (comp.Skills.TryGetValue(skill, out var current))
             comp.Skills[skill] = current - amount > MinExp ? current - amount : MinExp;
 
+        Dirty(uid, comp);
+
         if (!popup)
             return;
 
-        _popup.PopupEntity(Loc.GetString("skill-exp-reduced", ("skill", Loc.GetString($"skill-{skill}")), ("amount", amount)), uid, uid, PopupType.Small);
+        _popup.PopupClient(Loc.GetString("skill-exp-reduced", ("skill", Loc.GetString($"skill-{skill}")), ("amount", amount)), uid, uid, PopupType.Small);
     }
     public FixedPoint2 EnsureSkill(EntityUid uid, string skill)
     {

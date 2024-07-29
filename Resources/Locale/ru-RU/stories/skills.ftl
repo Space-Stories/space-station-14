@@ -11,3 +11,7 @@ skill-already-explored = Уже изучено!
 skill-Melee = Ближний бой
 skill-Guns = Огнестрел
 skill-EnergyGuns = Лазерное оружие
+skill-Engineering = Инженерное дело
+skill-Medicine = Медицина
+skill-Science = Ксеноархеология
+skill-Shuttle = Управление шаттлом

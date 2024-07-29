@@ -20,7 +20,8 @@ public sealed partial class ExploreToSkillsComponent : Component
 }
 
 [Serializable, NetSerializable]
-public sealed partial class ExploreToSkillsDoAfterEvent : SimpleDoAfterEvent
+public sealed partial class ExploreToSkillsDoAfterEvent : SimpleDoAfterEvent, IReceivesSkills
 {
-    public Dictionary<string, FixedPoint2> Skills = new();
+    [DataField("skills")]
+    public Dictionary<string, FixedPoint2> Skills { get; set; } = new();
 }

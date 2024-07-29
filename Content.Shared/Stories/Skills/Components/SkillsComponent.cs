@@ -1,25 +1,15 @@
 using Content.Shared.FixedPoint;
+using Robust.Shared.GameStates;
 
 namespace Content.Shared.Stories.Skills;
 
-[RegisterComponent]
+[RegisterComponent, NetworkedComponent, AutoGenerateComponentState]
 public sealed partial class SkillsComponent : Component
 {
-    [DataField("anySkills")]
+    [DataField("anySkills"), AutoNetworkedField]
     public bool AnySkills { get; set; } = false;
 
-    // Ограничитель, который например при конфигурации ниже
-    // будет уменьшать получаемый опыт в 10 раз после достижения опыта 0.6.
-    // TODO: Это должно быть в прототипе скилла для большей кастомизации.
-
-    [DataField("modifiers")]
-
-    public Dictionary<FixedPoint2, FixedPoint2> SkillsModifiers = new()
-    {
-        { 0.95f, 0.0f }, // Высший уровень владения недостижим в раунде.
-    };
-
-    [DataField("skills")]
+    [DataField("skills"), AutoNetworkedField]
     public Dictionary<string, FixedPoint2> Skills = new()
     {
         // Combat
@@ -28,6 +18,6 @@ public sealed partial class SkillsComponent : Component
         { "Melee", 0.0f },
     };
 
-    [DataField("explored")]
+    [DataField("explored"), AutoNetworkedField]
     public HashSet<string> AlreadyExplored = new();
 }

@@ -31,11 +31,15 @@ public sealed partial class SkillsSystem : SharedSkillsSystem
             return;
         if (_role.MindIsAntagonist(mindId))
             EnsureComp<SkillsComponent>(args.EntityUid).AnySkills = true;
+
+        Dirty(args.EntityUid, EnsureComp<SkillsComponent>(args.EntityUid));
     }
     private void OnMindAdded(EntityUid uid, SkillsComponent component, MindAddedMessage args)
     {
         if (_role.MindIsAntagonist(args.Mind))
             component.AnySkills = true;
+
+        Dirty(uid, component);
     }
     private void OnInit(EntityUid uid, SkillsComponent component, ComponentInit args)
     {
@@ -44,5 +48,7 @@ public sealed partial class SkillsSystem : SharedSkillsSystem
 
         if (_role.MindIsAntagonist(mindId))
             component.AnySkills = true;
+
+        Dirty(uid, component);
     }
 }
