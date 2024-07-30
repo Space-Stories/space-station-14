@@ -24,6 +24,10 @@
       - type: Skills
         skills:
           Shuttle: 1.0
+          Guns: 1.0
+          EnergyGuns: 0.5
+          Melee: 0.9
+          Medicine: 0.3
   # Stories skills - end
 
 - type: startingGear
