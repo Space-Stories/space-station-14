@@ -1,5 +1,6 @@
 using Content.Shared.Throwing;
 using Content.Server.Explosion.EntitySystems;
+using Robust.Shared.Random;
 
 
 
@@ -9,6 +10,7 @@ namespace Content.Server.Stories.TriggerOnLand
     public sealed class TriggerOnLandSystem : EntitySystem
     {
         [Dependency] private readonly TriggerSystem _triggerSystem = default!;
+        [Dependency] private readonly IRobustRandom _random = default!;
 
         public override void Initialize()
         {
@@ -21,7 +23,10 @@ namespace Content.Server.Stories.TriggerOnLand
 
         private void TriggerOnLand(EntityUid uid, TriggerOnLandComponent component, ref LandEvent args)
         {
-            _triggerSystem.Trigger(uid, args.User);
+            if (_random.Prob(component.Prob))
+            {
+                _triggerSystem.Trigger(uid, args.User);
+            }
         }
 
     }
