@@ -38,6 +38,12 @@ using Robust.Shared.Player;
 using Content.Server.GameTicking;
 using Robust.Shared.Console;
 using Content.Server.Nuke;
+using Content.Server.Stories.Conversion;
+using Content.Server.Stories.Shadowling;
+using Content.Shared.Stories.Conversion;
+using Robust.Shared.Random;
+using System.Linq;
+using Content.Server.Polymorph.Components;
 
 namespace Content.Server.Stories.GameTicking.Rules;
 
@@ -58,10 +64,64 @@ public sealed class ShadowlingRuleSystem : GameRuleSystem<ShadowlingRuleComponen
     [Dependency] private readonly StationSystem _stationSystem = default!;
     [Dependency] private readonly NukeSystem _nuke = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
+    [Dependency] private readonly ConversionSystem _conversion = default!;
+    [Dependency] private readonly ShadowlingSystem _shadowling = default!;
+
+    [ValidatePrototypeId<ConversionPrototype>]
+    public const string ShadowlingThrallConversion = "ShadowlingThrall";
+
+    /// <summary>
+    /// Шанс того, что слуга просто расконвертируется, вместо передачи.
+    /// </summary>
+    public const float ShadowlingThrallProbOfLost = 0.5f;
     public override void Initialize()
     {
         base.Initialize();
         SubscribeLocalEvent<ShadowlingWorldAscendanceEvent>(OnWorldAscendance);
+        SubscribeLocalEvent<ShadowlingComponent, MobStateChangedEvent>(OnMobStateChanged);
+    }
+    private void OnMobStateChanged(EntityUid uid, ShadowlingComponent comp, MobStateChangedEvent args)
+    {
+        if (args.NewMobState != MobState.Dead)
+            return;
+
+        var query = QueryActiveRules();
+        while (query.MoveNext(out var ruleUid, out _, out var _, out _))
+        {
+            // FIXME: Плохой код.
+
+            HashSet<EntityUid> shadowlings = new();
+            var shadowlingsQuery = AllEntityQuery<ShadowlingComponent, MobStateComponent>();
+            while (shadowlingsQuery.MoveNext(out var shadowlingUid, out _, out var mobState))
+                if (_mobState.IsAlive(shadowlingUid, mobState))
+                    shadowlings.Add(shadowlingUid);
+
+            shadowlings.ExceptWith(_antag.GetAliveAntags(ruleUid).ToHashSet());
+
+            if (shadowlings.Count == 0)
+            {
+                foreach (var ent in _conversion.GetEntitiesConvertedBy(uid, ShadowlingThrallConversion))
+                {
+                    _conversion.TryRevert(ent, ShadowlingThrallConversion);
+                }
+                continue;
+            }
+
+            var shadowling = _random.Pick(shadowlings);
+
+            foreach (var ent in _conversion.GetEntitiesConvertedBy(uid, ShadowlingThrallConversion))
+            {
+                if (_random.Prob(ShadowlingThrallProbOfLost))
+                    _conversion.TryRevert(ent, ShadowlingThrallConversion);
+                else if (_conversion.TryGetConversion(ent, ShadowlingThrallConversion, out var conversion))
+                {
+                    conversion.Owner = GetNetEntity(shadowling);
+                }
+            }
+
+            _shadowling.RefreshActions(shadowling);
+        }
     }
     private void CheckWin()
     {

@@ -60,7 +60,6 @@ public sealed partial class ShadowlingSystem : EntitySystem
     [Dependency] private readonly FlashSystem _flash = default!;
     [Dependency] private readonly StunSystem _stun = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
-    public readonly Color ThrallEyeColor = Color.Red;
     public override void Initialize()
     {
         base.Initialize();
@@ -70,16 +69,6 @@ public sealed partial class ShadowlingSystem : EntitySystem
         SubscribeLocalEvent<ShadowlingComponent, ShotAttemptedEvent>(OnShotAttempted);
         SubscribeLocalEvent<ShadowlingThrallComponent, ConvertedEvent>(OnThrallConverted);
         SubscribeLocalEvent<ShadowlingThrallComponent, RevertedEvent>(OnThrallReverted);
-
-        SubscribeLocalEvent<ShadowlingComponent, MobStateChangedEvent>(OnMobStateChanged);
-    }
-    private void OnMobStateChanged(EntityUid uid, ShadowlingComponent comp, MobStateChangedEvent args)
-    {
-        if (args.NewMobState == MobState.Dead)
-            foreach (var ent in _conversion.GetEntitiesConvertedBy(uid, ShadowlingThrallConversion))
-            {
-                _conversion.TryRevert(ent, ShadowlingThrallConversion);
-            }
     }
     private void OnShotAttempted(EntityUid uid, ShadowlingComponent comp, ref ShotAttemptedEvent args)
     {
@@ -94,7 +83,7 @@ public sealed partial class ShadowlingSystem : EntitySystem
         if (TryComp<HumanoidAppearanceComponent>(uid, out var appearance))
         {
             comp.OldEyeColor = appearance.EyeColor;
-            appearance.EyeColor = ThrallEyeColor;
+            appearance.EyeColor = comp.EyeColor;
             Dirty(uid, appearance);
         }
 
