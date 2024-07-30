@@ -17,6 +17,14 @@
   - Salvage
   - Maintenance
   - External
+  # Stories skills - start
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: Skills
+        skills:
+          Shuttle: 1.0
+  # Stories skills - end
 
 - type: startingGear
   id: SalvageSpecialistGear

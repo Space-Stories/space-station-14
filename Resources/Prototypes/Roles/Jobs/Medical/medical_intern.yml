@@ -17,6 +17,14 @@
   access:
   - Medical
   - Maintenance
+  # Stories skills - start
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: Skills
+        skills:
+          Medicine: 0.5
+  # Stories skills - end
 
 - type: startingGear
   id: MedicalInternGear

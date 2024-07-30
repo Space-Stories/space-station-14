@@ -14,10 +14,11 @@
     components:
     - type: MimePowers
     - type: FrenchAccent
-    # Stories Skills
+  # Stories skills - start
     - type: Skills
       skills:
-        Guns: 0.95
+        Melee: 1.0
+  # Stories skills - end
 
 - type: startingGear
   id: MimeGear

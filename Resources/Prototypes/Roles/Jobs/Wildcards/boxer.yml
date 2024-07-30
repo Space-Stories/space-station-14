@@ -9,6 +9,14 @@
   access:
   - Service
   - Maintenance
+  # Stories skills - start
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: Skills
+        skills:
+          Melee: 1.0
+  # Stories skills - end
 
 - type: startingGear
   id: BoxerGear
