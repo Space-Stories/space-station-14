@@ -6,6 +6,7 @@
   - MobDamageable
   description: Очень страшный.
   components:
+  - type: ZombieImmune
   - type: ThermalVision
   - type: MobState
     allowedStates:
