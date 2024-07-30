@@ -20,16 +20,9 @@
   - PrisonEng
   - Maintenance
   - External
-  special:
-  - !type:AddComponentSpecial
-    components:
-      - type: Skills
-        skills:
-          Melee: 0.1
-          Guns: 0.1
-          EnergyGuns: 0.1
-          Engineering: 1.0
-          Shuttle: 1.0
+  # special:
+  # - !type:AddImplantSpecial
+  #   implants: [ MindShieldImplant ]
 
 - type: startingGear
   id: PRISONEngineerGear

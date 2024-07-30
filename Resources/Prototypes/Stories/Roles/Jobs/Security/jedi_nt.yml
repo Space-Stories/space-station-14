@@ -31,12 +31,6 @@
     implants: [ MindShieldImplant ]
   - !type:AddComponentSpecial
     components:
-    - type: Skills
-      skills:
-        Melee: 1.0
-        Guns: 0.1
-        EnergyGuns: 0.1
-        Shuttle: 0.5
     - type: Force
     - type: ForceUser
       preset: Jedi

@@ -57,13 +57,6 @@
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
-  # Stories skills - start
-      - type: Skills
-        skills:
-          Guns: 0.5
-          EnergyGuns: 0.5
-          Shuttle: 1.0
-  # Stories skills - end
 
 - type: startingGear
   id: HoPGear

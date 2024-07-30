@@ -5,23 +5,6 @@
   description: A rooty tooty point and shooty.
   abstract: true
   components:
-  # Stories - start
-  - type: ShotToSkills
-    skills:
-      Guns: 0.01
-  - type: SkillsAffectShots
-    minAngle: 90
-    maxAngle: 90
-    skills:
-      Guns: 1.0
-  - type: ShotRequiresSkills
-    skills:
-      Guns: 1.0
-  - type: ExploreToSkills
-    seconds: 10
-    skills:
-      Guns: 0.1
-  # Stories - end
   - type: Sprite
   - type: Item
     size: Huge

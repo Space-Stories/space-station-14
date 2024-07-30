@@ -15,15 +15,6 @@
   - Engineering
   - External
   - Atmospherics
-  # Stories skills - start
-  special:
-  - !type:AddComponentSpecial
-    components:
-      - type: Skills
-        skills:
-          Engineering: 1.0
-          Shuttle: 1.0
-  # Stories skills - end
 
 - type: startingGear
   id: AtmosphericTechnicianGear

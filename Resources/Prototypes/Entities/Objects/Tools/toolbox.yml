@@ -3,24 +3,6 @@
   parent: BaseStorageItem
   abstract: true
   components:
-  # Stories skills - start
-  - type: ExploreToSkills
-    seconds: 10
-    skills:
-      Melee: 0.1
-  - type: HitToSkills
-    skills:
-      Melee: 0.02
-  - type: SkillsAffectAttackRate
-    skills:
-      Melee: 0.9
-    multiplier: 1
-  - type: SkillsAffectDamage
-    skills:
-      Melee: 0.5
-    heavyAttackMultiplier: 1
-    lightAttackMultiplier: 1
-  # Stories skills - end
   - type: Sprite
     layers:
       - map: [ base ]

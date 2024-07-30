@@ -4,24 +4,6 @@
   id: Spear
   description: Definition of a Classic. Keeping murder affordable since 200,000 BCE.
   components:
-  # Stories skills - start
-  - type: ExploreToSkills
-    seconds: 10
-    skills:
-      Melee: 0.1
-  - type: HitToSkills
-    skills:
-      Melee: 0.01
-  - type: SkillsAffectAttackRate
-    skills:
-      Melee: 0.9
-    multiplier: 1
-  - type: SkillsAffectDamage
-    skills:
-      Melee: 1.0
-    heavyAttackMultiplier: 1
-    lightAttackMultiplier: 1
-  # Stories skills - end
   - type: EmbeddableProjectile
     offset: 0.15,0.15
   - type: ThrowingAngle

@@ -4,12 +4,6 @@
   name: cloning pod
   description: A Cloning Pod. 50% reliable.
   components:
-  # Stories skills - start
-  - type: ExploreToSkills
-    seconds: 10
-    skills:
-      Medicine: 0.1
-  # Stories skills - end
   - type: CloningPod
   - type: DeviceList
   - type: DeviceNetwork

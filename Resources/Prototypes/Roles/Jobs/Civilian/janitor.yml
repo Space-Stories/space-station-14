@@ -14,13 +14,6 @@
   - !type:GiveItemOnHolidaySpecial
     holiday: GarbageDay
     prototype: WeaponRevolverInspector
-  # Stories skills - start
-  - !type:AddComponentSpecial
-    components:
-      - type: Skills
-        skills:
-          Melee: 0.1
-  # Stories skills - end
 
 - type: startingGear
   id: JanitorGear

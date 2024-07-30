@@ -33,11 +33,6 @@
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   name: wall gear
@@ -56,11 +51,6 @@
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   name: wall
@@ -97,11 +87,6 @@
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   name: clock wall
@@ -120,12 +105,6 @@
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
-
 # here
 - type: construction
   name: wood wall
@@ -162,11 +141,6 @@
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   name: silver wall
@@ -185,11 +159,6 @@
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   name: plastic wall
@@ -208,11 +177,6 @@
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   name: plasma wall
@@ -231,11 +195,6 @@
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   name: gold wall
@@ -254,11 +213,6 @@
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   name: shuttle wall
@@ -277,11 +231,6 @@
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   name: interior shuttle wall
@@ -300,11 +249,6 @@
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   name: diagonal shuttle wall
@@ -323,11 +267,6 @@
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   name: bananium wall
@@ -374,11 +313,6 @@
   category: construction-category-structures
   description: A flimsy framework of iron rods.
   conditions:
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
     - !type:TileNotBlocked
       failIfSpace: false
   icon:
@@ -397,11 +331,6 @@
   category: construction-category-structures
   description: A flimsy framework of iron rods assembled in traditional ratvarian fashion.
   conditions:
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
     - !type:TileNotBlocked
       failIfSpace: false
   icon:
@@ -420,11 +349,6 @@
   category: construction-category-structures
   description: A flimsy framework of iron rods.
   conditions:
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
     - !type:TileNotBlocked
       failIfSpace: false
   icon:
@@ -442,11 +366,6 @@
   category: construction-category-structures
   description: A flimsy framework of iron rods assembled in traditional ratvarian fashion.
   conditions:
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
     - !type:TileNotBlocked
       failIfSpace: false
   icon:
@@ -504,11 +423,6 @@
   conditions:
     - !type:EmptyOrWindowValidInTile
     - !type:NoWindowsInTile
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
   icon:
     sprite: Structures/Windows/reinforced_window.rsi
     state: full
@@ -528,11 +442,6 @@
   conditions:
     - !type:EmptyOrWindowValidInTile
     - !type:NoWindowsInTile
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
   icon:
     sprite: Structures/Windows/reinforced_window_diagonal.rsi
     state: state1
@@ -570,11 +479,6 @@
   conditions:
     - !type:EmptyOrWindowValidInTile
     - !type:NoWindowsInTile
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
   icon:
     sprite: Structures/Windows/clockwork_window.rsi
     state: full
@@ -594,11 +498,6 @@
   conditions:
     - !type:EmptyOrWindowValidInTile
     - !type:NoWindowsInTile
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
   icon:
     sprite: Structures/Windows/clockwork_diagonal.rsi
     state: state0
@@ -617,11 +516,6 @@
   conditions:
     - !type:EmptyOrWindowValidInTile
     - !type:NoWindowsInTile
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
   icon:
     sprite: Structures/Windows/plasma_window.rsi
     state: full
@@ -641,11 +535,6 @@
   conditions:
     - !type:EmptyOrWindowValidInTile
     - !type:NoWindowsInTile
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
   icon:
     sprite: Structures/Windows/reinforced_plasma_window.rsi
     state: full
@@ -665,11 +554,6 @@
   conditions:
     - !type:EmptyOrWindowValidInTile
     - !type:NoWindowsInTile
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
   icon:
     sprite: Structures/Windows/shuttle_window.rsi
     state: full
@@ -689,11 +573,6 @@
   conditions:
     - !type:EmptyOrWindowValidInTile
     - !type:NoWindowsInTile
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
   icon:
     sprite: Structures/Windows/plasma_diagonal.rsi
     state: state1
@@ -712,11 +591,6 @@
   conditions:
     - !type:EmptyOrWindowValidInTile
     - !type:NoWindowsInTile
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
   icon:
     sprite: Structures/Windows/reinforced_plasma_diagonal.rsi
     state: state1
@@ -753,11 +627,6 @@
   conditions:
     - !type:EmptyOrWindowValidInTile
     - !type:NoWindowsInTile
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
   icon:
     sprite: Structures/Windows/directional.rsi
     state: reinforced_window
@@ -776,11 +645,6 @@
   conditions:
     - !type:EmptyOrWindowValidInTile
     - !type:NoWindowsInTile
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
   icon:
     sprite: Structures/Windows/directional.rsi
     state: clock_window
@@ -799,11 +663,6 @@
   conditions:
     - !type:EmptyOrWindowValidInTile
     - !type:NoWindowsInTile
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
   icon:
     sprite: Structures/Windows/directional.rsi
     state: plasma_window
@@ -822,11 +681,6 @@
   conditions:
     - !type:EmptyOrWindowValidInTile
     - !type:NoWindowsInTile
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
   icon:
     sprite: Structures/Windows/directional.rsi
     state: plasma_reinforced_window
@@ -845,11 +699,6 @@
   conditions:
     - !type:EmptyOrWindowValidInTile
     - !type:NoWindowsInTile
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
   icon:
     sprite: Structures/Windows/uranium_window.rsi
     state: full
@@ -869,11 +718,6 @@
   conditions:
     - !type:EmptyOrWindowValidInTile
     - !type:NoWindowsInTile
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
   icon:
     sprite: Structures/Windows/reinforced_uranium_window.rsi
     state: full
@@ -893,11 +737,6 @@
   conditions:
     - !type:EmptyOrWindowValidInTile
     - !type:NoWindowsInTile
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
   icon:
     sprite: Structures/Windows/uranium_window_diagonal.rsi
     state: state1
@@ -916,11 +755,6 @@
   conditions:
     - !type:EmptyOrWindowValidInTile
     - !type:NoWindowsInTile
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
   icon:
     sprite: Structures/Windows/reinforced_uranium_diagonal.rsi
     state: state1
@@ -943,11 +777,6 @@
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   name: glass firelock
@@ -965,11 +794,6 @@
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   name: Thin firelock
@@ -987,11 +811,6 @@
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   name: shutter
@@ -1007,12 +826,6 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
-  conditions:
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   name: glass shutter
@@ -1028,12 +841,6 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
-  conditions:
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   name: radiation shutter
@@ -1049,12 +856,6 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
-  conditions:
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   name: blast door
@@ -1070,12 +871,6 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
-  conditions:
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   name: catwalk
@@ -1480,11 +1275,6 @@
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   name: glass airlock
@@ -1502,11 +1292,6 @@
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   name: pinion airlock
@@ -1524,11 +1309,6 @@
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   name: glass pinion airlock
@@ -1546,11 +1326,6 @@
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   name: shuttle airlock
@@ -1569,11 +1344,6 @@
   canBuildInImpassable: false
   conditions:
   - !type:TileNotBlocked
-  # Stories skills - start
-  - !type:RequiresSkills
-    skills:
-      Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   name: glass shuttle airlock
@@ -1592,11 +1362,6 @@
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   name: windoor
@@ -1614,11 +1379,6 @@
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   name: secure windoor
@@ -1636,11 +1396,6 @@
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   name: clockwork windoor
@@ -1658,11 +1413,6 @@
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 #lighting
 - type: construction

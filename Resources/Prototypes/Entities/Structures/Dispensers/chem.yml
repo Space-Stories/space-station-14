@@ -5,15 +5,6 @@
   parent: ReagentDispenserBase
   description: An industrial grade chemical dispenser.
   components:
-  # Stories skills - start
-  - type: ExploreToSkills
-    seconds: 10
-    skills:
-      Medicine: 0.1
-  - type: ActivatableUIRequiresSkills
-    skills:
-      Medicine: 1.0
-  # Stories skills - end
   - type: Sprite
     sprite: Structures/dispensers.rsi
     state: industrial-working

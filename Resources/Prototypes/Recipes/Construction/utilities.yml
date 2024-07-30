@@ -12,12 +12,6 @@
     state: camera
   objectType: Structure
   placementMode: SnapgridCenter
-  conditions:
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   name: telescreen
@@ -33,12 +27,6 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
-  conditions:
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   name: station map
@@ -57,11 +45,6 @@
   canBuildInImpassable: true
   conditions:
   - !type:WallmountCondition {}
-  # Stories skills - start
-  - !type:RequiresSkills
-    skills:
-      Engineering: 0.5
-  # Stories skills - end
 
 # POWER
 - type: construction
@@ -78,12 +61,6 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
-  conditions:
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   name: solar assembly
@@ -102,11 +79,6 @@
   conditions:
     - !type:TileNotBlocked
       failIfSpace: false
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   name: cable terminal
@@ -122,12 +94,6 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: false
-  conditions:
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   name: wallmount substation
@@ -143,12 +109,6 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
-  conditions:
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   name: wallmount generator
@@ -164,12 +124,6 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
-  conditions:
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   name: wallmount APU
@@ -185,12 +139,6 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
-  conditions:
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 # DISPOSALS
 - type: construction
@@ -206,12 +154,6 @@
   icon:
     sprite: Structures/Piping/disposal.rsi
     state: "disposal"
-  conditions:
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   name: mailing unit
@@ -408,11 +350,6 @@
   canBuildInImpassable: true
   conditions:
   - !type:WallmountCondition {}
-  # Stories skills - start
-  - !type:RequiresSkills
-    skills:
-      Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   name: fire alarm
@@ -431,11 +368,6 @@
   canBuildInImpassable: true
   conditions:
   - !type:WallmountCondition {}
-  # Stories skills - start
-  - !type:RequiresSkills
-    skills:
-      Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   name: air sensor
@@ -451,12 +383,6 @@
   placementMode: SnapgridCenter
   objectType: Structure
   canRotate: true
-  conditions:
-  # Stories skills - start
-  - !type:RequiresSkills
-    skills:
-      Engineering: 0.5
-  # Stories skills - end
 
 # ATMOS PIPES
 - type: construction
@@ -550,11 +476,6 @@
     state: vent_off
   conditions:
     - !type:NoUnstackableInTile
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   name: passive vent
@@ -576,11 +497,6 @@
     state: vent_passive
   conditions:
     - !type:NoUnstackableInTile
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   name: air scrubber
@@ -602,11 +518,6 @@
     state: scrub_off
   conditions:
     - !type:NoUnstackableInTile
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   name: air injector
@@ -628,11 +539,6 @@
     state: injector
   conditions:
     - !type:NoUnstackableInTile
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 # ATMOS BINARY
 - type: construction
@@ -655,11 +561,6 @@
     state: pumpPressure
   conditions:
     - !type:NoUnstackableInTile
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   name: volumetric gas pump
@@ -681,11 +582,6 @@
     state: pumpVolume
   conditions:
     - !type:NoUnstackableInTile
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   id: GasPassiveGate
@@ -707,11 +603,6 @@
     state: pumpPassiveGate
   conditions:
     - !type:NoUnstackableInTile
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   id: GasValve
@@ -733,11 +624,6 @@
     state: pumpManualValve
   conditions:
     - !type:NoUnstackableInTile
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   id: SignalControlledValve
@@ -759,11 +645,6 @@
     state: pumpSignalValve
   conditions:
   - !type:NoUnstackableInTile
-  # Stories skills - start
-  - !type:RequiresSkills
-    skills:
-      Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   id: GasPort
@@ -785,11 +666,6 @@
     state: gasCanisterPort
   conditions:
     - !type:NoUnstackableInTile
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   id: GasDualPortVentPump
@@ -809,12 +685,6 @@
     state: pipeStraight
   - sprite: Structures/Piping/Atmospherics/vent.rsi
     state: vent_off
-  conditions:
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   id: HeatExchanger
@@ -829,12 +699,6 @@
   icon:
     sprite: Structures/Piping/Atmospherics/heatexchanger.rsi
     state: heStraight
-  conditions:
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 # ATMOS TRINARY
 - type: construction
@@ -853,11 +717,6 @@
   mirror: GasFilterFlipped
   conditions:
     - !type:NoUnstackableInTile
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   id: GasFilterFlipped
@@ -876,11 +735,6 @@
   mirror: GasFilter
   conditions:
     - !type:NoUnstackableInTile
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   id: GasMixer
@@ -898,11 +752,6 @@
   mirror: GasMixerFlipped
   conditions:
     - !type:NoUnstackableInTile
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   id: GasMixerFlipped
@@ -921,11 +770,6 @@
   mirror: GasMixer
   conditions:
     - !type:NoUnstackableInTile
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   id: PressureControlledValve
@@ -942,11 +786,6 @@
     state: off
   conditions:
     - !type:NoUnstackableInTile
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 # INTERCOM
 - type: construction
@@ -966,11 +805,6 @@
   canBuildInImpassable: true
   conditions:
   - !type:WallmountCondition {}
-  # Stories skills - start
-  - !type:RequiresSkills
-    skills:
-      Engineering: 0.5
-  # Stories skills - end
 
 # TIMERS
 - type: construction
@@ -989,11 +823,6 @@
   canBuildInImpassable: true
   conditions:
   - !type:WallmountCondition
-  # Stories skills - start
-  - !type:RequiresSkills
-    skills:
-      Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   name: screen timer
@@ -1012,11 +841,6 @@
   canBuildInImpassable: true
   conditions:
   - !type:WallmountCondition
-  # Stories skills - start
-  - !type:RequiresSkills
-    skills:
-      Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   name: brig timer
@@ -1035,8 +859,3 @@
   canBuildInImpassable: true
   conditions:
   - !type:WallmountCondition
-  # Stories skills - start
-  - !type:RequiresSkills
-    skills:
-      Engineering: 0.5
-  # Stories skills - end

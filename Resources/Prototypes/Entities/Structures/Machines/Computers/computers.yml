@@ -47,15 +47,6 @@
   description: Used to pilot a shuttle.
   abstract: true
   components:
-  # Stories skills - start
-  - type: ExploreToSkills
-    seconds: 10
-    skills:
-      Shuttle: 0.33
-  - type: ActivatableUIRequiresSkills
-    skills:
-      Shuttle: 0.9
-  # Stories skills - end
   - type: ShuttleConsole
   - type: ActivatableUI
     key: enum.ShuttleConsoleUiKey.Key
@@ -405,15 +396,6 @@
   name: R&D computer
   description: A computer used to interface with R&D tools.
   components:
-  # Stories skills - start
-  - type: ExploreToSkills
-    seconds: 10
-    skills:
-      Science: 0.1
-  - type: ActivatableUIRequiresSkills
-    skills:
-      Science: 1.0
-  # Stories skills - end
   - type: Sprite
     layers:
     - map: ["computerLayerBody"]
@@ -458,15 +440,6 @@
   name: analysis console
   description: A computer used to interface with the artifact analyzer.
   components:
-  # Stories skills - start
-  - type: ExploreToSkills
-    seconds: 10
-    skills:
-      Science: 0.1
-  - type: ActivatableUIRequiresSkills
-    skills:
-      Science: 1.0
-  # Stories skills - end
   - type: Sprite
     layers:
     - map: ["computerLayerBody"]
@@ -834,15 +807,6 @@
   name: cloning console computer
   description: The centerpiece of the cloning system, medicine's greatest accomplishment. It has lots of ports and wires.
   components:
-  # Stories skills - start
-  - type: ExploreToSkills
-    seconds: 10
-    skills:
-      Medicine: 0.1
-  - type: ActivatableUIRequiresSkills
-    skills:
-      Medicine: 1.0
-  # Stories skills - end
   - type: CloningConsole
   - type: DeviceList
   - type: DeviceNetwork

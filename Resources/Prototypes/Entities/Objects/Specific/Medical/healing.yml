@@ -3,12 +3,6 @@
   id: BaseHealingItem
   abstract: true
   components:
-  # Stories skills - start
-  - type: ExploreToSkills
-    seconds: 10
-    skills:
-      Medicine: 0.05
-  # Stories skills - end
   - type: Sprite
     sprite: Objects/Specific/Medical/medical.rsi
   - type: Item

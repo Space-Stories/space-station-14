@@ -4,15 +4,6 @@
   name: health analyzer
   description: A hand-held body scanner capable of distinguishing vital signs of the subject.
   components:
-  # Stories skills - start
-  - type: GettingInteractedRequiresSkills
-    skills:
-      Medicine: 0.5
-  - type: ExploreToSkills
-    seconds: 10
-    skills:
-      Medicine: 0.1
-  # Stories skills - end
   - type: Sprite
     sprite: Objects/Specific/Medical/healthanalyzer.rsi
     state: icon

@@ -15,14 +15,6 @@
   - Maintenance
   extendedAccess:
   - Chemistry
-  # Stories skills - start
-  special:
-  - !type:AddComponentSpecial
-    components:
-      - type: Skills
-        skills:
-          Medicine: 1.0
-  # Stories skills - end
 
 - type: startingGear
   id: DoctorGear

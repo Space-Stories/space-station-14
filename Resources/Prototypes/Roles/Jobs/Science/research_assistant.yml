@@ -17,14 +17,6 @@
   access:
   - Research
   - Maintenance
-  # Stories skills - start
-  special:
-  - !type:AddComponentSpecial
-    components:
-      - type: Skills
-        skills:
-          Science: 0.5
-  # Stories skills - end
 
 - type: startingGear
   id: ResearchAssistantGear

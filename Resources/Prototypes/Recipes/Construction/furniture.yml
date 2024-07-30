@@ -647,11 +647,6 @@
   canBuildInImpassable: false
   conditions:
     - !type:TileNotBlocked
-  # Stories skills - start
-    - !type:RequiresSkills
-      skills:
-        Engineering: 0.5
-  # Stories skills - end
 
 - type: construction
   id: DogBed
@@ -737,7 +732,7 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
-
+    
 - type: construction
   id: CurtainsBlack
   name: black curtains
@@ -767,7 +762,7 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
-
+    
 - type: construction
   id: CurtainsCyan
   name: cyan curtains
@@ -782,7 +777,7 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
-
+    
 - type: construction
   id: CurtainsGreen
   name: green curtains
@@ -797,7 +792,7 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
-
+    
 - type: construction
   id: CurtainsOrange
   name: orange curtains
@@ -812,7 +807,7 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
-
+    
 - type: construction
   id: CurtainsPink
   name: pink curtains
@@ -827,7 +822,7 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
-
+    
 - type: construction
   id: CurtainsPurple
   name: purple curtains
@@ -842,7 +837,7 @@
   objectType: Structure
   placementMode: SnapgridCenter
   canBuildInImpassable: true
-
+    
 - type: construction
   id: CurtainsRed
   name: red curtains
