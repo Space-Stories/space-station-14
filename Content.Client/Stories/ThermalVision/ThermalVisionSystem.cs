@@ -51,11 +51,13 @@ public sealed class ThermalVisionSystem : SharedThermalVisionSystem
     {
         _overlay.RemoveOverlay(new ThermalVisionOverlay());
         _light.DrawShadows = true;
+        _light.DrawLighting = true;
     }
 
     private void On()
     {
         _overlay.AddOverlay(new ThermalVisionOverlay());
         _light.DrawShadows = false;
+        _light.DrawLighting = false;
     }
 }
