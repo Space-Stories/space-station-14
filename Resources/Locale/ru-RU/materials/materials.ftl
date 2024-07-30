@@ -24,7 +24,6 @@ materials-web = шёлк
 materials-bones = кости
 materials-coal = уголь
 materials-gunpowder = чёрный порох
-materials-inks = чернила
 # Ores
 materials-raw-iron = руда железа
 materials-raw-quartz = руда кварца

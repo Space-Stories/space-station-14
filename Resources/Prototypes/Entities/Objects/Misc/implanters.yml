@@ -7,6 +7,15 @@
   parent: BaseItem
   abstract: true
   components:
+    # Stories skills - start
+    - type: GettingInteractedRequiresSkills
+      skills:
+        Medicine: 0.5
+    - type: ExploreToSkills
+      seconds: 10
+      skills:
+        Medicine: 0.05
+    # Stories skills - end
     - type: ItemSlots
     - type: ContainerContainer
       containers:

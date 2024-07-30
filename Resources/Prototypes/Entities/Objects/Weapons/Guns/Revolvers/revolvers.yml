@@ -5,6 +5,18 @@
   description: A rooty tooty point and shooty.
   abstract: true
   components:
+   # Stories - start
+  - type: ShotToSkills
+    skills:
+      Guns: 0.02
+  - type: ShotRequiresSkills
+    skills:
+      Guns: 0.1
+  - type: ExploreToSkills
+    seconds: 1
+    skills:
+      Guns: 0.05
+   # Stories - end
   - type: Sprite
     state: icon
   - type: Item

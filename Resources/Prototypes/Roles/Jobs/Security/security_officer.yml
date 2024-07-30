@@ -19,6 +19,16 @@
   - External
   - Cryogenics
   special:
+  # Stories skills - start
+  - !type:AddComponentSpecial
+    components:
+    - type: Skills
+      skills:
+        Guns: 0.9
+        EnergyGuns: 0.9
+        Medicine: 0.3
+        Melee: 0.5
+  # Stories skills - end
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
 

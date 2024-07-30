@@ -5,6 +5,12 @@
   description: A thruster that allows a shuttle to move.
   abstract: true
   components:
+    # Stories skills - start
+    - type: ExploreToSkills
+      seconds: 10
+      skills:
+        Shuttle: 0.33
+    # Stories skills - end
     - type: Fixtures
       fixtures:
         fix1:

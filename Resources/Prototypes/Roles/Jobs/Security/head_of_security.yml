@@ -38,6 +38,15 @@
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
+  # Stories skills - start
+      - type: Skills
+        skills:
+          Medicine: 0.3
+          Melee: 0.9
+          Guns: 1.0
+          EnergyGuns: 1.0
+          Shuttle: 1.0
+  # Stories skills - end
 
 - type: startingGear
   id: HoSGear

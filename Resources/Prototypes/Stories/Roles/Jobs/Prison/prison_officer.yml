@@ -22,6 +22,15 @@
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+      - type: Skills
+        skills:
+          Guns: 0.9
+          EnergyGuns: 0.9
+          Medicine: 0.3
+          Melee: 0.5
+          Shuttle: 1.0
 
 - type: startingGear
   id: PRISONOfficerGear

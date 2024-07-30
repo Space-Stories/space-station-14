@@ -19,9 +19,16 @@
   - Prison
   - PrisonMed
   - Maintenance
-  # special:
-  # - !type:AddImplantSpecial
-  #   implants: [ MindShieldImplant ]
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: Skills
+        skills:
+          Medicine: 1.0
+          Melee: 0.1
+          Guns: 0.1
+          EnergyGuns: 0.1
+          Shuttle: 1.0
 
 - type: startingGear
   id: PRISONMedicGear

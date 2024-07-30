@@ -20,7 +20,6 @@
       - id: RubberStampApproved
       - id: ClothingHeadsetAltCargo
       - id: BoxEncryptionKeyCargo
-      - id: BoxPrinter # Stories
 
 - type: entity
   id: LockerCaptainFilledHardsuit
@@ -138,7 +137,6 @@
         prob: 0.5
       - id: ClothingOuterCoatHOP # Corvax-Resprite
       - id: AccessConfigurator
-      - id: BoxPrinter # Stories
 
 - type: entity
   id: LockerChiefEngineerFilledHardsuit

@@ -1,0 +1,47 @@
+# - Weapons
+
+# Оружие ближнего боя
+- type: skill
+  id: Melee
+
+# Огнестрел
+- type: skill
+  id: Guns
+
+# Лазеры
+- type: skill
+  id: EnergyGuns
+
+# - Eng
+
+# Строительство, генераторы, УЧ.
+- type: skill
+  id: Engineering
+
+# - type: skill
+#   id: Atmos
+
+# - Med
+
+# Химия, клонерка, крио, лечение, дефиб, хирургия
+- type: skill
+  id: Medicine
+
+# - RND
+
+# Артефакты, аномалии, киборги,
+- type: skill
+  id: Science
+
+# - Civilian
+
+# Готовка
+# - type: skill
+#   id: Cook
+
+# - Other
+
+- type: skill
+  id: Shuttle
+  modifiers:
+    0.0: 1.0
