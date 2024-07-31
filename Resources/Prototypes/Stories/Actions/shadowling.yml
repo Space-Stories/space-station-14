@@ -88,7 +88,7 @@
       solution:
         reagents:
         - ReagentId: IceOil
-          Quantity: 8
+          Quantity: 4
       whitelist:
         components:
         - Body

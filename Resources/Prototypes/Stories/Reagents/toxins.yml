@@ -8,13 +8,24 @@
   metabolisms:
     Poison:
       effects:
+      - !type:MovespeedModifier
+        conditions:
+        - !type:ReagentThreshold
+          reagent: IceOil
+          min: 3 # your legs stop working when above 3
+        walkSpeedModifier: 0.00
+        sprintSpeedModifier: 0.00
+      - !type:MovespeedModifier
+        conditions:
+        - !type:ReagentThreshold
+          reagent: IceOil
+          max: 3 # your legs stop working when above 3
+        walkSpeedModifier: 0.6
+        sprintSpeedModifier: 0.6
       - !type:HealthChange
         damage:
           types:
             Cold: 2.8
-      - !type:MovespeedModifier
-        walkSpeedModifier: 0.65
-        sprintSpeedModifier: 0.75
       - !type:AdjustTemperature
         conditions:
         - !type:Temperature
