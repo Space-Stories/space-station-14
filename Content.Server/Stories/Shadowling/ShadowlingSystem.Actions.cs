@@ -35,9 +35,6 @@ public sealed partial class ShadowlingSystem
     [ValidatePrototypeId<ReagentPrototype>]
     public const string ShadowlingSmokeReagent = "ShadowlingSmokeReagent";
 
-    [ValidatePrototypeId<ReagentPrototype>]
-    public const string IceOilReagent = "IceOil";
-
     [ValidatePrototypeId<ConversionPrototype>]
     public const string ShadowlingThrallConversion = "ShadowlingThrall";
     public void InitializeActions()

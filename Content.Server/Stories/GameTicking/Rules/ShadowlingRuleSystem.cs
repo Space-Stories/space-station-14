@@ -167,5 +167,7 @@ public sealed class ShadowlingRuleSystem : GameRuleSystem<ShadowlingRuleComponen
                 ("name", name),
                 ("user", data.UserName)));
         }
+
+        args.AddLine("\n");
     }
 }
