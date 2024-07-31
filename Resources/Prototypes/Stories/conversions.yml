@@ -1,6 +1,9 @@
 - type: conversion
   id: ShadowlingThrall
   statusIcon: ShadowlingThrallFaction
+  blacklist:
+    components:
+    - Zombie
   briefing:
     text: thrall-role-greeting
     color: Red
