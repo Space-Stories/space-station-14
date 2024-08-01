@@ -29,7 +29,7 @@
       skills:
         Guns: 0.5
         EnergyGuns: 0.5
-        Medicine: 0.1
+        Medical: 0.1
         Melee: 0.3
   # Stories skills - end
   - !type:AddImplantSpecial

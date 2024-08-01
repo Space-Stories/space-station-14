@@ -35,7 +35,7 @@
     components:
       - type: Skills
         skills:
-          Medicine: 0.3
+          Medical: 0.3
           Melee: 0.9
           Guns: 1.0
           EnergyGuns: 1.0

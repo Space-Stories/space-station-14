@@ -23,7 +23,7 @@
     components:
       - type: Skills
         skills:
-          Medicine: 1.0
+          Medical: 1.0
   # Stories skills - end
 
 - type: startingGear
