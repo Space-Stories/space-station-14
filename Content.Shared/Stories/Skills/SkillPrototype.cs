@@ -8,12 +8,12 @@ public sealed partial class SkillPrototype : IPrototype
 {
     [IdDataField] public string ID { get; } = default!;
 
-    [DataField("modifiers")]
-    public Dictionary<FixedPoint2, FixedPoint2> Modifiers = new()
-    {
-        { 0.25f, 0.90f },
-        { 0.50f, 0.50f },
-        { 0.80f, 0.10f },
-        { 0.95f, 0.01f },
-    };
+    [DataField(required: true)]
+    private LocId Name { get; set; }
+
+    [ViewVariables(VVAccess.ReadOnly)]
+    public string LocalizedName => Loc.GetString(Name);
+
+    [DataField("modifier")]
+    public float Modifier = 1f;
 }

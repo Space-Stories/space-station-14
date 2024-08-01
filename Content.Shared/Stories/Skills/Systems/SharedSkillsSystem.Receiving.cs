@@ -20,7 +20,7 @@ public abstract partial class SharedSkillsSystem
     {
         foreach (var (skill, value) in receives.Skills)
         {
-            Add(uid, value * modificator, skill);
+            TryAdd(uid, skill, value * modificator);
         }
     }
     private void OnShot(EntityUid uid, ShotToSkillsComponent component, ref GunShotEvent args)
