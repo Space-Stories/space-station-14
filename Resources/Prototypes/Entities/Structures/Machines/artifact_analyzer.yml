@@ -5,7 +5,7 @@
   description: A platform capable of performing analysis on various types of artifacts.
   components:
   # Stories skills - start
-  - type: GettingInteractedRequiresSkills
+  - type: UseRequiresSkills
     skills:
       Science: 0.5
   # Stories skills - end

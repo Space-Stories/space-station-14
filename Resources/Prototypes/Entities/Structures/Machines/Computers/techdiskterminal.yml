@@ -8,10 +8,10 @@
   - type: ExploreToSkills
     seconds: 10
     skills:
-      Science: 0.1
+      Science: 0.05
   - type: ActivatableUIRequiresSkills
     skills:
-      Science: 1.0
+      Science: 0.5
   # Stories skills - end
   - type: Sprite
     noRot: true

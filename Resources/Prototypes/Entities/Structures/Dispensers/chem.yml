@@ -9,10 +9,10 @@
   - type: ExploreToSkills
     seconds: 10
     skills:
-      Medicine: 0.1
+      Medical: 0.1
   - type: ActivatableUIRequiresSkills
     skills:
-      Medicine: 1.0
+      Medical: 1.0
   # Stories skills - end
   - type: Sprite
     sprite: Structures/dispensers.rsi

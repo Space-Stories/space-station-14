@@ -1,47 +1,61 @@
-# - Weapons
+# Factions
 
-# Оружие ближнего боя
 - type: skill
-  id: Melee
+  id: Syndicate
+  name: Синдикат
+  modifier: 0.1
 
-# Огнестрел
 - type: skill
-  id: Guns
+  id: Nanotrasen
+  name: Nanotrasen
+  modifier: 0.1
 
-# Лазеры
+# Departments
+
 - type: skill
-  id: EnergyGuns
+  id: Security
+  name: Служба безопасности
+  modifier: 0.5
 
-# - Eng
+- type: skill
+  id: Command
+  name: Командование
 
-# Строительство, генераторы, УЧ.
+- type: skill
+  id: Cargo
+  name: Снабжение
+
 - type: skill
   id: Engineering
+  name: Инженерный
 
-# - type: skill
-#   id: Atmos
-
-# - Med
-
-# Химия, клонерка, крио, лечение, дефиб, хирургия
 - type: skill
-  id: Medicine
+  id: Medical
+  name: Медицина
 
-# - RND
-
-# Артефакты, аномалии, киборги,
 - type: skill
   id: Science
+  name: Наука
+  modifier: 0.5
 
-# - Civilian
+- type: skill
+  id: Civilian
+  name: Сервис
 
-# Готовка
-# - type: skill
-#   id: Cook
+# Special
 
-# - Other
+- type: skill
+  id: Melee
+  name: Ближний бой
+
+- type: skill
+  id: Guns
+  name: Оружие
+
+- type: skill
+  id: EnergyGuns
+  name: Лазерное оружие
 
 - type: skill
   id: Shuttle
-  modifiers:
-    0.0: 1.0
+  name: Управление шаттлами

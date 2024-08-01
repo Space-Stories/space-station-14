@@ -3,23 +3,20 @@
   parent: BaseItem
   abstract: true
   components:
-  # Stories - start
+  # Stories skills - start
   - type: ShotToSkills
     skills:
-      EnergyGuns: 0.01
+      EnergyGuns: 0.02
   - type: SkillsAffectShots
-    minAngle: 180
-    maxAngle: 180
+    minAngle: 90
+    maxAngle: 90
     skills:
       EnergyGuns: 1.0
-  - type: ShotRequiresSkills
-    skills:
-      EnergyGuns: 0.0
   - type: ExploreToSkills
     seconds: 10
     skills:
-      EnergyGuns: 0.1
-  # Stories - end
+      EnergyGuns: 0.05
+  # Stories skills - end
   - type: Sprite
   - type: Item
     size: Huge

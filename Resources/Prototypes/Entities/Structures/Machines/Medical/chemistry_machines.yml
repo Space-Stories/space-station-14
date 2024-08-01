@@ -4,9 +4,9 @@
   abstract: true
   components:
   # Stories skills - start
-  - type: GettingInteractedRequiresSkills
+  - type: UseRequiresSkills
     skills:
-      Medicine: 0.5
+      Medical: 0.5
   # Stories skills - end
   - type: Transform
     anchored: true

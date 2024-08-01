@@ -8,7 +8,7 @@
   - type: ExploreToSkills
     seconds: 10
     skills:
-      Medicine: 0.1
+      Medical: 0.1
   # Stories skills - end
   - type: CloningPod
   - type: DeviceList

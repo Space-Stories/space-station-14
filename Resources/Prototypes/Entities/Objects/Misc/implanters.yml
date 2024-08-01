@@ -8,13 +8,16 @@
   abstract: true
   components:
     # Stories skills - start
-    - type: GettingInteractedRequiresSkills
+    - type: UseRequiresSkills
       skills:
-        Medicine: 0.5
+        Medical: 1.0
+    - type: AddImplantRequiresSkills
+      skills:
+        Medical: 1.0
     - type: ExploreToSkills
-      seconds: 10
+      seconds: 3
       skills:
-        Medicine: 0.05
+        Medical: 0.05
     # Stories skills - end
     - type: ItemSlots
     - type: ContainerContainer

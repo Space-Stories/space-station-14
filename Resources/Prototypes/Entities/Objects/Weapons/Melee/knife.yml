@@ -7,21 +7,18 @@
   - type: ExploreToSkills
     seconds: 10
     skills:
-      Melee: 0.1
+      Melee: 0.05
   - type: HitToSkills
     skills:
-      Melee: 0.01
+      Melee: 0.02
   - type: SkillsAffectAttackRate
     skills:
       Melee: 0.9
-    # Мастер будет иметь в два раза больше скорость.
     multiplier: 1
   - type: SkillsAffectDamage
     skills:
-      Melee: 0.5
-    # Мастер будет иметь обычный урон.
-    heavyAttackMultiplier: 0.5
-    # Мастер будет иметь в два раза больше урона.
+      Melee: 0.9
+    heavyAttackMultiplier: 1
     lightAttackMultiplier: 1
   # Stories skills - end
   - type: Tag

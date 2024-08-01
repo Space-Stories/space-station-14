@@ -5,9 +5,11 @@
   placement:
     mode: SnapgridCenter
   components:
+  # Stories skills - start
   - type: ActivatableUIRequiresSkills
     skills:
       Engineering: 1.0
+  # Stories skills - end
   - type: Clickable
   - type: InteractionOutline
   - type: Sprite

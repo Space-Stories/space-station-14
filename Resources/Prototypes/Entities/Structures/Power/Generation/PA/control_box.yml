@@ -4,9 +4,11 @@
   name: PA control computer
   description: This controls the density of the particles.
   components:
+  # Stories skills - start
   - type: ActivatableUIRequiresSkills
     skills:
       Engineering: 1.0
+  # Stories skills - end
   - type: Sprite
     sprite: Structures/Power/Generation/PA/control_box.rsi
   - type: ParticleAcceleratorControlBox
@@ -28,11 +30,6 @@
   - type: Wires
     boardName: wires-board-name-pa
     layoutId: ParticleAccelerator
-  #Stories start
-  - type: AccessReader
-    access: [[ "Command" ]]
-  - type: Lock
-  #Stories end
 
 # Unfinished
 

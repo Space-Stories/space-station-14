@@ -5,9 +5,9 @@
   components:
   # Stories skills - start
   - type: ExploreToSkills
-    seconds: 10
+    seconds: 3
     skills:
-      Melee: 0.3
+      Melee: 0.10
   - type: HitToSkills
     skills:
       Melee: 0.03
@@ -17,7 +17,7 @@
     multiplier: 1
   - type: SkillsAffectDamage
     skills:
-      Melee: 0.9
+      Melee: 1.0
     heavyAttackMultiplier: 1
     lightAttackMultiplier: 1
   # Stories skills - end

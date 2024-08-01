@@ -5,13 +5,19 @@
   description: A hand-held body scanner capable of distinguishing vital signs of the subject.
   components:
   # Stories skills - start
-  - type: GettingInteractedRequiresSkills
+  - type: ActivatableUIRequiresSkills
     skills:
-      Medicine: 0.5
+      Medical: 0.1
+  - type: UseRequiresSkills
+    skills:
+      Medical: 0.1
+  - type: ItemToggleRequiresSkills
+    skills:
+      Medical: 0.1
   - type: ExploreToSkills
     seconds: 10
     skills:
-      Medicine: 0.1
+      Medical: 0.10
   # Stories skills - end
   - type: Sprite
     sprite: Objects/Specific/Medical/healthanalyzer.rsi

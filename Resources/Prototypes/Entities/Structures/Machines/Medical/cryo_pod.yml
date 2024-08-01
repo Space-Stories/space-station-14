@@ -5,9 +5,12 @@
   description: A special machine intended to create a safe environment for the use of chemicals that react in cold environments.
   components:
   # Stories skills - start
-  - type: GettingInteractedRequiresSkills
+  - type: UseRequiresSkills
     skills:
-      Medicine: 0.5
+      Medical: 0.5
+  - type: ItemToggleRequiresSkills
+    skills:
+      Medical: 0.5
   # Stories skills - end
   - type: Sprite
     sprite: Structures/Machines/cryogenics.rsi

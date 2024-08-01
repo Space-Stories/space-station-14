@@ -5,7 +5,7 @@
   description: A rooty tooty point and shooty.
   abstract: true
   components:
-  # Stories - start
+  # Stories skills - start
   - type: ShotToSkills
     skills:
       Guns: 0.03
@@ -16,8 +16,8 @@
   - type: ExploreToSkills
     seconds: 10
     skills:
-      Guns: 0.1
-  # Stories - end
+      Guns: 0.10
+  # Stories skills - end
   - type: Sprite
     layers:
     - state: icon
@@ -63,10 +63,7 @@
   id: WeaponShotgunBulldog
   description: It's a magazine-fed shotgun designed for close quarters combat. Uses .50 shotgun shells.
   components:
-  # Stories - start
-  - type: ShotRequiresSkills
-    skills:
-      Guns: 1.0
+  # Stories skills - start
   - type: ShotToSkills
     skills:
       Guns: 0.03
@@ -77,8 +74,8 @@
   - type: ExploreToSkills
     seconds: 10
     skills:
-      Guns: 0.1
-  # Stories - end
+      Guns: 0.10
+  # Stories skills - end
   - type: Sprite
     sprite: Objects/Weapons/Guns/Shotguns/bulldog.rsi
     layers:

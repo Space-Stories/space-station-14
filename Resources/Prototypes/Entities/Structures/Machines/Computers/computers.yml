@@ -409,10 +409,10 @@
   - type: ExploreToSkills
     seconds: 10
     skills:
-      Science: 0.1
+      Science: 0.05
   - type: ActivatableUIRequiresSkills
     skills:
-      Science: 1.0
+      Science: 0.5
   # Stories skills - end
   - type: Sprite
     layers:
@@ -462,10 +462,10 @@
   - type: ExploreToSkills
     seconds: 10
     skills:
-      Science: 0.1
+      Science: 0.05
   - type: ActivatableUIRequiresSkills
     skills:
-      Science: 1.0
+      Science: 0.5
   # Stories skills - end
   - type: Sprite
     layers:
@@ -838,10 +838,10 @@
   - type: ExploreToSkills
     seconds: 10
     skills:
-      Medicine: 0.1
+      Medical: 0.10
   - type: ActivatableUIRequiresSkills
     skills:
-      Medicine: 1.0
+      Medical: 1.0
   # Stories skills - end
   - type: CloningConsole
   - type: DeviceList

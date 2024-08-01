@@ -399,7 +399,7 @@
       Science: 0.1
   - type: ActivatableUIRequiresSkills
     skills:
-      Science: 1.0
+      Science: 0.5
   # Stories skills - end
   - type: Sprite
     sprite: Structures/Machines/circuit_imprinter.rsi
@@ -547,7 +547,7 @@
       Science: 0.1
   - type: ActivatableUIRequiresSkills
     skills:
-      Science: 1.0
+      Science: 0.5
   # Stories skills - end
   - type: Sprite
     sprite: Structures/Machines/exosuit_fabricator.rsi
