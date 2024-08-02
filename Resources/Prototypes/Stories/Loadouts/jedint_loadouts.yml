@@ -1,0 +1,365 @@
+- type: roleLoadout
+  id: JobJediNt
+  groups:
+  - JediNtHead
+  - JediNtMask
+  - JediNtNeck
+  - JediNtJumpsuit
+  - JediNtBelt
+  - JediNtBackpack
+  - JediNtOuterClothing
+  - JediNtShoes
+  - JediNtLightsaber
+  - SurvivalSecurity
+  - Trinkets
+  - GroupSpeciesBreathTool
+
+- type: loadoutEffectGroup
+  id: Partner
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: Command
+      time: 3600 # 1 hour
+
+- type: loadoutGroup
+  id: JediNtHead
+  name: Страж Клинка, голова
+  minLimit: 0
+  loadouts:
+  - ClothingHeadHatExe
+
+- type: loadoutGroup
+  id: JediNtMask
+  name: Страж Клинка, маска
+  minLimit: 0
+  loadouts:
+  - ClothingMaskGasExe
+
+- type: loadoutGroup
+  id: JediNtShoes
+  name: Страж Клинка, обувь
+  loadouts:
+  - ClothingShoesBootsExe
+  - ClothingShoesBootsJackJediNomad
+  - ClothingShoesBootsJackJediNt
+  - ClothingShoesBootsJackJedi
+
+- type: loadoutGroup
+  id: JediNtBelt
+  name: Страж Клинка, пояс
+  loadouts:
+  - SecurityBelt
+  - ClothingBeltJedi
+  - ClothingBeltSheathExe
+
+- type: loadoutGroup
+  id: JediNtNeck
+  name: Страж Клинка, шея
+  minLimit: 0
+  loadouts:
+  - ClothingNeckCloakExe
+  - ClothingNeckMantleJediNt
+  - ClothingNeckMantleJediNomad
+
+- type: loadoutGroup
+  id: JediNtJumpsuit
+  name: Страж Клинка, комбинезон
+  minLimit: 1
+  loadouts:
+  - ClothingUniformJumpsuitExe
+  - ClothingUniformJumpsuitJediNomad
+  - ClothingUniformJumpsuitJediNt
+  - ClothingUniformJumpsuitJedi
+
+- type: loadoutGroup
+  id: JediNtBackpack
+  name: Страж Клинка, рюкзак
+  minLimit: 0
+  loadouts:
+  - ClothingBackpackJediNt
+
+- type: loadoutGroup
+  id: JediNtOuterClothing
+  name: Страж Клинка, верхняя одежда
+  minLimit: 0
+  loadouts:
+  - ClothingOuterVestArmorExe
+  - ClothingOuterVestJediNt
+  - ClothingOuterCoatJedi
+
+- type: loadoutGroup
+  id: JediNtLightsaber
+  name: Страж Клинка, световой меч
+  minLimit: 1
+  loadouts:
+  - LightsaberCrossguard
+  - LightsaberDouble
+  - LightsaberRapier
+  - LightsaberShort
+  - Lightsaber
+
+# Маска хранителя
+
+- type: loadout
+  id: ClothingMaskGasExe
+  equipment: ClothingMaskGasExe
+
+- type: startingGear
+  id: ClothingMaskGasExe
+  equipment:
+    mask: ClothingMaskGasExe
+
+# Шляпа хранителя
+
+- type: loadout
+  id: ClothingHeadHatExe
+  equipment: ClothingHeadHatExe
+
+- type: startingGear
+  id: ClothingHeadHatExe
+  equipment:
+    head: ClothingHeadHatExe
+
+# Рапира
+
+- type: loadout
+  id: LightsaberRapier
+  equipment: LightsaberRapier
+
+- type: startingGear
+  id: LightsaberRapier
+  equipment:
+    pocket1: LightsaberRapier
+
+# Двухклинковый меч
+
+- type: loadout
+  id: LightsaberDouble
+  equipment: LightsaberDouble
+
+- type: startingGear
+  id: LightsaberDouble
+  equipment:
+    pocket1: LightsaberDouble
+
+# Меч с боковыми лезвиями
+
+- type: loadout
+  id: LightsaberCrossguard
+  equipment: LightsaberCrossguard
+
+- type: startingGear
+  id: LightsaberCrossguard
+  equipment:
+    pocket1: LightsaberCrossguard
+
+# Короткий меч
+
+- type: loadout
+  id: LightsaberShort
+  equipment: LightsaberShort
+
+- type: startingGear
+  id: LightsaberShort
+  equipment:
+    pocket1: LightsaberShort
+
+# Обычный меч
+
+- type: loadout
+  id: Lightsaber
+  equipment: Lightsaber
+
+- type: startingGear
+  id: Lightsaber
+  equipment:
+    pocket1: Lightsaber
+
+# Накидка джедая
+
+- type: loadout
+  id: ClothingOuterCoatJedi
+  equipment: ClothingOuterCoatJedi
+
+- type: startingGear
+  id: ClothingOuterCoatJedi
+  equipment:
+    outerClothing: ClothingOuterCoatJedi
+
+# Бронежилет хранителя
+
+- type: loadout
+  id: ClothingOuterVestArmorExe
+  equipment: ClothingOuterVestArmorExe
+
+- type: startingGear
+  id: ClothingOuterVestArmorExe
+  equipment:
+    outerClothing: ClothingOuterVestArmorExe
+
+# Бронежилет стража
+
+- type: loadout
+  id: ClothingOuterVestJediNt
+  equipment: ClothingOuterVestJediNt
+
+- type: startingGear
+  id: ClothingOuterVestJediNt
+  equipment:
+    outerClothing: ClothingOuterVestJediNt
+
+# Рюкзак джедая
+
+- type: loadout
+  id: ClothingBackpackJediNt
+  equipment: ClothingBackpackJediNt
+
+- type: startingGear
+  id: ClothingBackpackJediNt
+  equipment:
+    back: ClothingBackpackJediNt
+
+# Роба джедая
+
+- type: loadout
+  id: ClothingUniformJumpsuitJedi
+  equipment: ClothingUniformJumpsuitJedi
+
+- type: startingGear
+  id: ClothingUniformJumpsuitJedi
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitJedi
+
+# Комбинезон хранителя
+
+- type: loadout
+  id: ClothingUniformJumpsuitExe
+  equipment: ClothingUniformJumpsuitExe
+
+- type: startingGear
+  id: ClothingUniformJumpsuitExe
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitExe
+
+# Комбинезон путника
+
+- type: loadout
+  id: ClothingUniformJumpsuitJediNomad
+  equipment: ClothingUniformJumpsuitJediNomad
+
+- type: startingGear
+  id: ClothingUniformJumpsuitJediNomad
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitJediNomad
+
+# Униформа стража
+
+- type: loadout
+  id: ClothingUniformJumpsuitJediNt
+  equipment: ClothingUniformJumpsuitJediNt
+
+- type: startingGear
+  id: ClothingUniformJumpsuitJediNt
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitJediNt
+
+# Плащ хранителя
+
+- type: loadout
+  id: ClothingNeckCloakExe
+  equipment: ClothingNeckCloakExe
+
+- type: startingGear
+  id: ClothingNeckCloakExe
+  equipment:
+    neck: ClothingNeckCloakExe
+
+# Мантия стража
+
+- type: loadout
+  id: ClothingNeckMantleJediNt
+  equipment: ClothingNeckMantleJediNt
+
+- type: startingGear
+  id: ClothingNeckMantleJediNt
+  equipment:
+    neck: ClothingNeckMantleJediNt
+
+# Мантия путника
+
+- type: loadout
+  id: ClothingNeckMantleJediNomad
+  equipment: ClothingNeckMantleJediNomad
+
+- type: startingGear
+  id: ClothingNeckMantleJediNomad
+  equipment:
+    neck: ClothingNeckMantleJediNomad
+
+# Ботинки стража
+
+- type: loadout
+  id: ClothingShoesBootsJackJediNt
+  equipment: ClothingShoesBootsJackJediNt
+
+- type: startingGear
+  id: ClothingShoesBootsJackJediNt
+  equipment:
+    shoes: ClothingShoesBootsJackJediNt
+
+# Ботинки путника
+
+- type: loadout
+  id: ClothingShoesBootsJackJediNomad
+  equipment: ClothingShoesBootsJackJediNomad
+
+- type: startingGear
+  id: ClothingShoesBootsJackJediNomad
+  equipment:
+    shoes: ClothingShoesBootsJackJediNomad
+
+# Ботинки хранителя
+
+- type: loadout
+  id: ClothingShoesBootsExe
+  equipment: ClothingShoesBootsExe
+
+- type: startingGear
+  id: ClothingShoesBootsExe
+  equipment:
+    shoes: ClothingShoesBootsExe
+
+# Ботинки джедая
+
+- type: loadout
+  id: ClothingShoesBootsJackJedi
+  equipment: ClothingShoesBootsJackJedi
+
+- type: startingGear
+  id: ClothingShoesBootsJackJedi
+  equipment:
+    shoes: ClothingShoesBootsJackJedi
+
+# Пояс джедая
+
+- type: loadout
+  id: ClothingBeltJedi
+  equipment: ClothingBeltJedi
+
+- type: startingGear
+  id: ClothingBeltJedi
+  equipment:
+    belt: ClothingBeltJedi
+
+# Пояс хранителя
+
+- type: loadout
+  id: ClothingBeltSheathExe
+  equipment: ClothingBeltSheathExe
+
+- type: startingGear
+  id: ClothingBeltSheathExe
+  equipment:
+    belt: ClothingBeltSheathExe

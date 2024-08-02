@@ -38,35 +38,33 @@
 - type: startingGear
   id: JediNtGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitJediNt
-    back: ClothingBackpackJediNtFilled
-    shoes: ClothingShoesBootsJackJediNt
-    eyes: ClothingEyesGlassesSecurity
-    pocket1: LightSaberJediNt
-    outerClothing: ClothingOuterVestJediNt
     id: JediNtPDA
     ears: ClothingHeadsetJediNtAlt
-    belt: ClothingBeltSecurityFilled
-    gloves: ClothingHandsGlovesCombat
-    neck: ClothingNeckMantleJediNt
-  # innerclothingskirt: ClothingUniformJumpskirtSP
-  # satchel: PRISONClothingBackpackSatchelFilled
-  # duffelbag: PRISONClothingBackpackDuffelFilled
+    gloves: BlackGloves
+    # belt: ClothingBeltSecurityFilled
 
-- type: startingGear
-  id: JediGear
-  equipment:
-    jumpsuit: ClothingUniformJumpsuitJedi
     # back: ClothingBackpackJediNtFilled
-    shoes: ClothingShoesBootsJackJedi
-    # eyes: ClothingEyesGlassesSunglasses
-    pocket1: LightSaberJediNt
-    outerClothing: ClothingOuterCoatJediFilled
-    id: JediNtPDA
-    ears: ClothingHeadsetJediNtAlt
-    belt: ClothingBeltJediFilled
-    # gloves: ClothingHandsGlovesCombat
+    # eyes: ClothingEyesGlassesSecurity
+    # jumpsuit: ClothingUniformJumpsuitJediNt
+    # shoes: ClothingShoesBootsJackJediNt
+    # pocket1: LightSaberJediNt
+    # outerClothing: ClothingOuterVestJediNt
     # neck: ClothingNeckMantleJediNt
-  # innerclothingskirt: ClothingUniformJumpskirtSP
-  # satchel: PRISONClothingBackpackSatchelFilled
-  # duffelbag: PRISONClothingBackpackDuffelFilled
+
+# - type: startingGear
+#   id: JediGear
+#   equipment:
+#     jumpsuit: ClothingUniformJumpsuitJedi
+#     # back: ClothingBackpackJediNtFilled
+#     shoes: ClothingShoesBootsJackJedi
+#     # eyes: ClothingEyesGlassesSunglasses
+#     pocket1: LightSaberJediNt
+#     outerClothing: ClothingOuterCoatJediFilled
+#     id: JediNtPDA
+#     ears: ClothingHeadsetJediNtAlt
+#     belt: ClothingBeltJediFilled
+#     # gloves: ClothingHandsGlovesCombat
+#     # neck: ClothingNeckMantleJediNt
+#   # innerclothingskirt: ClothingUniformJumpskirtSP
+#   # satchel: PRISONClothingBackpackSatchelFilled
+#   # duffelbag: PRISONClothingBackpackDuffelFilled
