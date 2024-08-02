@@ -40,7 +40,7 @@
   equipment:
     id: JediNtPDA
     ears: ClothingHeadsetJediNtAlt
-    gloves: BlackGloves
+    gloves: ClothingHandsGlovesColorBlack
     # belt: ClothingBeltSecurityFilled
 
     # back: ClothingBackpackJediNtFilled

@@ -17,11 +17,8 @@
 - type: loadoutEffectGroup
   id: Partner
   effects:
-  - !type:JobRequirementLoadoutEffect
-    requirement:
-      !type:DepartmentTimeRequirement
-      department: Command
-      time: 3600 # 1 hour
+  - !type:PartnerLoadoutEffect
+    tier: 1
 
 - type: loadoutGroup
   id: JediNtHead
@@ -105,6 +102,9 @@
 - type: loadout
   id: ClothingMaskGasExe
   equipment: ClothingMaskGasExe
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: Partner
 
 - type: startingGear
   id: ClothingMaskGasExe
