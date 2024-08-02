@@ -8,19 +8,6 @@ using Robust.Shared.Utility;
 namespace Content.Shared.Corvax.Sponsors;
 
 [Serializable, NetSerializable]
-public sealed class DbSponsorInfo
-{
-    public int? Tier { get; set; }
-    public string? OOCColor { get; set; }
-    public bool HavePriorityJoin { get; set; } = false;
-    public int ExtraSlots { get; set; }
-    public bool RoleTimeBypass { get; set; } = false;
-    public string[]? AllowedAntags { get; set; } = Array.Empty<string>();
-    public string? GhostSkin { get; set; }
-    public int LastDayTakingAntag { get; set; }
-}
-
-[Serializable, NetSerializable]
 public sealed class SponsorInfo
 {
     [JsonPropertyName("tier")]
@@ -41,8 +28,14 @@ public sealed class SponsorInfo
     [JsonPropertyName("roleTimeBypass")]
     public bool RoleTimeBypass { get; set; } = false;
 
+    [JsonPropertyName("ghost_skin")]
+    public string GhostSkin { get; set; } = "MobObserver";
+
     [JsonPropertyName("allowed_antags")]
-    public string[]? AllowedAntags { get; set; } = Array.Empty<string>();
+    public string[] AllowedAntags { get; set; } = Array.Empty<string>();
+
+    [JsonPropertyName("last_day_taking_antag")]
+    public int LastDayTakingAntag { get; set; } = 0;
 }
 
 

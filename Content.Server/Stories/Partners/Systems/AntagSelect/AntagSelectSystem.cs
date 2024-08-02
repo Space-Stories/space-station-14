@@ -40,6 +40,7 @@ public sealed class AntagSelectSystem : EntitySystem
     [Dependency] private readonly SponsorsManager _sponsorsManager = default!;
     [Dependency] private readonly IConsoleHost _host = default!;
     [Dependency] private readonly IPartnersManager _db = default!;
+    [Dependency] private readonly SponsorsManager _partners = default!;
     private const string DefaultRevsRule = "Revolutionary";
     private const string DefaultThiefRule = "Thief";
     private const string DefaultTraitorRule = "Traitor";
@@ -115,7 +116,7 @@ public sealed class AntagSelectSystem : EntitySystem
         var uid = args.EntityUid;
         var proto = args.Prototype;
 
-        if (!_db.TryGetInfo(args.Session.UserId, out var sponsorData) || sponsorData.AllowedAntags != null && !sponsorData.AllowedAntags.Contains(proto.ID) || sponsorData.LastDayTakingAntag == DateTime.Now.DayOfYear)
+        if (!_partners.TryGetInfo(args.Session.UserId, out var sponsorData) || sponsorData.AllowedAntags != null && !sponsorData.AllowedAntags.Contains(proto.ID) || sponsorData.LastDayTakingAntag == DateTime.Now.DayOfYear)
             args.Cancel();
 
         if (!_mind.TryGetMind(uid, out var mindId, out var mind))

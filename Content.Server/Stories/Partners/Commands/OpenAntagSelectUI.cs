@@ -17,7 +17,7 @@ public sealed class OpenAntagSelectCommand : IConsoleCommand
     [Dependency] private readonly IEntityManager _entityManager = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly IPartnersManager _db = default!;
+    [Dependency] private readonly SponsorsManager _partners = default!;
     public string Command => "openantagselect";
     public string Description => "Открыть меню выдачи антагов.";
     public string Help => "Usage: pickantag dragon";
@@ -31,7 +31,7 @@ public sealed class OpenAntagSelectCommand : IConsoleCommand
         var antagSelectSystem = _entityManager.System<AntagSelectSystem>();
         var playerEntity = shell.Player.AttachedEntity.Value;
 
-        if (_db.TryGetInfo(shell.Player.UserId, out var sponsor) && sponsor.AllowedAntags != null)
+        if (_partners.TryGetInfo(shell.Player.UserId, out var sponsor) && sponsor.AllowedAntags != null)
         {
             uiSystem.OpenUi(playerEntity, AntagSelectUiKey.Key, shell.Player);
             var random = _random.Pick(sponsor.AllowedAntags);
