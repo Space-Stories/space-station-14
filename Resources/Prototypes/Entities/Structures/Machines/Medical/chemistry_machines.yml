@@ -3,6 +3,11 @@
   parent: [ BaseMachinePowered, SmallConstructibleMachine ]
   abstract: true
   components:
+  # Stories skills - start
+  - type: UseRequiresSkills
+    skills:
+      Medical: 0.5
+  # Stories skills - end
   - type: Transform
     anchored: true
   - type: SolutionContainerMixer

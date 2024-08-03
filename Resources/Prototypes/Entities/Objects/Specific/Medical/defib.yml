@@ -5,6 +5,18 @@
   description: CLEAR! Zzzzat!
   abstract: true
   components:
+    # Stories skills - start
+    - type: UseRequiresSkills
+      skills:
+        Medical: 0.5
+    - type: ItemToggleRequiresSkills
+      skills:
+        Medical: 0.5
+    - type: ExploreToSkills
+      seconds: 10
+      skills:
+        Medical: 0.10
+    # Stories skills - end
     - type: Sprite
       sprite: Objects/Specific/Medical/defib.rsi
       layers:

@@ -11,6 +11,12 @@
   icon:
     sprite: Structures/Machines/parts.rsi
     state: 4
+  conditions:
+  # Stories skills - start
+    - !type:RequiresSkills
+      skills:
+        Engineering: 0.5
+  # Stories skills - end
 
 - type: construction
   name: machine frame
@@ -25,6 +31,12 @@
   icon:
     sprite: Structures/Machines/parts.rsi
     state: "box_0"
+  conditions:
+  # Stories skills - start
+    - !type:RequiresSkills
+      skills:
+        Engineering: 0.5
+  # Stories skills - end
 
 # Switching
 - type: construction
@@ -42,6 +54,11 @@
     state: switch-off
   conditions:
     - !type:TileNotBlocked
+  # Stories skills - start
+    - !type:RequiresSkills
+      skills:
+        Engineering: 0.5
+  # Stories skills - end
 
 - type: construction
   name: light switch
@@ -60,6 +77,11 @@
   canBuildInImpassable: true
   conditions:
     - !type:WallmountCondition
+  # Stories skills - start
+    - !type:RequiresSkills
+      skills:
+        Engineering: 0.5
+  # Stories skills - end
 
 - type: construction
   name: signal switch
@@ -78,6 +100,11 @@
   canBuildInImpassable: true
   conditions:
     - !type:WallmountCondition
+  # Stories skills - start
+    - !type:RequiresSkills
+      skills:
+        Engineering: 0.5
+  # Stories skills - end
 
 - type: construction
   name: signal button
@@ -96,6 +123,11 @@
   canBuildInImpassable: true
   conditions:
     - !type:WallmountCondition
+  # Stories skills - start
+    - !type:RequiresSkills
+      skills:
+        Engineering: 0.5
+  # Stories skills - end
 
 - type: construction
   name: directional light switch
@@ -114,6 +146,11 @@
   canBuildInImpassable: true
   conditions:
     - !type:WallmountCondition
+  # Stories skills - start
+    - !type:RequiresSkills
+      skills:
+        Engineering: 0.5
+  # Stories skills - end
 
 - type: construction
   name: directional signal switch
@@ -132,6 +169,11 @@
   canBuildInImpassable: true
   conditions:
     - !type:WallmountCondition
+  # Stories skills - start
+    - !type:RequiresSkills
+      skills:
+        Engineering: 0.5
+  # Stories skills - end
 
 - type: construction
   name: directional signal button
@@ -150,3 +192,8 @@
   canBuildInImpassable: true
   conditions:
     - !type:WallmountCondition
+  # Stories skills - start
+    - !type:RequiresSkills
+      skills:
+        Engineering: 0.5
+  # Stories skills - end

@@ -16,6 +16,14 @@
   extendedAccess:
   - Kitchen
   - Bar
+  # Stories skills - start
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: Skills
+        skills:
+          Melee: 0.1
+  # Stories skills - end
 
 - type: startingGear
   id: BotanistGear

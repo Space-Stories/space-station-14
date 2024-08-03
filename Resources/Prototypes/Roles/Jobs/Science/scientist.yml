@@ -13,6 +13,14 @@
   access:
   - Research
   - Maintenance
+  # Stories skills - start
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: Skills
+        skills:
+          Science: 1.0
+  # Stories skills - end
 
 - type: startingGear
   id: ScientistGear

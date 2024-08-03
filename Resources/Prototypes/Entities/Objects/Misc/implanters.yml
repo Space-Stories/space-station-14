@@ -7,6 +7,18 @@
   parent: BaseItem
   abstract: true
   components:
+    # Stories skills - start
+    - type: UseRequiresSkills
+      skills:
+        Medical: 1.0
+    - type: AddImplantRequiresSkills
+      skills:
+        Medical: 1.0
+    - type: ExploreToSkills
+      seconds: 3
+      skills:
+        Medical: 0.05
+    # Stories skills - end
     - type: ItemSlots
     - type: ContainerContainer
       containers:

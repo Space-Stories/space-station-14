@@ -1,0 +1,61 @@
+# Factions
+
+- type: skill
+  id: Syndicate
+  name: Синдикат
+  modifier: 0.1
+
+- type: skill
+  id: Nanotrasen
+  name: Nanotrasen
+  modifier: 0.1
+
+# Departments
+
+- type: skill
+  id: Security
+  name: Служба безопасности
+  modifier: 0.5
+
+- type: skill
+  id: Command
+  name: Командование
+
+- type: skill
+  id: Cargo
+  name: Снабжение
+
+- type: skill
+  id: Engineering
+  name: Инженерный
+
+- type: skill
+  id: Medical
+  name: Медицина
+
+- type: skill
+  id: Science
+  name: Наука
+  modifier: 0.5
+
+- type: skill
+  id: Civilian
+  name: Сервис
+
+# Special
+
+- type: skill
+  id: Melee
+  name: Ближний бой
+
+- type: skill
+  id: Guns
+  name: Оружие
+
+- type: skill
+  id: EnergyGuns
+  name: Лазерное оружие
+
+- type: skill
+  id: Shuttle
+  name: Управление шаттлами

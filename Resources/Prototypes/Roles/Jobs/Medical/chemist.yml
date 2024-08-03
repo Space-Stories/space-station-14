@@ -14,6 +14,14 @@
   - Medical
   - Chemistry
   - Maintenance
+  # Stories skills - start
+  special:
+  - !type:AddComponentSpecial
+    components:
+      - type: Skills
+        skills:
+          Medical: 1.0
+  # Stories skills - end
 
 - type: startingGear
   id: ChemistGear

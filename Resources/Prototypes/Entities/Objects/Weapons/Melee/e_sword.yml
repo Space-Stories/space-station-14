@@ -4,6 +4,18 @@
   id: EnergySword
   description: A very loud & dangerous sword with a beam made of pure, concentrated plasma. Cuts through unarmored targets like butter.
   components:
+  # Stories skills - start
+  - type: ExploreToSkills
+    seconds: 10
+    skills:
+      Melee: 0.10
+  - type: HitRequiresSkills
+    skills:
+      Melee: 1.0
+  - type: ItemToggleRequiresSkills
+    skills:
+      Melee: 1.0
+  # Stories skills - end
   - type: EnergySword
   - type: ItemToggle
     soundActivate:
