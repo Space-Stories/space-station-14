@@ -1,3 +1,4 @@
+using Content.Server.Stories.Shadowling;
 using Content.Shared.Roles;
 
 namespace Content.Server.Roles;
@@ -18,6 +19,8 @@ public sealed class RoleSystem : SharedRoleSystem
         SubscribeAntagEvents<TraitorRoleComponent>();
         SubscribeAntagEvents<ZombieRoleComponent>();
         SubscribeAntagEvents<ThiefRoleComponent>();
+        SubscribeAntagEvents<ShadowlingRoleComponent>(); // Stories       | Оффы просто гении. Роль антага делается прототипом, но
+        SubscribeAntagEvents<ShadowlingThrallRoleComponent>(); // Stories | , чтобы игра считала её антагом, нужно писать сюда код.
     }
 
     public string? MindGetBriefing(EntityUid? mindId)

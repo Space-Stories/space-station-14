@@ -1,0 +1,9 @@
+- type: entity
+  id: CrateServicePrinter
+  parent: CrateGenericSteel
+  name: printer crate
+  description: Printer for some burecrautic things
+  components:
+  - type: StorageFill
+    contents:
+    - id: BoxPrinter

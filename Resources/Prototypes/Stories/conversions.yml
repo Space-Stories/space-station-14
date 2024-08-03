@@ -1,4 +1,27 @@
 - type: conversion
+  id: ShadowlingThrall
+  statusIcon: ShadowlingThrallFaction
+  blacklist:
+    components:
+    - Zombie
+  briefing:
+    text: thrall-role-greeting
+    color: Red
+  endBriefing:
+    text: thrall-role-goodbye
+    color: Red
+  components:
+  - type: ThermalVision
+  - type: ShadowlingThrall
+  mindComponents:
+  - type: RoleBriefing
+    briefing: thrall-briefing
+  - type: ShadowlingThrallRole
+    prototype: ShadowlingThrall
+  channels:
+    - ShadowlingMind
+
+- type: conversion
   id: HypnotizedEmpire
   statusIcon: HypnotizedEmpireFaction
   briefing:

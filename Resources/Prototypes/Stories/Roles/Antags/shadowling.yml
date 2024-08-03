@@ -1,17 +1,16 @@
 - type: antag
   id: Shadowling
-  name: Тенеморф | БЕТА |
+  name: Тенеморф
   antagonist: true
-  setPreference: false
-  objective: Поработите экипаж и станьте богом
+  setPreference: true
+  objective: Поработите экипаж и станьте богом.
   requirements:
   - !type:OverallPlaytimeRequirement
-    time: 1
-    # time: 36000 # 10h Stories-RoleTime
+    time: 36000 # 10h Stories-RoleTime
 
 - type: antag
   id: ShadowlingThrall
-  name: Тралл
+  name: Тралл тенеморфа
   antagonist: true
   setPreference: false
-  objective: Выполняйте приказы своего хозяина и помогите ему в его цели стать богом
+  objective: Выполняйте приказы своего хозяина и помогите ему в его цели стать богом.

@@ -26,7 +26,6 @@
         key_slots:
           - PRISONEncryptionKey
           - EncryptionKeyCommon
-          - EncryptionKeyMedical
     - type: Sprite
       sprite: Stories/Clothing/Ears/Headsets/prison.rsi
     - type: Clothing
@@ -43,7 +42,6 @@
         key_slots:
           - PRISONEncryptionKey
           - EncryptionKeyCommon
-          - EncryptionKeyEngineering
     - type: Sprite
       sprite: Stories/Clothing/Ears/Headsets/prison.rsi
     - type: Clothing

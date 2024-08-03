@@ -1,9 +1,11 @@
 - type: entity
   save: false
-  name: Urist' McShadowling
+  name: Тенеморф
   parent: BaseMobShadowling
   id: MobShadowling
   components:
+    - type: NameIdentifier
+      group: GenericNumber
     - type: CombatMode
     - type: InteractionPopup
       successChance: 1

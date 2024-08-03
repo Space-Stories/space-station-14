@@ -21,6 +21,8 @@ using Content.Shared.Stories.Sponsor.AntagSelect;
 using Content.Server.Database;
 using Content.Server.Antag;
 using Content.Server.Stories.Shadowling;
+using Content.Shared.Stories.Shadowling;
+using Content.Server.Stories.GameTicking.Rules.Components;
 
 namespace Content.Server.Stories.Sponsor.AntagSelect;
 public sealed class AntagSelectSystem : EntitySystem
@@ -42,6 +44,7 @@ public sealed class AntagSelectSystem : EntitySystem
     [Dependency] private readonly IPartnersManager _db = default!;
     private const string DefaultRevsRule = "Revolutionary";
     private const string DefaultThiefRule = "Thief";
+    private const string DefaultShadowlingRule = "Shadowling";
     private const string DefaultTraitorRule = "Traitor";
     public override void Initialize()
     {
@@ -95,8 +98,7 @@ public sealed class AntagSelectSystem : EntitySystem
     }
     private void OnShadowling(MakeShadowlingEvent args)
     {
-        EnsureComp<ShadowlingComponent>(args.EntityUid); // FIXME: upstream hardcode
-
+        _antag.ForceMakeAntag<ShadowlingRuleComponent>(args.Player, DefaultShadowlingRule);
         args.RoleTaken = true;
     }
     private void OnThief(MakeThiefEvent args)

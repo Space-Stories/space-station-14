@@ -54,3 +54,20 @@
         - state: idspmedic
     - type: PresetIdCard
       job: PRISONMedic
+
+- type: entity
+  parent: IDCardStandard
+  id: PRISONIDCardPrisoner
+  name: ID карта заключенного тюрьмы
+  description: Карта, необходимая для доступа в различные области станции.
+  components:
+    - type: Sprite
+      sprite: Objects/Misc/id_cards.rsi
+      layers:
+        - state: orange
+    - type: PresetIdCard
+      job: PRISONPrisoner
+    - type: Clothing
+      slots:
+        - idcard
+      sprite: Objects/Misc/id_cards.rsi

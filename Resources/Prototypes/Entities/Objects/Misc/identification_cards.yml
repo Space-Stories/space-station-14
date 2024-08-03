@@ -867,3 +867,9 @@
     - CentralCommand
     - NuclearOperative
     - SyndicateAgent
+    - HeadOfPrison # Stories - start
+    - PrisonBrig
+    - Prison
+    - PrisonMed
+    - PrisonEng
+    - Prisoner # Stories - end
