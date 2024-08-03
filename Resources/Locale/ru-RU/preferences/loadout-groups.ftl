@@ -158,3 +158,5 @@ loadout-group-paramedic-shoes = Парамедик, обувь
 loadout-group-reporter-jumpsuit = Репортёр, комбинезон
 loadout-group-boxer-jumpsuit = Боксёр, комбинезон
 loadout-group-boxer-gloves = Боксёр, перчатки
+
+loadout-group-partner-tier-restriction = Вы не партнёр или ваша подписка слишком мала!

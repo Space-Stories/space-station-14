@@ -20,18 +20,29 @@
   id: SithGear
   equipment:
     jumpsuit: ClothingUniformJumpsuitSith
-    # belt holds katana so satchel has the tools for sabotaging things
     mask: ClothingMaskGasSith
     neck: ClothingNeckCloakSith
-    # head: ClothingHeadHatHoodSith
     eyes: ClothingEyesHudSyndicate
     gloves: ClothingHandsGlovesSith
-    # outerClothing: ClothingOuterSuitSpaceNinja
     shoes: ClothingShoesSith
     id: AgentIDCard
     back: JetpackBlackFilled
     ears: ClothingHeadsetGrey
-    pocket1: LightSaberDoubleSith
+    pocket1: LightsaberDoubleRed
     pocket2: PinpointerUniversal
     belt: ClothingBeltSith
-    suitstorage: OxygenTankFilled
+
+- type: startingGear
+  id: KyloGear
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitKylo
+    mask: ClothingMaskGasSyndicate
+    neck: ClothingNeckCloakKylo
+    gloves: ClothingHandsGlovesCombat
+    shoes: ClothingShoesSith
+    id: AgentIDCard
+    back: JetpackBlackFilled
+    ears: ClothingHeadsetGrey
+    pocket1: LightsaberCrossguardRed
+    pocket2: PinpointerUniversal
+    belt: ClothingBeltSith

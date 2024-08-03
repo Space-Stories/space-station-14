@@ -1,9 +1,16 @@
 - type: entity
   name: световой меч
   parent: EnergySword
-  id: LightSaberJediNt
+  abstract: true
+  id: BaseLightsaber
   description: Особенное оружие, созданное сколь для элегантного боя, сколь и для церемонний, его работа связана с кайбер-кристаллом внутри.
   components:
+  - type: EmitSoundOnThrow
+    sound:
+      path: /Audio/Weapons/eblademiss.ogg
+      params:
+        variation: 0.125
+  - type: LightSaber
   - type: ItemToggleDamageContacts
     activatedSoundOnHit:
       path: /Audio/Weapons/eblade1.ogg
@@ -31,7 +38,10 @@
       path: /Audio/Weapons/eblade1.ogg
   - type: EnergySword
     colorOptions:
-      - White
+      - DodgerBlue
+      - Aqua
+      - MediumSpringGreen
+      - MediumOrchid
   - type: Reflect
     enabled: false
     reflectProb: 0.50
@@ -40,8 +50,6 @@
       - Energy
   - type: Damageable
     damageContainer: Inorganic
-  # - type: ThrowingAngle
-  #   angle: 225
   - type: Fixtures
     fixtures:
       fix1:
@@ -55,7 +63,6 @@
         - FlyingMobLayer
         restitution: 0.3
         friction: 0.2
-  - type: LightSaber
   - type: DamageOtherOnHit
     soundHit:
       path: /Audio/Weapons/eblade1.ogg
@@ -74,9 +81,231 @@
       - ForceUser # Чувствительные к силе отражают это, так как иначе бы это было имбой против них.
 
 - type: entity
+  name: световая рапира
+  parent: BaseLightsaber
+  id: LightsaberRapier
+  description: Особенное оружие, созданное сколь для элегантного боя, сколь и для церемонний, его работа связана с кайбер-кристаллом внутри.
+  components:
+  - type: EnergySword
+    colorOptions:
+    - "#04ecfc"
+  - type: Item
+    size: Small
+    sprite: Stories/Objects/Weapons/Melee/e_rapier.rsi
+  - type: Sprite
+    sprite: Stories/Objects/Weapons/Melee/e_rapier.rsi
+    layers:
+      - state: e_rapier
+      - state: e_rapier_blade
+        visible: false
+        shader: unshaded
+        map: [ "blade" ]
+  - type: BlockMeleeAttack
+    enabled: false
+    blockSound:
+      path: /Audio/Weapons/eblade1.ogg
+  - type: Reflect
+    enabled: false
+    reflectProb: 0.50
+    spread: 90
+    reflects:
+      - Energy
+  - type: ItemToggleDamageContacts
+    activatedSoundOnHit:
+      path: /Audio/Weapons/eblade1.ogg
+      params:
+        volume: -6
+        variation: 0.250
+    activatedDamage:
+        types:
+            Slash: 7.5
+            Heat: 7.5
+            Structural: 2
+  - type: ItemToggleDamageOtherOnHit
+    activatedSoundOnHit:
+      path: /Audio/Weapons/eblade1.ogg
+      params:
+        variation: 0.250
+    activatedDamage:
+        types:
+            Slash: 7.5
+            Heat: 7.5
+            Structural: 2
+  - type: DamageOtherOnHit
+    soundHit:
+      path: /Audio/Weapons/eblade1.ogg
+    damage:
+      types:
+        Blunt: 0
+  - type: DamageContacts
+    soundHit:
+      path: /Audio/Weapons/eblade1.ogg
+    onlyTethered: true
+    damage:
+      types:
+        Structural: 0
+    ignoreWhitelist:
+      components:
+      - ForceUser # Чувствительные к силе отражают это, так как иначе бы это было имбой против них.
+
+# Random color
+
+- type: entity
+  name: световой меч
+  parent: BaseLightsaber
+  id: Lightsaber
+  description: Особенное оружие, созданное сколь для элегантного боя, сколь и для церемонний, его работа связана с кайбер-кристаллом внутри.
+  components:
+  - type: BlockMeleeAttack
+    enabled: false
+    blockSound:
+      path: /Audio/Weapons/eblade1.ogg
+  - type: Reflect
+    enabled: false
+    reflectProb: 0.50
+    spread: 90
+    reflects:
+      - Energy
+  - type: ItemToggleDamageContacts
+    activatedSoundOnHit:
+      path: /Audio/Weapons/eblade1.ogg
+      params:
+        volume: -6
+        variation: 0.250
+    activatedDamage:
+        types:
+            Slash: 7.5
+            Heat: 7.5
+            Structural: 2
+  - type: ItemToggleDamageOtherOnHit
+    activatedSoundOnHit:
+      path: /Audio/Weapons/eblade1.ogg
+      params:
+        variation: 0.250
+    activatedDamage:
+        types:
+            Slash: 7.5
+            Heat: 7.5
+            Structural: 2
+  - type: DamageOtherOnHit
+    soundHit:
+      path: /Audio/Weapons/eblade1.ogg
+    damage:
+      types:
+        Blunt: 0
+  - type: DamageContacts
+    soundHit:
+      path: /Audio/Weapons/eblade1.ogg
+    onlyTethered: true
+    damage:
+      types:
+        Structural: 0
+    ignoreWhitelist:
+      components:
+      - ForceUser # Чувствительные к силе отражают это, так как иначе бы это было имбой против них.
+
+- type: entity
+  name: короткий световой меч
+  parent: BaseLightsaber
+  id: LightsaberShort
+  description: Особенное оружие, созданное сколь для элегантного боя, сколь и для церемонний, его работа связана с кайбер-кристаллом внутри.
+  components:
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PhysShapeCircle
+          radius: 0.3
+        density: 1
+        mask:
+        - ItemMask
+        layer:
+        - FlyingMobLayer
+        restitution: 0.3
+        friction: 0.2
+  - type: MeleeWeapon
+    wideAnimationRotation: -135
+    attackRate: 3
+    damage:
+      types:
+        Blunt: 4.5
+  - type: ItemToggleMeleeWeapon
+    activatedSoundOnHit:
+      path: /Audio/Weapons/eblade1.ogg
+      params:
+        variation: 0.250
+    activatedSoundOnHitNoDamage:
+      path: /Audio/Weapons/eblade1.ogg
+      params:
+        variation: 0.250
+        volume: -10
+    activatedSoundOnSwing:
+      path: /Audio/Weapons/eblademiss.ogg
+      params:
+        variation: 0.125
+    activatedDamage:
+        types:
+            Slash: 7.5
+            Heat: 7.5
+            Structural: 10
+  - type: Reflect
+    enabled: false
+    reflectProb: 0.25
+    spread: 90
+    reflects:
+      - Energy
+  - type: BlockMeleeAttack
+    enabled: false
+    blockProb: 0.25
+    blockSound:
+      path: /Audio/Weapons/eblade1.ogg
+  - type: Item
+    size: Small
+    sprite: Stories/Objects/Weapons/Melee/e_sword_nomad.rsi
+  - type: Sprite
+    sprite: Stories/Objects/Weapons/Melee/e_sword_nomad.rsi
+    layers:
+      - state: e_sword
+      - state: e_sword_blade
+        color: "#FFFFFF"
+        visible: false
+        shader: unshaded
+        map: [ "blade" ]
+
+- type: entity
+  name: световой меч с боковыми лезвиями
+  parent: BaseLightsaber
+  id: LightsaberCrossguard
+  description: Особенное оружие, созданное сколь для элегантного боя, сколь и для церемонний, его работа связана с кайбер-кристаллом внутри.
+  components:
+  - type: Reflect
+    enabled: false
+    reflectProb: 0.75
+    spread: 90
+    reflects:
+      - Energy
+  - type: BlockMeleeAttack
+    enabled: false
+    blockProb: 0.75
+    blockSound:
+      path: /Audio/Weapons/eblade1.ogg
+  - type: Item
+    size: Small
+    sprite: Stories/Objects/Weapons/Melee/e_sword_kylo_inhand.rsi
+  - type: Sprite
+    sprite: Stories/Objects/Weapons/Melee/e_sword_kylo.rsi
+    layers:
+      - state: e_sword
+      - state: e_sword_blade
+        color: "#FFFFFF"
+        visible: false
+        shader: unshaded
+        map: [ "blade" ]
+
+- type: entity
   name: двухклинковый световой меч
-  parent: LightSaberJediNt
-  id: LightSaberDoubleSith
+  parent: BaseLightsaber
+  id: LightsaberDouble
   description: Вариант светового меча, особенностью которого являются лезвия, излучаемые с обеих сторон рукояти.
   components:
   - type: ItemToggleDamageContacts
@@ -104,9 +333,6 @@
     enabled: false
     blockSound:
       path: /Audio/Weapons/eblade1.ogg
-  - type: Damageable
-    damageContainer: Inorganic
-  - type: LightSaber
   - type: DamageOtherOnHit
     soundHit:
       path: /Audio/Weapons/eblade1.ogg
@@ -123,18 +349,6 @@
     ignoreWhitelist:
       components:
       - ForceUser # Чувствительные к силе отражают это, так как иначе бы это было имбой против них.
-  - type: EnergySword
-    colorOptions:
-      - Red
-  - type: ItemToggle
-    soundActivate:
-      path: /Audio/Weapons/ebladeon.ogg
-      params:
-        volume: 3
-    soundDeactivate:
-      path: /Audio/Weapons/ebladeoff.ogg
-      params:
-        volume: 3
   - type: ItemToggleMeleeWeapon
     activatedSoundOnSwing:
       path: /Audio/Weapons/eblademiss.ogg
@@ -176,14 +390,49 @@
     spread: 90
     reflects:
       - Energy
-  - type: UseDelay
-    delay: 1
-  - type: ToggleableLightVisuals
-    spriteLayer: blade
-    inhandVisuals:
-      left:
-      - state: inhand-left-blade
-        shader: unshaded
-      right:
-      - state: inhand-right-blade
-        shader: unshaded
+
+# Red
+
+- type: entity
+  name: световой меч
+  parent: Lightsaber
+  id: LightsaberRed
+  suffix: Red
+  description: Особенное оружие, созданное сколь для элегантного боя, сколь и для церемонний, его работа связана с кайбер-кристаллом внутри.
+  components:
+  - type: EnergySword
+    colorOptions:
+      - Red
+
+- type: entity
+  name: короткий световой меч
+  parent: LightsaberShort
+  id: LightsaberShortRed
+  suffix: Red
+  description: Особенное оружие, созданное сколь для элегантного боя, сколь и для церемонний, его работа связана с кайбер-кристаллом внутри.
+  components:
+  - type: EnergySword
+    colorOptions:
+      - Red
+
+- type: entity
+  name: световой меч с боковыми лезвиями
+  parent: LightsaberCrossguard
+  suffix: Red
+  id: LightsaberCrossguardRed
+  description: Особенное оружие, созданное сколь для элегантного боя, сколь и для церемонний, его работа связана с кайбер-кристаллом внутри.
+  components:
+  - type: EnergySword
+    colorOptions:
+      - Red
+
+- type: entity
+  name: двухклинковый световой меч
+  parent: LightsaberDouble
+  suffix: Red
+  id: LightsaberDoubleRed
+  description: Вариант светового меча, особенностью которого являются лезвия, излучаемые с обеих сторон рукояти.
+  components:
+  - type: EnergySword
+    colorOptions:
+      - Red

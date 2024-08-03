@@ -118,7 +118,27 @@
   - Survival
   event: !type:MakeGhostRoleAntagEvent
     gameRule: SithSpawn
-    spawnerId: SpawnPointGhostSith
+    spawnerId: SpawnPointSith
+
+- type: sponsorAntag
+  id: kylo
+  key: big_antag
+  earliestStart: 30
+  gameStatus: Ghost
+  latestStart: 90
+  minimumPlayers: 40
+  maxIssuance: 1
+  allowedGamePresets:
+  - AllAtOnce
+  - Secret
+  - Traitor
+  - Pirates
+  - Zombie
+  - Extended
+  - Survival
+  event: !type:MakeGhostRoleAntagEvent
+    gameRule: KyloSpawn
+    spawnerId: SpawnPointSith
 
 - type: sponsorAntag
   id: dragon
@@ -345,7 +365,7 @@
   - Shadowling
   event: !type:MakeGhostRoleAntagEvent
     gameRule: SithSpawn
-    spawnerId: SpawnPointGhostSith
+    spawnerId: SpawnPointSith
 
 - type: sponsorAntag
   id: dragonDEBUG

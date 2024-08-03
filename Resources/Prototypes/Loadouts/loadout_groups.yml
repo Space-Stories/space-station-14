@@ -14,17 +14,27 @@
   - CigPackBlack
   - CigarCase
   - CigarGold
-  - ClothingNeckLGBTPin
-  - ClothingNeckAromanticPin
-  - ClothingNeckAsexualPin
-  - ClothingNeckBisexualPin
-  - ClothingNeckIntersexPin
-  - ClothingNeckLesbianPin
-  - ClothingNeckNonBinaryPin
-  - ClothingNeckPansexualPin
-  - ClothingNeckTransPin
-  - ClothingNeckAutismPin
-  - ClothingNeckGoldAutismPin
+  # Stories - start
+  - ToyFigurineShadowling
+  - ToyFigurineAscendedShadowling
+  - ToyFigurineSith
+  - ToyFigurineJediNt
+  - ToyFigurineMSP
+  - ToyFigurineOSP
+  - ToyFigurineESP
+  - ToyFigurineHOSP
+  # - ClothingNeckLGBTPin
+  # - ClothingNeckAromanticPin
+  # - ClothingNeckAsexualPin
+  # - ClothingNeckBisexualPin
+  # - ClothingNeckIntersexPin
+  # - ClothingNeckLesbianPin
+  # - ClothingNeckNonBinaryPin
+  # - ClothingNeckPansexualPin
+  # - ClothingNeckTransPin
+  # - ClothingNeckAutismPin
+  # - ClothingNeckGoldAutismPin
+  # Stories - end
 
 - type: loadoutGroup
   id: Glasses

@@ -14,6 +14,7 @@ antag-spaceninja = Космический ниндзя
 antag-loneops = Одинокий оперативник
 antag-headrev = Глава революции
 antag-inquisitor = Инквизитор
+antag-kylo = Инквизитор [Кайло Рен]
 antag-dragon = Космический дракон
 antag-terminator = Экстерминатор
 ui-escape-antagselect = Выбор антагониста

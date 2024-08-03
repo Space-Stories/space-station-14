@@ -1,0 +1,35 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Original sprites made by Flareguy for Space Station 14. Figurines Space Prison, JediNt and Syth created by RustedTim(discord:helloo4771) for SpaceStories(Server SS14)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "esp"
+    },
+    {
+      "name": "hosp"
+    },
+    {
+      "name": "jedint"
+    },
+    {
+      "name": "msp"
+    },
+    {
+      "name": "osp"
+    },
+    {
+      "name": "sith"
+    },
+    {
+      "name": "shadowling"
+    },
+    {
+      "name": "ascendedShadowling"
+    }
+  ]
+}

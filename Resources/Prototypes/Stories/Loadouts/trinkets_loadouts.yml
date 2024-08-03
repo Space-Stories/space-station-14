@@ -1,0 +1,119 @@
+# Тенеморф
+
+- type: loadout
+  id: ToyFigurineShadowling
+  equipment: ToyFigurineShadowling
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: PartnerMinTier4
+
+- type: startingGear
+  id: ToyFigurineShadowling
+  storage:
+    back:
+    - ToyFigurineShadowling
+
+# Вознесенный тенеморф
+
+- type: loadout
+  id: ToyFigurineAscendedShadowling
+  equipment: ToyFigurineAscendedShadowling
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: PartnerMinTier4
+
+- type: startingGear
+  id: ToyFigurineAscendedShadowling
+  storage:
+    back:
+    - ToyFigurineAscendedShadowling
+
+# Ситх
+
+- type: loadout
+  id: ToyFigurineSith
+  equipment: ToyFigurineSith
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: PartnerMinTier5
+
+- type: startingGear
+  id: ToyFigurineSith
+  storage:
+    back:
+    - ToyFigurineSith
+
+# Страж
+
+- type: loadout
+  id: ToyFigurineJediNt
+  equipment: ToyFigurineJediNt
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: PartnerMinTier4
+
+- type: startingGear
+  id: ToyFigurineJediNt
+  storage:
+    back:
+    - ToyFigurineJediNt
+
+# Медик КТ
+
+- type: loadout
+  id: ToyFigurineMSP
+  equipment: ToyFigurineMSP
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: PartnerMinTier1
+
+- type: startingGear
+  id: ToyFigurineMSP
+  storage:
+    back:
+    - ToyFigurineMSP
+
+# Офицер КТ
+
+- type: loadout
+  id: ToyFigurineOSP
+  equipment: ToyFigurineOSP
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: PartnerMinTier1
+
+- type: startingGear
+  id: ToyFigurineOSP
+  storage:
+    back:
+    - ToyFigurineOSP
+
+# Офицер КТ
+
+- type: loadout
+  id: ToyFigurineESP
+  equipment: ToyFigurineESP
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: PartnerMinTier1
+
+- type: startingGear
+  id: ToyFigurineESP
+  storage:
+    back:
+    - ToyFigurineESP
+
+# Глава КТ
+
+- type: loadout
+  id: ToyFigurineHOSP
+  equipment: ToyFigurineHOSP
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: PartnerMinTier1
+
+- type: startingGear
+  id: ToyFigurineHOSP
+  storage:
+    back:
+    - ToyFigurineHOSP
