@@ -428,7 +428,7 @@
 
 - type: entity
   name: двухклинковый световой меч
-  parent: BaseLightsaber
+  parent: LightsaberDouble
   suffix: Red
   id: LightsaberDoubleRed
   description: Вариант светового меча, особенностью которого являются лезвия, излучаемые с обеих сторон рукояти.

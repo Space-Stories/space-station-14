@@ -17,7 +17,7 @@ entities:
   - uid: 1
     components:
     - type: MetaData
-      name: grid
+      name: TIE Fighter
     - type: Transform
       pos: 14.424668,-2.4065256
       parent: invalid
@@ -807,8 +807,6 @@ entities:
         - 0
     - type: Physics
       bodyType: Static
-    - type: AtmosDevice
-      joinedGrid: 1
 - proto: AirlockGlassShuttleSyndicate
   entities:
   - uid: 57
@@ -834,9 +832,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 9.5,1.5
       parent: 1
-    - type: Apc
-      lastExternalState: Low
-      lastChargeState: Full
     - type: PowerNetworkBattery
       loadingNetworkDemand: 560
       currentReceiving: 559.9241
@@ -848,9 +843,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 1.5,2.5
       parent: 1
-    - type: Apc
-      lastExternalState: Low
-      lastChargeState: Full
     - type: PowerNetworkBattery
       loadingNetworkDemand: 10500
       currentReceiving: 10500.042
@@ -861,9 +853,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 11.5,2.5
       parent: 1
-    - type: Apc
-      lastExternalState: Low
-      lastChargeState: Full
     - type: PowerNetworkBattery
       loadingNetworkDemand: 10500
       currentReceiving: 10500.042
@@ -892,9 +881,6 @@ entities:
     - type: DeviceNetwork
       address: 6725-F016
       receiveFrequency: 1280
-    - type: DeviceLinkSink
-      links:
-      - 9
   - uid: 135
     components:
     - type: Transform
@@ -910,9 +896,6 @@ entities:
     - type: DeviceNetwork
       address: 20DD-0301
       receiveFrequency: 1280
-    - type: DeviceLinkSink
-      links:
-      - 9
   - uid: 137
     components:
     - type: Transform
@@ -928,9 +911,6 @@ entities:
     - type: DeviceNetwork
       address: 21E1-A433
       receiveFrequency: 1280
-    - type: DeviceLinkSink
-      links:
-      - 9
   - uid: 176
     components:
     - type: Transform
@@ -946,9 +926,6 @@ entities:
     - type: DeviceNetwork
       address: 63E7-DC26
       receiveFrequency: 1280
-    - type: DeviceLinkSink
-      links:
-      - 9
   - uid: 178
     components:
     - type: Transform
@@ -964,9 +941,6 @@ entities:
     - type: DeviceNetwork
       address: 66B3-94FF
       receiveFrequency: 1280
-    - type: DeviceLinkSink
-      links:
-      - 9
 - proto: C4
   entities:
   - uid: 129
@@ -1558,6 +1532,10 @@ entities:
           occludes: True
           ents:
           - 107
+        disk_slot: !type:ContainerSlot
+          showEnts: False
+          occludes: True
+          ent: null
 - proto: CrowbarRed
   entities:
   - uid: 188
@@ -1802,8 +1780,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 12.5,0.5
       parent: 1
-    - type: AtmosDevice
-      joinedGrid: 1
 - proto: GasVentPump
   entities:
   - uid: 131
@@ -1816,8 +1792,6 @@ entities:
       address: Вент-4052-54D7
       transmitFrequency: 1621
       receiveFrequency: 1621
-    - type: AtmosDevice
-      joinedGrid: 1
     - type: AtmosMonitor
       trippedThresholds:
       - Temperature
@@ -2653,9 +2627,9 @@ entities:
     - type: Transform
       pos: 5.5,-1.5
       parent: 1
-- proto: SpawnPointGhostSith
+- proto: SpawnPointNukies
   entities:
-  - uid: 351
+  - uid: 193
     components:
     - type: Transform
       pos: 6.5,1.5
@@ -2695,6 +2669,13 @@ entities:
       parent: 144
     - type: Physics
       canCollide: False
+- proto: SyndicateIDCard
+  entities:
+  - uid: 65
+    components:
+    - type: Transform
+      pos: 7.5,-0.5
+      parent: 1
 - proto: SyndicateShuttleConsoleCircuitboard
   entities:
   - uid: 107

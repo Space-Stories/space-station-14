@@ -61,7 +61,7 @@ public sealed class PickAntagCommand : IConsoleCommand
             if (!antagSelectSystem.IssuedSponsorRoles.TryAdd(proto.Key, 1))
                 antagSelectSystem.IssuedSponsorRoles[proto.Key] += 1;
 
-            _db.SetAntagPicked(shell.Player.UserId);
+            // _db.SetAntagPicked(shell.Player.UserId);
         }
     }
 }

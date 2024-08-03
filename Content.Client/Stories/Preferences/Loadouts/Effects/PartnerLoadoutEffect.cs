@@ -10,14 +10,14 @@ namespace Content.Shared.Preferences.Loadouts.Effects;
 public sealed partial class PartnerLoadoutEffect : LoadoutEffect
 {
     [DataField(required: true)]
-    public float Tier = 1f;
+    public float MinTier = 1f;
 
     public override bool Validate(HumanoidCharacterProfile profile, RoleLoadout loadout, ICommonSession? session, IDependencyCollection collection,
         [NotNullWhen(false)] out FormattedMessage? reason)
     {
         var manager = collection.Resolve<SponsorsManager>();
         reason = FormattedMessage.FromUnformatted(Loc.GetString("loadout-group-partner-tier-restriction"));
-        if (!manager.TryGetInfo(out var sponsorInfo) || sponsorInfo.Tier < Tier)
+        if (!manager.TryGetInfo(out var sponsorInfo) || sponsorInfo.Tier < MinTier)
         {
             return false;
         }
