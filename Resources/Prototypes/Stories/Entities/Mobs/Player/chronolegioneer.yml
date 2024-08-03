@@ -15,4 +15,3 @@
   components:
     - type: Loadout
       prototypes: [ ChronoLegioneerGear ]
-    - type: WeaponrySkill
