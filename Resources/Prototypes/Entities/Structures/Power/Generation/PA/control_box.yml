@@ -25,11 +25,8 @@
   - type: Wires
     boardName: wires-board-name-pa
     layoutId: ParticleAccelerator
-  #Stories start
   - type: AccessReader
-    access: [[ "Command" ]]
-  - type: Lock
-  #Stories end
+    access: [["Engineering"]]
 
 # Unfinished
 
