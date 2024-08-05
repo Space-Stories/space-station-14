@@ -1,6 +1,6 @@
 using Content.Shared.IdentityManagement;
 using Content.Shared.Popups;
-using Content.Shared.SpaceStories.Empire.Components;
+using Content.Shared.Stories.Empire.Components;
 using Content.Shared.Stunnable;
 using Content.Shared.Chat;
 using Content.Shared.Mind;
@@ -12,7 +12,7 @@ using Robust.Server.Audio;
 using Robust.Shared.Audio;
 using Content.Shared.Stories.Mindshield;
 
-namespace Content.Server.SpaceStories.Empire;
+namespace Content.Server.Stories.Empire;
 
 public sealed class EmpireSystem : EntitySystem
 {

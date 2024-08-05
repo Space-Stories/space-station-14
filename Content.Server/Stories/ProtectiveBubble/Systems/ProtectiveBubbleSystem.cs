@@ -1,10 +1,10 @@
 using Content.Shared.StatusEffect;
 using Content.Shared.Actions;
 using Content.Shared.Damage;
-using Content.Shared.SpaceStories.Force;
+using Content.Shared.Stories.Force;
 using Content.Server.Weapons.Melee;
 using Content.Shared.Alert;
-namespace Content.Server.SpaceStories.ForceUser.ProtectiveBubble.Systems;
+namespace Content.Server.Stories.ForceUser.ProtectiveBubble.Systems;
 
 public sealed partial class ProtectiveBubbleSystem : EntitySystem
 {

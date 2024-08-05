@@ -1,4 +1,4 @@
-namespace Content.Shared.SpaceStories.PullTo;
+namespace Content.Shared.Stories.PullTo;
 
 [RegisterComponent, AutoGenerateComponentState]
 [Access(typeof(PullToSystem))]

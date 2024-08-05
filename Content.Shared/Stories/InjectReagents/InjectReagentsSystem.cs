@@ -4,7 +4,7 @@ using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Whitelist;
 using Content.Shared.Chemistry.Components.SolutionManager;
 
-namespace Content.Shared.SpaceStories.InjectReagents;
+namespace Content.Shared.Stories.InjectReagents;
 public sealed partial class InjectReagentsSystem : EntitySystem
 {
     [Dependency] private readonly SharedSolutionContainerSystem _solutions = default!;

@@ -1,7 +1,7 @@
 using Robust.Shared.Prototypes;
 using Content.Shared.Alert;
 
-namespace Content.Shared.SpaceStories.ForceUser;
+namespace Content.Shared.Stories.ForceUser;
 
 [Prototype("forcePreset"), DataDefinition]
 public sealed partial class ForcePresetPrototype : IPrototype
@@ -33,7 +33,7 @@ public sealed partial class ForcePresetPrototype : IPrototype
 
     [DataField("componentsToRemove")]
     [AlwaysPushInheritance]
-    public HashSet<string> ToRemove = new();
+    public ComponentRegistry ToRemove = new();
 }
 public enum ForceSide : byte
 {

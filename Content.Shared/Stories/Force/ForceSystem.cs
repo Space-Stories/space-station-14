@@ -3,22 +3,22 @@ using Content.Shared.Popups;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Hands.EntitySystems;
-using Content.Shared.SpaceStories.Force.LightSaber;
+using Content.Shared.Stories.Force.Lightsaber;
 using Robust.Shared.Physics.Events;
 using Content.Shared.Weapons.Misc;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
-using Content.Shared.SpaceStories.ForceUser.Actions.Events;
+using Content.Shared.Stories.ForceUser.Actions.Events;
 using Robust.Shared.Timing;
 using Content.Shared.Atmos.Piping;
 using Content.Shared.Body.Components;
-using Content.Shared.SpaceStories.ForceUser;
+using Content.Shared.Stories.ForceUser;
 using Robust.Shared.Utility;
 using Content.Shared.FixedPoint;
 using Content.Shared.Alert;
 using Content.Shared.Mobs.Systems;
 
-namespace Content.Shared.SpaceStories.Force;
+namespace Content.Shared.Stories.Force;
 public sealed partial class ForceSystem : EntitySystem // TODO: Навести порядок с Float и FixedPoint2
 {
     [Dependency] private readonly AlertsSystem _alerts = default!;

@@ -1,8 +1,8 @@
-using Content.Shared.SpaceStories.ForceUser;
+using Content.Shared.Stories.ForceUser;
 using Content.Shared.Popups;
 using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Throwing;
-using Content.Server.SpaceStories.TetherGun;
+using Content.Server.Stories.TetherGun;
 using Content.Server.Flash;
 using Content.Server.Emp;
 using Content.Server.Cuffs;
@@ -19,24 +19,24 @@ using Content.Shared.DoAfter;
 using Content.Shared.Movement.Systems;
 using Content.Server.Popups;
 using Content.Shared.Inventory;
-using Content.Server.SpaceStories.Empire;
+using Content.Server.Stories.Empire;
 using Content.Server.Store.Systems;
-using Content.Shared.SpaceStories.Force;
+using Content.Shared.Stories.Force;
 using Content.Server.Polymorph.Systems;
 using Content.Shared.Tag;
 using Robust.Shared.Map;
 using Content.Server.Fluids.EntitySystems;
 using Content.Server.Administration.Systems;
-using Content.Shared.SpaceStories.PullTo;
+using Content.Shared.Stories.PullTo;
 using Robust.Shared.Random;
 using Content.Shared.Item.ItemToggle;
 using Content.Shared.Interaction;
 using Content.Server.Beam;
-using Content.Server.SpaceStories.ForceUser.ProtectiveBubble.Systems;
+using Content.Server.Stories.ForceUser.ProtectiveBubble.Systems;
 using Robust.Shared.Prototypes;
 using Content.Server.Stories.Conversion;
 
-namespace Content.Server.SpaceStories.ForceUser;
+namespace Content.Server.Stories.ForceUser;
 public sealed partial class ForceUserSystem : SharedForceUserSystem
 {
     [Dependency] private readonly IMapManager _mapManager = default!;
@@ -89,13 +89,12 @@ public sealed partial class ForceUserSystem : SharedForceUserSystem
         InitializeStrangle();
         InitializePolymorph();
         InitializeProtectiveBubble();
-        InitializeLightSaber();
+        InitializeLightsaber();
         InitializeLightning();
         InitializeSteal();
     }
     public override void Update(float frameTime)
     {
         base.Update(frameTime);
-        UpdateLightSaber(frameTime);
     }
 }

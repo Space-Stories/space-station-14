@@ -1,10 +1,10 @@
 using Robust.Client.Graphics;
 using Robust.Client.Player;
-using Content.Shared.SpaceStories.Nightvision;
+using Content.Shared.Stories.Nightvision;
 using Content.Shared.GameTicking;
 using Robust.Shared.Player;
 
-namespace Content.Client.SpaceStories.Nightvision;
+namespace Content.Client.Stories.Nightvision;
 
 public sealed class NightvisionSystem : EntitySystem
 {

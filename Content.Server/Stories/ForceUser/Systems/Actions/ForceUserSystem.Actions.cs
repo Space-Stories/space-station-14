@@ -1,16 +1,16 @@
 using Content.Shared.Cuffs.Components;
 using Content.Shared.Mindshield.Components;
-using Content.Shared.SpaceStories.ForceUser.Actions.Events;
+using Content.Shared.Stories.ForceUser.Actions.Events;
 using Content.Server.Store.Components;
-using Content.Shared.SpaceStories.ForceUser;
+using Content.Shared.Stories.ForceUser;
 using Robust.Shared.Physics.Components;
 using Content.Shared.Physics;
 using Content.Shared.Mobs;
-using Content.Shared.SpaceStories.Empire.Components;
-using Content.Server.SpaceStories.ForceUser.ProtectiveBubble.Components;
+using Content.Shared.Stories.Empire.Components;
+using Content.Server.Stories.ForceUser.ProtectiveBubble.Components;
 using Content.Shared.Store.Components;
 
-namespace Content.Server.SpaceStories.ForceUser;
+namespace Content.Server.Stories.ForceUser;
 public sealed partial class ForceUserSystem
 {
     public void InitializeSimpleActions()

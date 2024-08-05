@@ -51,7 +51,7 @@
       event: !type:ForceLookUpActionEvent
 
 - type: entity
-  id: ActionRecallLightSaber
+  id: ActionRecallLightsaber
   name: Призвать световой меч
   description: Телепортируйте свой световой меч к себе. Чем дальше меч, тем больше времени понадобится, чтобы притянуть меч во второй раз.
   noSpawn: true
@@ -62,7 +62,7 @@
     itemIconStyle: NoItem
     event: !type:InstantForceUserActionEvent
       volume: 25
-      event: !type:RecallLightSaberEvent {}
+      event: !type:RecallLightsaberEvent {}
 
 - type: entity
   id: ActionTelekinesis

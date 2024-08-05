@@ -3,7 +3,7 @@ using Content.Server.Administration;
 using Content.Server.Communications;
 using Content.Shared.Administration;
 using Content.Shared.Communications;
-using Content.Shared.SpaceStories.ForceUser;
+using Content.Shared.Stories.ForceUser;
 using JetBrains.Annotations;
 using Robust.Server;
 using Robust.Server.GameObjects;

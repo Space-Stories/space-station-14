@@ -1,4 +1,4 @@
-namespace Content.Server.SpaceStories.ForceUser.ProtectiveBubble.Components;
+namespace Content.Server.Stories.ForceUser.ProtectiveBubble.Components;
 
 [RegisterComponent]
 public sealed partial class ProtectedByProtectiveBubbleComponent : Component

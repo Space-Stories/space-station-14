@@ -3,7 +3,7 @@ using Content.Shared.StatusIcon;
 using Robust.Shared.Prototypes;
 using Content.Shared.Antag;
 
-namespace Content.Shared.SpaceStories.Empire.Components;
+namespace Content.Shared.Stories.Empire.Components;
 
 [RegisterComponent, NetworkedComponent]
 public sealed partial class EmpireComponent : Component

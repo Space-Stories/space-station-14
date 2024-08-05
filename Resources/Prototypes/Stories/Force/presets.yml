@@ -43,7 +43,7 @@
     currencyWhitelist:
     - SkillPoint
   componentsToRemove:
-  - Strippable
+  - type: Strippable
 
 - type: forcePreset
   id: Jedi

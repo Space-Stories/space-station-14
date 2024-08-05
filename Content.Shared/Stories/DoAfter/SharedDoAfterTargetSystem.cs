@@ -3,7 +3,7 @@ using Content.Shared.Actions;
 using Robust.Shared.Serialization;
 using Content.Shared.FixedPoint;
 
-namespace Content.Shared.SpaceStories.DoAfter;
+namespace Content.Shared.Stories.DoAfter;
 public sealed partial class SharedDoAfterTargetSystem : EntitySystem
 {
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;

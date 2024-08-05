@@ -1,9 +1,9 @@
 using Content.Shared.Explosion;
 using Content.Shared.Temperature;
 using Content.Shared.Interaction.Events;
-using Content.Server.SpaceStories.ForceUser.ProtectiveBubble.Components;
+using Content.Server.Stories.ForceUser.ProtectiveBubble.Components;
 
-namespace Content.Server.SpaceStories.ForceUser.ProtectiveBubble.Systems;
+namespace Content.Server.Stories.ForceUser.ProtectiveBubble.Systems;
 
 public sealed partial class ProtectiveBubbleSystem
 {

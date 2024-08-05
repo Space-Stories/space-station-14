@@ -3,15 +3,15 @@ using Content.Shared.Popups;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Hands.EntitySystems;
-using Content.Shared.SpaceStories.Force.LightSaber;
+using Content.Shared.Stories.Force.Lightsaber;
 using Robust.Shared.Physics.Events;
 using Content.Shared.Weapons.Misc;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
-using Content.Shared.SpaceStories.ForceUser.Actions.Events;
-using Content.Shared.SpaceStories.Force;
+using Content.Shared.Stories.ForceUser.Actions.Events;
+using Content.Shared.Stories.Force;
 
-namespace Content.Shared.SpaceStories.ForceUser;
+namespace Content.Shared.Stories.ForceUser;
 public abstract partial class SharedForceUserSystem
 {
     private void InitializeActions()
@@ -65,7 +65,7 @@ public abstract partial class SharedForceUserSystem
             _popup.PopupEntity("Недостаточно сил!", uid, uid, PopupType.SmallCaution);
             return;
         }
-        RaiseLocalEvent(eventToRaise.Performer, (object) eventToRaise, true);
+        RaiseLocalEvent(eventToRaise.Performer, (object)eventToRaise, true);
 
         argsBaseAction.Handled = true;
     }

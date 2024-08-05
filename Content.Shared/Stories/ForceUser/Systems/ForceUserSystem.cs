@@ -1,14 +1,16 @@
 using Content.Shared.Actions;
 using Content.Shared.Popups;
 using Content.Shared.Weapons.Ranged.Events;
-using Content.Shared.SpaceStories.Force.LightSaber;
+using Content.Shared.Stories.Force.Lightsaber;
 using Robust.Shared.Prototypes;
 using Content.Shared.Alert;
 using Robust.Shared.Serialization.Manager;
-using Content.Shared.SpaceStories.Force;
+using Content.Shared.Stories.Force;
 using Content.Shared.Rounding;
+using Content.Shared.DoAfter;
+using Content.Shared.Mobs.Systems;
 
-namespace Content.Shared.SpaceStories.ForceUser;
+namespace Content.Shared.Stories.ForceUser;
 public abstract partial class SharedForceUserSystem : EntitySystem
 {
     [Dependency] private readonly SharedPopupSystem _popup = default!;
@@ -18,6 +20,8 @@ public abstract partial class SharedForceUserSystem : EntitySystem
     [Dependency] private readonly IComponentFactory _compFact = default!;
     [Dependency] private readonly ISerializationManager _seriMan = default!;
     [Dependency] private readonly AlertsSystem _alerts = default!;
+    [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
+    [Dependency] private readonly MobStateSystem _mobState = default!;
     private ISawmill _sawmill = default!;
     public override void Initialize()
     {
@@ -29,6 +33,7 @@ public abstract partial class SharedForceUserSystem : EntitySystem
         SubscribeLocalEvent<ForceUserComponent, ShotAttemptedEvent>(OnShotAttempted);
         SubscribeLocalEvent<ForceUserComponent, VolumeChangedEvent>(OnVolume);
         InitializeActions();
+        InitializeLightsaber();
     }
     private void OnVolume(EntityUid uid, ForceUserComponent component, VolumeChangedEvent args)
     {
@@ -46,22 +51,8 @@ public abstract partial class SharedForceUserSystem : EntitySystem
         if (!_force.SetVolume(uid, proto.Volume, proto.PassiveVolume, proto.MaxVolume))
             _sawmill.Error($"{ToPrettyString(uid)} failed to set force volume");
 
-        foreach (var toRemove in proto.ToRemove)
-        {
-            if (_compFact.TryGetRegistration(toRemove, out var registration))
-                RemComp(uid, registration.Type);
-        }
-
-        foreach (var (name, data) in proto.ToAdd)
-        {
-            if (HasComp(uid, data.Component.GetType()))
-                continue;
-
-            var comp = (Component) _compFact.GetComponent(name);
-            var temp = (object) comp;
-            _seriMan.CopyTo(data.Component, ref temp);
-            EntityManager.AddComponent(uid, (Component) temp!);
-        }
+        EntityManager.RemoveComponents(uid, proto.ToRemove);
+        EntityManager.AddComponents(uid, proto.ToAdd);
     }
     private void OnInit(EntityUid uid, ForceUserComponent component, ComponentInit args)
     {
@@ -71,15 +62,6 @@ public abstract partial class SharedForceUserSystem : EntitySystem
     private void OnShutdown(EntityUid uid, ForceUserComponent component, ComponentShutdown args)
     {
         Del(component.ShopActionEntity);
-    }
-    public void BindLightSaber(EntityUid uid, EntityUid? lightsaber, ForceUserComponent? comp = null)
-    {
-        if (!Resolve(uid, ref comp) || comp.LightSaber == lightsaber || !TryComp<LightSaberComponent>(lightsaber, out var saber) || saber.LightSaberOwner != null)
-            return;
-        _popup.PopupEntity(Loc.GetString("Вы чувствуете связь с мечом..."), uid, uid);
-
-        comp.LightSaber = lightsaber;
-        saber.LightSaberOwner = uid;
     }
     private void OnShotAttempted(EntityUid uid, ForceUserComponent comp, ref ShotAttemptedEvent args)
     {

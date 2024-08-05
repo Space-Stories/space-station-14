@@ -1,19 +1,19 @@
-using Content.Shared.SpaceStories.ForceUser.Actions.Events;
-using Content.Shared.SpaceStories.ForceUser;
-using Content.Server.SpaceStories.ForceUser.ProtectiveBubble.Components;
+using Content.Shared.Stories.ForceUser.Actions.Events;
+using Content.Shared.Stories.ForceUser;
+using Content.Server.Stories.ForceUser.ProtectiveBubble.Components;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Actions;
 using Content.Shared.Popups;
 using Content.Shared.Weapons.Ranged.Events;
-using Content.Shared.SpaceStories.Force.LightSaber;
+using Content.Shared.Stories.Force.Lightsaber;
 using Robust.Shared.Prototypes;
 using Content.Shared.Alert;
 using Robust.Shared.Serialization.Manager;
-using Content.Shared.SpaceStories.Force;
+using Content.Shared.Stories.Force;
 using Content.Shared.Rounding;
 using Content.Shared.Damage;
 
-namespace Content.Server.SpaceStories.ForceUser.ProtectiveBubble.Systems;
+namespace Content.Server.Stories.ForceUser.ProtectiveBubble.Systems;
 
 public sealed partial class ProtectiveBubbleSystem
 {

@@ -1,4 +1,4 @@
-using Content.Shared.SpaceStories.ForceUser;
+using Content.Shared.Stories.ForceUser;
 using Content.Shared.Actions;
 using Content.Shared.Popups;
 using Content.Shared.Hands.EntitySystems;
@@ -6,13 +6,13 @@ using Content.Shared.Timing;
 using Robust.Shared.Timing;
 using Content.Shared.Throwing;
 using Content.Shared.Weapons.Misc;
-using Content.Server.SpaceStories.TetherGun;
-using Content.Shared.SpaceStories.ForceUser.Actions.Events;
-using Content.Shared.SpaceStories.PullTo;
-using Content.Shared.SpaceStories.Force.LightSaber;
+using Content.Server.Stories.TetherGun;
+using Content.Shared.Stories.ForceUser.Actions.Events;
+using Content.Shared.Stories.PullTo;
+using Content.Shared.Stories.Force.Lightsaber;
 using Content.Shared.Inventory.Events;
 
-namespace Content.Server.SpaceStories.ForceUser;
+namespace Content.Server.Stories.ForceUser;
 public sealed partial class ForceUserSystem
 {
     public void InitializeRecallEquipment()

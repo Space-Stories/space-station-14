@@ -48,10 +48,10 @@
           ejectVerbText: sheath-eject-verb
           whitelist:
             components:
-              - LightSaber
+              - Lightsaber
     - type: ItemMapper
       mapLayers:
         sheath-sabre:
           whitelist:
             components:
-              - LightSaber
+              - Lightsaber

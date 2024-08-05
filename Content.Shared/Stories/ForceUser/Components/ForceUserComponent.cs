@@ -9,7 +9,7 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototy
 using Robust.Shared.Prototypes;
 using Content.Shared.Alert;
 
-namespace Content.Shared.SpaceStories.ForceUser;
+namespace Content.Shared.Stories.ForceUser;
 
 [RegisterComponent, AutoGenerateComponentState]
 [Access(typeof(SharedForceUserSystem))]
@@ -24,7 +24,7 @@ public sealed partial class ForceUserComponent : Component
     public string AlertType() => _proto.TryIndex<ForcePresetPrototype>(Preset, out var proto) ? proto.AlertType : "ForceVolume";
 
     [DataField("lightsaber"), AutoNetworkedField]
-    public EntityUid? LightSaber { get; set; } = null;
+    public EntityUid? Lightsaber { get; set; } = null;
 
     [DataField("equipments")]
     public Dictionary<string, EntityUid>? Equipments { get; set; } = null;
