@@ -1,3 +1,18 @@
+# Сферы
+
+- type: loadout
+  id: ClothingNeckElectrospheres
+  equipment: ClothingNeckElectrospheres
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: PartnerMinTier4
+
+- type: startingGear
+  id: ClothingNeckElectrospheres
+  storage:
+    back:
+    - ClothingNeckElectrospheres
+
 # Тенеморф
 
 - type: loadout
