@@ -64,18 +64,10 @@
 
 - type: loadout
   id: PRISONUshankaHeadOfPrison
-  equipment: PRISONUshankaHeadOfPrison
-
-- type: startingGear
-  id: PRISONUshankaHeadOfPrison
   equipment:
     head: PRISONClothingHeadHatUshanka
 
 - type: loadout
-  id: PRISONCapHeadOfPrison
-  equipment: PRISONCapHeadOfPrison
-
-- type: startingGear
   id: PRISONCapHeadOfPrison
   equipment:
     head: PRISONClothingHeadHatCapHeadOfPrison
@@ -92,22 +84,14 @@
 
 - type: loadout
   id: PRISONGloves
-  equipment: BlackGloves
-
-- type: startingGear
-  id: BlackGloves
   equipment:
     gloves: ClothingHandsGlovesColorBlack
 
 - type: loadout
   id: PRISONCombatGloves
-  equipment: CombatBlackGloves
   effects:
   - !type:GroupLoadoutEffect
     proto: Prison
-
-- type: startingGear
-  id: CombatBlackGloves
   equipment:
     gloves: ClothingHandsGlovesCombat
 
@@ -120,10 +104,6 @@
   - PRISONArmorVest
 
 - type: loadout
-  id: PRISONArmorVest
-  equipment: PRISONArmorVest
-
-- type: startingGear
   id: PRISONArmorVest
   equipment:
     outerClothing: PRISONClothingOuterVestArmor
@@ -140,27 +120,15 @@
 
 - type: loadout
   id: PRISONDuffel
-  equipment: PRISONDuffel
-
-- type: startingGear
-  id: PRISONDuffel
   equipment:
     back: PRISONClothingBackpackDuffel
 
 - type: loadout
   id: PRISONSatchel
-  equipment: PRISONSatchel
-
-- type: startingGear
-  id: PRISONSatchel
   equipment:
     back: PRISONClothingBackpackSatchel
 
 - type: loadout
-  id: PRISONBackpack
-  equipment: PRISONBackpack
-
-- type: startingGear
   id: PRISONBackpack
   equipment:
     back: PRISONClothingBackpack
@@ -177,18 +145,10 @@
 
 - type: loadout
   id: PRISONBeret
-  equipment: PRISONBeret
-
-- type: startingGear
-  id: PRISONBeret
   equipment:
     head: PRISONClothingHeadHatBeret
 
 - type: loadout
-  id: PRISONCap
-  equipment: PRISONCap
-
-- type: startingGear
   id: PRISONCap
   equipment:
     head: PRISONClothingHeadHatSoft
@@ -206,10 +166,6 @@
 
 - type: loadout
   id: PRISONJackBoots
-  equipment: PRISONJackBoots
-
-- type: startingGear
-  id: PRISONJackBoots
   equipment:
     shoes: PRISONClothingShoesBootsJack
 
@@ -223,10 +179,6 @@
   - PRISONWebbing
 
 - type: loadout
-  id: PRISONWebbing
-  equipment: PRISONWebbing
-
-- type: startingGear
   id: PRISONWebbing
   equipment:
     belt: PRISONClothingBeltWebbing
