@@ -123,7 +123,7 @@ public sealed partial class SithPolymorphEvent : InstantActionEvent
     /// Defaults to smoke but you can use foam if you want.
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public ProtoId<EntityPrototype> SmokePrototype = "Smoke";
+    public EntProtoId SmokePrototype = "Smoke";
 
     /// <summary>
     /// Solution to add to each smoke cloud.

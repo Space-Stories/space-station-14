@@ -2,13 +2,9 @@
 
 - type: loadout
   id: ClothingNeckElectrospheres
-  equipment: ClothingNeckElectrospheres
   effects:
   - !type:GroupLoadoutEffect
     proto: PartnerMinTier4
-
-- type: startingGear
-  id: ClothingNeckElectrospheres
   storage:
     back:
     - ClothingNeckElectrospheres
@@ -17,13 +13,9 @@
 
 - type: loadout
   id: ToyFigurineShadowling
-  equipment: ToyFigurineShadowling
   effects:
   - !type:GroupLoadoutEffect
     proto: PartnerMinTier4
-
-- type: startingGear
-  id: ToyFigurineShadowling
   storage:
     back:
     - ToyFigurineShadowling
@@ -32,13 +24,9 @@
 
 - type: loadout
   id: ToyFigurineAscendedShadowling
-  equipment: ToyFigurineAscendedShadowling
   effects:
   - !type:GroupLoadoutEffect
     proto: PartnerMinTier4
-
-- type: startingGear
-  id: ToyFigurineAscendedShadowling
   storage:
     back:
     - ToyFigurineAscendedShadowling
@@ -47,13 +35,9 @@
 
 - type: loadout
   id: ToyFigurineSith
-  equipment: ToyFigurineSith
   effects:
   - !type:GroupLoadoutEffect
     proto: PartnerMinTier5
-
-- type: startingGear
-  id: ToyFigurineSith
   storage:
     back:
     - ToyFigurineSith
@@ -62,13 +46,9 @@
 
 - type: loadout
   id: ToyFigurineJediNt
-  equipment: ToyFigurineJediNt
   effects:
   - !type:GroupLoadoutEffect
     proto: PartnerMinTier4
-
-- type: startingGear
-  id: ToyFigurineJediNt
   storage:
     back:
     - ToyFigurineJediNt
@@ -77,13 +57,9 @@
 
 - type: loadout
   id: ToyFigurineMSP
-  equipment: ToyFigurineMSP
   effects:
   - !type:GroupLoadoutEffect
     proto: PartnerMinTier1
-
-- type: startingGear
-  id: ToyFigurineMSP
   storage:
     back:
     - ToyFigurineMSP
@@ -92,13 +68,9 @@
 
 - type: loadout
   id: ToyFigurineOSP
-  equipment: ToyFigurineOSP
   effects:
   - !type:GroupLoadoutEffect
     proto: PartnerMinTier1
-
-- type: startingGear
-  id: ToyFigurineOSP
   storage:
     back:
     - ToyFigurineOSP
@@ -107,13 +79,9 @@
 
 - type: loadout
   id: ToyFigurineESP
-  equipment: ToyFigurineESP
   effects:
   - !type:GroupLoadoutEffect
     proto: PartnerMinTier1
-
-- type: startingGear
-  id: ToyFigurineESP
   storage:
     back:
     - ToyFigurineESP
@@ -122,13 +90,9 @@
 
 - type: loadout
   id: ToyFigurineHOSP
-  equipment: ToyFigurineHOSP
   effects:
   - !type:GroupLoadoutEffect
     proto: PartnerMinTier1
-
-- type: startingGear
-  id: ToyFigurineHOSP
   storage:
     back:
     - ToyFigurineHOSP
