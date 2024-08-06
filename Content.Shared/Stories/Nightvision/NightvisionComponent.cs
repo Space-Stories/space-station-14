@@ -1,7 +1,7 @@
 using Content.Shared.Eye.Blinding.Systems;
 using Robust.Shared.GameStates;
 
-namespace Content.Shared.SpaceStories.Nightvision;
+namespace Content.Shared.Stories.Nightvision;
 
 [RegisterComponent]
 [NetworkedComponent, AutoGenerateComponentState]

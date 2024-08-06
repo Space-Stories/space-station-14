@@ -1,0 +1,65 @@
+- type: entity
+  parent: WindoorSecure
+  name: раздвижное бронеокно
+  description: Это и прочное окно, и раздвижная дверь. Вот это да!
+  id: PRISONWindoorSecureHeadOfPrisonLocked
+  suffix: HeadOfPrison, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ PRISONDoorElectronicsHeadOfPrison ]
+
+- type: entity
+  parent: WindoorSecure
+  name: раздвижное бронеокно
+  description: Это и прочное окно, и раздвижная дверь. Вот это да!
+  id: PRISONWindoorSecureBrigLocked
+  suffix: PrisonBrig, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ PRISONDoorElectronicsBrig ]
+
+- type: entity
+  parent: WindoorSecure
+  name: раздвижное бронеокно
+  description: Это и прочное окно, и раздвижная дверь. Вот это да!
+  id: PRISONWindoorSecureLocked
+  suffix: Prison, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ PRISONDoorElectronics ]
+
+- type: entity
+  parent: WindoorSecure
+  name: раздвижное бронеокно
+  description: Это и прочное окно, и раздвижная дверь. Вот это да!
+  id: PRISONWindoorSecureEngLocked
+  suffix: PrisonEng, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ PRISONDoorElectronicsEng ]
+
+- type: entity
+  parent: WindoorSecure
+  name: раздвижное бронеокно
+  description: Это и прочное окно, и раздвижная дверь. Вот это да!
+  id: PRISONWindoorSecureMedLocked
+  suffix: PrisonMed, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ PRISONDoorElectronicsMed ]
+
+- type: entity
+  parent: WindoorSecure
+  name: раздвижное бронеокно
+  description: Это и прочное окно, и раздвижная дверь. Вот это да!
+  id: PRISONWindoorSecurePrisonerLocked
+  suffix: Prisoner, Locked
+  components:
+  - type: ContainerFill
+    containers:
+      board: [ PRISONDoorElectronicsPrisoner ]

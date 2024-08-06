@@ -1,8 +1,8 @@
-using Content.Shared.SpaceStories.Damage.Components;
+using Content.Shared.Stories.Damage.Components;
 using Content.Shared.Projectiles;
 using Content.Shared.Throwing;
 
-namespace Content.Shared.SpaceStories.Damage.Systems;
+namespace Content.Shared.Stories.Damage.Systems;
 public sealed partial class PushOnCollideSystem : EntitySystem
 {
     // TODO: Добавить откидывание при контакте с кем-то и значения в компонент

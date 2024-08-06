@@ -113,7 +113,7 @@
     modifiers:
       coefficients:
         Heat: 0.90
-        Radiation: 0.001
+        Radiation: 0.01
   - type: Clothing
     sprite: Clothing/OuterClothing/Suits/rad.rsi
   - type: GroupExamine
@@ -136,6 +136,7 @@
     sprite: Clothing/OuterClothing/Suits/spaceninja.rsi
   - type: Clothing
     sprite: Clothing/OuterClothing/Suits/spaceninja.rsi
+  # hardsuit stuff
   - type: PressureProtection
     highPressureMultiplier: 0.6
     lowPressureMultiplier: 1000

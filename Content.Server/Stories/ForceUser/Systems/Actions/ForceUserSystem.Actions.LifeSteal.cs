@@ -1,4 +1,4 @@
-using Content.Shared.SpaceStories.ForceUser.Actions.Events;
+using Content.Shared.Stories.ForceUser.Actions.Events;
 using Robust.Shared.Map;
 using System.Numerics;
 using Content.Shared.DoAfter;
@@ -10,7 +10,7 @@ using Content.Shared.Movement.Components;
 using Content.Shared.Damage;
 using Robust.Shared.Random;
 
-namespace Content.Server.SpaceStories.ForceUser;
+namespace Content.Server.Stories.ForceUser;
 public sealed partial class ForceUserSystem
 {
     public void InitializeSteal()

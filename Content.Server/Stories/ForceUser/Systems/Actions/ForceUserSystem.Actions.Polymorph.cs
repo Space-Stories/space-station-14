@@ -1,10 +1,10 @@
-using Content.Shared.SpaceStories.ForceUser;
-using Content.Shared.SpaceStories.ForceUser.Actions.Events;
+using Content.Shared.Stories.ForceUser;
+using Content.Shared.Stories.ForceUser.Actions.Events;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Coordinates.Helpers;
 using Content.Shared.Maps;
 
-namespace Content.Server.SpaceStories.ForceUser;
+namespace Content.Server.Stories.ForceUser;
 public sealed partial class ForceUserSystem
 {
     public void InitializePolymorph()

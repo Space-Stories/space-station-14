@@ -1,12 +1,12 @@
 using Robust.Shared.GameStates;
 
-namespace Content.Shared.SpaceStories.Force.LightSaber;
+namespace Content.Shared.Stories.Force.Lightsaber;
 
 [RegisterComponent, AutoGenerateComponentState]
-public sealed partial class LightSaberComponent : Component
+public sealed partial class LightsaberComponent : Component
 {
     [DataField("lightSaberOwner"), AutoNetworkedField]
-    public EntityUid? LightSaberOwner;
+    public EntityUid? LightsaberOwner;
 
     [DataField("deactivateProb")]
     public float DeactivateProb = 0.5f;

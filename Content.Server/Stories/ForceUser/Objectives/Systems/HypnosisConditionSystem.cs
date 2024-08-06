@@ -2,7 +2,7 @@ using System.Linq;
 using Content.Server.Objectives.Components;
 using Content.Server.Roles;
 using Content.Shared.Objectives.Components;
-using Content.Shared.SpaceStories.Empire.Components;
+using Content.Shared.Stories.Empire.Components;
 
 namespace Content.Server.Objectives.Systems;
 

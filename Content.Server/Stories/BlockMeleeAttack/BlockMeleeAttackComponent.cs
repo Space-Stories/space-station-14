@@ -5,7 +5,7 @@ using Robust.Shared.Physics.Collision.Shapes;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 
-namespace Content.Server.SpaceStories.BlockMeleeAttack;
+namespace Content.Server.Stories.BlockMeleeAttack;
 
 /// <summary>
 /// This component goes on an item that you want to use to block

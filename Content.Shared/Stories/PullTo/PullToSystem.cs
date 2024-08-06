@@ -3,20 +3,20 @@ using Content.Shared.Popups;
 using Content.Shared.Weapons.Melee.Events;
 using Content.Shared.Weapons.Ranged.Events;
 using Content.Shared.Hands.EntitySystems;
-using Content.Shared.SpaceStories.Force.LightSaber;
+using Content.Shared.Stories.Force.Lightsaber;
 using Robust.Shared.Physics.Events;
 using Content.Shared.Weapons.Misc;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Serialization.Manager;
-using Content.Shared.SpaceStories.ForceUser.Actions.Events;
-using Content.Shared.SpaceStories.Force;
+using Content.Shared.Stories.ForceUser.Actions.Events;
+using Content.Shared.Stories.Force;
 using Content.Shared.Throwing;
 using Content.Shared.Inventory;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Physics.Components;
 using System.Numerics;
 
-namespace Content.Shared.SpaceStories.PullTo;
+namespace Content.Shared.Stories.PullTo;
 public sealed partial class PullToSystem : EntitySystem
 {
     [Dependency] private readonly ThrowingSystem _throwing = default!;

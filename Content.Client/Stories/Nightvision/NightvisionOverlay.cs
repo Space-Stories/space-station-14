@@ -2,9 +2,9 @@ using Robust.Client.Graphics;
 using Robust.Client.Player;
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
-using Content.Shared.SpaceStories.Nightvision;
+using Content.Shared.Stories.Nightvision;
 
-namespace Content.Client.SpaceStories.Nightvision;
+namespace Content.Client.Stories.Nightvision;
 public sealed class NightvisionOverlay : Overlay
 {
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;

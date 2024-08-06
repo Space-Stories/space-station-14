@@ -1,5 +1,4 @@
 # Ban Webhook
-server-ban-string-never = Никогда
 server-ban-string-infinity = Вечно
 server-ban-no-name = Не найдено. ({ $hwid })
 server-time-ban = Временный бан на { $mins } { $mins ->

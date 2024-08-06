@@ -1,11 +1,11 @@
-using Content.Server.SpaceStories.ForceUser.Components;
+using Content.Server.Stories.ForceUser.Components;
 using Content.Shared.Projectiles;
 using Content.Shared.Popups;
 using Robust.Shared.Random;
 using Content.Shared.Explosion.Components.OnTrigger;
 using Content.Server.Explosion.EntitySystems;
 
-namespace Content.Server.SpaceStories.ForceUser.Systems;
+namespace Content.Server.Stories.ForceUser.Systems;
 
 public sealed class FrozeBulletsSystem : EntitySystem
 {

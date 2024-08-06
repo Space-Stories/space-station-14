@@ -9,11 +9,11 @@
     #Once the issues are fixed the species should be removed from this list to be enabled.
     #Balance concerns are not a valid reason to disable a species, except for high-impact Nukie-specific exploits.
     - Vox
-  - type: StationEvent
-    earliestStart: 35
-    weight: 5.5
-    minimumPlayers: 20
-    duration: 1
+  # - type: StationEvent
+  #   earliestStart: 35
+  #   weight: 5.5
+  #   minimumPlayers: 20
+  #   duration: 1
   - type: RuleGrids
   - type: LoadMapRule
     preloadedGrid: TIE
@@ -104,11 +104,11 @@
     #Once the issues are fixed the species should be removed from this list to be enabled.
     #Balance concerns are not a valid reason to disable a species, except for high-impact Nukie-specific exploits.
     - Vox
-  - type: StationEvent
-    earliestStart: 35
-    weight: 5.5
-    minimumPlayers: 20
-    duration: 1
+  # - type: StationEvent
+  #   earliestStart: 35
+  #   weight: 5.5
+  #   minimumPlayers: 20
+  #   duration: 1
   - type: RuleGrids
   - type: LoadMapRule
     preloadedGrid: TIE

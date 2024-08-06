@@ -47,7 +47,7 @@
     # eyes: ClothingEyesGlassesSecurity
     # jumpsuit: ClothingUniformJumpsuitJediNt
     # shoes: ClothingShoesBootsJackJediNt
-    # pocket1: LightSaberJediNt
+    # pocket1: LightsaberJediNt
     # outerClothing: ClothingOuterVestJediNt
     # neck: ClothingNeckMantleJediNt
 
@@ -58,7 +58,7 @@
 #     # back: ClothingBackpackJediNtFilled
 #     shoes: ClothingShoesBootsJackJedi
 #     # eyes: ClothingEyesGlassesSunglasses
-#     pocket1: LightSaberJediNt
+#     pocket1: LightsaberJediNt
 #     outerClothing: ClothingOuterCoatJediFilled
 #     id: JediNtPDA
 #     ears: ClothingHeadsetJediNtAlt

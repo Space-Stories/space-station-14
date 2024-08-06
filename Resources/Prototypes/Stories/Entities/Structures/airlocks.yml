@@ -11,7 +11,7 @@
       sprite: Stories/Structures/Doors/Airlocks/Glass/security.rsi
     - type: ContainerFill
       containers:
-        board: [PRISONDoorElectronics]
+        board: [PRISONDoorElectronicsHeadOfPrison]
 
 - type: entity
   parent: Airlock
@@ -33,7 +33,7 @@
   name: стеклянный шлюз брига тюрьмы
   description: Он открывается, он закрывается, и он может вас раздавить.
   id: PRISONAirlockGlassLockedBrig
-  suffix: Prison, Glass, Locked
+  suffix: PrisonBrig, Glass, Locked
   components:
     - type: Sprite
       sprite: Stories/Structures/Doors/Airlocks/Glass/security.rsi
@@ -46,7 +46,7 @@
   name: шлюз брига тюрьмы
   description: Он открывается, он закрывается, и он может вас раздавить.
   id: PRISONAirlockLockedBrig
-  suffix: Prison, Locked
+  suffix: PrisonBrig, Locked
   components:
     - type: Sprite
       sprite: Stories/Structures/Doors/Airlocks/Standard/security.rsi
@@ -149,7 +149,7 @@
   components:
     - type: ContainerFill
       containers:
-        board: [PRISONDoorElectronics]
+        board: [PRISONDoorElectronicsPrisoner]
 
 - type: entity
   parent: Airlock
@@ -160,4 +160,4 @@
   components:
     - type: ContainerFill
       containers:
-        board: [PRISONDoorElectronics]
+        board: [PRISONDoorElectronicsPrisoner]

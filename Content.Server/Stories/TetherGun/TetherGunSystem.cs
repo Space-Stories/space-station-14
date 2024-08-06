@@ -1,7 +1,7 @@
 using Content.Shared.Pulling.Events;
 using Content.Shared.Weapons.Misc;
 
-namespace Content.Server.SpaceStories.TetherGun;
+namespace Content.Server.Stories.TetherGun;
 
 public sealed class TetherGunSystem : SharedTetherGunSystem
 {

@@ -1,10 +1,19 @@
-## Shadowling
+shadowling-ascendance-announcement = Сканерами дальнего действия было зафиксировано превознесение тенеморфа. Спасибо, что выбрали NanoTrasen!
 
-roles-antag-shadowling-name = Тенеморф
-roles-antag-shadowling-objective = Захвати команду, превознесись и стань сродни Богу.
+shadowling-list-name-user = - [color=DarkRed]{ $name }[/color] ([color=gray]{ $user }[/color])
+shadowling-count = { $initialCount ->
+        [one] Тенеморф был один:
+       *[other] Тенеморфов было { $initialCount }:
+    }
+
+shadowling-won = [color=crimson]Тенеморфы поработили станцию и превознеслись.[/color]
+shadowling-lost = [color=green]Станция уничтожила всех тенеморфов.[/color]
+shadowling-stalemate = [color=yellow]Тенеморфы выжили. Ничья.[/color]
+
 shadowling-role-greeting =
     Вы - тенеморф.
     Вы должны поработить станцию, превознестись и стать богом для этой несчастной станции. Вы можете подчинять волю членов экипажа при помощи своих способностей, но помните, что щит разума может заблокировать вашу атаку.
+
 shadowling-briefing =
     Используйте способность "Поработить" для
     подчинения членов экипажа и способность
@@ -13,10 +22,6 @@ shadowling-briefing =
     получить возможность превознестись.
 shadowling-break-mindshield = Щит разума был уничтожен!
 
-## Thrall
-
-roles-antag-thrall-name = Трелл
-roles-antag-thrall-objective = Ваша задача - защищать и выполнять приказы тенеморфа.
 thrall-break-control =
     { $name } { $gender ->
         [male] вспомнил, кому он верен
@@ -24,21 +29,11 @@ thrall-break-control =
         [epicene] вспомнили, кому они верни
        *[neuter] вспомнило, кому оно верно
     } на самом деле!
+
+thrall-role-goodbye =
+    Вы больше не тралл.
+    Вы не помните все то, чтобы было с вами, когда вы были им.
 thrall-role-greeting =
-    Вы - Трелл.
+    Вы - Тралл.
     Вы должны подчиняться тенеморфу и помочь ему в его цели превознестись.
 thrall-briefing = Помогите тенеморфу поработить станцию и превознестись.
-
-## General
-
-shadowling-title = Тенеморфы
-shadowling-description = На станции обитают тенеморфы
-shadowling-not-enough-ready-players = Недостаточно игроков готовы к игре! { $readyPlayersCount } игроков из необходимых { $minimumPlayers } готовы. Нельзя запустить пресет Тенеморфы.
-shadowling-no-one-ready = Нет готовых игроков! Нельзя запустить пресет Тенеморфы.
-shadowling-no-shadowlings = Нет кандидатов на роль тенеморфа. Нельзя запустить пресет Тенеморфы.
-shadowling-won = Тенеморфы поработили станцию и превознеслись.
-shadowling-name-user = { $title } (${ username }) был тенеморфом.
-shadowling-name = { $title } был тенеморфом.
-shadowling-lost = Станция уничтожила всех тенеморфов.
-shadowling-count = Было { $initialCount } тенеморфов
-shadowling-stalemate = Тенеморфы выжили. Ничья.

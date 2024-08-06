@@ -1,0 +1,23 @@
+- type: statusIcon
+  id: ShadowlingFaction
+  priority: 11
+  showTo:
+    components:
+    - ShowAntagIcons
+    - Shadowling
+    - ShadowlingThrall
+  icon:
+    sprite: /Textures/Stories/Interface/Misc/job_icons.rsi
+    state: Shadowlings
+
+- type: statusIcon
+  id: ShadowlingThrallFaction
+  priority: 11
+  showTo:
+    components:
+    - ShowAntagIcons
+    - Shadowling
+    - ShadowlingThrall
+  icon:
+    sprite: /Textures/Stories/Interface/Misc/job_icons.rsi
+    state: ShadowlingsSlave
