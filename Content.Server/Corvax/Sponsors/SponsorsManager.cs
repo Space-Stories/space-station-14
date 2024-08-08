@@ -11,7 +11,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Server.Corvax.Sponsors;
 
-public sealed class SponsorsManager
+public sealed partial class SponsorsManager
 {
     [Dependency] private readonly IServerNetManager _netMgr = default!;
     [Dependency] private readonly IConfigurationManager _cfg = default!;
@@ -27,9 +27,9 @@ public sealed class SponsorsManager
     {
         _sawmill = Logger.GetSawmill("sponsors");
         _cfg.OnValueChanged(CCCVars.SponsorsApiUrl, s => _apiUrl = s, true);
-        
+
         _netMgr.RegisterNetMessage<MsgSponsorInfo>();
-        
+
         _netMgr.Connecting += OnConnecting;
         _netMgr.Connected += OnConnected;
         _netMgr.Disconnect += OnDisconnect;
@@ -53,20 +53,20 @@ public sealed class SponsorsManager
 
         _cachedSponsors[e.UserId] = info;
     }
-    
+
     private void OnConnected(object? sender, NetChannelArgs e)
     {
         var info = _cachedSponsors.TryGetValue(e.Channel.UserId, out var sponsor) ? sponsor : null;
         var msg = new MsgSponsorInfo() { Info = info };
         _netMgr.ServerSendMessage(msg, e.Channel);
     }
-    
+
     private void OnDisconnect(object? sender, NetDisconnectedArgs e)
     {
         _cachedSponsors.Remove(e.Channel.UserId);
     }
 
-    private async Task<SponsorInfo?> LoadSponsorInfo(NetUserId userId)
+    public async Task<SponsorInfo?> LoadSponsorInfo(NetUserId userId)
     {
         if (string.IsNullOrEmpty(_apiUrl))
             return null;
