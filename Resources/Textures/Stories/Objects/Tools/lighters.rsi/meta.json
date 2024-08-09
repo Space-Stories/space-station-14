@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Taken from tgstation at https://github.com/tgstation/tgstation/commit/a28b24f149702527f3eb22f5c686f06c836f2f99; sprite has been edited. Original Engraved zippo drawn by Darkenson. Engraved SpaceStorie zippo drawn by RustedTim(discord:helloo4771).",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "lighter_flame",
+      "delays": [
+        [
+          0.2,
+          0.1
+        ]
+      ]
+    },
+    {
+      "name": "zippo_icon"
+    },
+    {
+      "name": "zippo_open"
+    },
+    {
+      "name": "zippo_top"
+    },
+    {
+      "name": "zippo-inhand-left",
+      "directions": 4
+    },
+    {
+      "name": "zippo-inhand-right",
+      "directions": 4
+    },
+    {
+      "name": "zippo-inhand-left-flame",
+      "directions": 4
+    },
+    {
+      "name": "zippo-inhand-right-flame",
+      "directions": 4
+    }
+  ]
+}
