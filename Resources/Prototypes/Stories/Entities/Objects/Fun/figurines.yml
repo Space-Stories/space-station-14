@@ -89,3 +89,30 @@
   components:
   - type: Sprite
     state: hosp
+
+- type: entity
+  parent: BaseFigurineStories
+  id: ToyFigurineBubblegum
+  name: фигурка Бубльгума
+  description: Король всех демонов резни. Своей тяжелой поступью он сотрясает Лаваленд, оставляя за собой кровавый след.
+  components:
+  - type: Sprite
+    state: bublgum
+
+- type: entity
+  parent: BaseFigurineStories
+  id: ToyFigurineAshDragon
+  name: фигурка Пепельного дракона
+  description: Крылатое чудовище, почитаемый хранитель Некрополя. Ужас во плоти бродит по бесплодной пустоши, изрыгая потоки смертоносного пламени.
+  components:
+  - type: Sprite
+    state: dragon
+
+- type: entity
+  parent: BaseFigurineStories
+  id: ToyFigurineColossus
+  name: фигурка Колосса
+  description: Падший ангел, бредущий по пустошам Лаваленда, карающий всех, кто кажется ему нечистым.
+  components:
+  - type: Sprite
+    state: colossus

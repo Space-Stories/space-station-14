@@ -1,25 +1,24 @@
 using Npgsql;
 using Content.Shared.Corvax.CCCVars;
 using Robust.Shared.Configuration;
-using Robust.Shared.ContentPack;
-using Prometheus;
-using Robust.Shared.Serialization;
 using Robust.Shared.Network;
-using System.Diagnostics.CodeAnalysis;
-using Content.Shared.Corvax.Sponsors;
 
 namespace Content.Server.Database;
+
+// FIXME: Удалить это вообще. (Нужно перенести в API)
 
 public interface IPartnersManager
 {
     void Init();
     void SetAntagPicked(NetUserId userId);
 }
+
 public sealed class PartnersManager : IPartnersManager
 {
     [Dependency] private readonly IConfigurationManager _cfg = default!;
     private NpgsqlConnection _db = default!;
     private ISawmill _sawmill = default!;
+
     public void SetAntagPicked(NetUserId userId)
     {
         if (_db.FullState == System.Data.ConnectionState.Closed || _db.FullState == System.Data.ConnectionState.Broken)
@@ -28,6 +27,7 @@ public sealed class PartnersManager : IPartnersManager
         using NpgsqlCommand cmd = new NpgsqlCommand($"""UPDATE partners SET "last_day_taking_antag" = {DateTime.Now.DayOfYear} WHERE partners.net_id = '{userId.UserId.ToString()}'""", _db);
         using NpgsqlDataReader reader = cmd.ExecuteReader();
     }
+
     public void Init()
     {
         _sawmill = Logger.GetSawmill("partners");

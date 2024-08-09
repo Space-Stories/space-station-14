@@ -5,10 +5,6 @@
   description: Boo!
   categories: [ HideSpawnMenu ]
   components:
-  - type: UserInterface
-    interfaces:
-      enum.AntagSelectUiKey.Key: # Stories-Sponsor
-        type: AntagSelectBoundUserInterface # Stories-Sponsor
   - type: CargoSellBlacklist
   - type: Sprite
     overrideContainerOcclusion: true # Ghosts always show up regardless of where they're contained.

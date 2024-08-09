@@ -1,3 +1,138 @@
+# Гравированная зажигалка флиппо
+
+- type: loadout
+  id: StoriesFlippoEngravedLighter
+  equipment: StoriesFlippoEngravedLighter
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: PartnerMinTier3
+
+- type: startingGear
+  id: StoriesFlippoEngravedLighter
+  storage:
+    back:
+    - StoriesFlippoEngravedLighter
+
+# Сереб. часы
+
+- type: loadout
+  id: WristwatchSilver
+  equipment: WristwatchSilver
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: PartnerMinTier3
+
+- type: startingGear
+  id: WristwatchSilver
+  storage:
+    back:
+    - WristwatchSilver
+
+# Золотые часы
+
+- type: loadout
+  id: StoriesWristwatchGold
+  equipment: StoriesWristwatchGold
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: PartnerMinTier3
+
+- type: startingGear
+  id: StoriesWristwatchGold
+  storage:
+    back:
+    - StoriesWristwatchGold
+
+# Плащ коллекционера
+
+- type: loadout
+  id: ClothingNeckCloakCollector
+  equipment: ClothingNeckCloakCollector
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: PartnerMinTier4
+
+- type: startingGear
+  id: ClothingNeckCloakCollector
+  storage:
+    back:
+    - ClothingNeckCloakCollector
+
+# Плащ аномалиста
+
+- type: loadout
+  id: ClothingNeckCloakAnomalist
+  equipment: ClothingNeckCloakAnomalist
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: PartnerMinTier4
+
+- type: startingGear
+  id: ClothingNeckCloakAnomalist
+  storage:
+    back:
+    - ClothingNeckCloakAnomalist
+
+# Плащ заклинателя змей
+
+- type: loadout
+  id: ClothingNeckCloakSnake
+  equipment: ClothingNeckCloakSnake
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: PartnerMinTier5
+
+- type: startingGear
+  id: ClothingNeckCloakSnake
+  storage:
+    back:
+    - ClothingNeckCloakSnake
+
+# Колосс
+
+- type: loadout
+  id: ToyFigurineColossus
+  equipment: ToyFigurineColossus
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: PartnerMinTier5
+
+- type: startingGear
+  id: ToyFigurineColossus
+  storage:
+    back:
+    - ToyFigurineColossus
+
+# Дракон
+
+- type: loadout
+  id: ToyFigurineAshDragon
+  equipment: ToyFigurineAshDragon
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: PartnerMinTier5
+
+- type: startingGear
+  id: ToyFigurineAshDragon
+  storage:
+    back:
+    - ToyFigurineAshDragon
+
+# Бубл
+
+- type: loadout
+  id: ToyFigurineBubblegum
+  equipment: ToyFigurineBubblegum
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: PartnerMinTier5
+
+- type: startingGear
+  id: ToyFigurineBubblegum
+  storage:
+    back:
+    - ToyFigurineBubblegum
+
 # Сферы
 
 - type: loadout

@@ -183,8 +183,6 @@
   - type: Stripping
   - type: UserInterface
     interfaces:
-      enum.AntagSelectUiKey.Key: # Stories-Sponsor
-        type: AntagSelectBoundUserInterface # Stories-Sponsor
       enum.StoreUiKey.Key: # SpaceStories Немного магазина во всех нас. // TODO: Убрать отсюда
         type: StoreBoundUserInterface # ! Это нужно, чтобы пользователи силы могли открывать свой магазин навыков.
       enum.VoiceMaskUIKey.Key:
