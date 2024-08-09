@@ -47,8 +47,6 @@ public interface IBanManager
     /// <param name="unbanTime">The time at which this role ban was pardoned.</param>
     public Task<string> PardonRoleBan(int banId, NetUserId? unbanningAdmin, DateTimeOffset unbanTime);
 
-    public void WebhookUpdateRoleBans(NetUserId? target, string? targetUsername, NetUserId? banningAdmin, (IPAddress, int)? addressRange, ImmutableArray<byte>? hwid, string role, uint? minutes, NoteSeverity severity, string reason, DateTimeOffset timeOfBan);
-
     /// <summary>
     /// Sends role bans to the target
     /// </summary>

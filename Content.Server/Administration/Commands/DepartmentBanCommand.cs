@@ -98,7 +98,6 @@ public sealed class DepartmentBanCommand : IConsoleCommand
         foreach (var job in departmentProto.Roles)
         {
             _banManager.CreateRoleBan(targetUid, located.Username, shell.Player?.UserId, null, targetHWid, job, minutes, severity, reason, now);
-            _banManager.WebhookUpdateRoleBans(targetUid, located.Username, shell.Player?.UserId, null, targetHWid, job, minutes, severity, reason, now); // Stories-BanWebhook
         }
     }
 
