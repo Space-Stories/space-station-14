@@ -86,3 +86,30 @@
       - ForceRecallEquipment
   - type: Sprite
     sprite: Stories/Clothing/Neck/Cloaks/exe_cloak.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakSnake
+  name: плащ заклинателя змей
+  description: Я не уверен, что это Тайпан Маккоя, но она явно сбежала с Тайпана.
+  components:
+  - type: Sprite
+    sprite: Stories/Clothing/Neck/Cloaks/cloak_snake.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakAnomalist
+  name: плащ аномалиста
+  description: Я думаю, тут изображены координаты аномальной зоны.
+  components:
+  - type: Sprite
+    sprite: Stories/Clothing/Neck/Cloaks/cloak_anomalist.rsi
+
+- type: entity
+  parent: ClothingNeckBase
+  id: ClothingNeckCloakCollector
+  name: плащ коллекционера
+  description: Нет, его владелец не полуночный человек.
+  components:
+  - type: Sprite
+    sprite: Stories/Clothing/Neck/Cloaks/cloak_collector.rsi

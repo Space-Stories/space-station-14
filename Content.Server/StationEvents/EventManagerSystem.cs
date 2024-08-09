@@ -143,7 +143,7 @@ public sealed class EventManagerSystem : EntitySystem
         return allEvents;
     }
 
-    private int GetOccurrences(EntityPrototype stationEvent)
+    public int GetOccurrences(EntityPrototype stationEvent)
     {
         return GetOccurrences(stationEvent.ID);
     }

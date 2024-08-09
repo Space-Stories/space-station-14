@@ -5,16 +5,16 @@
   minLimit: 0
   maxLimit: 3
   loadouts:
-  - PlushieLizard
-  - PlushieSpaceLizard
-  - Lighter
-  - CigPackGreen
-  - CigPackRed
-  - CigPackBlue
-  - CigPackBlack
-  - CigarCase
-  - CigarGold
   # Stories - start
+  - StoriesFlippoEngravedLighter
+  - WristwatchSilver
+  - StoriesWristwatchGold
+  - ClothingNeckCloakCollector
+  - ClothingNeckCloakAnomalist
+  - ClothingNeckCloakSnake
+  - ToyFigurineColossus
+  - ToyFigurineAshDragon
+  - ToyFigurineBubblegum
   - ClothingNeckElectrospheres
   - ToyFigurineShadowling
   - ToyFigurineAscendedShadowling
@@ -24,6 +24,15 @@
   - ToyFigurineOSP
   - ToyFigurineESP
   - ToyFigurineHOSP
+  # - PlushieLizard
+  # - PlushieSpaceLizard
+  # - Lighter
+  # - CigPackGreen
+  # - CigPackRed
+  # - CigPackBlue
+  # - CigPackBlack
+  - CigarCase
+  - CigarGold
   # - ClothingNeckLGBTPin
   # - ClothingNeckAromanticPin
   # - ClothingNeckAsexualPin
