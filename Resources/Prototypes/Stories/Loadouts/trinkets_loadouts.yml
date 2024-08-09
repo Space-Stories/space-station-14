@@ -2,13 +2,9 @@
 
 - type: loadout
   id: StoriesFlippoEngravedLighter
-  equipment: StoriesFlippoEngravedLighter
   effects:
   - !type:GroupLoadoutEffect
     proto: PartnerMinTier3
-
-- type: startingGear
-  id: StoriesFlippoEngravedLighter
   storage:
     back:
     - StoriesFlippoEngravedLighter
@@ -17,13 +13,9 @@
 
 - type: loadout
   id: WristwatchSilver
-  equipment: WristwatchSilver
   effects:
   - !type:GroupLoadoutEffect
     proto: PartnerMinTier3
-
-- type: startingGear
-  id: WristwatchSilver
   storage:
     back:
     - WristwatchSilver
@@ -32,13 +24,9 @@
 
 - type: loadout
   id: StoriesWristwatchGold
-  equipment: StoriesWristwatchGold
   effects:
   - !type:GroupLoadoutEffect
     proto: PartnerMinTier3
-
-- type: startingGear
-  id: StoriesWristwatchGold
   storage:
     back:
     - StoriesWristwatchGold
@@ -47,13 +35,9 @@
 
 - type: loadout
   id: ClothingNeckCloakCollector
-  equipment: ClothingNeckCloakCollector
   effects:
   - !type:GroupLoadoutEffect
     proto: PartnerMinTier4
-
-- type: startingGear
-  id: ClothingNeckCloakCollector
   storage:
     back:
     - ClothingNeckCloakCollector
@@ -62,13 +46,9 @@
 
 - type: loadout
   id: ClothingNeckCloakAnomalist
-  equipment: ClothingNeckCloakAnomalist
   effects:
   - !type:GroupLoadoutEffect
     proto: PartnerMinTier4
-
-- type: startingGear
-  id: ClothingNeckCloakAnomalist
   storage:
     back:
     - ClothingNeckCloakAnomalist
@@ -77,13 +57,9 @@
 
 - type: loadout
   id: ClothingNeckCloakSnake
-  equipment: ClothingNeckCloakSnake
   effects:
   - !type:GroupLoadoutEffect
     proto: PartnerMinTier5
-
-- type: startingGear
-  id: ClothingNeckCloakSnake
   storage:
     back:
     - ClothingNeckCloakSnake
@@ -92,13 +68,9 @@
 
 - type: loadout
   id: ToyFigurineColossus
-  equipment: ToyFigurineColossus
   effects:
   - !type:GroupLoadoutEffect
     proto: PartnerMinTier5
-
-- type: startingGear
-  id: ToyFigurineColossus
   storage:
     back:
     - ToyFigurineColossus
@@ -107,13 +79,9 @@
 
 - type: loadout
   id: ToyFigurineAshDragon
-  equipment: ToyFigurineAshDragon
   effects:
   - !type:GroupLoadoutEffect
     proto: PartnerMinTier5
-
-- type: startingGear
-  id: ToyFigurineAshDragon
   storage:
     back:
     - ToyFigurineAshDragon
@@ -122,13 +90,9 @@
 
 - type: loadout
   id: ToyFigurineBubblegum
-  equipment: ToyFigurineBubblegum
   effects:
   - !type:GroupLoadoutEffect
     proto: PartnerMinTier5
-
-- type: startingGear
-  id: ToyFigurineBubblegum
   storage:
     back:
     - ToyFigurineBubblegum
