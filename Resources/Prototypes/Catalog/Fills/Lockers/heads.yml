@@ -77,10 +77,6 @@
       - id: JetpackCaptainFilled
       - id: MedalCase
       - id: ClothingHeadHatCapcap
-      # Corvax-Resprite-Start
-      - id: ClothingHeadCaptainHat
-      - id: ClothingOuterCoatCaptain
-      # Corvax-Resprite-End
       - id: PRISONRadioHandheld # Stories
 
 - type: entity
@@ -136,7 +132,6 @@
       - id: BoxEncryptionKeyService
       - id: ClothingBackpackIan
         prob: 0.5
-      - id: ClothingOuterCoatHOP # Corvax-Resprite
       - id: AccessConfigurator
       - id: BoxPrinter # Stories
 
@@ -273,13 +268,10 @@
     contents:
       - id: WeaponDisabler
       - id: ClothingHeadHatBeretHoS
-      - id: ClothingHeadHatCapHoS # Corvax-SecFashion
-        prob: 0.5
       - id: ClothingHeadHatHoshat
       - id: ClothingNeckCloakHos
       - id: ClothingOuterCoatHoSTrench
       - id: ClothingMaskNeckGaiter
-      - id: ClothingOuterCoatHoSGreatcoat # Corvax-Resprite
       - id: ClothingUniformJumpskirtHoSAlt
       - id: ClothingUniformJumpsuitHoSAlt
       - id: ClothingOuterHardsuitSecurityRed
@@ -313,13 +305,10 @@
     contents:
       - id: WeaponDisabler
       - id: ClothingHeadHatBeretHoS
-      - id: ClothingHeadHatCapHoS # Corvax-SecFashion
-        prob: 0.5
       - id: ClothingHeadHatHoshat
       - id: ClothingNeckCloakHos
       - id: ClothingOuterCoatHoSTrench
       - id: ClothingMaskNeckGaiter
-      - id: ClothingOuterCoatHoSGreatcoat # Corvax-Resprite
       - id: ClothingUniformJumpskirtHoSAlt
       - id: ClothingUniformJumpsuitHoSAlt
       - id: ClothingUniformJumpsuitHoSBlue
