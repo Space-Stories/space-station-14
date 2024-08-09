@@ -35,8 +35,6 @@
       - type: Force
       - type: ForceUser
         preset: Inquisitor
-      - type: GenericAntag
-        rule: Sith
       - type: AutoImplant
         implants:
         - DeathAcidifierImplant
@@ -112,6 +110,11 @@
   - type: RuleGrids
   - type: LoadMapRule
     preloadedGrid: TIE
+  - type: AntagObjectives
+    objectives:
+    - KillJediNtObjective
+    - SithSurviveObjective
+    - HypnosisObjective
   - type: AntagSelection
     definitions:
     - spawnerPrototype: SpawnPointSith
@@ -130,8 +133,6 @@
       - type: Force
       - type: ForceUser
         preset: Inquisitor
-      - type: GenericAntag
-        rule: Sith
       - type: AutoImplant
         implants:
         - DeathAcidifierImplant

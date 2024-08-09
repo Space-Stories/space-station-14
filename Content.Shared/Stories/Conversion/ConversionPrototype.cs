@@ -14,7 +14,7 @@ public sealed partial class ConversionPrototype : IPrototype
 
     #region Other
 
-    [DataField("statusIcon", customTypeSerializer: typeof(PrototypeIdSerializer<StatusIconPrototype>))]
+    [DataField("statusIcon", customTypeSerializer: typeof(PrototypeIdSerializer<FactionIconPrototype>))]
     public string? StatusIcon = null;
 
     [DataField("channels")]
