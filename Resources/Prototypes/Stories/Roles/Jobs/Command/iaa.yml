@@ -1,6 +1,6 @@
 - type: job
   id: IAA
-  name: job-name-iaa
+  name: агент внутрених дел
   playTimeTracker: JobIAA
   requirements:
     - !type:DepartmentTimeRequirement
