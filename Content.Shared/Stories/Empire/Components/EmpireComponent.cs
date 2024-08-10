@@ -9,5 +9,5 @@ namespace Content.Shared.Stories.Empire.Components;
 public sealed partial class EmpireComponent : Component
 {
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public ProtoId<StatusIconPrototype> StatusIcon { get; set; } = "EmpireFaction";
+    public ProtoId<FactionIconPrototype> StatusIcon { get; set; } = "EmpireFaction";
 }

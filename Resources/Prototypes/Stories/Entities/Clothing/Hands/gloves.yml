@@ -8,8 +8,6 @@
     sprite: Stories/Clothing/Hands/Gloves/chronolegioneer.rsi
   - type: Clothing
     sprite: Stories/Clothing/Hands/Gloves/chronolegioneer.rsi
-  - type: GloveHeatResistance
-    heatResistance: 1400
   - type: Insulated
   - type: FingerprintMask
 

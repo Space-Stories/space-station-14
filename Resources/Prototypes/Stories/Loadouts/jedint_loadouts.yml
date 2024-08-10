@@ -95,13 +95,9 @@
 
 - type: loadout
   id: ClothingMaskGasExe
-  equipment: ClothingMaskGasExe
   effects:
   - !type:GroupLoadoutEffect
     proto: PartnerMinTier4
-
-- type: startingGear
-  id: ClothingMaskGasExe
   equipment:
     mask: ClothingMaskGasExe
 
@@ -109,13 +105,9 @@
 
 - type: loadout
   id: ClothingHeadHatExe
-  equipment: ClothingHeadHatExe
   effects:
   - !type:GroupLoadoutEffect
     proto: PartnerMinTier4
-
-- type: startingGear
-  id: ClothingHeadHatExe
   equipment:
     head: ClothingHeadHatExe
 
@@ -123,13 +115,9 @@
 
 - type: loadout
   id: LightsaberRapier
-  equipment: LightsaberRapier
   effects:
   - !type:GroupLoadoutEffect
     proto: PartnerMinTier4
-
-- type: startingGear
-  id: LightsaberRapier
   equipment:
     pocket1: LightsaberRapier
 
@@ -137,13 +125,9 @@
 
 - type: loadout
   id: LightsaberDouble
-  equipment: LightsaberDouble
   effects:
   - !type:GroupLoadoutEffect
     proto: PartnerMinTier1
-
-- type: startingGear
-  id: LightsaberDouble
   equipment:
     pocket1: LightsaberDouble
 
@@ -151,13 +135,9 @@
 
 - type: loadout
   id: LightsaberCrossguard
-  equipment: LightsaberCrossguard
   effects:
   - !type:GroupLoadoutEffect
     proto: PartnerMinTier4
-
-- type: startingGear
-  id: LightsaberCrossguard
   equipment:
     pocket1: LightsaberCrossguard
 
@@ -165,23 +145,15 @@
 
 - type: loadout
   id: LightsaberShort
-  equipment: LightsaberShort
   effects:
   - !type:GroupLoadoutEffect
     proto: PartnerMinTier3
-
-- type: startingGear
-  id: LightsaberShort
   equipment:
     pocket1: LightsaberShort
 
 # Обычный меч
 
 - type: loadout
-  id: Lightsaber
-  equipment: Lightsaber
-
-- type: startingGear
   id: Lightsaber
   equipment:
     pocket1: Lightsaber
@@ -190,13 +162,9 @@
 
 - type: loadout
   id: ClothingOuterCoatJedi
-  equipment: ClothingOuterCoatJedi
   effects:
   - !type:GroupLoadoutEffect
     proto: PartnerMinTier1
-
-- type: startingGear
-  id: ClothingOuterCoatJedi
   equipment:
     outerClothing: ClothingOuterCoatJedi
 
@@ -204,23 +172,15 @@
 
 - type: loadout
   id: ClothingOuterVestArmorExe
-  equipment: ClothingOuterVestArmorExe
   effects:
   - !type:GroupLoadoutEffect
     proto: PartnerMinTier4
-
-- type: startingGear
-  id: ClothingOuterVestArmorExe
   equipment:
     outerClothing: ClothingOuterVestArmorExe
 
 # Бронежилет стража
 
 - type: loadout
-  id: ClothingOuterVestJediNt
-  equipment: ClothingOuterVestJediNt
-
-- type: startingGear
   id: ClothingOuterVestJediNt
   equipment:
     outerClothing: ClothingOuterVestJediNt
@@ -229,10 +189,6 @@
 
 - type: loadout
   id: ClothingBackpackJediNt
-  equipment: ClothingBackpackJediNt
-
-- type: startingGear
-  id: ClothingBackpackJediNt
   equipment:
     back: ClothingBackpackJediNt
 
@@ -240,13 +196,9 @@
 
 - type: loadout
   id: ClothingUniformJumpsuitJedi
-  equipment: ClothingUniformJumpsuitJedi
   effects:
   - !type:GroupLoadoutEffect
     proto: PartnerMinTier1
-
-- type: startingGear
-  id: ClothingUniformJumpsuitJedi
   equipment:
     jumpsuit: ClothingUniformJumpsuitJedi
 
@@ -254,13 +206,9 @@
 
 - type: loadout
   id: ClothingUniformJumpsuitExe
-  equipment: ClothingUniformJumpsuitExe
   effects:
   - !type:GroupLoadoutEffect
     proto: PartnerMinTier4
-
-- type: startingGear
-  id: ClothingUniformJumpsuitExe
   equipment:
     jumpsuit: ClothingUniformJumpsuitExe
 
@@ -268,23 +216,15 @@
 
 - type: loadout
   id: ClothingUniformJumpsuitJediNomad
-  equipment: ClothingUniformJumpsuitJediNomad
   effects:
   - !type:GroupLoadoutEffect
     proto: PartnerMinTier3
-
-- type: startingGear
-  id: ClothingUniformJumpsuitJediNomad
   equipment:
     jumpsuit: ClothingUniformJumpsuitJediNomad
 
 # Униформа стража
 
 - type: loadout
-  id: ClothingUniformJumpsuitJediNt
-  equipment: ClothingUniformJumpsuitJediNt
-
-- type: startingGear
   id: ClothingUniformJumpsuitJediNt
   equipment:
     jumpsuit: ClothingUniformJumpsuitJediNt
@@ -293,23 +233,15 @@
 
 - type: loadout
   id: ClothingNeckCloakExe
-  equipment: ClothingNeckCloakExe
   effects:
   - !type:GroupLoadoutEffect
     proto: PartnerMinTier4
-
-- type: startingGear
-  id: ClothingNeckCloakExe
   equipment:
     neck: ClothingNeckCloakExe
 
 # Мантия стража
 
 - type: loadout
-  id: ClothingNeckMantleJediNt
-  equipment: ClothingNeckMantleJediNt
-
-- type: startingGear
   id: ClothingNeckMantleJediNt
   equipment:
     neck: ClothingNeckMantleJediNt
@@ -318,23 +250,15 @@
 
 - type: loadout
   id: ClothingNeckMantleJediNomad
-  equipment: ClothingNeckMantleJediNomad
   effects:
   - !type:GroupLoadoutEffect
     proto: PartnerMinTier3
-
-- type: startingGear
-  id: ClothingNeckMantleJediNomad
   equipment:
     neck: ClothingNeckMantleJediNomad
 
 # Ботинки стража
 
 - type: loadout
-  id: ClothingShoesBootsJackJediNt
-  equipment: ClothingShoesBootsJackJediNt
-
-- type: startingGear
   id: ClothingShoesBootsJackJediNt
   equipment:
     shoes: ClothingShoesBootsJackJediNt
@@ -343,13 +267,9 @@
 
 - type: loadout
   id: ClothingShoesBootsJackJediNomad
-  equipment: ClothingShoesBootsJackJediNomad
   effects:
   - !type:GroupLoadoutEffect
     proto: PartnerMinTier3
-
-- type: startingGear
-  id: ClothingShoesBootsJackJediNomad
   equipment:
     shoes: ClothingShoesBootsJackJediNomad
 
@@ -357,13 +277,9 @@
 
 - type: loadout
   id: ClothingShoesBootsExe
-  equipment: ClothingShoesBootsExe
   effects:
   - !type:GroupLoadoutEffect
     proto: PartnerMinTier4
-
-- type: startingGear
-  id: ClothingShoesBootsExe
   equipment:
     shoes: ClothingShoesBootsExe
 
@@ -371,13 +287,9 @@
 
 - type: loadout
   id: ClothingShoesBootsJackJedi
-  equipment: ClothingShoesBootsJackJedi
   effects:
   - !type:GroupLoadoutEffect
     proto: PartnerMinTier1
-
-- type: startingGear
-  id: ClothingShoesBootsJackJedi
   equipment:
     shoes: ClothingShoesBootsJackJedi
 
@@ -385,13 +297,9 @@
 
 - type: loadout
   id: ClothingBeltJedi
-  equipment: ClothingBeltJedi
   effects:
   - !type:GroupLoadoutEffect
     proto: PartnerMinTier1
-
-- type: startingGear
-  id: ClothingBeltJedi
   equipment:
     belt: ClothingBeltJedi
 
@@ -399,12 +307,8 @@
 
 - type: loadout
   id: ClothingBeltSheathExe
-  equipment: ClothingBeltSheathExe
   effects:
   - !type:GroupLoadoutEffect
     proto: PartnerMinTier4
-
-- type: startingGear
-  id: ClothingBeltSheathExe
   equipment:
     belt: ClothingBeltSheathExe

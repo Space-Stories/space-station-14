@@ -15,7 +15,7 @@ namespace Content.Shared.Stories.Shadowling;
 public sealed partial class ShadowlingComponent : Component
 {
     [DataField]
-    public ProtoId<StatusIconPrototype> StatusIcon = "ShadowlingFaction";
+    public ProtoId<FactionIconPrototype> StatusIcon = "ShadowlingFaction";
 
     [DataField]
     public Dictionary<string, int> Actions = new();
