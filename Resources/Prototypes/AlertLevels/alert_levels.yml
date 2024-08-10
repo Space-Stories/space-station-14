@@ -70,15 +70,3 @@
       emergencyLightColor: DarkViolet
       forceEnableEmergencyLights: true
       shuttleTime: 1200
-    tempest:
-      announcement: alert-level-tempest-announcement
-      selectable: false
-      sound:
-        path: /Audio/Stories/Effects/tempest.ogg
-        params:
-          volume: -2
-      disableSelection: true
-      color: Turquoise
-      emergencyLightColor: Turquoise
-      forceEnableEmergencyLights: true
-      shuttleTime: 600

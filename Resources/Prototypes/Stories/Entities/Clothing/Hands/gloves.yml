@@ -1,24 +1,4 @@
 - type: entity
-  parent: ClothingHandsBase
-  id: ClothingHandsGlovesChronoLegioneer
-  name: перчатки будущего
-  description: Футуристичные перчатки из неизвестного материала, не оставляющего отпечатков
-  components:
-  - type: Sprite
-    sprite: Stories/Clothing/Hands/Gloves/chronolegioneer.rsi
-  - type: Clothing
-    sprite: Stories/Clothing/Hands/Gloves/chronolegioneer.rsi
-  - type: Insulated
-  - type: FingerprintMask
-
-- type: entity
-  parent: ClothingHandsGlovesChronoLegioneer
-  id: ClothingHandsGlovesChronoLegioneerUnremoveable
-  suffix: Неснимаемый
-  components:
-  - type: Unremoveable
-
-- type: entity
   parent: ClothingHandsGlovesColorBlack
   id: ClothingHandsGlovesSith
   name: перчатки инквизитора
