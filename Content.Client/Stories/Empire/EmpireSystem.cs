@@ -1,9 +1,9 @@
 using Content.Shared.StatusIcon.Components;
 using Content.Shared.StatusIcon;
 using Robust.Shared.Prototypes;
-using Content.Shared.SpaceStories.Empire.Components;
+using Content.Shared.Stories.Empire.Components;
 
-namespace Content.Client.SpaceStories.Empire;
+namespace Content.Client.Stories.Empire;
 public sealed class EmpireSystem : SharedStatusIconSystem
 {
     [Dependency] private readonly IPrototypeManager _prototype = default!;

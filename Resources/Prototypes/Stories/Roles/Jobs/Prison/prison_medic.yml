@@ -13,15 +13,15 @@
   startingGear: PRISONMedicGear
   icon: "JobIconSpacePrisonMedic"
   supervisors: начальник тюрьмы
-  canBeAntag: false
+  canBeAntag: true
   access:
+  - Prisoner
   - Prison
   - PrisonMed
   - Maintenance
-  - Medical
-  special:
-  - !type:AddImplantSpecial
-    implants: [ MindShieldImplant ]
+  # special:
+  # - !type:AddImplantSpecial
+  #   implants: [ MindShieldImplant ]
 
 - type: startingGear
   id: PRISONMedicGear

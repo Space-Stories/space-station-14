@@ -4,50 +4,75 @@
   parent:
   - BaseMob
   - MobDamageable
+  - MobCombat
   id: BaseMobShadowling
   abstract: true
   components:
+  - type: ZombieImmune
+  - type: ThermalVision
+  - type: ComplexInteraction
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTypeTrigger
+        damageType: Heat
+        damage: 480
+      behaviors:
+      - !type:SpawnEntitiesBehavior
+        spawnInContainer: true
+        spawn:
+          Ash:
+            min: 1
+            max: 1
+      - !type:BurnBodyBehavior { }
+      - !type:PlaySoundBehavior
+        sound:
+          collection: MeatLaserImpact
+  - type: Prying
+    pryPowered: true
+    force: true
+    useSound:
+      path: /Audio/Items/crowbar.ogg
+  - type: Shadowling
+    actions:
+      # ActionShadowlingHatch: 0
+      ActionShadowlingShadowWalk: 0
+      ActionShadowlingGlare: 0
+      ActionShadowlingVeil: 0
+      ActionShadowlingIcyVeins: 0
+      ActionShadowlingCollectiveMind: 0
+      ActionShadowlingRapidReHatch: 0
+      ActionShadowlingEnthrall: 0
+      ActionShadowlingBlindnessSmoke: 5
+      ActionShadowlingSonicScreech: 3
+      ActionShadowlingBlackRecuperation: 9
+      ActionShadowlingAscendance: 15
+  - type: Photosensitivity
+  - type: NoSlip
+  - type: MovementAlwaysTouching
   - type: Insulated
   - type: CombatMode
   - type: InputMover
   - type: MobMover
   - type: Hands
-  - type: Tool
-    speed: 5
-    qualities:
-      - Prying
-  - type: Prying
-    pryPowered: !type:Bool
-      true
-    force: !type:Bool
-      true
-    useSound:
-      path: /Audio/Items/crowbar.ogg
-  - type: PassiveDamage # Slight passive regen. Assuming one damage type, comes out to about 4 damage a minute.
-    allowedStates:
-    - Alive
-    damageCap: 20
-    damage:
-      types:
-        Heat: -0.07
-      groups:
-        Brute: -0.07
-  - type: Shadowling
-    performLightDamage: true
   - type: StatusEffects
     allowed:
     - Stun
+    - KnockedDown
     - SlowedDown
     - Stutter
+    - SeeingRainbows
     - Electrocution
-    - ForcedSleep
-    - TemporaryBlindness
+    - Drunk
     - SlurredSpeech
     - RatvarianLanguage
     - PressureImmunity
     - Muted
+    - ForcedSleep
+    - TemporaryBlindness
+    - Pacified
     - StaminaModifier
-  # Other
+    - Flashed
   - type: Temperature
     heatDamageThreshold: 360
     coldDamageThreshold: 0
@@ -69,11 +94,6 @@
     thermalRegulationTemperatureThreshold: 25
   - type: TypingIndicator
     proto: holo
-  - type: Butcherable
-    butcheringType: Spike
-    spawned:
-      - id: FoodMeat
-        amount: 5
   - type: MobState
     allowedStates:
     - Alive
@@ -102,6 +122,10 @@
   - type: Body
     prototype: Shadowling
     requiredLegs: 2
+  - type: IntrinsicRadioReceiver
+  - type: IntrinsicRadioTransmitter
+    channels:
+    - ShadowlingMind
   - type: ActiveRadio
     channels:
     - ShadowlingMind
@@ -126,21 +150,9 @@
     baseWalkSpeed : 2.7
     baseSprintSpeed : 4.5
   - type: Perishable
-  - type: Eye
-    drawFov: false
-    visMask:
-      - Normal
   - type: ContentEye
     maxZoom: 1.2, 1.2
   - type: Puller
   - type: Tag
     tags:
     - DoorBumpOpener
-
-- type: radioChannel
-  id: ShadowlingMind
-  name: chat-radio-shadowling
-  frequency: 98767
-  keycode: 'ш'
-  color: "#8b0000"
-  longRange: true

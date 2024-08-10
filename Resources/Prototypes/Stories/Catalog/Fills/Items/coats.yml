@@ -1,8 +1,0 @@
-- type: entity
-  parent: ClothingOuterCoatJedi
-  id: ClothingOuterCoatJediFilled
-  components:
-  - type: StorageFill
-    contents:
-      - id: BoxSurvivalSecurity
-      - id: Flash

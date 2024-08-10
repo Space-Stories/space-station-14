@@ -3,15 +3,15 @@ using Content.Shared.DoAfter;
 using Content.Shared.Damage;
 using Robust.Shared.Serialization;
 using Content.Shared.Actions;
-using Content.Shared.SpaceStories.Force;
+using Content.Shared.Stories.Force;
 using Content.Shared.Polymorph;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
 using Content.Shared.Chemistry.Components;
 using Robust.Shared.Prototypes;
 
-namespace Content.Shared.SpaceStories.ForceUser.Actions.Events;
+namespace Content.Shared.Stories.ForceUser.Actions.Events;
 
-// "Простые" события, которые не нуждаются в Content.Shared.SpaceStories.ForceUser.Components
+// "Простые" события, которые не нуждаются в Content.Shared.Stories.ForceUser.Components
 // ? Возможно стоит их убрать отсюда?
 #region Simple
 public sealed partial class LightningStrikeEvent : EntityTargetActionEvent { }
@@ -86,7 +86,7 @@ public sealed partial class CreateProtectiveBubbleEvent : InstantActionEvent
 public sealed partial class StopProtectiveBubbleEvent : InstantActionEvent { }
 #endregion
 
-// События работа которых завязана на Content.Shared.SpaceStories.ForceUser.Components
+// События работа которых завязана на Content.Shared.Stories.ForceUser.Components
 #region ForceUser
 public sealed partial class ForceShopActionEvent : InstantActionEvent { }
 public sealed partial class ForceLookUpActionEvent : InstantActionEvent
@@ -99,7 +99,7 @@ public sealed partial class FrozeBulletsActionEvent : InstantActionEvent
     [DataField("seconds")]
     public float Seconds = 10;
 }
-public sealed partial class RecallLightSaberEvent : InstantActionEvent { }
+public sealed partial class RecallLightsaberEvent : InstantActionEvent { }
 public sealed partial class RecallEquipmentsEvent : InstantActionEvent { }
 public sealed partial class SithPolymorphEvent : InstantActionEvent
 {
@@ -123,7 +123,7 @@ public sealed partial class SithPolymorphEvent : InstantActionEvent
     /// Defaults to smoke but you can use foam if you want.
     /// </summary>
     [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public ProtoId<EntityPrototype> SmokePrototype = "Smoke";
+    public EntProtoId SmokePrototype = "Smoke";
 
     /// <summary>
     /// Solution to add to each smoke cloud.
@@ -232,4 +232,22 @@ public sealed partial class WorldTargetForceUserActionEvent : WorldTargetActionE
     [DataField("event")]
     [NonSerialized]
     public WorldTargetActionEvent? Event = null;
+}
+
+[Serializable, NetSerializable]
+public sealed partial class LightsaberDetachedEvent : SimpleDoAfterEvent
+{
+
+}
+
+[Serializable, NetSerializable]
+public sealed partial class LightsaberConnectedEvent : SimpleDoAfterEvent
+{
+
+}
+
+[Serializable, NetSerializable]
+public sealed partial class LightsaberHackedEvent : SimpleDoAfterEvent
+{
+
 }

@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Numerics;
+using Content.Server.Corvax.Sponsors;
 using Content.Server.Database;
 using Content.Server.GameTicking;
 using Content.Server.Ghost.Components;
@@ -31,7 +32,7 @@ namespace Content.Server.Ghost
     public sealed class GhostSystem : SharedGhostSystem
     {
         [Dependency] private readonly SharedActionsSystem _actions = default!;
-        [Dependency] private readonly IPartnersManager _partners = default!;
+        [Dependency] private readonly SponsorsManager _partners = default!;
         [Dependency] private readonly SharedEyeSystem _eye = default!;
         [Dependency] private readonly FollowerSystem _followerSystem = default!;
         [Dependency] private readonly IGameTiming _gameTiming = default!;
@@ -130,7 +131,7 @@ namespace Content.Server.Ghost
         private void OnRelayMoveInput(EntityUid uid, GhostOnMoveComponent component, ref MoveInputEvent args)
         {
             // If they haven't actually moved then ignore it.
-            if ((args.Component.HeldMoveButtons &
+            if ((args.Entity.Comp.HeldMoveButtons &
                  (MoveButtons.Down | MoveButtons.Left | MoveButtons.Up | MoveButtons.Right)) == 0x0)
             {
                 return;
@@ -450,8 +451,10 @@ namespace Content.Server.Ghost
                 return null;
             }
 
-            _partners.TryGetInfo(mind.Comp.UserId, out var sponsorInfo); // STORIES - start
-            var proto = sponsorInfo == null || sponsorInfo.GhostSkin == null ? GameTicker.ObserverPrototypeName : sponsorInfo.GhostSkin;
+            var proto = GameTicker.ObserverPrototypeName; // STORIES - start
+
+            if (mind.Comp.UserId != null && _partners.TryGetInfo(mind.Comp.UserId.Value, out var sponsorInfo))
+                proto = sponsorInfo.GhostSkin;
 
             var ghost = SpawnAtPosition(proto, spawnPosition.Value); // STORIES - end
             var ghostComponent = Comp<GhostComponent>(ghost);

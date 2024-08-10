@@ -2,9 +2,9 @@ using Content.Shared.GameTicking;
 using Content.Shared.Inventory.Events;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
-using Content.Shared.SpaceStories.Nightvision;
+using Content.Shared.Stories.Nightvision;
 
-namespace Content.Server.SpaceStories.Nightvision;
+namespace Content.Server.Stories.Nightvision;
 
 public sealed class NightvisionSystem : EntitySystem
 {

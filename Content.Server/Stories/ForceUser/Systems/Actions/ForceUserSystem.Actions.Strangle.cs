@@ -2,10 +2,10 @@ using Content.Shared.DoAfter;
 using Content.Shared.Standing;
 using Content.Shared.Gravity;
 using Content.Shared.Speech.Muting;
-using Content.Shared.SpaceStories.ForceUser.Actions.Events;
+using Content.Shared.Stories.ForceUser.Actions.Events;
 using Content.Shared.Movement.Components;
 
-namespace Content.Server.SpaceStories.ForceUser;
+namespace Content.Server.Stories.ForceUser;
 public sealed partial class ForceUserSystem
 {
     public const float DamageLimit = 100f;

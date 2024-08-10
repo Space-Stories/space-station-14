@@ -19,3 +19,11 @@
   frequency: 1984
   color: "#1b67a5"
   longRange: true
+
+- type: radioChannel
+  id: ShadowlingMind
+  name: chat-radio-shadowling
+  frequency: 98767
+  keycode: 'ш'
+  color: "#8b0000"
+  longRange: true

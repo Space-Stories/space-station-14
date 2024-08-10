@@ -28,3 +28,30 @@
           - Flash
           - Handcuff
           - EnergySword
+
+- type: entity
+  parent: ClothingBeltSheath
+  id: ClothingBeltSheathExe
+  name: ножны для световой рапиры
+  description: Богато украшенные ножны, предназначенные для хранения клинка.
+  components:
+    - type: Sprite
+      sprite: Stories/Clothing/Belt/e_rapier_sheath.rsi
+      state: sheath
+    - type: Clothing
+      sprite: Stories/Clothing/Belt/e_rapier_sheath.rsi
+    - type: ItemSlots
+      slots:
+        item:
+          name: Sabre
+          insertVerbText: sheath-insert-verb
+          ejectVerbText: sheath-eject-verb
+          whitelist:
+            components:
+              - Lightsaber
+    - type: ItemMapper
+      mapLayers:
+        sheath-sabre:
+          whitelist:
+            components:
+              - Lightsaber

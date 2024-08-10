@@ -24,6 +24,6 @@ public sealed class AutoTraitorSystem : EntitySystem
 
     private void OnMindAdded(EntityUid uid, AutoTraitorComponent comp, MindAddedMessage args)
     {
-        _antag.ForceMakeAntag<AutoTraitorComponent>(args.Mind.Comp.Session, DefaultTraitorRule);
+        // _antag.ForceMakeAntag<AutoTraitorComponent>(args.Mind.Comp.Session, DefaultTraitorRule); // Stories: Крашит сервер. Что поделать.
     }
 }

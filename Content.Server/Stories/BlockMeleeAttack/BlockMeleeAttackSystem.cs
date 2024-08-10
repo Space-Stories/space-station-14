@@ -6,7 +6,7 @@ using Robust.Shared.Random;
 using Robust.Shared.Timing;
 using Content.Shared.Item.ItemToggle.Components;
 
-namespace Content.Server.SpaceStories.BlockMeleeAttack;
+namespace Content.Server.Stories.BlockMeleeAttack;
 
 public sealed partial class BlockMeleeAttackSystem : EntitySystem
 {

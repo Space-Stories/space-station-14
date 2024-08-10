@@ -2,11 +2,11 @@ using Content.Server.Light.EntitySystems;
 using Content.Shared.Actions;
 using Content.Server.Light.Components;
 using Content.Shared.Polymorph;
-using Content.Server.SpaceStories.ForceUser.Components;
+using Content.Server.Stories.ForceUser.Components;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
 
-namespace Content.Server.SpaceStories.ForceUser.Systems;
+namespace Content.Server.Stories.ForceUser.Systems;
 public sealed partial class SithGhostSystem : EntitySystem
 {
     [Dependency] private readonly SharedActionsSystem _actions = default!;

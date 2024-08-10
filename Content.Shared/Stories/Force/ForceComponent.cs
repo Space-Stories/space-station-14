@@ -1,6 +1,6 @@
 using Content.Shared.FixedPoint;
 
-namespace Content.Shared.SpaceStories.Force;
+namespace Content.Shared.Stories.Force;
 
 [RegisterComponent]
 public sealed partial class ForceComponent : Component

@@ -13,15 +13,13 @@
   startingGear: PRISONEngineerGear
   icon: "JobIconSpacePrisonEngineer"
   supervisors: начальник тюрьмы
-  canBeAntag: false
+  canBeAntag: true
   access:
+  - Prisoner
   - Prison
   - PrisonEng
-  # - Security
-  - Brig
   - Maintenance
   - External
-  - Engineering
   # special:
   # - !type:AddImplantSpecial
   #   implants: [ MindShieldImplant ]

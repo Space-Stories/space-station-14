@@ -1,8 +1,11 @@
 using System.Numerics;
+using Content.Server.Popups;
+using Content.Shared.Damage;
 using Robust.Server.GameObjects;
 using Robust.Shared.Map;
 using Robust.Shared.Map.Components;
 using Robust.Shared.Utility;
+using Content.Shared.Maps;
 
 namespace Content.Server.Stories.Photosensitivity;
 
@@ -12,10 +15,67 @@ public sealed partial class PhotosensitivitySystem : EntitySystem
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly IMapManager _mapManager = default!;
     [Dependency] private readonly MapSystem _mapSystem = default!;
+    [Dependency] private readonly DamageableSystem _damageable = default!;
+    [Dependency] private readonly PopupSystem _popup = default!;
+    [Dependency] private readonly ITileDefinitionManager _tileDefManager = default!;
+    private const float UpdateTimer = 2f;
+    private float _timer;
+    public const float MaxIllumination = 10f;
+    public const float MinIllumination = 0f;
 
-    // If it will'be used for something else than shadowlings then it should be rewritten
-    // to calculate tiles lightness every time some light point appears, disappears or moving
-    // due to performance issues this can cause
+    // FIXME: Shitcode + Hardcode
+    public override void Update(float frameTime)
+    {
+        _timer += frameTime;
+
+        if (_timer < UpdateTimer)
+            return;
+
+        _timer -= UpdateTimer;
+
+        var query = EntityQueryEnumerator<PhotosensitivityComponent>();
+
+        while (query.MoveNext(out var uid, out var comp))
+        {
+            if (!comp.Enabled)
+                continue;
+
+            var gridUid = Transform(uid).GridUid;
+
+            if (gridUid != null && TryComp<MapGridComponent>(gridUid, out var grid))
+            {
+                var tile = grid.GetTileRef(Transform(uid).Coordinates);
+
+                if (tile.IsSpace(_tileDefManager))
+                {
+                    _damageable.TryChangeDamage(uid, comp.DamageInSpace, true, false);
+                    _popup.PopupEntity("Свет выжигает вас!", uid, uid);
+                    continue;
+                }
+            }
+            else
+            {
+                _damageable.TryChangeDamage(uid, comp.DamageInSpace, true, false);
+                _popup.PopupEntity("Свет выжигает вас!", uid, uid);
+                continue;
+            }
+
+            var illumination = Math.Min(GetIllumination(uid), 10);
+
+            if (illumination > 1.5)
+            {
+                _damageable.TryChangeDamage(uid, comp.Damage * illumination, true, false);
+                _popup.PopupEntity("Свет выжигает вас!", uid, uid);
+            }
+            else if (illumination < 1)
+            {
+                _damageable.TryChangeDamage(uid, comp.DarknessHealing, true, false);
+            }
+        }
+    }
+
+    // В душе не чаю, что тут написано Lokilife'ом и не желаю разбираться, но
+    // это единственный щиткод от этого автора, который будет в тенеморфе.
     public float GetIllumination(EntityUid uid)
     {
         var destTrs = Transform(uid);
@@ -51,7 +111,7 @@ public sealed partial class PhotosensitivitySystem : EntitySystem
 
                 Vector2 srcLocal = sourceTrs.ParentUid == grid.Owner
                     ? sourceTrs.LocalPosition
-                    : Vector2.Transform(source, gridTrs.InvLocalMatrix); 
+                    : Vector2.Transform(source, gridTrs.InvLocalMatrix);
 
                 Vector2 dstLocal = destTrs.ParentUid == grid.Owner
                     ? destTrs.LocalPosition
@@ -95,6 +155,12 @@ public sealed partial class PhotosensitivitySystem : EntitySystem
 
             illumination = Math.Max(illumination, lightPoint.Comp.Radius - lightPoint.Comp.Energy * dist);
         }
+
+        if (illumination > MaxIllumination)
+            illumination = MaxIllumination;
+
+        if (illumination < MinIllumination)
+            illumination = MinIllumination;
 
         return illumination;
     }

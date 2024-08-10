@@ -149,7 +149,7 @@
   components:
   - type: StationEvent
     weight: 6
-    duration: 1
+    duration: null
     earliestStart: 30
     reoccurrenceDelay: 20
     minimumPlayers: 30
@@ -171,6 +171,8 @@
       max: 1
       pickPlayer: false
       startingGear: SpaceNinjaGear
+      roleLoadout:
+      - RoleSurvivalEVA
       briefing:
         text: ninja-role-greeting
         color: Green
@@ -508,6 +510,7 @@
     startAudio:
       path: /Audio/Announcements/intercept.ogg
     duration: null # the rule has to last the whole round not 1 second
+    occursDuringRoundEnd: false
   - type: AlertLevelInterceptionRule
   - type: AntagSelection
     definitions:

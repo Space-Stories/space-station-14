@@ -2,7 +2,7 @@
   parent: ClothingOuterArmorBasic
   id: ClothingOuterVestJediNt
   name: утепленный бронежилет стража клинка
-  description: Потому что, кто-то сказал, что бронежилеты могут быть утепленны.
+  description: Потому что, кто-то сказал, что бронежилеты могут быть утепленны. Ваш щит уже утеплен!
   components:
     - type: Tag
       tags:
@@ -24,3 +24,14 @@
       sprite: Stories/Clothing/OuterClothing/Vests/armor_sp.rsi
     - type: Clothing
       sprite: Stories/Clothing/OuterClothing/Vests/armor_sp.rsi
+
+- type: entity
+  parent: ClothingOuterArmorBasic
+  id: ClothingOuterVestArmorExe
+  name: бронежилет хранителя
+  description: Тонкий бронежилет типа I, обеспечивающий достойную защиту от большинства видов повреждений.
+  components:
+    - type: Sprite
+      sprite: Stories/Clothing/OuterClothing/Vests/exe_armor.rsi
+    - type: Clothing
+      sprite: Stories/Clothing/OuterClothing/Vests/exe_armor.rsi

@@ -1,7 +1,7 @@
-using Content.Server.SpaceStories.ForceUser.Components;
+using Content.Server.Stories.ForceUser.Components;
 using Content.Server.Ghost;
 
-namespace Content.Server.SpaceStories.ForceUser.Systems;
+namespace Content.Server.Stories.ForceUser.Systems;
 public sealed class PassiveGhostBooSystem : EntitySystem
 {
     [Dependency] private readonly EntityLookupSystem _lookup = default!;

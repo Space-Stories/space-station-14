@@ -38,10 +38,10 @@
     stock: 1
 
 - type: listing
-  id: ActionRecallLightSaber
+  id: ActionRecallLightsaber
   name: Призвать световой меч
   description: Призовите ваш световой меч к себе. Если он не сможет настигнуть вас, то телепортируется к вам.
-  productAction: ActionRecallLightSaber
+  productAction: ActionRecallLightsaber
   cost:
     SkillPoint: 2
   categories:

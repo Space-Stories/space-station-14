@@ -1,12 +1,12 @@
 using Robust.Shared.Physics.Events;
-using Content.Server.SpaceStories.ForceUser.ProtectiveBubble.Components;
+using Content.Server.Stories.ForceUser.ProtectiveBubble.Components;
 using Content.Shared.Projectiles;
 using Content.Shared.Damage;
 using Content.Shared.Rounding;
 using SixLabors.ImageSharp.Processing;
 using Content.Shared.Alert;
 
-namespace Content.Server.SpaceStories.ForceUser.ProtectiveBubble.Systems;
+namespace Content.Server.Stories.ForceUser.ProtectiveBubble.Systems;
 
 public sealed partial class ProtectiveBubbleSystem
 {

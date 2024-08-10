@@ -1,11 +1,11 @@
-using Content.Shared.SpaceStories.ForceUser;
-using Content.Shared.SpaceStories.ForceUser.Actions.Events;
+using Content.Shared.Stories.ForceUser;
+using Content.Shared.Stories.ForceUser.Actions.Events;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Coordinates.Helpers;
 using Content.Shared.Maps;
-using Content.Server.SpaceStories.ForceUser.ProtectiveBubble.Components;
+using Content.Server.Stories.ForceUser.ProtectiveBubble.Components;
 
-namespace Content.Server.SpaceStories.ForceUser;
+namespace Content.Server.Stories.ForceUser;
 public sealed partial class ForceUserSystem
 {
     public void InitializeProtectiveBubble()
