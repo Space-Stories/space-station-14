@@ -39,4 +39,3 @@ public sealed partial class ItemToggleDamageOtherOnHitComponent : Component
     [ViewVariables(VVAccess.ReadWrite), DataField, AutoNetworkedField]
     public DamageSpecifier? DeactivatedDamage = null;
 }
-
