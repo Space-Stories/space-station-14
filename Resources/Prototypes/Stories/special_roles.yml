@@ -44,16 +44,18 @@
   id: spaceninja
   state: Ghost
   gameRule: NinjaSpawn
-  gameRulesBlacklist:
-  - NinjaSpawn
 
 - type: specialRole
   id: loneops
   state: Ghost
   gameRule: LoneOpsSpawn
   gameRulesBlacklist:
-  - LoneOpsSpawn
   - Nukeops
+
+- type: specialRole
+  id: dragon
+  state: Ghost
+  gameRule: DragonSpawn
 
 - type: specialRole
   id: inquisitor
@@ -76,10 +78,3 @@
   - Zombie
   - Nukeops
   - Shadowling
-
-- type: specialRole
-  id: dragon
-  state: Ghost
-  gameRule: DragonSpawn
-  gameRulesBlacklist:
-  - DragonSpawn
