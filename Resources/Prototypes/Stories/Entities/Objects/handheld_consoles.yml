@@ -8,6 +8,7 @@
   - PowerCellSlotSmallItem
   id: BaseHandheldShuttleConsole
   components:
+  - type: ItemToggle
   - type: ApcPowerReceiver
     powerLoad: 200
   - type: ExtensionCableReceiver
