@@ -9,9 +9,6 @@
       - ForceRecallEquipment
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodJedihood
-  - type: Storage
-    maxItemSize: Large
-    maxTotalWeight: 16
   - type: TemperatureProtection
     coefficient: 0.001
   - type: ClothingSpeedModifier
