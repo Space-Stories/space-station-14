@@ -36,6 +36,7 @@
   - Zombie
   - Nukeops
   - Shadowling
+  - Traitor
 
 # Spawn
 
@@ -44,9 +45,6 @@
   state: Ghost
   gameRule: NinjaSpawn
   gameRulesBlacklist:
-  - SithSpawn
-  - DragonSpawn
-  - LoneOpsSpawn
   - NinjaSpawn
 
 - type: specialRole
@@ -54,11 +52,8 @@
   state: Ghost
   gameRule: LoneOpsSpawn
   gameRulesBlacklist:
-  - Nukeops
-  - SithSpawn
-  - DragonSpawn
   - LoneOpsSpawn
-  - NinjaSpawn
+  - Nukeops
 
 - type: specialRole
   id: inquisitor
@@ -66,6 +61,7 @@
   gameRule: SithSpawn
   gameRulesBlacklist:
   - SithSpawn
+  - KyloSpawn
   - Zombie
   - Nukeops
   - Shadowling
@@ -75,20 +71,15 @@
   state: Ghost
   gameRule: KyloSpawn
   gameRulesBlacklist:
+  - SithSpawn
+  - KyloSpawn
   - Zombie
   - Nukeops
   - Shadowling
-  - SithSpawn
-  - DragonSpawn
-  - LoneOpsSpawn
-  - NinjaSpawn
 
 - type: specialRole
   id: dragon
   state: Ghost
   gameRule: DragonSpawn
   gameRulesBlacklist:
-  - SithSpawn
   - DragonSpawn
-  - LoneOpsSpawn
-  - NinjaSpawn
