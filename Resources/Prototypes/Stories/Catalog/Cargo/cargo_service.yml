@@ -4,6 +4,6 @@
     sprite: Stories/Structures/Machines/printer.rsi
     state: icon
   product: CrateServicePrinter
-  cost: 600
+  cost: 1000
   category: cargoproduct-category-name-service
   group: market
