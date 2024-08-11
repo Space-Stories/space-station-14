@@ -1,7 +1,7 @@
 - type: entity
   id: OrganKidanStomach
   parent: BaseAnimalOrgan
-  name: stomach
+  name: желудок
   noSpawn: true
   components:
   - type: Organ
@@ -27,7 +27,7 @@
 - type: entity
   id: OrganKidanLiver
   parent: BaseAnimalOrgan
-  name: liver
+  name: печень
   noSpawn: true
   components:
   - type: Organ
@@ -41,7 +41,7 @@
 - type: entity
   id: OrganKidanHeart
   parent: BaseAnimalOrgan
-  name: heart
+  name: сердце
   noSpawn: true
   components:
   - type: Organ
@@ -57,7 +57,7 @@
 - type: entity
   id: OrganKidanKidneys
   parent: BaseAnimalOrgan
-  name: kidneys
+  name: почки
   noSpawn: true
   components:
   - type: Organ

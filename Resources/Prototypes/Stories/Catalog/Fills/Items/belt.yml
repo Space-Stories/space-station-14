@@ -2,8 +2,8 @@
   parent: ClothingBeltJedi
   id: ClothingBeltJediFilled
   components:
-    - type: StorageFill
-      contents:
-        - id: Handcuffs
-          amount: 3
-        - id: Flash
+  - type: StorageFill
+    contents:
+      - id: Handcuffs
+        amount: 3
+      - id: Flash

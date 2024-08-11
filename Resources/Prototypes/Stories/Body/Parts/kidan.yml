@@ -3,7 +3,7 @@
 - type: entity
   id: PartKidan
   parent: BaseItem
-  name: "kidan body part"
+  name: часть тела кидана
   abstract: true
   components:
   - type: Damageable
@@ -26,7 +26,7 @@
 
 - type: entity
   id: TorsoKidan
-  name: "kidan torso"
+  name: торс кидана
   parent: PartKidan
   components:
   - type: Sprite
@@ -47,7 +47,7 @@
 
 - type: entity
   id: HeadKidan
-  name: "kidan head"
+  name: голова кидана
   parent: PartKidan
   components:
   - type: Sprite
@@ -74,7 +74,7 @@
 
 - type: entity
   id: LeftArmKidan
-  name: "left Kidan arm"
+  name: левая рука кидана
   parent: PartKidan
   components:
   - type: Sprite
@@ -89,7 +89,7 @@
 
 - type: entity
   id: RightArmKidan
-  name: "right Kidan arm"
+  name: правая рука кидана
   parent: PartKidan
   components:
   - type: Sprite
@@ -104,7 +104,7 @@
 
 - type: entity
   id: LeftHandKidan
-  name: "left Kidan hand"
+  name: левая кисть кидана
   parent: PartKidan
   components:
   - type: Sprite
@@ -119,7 +119,7 @@
 
 - type: entity
   id: RightHandKidan
-  name: "right Kidan hand"
+  name: правая кисть кидана
   parent: PartKidan
   components:
   - type: Sprite
@@ -134,7 +134,7 @@
 
 - type: entity
   id: LeftLegKidan
-  name: "left Kidan leg"
+  name: левая нога кидана
   parent: PartKidan
   components:
   - type: Sprite
@@ -152,7 +152,7 @@
 
 - type: entity
   id: RightLegKidan
-  name: "right Kidan leg"
+  name: правая нога кидана
   parent: PartKidan
   components:
   - type: Sprite
@@ -170,7 +170,7 @@
 
 - type: entity
   id: LeftFootKidan
-  name: "left Kidan foot"
+  name: левая стопа кидана
   parent: PartKidan
   components:
   - type: Sprite
@@ -185,7 +185,7 @@
 
 - type: entity
   id: RightFootKidan
-  name: "right Kidan foot"
+  name: правая стопа кидана
   parent: PartKidan
   components:
   - type: Sprite

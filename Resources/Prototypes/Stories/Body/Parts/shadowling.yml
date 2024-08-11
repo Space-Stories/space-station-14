@@ -1,9 +1,7 @@
-# TODO: Add descriptions (many)
-# TODO BODY: Part damage
 - type: entity
   id: PartShadowling
   parent: [BaseItem, BasePart]
-  name: "shadowling body part"
+  name: часть тела тенеморфа
   abstract: true
   components:
   - type: Extractable
@@ -16,7 +14,7 @@
 
 - type: entity
   id: TorsoShadowling
-  name: "shadowling torso"
+  name: туловище тенеморфа
   parent: [PartShadowling, BaseTorso]
   components:
   - type: Sprite
@@ -32,7 +30,7 @@
 
 - type: entity
   id: HeadShadowling
-  name: "shadowling head"
+  name: голова тенеморфа
   parent: [PartShadowling, BaseHead]
   components:
   - type: Sprite
@@ -48,7 +46,7 @@
 
 - type: entity
   id: LeftArmShadowling
-  name: "left shadowling arm"
+  name: левая рука тенеморфа
   parent: [PartShadowling, BaseLeftArm]
   components:
   - type: Sprite
@@ -57,7 +55,7 @@
 
 - type: entity
   id: RightArmShadowling
-  name: "right shadowling arm"
+  name: правая рука тенеморфа
   parent: [PartShadowling, BaseRightArm]
   components:
   - type: Sprite
@@ -66,7 +64,7 @@
 
 - type: entity
   id: LeftHandShadowling
-  name: "left shadowling hand"
+  name:  левая кисть тенеморфа
   parent: [PartShadowling, BaseLeftHand]
   components:
   - type: Sprite
@@ -75,7 +73,7 @@
 
 - type: entity
   id: RightHandShadowling
-  name: "right shadowling hand"
+  name: правая кисть тенеморфа
   parent: [PartShadowling, BaseRightHand]
   components:
   - type: Sprite
@@ -84,7 +82,7 @@
 
 - type: entity
   id: LeftLegShadowling
-  name: "left shadowling leg"
+  name: левая нога тенеморфа
   parent: [PartShadowling, BaseLeftLeg]
   components:
   - type: Sprite
@@ -93,7 +91,7 @@
 
 - type: entity
   id: RightLegShadowling
-  name: "right shadowling leg"
+  name: правая нога тенеморфа
   parent: [PartShadowling, BaseRightLeg]
   components:
   - type: Sprite
@@ -102,7 +100,7 @@
 
 - type: entity
   id: LeftFootShadowling
-  name: "left shadowling foot"
+  name: левая стопа тенеморфа
   parent: [PartShadowling, BaseLeftFoot]
   components:
   - type: Sprite
@@ -111,7 +109,7 @@
 
 - type: entity
   id: RightFootShadowling
-  name: "right shadowling foot"
+  name: правая стопа тенеморфа
   parent: [PartShadowling, BaseRightFoot]
   components:
   - type: Sprite
