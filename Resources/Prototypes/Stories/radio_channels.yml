@@ -26,4 +26,11 @@
   frequency: 98767
   keycode: 'ш'
   color: "#8b0000"
+
+- type: radioChannel
+  id: SpafMind #for spaf
+  name: Общий разум
+  keycode: 'r'
+  frequency: 9361
+  color: "#00FF00"
   longRange: true
