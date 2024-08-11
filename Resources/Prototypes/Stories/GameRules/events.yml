@@ -188,3 +188,20 @@
       mindComponents:
       - type: EmpireMemberRole
         prototype: EmpireMember
+
+- type: entity
+  id: SpafMigration
+  parent: BaseStationEventShortDelay
+  components:
+  - type: StationEvent
+    startAnnouncement: station-event-vent-creatures-start-announcement
+    startAudio:
+      path: /Audio/Announcements/attention.ogg
+    earliestStart: 15
+    weight: 6
+    duration: 50
+    minimumPlayers: 30
+  - type: VentCrittersRule
+    specialEntries:
+    - id: SpawnPointGhostSpaf
+      prob: 0.001

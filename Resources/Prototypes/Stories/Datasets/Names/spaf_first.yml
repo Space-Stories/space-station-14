@@ -1,0 +1,15 @@
+- type: dataset
+  id: SpafFirst
+  values:
+  #- Green
+  - Зеленый
+  #- Meadow
+  - Луговой
+  #- Bloody
+  - Кровавый
+  #- Shadow
+  - Призрачный
+  #- Dark
+  - Темный
+  #- Silent
+  - Бесшумный

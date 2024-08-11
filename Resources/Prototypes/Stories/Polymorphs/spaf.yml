@@ -1,0 +1,10 @@
+- type: polymorph
+  id: MobSpaf
+  configuration:
+    entity: MobSpaf
+    forced: true
+    inventory: None
+    transferName: false
+    transferDamage: true
+    revertOnCrit: false
+    revertOnDeath: false

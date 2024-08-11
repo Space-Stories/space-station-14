@@ -1,0 +1,41 @@
+{
+    "version": 1,
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "license": "CC-BY-SA-3.0",
+    "copyright": "Space_Stories",
+    "states": [
+        {
+            "name": "spaf_stealth"
+        },
+        {
+            "name": "spaf_lube"
+        },
+        {
+            "name": "spaf_mine"
+        },
+        {
+            "name": "spaf_light"
+        },
+        {
+            "name": "spaf_glue"
+        },
+        {
+            "name": "spaf_food"
+        },
+        {
+            "name": "spaf_devour"
+        },
+        {
+            "name": "spaf_egg"
+        },
+        {
+            "name": "spaf_evol"
+        },
+        {
+            "name": "spaf_devour_on"
+        }
+    ]
+}

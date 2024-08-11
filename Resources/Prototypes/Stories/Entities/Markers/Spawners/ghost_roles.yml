@@ -15,3 +15,24 @@
       - state: green
       - sprite: Stories/Mobs/Ghosts/sith.rsi
         state: sith
+
+- type: entity
+  id: SpawnPointGhostSpaf
+  name: spaf spawn point
+  suffix: S.P.A.F.
+  parent: MarkerBase
+  components:
+  - type: GhostRole
+    name: ghost-role-information-spaf-name
+    description: ghost-role-information-spaf-description
+    rules: ghost-role-information-spaf-rules
+    raffle:
+      settings: default
+  - type: GhostRoleMobSpawner
+    prototype: MobSpaf
+  - type: Sprite
+    sprite: Markers/jobs.rsi
+    layers:
+      - state: green
+      - sprite: Stories/Mobs/Aliens/spaf.rsi
+        state: spaf

@@ -1,0 +1,22 @@
+- type: dataset
+  id: SpafLast
+  values:
+  #- Predator
+  - Хищник
+  #- Hunter
+  - Охотник
+  #- Devourer
+  - Поглотитель
+  #- Beast
+  - Зверь
+  #- Horror
+  - Ужас
+  #- Death
+  #- Reaper
+  - Жнец
+  #- Bonecracker
+  - Костолом
+  #- Killer
+  - Убийца
+  #- Ravager
+  - Опустошитель
