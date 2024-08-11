@@ -1,13 +1,13 @@
 - type: entity
-  name: printer box
+  name: коробка с принтером
   parent: BoxBase
   id: BoxPrinter
-  description: A cardboard box for document printer.
+  description: Картонная коробка со всем для бумажного принтера.
   components:
   - type: Item
     size: Large
     shape:
-    - 0,0,3,3 
+    - 0,0,3,3
   - type: Storage
     maxItemSize: Large
     grid:
@@ -49,10 +49,10 @@
     - id: PrinterDocFlatpack
 
 - type: entity
-  name: syndie printer box
+  name: коробка с синди принтером
   parent: BoxPrinter
   id: BoxSyndiePrinter
-  description: A syndie cardboard box for document printer.
+  description: Картонная коробка со всем для бумажного принтера.
   components:
   - type: Sprite
     sprite: Stories/Objects/Storage/printer_box_syndie.rsi

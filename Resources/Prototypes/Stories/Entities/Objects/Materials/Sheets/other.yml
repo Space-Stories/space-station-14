@@ -1,6 +1,8 @@
 - type: entity
   parent: Paper
   id: SheetPrinter
+  name: бумага
+  description: Лист материала, широко применяемого на станции в различных целях.
   suffix: Full
   components:
   - type: Material
@@ -30,11 +32,12 @@
   components:
   - type: Stack
     count: 1
-    
+
 - type: entity
   parent: SheetOtherBase
   id: InkPrinter
-  name: printer ink
+  name: чернила
+  description: Лист материала, широко применяемого на станции в различных целях.
   suffix: Full
   components:
   - type: Sprite

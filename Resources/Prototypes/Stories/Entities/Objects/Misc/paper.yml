@@ -1,14 +1,15 @@
 - type: entity
-  name: printed paper
+  name: распечатаная бумага
   parent: Paper
   id: PrintedPaper
-  description: 'A piece of printed paper.'
+  description: Кусок распечатанной бумаги.
   components:
   - type: Sprite
-    sprite: Stories/Objects/Misc/bureaucracy.rsi
+    sprite: Objects/Misc/bureaucracy.rsi
     layers:
     - state: paper
-    - state: paper_words-blue
+    - sprite: Stories/Objects/Misc/bureaucracy.rsi
+      state: paper_words-blue
       map: ["enum.PaperVisualLayers.Writing"]
       visible: false
     - state: paper_stamp-generic
@@ -22,16 +23,18 @@
     backgroundPatchMargin: 16.0, 16.0, 16.0, 16.0
 
 - type: entity
-  name: printed angry paper
+  name: злая печатная бумага
   parent: Paper
   id: PrintedSyndiePaper
-  description: 'A piece of very angry paper.'
+  description: Кусок злой распечатанной бумаги.
   components:
   - type: Sprite
-    sprite: Stories/Objects/Misc/bureaucracy.rsi
+    sprite: Objects/Misc/bureaucracy.rsi
     layers:
-    - state: paper-gray
-    - state: paper-gray_words-red
+    - sprite: Stories/Objects/Misc/bureaucracy.rsi
+      state: paper-gray
+    - sprite: Stories/Objects/Misc/bureaucracy.rsi
+      state: paper-gray_words-red
       map: ["enum.PaperVisualLayers.Writing"]
       visible: false
     - state: paper_stamp-generic

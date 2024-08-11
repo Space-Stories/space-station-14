@@ -1,8 +1,8 @@
 - type: entity
   parent: BaseLathe
   id: PrinterDoc
-  name: document printer
-  description: Bureaucratic perfection. Stores a database of all Nanotrasen documents, and lets you print them as long as you have paper.
+  name: бумажный принтер
+  description: Бюрократический идеал. Хранит в своей базе данных документы и позволяет их печатать, пока у вас есть бумага и чернила.
   components:
   - type: Sprite
     sprite: Stories/Structures/Machines/printer.rsi
@@ -24,59 +24,59 @@
     idleState: icon
     runningState: building
     staticRecipes:
-      - PrintedDocumentReportStationRecipe
-      - PrintedDocumentReporDepartmentRecipe
-      - PrintedDocumentReportEmployeePerformanceRecipe
-      - PrintedDocumentInternalAffairsAgentsReportRecipe
-      - PrintedDocumentConditionReportRecipe
-      - PrintedDocumentReportStudyObjectRecipe
-      - PrintedDocumentExperimentReportRecipe
-      - PrintedDocumentDisposalReportRecipe
-      - PrintedDocumentApplicationAppointmentInterimRecipe
-      - PrintedDocumentApplicationEmploymentRecipe
-      - PrintedDocumentLetterResignationRecipe
-      - PrintedDocumentApplicationAccessRecipe
-      - PrintedDocumentApplicationEquipmentRecipe
-      - PrintedDocumentEvacuationShuttleRequestRecipe
-      - PrintedDocumentShuttleRegistrationRequestRecipe
-      - PrintedDocumentRequestCallMembersCentralCommitteeDSORecipe
-      - PrintedDocumentRequestChangeSalaryRecipe
-      - PrintedDocumentRequestForNonlistedEmploymentRecipe
-      - PrintedDocumentRequestForPromotionRecipe
-      - PrintedDocumentRequestEuthanasiaRecipe
-      - PrintedDocumentRequestConstructionWorkRecipe
-      - PrintedDocumentComplaintOffenseRecipe
-      - PrintedDocumentPermissionEquipmentRecipe
-      - PrintedDocumentSearchPermissionRecipe
-      - PrintedDocumentPrescriptionDrugAuthorizationRecipe
-      - PrintedDocumentPermissionDisposeBodyRecipe
-      - PrintedDocumentConstructionPermitRecipe
-      - PrintedDocumentOrderDismissalRecipe
-      - PrintedDocumentOrderDeprivationAccessRecipe
-      - PrintedDocumentOrderEncouragementRecipe
-      - PrintedDocumentOrderParolePrisonerRecipe
-      - PrintedDocumentOrderRecognizingSentienceCreatureRecipe
-      - PrintedDocumentOrderMedicalInterventionRecipe
-      - PrintedDocumentProductManufacturingOrderRecipe
-      - PrintedDocumentOrderPurchaseResourcesEquipmentRecipe
-      - PrintedDocumentOrderingSpecialEquipmentRecipe
-      - PrintedDocumentCertificateRecipe
-      - PrintedDocumentCertificateAdvancedTrainingRecipe
-      - PrintedDocumentCertificateOffenseRecipe
-      - PrintedDocumentDeathCertificateRecipe
-      - PrintedDocumentMarriageCertificateRecipe
-      - PrintedDocumentDivorceCertificateRecipe
-      - PrintedDocumentClosingIndictmentRecipe
-      - PrintedDocumentSentenceRecipe
-      - PrintedDocumentJudgmentRecipe
-      - PrintedDocumentStatementHealtheRecipe
+    - PrintedDocumentReportStationRecipe
+    - PrintedDocumentReporDepartmentRecipe
+    - PrintedDocumentReportEmployeePerformanceRecipe
+    - PrintedDocumentInternalAffairsAgentsReportRecipe
+    - PrintedDocumentConditionReportRecipe
+    - PrintedDocumentReportStudyObjectRecipe
+    - PrintedDocumentExperimentReportRecipe
+    - PrintedDocumentDisposalReportRecipe
+    - PrintedDocumentApplicationAppointmentInterimRecipe
+    - PrintedDocumentApplicationEmploymentRecipe
+    - PrintedDocumentLetterResignationRecipe
+    - PrintedDocumentApplicationAccessRecipe
+    - PrintedDocumentApplicationEquipmentRecipe
+    - PrintedDocumentEvacuationShuttleRequestRecipe
+    - PrintedDocumentShuttleRegistrationRequestRecipe
+    - PrintedDocumentRequestCallMembersCentralCommitteeDSORecipe
+    - PrintedDocumentRequestChangeSalaryRecipe
+    - PrintedDocumentRequestForNonlistedEmploymentRecipe
+    - PrintedDocumentRequestForPromotionRecipe
+    - PrintedDocumentRequestEuthanasiaRecipe
+    - PrintedDocumentRequestConstructionWorkRecipe
+    - PrintedDocumentComplaintOffenseRecipe
+    - PrintedDocumentPermissionEquipmentRecipe
+    - PrintedDocumentSearchPermissionRecipe
+    - PrintedDocumentPrescriptionDrugAuthorizationRecipe
+    - PrintedDocumentPermissionDisposeBodyRecipe
+    - PrintedDocumentConstructionPermitRecipe
+    - PrintedDocumentOrderDismissalRecipe
+    - PrintedDocumentOrderDeprivationAccessRecipe
+    - PrintedDocumentOrderEncouragementRecipe
+    - PrintedDocumentOrderParolePrisonerRecipe
+    - PrintedDocumentOrderRecognizingSentienceCreatureRecipe
+    - PrintedDocumentOrderMedicalInterventionRecipe
+    - PrintedDocumentProductManufacturingOrderRecipe
+    - PrintedDocumentOrderPurchaseResourcesEquipmentRecipe
+    - PrintedDocumentOrderingSpecialEquipmentRecipe
+    - PrintedDocumentCertificateRecipe
+    - PrintedDocumentCertificateAdvancedTrainingRecipe
+    - PrintedDocumentCertificateOffenseRecipe
+    - PrintedDocumentDeathCertificateRecipe
+    - PrintedDocumentMarriageCertificateRecipe
+    - PrintedDocumentDivorceCertificateRecipe
+    - PrintedDocumentClosingIndictmentRecipe
+    - PrintedDocumentSentenceRecipe
+    - PrintedDocumentJudgmentRecipe
+    - PrintedDocumentStatementHealtheRecipe
   - type: EmagLatheRecipes
     emagStaticRecipes:
-        - PrintedDocumentErrorLoadingFormHeaderRecipe
-        - PrintedDocumentNoticeOfLiquidationRecipe
-        - PrintedDocumentBusinessDealRecipe
-        - PrintedDocumentNoteBeginningMilitaryActionsRecipe
-        - PrintedDocumentReportAccomplishmentGoalsRecipe
+    - PrintedDocumentErrorLoadingFormHeaderRecipe
+    - PrintedDocumentNoticeOfLiquidationRecipe
+    - PrintedDocumentBusinessDealRecipe
+    - PrintedDocumentNoteBeginningMilitaryActionsRecipe
+    - PrintedDocumentReportAccomplishmentGoalsRecipe
   - type: Fixtures
     fixtures:
       fix1:
@@ -99,15 +99,15 @@
 - type: entity
   parent: PrinterDoc
   id: PrinterDocSyndie
-  name: syndie document printer
+  name: бумажный синди принтер
   components:
   - type: Lathe
     producingSound: /Audio/Machines/scanning.ogg
     idleState: icon
     runningState: building
     staticRecipes:
-      - PrintedDocumentErrorLoadingFormHeaderRecipe
-      - PrintedDocumentNoticeOfLiquidationRecipe
-      - PrintedDocumentBusinessDealRecipe
-      - PrintedDocumentNoteBeginningMilitaryActionsRecipe
-      - PrintedDocumentReportAccomplishmentGoalsRecipe
+    - PrintedDocumentErrorLoadingFormHeaderRecipe
+    - PrintedDocumentNoticeOfLiquidationRecipe
+    - PrintedDocumentBusinessDealRecipe
+    - PrintedDocumentNoteBeginningMilitaryActionsRecipe
+    - PrintedDocumentReportAccomplishmentGoalsRecipe
