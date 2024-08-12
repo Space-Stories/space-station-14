@@ -1,0 +1,125 @@
+- type: entity
+  categories: [ HideSpawnMenu ]
+  id: BaseReflector
+  parent: [ BaseMachine, ConstructibleMachine ]
+  components:
+  - type: Transform
+    noRot: false
+  - type: Sprite
+    sprite: Stories/Structures/Machines/reflectors.rsi
+  - type: EmitterReflector
+    projectileReflectorList:
+    - EmitterBolt
+    - AnomalousParticleDelta
+    - AnomalousParticleDeltaStrong
+    - AnomalousParticleEpsilon
+    - AnomalousParticleEpsilonStrong
+    - AnomalousParticleZeta
+    - AnomalousParticleZetaStrong
+    - AnomalousParticleSigma
+    - AnomalousParticleSigmaStrong
+  - type: Gun
+    projectileSpeed: 15
+    fireRate: 10
+    showExamineText: false
+    selectedMode: SemiAuto
+    availableModes:
+    - SemiAuto
+    soundGunshot:
+      path: /Audio/Weapons/Guns/Gunshots/taser2.ogg
+  - type: Rotatable
+    rotateWhileAnchored: true
+  - type: Lock
+    locked: false
+  - type: LockedAnchorable
+  - type: AccessReader
+    access: [["Engineering"]]
+  - type: GuideHelp
+    guides: [Singularity, Power]
+
+- type: entity
+  id: ReflectorBox
+  parent: BaseReflector
+  name: Отражатель, тип "Коробка"
+  description: Это устройство, способное отражать снаряды, попадающие в него, в указанном направлении.
+  components:
+  - type: Sprite
+    state: reflector_circle
+  - type: EmitterReflector
+    blockedDirections:
+    - West
+    reflectionDirection: "South"
+  - type: Machine
+    board: ReflectorBoxMachineCircuitboard
+  - type: Rotatable
+    rotateWhileAnchored: true
+
+- type: entity
+  id: ReflectorCorner
+  parent: BaseReflector
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Window
+  name: Отражатель, тип "Угловой"
+  description: Это устройство, способное отражать снаряды, попадающие в него, в указанном направлении.
+  components:
+  - type: Sprite
+    state: reflector_corner
+  - type: EmitterReflector
+    blockedDirections:
+    - West
+    reflectionDirection: "South"
+  - type: Machine
+    board: ReflectorCornerMachineCircuitboard
+  - type: Rotatable
+    rotateWhileAnchored: true
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PolygonShape
+          vertices:
+          - "-0.15,0.25"
+          - "-0.30,-0.30"
+          - "0.25,0.45"
+        mask:
+        - FullTileMask
+        layer:
+        - FullTileLayer
+
+
+- type: entity
+  id: ReflectorCornerTside
+  parent: BaseReflector
+  name: Отражатель, тип "Двойной-Угловой"
+  description: Это устройство, способное отражать снаряды, попадающие в него, в указанном направлении.
+  placement:
+    mode: SnapgridCenter
+    snap:
+    - Window
+  components:
+  - type: Sprite
+    state: reflector_corner_tside
+  - type: EmitterReflector
+    blockedDirections:
+    - West
+    reflectionDirection: "South"
+  - type: Machine
+    board: ReflectorCornerTsideMachineCircuitboard
+  - type: Rotatable
+    rotateWhileAnchored: true
+  - type: Fixtures
+    fixtures:
+      fix1:
+        shape:
+          !type:PolygonShape
+          vertices:
+          - "-0.5,0"
+          - "0.5,0"
+          - "0.5,-0.5"
+          - "-0.5,-0.5"
+        mask:
+        - FullTileMask
+        layer:
+        - GlassLayer

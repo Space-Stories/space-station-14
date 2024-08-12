@@ -200,6 +200,9 @@
       - ClothingHeadHatWelding
       - WetFloorSign
       - ClothingHeadHatCone
+      - ReflectorBoxMachineCircuitboard
+      - ReflectorCornerMachineCircuitboard
+      - ReflectorCornerTsideMachineCircuitboard
   - type: EmagLatheRecipes
     emagStaticRecipes:
       - BoxLethalshot

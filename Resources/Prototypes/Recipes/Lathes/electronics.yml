@@ -983,3 +983,30 @@
   materials:
     Steel: 100
     Glass: 500
+
+- type: latheRecipe
+  id: ReflectorBoxMachineCircuitboard
+  result: ReflectorBoxMachineCircuitboard
+  category: Circuitry
+  completetime: 4
+  materials:
+    Steel: 100
+    Glass: 500
+
+- type: latheRecipe
+  id: ReflectorCornerMachineCircuitboard
+  result: ReflectorCornerMachineCircuitboard
+  category: Circuitry
+  completetime: 4
+  materials:
+    Steel: 300
+    Glass: 100
+
+- type: latheRecipe
+  id: ReflectorCornerTsideMachineCircuitboard
+  result: ReflectorCornerTsideMachineCircuitboard
+  category: Circuitry
+  completetime: 4
+  materials:
+    Steel: 50
+    Glass: 100
