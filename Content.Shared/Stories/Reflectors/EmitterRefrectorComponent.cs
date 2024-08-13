@@ -1,6 +1,5 @@
+using Content.Shared.Whitelist;
 using Robust.Shared.GameStates;
-using Robust.Shared.Prototypes;
-using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype.List;
 
 namespace Content.Shared.Stories.Reflectors;
 
@@ -10,8 +9,11 @@ public sealed partial class EmitterReflectorComponent : Component
     [DataField]
     public string SourceFixtureId = "projectile";
 
-    [DataField(customTypeSerializer: typeof(PrototypeIdListSerializer<EntityPrototype>))]
-    public List<string> ProjectileReflectorList = new();
+    [DataField]
+    public EntityWhitelist? Whitelist;
+
+    [DataField]
+    public EntityWhitelist? Blacklist;
 
     [DataField]
     public List<string> BlockedDirections = new(); // "East", "West", "North", "South"

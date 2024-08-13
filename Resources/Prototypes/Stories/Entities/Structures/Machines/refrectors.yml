@@ -8,16 +8,11 @@
   - type: Sprite
     sprite: Stories/Structures/Machines/reflectors.rsi
   - type: EmitterReflector
-    projectileReflectorList:
-    - EmitterBolt
-    - AnomalousParticleDelta
-    - AnomalousParticleDeltaStrong
-    - AnomalousParticleEpsilon
-    - AnomalousParticleEpsilonStrong
-    - AnomalousParticleZeta
-    - AnomalousParticleZetaStrong
-    - AnomalousParticleSigma
-    - AnomalousParticleSigmaStrong
+    whitelist:
+      tags:
+      - EmitterBolt
+      components:
+      - AnomalousParticle
   - type: Gun
     projectileSpeed: 15
     fireRate: 10
