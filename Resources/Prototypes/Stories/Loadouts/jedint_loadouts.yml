@@ -13,6 +13,7 @@
   - SurvivalSecurity
   - Trinkets
   - GroupSpeciesBreathTool
+  - PartnersBackpacks # Stories
 
 - type: loadoutGroup
   id: JediNtHead

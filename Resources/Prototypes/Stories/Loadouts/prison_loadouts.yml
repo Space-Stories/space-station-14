@@ -9,6 +9,7 @@
   - PRISONShoes
   - SurvivalSecurity
   - Trinkets
+  - PartnersBackpacks # Stories
 
 - type: roleLoadout
   id: JobPRISONHeadOfPrison
@@ -19,6 +20,7 @@
   - PRISONShoes
   - SurvivalSecurity
   - Trinkets
+  - PartnersBackpacks # Stories
 
 - type: roleLoadout
   id: JobPRISONMedic
@@ -32,6 +34,7 @@
   - Glasses
   - SurvivalMedical
   - Trinkets
+  - PartnersBackpacks # Stories
 
 - type: roleLoadout
   id: JobPRISONEngineer
@@ -42,6 +45,7 @@
   - StationEngineerShoes
   - SurvivalExtended
   - Trinkets
+  - PartnersBackpacks # Stories
 
 - type: loadoutEffectGroup
   id: Prison
@@ -113,6 +117,7 @@
 - type: loadoutGroup
   id: PRISONBackpack
   name: Тюрьма, рюкзак
+  minLimit: 0 # Stories
   loadouts:
   - PRISONBackpack
   - PRISONSatchel

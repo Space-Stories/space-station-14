@@ -111,6 +111,7 @@
 - type: loadoutGroup
   id: CaptainBackpack
   name: loadout-group-captain-backpack
+  minLimit: 0 # Stories
   loadouts:
   - CaptainBackpack
   - CaptainSatchel
@@ -148,6 +149,7 @@
 - type: loadoutGroup
   id: HoPBackpack
   name: loadout-group-hop-backpack
+  minLimit: 0 # Stories
   loadouts:
   - CommonBackpack
   - CommonSatchel
@@ -187,6 +189,7 @@
 
 - type: loadoutGroup
   id: CommonBackpack
+  minLimit: 0 # Stories
   name: loadout-group-backpack
   loadouts:
   - CommonBackpack
@@ -393,6 +396,7 @@
 - type: loadoutGroup
   id: BotanistBackpack
   name: loadout-group-botanist-backpack
+  minLimit: 0 # Stories
   loadouts:
   - BotanistBackpack
   - BotanistSatchel
@@ -423,6 +427,7 @@
 - type: loadoutGroup
   id: ClownBackpack
   name: loadout-group-clown-backpack
+  minLimit: 0 # Stories
   loadouts:
   - ClownBackpack
   - ClownSatchel
@@ -480,6 +485,7 @@
 - type: loadoutGroup
   id: MimeBackpack
   name: loadout-group-mime-backpack
+  minLimit: 0 # Stories
   loadouts:
   - MimeBackpack
   - MimeSatchel
@@ -599,6 +605,7 @@
 - type: loadoutGroup
   id: CargoTechnicianBackpack
   name: loadout-group-cargo-technician-backpack
+  minLimit: 0 # Stories
   loadouts:
   - CargoTechnicianBackpack
   - CargoTechnicianSatchel
@@ -620,6 +627,7 @@
 
 - type: loadoutGroup
   id: SalvageSpecialistBackpack
+  minLimit: 0 # Stories
   name: loadout-group-salvage-specialist-backpack
   loadouts:
   - SalvageSpecialistBackpack
@@ -708,6 +716,7 @@
 
 - type: loadoutGroup
   id: StationEngineerBackpack
+  minLimit: 0 # Stories
   name: loadout-group-station-engineer-backpack
   loadouts:
   - StationEngineerBackpack
@@ -753,6 +762,7 @@
 
 - type: loadoutGroup
   id: AtmosphericTechnicianBackpack
+  minLimit: 0 # Stories
   name: loadout-group-atmospheric-technician-backpack
   loadouts:
   - AtmosphericTechnicianBackpack
@@ -843,6 +853,7 @@
 
 - type: loadoutGroup
   id: ScientistBackpack
+  minLimit: 0 # Stories
   name: loadout-group-scientist-backpack
   loadouts:
   - ScientistBackpack
@@ -972,6 +983,7 @@
 - type: loadoutGroup
   id: SecurityBackpack
   name: loadout-group-security-backpack
+  minLimit: 0 # Stories
   loadouts:
   - SecurityBackpack
   - SecuritySatchel
@@ -1134,6 +1146,7 @@
 - type: loadoutGroup
   id: MedicalBackpack
   name: loadout-group-medical-doctor-backpack
+  minLimit: 0 # Stories
   loadouts:
   - MedicalDoctorBackpack
   - MedicalDoctorSatchel
@@ -1194,6 +1207,7 @@
 - type: loadoutGroup
   id: ChemistBackpack
   name: loadout-group-chemist-backpack
+  minLimit: 0 # Stories
   loadouts:
   - ChemistBackpack
   - ChemistSatchel

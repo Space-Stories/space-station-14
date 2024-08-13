@@ -10,6 +10,7 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  # - PartnersBackpacks # Stories
 
 - type: roleLoadout
   id: JobHeadOfPersonnel
@@ -24,6 +25,7 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - PartnersBackpacks # Stories
 
 # Civilian
 - type: roleLoadout
@@ -40,6 +42,7 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - PartnersBackpacks # Stories
 
 - type: roleLoadout
   id: JobBartender
@@ -53,6 +56,7 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - PartnersBackpacks # Stories
 
 - type: roleLoadout
   id: JobServiceWorker
@@ -64,6 +68,7 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - PartnersBackpacks # Stories
 
 - type: roleLoadout
   id: JobChef
@@ -78,6 +83,7 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - PartnersBackpacks # Stories
 
 - type: roleLoadout
   id: JobLibrarian
@@ -101,6 +107,7 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - PartnersBackpacks # Stories
 
 - type: roleLoadout
   id: JobChaplain
@@ -116,6 +123,7 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - PartnersBackpacks # Stories
 
 - type: roleLoadout
   id: JobJanitor
@@ -131,6 +139,7 @@
   - Trinkets
   - JanitorPlunger
   - GroupSpeciesBreathTool
+  - PartnersBackpacks # Stories
 
 - type: roleLoadout
   id: JobBotanist
@@ -144,6 +153,7 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - PartnersBackpacks # Stories
 
 - type: roleLoadout
   id: JobClown
@@ -157,6 +167,7 @@
   - Glasses
   - SurvivalClown
   - Trinkets
+  - PartnersBackpacks # Stories
 
 - type: roleLoadout
   id: JobMime
@@ -170,6 +181,7 @@
   - Glasses
   - Survival
   - Trinkets
+  - PartnersBackpacks # Stories
 
 - type: roleLoadout
   id: JobMusician
@@ -183,6 +195,7 @@
   - Trinkets
   - Instruments
   - GroupSpeciesBreathTool
+  - PartnersBackpacks # Stories
 
 # Cargo
 - type: roleLoadout
@@ -199,6 +212,7 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - PartnersBackpacks # Stories
 
 - type: roleLoadout
   id: JobCargoTechnician
@@ -213,6 +227,7 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - PartnersBackpacks # Stories
 
 - type: roleLoadout
   id: JobSalvageSpecialist
@@ -225,6 +240,7 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - PartnersBackpacks # Stories
 
 # Engineering
 - type: roleLoadout
@@ -240,6 +256,7 @@
   - SurvivalExtended
   - Trinkets
   - GroupSpeciesBreathTool
+  - PartnersBackpacks # Stories
 
 - type: roleLoadout
   id: JobTechnicalAssistant
@@ -250,6 +267,7 @@
   - SurvivalExtended
   - Trinkets
   - GroupSpeciesBreathTool
+  - PartnersBackpacks # Stories
 
 - type: roleLoadout
   id: JobStationEngineer
@@ -264,6 +282,7 @@
   - SurvivalExtended
   - Trinkets
   - GroupSpeciesBreathTool
+  - PartnersBackpacks # Stories
 
 - type: roleLoadout
   id: JobAtmosphericTechnician
@@ -276,6 +295,7 @@
   - SurvivalExtended
   - Trinkets
   - GroupSpeciesBreathTool
+  - PartnersBackpacks # Stories
 
 # Science
 - type: roleLoadout
@@ -293,6 +313,7 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - PartnersBackpacks # Stories
 
 - type: roleLoadout
   id: JobScientist
@@ -310,6 +331,7 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - PartnersBackpacks # Stories
 
 - type: roleLoadout
   id: JobResearchAssistant
@@ -321,6 +343,7 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - PartnersBackpacks # Stories
 
 # Security
 - type: roleLoadout
@@ -336,6 +359,7 @@
   - SurvivalSecurity
   - Trinkets
   - GroupSpeciesBreathToolSecurity
+  - PartnersBackpacks # Stories
 
 - type: roleLoadout
   id: JobWarden
@@ -349,6 +373,7 @@
   - SurvivalSecurity
   - Trinkets
   - GroupSpeciesBreathToolSecurity
+  - PartnersBackpacks # Stories
 
 - type: roleLoadout
   id: JobSecurityOfficer
@@ -363,6 +388,7 @@
   - SurvivalSecurity
   - Trinkets
   - GroupSpeciesBreathToolSecurity
+  - PartnersBackpacks # Stories
 
 - type: roleLoadout
   id: JobDetective
@@ -377,6 +403,7 @@
   - SurvivalSecurity
   - Trinkets
   - GroupSpeciesBreathToolSecurity
+  - PartnersBackpacks # Stories
 
 - type: roleLoadout
   id: JobSecurityCadet
@@ -386,6 +413,7 @@
   - SurvivalSecurity
   - Trinkets
   - GroupSpeciesBreathToolSecurity
+  - PartnersBackpacks # Stories
 
 # Medical
 - type: roleLoadout
@@ -404,6 +432,7 @@
   - SurvivalMedical
   - Trinkets
   - GroupSpeciesBreathToolMedical
+  - PartnersBackpacks # Stories
 
 - type: roleLoadout
   id: JobMedicalDoctor
@@ -421,6 +450,7 @@
   - SurvivalMedical
   - Trinkets
   - GroupSpeciesBreathToolMedical
+  - PartnersBackpacks # Stories
 
 - type: roleLoadout
   id: JobMedicalIntern
@@ -432,6 +462,7 @@
   - SurvivalMedical
   - Trinkets
   - GroupSpeciesBreathToolMedical
+  - PartnersBackpacks # Stories
 
 - type: roleLoadout
   id: JobChemist
@@ -446,6 +477,7 @@
   - SurvivalMedical
   - Trinkets
   - GroupSpeciesBreathToolMedical
+  - PartnersBackpacks # Stories
 
 - type: roleLoadout
   id: JobParamedic
@@ -462,6 +494,7 @@
   - SurvivalMedical
   - Trinkets
   - GroupSpeciesBreathToolMedical
+  - PartnersBackpacks # Stories
 
 # Wildcards
 - type: roleLoadout
@@ -473,6 +506,7 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - PartnersBackpacks # Stories
 
 - type: roleLoadout
   id: JobReporter
@@ -484,6 +518,7 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - PartnersBackpacks # Stories
 
 - type: roleLoadout
   id: JobPsychologist
@@ -494,6 +529,7 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - PartnersBackpacks # Stories
 
 - type: roleLoadout
   id: JobBoxer
@@ -506,6 +542,7 @@
   - Survival
   - Trinkets
   - GroupSpeciesBreathTool
+  - PartnersBackpacks # Stories
 
 # These loadouts are used for non-crew spawns, like off-station antags and event mobs
 # They will be used without player configuration, thus they will only ever apply what is forced by MinLimit
