@@ -30,7 +30,7 @@
     eyes: ClothingEyesGlassesSecurity
     id: DetectivePDA
     ears: ClothingHeadsetSecurity
-    belt: ClothingBeltHolsterFilled
+    # belt: ClothingBeltHolsterFilled # Stories
   storage:
     back:
     - Flash

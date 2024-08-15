@@ -1,9 +1,11 @@
 - type: entity
-  parent: ClothingBeltJedi
-  id: ClothingBeltJediFilled
+  id: StoriesClothingBeltHolsterFilled
+  parent: ClothingBeltHolster
+  name: плечевая кобура c особым револьвером
+  description: 'Кобура для ношения пистолета и боеприпасов. ВНИМАНИЕ: Только для крутых.'
+  suffix: Filled
   components:
   - type: StorageFill
     contents:
-      - id: Handcuffs
-        amount: 3
-      - id: Flash
+        - id: WeaponRevolver
+        - id: SpeedLoaderMagnum

@@ -1324,6 +1324,7 @@
   name: loadout-group-detective-head
   minLimit: 0
   loadouts:
+  - DetectiveFedoraSpecialGrey # Stories
   - DetectiveFedora
   - DetectiveFedoraGrey
 
@@ -1332,12 +1333,14 @@
   name: loadout-group-detective-neck
   minLimit: 0
   loadouts:
+  - Decbadge # Stories
   - DetectiveTie
 
 - type: loadoutGroup
   id: DetectiveJumpsuit
   name: loadout-group-detective-jumpsuit
   loadouts:
+  - DetectiveJumpsuitSpecialGrey # Stories
   - DetectiveJumpsuit
   - DetectiveJumpskirt
   - NoirJumpsuit
@@ -1348,6 +1351,7 @@
   name: loadout-group-detective-outerclothing
   minLimit: 0
   loadouts:
+  - DetectiveCoatSpecialGrey # Stories
   - DetectiveArmorVest
   - DetectiveCoat
 

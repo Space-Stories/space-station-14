@@ -84,3 +84,14 @@
       sprite: Stories/Clothing/Uniforms/Jumpsuit/exe_jumpsuit.rsi
     - type: Clothing
       sprite: Stories/Clothing/Uniforms/Jumpsuit/exe_jumpsuit.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitDetectiveSpecialGrey
+  name: поношенный костюм
+  description: Тот, кто носит это, олицетворяет занятость.
+  components:
+    - type: Sprite
+      sprite: Stories/Clothing/Uniforms/Jumpsuit/detective.rsi
+    - type: Clothing
+      sprite: Stories/Clothing/Uniforms/Jumpsuit/detective.rsi
