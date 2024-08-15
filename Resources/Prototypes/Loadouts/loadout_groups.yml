@@ -24,13 +24,13 @@
   - ToyFigurineOSP
   - ToyFigurineESP
   - ToyFigurineHOSP
-  # - PlushieLizard
-  # - PlushieSpaceLizard
-  # - Lighter
-  # - CigPackGreen
-  # - CigPackRed
-  # - CigPackBlue
-  # - CigPackBlack
+  - PlushieLizard
+  - PlushieSpaceLizard
+  - Lighter
+  - CigPackGreen
+  - CigPackRed
+  - CigPackBlue
+  - CigPackBlack
   - CigarCase
   - CigarGold
   # - ClothingNeckLGBTPin
