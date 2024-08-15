@@ -90,7 +90,7 @@ public sealed partial class PrisonSystem : EntitySystem
                     if (_mobState.IsAlive(uid))
                         alivePrisoners++;
 
-                    if (Transform(uid).MapID != prisonMapdId)
+                    if (_mobState.IsAlive(uid) && Transform(uid).MapID != prisonMapdId)
                         escapedPrisoners.Add(uid);
                 }
             }
