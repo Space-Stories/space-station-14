@@ -13,7 +13,7 @@
   startingGear: PRISONEngineerGear
   icon: "JobIconSpacePrisonEngineer"
   supervisors: начальник тюрьмы
-  canBeAntag: true
+  canBeAntag: false
   access:
   - Prisoner
   - Prison

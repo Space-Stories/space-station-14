@@ -6,7 +6,7 @@
   startingGear: PRISONPrisoner
   icon: "JobIconPRISONPrisoner"
   supervisors: job-supervisors-everyone
-  canBeAntag: true
+  canBeAntag: false
   access:
   - Prisoner
   special:

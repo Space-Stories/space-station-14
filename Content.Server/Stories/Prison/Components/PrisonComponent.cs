@@ -8,10 +8,4 @@ public sealed partial class PrisonComponent : Component
     /// </summary>
     [DataField]
     public EntityUid? Station;
-
-    /// <summary>
-    /// Тюремные шаттлы.
-    /// </summary>
-    [DataField]
-    public List<EntityUid> Shuttles = new();
 }
