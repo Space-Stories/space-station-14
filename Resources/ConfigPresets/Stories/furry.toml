@@ -5,7 +5,7 @@
 
 [whitelist]
 enabled = true
-reason = "Фрр... UwU..."
+reason = "Фрр... UwU... Рррр..."
 
 [adminlogs]
 enabled = false
@@ -13,14 +13,14 @@ enabled = false
 [game]
 hostname = "📚 Space Stories - Furry 🐶"
 role_timers = false
-desc = "🥝 Фрррр..."
+desc = "🥝 Фрррр... Uwu?"
 map_pool = "StoriesDefaultMapPool"
 
 [shuttle]
 auto_call_time = 0
 
 [rules]
-time = 0.0
+time = 180.0
 
 [queue]
 enabled = false
