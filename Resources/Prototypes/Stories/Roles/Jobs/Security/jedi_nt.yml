@@ -40,31 +40,5 @@
   equipment:
     id: JediNtPDA
     ears: ClothingHeadsetJediNtAlt
-    gloves: ClothingHandsGlovesColorBlack
-    # belt: ClothingBeltSecurityFilled
-
-    # back: ClothingBackpackJediNtFilled
-    # eyes: ClothingEyesGlassesSecurity
-    # jumpsuit: ClothingUniformJumpsuitJediNt
-    # shoes: ClothingShoesBootsJackJediNt
-    # pocket1: LightsaberJediNt
-    # outerClothing: ClothingOuterVestJediNt
-    # neck: ClothingNeckMantleJediNt
-
-# - type: startingGear
-#   id: JediGear
-#   equipment:
-#     jumpsuit: ClothingUniformJumpsuitJedi
-#     # back: ClothingBackpackJediNtFilled
-#     shoes: ClothingShoesBootsJackJedi
-#     # eyes: ClothingEyesGlassesSunglasses
-#     pocket1: LightsaberJediNt
-#     outerClothing: ClothingOuterCoatJediFilled
-#     id: JediNtPDA
-#     ears: ClothingHeadsetJediNtAlt
-#     belt: ClothingBeltJediFilled
-#     # gloves: ClothingHandsGlovesCombat
-#     # neck: ClothingNeckMantleJediNt
-#   # innerclothingskirt: ClothingUniformJumpskirtSP
-#   # satchel: PRISONClothingBackpackSatchelFilled
-#   # duffelbag: PRISONClothingBackpackDuffelFilled
+    gloves: ClothingHandsGlovesCombat
+    eyes: ClothingEyesGlassesSecurity

@@ -95,6 +95,7 @@
   - ClothingBackpackSatchelRl
   # Stories-partners - end
   - ClothingBackpackJediNt
+  - ClothingBackpackSatchelJediNt
 
 - type: loadoutGroup
   id: JediNtOuterClothing
@@ -216,6 +217,13 @@
   id: ClothingBackpackJediNt
   equipment:
     back: ClothingBackpackJediNt
+
+# Рюкзак стража
+
+- type: loadout
+  id: ClothingBackpackSatchelJediNt
+  equipment:
+    back: ClothingBackpackSatchelJediNt
 
 # Роба джедая
 
