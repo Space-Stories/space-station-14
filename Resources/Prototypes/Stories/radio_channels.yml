@@ -26,6 +26,7 @@
   frequency: 98767
   keycode: 'ш'
   color: "#8b0000"
+  longRange: true
 
 - type: radioChannel
   id: SpafMind #for spaf
