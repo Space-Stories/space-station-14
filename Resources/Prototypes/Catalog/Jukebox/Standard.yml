@@ -33,12 +33,6 @@
   name: Qwertyquerty - Starlight
   path:
     path: /Audio/Jukebox/starlight.ogg
-    
-- type: jukebox
-  id: SpaceCruiser
-  name: Ben Prunty - Space Cruiser
-  path:
-    path: /audio/Jukebox/spacecruiser.ogg
 
 - type: jukebox
   id: sunset
