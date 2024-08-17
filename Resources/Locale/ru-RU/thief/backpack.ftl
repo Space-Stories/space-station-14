@@ -33,8 +33,7 @@ thief-backpack-category-syndie-description =
     Побрякушки из забытого прошлого или украденные у нерадивого агента?
     Вы нашли кое-какую связь. Виски, эхо...
     В комплект входят: Емаг, сигареты Interdyne,
-     кодовое слово синдиката, глушитель связи
-и несколько странных красных кристаллов.
+     кодовое слово синдиката, глушитель связи и несколько странных красных кристаллов.
 thief-backpack-category-sleeper-name = Набор сони
 thief-backpack-category-sleeper-description =
     Как в песне поётся: Until we close our eyes for good;
