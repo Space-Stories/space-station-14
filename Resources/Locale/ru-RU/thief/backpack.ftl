@@ -15,7 +15,7 @@ thief-backpack-button-deselect = Выбрано [X]
 thief-backpack-category-chameleon-name = Набор хамелеона
 thief-backpack-category-chameleon-description =
     Вы - никто и кто угодно, вы - мастер маскировки.
-    В комплект входят: комплект хамелеон-одежд, маскировочный проектор и ID карта агента.
+    В комплект входят: комплект хамелеон-одежды, маскировочный проектор и ID карта агента.
     Маскируйтесь под кого угодно и под что угодно.
 thief-backpack-category-tools-name = Набор вломщика
 thief-backpack-category-tools-description =
