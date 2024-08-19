@@ -23,6 +23,12 @@
     path: /Audio/Jukebox/constellations.ogg
 
 - type: jukebox
+  id: Cayava
+  name: James Primate - Cayava
+  path:
+    path: /Audio/Jukebox/cayava.ogg
+
+- type: jukebox
   id: Drifting
   name: Qwertyquerty - Drifting
   path:
