@@ -38,7 +38,7 @@
   id: SpaceCruiser
   name: Ben Prunty - Space Cruiser
   path:
-    path: /audio/Jukebox/spacecruiser.ogg
+    path: /Audio/Jukebox/spacecruiser.ogg
 
 - type: jukebox
   id: sunset
