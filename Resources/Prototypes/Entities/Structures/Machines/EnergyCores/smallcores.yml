@@ -7,7 +7,7 @@
       fix1:
         shape:
           !type:PhysShapeCircle
-          radius: 2
+          radius: 0.5
         density: 80
         mask:
           - FullTileMask
@@ -15,7 +15,7 @@
           - FullTileLayer
 
 - type: entity
-  parent: BaseShuttleCore
+  parent: BaseSmallCore
   id: RnDSmallCore
   description: Ядро для малых шаттлов, которое могжет изготовить каждая космическая станция типа "14", при имении ресурсов.
   name: Малое ядро шаттла РнД.
@@ -23,18 +23,19 @@
   - type: EnergyCore
     damage:
       types:
-        Heat: 0.1
+        Heat: 0.05
     requested: RnD
     timeOfLife: 480
     secPerMoles: 4
-    absorbGas: Gas.NitrousOxide
+    absorbGas: NitrousOxide
+    enablingLenght: 2.6
   - type: PowerSupplier
     supplyRate: 40000
   - type: Sprite
-    sprite: DarkStation/MainGame/Structures/Machines/EnergyCores/sprnd/spblue_mini.rsi
+    sprite: Structures/Machines/EnergyCores/sprnd/sprnd_mini.rsi
 
 - type: entity
-  parent: BaseShuttleCore
+  parent: BaseSmallCore
   id: NTSmallCore
   description: Ядро для малых шаттлов, создающиеся на передовых производствах НаноТрейзен. Сложнее в исполнении, чем ядра РнД, используют при работе БС энергию.
   name: Малое ядро шаттла НаноТрейзен.
@@ -42,18 +43,19 @@
   - type: EnergyCore
     damage:
       types:
-        Heat: 0.05
+        Heat: 0.01
     requested: Gold
     timeOfLife: 600
     secPerMoles: 6
-    absorbGas: Gas.Frezon
+    absorbGas: Frezon
+    enablingLenght: 7.7
   - type: PowerSupplier
     supplyRate: 50000
   - type: Sprite
-    sprite: DarkStation/MainGame/Structures/Machines/EnergyCores/spblue/sprnd_mini.rsi
+    sprite: Structures/Machines/EnergyCores/spblue/spblue_mini.rsi
 
 - type: entity
-  parent: BaseShuttleCore
+  parent: BaseSmallCore
   id: SyndicateSmallCore
   description: Ядро для малых шаттлов, изготвливаемое на теневых производствах корпораций Синдиката. Используют в работе редспейс.
   name: Малое ядро шаттла Синдиката.
@@ -61,18 +63,19 @@
   - type: EnergyCore
     damage:
       types:
-        Heat: 0.1
+        Heat: 0.05
     requested: Sindi
     timeOfLife: 500
     secPerMoles: 5
-    absorbGas: Gas.Ammonia
+    absorbGas: Ammonia
+    enablingLenght: 1.0
   - type: PowerSupplier
     supplyRate: 75000
   - type: Sprite
-    sprite: DarkStation/MainGame/Structures/Machines/EnergyCores/spred/spred_mini.rsi
+    sprite: Structures/Machines/EnergyCores/spred/spred_mini.rsi
 
 - type: entity
-  parent: BaseShuttleCore
+  parent: BaseSmallCore
   id: HandMadeSmallCore
   description: Ядро для малых шаттлов, изготовленное из первого, что попалось под руку. Ненадежно, но просто в создании.
   name: Малое самодельное ядро шаттла.
@@ -80,12 +83,12 @@
   - type: EnergyCore
     damage:
       types:
-        Heat: 0.2
+        Heat: 0.1
     requested: Gray
     timeOfLife: 400
     secPerMoles: 3
-    absorbGas: Gas.Plasma
+    absorbGas: Plasma
   - type: PowerSupplier
     supplyRate: 35000
   - type: Sprite
-    sprite: DarkStation/MainGame/Structures/Machines/EnergyCores/sphere/sphere_mini.rsi
+    sprite: Structures/Machines/EnergyCores/sphere/sphere_mini.rsi

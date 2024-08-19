@@ -20,6 +20,8 @@ using Content.Server.NodeContainer.EntitySystems;
 using Robust.Shared.Containers;
 using Content.Shared.Damage;
 using Content.Shared.DoAfter;
+using Content.Shared.Gravity;
+using Content.Server.Gravity;
 
 namespace Content.Server.Power.EnergyCores;
 
@@ -36,6 +38,7 @@ public sealed partial class EnergyCoreSystem : EntitySystem
     [Dependency] private readonly SharedAppearanceSystem _appearance = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
+    [Dependency] private readonly GravitySystem _gravitySystem = default!;
     private EntityQuery<PowerSupplierComponent> _recQuery;
     private TimeSpan _nextTickCore = TimeSpan.FromSeconds(1);
 
@@ -147,7 +150,8 @@ public sealed partial class EnergyCoreSystem : EntitySystem
     {
         component.Overheat = false;
         component.ForceDisabled = true;
-        TogglePower(component.Owner);
+        if (component.Working)
+            TogglePower(component.Owner);
     }
 
     private void Working(EnergyCoreComponent component, PipeNode air)
@@ -165,6 +169,8 @@ public sealed partial class EnergyCoreSystem : EntitySystem
             {
                 ForceTurnOff(component);
             }
+            if (!_e.TryGetComponent(component.Owner, out GravityGeneratorComponent? gravityGen)) return;
+            gravityGen.Charge = 1;
         }
     }
     private void EnergyCoreTick()
@@ -211,7 +217,7 @@ public sealed partial class EnergyCoreSystem : EntitySystem
     {
         if (core == null) if (!_e.TryGetComponent(uid, out core)) return;
         if (core.Trantransitional) return;
-        if (!_e.TryGetComponent(uid, out ApcPowerReceiverComponent? receiver)) return;   
+        if (!_e.TryGetComponent(uid, out ApcPowerReceiverComponent? receiver)) return;
         EnergyCoreState dataForSet;
         if (receiver.PowerDisabled)
             dataForSet = EnergyCoreState.Enabling;
@@ -232,6 +238,7 @@ public sealed partial class EnergyCoreSystem : EntitySystem
             return true;
         if (!_e.TryGetComponent(uid, out ApcPowerReceiverComponent? receiver)) return true;
         if (!_e.TryGetComponent(uid, out EnergyCoreComponent? core)) return true;
+        if (!_e.TryGetComponent(uid, out GravityGeneratorComponent? gravityGen)) return true;
 
         supplier.Enabled = !supplier.Enabled;
 
@@ -245,7 +252,7 @@ public sealed partial class EnergyCoreSystem : EntitySystem
             receiver.PowerDisabled = false;
             return true;
         }
-
+        
         receiver.PowerDisabled = !receiver.PowerDisabled;
 
         if (user != null)
@@ -259,6 +266,21 @@ public sealed partial class EnergyCoreSystem : EntitySystem
         var dataForSet = !receiver.PowerDisabled ? EnergyCoreState.Enabled : EnergyCoreState.Disabled;
         _appearance.SetData(uid, EnergyCoreVisualLayers.IsOn, dataForSet);
         core.Working = !receiver.PowerDisabled;
+        gravityGen.GravityActive = core.Working;
+
+        if (TryComp(uid, out TransformComponent? xform) &&
+            TryComp<GravityComponent>(xform.ParentUid, out var gravity))
+        {
+            // Force it on in the faster path.
+            if (gravityGen.GravityActive)
+            {
+                _gravitySystem.EnableGravity(xform.ParentUid, gravity);
+            }
+            else
+            {
+                _gravitySystem.RefreshGravity(xform.ParentUid, gravity);
+            }
+        }
         return !supplier.Enabled && !receiver.PowerDisabled; // i.e. PowerEnabled
     }
 

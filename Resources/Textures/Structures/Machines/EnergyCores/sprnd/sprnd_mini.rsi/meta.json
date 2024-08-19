@@ -14,9 +14,6 @@
       "name": "corpus_metal"
     },
     {
-      "name": "corpus_metal"
-    },
-    {
       "name": "corpus_wires-1"
     },
     {
@@ -108,10 +105,10 @@
       ]
     },
     {
-      "name": "spred-off"
+        "name": "sphere_off"
     },
     {
-      "name": "crutch"
+        "name": "crutch"
     }
   ]
 }
