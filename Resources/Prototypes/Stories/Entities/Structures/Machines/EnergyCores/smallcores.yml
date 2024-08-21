@@ -30,7 +30,7 @@
     absorbGas: NitrousOxide
     enablingLenght: 2.6
   - type: PowerSupplier
-    supplyRate: 40000
+    supplyRate: 50000
   - type: Sprite
     sprite: Stories/Structures/Machines/EnergyCores/sprnd/sprnd_mini.rsi
 
@@ -50,7 +50,7 @@
     absorbGas: Frezon
     enablingLenght: 7.7
   - type: PowerSupplier
-    supplyRate: 50000
+    supplyRate: 60000
   - type: Sprite
     sprite: Stories/Structures/Machines/EnergyCores/spblue/spblue_mini.rsi
 
@@ -70,7 +70,7 @@
     absorbGas: Ammonia
     enablingLenght: 1.0
   - type: PowerSupplier
-    supplyRate: 75000
+    supplyRate: 85000
   - type: Sprite
     sprite: Stories/Structures/Machines/EnergyCores/spred/spred_mini.rsi
 
@@ -89,6 +89,6 @@
     secPerMoles: 3
     absorbGas: Plasma
   - type: PowerSupplier
-    supplyRate: 35000
+    supplyRate: 45000
   - type: Sprite
     sprite: Stories/Structures/Machines/EnergyCores/sphere/sphere_mini.rsi
