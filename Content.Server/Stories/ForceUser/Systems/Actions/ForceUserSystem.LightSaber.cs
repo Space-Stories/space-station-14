@@ -20,6 +20,7 @@ using Content.Shared.Verbs;
 using Content.Shared.Stories.ForceUser.Actions.Events;
 
 namespace Content.Server.Stories.ForceUser;
+
 public sealed partial class ForceUserSystem
 {
     public void InitializeLightsaber()
