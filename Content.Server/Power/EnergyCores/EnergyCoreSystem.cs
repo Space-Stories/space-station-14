@@ -22,6 +22,8 @@ using Content.Shared.Damage;
 using Content.Shared.DoAfter;
 using Content.Shared.Gravity;
 using Content.Server.Gravity;
+using Content.Server.Shuttles.Systems;
+using Content.Server.Shuttles.Components;
 
 namespace Content.Server.Power.EnergyCores;
 
@@ -39,6 +41,7 @@ public sealed partial class EnergyCoreSystem : EntitySystem
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfterSystem = default!;
     [Dependency] private readonly GravitySystem _gravitySystem = default!;
+    [Dependency] private readonly ThrusterSystem _thrusterSystem = default!;
     private EntityQuery<PowerSupplierComponent> _recQuery;
     private TimeSpan _nextTickCore = TimeSpan.FromSeconds(1);
 
@@ -281,6 +284,12 @@ public sealed partial class EnergyCoreSystem : EntitySystem
                 _gravitySystem.RefreshGravity(xform.ParentUid, gravity);
             }
         }
+        if (!_e.TryGetComponent(uid, out ThrusterComponent? thruster)) return true;
+        if (!_e.TryGetComponent(uid, out TransformComponent? xForm)) return true;
+        if (core.Working)
+            _thrusterSystem.EnableThruster(uid, thruster, xForm);
+        else
+            _thrusterSystem.DisableThruster(uid, thruster, xForm);
         return !supplier.Enabled && !receiver.PowerDisabled; // i.e. PowerEnabled
     }
 

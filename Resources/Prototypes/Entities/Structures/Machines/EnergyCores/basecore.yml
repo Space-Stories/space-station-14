@@ -7,7 +7,7 @@
     mode: SnapgridCenter
   components:
   - type: Sprite
-    sprite: Structures/Stories/Machines/EnergyCores/sphere/sphere_big.rsi
+    sprite: Stories/Structures/Machines/EnergyCores/sphere/sphere_big.rsi
     layers:
       - state: crutch
         map: ["enum.GravityGeneratorVisualLayers.Base"]
