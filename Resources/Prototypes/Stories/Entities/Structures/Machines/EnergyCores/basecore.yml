@@ -148,6 +148,9 @@
       types:
         Heat: 0.3
     requested: Gold
+  - type: Repairable
+    doAfterDelay: 8
+    fuelCost: 15
 
 #- type: entity
 #  parent: BaseShuttleCore
