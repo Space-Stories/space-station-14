@@ -1,6 +1,6 @@
 
 
-namespace Content.Client.Power.EnergyCores;
+namespace Content.Client.Stories.EnergyCores;
 
 [RegisterComponent]
 public sealed partial class EnergyCoreVisualsComponent : Component

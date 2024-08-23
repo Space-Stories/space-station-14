@@ -1,7 +1,8 @@
-using Content.Shared.Power.EnergyCores;
+using Content.Shared.Stories.EnergyCores;
 using Robust.Client.GameObjects;
+using Content.Client.Power;
 
-namespace Content.Client.Power.EnergyCores;
+namespace Content.Client.Stories.EnergyCores;
 
 public sealed partial class EnergyCoreSystem : VisualizerSystem<EnergyCoreVisualsComponent>
 {

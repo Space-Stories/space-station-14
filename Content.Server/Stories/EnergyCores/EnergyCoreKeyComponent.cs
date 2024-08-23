@@ -1,3 +1,5 @@
+using Content.Shared.Stories.EnergyCores;
+
 namespace Content.Server.Stories.EnergyCores
 {
     [RegisterComponent]

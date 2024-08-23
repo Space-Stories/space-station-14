@@ -1,5 +1,5 @@
 using Content.Server.Atmos.Piping.Unary.EntitySystems;
-using Content.Shared.Power.EnergyCores;
+using Content.Shared.Stories.EnergyCores;
 using Robust.Shared.Timing;
 using Content.Server.Atmos.EntitySystems;
 using Content.Shared.Atmos.Piping.Unary.Components;
@@ -24,7 +24,6 @@ using Content.Shared.Gravity;
 using Content.Server.Gravity;
 using Content.Server.Shuttles.Systems;
 using Content.Server.Shuttles.Components;
-using Content.Shared.Examine;
 
 
 namespace Content.Server.Stories.EnergyCores;

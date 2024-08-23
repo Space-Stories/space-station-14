@@ -1,11 +1,12 @@
 using Content.Shared.Gravity;
 using Content.Shared.Construction.Prototypes;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom.Prototype;
+using Content.Server.Stories.EnergyCores;
 
 namespace Content.Server.Gravity
 {
     [RegisterComponent]
-    [Access(typeof(GravityGeneratorSystem), typeof(Content.Server.Power.EnergyCores.EnergyCoreSystem))]
+    [Access(typeof(GravityGeneratorSystem), typeof(EnergyCoreSystem))]
     public sealed partial class GravityGeneratorComponent : SharedGravityGeneratorComponent
     {
         // 1% charge per second.
