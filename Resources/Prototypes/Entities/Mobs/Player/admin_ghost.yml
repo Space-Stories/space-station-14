@@ -22,6 +22,9 @@
   - type: ComplexInteraction
   - type: Puller
   - type: CombatMode
+  - type: ClothingGrantComponent # Goobstation - Make sure the CE doesn't get cooked by supermatter
+    component:
+    - type: SupermatterImmune
   - type: Physics
     ignorePaused: true
     bodyType: Kinematic

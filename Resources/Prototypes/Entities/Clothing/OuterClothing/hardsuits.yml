@@ -338,6 +338,10 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitEngineeringWhite
+  - type: SupermatterImmune # Goobstation
+  - type: ClothingGrantComponent # Goobstation - Make sure the CE doesn't get cooked by supermatter
+    component:
+    - type: SupermatterImmune
 
 #Chief Medical Officer's Hardsuit
 - type: entity
