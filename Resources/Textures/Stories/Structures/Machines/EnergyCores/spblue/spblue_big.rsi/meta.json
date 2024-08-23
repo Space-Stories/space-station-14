@@ -8,27 +8,7 @@
   },
   "states": [
     {
-      "name": "ANIMATE_core",
-      "delays":[
-        [
-        0.2,
-        0.2,
-        0.2,
-        0.2,
-        0.2,
-        0.2,
-        0.2,
-        0.2,
-        0.2,
-        0.2
-      ]
-    ]
-    },
-    {
       "name": "corpus"
-    },
-    {
-      "name": "corpus_metal"
     },
     {
       "name": "corpus_metal"
@@ -112,7 +92,7 @@
       ]
     },
     {
-      "name": "sphere-off"
+      "name": "sphere_off"
     }
   ]
 }

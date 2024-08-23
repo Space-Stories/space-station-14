@@ -4,7 +4,7 @@ using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 using Content.Shared.Damage;
 using Content.Shared.DoAfter;
 
-namespace Content.Shared.Power.EnergyCores;
+namespace Content.Shared.Stories.EnergyCores;
 
 [RegisterComponent]
 [AutoGenerateComponentPause]

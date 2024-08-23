@@ -24,8 +24,10 @@ using Content.Shared.Gravity;
 using Content.Server.Gravity;
 using Content.Server.Shuttles.Systems;
 using Content.Server.Shuttles.Components;
+using Content.Shared.Examine;
 
-namespace Content.Server.Power.EnergyCores;
+
+namespace Content.Server.Stories.EnergyCores;
 
 public sealed partial class EnergyCoreSystem : EntitySystem
 {
@@ -56,6 +58,7 @@ public sealed partial class EnergyCoreSystem : EntitySystem
         SubscribeLocalEvent<EntRemovedFromContainerMessage>(OnEntRemovedFromContainer);
 
         SubscribeLocalEvent<EnergyCoreComponent, TogglePowerDoAfterEvent>(TogglePowerDoAfter);
+
     }
     private void OnMapInit(EntityUid uid, EnergyCoreComponent component, MapInitEvent args)
     {

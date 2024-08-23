@@ -1,4 +1,4 @@
-namespace Content.Shared.Power.EnergyCores
+namespace Content.Server.Stories.EnergyCores
 {
     [RegisterComponent]
     public sealed partial class EnergyCoreKeyComponent : Component

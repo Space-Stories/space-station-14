@@ -45,7 +45,7 @@
   - type: Appearance
   - type: Pullable
   - type: Damageable
-    damageContainer: Inorganic
+    damageContainer: Silicon
     damageModifierSet: Metallic
   - type: Destructible
     thresholds:

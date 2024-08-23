@@ -1,6 +1,6 @@
 - type: entity
   parent: BaseShuttleCore
-  id: BaseSmallCore
+  id: BaseMediumCore
   components:
   - type: Fixtures
     fixtures:
@@ -15,10 +15,10 @@
           - FullTileLayer
 
 - type: entity
-  parent: BaseSmallCore
-  id: RnDSmallCore
-  description: Ядро для малых шаттлов, которое могжет изготовить каждая космическая станция типа "14", при имении ресурсов.
-  name: Малое ядро шаттла РнД.
+  parent: BaseMediumCore
+  id: RnDMediumCore
+  description: Ядро для средних шаттлов, которое могжет изготовить каждая космическая станция типа "14", при имении ресурсов.
+  name: Среднее ядро шаттла РнД.
   components:
   - type: EnergyCore
     damage:
@@ -30,15 +30,15 @@
     absorbGas: NitrousOxide
     enablingLenght: 2.6
   - type: PowerSupplier
-    supplyRate: 110000
+    supplyRate: 120000
   - type: Sprite
     sprite: Stories/Structures/Machines/EnergyCores/sprnd/sprnd.rsi
 
 - type: entity
-  parent: BaseSmallCore
-  id: NTSmallCore
-  description: Ядро для малых шаттлов, создающиеся на передовых производствах НаноТрейзен. Сложнее в исполнении, чем ядра РнД, используют при работе БС энергию.
-  name: Малое ядро шаттла НаноТрейзен.
+  parent: BaseMediumCore
+  id: NTMediumCore
+  description: Ядро для средних шаттлов, создающиеся на передовых производствах НаноТрейзен. Сложнее в исполнении, чем ядра РнД, используют при работе БС энергию.
+  name: Среднее ядро шаттла НаноТрейзен.
   components:
   - type: EnergyCore
     damage:
@@ -50,15 +50,15 @@
     absorbGas: Frezon
     enablingLenght: 7.7
   - type: PowerSupplier
-    supplyRate: 130000
+    supplyRate: 150000
   - type: Sprite
     sprite: Stories/Structures/Machines/EnergyCores/spblue/spblue.rsi
 
 - type: entity
-  parent: BaseSmallCore
-  id: SyndicateSmallCore
-  description: Ядро для малых шаттлов, изготвливаемое на теневых производствах корпораций Синдиката. Используют в работе редспейс.
-  name: Малое ядро шаттла Синдиката.
+  parent: BaseMediumCore
+  id: SyndicateMediumCore
+  description: Ядро для средних шаттлов, изготвливаемое на теневых производствах корпораций Синдиката. Используют в работе редспейс.
+  name: Среднее ядро шаттла Синдиката.
   components:
   - type: EnergyCore
     damage:
@@ -70,15 +70,15 @@
     absorbGas: Ammonia
     enablingLenght: 1.0
   - type: PowerSupplier
-    supplyRate: 145000
+    supplyRate: 180000
   - type: Sprite
     sprite: Stories/Structures/Machines/EnergyCores/spred/spred.rsi
 
 - type: entity
-  parent: BaseSmallCore
-  id: HandMadeSmallCore
-  description: Ядро для малых шаттлов, изготовленное из первого, что попалось под руку. Ненадежно, но просто в создании.
-  name: Малое самодельное ядро шаттла.
+  parent: BaseMediumCore
+  id: HandMadeMediumCore
+  description: Ядро для средних шаттлов, изготовленное из первого, что попалось под руку. Ненадежно, но просто в создании.
+  name: Среднее самодельное ядро шаттла.
   components:
   - type: EnergyCore
     damage:
@@ -89,6 +89,6 @@
     secPerMoles: 3
     absorbGas: Plasma
   - type: PowerSupplier
-    supplyRate: 90000
+    supplyRate: 100000
   - type: Sprite
     sprite: Stories/Structures/Machines/EnergyCores/sphere/sphere.rsi

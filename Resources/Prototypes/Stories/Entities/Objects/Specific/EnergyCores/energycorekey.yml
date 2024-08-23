@@ -14,7 +14,7 @@
   name: Ключ от ядра шаттла(НТ)
   components:
   - type: Sprite
-    sprite: Stories/Structures/Machines/EnergyCores/key_of_sphere.rsi
+    sprite: Stories/Objects/Specific/EnergyCores/key_of_sphere.rsi
     layers:
       - state: key_of_sphere_gold
         visible: true
@@ -27,7 +27,7 @@
   name: Ключ от ядра шаттла(РНД)
   components:
   - type: Sprite
-    sprite: Stories/Structures/Machines/EnergyCores/key_of_sphere.rsi
+    sprite: Stories/Objects/Specific/EnergyCores/key_of_sphere.rsi
     layers:
       - state: key_of_sphere_rnd
         visible: true
@@ -40,7 +40,7 @@
   name: Ключ от ядра шаттла(Самодельное)
   components:
   - type: Sprite
-    sprite: Stories/Structures/Machines/EnergyCores/key_of_sphere.rsi
+    sprite: Stories/Objects/Specific/EnergyCores/key_of_sphere.rsi
     layers:
       - state: key_of_sphere_gray
         visible: true
@@ -53,7 +53,7 @@
   name: Ключ от ядра шаттла(Синдикат)
   components:
   - type: Sprite
-    sprite: Stories/Structures/Machines/EnergyCores/key_of_sphere.rsi
+    sprite: Stories/Objects/Specific/EnergyCores/key_of_sphere.rsi
     layers:
       - state: key_of_sphere_sindi
         visible: true
