@@ -10,6 +10,7 @@ using Content.Shared.Stealth;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Devour;
 using Content.Shared.Devour.Components;
+using Content.Shared.Mobs;
 
 namespace Content.Shared.Stories.Spaf;
 
@@ -21,6 +22,7 @@ public abstract partial class SharedSpafSystem : EntitySystem
     [Dependency] private readonly HungerSystem _hunger = default!;
     [Dependency] private readonly SharedPuddleSystem _puddle = default!;
     [Dependency] private readonly SharedStealthSystem _stealth = default!;
+    [Dependency] private readonly SharedContainerSystem _container = default!;
     public override void Initialize()
     {
         base.Initialize();
@@ -33,6 +35,7 @@ public abstract partial class SharedSpafSystem : EntitySystem
         SubscribeLocalEvent<SpafComponent, SpafStealthDoAfterEvent>(OnStealthDoAfter);
 
         SubscribeLocalEvent<SpafComponent, DevourDoAfterEvent>(OnDevourDoAfter);
+        SubscribeLocalEvent<SpafComponent, MobStateChangedEvent>(OnMobStateChanged);
 
         SubscribeLocalEvent<HungerComponent, FoodPopupEvent>(OnFood);
     }
@@ -57,6 +60,14 @@ public abstract partial class SharedSpafSystem : EntitySystem
     {
         if (!args.Cancelled && TryComp<DevourerComponent>(uid, out var devourer))
             _hunger.ModifyHunger(uid, devourer.HealRate);
+    }
+
+    private void OnMobStateChanged(EntityUid uid, SpafComponent component, MobStateChangedEvent args)
+    {
+        if (args.NewMobState != MobState.Dead || !TryComp<DevourerComponent>(uid, out var devourer))
+            return;
+
+        _container.EmptyContainer(devourer.Stomach);
     }
 
     private void OnInit(EntityUid uid, SpafComponent component, ComponentInit args)

@@ -22,6 +22,8 @@ using Content.Shared.Mobs.Systems;
 using Robust.Server.Player;
 using Content.Shared.Mind;
 using Content.Server.Mind;
+using Content.Shared.Roles;
+using Content.Shared.Roles.Jobs;
 
 namespace Content.Server.Stories.Prison;
 
@@ -41,7 +43,7 @@ public sealed partial class PrisonSystem : EntitySystem
     [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly StatusEffectsSystem _statusEffects = default!;
-    private const string PrisonerJobId = "PRISONPrisoner";
+    private readonly ProtoId<JobPrototype> _prisonerJobId = "PRISONPrisoner";
     private const string PacifiedKey = "Pacified";
     /// <summary>
     /// Процент сбежавших зеков для их полной победы.
@@ -76,9 +78,11 @@ public sealed partial class PrisonSystem : EntitySystem
             int alivePrisoners = 0;
             HashSet<EntityUid> escapedPrisoners = new();
 
-            foreach (var (player, jobs) in stationJobs.PlayerJobs)
+
+            var queryPrisonersMinds = EntityQueryEnumerator<JobComponent, MindComponent>();
+            while (queryPrisonersMinds.MoveNext(out var uid, out var job, out var mind))
             {
-                if (jobs.Contains(PrisonerJobId))
+                if (job.Prototype == _prisonerJobId)
                     roundstartPrisoners++;
             }
 
