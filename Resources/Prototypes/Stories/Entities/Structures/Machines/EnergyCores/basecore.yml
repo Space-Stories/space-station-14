@@ -28,7 +28,24 @@
         map: [ "enum.EnergyCoreVisualLayers.Enabling" ]
       - state: fly
         map: [ "enum.EnergyCoreVisualLayers.IsOn" ]
-
+  - type: GenericVisualizer
+    visuals:
+      enum.EnergyCoreState.Enabled:
+        enum.EnergyCoreVisualLayers.IsOn:
+          True: { visible: true }
+          False: { visible: false }
+      enum.EnergyCoreState.Disabled:
+        enum.EnergyCoreVisualLayers.IsOff:
+          True: { visible: true }
+          False: { visible: false }
+      enum.EnergyCoreState.Enabling:
+        enum.EnergyCoreVisualLayers.Enabling:
+          True: { visible: true }
+          False: { visible: false }
+      enum.EnergyCoreState.Disabling:
+        enum.EnergyCoreVisualLayers.Disabling:
+          True: { visible: true }
+          False: { visible: false }
   - type: NodeContainer
     examinable: true
     nodes:
@@ -105,12 +122,6 @@
     requireSpace: false
     thrust: 2000
   - type: DoAfter
-  - type: GenericVisualizer
-    visuals:
-      enum.PowerDeviceVisuals.Powered:
-        enum.PowerDeviceVisualLayers.Powered:
-          True: { visible: true }
-          False: { visible: false }
   - type: Fixtures
     fixtures:
       fix1:
