@@ -1,0 +1,11 @@
+- type: jukebox
+  id: Cayava
+  name: James Primate - Cayava
+  path:
+    path: /Audio/Stories/Jukebox/cayava.ogg
+
+- type: jukebox
+  id: SpaceCruiser
+  name: Ben Prunty - Space Cruiser
+  path:
+    path: /Audio/Stories/Jukebox/spacecruiser.ogg
