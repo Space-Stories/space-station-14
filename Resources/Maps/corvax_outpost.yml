@@ -88313,13 +88313,6 @@ entities:
     - type: Transform
       pos: 14.5,24.5
       parent: 2
-- proto: SpawnMobGorillaLargo
-  entities:
-  - uid: 9038
-    components:
-    - type: Transform
-      pos: -19.5,37.5
-      parent: 2
 - proto: SpawnMobMcGriff
   entities:
   - uid: 17579

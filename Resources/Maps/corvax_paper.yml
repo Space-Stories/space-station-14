@@ -88302,18 +88302,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 75.5,49.5
       parent: 2
-- proto: SpawnMobGorillaLargo
-  entities:
-  - uid: 12577
-    components:
-    - type: Transform
-      pos: 5.5,2.5
-      parent: 2
-  - uid: 12578
-    components:
-    - type: Transform
-      pos: 42.5,44.5
-      parent: 2
 - proto: SpawnMobMcGriff
   entities:
   - uid: 12579

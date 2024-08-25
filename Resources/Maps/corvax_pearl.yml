@@ -120611,13 +120611,6 @@ entities:
     - type: Transform
       pos: 57.5,44.5
       parent: 2
-- proto: SpawnMobGorillaLargo
-  entities:
-  - uid: 12311
-    components:
-    - type: Transform
-      pos: -10.5,43.5
-      parent: 2
 - proto: SpawnMobLizard
   entities:
   - uid: 12312
