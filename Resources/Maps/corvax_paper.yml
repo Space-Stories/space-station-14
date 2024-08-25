@@ -38568,7 +38568,7 @@ entities:
     - type: Transform
       pos: -17.5,8.5
       parent: 15861
-- proto: ChairCarp
+- proto: ComfyChair
   entities:
   - uid: 5564
     components:
@@ -40632,7 +40632,7 @@ entities:
     - type: Transform
       pos: 52.480534,69.52751
       parent: 2
-- proto: ClothingNeckNanoTrasenPin
+- proto:
   entities:
   - uid: 5851
     components:
@@ -75099,40 +75099,6 @@ entities:
     - type: Transform
       pos: 73.5,68.5
       parent: 2
-- proto: LootSpawnerContraband
-  entities:
-  - uid: 29
-    components:
-    - type: Transform
-      pos: 26.5,58.5
-      parent: 2
-  - uid: 5771
-    components:
-    - type: Transform
-      pos: 73.5,4.5
-      parent: 2
-  - uid: 5896
-    components:
-    - type: Transform
-      pos: 89.5,21.5
-      parent: 2
-- proto: LootSpawnerContrabandLow
-  entities:
-  - uid: 713
-    components:
-    - type: Transform
-      pos: 56.5,78.5
-      parent: 2
-  - uid: 898
-    components:
-    - type: Transform
-      pos: 16.5,-14.5
-      parent: 2
-  - uid: 5898
-    components:
-    - type: Transform
-      pos: 54.5,32.5
-      parent: 2
 - proto: MachineAnomalyGenerator
   entities:
   - uid: 10617
@@ -78112,7 +78078,7 @@ entities:
     - type: Transform
       pos: 82.5,65.5
       parent: 2
-- proto: PottedPlantAlt5
+- proto: PottedPlant10
   entities:
   - uid: 10961
     components:

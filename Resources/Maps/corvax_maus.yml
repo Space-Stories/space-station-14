@@ -50907,7 +50907,7 @@ entities:
     - type: Transform
       pos: -6.5,-4.5
       parent: 17265
-- proto: ChairCarp
+- proto: ComfyChair
   entities:
   - uid: 5670
     components:
@@ -53088,7 +53088,7 @@ entities:
     - type: Transform
       pos: -54.522316,2.8007936
       parent: 2
-- proto: ClothingHeadHatERTLeaderBeret
+- proto:
   entities:
   - uid: 16362
     components:
@@ -53608,7 +53608,7 @@ entities:
     - type: Transform
       pos: -54.778057,2.456685
       parent: 2
-- proto: ClothingNeckMantleERTLeader
+- proto:
   entities:
   - uid: 16364
     components:
@@ -53617,7 +53617,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingNeckMantleHOSShoulder
+- proto: ClothingNeckMantleHOS
   entities:
   - uid: 19894
     components:
@@ -53726,7 +53726,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingOuterCoatDetectiveDark
+- proto:
   entities:
   - uid: 5979
     components:
@@ -61212,44 +61212,6 @@ entities:
       parent: 6863
     - type: Physics
       canCollide: False
-- proto: ERTSpawnerEngineering
-  entities:
-  - uid: 16423
-    components:
-    - type: Transform
-      pos: 4.5,-4.5
-      parent: 16090
-- proto: ERTSpawnerLeader
-  entities:
-  - uid: 16424
-    components:
-    - type: Transform
-      pos: -5.5,-6.5
-      parent: 16090
-- proto: ERTSpawnerMedical
-  entities:
-  - uid: 16425
-    components:
-    - type: Transform
-      pos: 4.5,-6.5
-      parent: 16090
-- proto: ERTSpawnerSrcurity
-  entities:
-  - uid: 16426
-    components:
-    - type: Transform
-      pos: 6.5,-4.5
-      parent: 16090
-  - uid: 16427
-    components:
-    - type: Transform
-      pos: 6.5,-5.5
-      parent: 16090
-  - uid: 16428
-    components:
-    - type: Transform
-      pos: 6.5,-6.5
-      parent: 16090
 - proto: ExosuitFabricator
   entities:
   - uid: 6865
@@ -89471,40 +89433,6 @@ entities:
     - type: Physics
       canCollide: False
       bodyType: Static
-- proto: LootSpawnerContrabandLow
-  entities:
-  - uid: 2121
-    components:
-    - type: Transform
-      pos: -75.5,15.5
-      parent: 2
-  - uid: 2496
-    components:
-    - type: Transform
-      pos: -42.5,31.5
-      parent: 2
-  - uid: 7260
-    components:
-    - type: Transform
-      pos: -10.5,-33.5
-      parent: 2
-  - uid: 13341
-    components:
-    - type: Transform
-      pos: -1.5,3.5
-      parent: 2
-- proto: LuxuryPen
-  entities:
-  - uid: 10061
-    components:
-    - type: Transform
-      pos: -51.624054,-52.53534
-      parent: 2
-  - uid: 10383
-    components:
-    - type: Transform
-      pos: -33.673576,1.6607132
-      parent: 2
 - proto: Machete
   entities:
   - uid: 10062
@@ -92859,7 +92787,7 @@ entities:
     - type: Transform
       pos: -44.5,-39.5
       parent: 2
-- proto: PottedPlantAlt2
+- proto: PottedPlant17
   entities:
   - uid: 10382
     components:
@@ -92871,14 +92799,14 @@ entities:
     - type: Transform
       pos: -37.5,-3.5
       parent: 2
-- proto: PottedPlantAlt3
+- proto: PottedPlant18
   entities:
   - uid: 10387
     components:
     - type: Transform
       pos: -37.5,-4.5
       parent: 2
-- proto: PottedPlantAlt6
+- proto: PottedPlant19
   entities:
   - uid: 6703
     components:
@@ -92890,7 +92818,7 @@ entities:
     - type: Transform
       pos: -32.5,-39.5
       parent: 2
-- proto: PottedPlantAlt7
+- proto: PottedPlant6
   entities:
   - uid: 19985
     components:

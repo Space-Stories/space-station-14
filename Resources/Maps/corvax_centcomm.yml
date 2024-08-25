@@ -19703,7 +19703,7 @@ entities:
     - type: Transform
       pos: 10.5425625,-10.361721
       parent: 2
-- proto: ClothingHeadHatERTLeaderBeret
+- proto:
   entities:
   - uid: 4771
     components:
@@ -19917,7 +19917,7 @@ entities:
     - type: Transform
       pos: 5.5791564,-32.378746
       parent: 2
-- proto: ClothingNeckMantleERTLeader
+- proto:
   entities:
   - uid: 4773
     components:
@@ -19926,7 +19926,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingNeckNanoTrasenPin
+- proto:
   entities:
   - uid: 478
     components:
@@ -23554,40 +23554,6 @@ entities:
     - type: DeviceLinkSink
       links:
       - 8160
-- proto: ERTSpawnerEngineering
-  entities:
-  - uid: 8353
-    components:
-    - type: Transform
-      pos: 26.5,-38.5
-      parent: 2
-    - type: DeviceLinkSink
-      links:
-      - 8202
-  - uid: 8354
-    components:
-    - type: Transform
-      pos: 26.5,-39.5
-      parent: 2
-    - type: DeviceLinkSink
-      links:
-      - 8203
-  - uid: 8355
-    components:
-    - type: Transform
-      pos: 26.5,-40.5
-      parent: 2
-    - type: DeviceLinkSink
-      links:
-      - 8204
-  - uid: 8365
-    components:
-    - type: Transform
-      pos: -5.5,23.5
-      parent: 2
-    - type: DeviceLinkSink
-      links:
-      - 8161
 - proto: ERTSpawnerJanitor
   entities:
   - uid: 8358
@@ -38366,7 +38332,7 @@ entities:
     - type: Transform
       pos: -15.5,24.5
       parent: 2
-- proto: PottedPlantAlt0
+- proto: PottedPlant16
   entities:
   - uid: 2856
     components:
@@ -38378,14 +38344,14 @@ entities:
     - type: Transform
       pos: -9.5,-38.5
       parent: 2
-- proto: PottedPlantAlt1
+- proto: PottedPlant15
   entities:
   - uid: 3589
     components:
     - type: Transform
       pos: -22.5,-9.5
       parent: 2
-- proto: PottedPlantAlt2
+- proto: PottedPlant17
   entities:
   - uid: 1917
     components:
@@ -38403,7 +38369,7 @@ entities:
     - type: Transform
       pos: -35.5,-1.5
       parent: 2
-- proto: PottedPlantAlt8
+- proto: PottedPlant5
   entities:
   - uid: 3590
     components:

@@ -41127,7 +41127,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: -28.5,-52.5
       parent: 2
-- proto: ChairCarp
+- proto: ComfyChair
   entities:
   - uid: 544
     components:
@@ -51592,56 +51592,6 @@ entities:
     - type: Transform
       pos: 6.3170567,-30.435608
       parent: 2
-- proto: ERTSpawnerEngineering
-  entities:
-  - uid: 17682
-    components:
-    - type: Transform
-      pos: 2.5,-7.5
-      parent: 17647
-    - type: DeviceLinkSink
-      links:
-      - 17649
-- proto: ERTSpawnerJanitor
-  entities:
-  - uid: 17681
-    components:
-    - type: Transform
-      pos: -1.5,-7.5
-      parent: 17647
-    - type: DeviceLinkSink
-      links:
-      - 17649
-- proto: ERTSpawnerLeader
-  entities:
-  - uid: 17683
-    components:
-    - type: Transform
-      pos: -5.5,-5.5
-      parent: 17647
-    - type: DeviceLinkSink
-      links:
-      - 17649
-- proto: ERTSpawnerMedical
-  entities:
-  - uid: 17679
-    components:
-    - type: Transform
-      pos: 2.5,-3.5
-      parent: 17647
-    - type: DeviceLinkSink
-      links:
-      - 17649
-- proto: ERTSpawnerSrcurity
-  entities:
-  - uid: 17678
-    components:
-    - type: Transform
-      pos: -1.5,-3.5
-      parent: 17647
-    - type: DeviceLinkSink
-      links:
-      - 17649
 - proto: ExosuitFabricator
   entities:
   - uid: 5487
@@ -79470,14 +79420,14 @@ entities:
     - type: Transform
       pos: 22.71807,16.368614
       parent: 2
-- proto: PottedPlantAlt3
+- proto: PottedPlant18
   entities:
   - uid: 3225
     components:
     - type: Transform
       pos: 10.5,-57.5
       parent: 2
-- proto: PottedPlantAlt4
+- proto: PottedPlant12
   entities:
   - uid: 9259
     components:
@@ -79490,7 +79440,7 @@ entities:
           showEnts: False
           occludes: True
           ent: 9260
-- proto: PottedPlantAlt7
+- proto: PottedPlant6
   entities:
   - uid: 248
     components:

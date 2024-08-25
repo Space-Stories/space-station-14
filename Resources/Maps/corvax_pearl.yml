@@ -61616,7 +61616,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: -11.5,-15.5
       parent: 15602
-- proto: ChairCarp
+- proto: ComfyChair
   entities:
   - uid: 3446
     components:
@@ -64147,7 +64147,7 @@ entities:
     - type: Transform
       pos: 4.549658,-57.41637
       parent: 2
-- proto: ClothingNeckMantleHOSShoulder
+- proto: ClothingNeckMantleHOS
   entities:
   - uid: 3788
     components:
@@ -110072,7 +110072,7 @@ entities:
           showEnts: False
           occludes: True
           ent: 8
-- proto: PottedPlantAlt7
+- proto: PottedPlant6
   entities:
   - uid: 10769
     components:

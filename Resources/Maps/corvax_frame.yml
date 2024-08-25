@@ -6132,7 +6132,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingNeckMantleHOSShoulder
+- proto: ClothingNeckMantleHOS
   entities:
   - uid: 65
     components:

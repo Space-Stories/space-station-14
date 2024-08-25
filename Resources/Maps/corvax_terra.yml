@@ -26445,7 +26445,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 27.5,30.5
       parent: 2
-- proto: ChairCarp
+- proto: ComfyChair
   entities:
   - uid: 1828
     components:
@@ -47939,7 +47939,7 @@ entities:
     - type: Transform
       pos: 24.5,0.5
       parent: 2
-- proto: PottedPlantAlt0
+- proto: PottedPlant16
   entities:
   - uid: 1877
     components:

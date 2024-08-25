@@ -16042,7 +16042,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -23.5,-7.5
       parent: 2
-- proto: ChairCarp
+- proto: ComfyChair
   entities:
   - uid: 1569
     components:
@@ -29324,67 +29324,6 @@ entities:
     - type: Physics
       canCollide: False
       bodyType: Static
-- proto: LootSpawnerContraband
-  entities:
-  - uid: 1749
-    components:
-    - type: Transform
-      pos: -18.5,13.5
-      parent: 2
-  - uid: 2701
-    components:
-    - type: Transform
-      pos: -18.5,13.5
-      parent: 2
-  - uid: 3172
-    components:
-    - type: Transform
-      pos: 13.5,2.5
-      parent: 5016
-  - uid: 3173
-    components:
-    - type: Transform
-      pos: 13.5,2.5
-      parent: 5016
-  - uid: 5819
-    components:
-    - type: Transform
-      pos: 14.5,2.5
-      parent: 5016
-- proto: LootSpawnerContrabandHigh
-  entities:
-  - uid: 5853
-    components:
-    - type: Transform
-      pos: 1.5,-0.5
-      parent: 5016
-- proto: LootSpawnerContrabandLow
-  entities:
-  - uid: 1751
-    components:
-    - type: Transform
-      pos: -18.5,13.5
-      parent: 2
-  - uid: 1760
-    components:
-    - type: Transform
-      pos: -18.5,13.5
-      parent: 2
-  - uid: 1820
-    components:
-    - type: Transform
-      pos: -18.5,13.5
-      parent: 2
-  - uid: 2038
-    components:
-    - type: Transform
-      pos: -18.5,13.5
-      parent: 2
-  - uid: 2932
-    components:
-    - type: Transform
-      pos: -18.5,13.5
-      parent: 2
 - proto: Machete
   entities:
   - uid: 5519
@@ -30660,7 +30599,7 @@ entities:
     - type: Transform
       pos: -2.5,3.5
       parent: 2
-- proto: PottedPlantAlt7
+- proto: PottedPlant6
   entities:
   - uid: 2955
     components:
