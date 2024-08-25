@@ -12656,13 +12656,6 @@ entities:
     - type: Transform
       pos: -1.5,-4.5
       parent: 183
-- proto: SpawnPointPilot
-  entities:
-  - uid: 1816
-    components:
-    - type: Transform
-      pos: 17.5,21.5
-      parent: 183
 - proto: SpawnPointSalvageSpecialist
   entities:
   - uid: 1611

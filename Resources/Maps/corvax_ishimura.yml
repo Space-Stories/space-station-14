@@ -159208,13 +159208,6 @@ entities:
     - type: Transform
       pos: -93.5,13.5
       parent: 2
-- proto: SpawnPointPilot
-  entities:
-  - uid: 19066
-    components:
-    - type: Transform
-      pos: 38.5,-29.5
-      parent: 2
 - proto: SpawnPointPsychologist
   entities:
   - uid: 19067

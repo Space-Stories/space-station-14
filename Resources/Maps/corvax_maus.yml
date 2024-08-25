@@ -104307,13 +104307,6 @@ entities:
     - type: Transform
       pos: -69.5,-42.5
       parent: 2
-- proto: SpawnPointPilot
-  entities:
-  - uid: 12072
-    components:
-    - type: Transform
-      pos: -13.5,5.5
-      parent: 2
 - proto: SpawnPointPsychologist
   entities:
   - uid: 12073

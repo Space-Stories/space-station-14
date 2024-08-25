@@ -121269,28 +121269,6 @@ entities:
     - type: Transform
       pos: -19.5,26.5
       parent: 2
-- proto: SpawnPointPilot
-  entities:
-  - uid: 12428
-    components:
-    - type: Transform
-      pos: -22.5,-20.5
-      parent: 2
-  - uid: 12429
-    components:
-    - type: Transform
-      pos: -20.5,-20.5
-      parent: 2
-  - uid: 12430
-    components:
-    - type: Transform
-      pos: -5.5,-27.5
-      parent: 2
-  - uid: 12431
-    components:
-    - type: Transform
-      pos: -5.5,-28.5
-      parent: 2
 - proto: SpawnPointPsychologist
   entities:
   - uid: 12432
