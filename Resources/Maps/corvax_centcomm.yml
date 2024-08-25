@@ -42776,27 +42776,6 @@ entities:
     - type: Transform
       pos: -26.07177,-40.353302
       parent: 2
-- proto: ShippingContainerDonkCo
-  entities:
-  - uid: 6559
-    components:
-    - type: Transform
-      pos: 20.5,-6.5
-      parent: 2
-- proto: ShippingContainerKahraman
-  entities:
-  - uid: 2513
-    components:
-    - type: Transform
-      pos: 20.5,-5.5
-      parent: 2
-- proto: ShippingContainerNanotrasen
-  entities:
-  - uid: 4681
-    components:
-    - type: Transform
-      pos: 20.5,-2.5
-      parent: 2
 - proto: ShotGunCabinetFilled
   entities:
   - uid: 8010

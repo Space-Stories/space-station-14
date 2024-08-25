@@ -152176,39 +152176,6 @@ entities:
     - type: Transform
       pos: 4.6959023,11.659249
       parent: 24902
-- proto: ShippingContainerConarex
-  entities:
-  - uid: 18121
-    components:
-    - type: Transform
-      pos: -65.5,-9.5
-      parent: 2
-- proto: ShippingContainerCybersun
-  entities:
-  - uid: 18122
-    components:
-    - type: Transform
-      pos: -65.5,-11.5
-      parent: 2
-- proto: ShippingContainerInterdyne
-  entities:
-  - uid: 18123
-    components:
-    - type: Transform
-      pos: -60.5,-9.5
-      parent: 2
-  - uid: 18124
-    components:
-    - type: Transform
-      pos: -65.5,-10.5
-      parent: 2
-- proto: ShippingContainerNanotrasen
-  entities:
-  - uid: 18125
-    components:
-    - type: Transform
-      pos: -65.5,-12.5
-      parent: 2
 - proto: ShotGunCabinetFilled
   entities:
   - uid: 18126
