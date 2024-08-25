@@ -22,6 +22,7 @@ public abstract partial class SharedForceUserSystem
         SubscribeLocalEvent<LightsaberComponent, LightsaberDetachedEvent>(OnDetached);
         SubscribeLocalEvent<LightsaberComponent, LightsaberHackedEvent>(OnHacked);
     }
+
     private void OnGetVerbs(EntityUid uid, LightsaberComponent component, GetVerbsEvent<InteractionVerb> args)
     {
         if (!args.CanAccess || !args.CanInteract)
@@ -48,7 +49,7 @@ public abstract partial class SharedForceUserSystem
                 }
             });
         }
-        else if (component.LightsaberOwner is { } owner && _mobState.IsAlive(owner))
+        else if (component.LightsaberOwner == args.User)
         {
             args.Verbs.Add(new InteractionVerb()
             {
@@ -66,7 +67,7 @@ public abstract partial class SharedForceUserSystem
                 }
             });
         }
-        else
+        else if (component.LightsaberOwner is { } owner && _mobState.IsAlive(owner))
         {
             args.Verbs.Add(new InteractionVerb()
             {
@@ -91,6 +92,7 @@ public abstract partial class SharedForceUserSystem
         if (args.Cancelled || args.Handled)
             return;
 
+        UnbindLightsaber(args.User);
         BindLightsaber(args.User, uid);
 
         args.Handled = true;
