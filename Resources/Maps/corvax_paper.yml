@@ -40625,13 +40625,6 @@ entities:
     - type: Transform
       pos: 20.471823,16.401287
       parent: 2
-- proto: ClothingNeckNakamuraPin
-  entities:
-  - uid: 5849
-    components:
-    - type: Transform
-      pos: 52.480534,69.52751
-      parent: 2
 - proto:
   entities:
   - uid: 5851
@@ -40663,13 +40656,6 @@ entities:
     - type: Transform
       pos: 35.5,-0.5
       parent: 2
-- proto: ClothingNeckSyndicakePin
-  entities:
-  - uid: 15904
-    components:
-    - type: Transform
-      pos: -13.574856,12.48324
-      parent: 15861
 - proto: ClothingNeckTieDet
   entities:
   - uid: 1083
@@ -41069,15 +41055,6 @@ entities:
     - type: Transform
       pos: 82.5,24.5
       parent: 2
-- proto: ClothingUniformJumpskirtElegantMaid
-  entities:
-  - uid: 5889
-    components:
-    - type: Transform
-      parent: 5888
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: ClothingUniformJumpskirtJanimaidmini
   entities:
   - uid: 5890
@@ -42231,17 +42208,6 @@ entities:
         - 0
         - 0
         - 0
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 5889
-        paper_label: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
 - proto: CrateTrashCartFilled
   entities:
   - uid: 6033
@@ -90593,13 +90559,6 @@ entities:
     components:
     - type: Transform
       pos: 1.5,11.5
-      parent: 2
-- proto: SurveillanceCameraWirelessRouterBase
-  entities:
-  - uid: 12826
-    components:
-    - type: Transform
-      pos: 42.5,57.5
       parent: 2
 - proto: SurveillanceWirelessCameraAnchoredEntertainment
   entities:
