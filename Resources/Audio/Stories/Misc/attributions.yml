@@ -7,3 +7,7 @@
   license: "CC-BY-4.0"
   copyright: "bobik-music"
   source: "https://www.youtube.com/watch?v=vFO7bhv54W0"
+
+- files: ["altdelta".ogg"]
+  license: "CC-BY-4.0"
+  copyright: "M1and1B DS"

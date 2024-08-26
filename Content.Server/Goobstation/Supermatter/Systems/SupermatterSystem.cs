@@ -359,21 +359,12 @@ public sealed class SupermatterSystem : SharedSupermatterSystem
                 case DelamType.Explosion:
                 default:
                     loc = "supermatter-delam-explosion";
-                    break;
-
-                case DelamType.Singulo:
-                    loc = "supermatter-delam-overmass";
-                    alertLevel = "delta";
-                    break;
-
-                case DelamType.Tesla:
-                    loc = "supermatter-delam-tesla";
-                    alertLevel = "delta";
+                    alertLevel = "altdelta";
                     break;
 
                 case DelamType.Cascade:
                     loc = "supermatter-delam-cascade";
-                    alertLevel = "delta";
+                    alertLevel = "C.A.S.C.A.D.E";
                     break;
             }
 
@@ -442,20 +433,13 @@ public sealed class SupermatterSystem : SharedSupermatterSystem
     {
         var mix = _atmosphere.GetContainingMixture(uid, true, true);
 
-        if (mix is { })
         {
-            var absorbedGas = mix.Remove(sm.GasEfficiency * mix.TotalMoles);
-            var moles = absorbedGas.TotalMoles;
-
-            if (moles >= sm.MolePenaltyThreshold)
-                return DelamType.Singulo;
+            return DelamType.Explosion;
         }
-        if (sm.Power >= sm.PowerPenaltyThreshold)
-            return DelamType.Tesla;
 
-        // TODO: add resonance cascade when there's crazy conditions, or a destabilizing crystal :godo:
-
-        return DelamType.Explosion;
+        // при добавлении анти-ноблиума, добавить реакцию "каскад"
+        //       if (sm.Power >= sm.PowerPenaltyThreshold)
+        //    return DelamType.Tesla;
     }
 
     /// <summary>
@@ -488,14 +472,6 @@ public sealed class SupermatterSystem : SharedSupermatterSystem
             case DelamType.Explosion:
             default:
                 _explosion.TriggerExplosive(uid);
-                break;
-
-            case DelamType.Singulo:
-                Spawn(sm.SingularityPrototypeId, xform.Coordinates);
-                break;
-
-            case DelamType.Tesla:
-                Spawn(sm.TeslaPrototypeId, xform.Coordinates);
                 break;
 
             case DelamType.Cascade:
