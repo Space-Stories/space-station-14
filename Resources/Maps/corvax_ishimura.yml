@@ -26103,16 +26103,6 @@ entities:
         - DoorStatus: Toggle
         27741:
         - DoorStatus: Toggle
-        28060:
-        - DoorStatus: Trigger
-        28063:
-        - DoorStatus: Trigger
-        28064:
-        - DoorStatus: Trigger
-        28065:
-        - DoorStatus: Trigger
-        28062:
-        - DoorStatus: Trigger
   - uid: 27736
     components:
     - type: Transform
@@ -26127,8 +26117,6 @@ entities:
       linkedPorts:
         28254:
         - DoorStatus: InputB
-        28061:
-        - DoorStatus: Trigger
 - proto: BlastDoorOpen
   entities:
   - uid: 1055
@@ -76789,13 +76777,6 @@ entities:
     - type: Transform
       pos: 3.3804922,-27.484467
       parent: 2
-- proto: ClothingEyesBinoclardLenses
-  entities:
-  - uid: 9180
-    components:
-    - type: Transform
-      pos: -75.56238,-5.1952434
-      parent: 2
 - proto: ClothingEyesGlasses
   entities:
   - uid: 9182
@@ -76926,19 +76907,6 @@ entities:
     - type: Transform
       pos: -2.5900269,-11.5877075
       parent: 27712
-- proto: ClothingHandsGlovesAerostatic
-  entities:
-  - uid: 9209
-    components:
-    - type: Transform
-      pos: -19.437286,27.58992
-      parent: 2
-  - uid: 9211
-    components:
-    - type: Transform
-      parent: 9210
-    - type: Physics
-      canCollide: False
 - proto: ClothingHandsGlovesBoxingBlue
   entities:
   - uid: 9216
@@ -77183,13 +77151,6 @@ entities:
     components:
     - type: Transform
       pos: 9.46803,9.090267
-      parent: 2
-- proto: ClothingHeadCapCentcomBlack
-  entities:
-  - uid: 9700
-    components:
-    - type: Transform
-      pos: 47.59161,-3.4091012
       parent: 2
 - proto: ClothingHeadHatBunny
   entities:
@@ -77700,13 +77661,6 @@ entities:
     - type: Transform
       pos: -75.593666,21.535728
       parent: 2
-- proto: ClothingNeckCloakCentcomAdmiral
-  entities:
-  - uid: 9335
-    components:
-    - type: Transform
-      pos: -49.524063,30.571947
-      parent: 2
 - proto: ClothingNeckCloakEnby
   entities:
   - uid: 9336
@@ -77803,13 +77757,6 @@ entities:
     - type: Transform
       pos: 44.551403,-12.233146
       parent: 2
-- proto: ClothingNeckHorrific
-  entities:
-  - uid: 9350
-    components:
-    - type: Transform
-      pos: -39.61603,28.938139
-      parent: 2
 - proto:
   entities:
   - uid: 28001
@@ -77840,33 +77787,12 @@ entities:
     - type: Transform
       pos: 15.374619,11.48614
       parent: 2
-- proto: ClothingNeckSyndicakePin
-  entities:
-  - uid: 9353
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -87.77427,27.411627
-      parent: 2
 - proto: ClothingNeckTieDet
   entities:
   - uid: 9354
     components:
     - type: Transform
       pos: 8.465353,27.48247
-      parent: 2
-- proto: ClothingOuterAerostaticBomberJacket
-  entities:
-  - uid: 9213
-    components:
-    - type: Transform
-      parent: 9210
-    - type: Physics
-      canCollide: False
-  - uid: 9355
-    components:
-    - type: Transform
-      pos: -19.437286,28.49617
       parent: 2
 - proto: ClothingOuterApron
   entities:
@@ -78013,27 +77939,6 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingOuterCoatHoSGreatcoat
-  entities:
-  - uid: 9362
-    components:
-    - type: Transform
-      pos: 47.54736,-3.4091012
-      parent: 2
-  - uid: 9375
-    components:
-    - type: Transform
-      parent: 9374
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 9378
-    components:
-    - type: Transform
-      parent: 9377
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: ClothingOuterCoatLab
   entities:
   - uid: 9184
@@ -78049,29 +77954,6 @@ entities:
     components:
     - type: Transform
       pos: -1.3852253,6.663702
-      parent: 2
-- proto: ClothingOuterCoatSecurityOvercoat
-  entities:
-  - uid: 9376
-    components:
-    - type: Transform
-      parent: 9374
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 9379
-    components:
-    - type: Transform
-      parent: 9377
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-- proto: ClothingOuterDiscoAssBlazer
-  entities:
-  - uid: 9381
-    components:
-    - type: Transform
-      pos: -39.54277,32.313835
       parent: 2
 - proto: ClothingOuterHardsuitClown
   entities:
@@ -78432,19 +78314,6 @@ entities:
     - type: Transform
       pos: -34.433907,24.100704
       parent: 2
-- proto: ClothingShoesAerostatic
-  entities:
-  - uid: 9215
-    components:
-    - type: Transform
-      parent: 9210
-    - type: Physics
-      canCollide: False
-  - uid: 9395
-    components:
-    - type: Transform
-      pos: -19.421661,27.93367
-      parent: 2
 - proto: ClothingShoesBling
   entities:
   - uid: 9396
@@ -78706,13 +78575,6 @@ entities:
     - type: Transform
       pos: 17.346148,31.900644
       parent: 2
-- proto: ClothingShoesGreenLizardskin
-  entities:
-  - uid: 9429
-    components:
-    - type: Transform
-      pos: -42.542587,28.46403
-      parent: 2
 - proto: ClothingShoesLeather
   entities:
   - uid: 9185
@@ -78833,13 +78695,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 42.416092,21.495304
       parent: 2
-- proto: ClothingUniformJumpsuitAerostatic
-  entities:
-  - uid: 9435
-    components:
-    - type: Transform
-      pos: -19.499786,29.230545
-      parent: 2
 - proto: ClothingUniformJumpsuitDetective
   entities:
   - uid: 9188
@@ -78934,13 +78789,6 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingUniformJumpsuitSuperstarCop
-  entities:
-  - uid: 9438
-    components:
-    - type: Transform
-      pos: -39.995895,29.48571
-      parent: 2
 - proto: ClothingUniformJumpsuitWeb
   entities:
   - uid: 17320
@@ -89300,15 +89148,6 @@ entities:
         9214:
           position: 0,0
           _rotation: South
-        9213:
-          position: 2,0
-          _rotation: South
-        9215:
-          position: 4,0
-          _rotation: South
-        9211:
-          position: 6,0
-          _rotation: North
         9212:
           position: 0,2
           _rotation: East
@@ -89319,9 +89158,6 @@ entities:
           occludes: True
           ents:
           - 9214
-          - 9213
-          - 9215
-          - 9211
           - 9212
   - uid: 10768
     components:
@@ -89561,13 +89397,6 @@ entities:
     components:
     - type: Transform
       pos: -10.093948,-16.166403
-      parent: 2
-- proto: DrinkCampariBottleFull
-  entities:
-  - uid: 10805
-    components:
-    - type: Transform
-      pos: 43.732716,9.538339
       parent: 2
 - proto: DrinkChampagneBottleFull
   entities:
@@ -136183,18 +136012,6 @@ entities:
         - 0
         - 0
         - 0
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 9376
-          - 9375
-        paper_label: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
   - uid: 9377
     components:
     - type: Transform
@@ -136218,18 +136035,6 @@ entities:
         - 0
         - 0
         - 0
-    - type: ContainerContainer
-      containers:
-        entity_storage: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 9378
-          - 9379
-        paper_label: !type:ContainerSlot
-          showEnts: False
-          occludes: True
-          ent: null
   - uid: 16150
     components:
     - type: Transform
@@ -140167,13 +139972,6 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: PilotPDA
-  entities:
-  - uid: 16565
-    components:
-    - type: Transform
-      pos: -20.721928,8.658562
-      parent: 2
 - proto: PinpointerNuclear
   entities:
   - uid: 16566
@@ -154742,18 +154540,6 @@ entities:
         - Timer: Toggle
         27739:
         - Timer: Toggle
-        28060:
-        - Timer: Trigger
-        28062:
-        - Timer: Trigger
-        28063:
-        - Timer: Trigger
-        28064:
-        - Timer: Trigger
-        28065:
-        - Timer: Trigger
-        28061:
-        - Timer: Trigger
         27742:
         - Timer: Toggle
         27741:
@@ -162359,13 +162145,6 @@ entities:
       - SurveillanceCameraSupply
       nameSet: True
       id: Утилизаторская
-- proto: SurveillanceCameraWirelessRouterBase
-  entities:
-  - uid: 23587
-    components:
-    - type: Transform
-      pos: -106.5,24.5
-      parent: 2
 - proto: SurveillanceWirelessCameraMovableEntertainment
   entities:
   - uid: 19351
