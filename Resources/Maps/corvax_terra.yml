@@ -27742,13 +27742,6 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingHeadHatCapHoS
-  entities:
-  - uid: 1854
-    components:
-    - type: Transform
-      pos: -6.735471,-14.556772
-      parent: 2
 - proto: ClothingHeadHatChef
   entities:
   - uid: 2359
@@ -28082,7 +28075,7 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 2.6638434,-10.667153
       parent: 7097
-- proto: ClothingOuterVestArmorSec
+- proto: ClothingOuterArmorBasic
   entities:
   - uid: 143
     components:
@@ -45411,13 +45404,6 @@ entities:
     components:
     - type: Transform
       pos: 38.5,12.5
-      parent: 2
-- proto: KvassTank
-  entities:
-  - uid: 8282
-    components:
-    - type: Transform
-      pos: 22.5,-32.5
       parent: 2
 - proto: Lamp
   entities:
