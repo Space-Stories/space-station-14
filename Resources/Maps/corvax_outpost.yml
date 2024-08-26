@@ -15511,8 +15511,6 @@ entities:
       - 17651
     - type: DeviceLinkSource
       linkedPorts:
-        17649:
-        - DoorStatus: Trigger
         17653:
         - DoorStatus: Trigger
   - uid: 18889
@@ -42871,13 +42869,6 @@ entities:
     - type: Transform
       pos: -69.38428,-2.445906
       parent: 2
-- proto: ClothingNeckCloakCentcomBlack
-  entities:
-  - uid: 15027
-    components:
-    - type: Transform
-      pos: -79.46602,-8.374183
-      parent: 2
 - proto: ClothingNeckCloakGoliathCloak
   entities:
   - uid: 11038
@@ -43152,7 +43143,7 @@ entities:
     - type: Transform
       pos: 5.5494657,40.506115
       parent: 2
-- proto: ClothingShoesBootsJackSec
+- proto: ClothingShoesBootsCombatFilled
   entities:
   - uid: 1392
     components:
@@ -50720,13 +50711,6 @@ entities:
     components:
     - type: Transform
       pos: -66.234634,36.47222
-      parent: 2
-- proto: DrinkBadTouchGlass
-  entities:
-  - uid: 5504
-    components:
-    - type: Transform
-      pos: 1.350532,-11.329964
       parent: 2
 - proto: DrinkBeerBottleFull
   entities:
@@ -86414,32 +86398,6 @@ entities:
     - type: DeviceLinkSink
       links:
       - 10115
-- proto: SignalTimer
-  entities:
-  - uid: 17649
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 0.5,-0.5
-      parent: 17647
-    - type: SignalTimer
-      delay: 2700
-    - type: DeviceLinkSource
-      linkedPorts:
-        17678:
-        - Timer: Trigger
-        17679:
-        - Timer: Trigger
-        17681:
-        - Timer: Trigger
-        17682:
-        - Timer: Trigger
-        17683:
-        - Timer: Trigger
-    - type: DeviceLinkSink
-      invokeCounter: 1
-      links:
-      - 17650
 - proto: SignAnomaly
   entities:
   - uid: 5276
