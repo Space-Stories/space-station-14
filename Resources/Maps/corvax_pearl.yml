@@ -43052,14 +43052,6 @@ entities:
     - type: Transform
       pos: 9.5,-30.5
       parent: 2
-- proto: BookStationsAndAgents
-  entities:
-  - uid: 441
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 83.5047,-12.623337
-      parent: 2
 - proto: BookTemple
   entities:
   - uid: 442

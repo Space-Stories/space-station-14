@@ -21404,13 +21404,6 @@ entities:
     - type: Transform
       pos: -49.5,-52.5
       parent: 2
-- proto: BookStationsAndAgents
-  entities:
-  - uid: 755
-    components:
-    - type: Transform
-      pos: -29.612967,-57.442905
-      parent: 2
 - proto: BoozeDispenser
   entities:
   - uid: 756

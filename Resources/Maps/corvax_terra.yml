@@ -15756,14 +15756,6 @@ entities:
     - type: Transform
       pos: -1.5,16.5
       parent: 6342
-- proto: BookStationsAndAgents
-  entities:
-  - uid: 1699
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 5.435681,24.348907
-      parent: 2
 - proto: BoozeDispenser
   entities:
   - uid: 4553
