@@ -6385,24 +6385,6 @@ entities:
     - type: Transform
       pos: 4.5,5.5
       parent: 5016
-  - uid: 6764
-    components:
-    - type: Transform
-      pos: 3.5,-1.5
-      parent: 6687
-    - type: DeviceLinkSource
-      linkedPorts:
-        6774:
-        - DoorStatus: InputA
-  - uid: 6765
-    components:
-    - type: Transform
-      pos: -2.5,-1.5
-      parent: 6687
-    - type: DeviceLinkSource
-      linkedPorts:
-        6774:
-        - DoorStatus: InputB
 - proto: BlastDoorOpen
   entities:
   - uid: 224
@@ -16868,18 +16850,6 @@ entities:
         solution@food: !type:ContainerSlot
           ent: 3725
     - type: InsideEntityStorage
-- proto: ClothingHeadHatCapHoS
-  entities:
-  - uid: 86
-    components:
-    - type: MetaData
-      desc: Кажется эту фуражку носил какой-то Генри, и он явно был ГСБ!
-      name: фуражка Генри
-    - type: Transform
-      parent: 2786
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: ClothingHeadHatFlowerWreath
   entities:
   - uid: 4416
@@ -17052,13 +17022,6 @@ entities:
         solution@food: !type:ContainerSlot
           ent: 3496
     - type: InsideEntityStorage
-- proto: ClothingNeckSyndicakePin
-  entities:
-  - uid: 1643
-    components:
-    - type: Transform
-      pos: -28.539452,-5.9368467
-      parent: 2
 - proto: ClothingOuterArmorHeavy
   entities:
   - uid: 5610
@@ -17422,14 +17385,6 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingUniformJumpsuitAerostatic
-  entities:
-  - uid: 5387
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: 13.661739,-3.5450866
-      parent: 5016
 - proto: ClothingUniformJumpsuitColorLightBrown
   entities:
   - uid: 4996
@@ -20172,14 +20127,6 @@ entities:
       parent: 4510
     - type: Physics
       canCollide: False
-- proto: DrinkYorshGlass
-  entities:
-  - uid: 4519
-    components:
-    - type: Transform
-      parent: 4510
-    - type: Physics
-      canCollide: False
 - proto: EmergencyLight
   entities:
   - uid: 6558
@@ -20259,31 +20206,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: -18.4584,11.452088
       parent: 2
-- proto: ERTSpawnerLeader
-  entities:
-  - uid: 7016
-    components:
-    - type: Transform
-      pos: 1.5,9.5
-      parent: 6687
-    - type: DeviceLinkSink
-      invokeCounter: 1
-- proto: ERTSpawnerSrcurity
-  entities:
-  - uid: 7017
-    components:
-    - type: Transform
-      pos: 3.5,3.5
-      parent: 6687
-    - type: DeviceLinkSink
-      invokeCounter: 1
-  - uid: 7018
-    components:
-    - type: Transform
-      pos: -2.5,3.5
-      parent: 6687
-    - type: DeviceLinkSink
-      invokeCounter: 1
 - proto: ExGrenade
   entities:
   - uid: 5443
@@ -22262,7 +22184,6 @@ entities:
           - 4516
           - 4517
           - 4518
-          - 4519
           - 4520
     - type: Storage
       storedItems:
@@ -22289,9 +22210,6 @@ entities:
           _rotation: South
         4518:
           position: 7,0
-          _rotation: South
-        4519:
-          position: 0,2
           _rotation: South
         4520:
           position: 1,2
@@ -28694,8 +28612,6 @@ entities:
         - Pressed: Toggle
         2993:
         - Pressed: Toggle
-        6765:
-        - Pressed: Toggle
 - proto: LockableButtonHeadOfSecurity
   entities:
   - uid: 6652
@@ -28713,8 +28629,6 @@ entities:
         6686:
         - Pressed: Toggle
         3012:
-        - Pressed: Toggle
-        6764:
         - Pressed: Toggle
 - proto: LockerAtmosphericsFilledHardsuit
   entities:
@@ -29018,7 +28932,6 @@ entities:
           - 3495
           - 2848
           - 2788
-          - 86
         paper_label: !type:ContainerSlot
           showEnts: False
           occludes: True
@@ -29307,23 +29220,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -10.591899,24.884758
       parent: 2
-- proto: LogicGate
-  entities:
-  - uid: 6774
-    components:
-    - type: Transform
-      anchored: True
-      pos: 0.5,-2.5
-      parent: 6687
-    - type: DeviceLinkSink
-      invokeCounter: 2
-    - type: DeviceLinkSource
-      linkedPorts:
-        7019:
-        - Output: Trigger
-    - type: Physics
-      canCollide: False
-      bodyType: Static
 - proto: Machete
   entities:
   - uid: 5519
@@ -34863,25 +34759,6 @@ entities:
         - Pressed: Toggle
         6619:
         - Pressed: Toggle
-- proto: SignalTimer
-  entities:
-  - uid: 7019
-    components:
-    - type: Transform
-      pos: -2.5,-1.5
-      parent: 6687
-    - type: SignalTimer
-      delay: 1200
-    - type: DeviceLinkSource
-      linkedPorts:
-        7018:
-        - Timer: Trigger
-        7017:
-        - Timer: Trigger
-        7016:
-        - Timer: Trigger
-    - type: DeviceLinkSink
-      invokeCounter: 1
 - proto: SignArmory
   entities:
   - uid: 5633
