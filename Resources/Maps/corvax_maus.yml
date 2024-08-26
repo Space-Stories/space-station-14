@@ -52628,14 +52628,6 @@ entities:
       parent: 6737
     - type: Physics
       canCollide: False
-- proto: ClothingBackpackSatchelCE
-  entities:
-  - uid: 19923
-    components:
-    - type: Transform
-      parent: 19921
-    - type: Physics
-      canCollide: False
 - proto: ClothingBackpackScience
   entities:
   - uid: 10653
@@ -52715,13 +52707,6 @@ entities:
     components:
     - type: Transform
       pos: -36.51513,-61.211742
-      parent: 2
-- proto: ClothingEyesBinoclardLenses
-  entities:
-  - uid: 5889
-    components:
-    - type: Transform
-      pos: -21.46775,-27.45838
       parent: 2
 - proto: ClothingEyesBlindfold
   entities:
@@ -52832,13 +52817,6 @@ entities:
       parent: 19928
     - type: Physics
       canCollide: False
-- proto: ClothingEyesSalesman
-  entities:
-  - uid: 20030
-    components:
-    - type: Transform
-      pos: -33.59507,-33.414917
-      parent: 2
 - proto: ClothingHandsGlovesColorBlack
   entities:
   - uid: 5903
@@ -52955,15 +52933,6 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingHeadHatBeretCentcomNaval
-  entities:
-  - uid: 5918
-    components:
-    - type: MetaData
-      name: Флотский берет ProshaKartofagen
-    - type: Transform
-      pos: -43.593597,-71.46138
-      parent: 2
 - proto: ClothingHeadHatBeretCmo
   entities:
   - uid: 19929
@@ -53653,13 +53622,6 @@ entities:
     - type: Transform
       pos: -59.52602,-36.436268
       parent: 2
-- proto: ClothingNeckUSSPPin
-  entities:
-  - uid: 11044
-    components:
-    - type: Transform
-      pos: -78.30252,-19.547739
-      parent: 2
 - proto: ClothingOuterApronChef
   entities:
   - uid: 5977
@@ -53981,21 +53943,6 @@ entities:
     - type: Transform
       pos: -33.472637,-30.421116
       parent: 2
-- proto: ClothingOuterVestArmorSec
-  entities:
-  - uid: 5921
-    components:
-    - type: Transform
-      parent: 5919
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 5981
-    components:
-    - type: Transform
-      parent: 5736
-    - type: Physics
-      canCollide: False
 - proto: ClothingOuterVestWebMerc
   entities:
   - uid: 5991
@@ -54010,14 +53957,7 @@ entities:
     - type: Transform
       pos: -20.572067,20.480862
       parent: 2
-- proto: ClothingShoesBootsCowboyBrown
-  entities:
-  - uid: 20178
-    components:
-    - type: Transform
-      pos: -74.2856,-7.2882524
-      parent: 2
-- proto: ClothingShoesBootsJackSecFilled
+- proto: ClothingShoesBootsCombatFilled
   entities:
   - uid: 5922
     components:
@@ -54026,6 +53966,13 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
+- proto: ClothingShoesBootsCowboyBrown
+  entities:
+  - uid: 20178
+    components:
+    - type: Transform
+      pos: -74.2856,-7.2882524
+      parent: 2
 - proto: ClothingShoesBootsMag
   entities:
   - uid: 5994
@@ -54240,18 +54187,6 @@ entities:
     - type: Transform
       pos: -14.113485,-37.48827
       parent: 2
-- proto: ClothingUniformJumpskirtElegantMaid
-  entities:
-  - uid: 6093
-    components:
-    - type: Transform
-      pos: -5.48064,-4.367627
-      parent: 2
-  - uid: 20241
-    components:
-    - type: Transform
-      pos: -33.466637,-31.385777
-      parent: 2
 - proto: ClothingUniformJumpskirtLawyerBlack
   entities:
   - uid: 6771
@@ -54309,14 +54244,6 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingUniformJumpsuitHoSBlack
-  entities:
-  - uid: 5929
-    components:
-    - type: Transform
-      parent: 5736
-    - type: Physics
-      canCollide: False
 - proto: ClothingUniformJumpsuitLawyerBlack
   entities:
   - uid: 6013
@@ -56628,6 +56555,21 @@ entities:
       parent: 2
     - type: NavMapBeacon
       text: Хранилище
+- proto: ClothingOuterArmorBasic
+  entities:
+  - uid: 5921
+    components:
+    - type: Transform
+      parent: 5919
+    - type: Physics
+      canCollide: False
+    - type: InsideEntityStorage
+  - uid: 5981
+    components:
+    - type: Transform
+      parent: 5736
+    - type: Physics
+      canCollide: False
 - proto: DefaultStationBeaconWardensOffice
   entities:
   - uid: 6247
@@ -60295,13 +60237,6 @@ entities:
     components:
     - type: Transform
       pos: -20.530357,-62.515533
-      parent: 2
-- proto: DrinkBadTouchGlass
-  entities:
-  - uid: 20012
-    components:
-    - type: Transform
-      pos: -29.39242,-29.393179
       parent: 2
 - proto: DrinkBeerBottleFull
   entities:
@@ -64019,210 +63954,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -62.66062,9.872792
-      parent: 2
-- proto: FloorAzureWaterEntity
-  entities:
-  - uid: 3719
-    components:
-    - type: Transform
-      pos: -34.5,-47.5
-      parent: 2
-  - uid: 3829
-    components:
-    - type: Transform
-      pos: -35.5,-48.5
-      parent: 2
-  - uid: 4771
-    components:
-    - type: Transform
-      pos: -34.5,-48.5
-      parent: 2
-  - uid: 4776
-    components:
-    - type: Transform
-      pos: -39.5,-48.5
-      parent: 2
-  - uid: 4792
-    components:
-    - type: Transform
-      pos: -39.5,-45.5
-      parent: 2
-  - uid: 6243
-    components:
-    - type: Transform
-      pos: -38.5,-47.5
-      parent: 2
-  - uid: 7163
-    components:
-    - type: Transform
-      pos: -32.5,-45.5
-      parent: 2
-  - uid: 7164
-    components:
-    - type: Transform
-      pos: -32.5,-48.5
-      parent: 2
-  - uid: 7165
-    components:
-    - type: Transform
-      pos: -32.5,-47.5
-      parent: 2
-  - uid: 7166
-    components:
-    - type: Transform
-      pos: -32.5,-49.5
-      parent: 2
-  - uid: 7167
-    components:
-    - type: Transform
-      pos: -37.5,-48.5
-      parent: 2
-  - uid: 7168
-    components:
-    - type: Transform
-      pos: -37.5,-49.5
-      parent: 2
-  - uid: 7169
-    components:
-    - type: Transform
-      pos: -38.5,-45.5
-      parent: 2
-  - uid: 7170
-    components:
-    - type: Transform
-      pos: -39.5,-47.5
-      parent: 2
-  - uid: 7171
-    components:
-    - type: Transform
-      pos: -36.5,-46.5
-      parent: 2
-  - uid: 7172
-    components:
-    - type: Transform
-      pos: -33.5,-47.5
-      parent: 2
-  - uid: 7173
-    components:
-    - type: Transform
-      pos: -33.5,-45.5
-      parent: 2
-  - uid: 7174
-    components:
-    - type: Transform
-      pos: -34.5,-45.5
-      parent: 2
-  - uid: 7175
-    components:
-    - type: Transform
-      pos: -35.5,-45.5
-      parent: 2
-  - uid: 7176
-    components:
-    - type: Transform
-      pos: -36.5,-48.5
-      parent: 2
-  - uid: 7177
-    components:
-    - type: Transform
-      pos: -36.5,-45.5
-      parent: 2
-  - uid: 7178
-    components:
-    - type: Transform
-      pos: -32.5,-46.5
-      parent: 2
-  - uid: 7179
-    components:
-    - type: Transform
-      pos: -39.5,-46.5
-      parent: 2
-  - uid: 7180
-    components:
-    - type: Transform
-      pos: -38.5,-48.5
-      parent: 2
-  - uid: 7181
-    components:
-    - type: Transform
-      pos: -37.5,-45.5
-      parent: 2
-  - uid: 7182
-    components:
-    - type: Transform
-      pos: -33.5,-48.5
-      parent: 2
-  - uid: 7183
-    components:
-    - type: Transform
-      pos: -34.5,-49.5
-      parent: 2
-  - uid: 7184
-    components:
-    - type: Transform
-      pos: -35.5,-49.5
-      parent: 2
-  - uid: 7185
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -35.5,-46.5
-      parent: 2
-  - uid: 7186
-    components:
-    - type: Transform
-      pos: -36.5,-47.5
-      parent: 2
-  - uid: 7187
-    components:
-    - type: Transform
-      pos: -39.5,-49.5
-      parent: 2
-  - uid: 7188
-    components:
-    - type: Transform
-      pos: -38.5,-49.5
-      parent: 2
-  - uid: 7189
-    components:
-    - type: Transform
-      pos: -37.5,-46.5
-      parent: 2
-  - uid: 7190
-    components:
-    - type: Transform
-      pos: -34.5,-46.5
-      parent: 2
-  - uid: 7191
-    components:
-    - type: Transform
-      pos: -33.5,-49.5
-      parent: 2
-  - uid: 7192
-    components:
-    - type: Transform
-      pos: -33.5,-46.5
-      parent: 2
-  - uid: 7193
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -35.5,-47.5
-      parent: 2
-  - uid: 7194
-    components:
-    - type: Transform
-      pos: -36.5,-49.5
-      parent: 2
-  - uid: 7196
-    components:
-    - type: Transform
-      pos: -38.5,-46.5
-      parent: 2
-  - uid: 7197
-    components:
-    - type: Transform
-      pos: -37.5,-47.5
       parent: 2
 - proto: FloorDrain
   entities:
@@ -87811,13 +87542,6 @@ entities:
     - type: Transform
       pos: -18.556097,18.586267
       parent: 2
-- proto: KvassTankFull
-  entities:
-  - uid: 9988
-    components:
-    - type: Transform
-      pos: -71.5,-62.5
-      parent: 2
 - proto: Lamp
   entities:
   - uid: 9989
@@ -89184,10 +88908,10 @@ entities:
           occludes: True
           ents:
           - 5920
-          - 5922
           - 5926
           - 5925
           - 5923
+          - 5921
           - 5921
           - 5924
         paper_label: !type:ContainerSlot
@@ -89878,7 +89602,7 @@ entities:
         back: !type:ContainerSlot
           showEnts: False
           occludes: False
-          ent: 19923
+          ent: null
   - uid: 19928
     components:
     - type: Transform
@@ -99886,6 +99610,14 @@ entities:
     - type: Transform
       pos: -22.669308,-44.032475
       parent: 2
+- proto: ClothingUniformJumpsuitHoS
+  entities:
+  - uid: 5929
+    components:
+    - type: Transform
+      parent: 5736
+    - type: Physics
+      canCollide: False
 - proto: RubberStampTrader
   entities:
   - uid: 11441
@@ -101244,18 +100976,6 @@ entities:
         - Timer: Toggle
         16117:
         - Timer: Toggle
-        16423:
-        - Timer: Trigger
-        16425:
-        - Timer: Trigger
-        16426:
-        - Timer: Trigger
-        16427:
-        - Timer: Trigger
-        16428:
-        - Timer: Trigger
-        16424:
-        - Timer: Trigger
         16120:
         - Timer: Toggle
         16119:
