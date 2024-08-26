@@ -63523,7 +63523,6 @@ entities:
           ents:
           - 3743
           - 3737
-          - 3739
           - 3742
           - 3740
           - 3741
@@ -63782,20 +63781,6 @@ entities:
       parent: 3764
     - type: Physics
       canCollide: False
-- proto: ClothingHandsGlovesAerostatic
-  entities:
-  - uid: 3758
-    components:
-    - type: Transform
-      parent: 3756
-    - type: Physics
-      canCollide: False
-  - uid: 3766
-    components:
-    - type: Transform
-      parent: 3764
-    - type: Physics
-      canCollide: False
 - proto: ClothingHandsGlovesBoxingGreen
   entities:
   - uid: 3772
@@ -63914,22 +63899,6 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingHeadHatCapHoS
-  entities:
-  - uid: 3787
-    components:
-    - type: Transform
-      parent: 3786
-    - type: Physics
-      canCollide: False
-- proto: ClothingHeadHatCapWardenAlt
-  entities:
-  - uid: 3791
-    components:
-    - type: Transform
-      parent: 3790
-    - type: Physics
-      canCollide: False
 - proto: ClothingHeadHatChef
   entities:
   - uid: 3793
@@ -64154,20 +64123,6 @@ entities:
     - type: Transform
       pos: 93.52297,-4.5666986
       parent: 2
-- proto: ClothingOuterAerostaticBomberJacket
-  entities:
-  - uid: 3761
-    components:
-    - type: Transform
-      parent: 3756
-    - type: Physics
-      canCollide: False
-  - uid: 3769
-    components:
-    - type: Transform
-      parent: 3764
-    - type: Physics
-      canCollide: False
 - proto: ClothingOuterApronChef
   entities:
   - uid: 3826
@@ -64310,7 +64265,7 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingOuterCoatWardenAlt
+- proto: ClothingOuterCoatWarden
   entities:
   - uid: 3792
     components:
@@ -64343,20 +64298,6 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: ClothingShoesAerostatic
-  entities:
-  - uid: 3762
-    components:
-    - type: Transform
-      parent: 3756
-    - type: Physics
-      canCollide: False
-  - uid: 3770
-    components:
-    - type: Transform
-      parent: 3764
-    - type: Physics
-      canCollide: False
 - proto: ClothingShoesBootsWinterSecFilled
   entities:
   - uid: 3763
@@ -64526,22 +64467,6 @@ entities:
     - type: Transform
       pos: 90.50507,16.875002
       parent: 2
-- proto: ClothingUniformJumpskirtElegantMaid
-  entities:
-  - uid: 3739
-    components:
-    - type: Transform
-      parent: 3735
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
-  - uid: 3783
-    components:
-    - type: Transform
-      parent: 3781
-    - type: Physics
-      canCollide: False
-    - type: InsideEntityStorage
 - proto: ClothingUniformJumpskirtJanimaid
   entities:
   - uid: 3784
@@ -65872,7 +65797,6 @@ entities:
           - 3785
           - 3782
           - 3784
-          - 3783
         paper_label: !type:ContainerSlot
           showEnts: False
           occludes: True
@@ -71951,18 +71875,9 @@ entities:
         3763:
           position: 4,0
           _rotation: South
-        3761:
-          position: 0,1
-          _rotation: South
         3757:
           position: 6,0
           _rotation: North
-        3762:
-          position: 2,1
-          _rotation: South
-        3758:
-          position: 4,2
-          _rotation: East
     - type: ContainerContainer
       containers:
         storagebase: !type:Container
@@ -71972,10 +71887,7 @@ entities:
           - 3759
           - 3760
           - 3763
-          - 3761
           - 3757
-          - 3762
-          - 3758
   - uid: 3764
     components:
     - type: Transform
@@ -71992,18 +71904,9 @@ entities:
         3771:
           position: 4,0
           _rotation: South
-        3769:
-          position: 0,1
-          _rotation: South
         3765:
           position: 6,0
           _rotation: North
-        3770:
-          position: 2,1
-          _rotation: South
-        3766:
-          position: 4,2
-          _rotation: East
     - type: ContainerContainer
       containers:
         storagebase: !type:Container
@@ -72013,10 +71916,7 @@ entities:
           - 3767
           - 3768
           - 3771
-          - 3769
           - 3765
-          - 3770
-          - 3766
   - uid: 4905
     components:
     - type: Transform
@@ -75603,108 +75503,6 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: FloorAzureWaterEntity
-  entities:
-  - uid: 5373
-    components:
-    - type: Transform
-      pos: 83.5,-29.5
-      parent: 2
-  - uid: 5374
-    components:
-    - type: Transform
-      pos: 84.5,-27.5
-      parent: 2
-  - uid: 5375
-    components:
-    - type: Transform
-      pos: 82.5,-27.5
-      parent: 2
-  - uid: 5376
-    components:
-    - type: Transform
-      pos: 81.5,-27.5
-      parent: 2
-  - uid: 5377
-    components:
-    - type: Transform
-      pos: 84.5,-28.5
-      parent: 2
-  - uid: 5378
-    components:
-    - type: Transform
-      pos: 84.5,-29.5
-      parent: 2
-  - uid: 5379
-    components:
-    - type: Transform
-      pos: 81.5,-30.5
-      parent: 2
-  - uid: 5380
-    components:
-    - type: Transform
-      pos: 80.5,-27.5
-      parent: 2
-  - uid: 5381
-    components:
-    - type: Transform
-      pos: 80.5,-28.5
-      parent: 2
-  - uid: 5382
-    components:
-    - type: Transform
-      pos: 83.5,-28.5
-      parent: 2
-  - uid: 5383
-    components:
-    - type: Transform
-      pos: 82.5,-30.5
-      parent: 2
-  - uid: 5384
-    components:
-    - type: Transform
-      pos: 81.5,-26.5
-      parent: 2
-  - uid: 5385
-    components:
-    - type: Transform
-      pos: 83.5,-26.5
-      parent: 2
-  - uid: 5386
-    components:
-    - type: Transform
-      pos: 80.5,-29.5
-      parent: 2
-  - uid: 5387
-    components:
-    - type: Transform
-      pos: 81.5,-28.5
-      parent: 2
-  - uid: 5388
-    components:
-    - type: Transform
-      pos: 81.5,-29.5
-      parent: 2
-  - uid: 5389
-    components:
-    - type: Transform
-      pos: 82.5,-29.5
-      parent: 2
-  - uid: 5390
-    components:
-    - type: Transform
-      pos: 83.5,-27.5
-      parent: 2
-  - uid: 5391
-    components:
-    - type: Transform
-      pos: 82.5,-28.5
-      parent: 2
-  - uid: 5392
-    components:
-    - type: Transform
-      pos: 83.5,-30.5
-      parent: 2
 - proto: FloorDrain
   entities:
   - uid: 5393
@@ -108561,7 +108359,7 @@ entities:
         head: !type:ContainerSlot
           showEnts: False
           occludes: False
-          ent: 3787
+          ent: null
         suitstorage: !type:ContainerSlot
           showEnts: False
           occludes: False
@@ -108600,7 +108398,7 @@ entities:
         head: !type:ContainerSlot
           showEnts: False
           occludes: False
-          ent: 3791
+          ent: null
         suitstorage: !type:ContainerSlot
           showEnts: False
           occludes: False
