@@ -143,3 +143,5 @@
     doAfterDelay: 8
     fuelCost: 15
   - type: EnergyCoreVisuals
+    onState: crutch
+    offState: crutch
