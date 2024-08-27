@@ -51,7 +51,7 @@ public sealed partial class EnergyCoreSystem : EntitySystem
         SubscribeLocalEvent<EnergyCoreComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<EnergyCoreComponent, GetVerbsEvent<AlternativeVerb>>(AddSwitchPowerVerb);
         _recQuery = GetEntityQuery<PowerSupplierComponent>();
-        SubscribeLocalEvent<EnergyCoreComponent, AtmosDeviceUpdateEvent>(OnDeviceUpdated);
+        SubscribeLocalEvent<HeatFreezingCoreComponent, AtmosDeviceUpdateEvent>(OnDeviceUpdated);
 
         SubscribeLocalEvent<EntInsertedIntoContainerMessage>(OnEntInsertedIntoContainer);
         SubscribeLocalEvent<EntRemovedFromContainerMessage>(OnEntRemovedFromContainer);
@@ -91,7 +91,7 @@ public sealed partial class EnergyCoreSystem : EntitySystem
             TogglePower(entity);
         }
     }
-    private void OnDeviceUpdated(EntityUid uid, EnergyCoreComponent component, ref AtmosDeviceUpdateEvent args)
+    private void OnDeviceUpdated(EntityUid uid, HeatFreezingCoreComponent component, ref AtmosDeviceUpdateEvent args)
     {
         var timeDelta = args.dt;
         // If we are on top of a connector port, empty into it.
@@ -111,7 +111,7 @@ public sealed partial class EnergyCoreSystem : EntitySystem
     }
 
 
-    private bool Scrub(float timeDelta, PipeNode scrubber, GasMixture tile, EnergyCoreComponent target)
+    private bool Scrub(float timeDelta, PipeNode scrubber, GasMixture tile, HeatFreezingCoreComponent target)
     {
         if (tile.Temperature > target.FilterTemperature) return false;
         return _scrubberSystem.Scrub(timeDelta, target.TransferRate * _atmosphereSystem.PumpSpeedup(), ScrubberPumpDirection.Scrubbing, target.FilterGases, tile, scrubber.Air);
@@ -140,9 +140,10 @@ public sealed partial class EnergyCoreSystem : EntitySystem
     }
     private void Absorb(EnergyCoreComponent component, PipeNode air)
     {
+        if (!_e.TryGetComponent(component.Owner, out HeatFreezingCoreComponent? heatfreeze)) return;
         float timeDelta = 0;
         if (component.Working)
-            timeDelta = air.Air.GetMoles(component.AbsorbGas) * component.SecPerMoles;
+            timeDelta = air.Air.GetMoles(heatfreeze.AbsorbGas) * component.SecPerMoles;
         air.Air.Clear();
         component.TimeOfLife += timeDelta;
         if (component.Overheat && timeDelta > 0)
@@ -187,7 +188,9 @@ public sealed partial class EnergyCoreSystem : EntitySystem
             {
                 if (!TryComp<NodeContainerComponent>(target.Owner, out var component))
                     continue;
-                if (!_nodeContainer.TryGetNode(target.Owner, target.PortName, out PipeNode? cur))
+                if (!TryComp<HeatFreezingCoreComponent>(target.Owner, out var heatfreeze))
+                    continue;
+                if (!_nodeContainer.TryGetNode(target.Owner, heatfreeze.PortName, out PipeNode? cur))
                 {
                     continue;
                 }
@@ -256,8 +259,7 @@ public sealed partial class EnergyCoreSystem : EntitySystem
         {
             receiver.PowerDisabled = false;
             return true;
-        }
-        
+        } 
         receiver.PowerDisabled = !receiver.PowerDisabled;
 
         if (user != null)

@@ -27,12 +27,13 @@
     requested: RnD
     timeOfLife: 480
     secPerMoles: 4
-    absorbGas: NitrousOxide
     enablingLenght: 2.6
   - type: PowerSupplier
     supplyRate: 220000
   - type: Sprite
     sprite: Stories/Structures/Machines/EnergyCores/sprnd/sprnd_big.rsi
+  - type: HeatFreezingCore
+    absorbGas: NitrousOxide
 
 - type: entity
   parent: BaseBigCore
@@ -47,12 +48,13 @@
     requested: Gold
     timeOfLife: 600
     secPerMoles: 6
-    absorbGas: Frezon
     enablingLenght: 7.7
   - type: PowerSupplier
     supplyRate: 240000
   - type: Sprite
     sprite: Stories/Structures/Machines/EnergyCores/spblue/spblue_big.rsi
+  - type: HeatFreezingCore
+    absorbGas: Frezon
 
 - type: entity
   parent: BaseBigCore
@@ -67,12 +69,13 @@
     requested: Sindi
     timeOfLife: 500
     secPerMoles: 5
-    absorbGas: Ammonia
     enablingLenght: 1.0
   - type: PowerSupplier
     supplyRate: 260000
   - type: Sprite
     sprite: Stories/Structures/Machines/EnergyCores/spred/spred_big.rsi
+  - type: HeatFreezingCore
+    absorbGas: Ammonia
 
 - type: entity
   parent: BaseBigCore
@@ -87,8 +90,9 @@
     requested: Gray
     timeOfLife: 400
     secPerMoles: 3
-    absorbGas: Plasma
   - type: PowerSupplier
     supplyRate: 200000
   - type: Sprite
     sprite: Stories/Structures/Machines/EnergyCores/sphere/sphere_big.rsi
+  - type: HeatFreezingCore
+    absorbGas: Plasma

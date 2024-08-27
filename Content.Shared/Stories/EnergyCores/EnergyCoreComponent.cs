@@ -1,4 +1,3 @@
-using Content.Shared.Atmos;
 using Robust.Shared.Serialization;
 using Robust.Shared.Serialization.TypeSerializers.Implementations.Custom;
 using Content.Shared.Damage;
@@ -10,28 +9,9 @@ namespace Content.Shared.Stories.EnergyCores;
 [AutoGenerateComponentPause]
 public sealed partial class EnergyCoreComponent : Component
 {
-    [DataField("port"), ViewVariables(VVAccess.ReadWrite)]
-    public string PortName { get; set; } = "pipe";
-
-    [DataField("filterGases")]
-    public HashSet<Gas> FilterGases = new()
-        {
-            Gas.Frezon,
-            Gas.Ammonia,
-            Gas.NitrousOxide,
-            Gas.Plasma
-        };
-    [DataField]
-    public float FilterTemperature = Atmospherics.T0C + 50;
 
     [ViewVariables(VVAccess.ReadWrite)]
     public bool Working = true;
-
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public float MaxPressure = 3000;
-
-    [DataField, ViewVariables(VVAccess.ReadWrite)]
-    public float TransferRate = 100;
 
     [DataField("onState")]
     public string? OnState = "core_on";
@@ -67,9 +47,6 @@ public sealed partial class EnergyCoreComponent : Component
     public float Heating = 50;
 
     [DataField]
-    public Gas AbsorbGas = Gas.Frezon;
-
-    [DataField]
     public float LifeAfterOverheat = -60;
 
     [ViewVariables(VVAccess.ReadOnly)]
@@ -84,10 +61,10 @@ public sealed partial class EnergyCoreComponent : Component
 [Serializable, NetSerializable]
 public enum EnergyCoreVisualLayers : byte
 {
-    IsOff,
     IsOn,
-    Disabling,
-    Enabling
+    IsOff,
+    Enabling,
+    Disabling
 }
 
 [Serializable, NetSerializable]

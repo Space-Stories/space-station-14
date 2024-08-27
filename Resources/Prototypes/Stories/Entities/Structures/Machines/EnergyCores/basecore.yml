@@ -18,34 +18,16 @@
       - state: crutch
         map: [ "enum.PowerDeviceVisualLayers.Powered" ]
       - state: sphere_off
-        visible: false
         map: [ "enum.EnergyCoreVisualLayers.IsOff" ]
+        visible: false
       - state: disabling
-        visible: false
         map: [ "enum.EnergyCoreVisualLayers.Disabling" ]
-      - state: enabling
         visible: false
+      - state: enabling
         map: [ "enum.EnergyCoreVisualLayers.Enabling" ]
+        visible: false
       - state: fly
         map: [ "enum.EnergyCoreVisualLayers.IsOn" ]
-  - type: GenericVisualizer
-    visuals:
-      enum.EnergyCoreState.Enabled:
-        enum.EnergyCoreVisualLayers.IsOn:
-          True: { visible: true }
-          False: { visible: false }
-      enum.EnergyCoreState.Disabled:
-        enum.EnergyCoreVisualLayers.IsOff:
-          True: { visible: true }
-          False: { visible: false }
-      enum.EnergyCoreState.Enabling:
-        enum.EnergyCoreVisualLayers.Enabling:
-          True: { visible: true }
-          False: { visible: false }
-      enum.EnergyCoreState.Disabling:
-        enum.EnergyCoreVisualLayers.Disabling:
-          True: { visible: true }
-          False: { visible: false }
   - type: NodeContainer
     examinable: true
     nodes:
@@ -151,9 +133,7 @@
     interfaces:
       enum.StorageUiKey.Key:
         type: StorageBoundUserInterface
-  - type: EnergyCoreVisuals
-    onState: crutch
-    offState: crutch
+  - type: HeatFreezingCore
   - type: EnergyCore
     damage:
       types:
@@ -162,68 +142,4 @@
   - type: Repairable
     doAfterDelay: 8
     fuelCost: 15
-
-#- type: entity
-#  parent: BaseShuttleCore
-#  id: BaseRnDCore
-#  description: Базовое ядро шаттла РнД. Является прототипом основного ядра шаттла НаноТрейзен.
-#  name: Базовое ядро шаттла РнД.
-#  components:
-#  - type: EnergyCore
-#    damage:
-#      types:
-#        Heat: 0.4
-#    requested: RnD
-#    timeOfLife: 480
-#    secPerMoles: 4
-#    lifeAfterOverheat: -60
-#    absorbGas: Gas.Ammonia
-
-#- type: entity
-#  parent: BaseShuttleCore
-#  id: BaseNTCore
-#  description: Базовое ядро шаттла НаноТрейзен. Используется в большинстве шаттлов НаноТрейзен.
-#  name: Базовое ядро шаттла НаноТрейзен.
-#  components:
-#  - type: EnergyCore
-#    damage:
-#      types:
-#        Heat: 0.3
-#    requested: Gold
-#    timeOfLife: 600
-#    secPerMoles: 6
-#    lifeAfterOverheat: -40
-#    absorbGas: Gas.Frezon
-#
-#- type: entity
-#  parent: BaseShuttleCore
-#  id: BaseSDCore
-#  description: Базовое ядро шаттла Синдиката. Используется в большинстве шаттлов Синдиката.
-#  name: Базовое ядро шаттла Синдиката.
-#  components:
-#  - type: EnergyCore
-#    damage:
-#      types:
-#        Heat: 0.4
-#    requested: Sindi
-#    timeOfLife: 540
-#    secPerMoles: 6
-#    lifeAfterOverheat: -45
-#    absorbGas: Gas.NitrousOxide
-#
-#- type: entity
-#  parent: BaseShuttleCore
-#  id: BaseHMCore
-#  description: Базовое самодельное ядро шаттла. Используется в большинстве шаттлов малоразвитых корпораций/государств в связи с отсталостью технологии.
-#  name: Базовое ядро шаттла Синдиката.
-#  components:
-#  - type: EnergyCore
-#    damage:
-#      types:
-#        Heat: 0.4
-#    requested: Sindi
-#    timeOfLife: 540
-#    secPerMoles: 6
-#   absorbGas: Gas.NitrousOxide
-#    lifeAfterOverheat: -30
-
+  - type: EnergyCoreVisuals
