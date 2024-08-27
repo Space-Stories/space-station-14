@@ -164,7 +164,6 @@
   - type: SleepEmitSound
   - type: SSDIndicator
   - type: StandingState
-    canCrawl: true # Stories-Crawling
   - type: Fingerprint
   - type: Dna
   - type: MindContainer
