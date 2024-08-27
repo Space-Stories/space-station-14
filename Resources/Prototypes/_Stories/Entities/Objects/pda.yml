@@ -1,0 +1,52 @@
+- type: entity
+  parent: BasePDA
+  id: PRISONPDAHeadOfPrison
+  name: КПК начальника тюрьмы
+  description: Этот КПК - ваш путь к свободе.
+  components:
+  - type: Sprite
+    sprite: _Stories/Objects/Devices/pda.rsi
+  - type: Pda
+    id: PRISONIDCardHeadOfPrison
+    state: pda-hosp
+  - type: Icon
+    sprite: _Stories/Objects/Devices/pda.rsi
+    state: pda-hosp
+
+- type: entity
+  parent: PRISONPDAHeadOfPrison
+  id: PRISONPDAOfficer
+  name: КПК офицера тюрьмы
+  description: Этот КПК - ваш путь к свободе.
+  components:
+  - type: Pda
+    id: PRISONIDCardOfficer
+    state: pda-spofficer
+  - type: Icon
+    state: pda-spofficer
+
+- type: entity
+  parent: PRISONPDAHeadOfPrison
+  id: PRISONPDAEngineer
+  name: КПК инженера тюрьмы
+  description: Этот КПК - ваш путь к свободе.
+  components:
+  - type: Pda
+    id: PRISONIDCardEngineer
+    state: pda-spengineer
+  - type: Icon
+    state: pda-spengineer
+
+- type: entity
+  parent:
+    - PRISONPDAHeadOfPrison
+    - BaseMedicalPDA
+  id: PRISONPDAMedic
+  name: КПК врача тюрьмы
+  description: Этот КПК - ваш путь к свободе.
+  components:
+  - type: Pda
+    id: PRISONIDCardMedic
+    state: pda-spmedic
+  - type: Icon
+    state: pda-spmedic
