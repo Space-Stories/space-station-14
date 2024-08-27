@@ -1,4 +1,4 @@
-using Content.Server.Stories.Shadowling;
+using Content.Server._Stories.Shadowling;
 using Content.Shared.Roles;
 
 namespace Content.Server.Roles;
