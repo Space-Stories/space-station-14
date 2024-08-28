@@ -1,0 +1,9 @@
+- type: listing
+  id: UplinkRadioJammerIndustrial
+  name: Промышленный глушитель связи
+  description: Это устройство является улучшенной версией обычного глушителя связи. Радиус действия увеличен, но и потребление больше. (Замаскирован под %%%%%%%)
+  productEntity: RadioJammerIndustrial
+  cost:
+    Telecrystal: 12
+  categories:
+  - UplinkDisruption
