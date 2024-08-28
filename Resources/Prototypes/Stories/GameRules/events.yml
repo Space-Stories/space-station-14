@@ -2,6 +2,11 @@
   parent: BaseGameRule
   id: SithSpawn
   components:
+  - type: AntagObjectives
+    objectives:
+    - KillJediNtObjective
+    - SithSurviveObjective
+    - HypnosisObjective
   - type: AntagLoadProfileRule
     speciesOverride: Human
     speciesOverrideBlacklist:
