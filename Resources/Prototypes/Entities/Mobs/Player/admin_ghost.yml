@@ -103,8 +103,8 @@
   description: View a solar control interface.
   components:
   - type: InstantAction
-    icon: _Stories/Interface/AdminActions/solar.png # Stories-Resprite
-    iconOn: _Stories/Interface/AdminActions/solar.png # Stories-Resprite
+    icon: Stories/Interface/AdminActions/solar.png # Stories-Resprite
+    iconOn: Stories/Interface/AdminActions/solar.png # Stories-Resprite
     keywords: [ "AI", "console", "interface" ]
     priority: -10
     event: !type:ToggleIntrinsicUIEvent { key: enum.SolarControlConsoleUiKey.Key }
@@ -115,8 +115,8 @@
   description: View a communications interface.
   components:
   - type: InstantAction
-    icon: _Stories/Interface/AdminActions/communications.png # Stories-Resprite
-    iconOn: _Stories/Interface/AdminActions/communications.png # Stories-Resprite
+    icon: Stories/Interface/AdminActions/communications.png # Stories-Resprite
+    iconOn: Stories/Interface/AdminActions/communications.png # Stories-Resprite
     keywords: [ "AI", "console", "interface" ]
     priority: -10
     event: !type:ToggleIntrinsicUIEvent { key: enum.CommunicationsConsoleUiKey.Key }
@@ -127,8 +127,8 @@
   description: View a mass scanner interface.
   components:
   - type: InstantAction
-    icon: _Stories/Interface/AdminActions/radar.png # Stories-Resprite
-    iconOn: _Stories/Interface/AdminActions/radar.png # Stories-Resprite
+    icon: Stories/Interface/AdminActions/radar.png # Stories-Resprite
+    iconOn: Stories/Interface/AdminActions/radar.png # Stories-Resprite
     keywords: [ "AI", "console", "interface" ]
     priority: -10
     event: !type:ToggleIntrinsicUIEvent { key: enum.RadarConsoleUiKey.Key }
@@ -139,8 +139,8 @@
   description: View a cargo ordering interface.
   components:
   - type: InstantAction
-    icon: _Stories/Interface/AdminActions/cargo.png # Stories-Resprite
-    iconOn: _Stories/Interface/AdminActions/cargo.png # Stories-Resprite
+    icon: Stories/Interface/AdminActions/cargo.png # Stories-Resprite
+    iconOn: Stories/Interface/AdminActions/cargo.png # Stories-Resprite
     keywords: [ "AI", "console", "interface" ]
     priority: -10
     event: !type:ToggleIntrinsicUIEvent { key: enum.CargoConsoleUiKey.Orders }
@@ -151,8 +151,8 @@
   description: View a crew monitoring interface.
   components:
   - type: InstantAction
-    icon: _Stories/Interface/AdminActions/monitoring.png # Stories-Resprite
-    iconOn: _Stories/Interface/AdminActions/monitoring.png # Stories-Resprite
+    icon: Stories/Interface/AdminActions/monitoring.png # Stories-Resprite
+    iconOn: Stories/Interface/AdminActions/monitoring.png # Stories-Resprite
     keywords: [ "AI", "console", "interface" ]
     priority: -10
     event: !type:ToggleIntrinsicUIEvent { key: enum.CrewMonitoringUIKey.Key }
@@ -163,8 +163,8 @@
   description: View a station records Interface.
   components:
   - type: InstantAction
-    icon: _Stories/Interface/AdminActions/records.png # Stories-Resprite
-    iconOn: _Stories/Interface/AdminActions/records.png # Stories-Resprite
+    icon: Stories/Interface/AdminActions/records.png # Stories-Resprite
+    iconOn: Stories/Interface/AdminActions/records.png # Stories-Resprite
     keywords: [ "AI", "console", "interface" ]
     priority: -10
     event: !type:ToggleIntrinsicUIEvent { key: enum.GeneralStationRecordConsoleKey.Key }
@@ -176,7 +176,7 @@
   noSpawn: true
   components:
   - type: InstantAction
-    icon: _Stories/Interface/AdminActions/hide_ghost.png
-    iconOn: _Stories/Interface/AdminActions/hide_ghost.png
+    icon: Stories/Interface/AdminActions/hide_ghost.png
+    iconOn: Stories/Interface/AdminActions/hide_ghost.png
     event: !type:HideGhostEvent
     priority: -10

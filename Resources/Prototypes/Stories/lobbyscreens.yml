@@ -1,0 +1,35 @@
+- type: lobbyBackground
+  id: Atmos
+  background: /Textures/Stories/LobbyScreens/atmos.jpg
+
+- type: lobbyBackground
+  id: Boom
+  background: /Textures/Stories/LobbyScreens/boom.jpg
+
+- type: lobbyBackground
+  id: Botanic
+  background: /Textures/Stories/LobbyScreens/botanic.jpg
+
+- type: lobbyBackground
+  id: Engineer
+  background: /Textures/Stories/LobbyScreens/engineer.jpg
+
+- type: lobbyBackground
+  id: Fire
+  background: /Textures/Stories/LobbyScreens/fire.jpg
+
+- type: lobbyBackground
+  id: GuitarHunter
+  background: /Textures/Stories/LobbyScreens/guiterhunter.jpg
+
+- type: lobbyBackground
+  id: NewYear
+  background: /Textures/Stories/LobbyScreens/newyear.jpg
+
+- type: lobbyBackground
+  id: Plazma
+  background: /Textures/Stories/LobbyScreens/plazma.jpg
+
+- type: lobbyBackground
+  id: Spaf
+  background: /Textures/Stories/LobbyScreens/spaf.jpg

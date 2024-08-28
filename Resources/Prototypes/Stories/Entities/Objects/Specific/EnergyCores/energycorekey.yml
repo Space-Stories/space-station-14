@@ -1,0 +1,61 @@
+- type: entity
+  parent: BaseItem
+  id: BaseShuttleCoreKey
+  abstract: true
+  components:
+  - type: Tag
+    tags:
+    - CoreKey
+  - type: EnergyCoreKey
+
+- type: entity
+  parent: BaseShuttleCoreKey
+  id: GoldShuttleCoreKey
+  name: Ключ от ядра шаттла(НТ)
+  components:
+  - type: Sprite
+    sprite: Stories/Objects/Specific/EnergyCores/key_of_sphere.rsi
+    layers:
+      - state: key_of_sphere_gold
+        visible: true
+  - type: EnergyCoreKey
+    key: Gold
+
+- type: entity
+  parent: BaseShuttleCoreKey
+  id: RnDShuttleCoreKey
+  name: Ключ от ядра шаттла(РНД)
+  components:
+  - type: Sprite
+    sprite: Stories/Objects/Specific/EnergyCores/key_of_sphere.rsi
+    layers:
+      - state: key_of_sphere_rnd
+        visible: true
+  - type: EnergyCoreKey
+    key: RnD
+
+- type: entity
+  parent: BaseShuttleCoreKey
+  id: GrayShuttleCoreKey
+  name: Ключ от ядра шаттла(Самодельное)
+  components:
+  - type: Sprite
+    sprite: Stories/Objects/Specific/EnergyCores/key_of_sphere.rsi
+    layers:
+      - state: key_of_sphere_gray
+        visible: true
+  - type: EnergyCoreKey
+    key: Gray
+
+- type: entity
+  parent: BaseShuttleCoreKey
+  id: SindiShuttleCoreKey
+  name: Ключ от ядра шаттла(Синдикат)
+  components:
+  - type: Sprite
+    sprite: Stories/Objects/Specific/EnergyCores/key_of_sphere.rsi
+    layers:
+      - state: key_of_sphere_sindi
+        visible: true
+  - type: EnergyCoreKey
+    key: Sindi
