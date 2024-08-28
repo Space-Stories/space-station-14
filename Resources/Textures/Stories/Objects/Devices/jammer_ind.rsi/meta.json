@@ -1,7 +1,7 @@
 {
     "version": 1,
     "license": "CC-BY-SA-3.0",
-    "copyright": "Taken from https://github.com/tgstation/tgstation/commit/c65da5a49477413310c81c460ea4b243a9f864dd with minor edits.",
+    "copyright": "Taken from tgstation at commit https://github.com/tgstation/tgstation/commit/bfc9c6ba8126ee8c41564d68c4bfb9ce37faa8f8",
     "size": {
         "x": 32,
         "y": 32
@@ -13,21 +13,41 @@
         },
         {
             "name": "jammer_high_charge",
-            "directions": 1
+            "directions": 1,
+			"delays": [
+            [
+            0.1,
+            0.1
+            ]
+		]
         },
         {
             "name": "jammer_medium_charge",
-            "directions": 1
+            "directions": 1,
+			"delays": [
+            [
+            0.2,
+            0.2
+            ]
+		]
         },
         {
             "name": "jammer_low_charge",
             "directions": 1,
-        "delays": [
+			"delays": [
             [
             0.3,
             0.3
             ]
-        ]
-        }
+		]
+        },
+		{
+			"name": "inhand-left",
+			"directions": 4
+		},
+		{
+			"name": "inhand-right",
+			"directions": 4
+		}
     ]
 }
