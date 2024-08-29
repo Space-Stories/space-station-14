@@ -17,7 +17,7 @@
             !type:NanotrasenNameGenerator
             prefixCreator: 'TG'
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Shuttles/emergency_courser.yml
+          emergencyShuttlePath: /Maps/Stories/Shuttles/emergency_courser.yml
         - type: StationJobs
           availableJobs:
             CargoTechnician: [ 4, 4 ]

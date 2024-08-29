@@ -15,7 +15,7 @@
             !type:NanotrasenNameGenerator
             prefixCreator: 'MT'
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Shuttles/corvax_emergency.yml
+          emergencyShuttlePath: /Maps/Stories/Shuttles/corvax_emergency.yml
         - type: StationBiome
           biome: TerraPlanet
           mapLightColor: "#090303FF"
@@ -26,7 +26,7 @@
                 - type: ProtectedGrid
                 - type: TradeStation
               paths:
-                - /Maps/Shuttles/terra_trade.yml
+                - /Maps/Stories/Shuttles/terra_trade.yml
         - type: StationCargoShuttle
           path: /Maps/Test/empty.yml
         - type: StationJobs

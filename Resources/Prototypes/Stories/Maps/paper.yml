@@ -17,7 +17,7 @@
         - type: StationPrison
           gameMap: StoriesPrison
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Shuttles/emergency_corvaxpaper.yml
+          emergencyShuttlePath: /Maps/Stories/Shuttles/emergency_corvaxpaper.yml
         - type: StationJobs
           availableJobs:
             # service

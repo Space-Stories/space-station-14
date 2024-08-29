@@ -16,7 +16,7 @@
             !type:NanotrasenNameGenerator
             prefixCreator: 'TA'
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Shuttles/emergency_pilgrim.yml
+          emergencyShuttlePath: /Maps/Stories/Shuttles/emergency_pilgrim.yml
         - type: StationJobs
           availableJobs:
             # service

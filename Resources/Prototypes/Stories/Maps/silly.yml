@@ -15,11 +15,11 @@
             !type:NanotrasenNameGenerator
             prefixCreator: 'ABK'
         - type: StationEmergencyShuttle
-          emergencyShuttlePath: /Maps/Shuttles/emergency_corvaxsilly.yml
+          emergencyShuttlePath: /Maps/Stories/Shuttles/emergency_corvaxsilly.yml
         - type: StationCargoShuttle
-          path: /Maps/Shuttles/cargo_corvaxsilly.yml
+          path: /Maps/Stories/Shuttles/cargo_corvaxsilly.yml
         - type: StationArrivals
-          shuttlePath: /Maps/Shuttles/arrivals_corvaxsilly.yml
+          shuttlePath: /Maps/Stories/Shuttles/arrivals_corvaxsilly.yml
         - type: GridSpawn
           groups:
             trade: !type:GridSpawnGroup
@@ -27,10 +27,10 @@
                 - type: ProtectedGrid
                 - type: TradeStation
               paths:
-                - /Maps/Shuttles/trading_outpostcorvaxsilly.yml
+                - /Maps/Stories/Shuttles/trading_outpostcorvaxsilly.yml
             mining: !type:GridSpawnGroup
               paths:
-              - /Maps/Shuttles/mining_corvaxsilly.yml
+              - /Maps/Stories/Shuttles/mining_corvaxsilly.yml
             # Spawn last
             ruins: !type:GridSpawnGroup
               hide: true
