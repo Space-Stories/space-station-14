@@ -401,6 +401,7 @@
       heldPrefix: eshield
     - type: UseDelay
       delay: 0.5
+    - type: ItemTogglePointLight
     - type: ToggleableLightVisuals
       spriteLayer: shield
       inhandVisuals:
