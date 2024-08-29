@@ -88766,15 +88766,17 @@ entities:
     - type: Transform
       pos: -42.5,-16.5
       parent: 2
-  - uid: 3482
-    components:
-    - type: Transform
-      pos: -44.5,-19.5
-      parent: 2
   - uid: 14984
     components:
     - type: Transform
       pos: -40.5,-19.5
+      parent: 2
+- proto: SpawnPointJediNt
+  entities:
+  - uid: 99999
+    components:
+    - type: Transform
+      pos: -44.5,-19.5
       parent: 2
 - proto: SpawnPointServiceWorker
   entities:

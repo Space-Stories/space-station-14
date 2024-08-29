@@ -104325,7 +104325,9 @@ entities:
     - type: Transform
       pos: -23.5,-15.5
       parent: 2
-  - uid: 12089
+- proto: SpawnPointJediNt
+  entites:
+  - uid: 99999
     components:
     - type: Transform
       pos: -22.5,-15.5

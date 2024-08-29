@@ -88733,7 +88733,9 @@ entities:
     - type: Transform
       pos: 54.5,18.5
       parent: 2
-  - uid: 12651
+- proto: SpawnPointJediNt
+  entities:
+  - uid: 99999
     components:
     - type: Transform
       pos: 58.5,17.5

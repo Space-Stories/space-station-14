@@ -54912,15 +54912,12 @@ entities:
     - type: Transform
       pos: -7.5,2.5
       parent: 2
-  - uid: 4984
+- proto: SpawnPointJediNt
+  entites:
+  - uid: 99999
     components:
     - type: Transform
       pos: -3.5,-2.5
-      parent: 2
-  - uid: 4985
-    components:
-    - type: Transform
-      pos: -1.5,-2.5
       parent: 2
 - proto: SpawnPointServiceWorker
   entities:

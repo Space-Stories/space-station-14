@@ -121203,11 +121203,6 @@ entities:
       parent: 2
 - proto: SpawnPointSecurityOfficer
   entities:
-  - uid: 12459
-    components:
-    - type: Transform
-      pos: -9.5,-34.5
-      parent: 2
   - uid: 12460
     components:
     - type: Transform
@@ -121227,6 +121222,13 @@ entities:
     components:
     - type: Transform
       pos: -15.5,-12.5
+      parent: 2
+- proto: SpawnPointJediNt
+  entities:
+  - uid: 99999
+    components:
+    - type: Transform
+      pos: -9.5,-34.5
       parent: 2
 - proto: SpawnPointServiceWorker
   entities:

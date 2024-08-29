@@ -12622,6 +12622,13 @@ entities:
     - type: Transform
       pos: -1.5,-4.5
       parent: 183
+- proto: SpawnPointJediNt
+  entites:
+  - uid: 99999
+    components:
+    - type: Transform
+      pos: -2.5,-4.5
+      parent: 2183
 - proto: SpawnPointSalvageSpecialist
   entities:
   - uid: 1611
