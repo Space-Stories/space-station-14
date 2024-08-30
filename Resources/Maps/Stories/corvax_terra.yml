@@ -54913,7 +54913,7 @@ entities:
       pos: -7.5,2.5
       parent: 2
 - proto: SpawnPointJediNt
-  entites:
+  entities:
   - uid: 99999
     components:
     - type: Transform
