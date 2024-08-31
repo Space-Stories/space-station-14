@@ -12,3 +12,23 @@
     - type: Sprite
       sprite: Objects/Misc/bureaucracy.rsi
       state: stamp-hosp
+    - type: Tag
+      tags: 
+      - WhitelistChameleon
+
+- type: entity
+  name: печать мима
+  description: Печать из резины, для проставления печатей на важных документах.
+  parent: RubberStampBase
+  id: ChameleonRubberStamp
+  suffix: DO NOT MAP
+  components: 
+    - type: ChameleonStamp
+      default: RubberStampBase
+      slot: [all]
+    - type: UserInterface
+      interfaces:
+        enum.ChameleonUiKey.Key:
+          type: ChameleonStampBoundUserInterface
+    - type: Tag
+      tags: []
