@@ -50,6 +50,7 @@
     - id: RubberStampCaptain
     - id: SpaceCash1000
     - id: WeaponDisabler
+    - id: ClothingEyesGlassesCommand
 
 # No laser table + Laser table
 - type: entityTable
@@ -132,6 +133,7 @@
     - id: RubberStampDenied
     - id: RubberStampHop
     - id: WeaponDisabler
+    - id: ClothingEyesHudCommand
     - id: BoxPrinter # Stories
 
 - type: entity
