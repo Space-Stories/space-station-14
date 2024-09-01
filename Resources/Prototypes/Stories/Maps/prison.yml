@@ -2,8 +2,8 @@
   id: StoriesPrison
   mapName: 'Prison Station'
   mapPath: /Maps/Stories/prison.yml
-  minPlayers: 1
-  maxPlayers: 1000
+  minPlayers: 15
+  maxPlayers: 15
   stations:
     Prison:
       stationProto: PrisonStation
@@ -14,11 +14,9 @@
             !type:NanotrasenNameGenerator
             prefixCreator: 'DC'
         - type: StationJobs
-          overflowJobs:
-            - PRISONPrisoner
           availableJobs:
             PRISONHeadOfPrison: [ 1, 1 ]
-            PRISONOfficer: [ 8, 8 ]
+            PRISONOfficer: [ 6, 6 ]
             PRISONMedic: [ 1, 1 ]
             PRISONEngineer: [ 1, 1 ]
-            PRISONPrisoner: [ 8, 8 ]
+            PRISONPrisoner: [ 6, 0 ]

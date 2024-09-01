@@ -1,0 +1,36 @@
+- type: loadoutGroup
+  id: DetectiveBelt
+  name: Детектив, пояс
+  loadouts:
+  - ClothingBeltHolsterFilled
+  - StoriesClothingBeltHolsterFilled
+
+- type: loadout
+  id: ClothingBeltHolsterFilled
+  equipment:
+    belt: ClothingBeltHolsterFilled
+
+- type: loadout
+  id: StoriesClothingBeltHolsterFilled
+  equipment:
+    belt: StoriesClothingBeltHolsterFilled
+
+- type: loadout
+  id: DetectiveFedoraSpecialGrey
+  equipment:
+    head: ClothingHeadHatFedoraSpecialGrey
+
+- type: loadout
+  id: Decbadge
+  equipment:
+    neck: ClothingNeckDecbadge
+
+- type: loadout
+  id: DetectiveJumpsuitSpecialGrey
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitDetectiveSpecialGrey
+
+- type: loadout
+  id: DetectiveCoatSpecialGrey
+  equipment:
+    outerClothing: ClothingOuterCoatDetectiveGrey

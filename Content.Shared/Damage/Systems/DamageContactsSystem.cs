@@ -71,7 +71,7 @@ public sealed class DamageContactsSystem : EntitySystem
         if (HasComp<DamagedByContactComponent>(otherUid))
             return;
 
-        if (_whitelistSystem.IsWhitelistFail(component.IgnoreWhitelist, otherUid))
+        if (_whitelistSystem.IsWhitelistPass(component.IgnoreWhitelist, otherUid))
             return;
 
         if (!HasComp<TetheredComponent>(uid) && component.OnlyTethered) // SpaceStories

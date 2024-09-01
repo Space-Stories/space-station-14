@@ -117,6 +117,32 @@
   - PRISONBackpack
   - PRISONSatchel
   - PRISONDuffel
+  # Stories-partners - start
+  # Handbag
+  - ClothingBackpackHandbagAdidos
+  - ClothingBackpackHandbagBluesky
+  - ClothingBackpackHandbagEight
+  - ClothingBackpackHandbagGachi
+  - ClothingBackpackHandbagRl
+  # Backpack
+  - ClothingBackpackAdidos
+  - ClothingBackpackBluesky
+  - ClothingBackpackEight
+  - ClothingBackpackGachi
+  - ClothingBackpackRl
+  # Duffel
+  - ClothingBackpackDuffelAdidos
+  - ClothingBackpackDuffelBluesky
+  - ClothingBackpackDuffelEight
+  - ClothingBackpackDuffelGachi
+  - ClothingBackpackDuffelRl
+  # Satchel
+  - ClothingBackpackSatchelAdidos
+  - ClothingBackpackSatchelBluesky
+  - ClothingBackpackSatchelEight
+  - ClothingBackpackSatchelGachi
+  - ClothingBackpackSatchelRl
+  # Stories-partners - end
 
 - type: loadout
   id: PRISONDuffel

@@ -43,3 +43,20 @@
         Slash: 0.70
         Piercing: 0.70
         Heat: 0.80
+
+- type: entity
+  parent: [ClothingOuterStorageBase, AllowSuitStorageClothing, ClothingOuterArmorBasic]
+  id: ClothingOuterCoatDetectiveGrey
+  name: серый тренч детектива
+  description: Мультифункциональный тренчкот XVIII века. Носящий его - серьёзный тип.
+  components:
+  - type: Sprite
+    sprite: Stories/Clothing/OuterClothing/Coats/detective.rsi
+  - type: Clothing
+    sprite: Stories/Clothing/OuterClothing/Coats/detective.rsi
+  - type: StorageFill
+    contents:
+    - id: SmokingPipeFilledTobacco
+    - id: FlippoEngravedLighter
+  - type: ExplosionResistance
+    damageCoefficient: 1 #its a coat. it doesnt do shit

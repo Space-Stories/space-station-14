@@ -5,6 +5,7 @@
   - BaseMob
   - MobDamageable
   - MobCombat
+  - MobPolymorphable
   id: BaseMobShadowling
   abstract: true
   components:

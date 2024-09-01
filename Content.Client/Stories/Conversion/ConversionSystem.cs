@@ -22,7 +22,7 @@ public sealed partial class ConversionSystem : SharedConversionSystem
             if (proto.StatusIcon == null)
                 continue;
 
-            var iconProto = _prototype.Index<StatusIconPrototype>(proto.StatusIcon);
+            var iconProto = _prototype.Index<FactionIconPrototype>(proto.StatusIcon);
             args.StatusIcons.Add(iconProto);
         }
     }

@@ -4,6 +4,7 @@
   parent:
   - BaseMob
   - MobDamageable
+  - MobPolymorphable
   description: Если вы его видите, то вам следует бежать
   components:
   - type: Shadowling

@@ -15,9 +15,17 @@ public sealed partial class PartnerLoadoutEffect : LoadoutEffect
     public override bool Validate(HumanoidCharacterProfile profile, RoleLoadout loadout, ICommonSession? session, IDependencyCollection collection,
         [NotNullWhen(false)] out FormattedMessage? reason)
     {
-        var manager = collection.Resolve<SponsorsManager>();
         reason = FormattedMessage.FromUnformatted(Loc.GetString("loadout-group-partner-tier-restriction"));
-        if (!manager.TryGetInfo(session!.UserId, out var sponsorInfo) || sponsorInfo.Tier < MinTier)
+
+        try
+        {
+            var manager = collection.Resolve<SponsorsManager>();
+            if (!manager.TryGetInfo(session!.UserId, out var sponsorInfo) || sponsorInfo.Tier < MinTier)
+            {
+                return false;
+            }
+        }
+        catch
         {
             return false;
         }
