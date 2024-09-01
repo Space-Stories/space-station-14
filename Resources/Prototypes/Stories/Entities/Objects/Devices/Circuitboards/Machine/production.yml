@@ -19,17 +19,17 @@
   description: Машинная плата отражателя, тип "Коробка"
   components:
   - type: Sprite
-    sprite: Objects/Misc/module.rsi
-    state: power_mod
+    sprite: Stories/Objects/Misc/module.rsi
+    state: reflectorbox_circuitboard
   - type: MachineBoard
     prototype: ReflectorBox
     stackRequirements:
-      Capacitor: 1
+      Capacitor: 3
       CableHV: 10
     componentRequirements:
       PowerCell:
-        amount: 4
-        defaultPrototype: PowerCellSmall
+        amount: 1
+        defaultPrototype: PowerCellMedium
 
 - type: entity
   id: ReflectorCornerMachineCircuitboard
@@ -38,17 +38,17 @@
   description: Машинная плата отражателя, тип "Угловой"
   components:
   - type: Sprite
-    sprite: Objects/Misc/module.rsi
-    state: power_mod
+    sprite: Stories/Objects/Misc/module.rsi
+    state: reflectorcorner_circuitboard
   - type: MachineBoard
     prototype: ReflectorCorner
     stackRequirements:
-      Capacitor: 1
+      Capacitor: 3
       CableHV: 10
     componentRequirements:
       PowerCell:
-        amount: 4
-        defaultPrototype: PowerCellSmall
+        amount: 1
+        defaultPrototype: PowerCellMedium
 
 - type: entity
   id: ReflectorCornerTsideMachineCircuitboard
@@ -57,15 +57,15 @@
   description: Машинная плата отражателя, тип "Двойной-Угловой"
   components:
   - type: Sprite
-    sprite: Objects/Misc/module.rsi
-    state: power_mod
+    sprite: Stories/Objects/Misc/module.rsi
+    state: reflectortsidecorner_circuitboard
   - type: MachineBoard
     prototype: ReflectoCornerTside
     stackRequirements:
-      Capacitor: 1
+      Capacitor: 3
       CableHV: 10
     componentRequirements:
       PowerCell:
-        amount: 4
-        defaultPrototype: PowerCellSmall
+        amount: 1
+        defaultPrototype: PowerCellMedium
 
