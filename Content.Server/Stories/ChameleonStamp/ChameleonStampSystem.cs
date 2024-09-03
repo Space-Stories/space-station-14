@@ -62,7 +62,7 @@ public sealed class ChameleonStampSystem : SharedChameleonStampSystem
         if (!Resolve(uid, ref component))
             return;
 
-        var state = new ChameleonStampBoundUserInterfaceState(component.Slot, component.Default);
+        var state = new ChameleonStampBoundUserInterfaceState(component.Default);
         _uiSystem.SetUiState(uid, ChameleonUiKey.Key, state);
     }
 
