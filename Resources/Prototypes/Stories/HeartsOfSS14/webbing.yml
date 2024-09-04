@@ -1,0 +1,12 @@
+- type: entity
+  parent: [ClothingBeltStorageBase, ContentsExplosionResistanceBase]
+  id: ClothingBeltUSSPWebbing
+  name: РПС солдата СССП
+  description: Базовый РПС, использующийся в армии СССП и их саттелитов.
+  components:
+  - type: Sprite
+    sprite: Stories/HeartsOfSS14/USSP/webbing_sssp.rsi
+  - type: Clothing
+    sprite: Stories/HeartsOfSS14/USSP/webbing_sssp.rsi
+  - type: ExplosionResistance
+    damageCoefficient: 0.5

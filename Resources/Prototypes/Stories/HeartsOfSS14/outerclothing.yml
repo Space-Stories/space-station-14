@@ -1,0 +1,38 @@
+# Брохвица
+
+- type: entity
+  parent: ClothingOuterCoatHoSTrench
+  id: ClothingOuterCoatBroGen
+  name: Тренч генерала Брохвицы 
+  description: Элегантный и функциональный, с изысканным дизайном.
+  components:
+  - type: Sprite
+    sprite: Stories/HeartsOfSS14/Brohviza/BroGen.rsi
+  - type: Clothing
+    sprite: Stories/HeartsOfSS14/Brohviza/BroGen.rsi
+
+# ОПЗ
+
+- type: entity
+  parent: ClothingOuterCoatHoSTrench
+  id: ClothingOuterCoatUEGGen
+  name: Тренч генерала ОПЗ
+  description: Элегантный и функциональный, с изысканным дизайном, символизирует власть и командный дух.
+  components:
+  - type: Sprite
+    sprite: Stories/HeartsOfSS14/UEG/UEGGen.rsi
+  - type: Clothing
+    sprite: Stories/HeartsOfSS14/UEG/UEGGen.rsi
+
+# СССП
+
+- type: entity
+  parent: ClothingOuterCoatHoSTrench
+  id: ClothingOuterCoatUSSPGen
+  name: Пальто генерала СССП
+  description: Функциональное пальто генерала СССП, так и веет свободой коммунизма.
+  components:
+  - type: Sprite
+    sprite: Stories/HeartsOfSS14/USSP/coat_general_sssp.rsi
+  - type: Clothing
+    sprite: Stories/HeartsOfSS14/USSP/coat_general_sssp.rsi

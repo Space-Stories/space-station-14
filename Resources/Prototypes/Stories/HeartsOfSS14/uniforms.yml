@@ -1,0 +1,95 @@
+# Спаниела
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitOffSpa
+  name: Форма офицера Спаньелы. 
+  description: Прочна, крепка, защиту несет и стройна.
+  components:
+  - type: Sprite
+    sprite: Stories/HeartsOfSS14/Spaniela/OffS.rsi
+  - type: Clothing
+    sprite: Stories/HeartsOfSS14/Spaniela/OffS.rsi
+
+# Брохвица
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitOffB
+  name: Форма офицера Брохвицы. 
+  description: Утонченный стиль, строгость и функциональность, воплощение чести и дисциплины.
+  components:
+  - type: Sprite
+    sprite: Stories/HeartsOfSS14/Brohviza/OffB.rsi
+  - type: Clothing
+    sprite: Stories/HeartsOfSS14/Brohviza/OffB.rsi
+
+# ОПЗ
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitGenUEG
+  name: Форма генерала ОПЗ 
+  description: Сшитая из прочных материалов, она сочетает в себе функциональность и стиль.
+  components:
+  - type: Sprite
+    sprite: Stories/HeartsOfSS14/UEG/form-glav.rsi
+  - type: Clothing
+    sprite: Stories/HeartsOfSS14/UEG/form-glav.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitOffUEG
+  name: Форма офицера ОПЗ 
+  description: Сшитая из прочных материалов, она сочетает в себе функциональность и стиль.
+  components:
+  - type: Sprite
+    sprite: Stories/HeartsOfSS14/UEG/jumpsuit_officer_uge.rsi
+  - type: Clothing
+    sprite: Stories/HeartsOfSS14/UEG/jumpsuit_officer_uge.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitSolUEG
+  name: Форма солдата ОПЗ. 
+  description: Земли символ, прочна, крепка, защиту несет и стройна.
+  components:
+  - type: Sprite
+    sprite: Stories/HeartsOfSS14/UEG/SoldierUniformUEG.rsi
+  - type: Clothing
+    sprite: Stories/HeartsOfSS14/UEG/SoldierUniformUEG.rsi
+
+# СССП
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitSolUSSP
+  name: Форма солдата СССП. 
+  description: Да воздравствуют защитники Союза!
+  components:
+  - type: Sprite
+    sprite: Stories/HeartsOfSS14/USSP/jumpsuit_sssp.rsi
+  - type: Clothing
+    sprite: Stories/HeartsOfSS14/USSP/jumpsuit_sssp.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitOffUSSP
+  name: Форма офицера СССП. 
+  description: Форма офицера на службе у СССП.
+  components:
+  - type: Sprite
+    sprite: Stories/HeartsOfSS14/USSP/jumpsuit_officer_sssp.rsi
+  - type: Clothing
+    sprite: Stories/HeartsOfSS14/USSP/jumpsuit_officer_sssp.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitGenUSSP
+  name: Форма генерала СССП. 
+  description: Генеральская форма, внушает почёт и уважение в стране.
+  components:
+  - type: Sprite
+    sprite: Stories/HeartsOfSS14/USSP/jumpsuit_general_sssp.rsi
+  - type: Clothing
+    sprite: Stories/HeartsOfSS14/USSP/jumpsuit_general_sssp.rsi

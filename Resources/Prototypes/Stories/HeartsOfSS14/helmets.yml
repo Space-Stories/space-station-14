@@ -1,0 +1,133 @@
+# Спаниела
+
+- type: entity
+  parent: ClothingHeadHelmetBasic
+  id: ClothingHeadHelmetGenSpa
+  name: Фуражка генерала Спаньелы
+  description: Фуражка символ лидерства и авторитета.
+  components:
+  - type: Sprite
+    sprite: Stories/HeartsOfSS14/Spaniela/capGenS.rsi
+  - type: Clothing
+    sprite: Stories/HeartsOfSS14/Spaniela/capGenS.rsi
+
+- type: entity
+  parent: ClothingHeadHelmetBasic
+  id: ClothingHeadHelmetSpa
+  name: боевая фуражка Спаньелы 
+  description: Фуражка для использования в условиях боевых действий.
+  components:
+  - type: Sprite
+    sprite: Stories/HeartsOfSS14/Spaniela/capS.rsi
+  - type: Clothing
+    sprite: Stories/HeartsOfSS14/Spaniela/capS.rsi
+
+# Брохвица
+
+- type: entity
+  parent: ClothingHeadHelmetBasic
+  id: ClothingHeadHelmetB
+  name: Боевой шлем Брохвицы
+  description: Шлем для использования в боевых условиях, обеспечивающий защиту и долговечность.
+  components:
+  - type: Sprite
+    sprite: Stories/HeartsOfSS14/Brohviza/HelmetB.rsi
+  - type: Clothing
+    sprite: Stories/HeartsOfSS14/Brohviza/HelmetB.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatGenB
+  name: Фуражка генерала Брохвицы
+  description: Строгий стиль, символ лидерства и авторитета.
+  components:
+  - type: Sprite
+    sprite: Stories/HeartsOfSS14/Brohviza/capGenB.rsi
+  - type: Clothing
+    sprite: Stories/HeartsOfSS14/Brohviza/capGenB.rsi
+
+# ОПЗ
+
+- type: entity
+  parent: ClothingHeadBase 
+  id: ClothingHeadHatBeretUEG
+  name: Берет ОПЗ
+  description: Символ авторитета, стиль и крепость, отличает сдержанность и элитность.
+  components:
+  - type: Sprite
+    sprite: Stories/HeartsOfSS14/UEG/BeretUEG.rsi
+  - type: Clothing
+    sprite: Stories/HeartsOfSS14/UEG/BeretUEG.rsi
+  - type: Tag
+    tags:
+    - ClothMade
+    - HamsterWearable
+    - WhitelistChameleon
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatGenUEG
+  name: Фуражка генерала ОПЗ
+  description: Строгий стиль, символ лидерства и авторитета.
+  components:
+  - type: Sprite
+    sprite: Stories/HeartsOfSS14/UEG/cap-solglav.rsi
+  - type: Clothing
+    sprite: Stories/HeartsOfSS14/UEG/cap-solglav.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatOffUEG
+  name: Фуражка офицера ОПЗ
+  description: Эта фуражка говорит солдату о том, что он разговаривает со старшим по званию.
+  components:
+  - type: Sprite
+    sprite: Stories/HeartsOfSS14/UEG/hat_officer_uge.rsi
+  - type: Clothing
+    sprite: Stories/HeartsOfSS14/UEG/hat_officer_uge.rsi
+
+- type: entity
+  parent: ClothingHeadHelmetBasic
+  id: ClothingHeadHelmetUEG
+  name: боевой шлем ОПЗ
+  description: Шлем для использования в боевых условиях, обеспечивающий защиту и долговечность. Отличается строгим дизайном и функциональностью.
+  components:
+  - type: Sprite
+    sprite: Stories/HeartsOfSS14/UEG/HELMETUEG.rsi
+  - type: Clothing
+    sprite: Stories/HeartsOfSS14/UEG/HELMETUEG.rsi
+
+# СССП
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatGenUSSP
+  name: Фуражка генерала СССП
+  description: От этой фуражки веет комунизмом.
+  components:
+  - type: Sprite
+    sprite: Stories/HeartsOfSS14/USSP/hat_general_sssp.rsi
+  - type: Clothing
+    sprite: Stories/HeartsOfSS14/USSP/hat_general_sssp.rsi
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatOffUSSP
+  name: Фуражка офицера СССП
+  description: Эта фуражка говорит о том, что перед ним стоит истинный коммунист.
+  components:
+  - type: Sprite
+    sprite: Stories/HeartsOfSS14/USSP/hat_officer_sssp.rsi
+  - type: Clothing
+    sprite: Stories/HeartsOfSS14/USSP/hat_officer_sssp.rsi
+
+- type: entity
+  parent: ClothingHeadHelmetBasic
+  id: ClothingHeadHelmetUSSP
+  name: боевой шлем СССП
+  description: Шлем для использования в боевых условиях, обеспечивающий защиту и долговечность. Отличается схожестью со старыми шлемами 20-ого века.
+  components:
+  - type: Sprite
+    sprite: Stories/HeartsOfSS14/USSP/helmet_sssp.rsi
+  - type: Clothing
+    sprite: Stories/HeartsOfSS14/USSP/helmet_sssp.rsi
