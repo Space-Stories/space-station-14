@@ -6,4 +6,3 @@ department-Medical = Медицинский отдел
 department-Security = Служба безопасности
 department-Science = Научный отдел
 department-Specific = На определённых станциях
-department-EventRoles = Ивентовые роли
