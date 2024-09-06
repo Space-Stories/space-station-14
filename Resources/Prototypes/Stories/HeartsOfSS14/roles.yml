@@ -1,0 +1,163 @@
+- type: job
+  id: SoldierUSSP
+  name: солдат СССП
+  description: Слава партии! Слава труду! Слава СССП!
+  playTimeTracker: JobUSSPSoldier
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 36000 #10 часов на СБ
+    - !type:OverallPlaytimeRequirement
+      time: 72000 #20 часов
+  icon: "JobIconSecurityCadet"
+  startingGear: USSPGear
+  supervisors: исполнительным лейтенантам СССП
+  canBeAntag: false
+  access:
+  - Salvage
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: USSPGear
+  equipment:
+    head: ClothingHeadHelmetUSSP
+    jumpsuit: ClothingUniformJumpsuitSolUSSP
+    back: ClothingBackpackMerc
+    ears: ClothingHeadsetAltSyndicate
+    shoes: ClothingShoesBootsCombatFilled
+    id: SyndiPDA
+    belt: ClothingBeltUSSPWebbing
+
+
+
+- type: job
+  id: SoldierUEG
+  name: солдат ОПЗ
+  description: Земля - наш дом!
+  playTimeTracker: JobUEGSoldier
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 36000 #10 часов на СБ
+    - !type:OverallPlaytimeRequirement
+      time: 72000 #20 часов
+  icon: "JobIconMedicalIntern"
+  startingGear: UEGGear
+  supervisors: сержантам первого класса ОПЗ
+  canBeAntag: false
+  access:
+  - Chemistry
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: UEGGear
+  equipment:
+    head: ClothingHeadHelmetUEG
+    jumpsuit: ClothingUniformJumpsuitSolUEG
+    back: ClothingBackpackMerc
+    ears: ClothingHeadsetAltUEG
+    shoes: ClothingShoesBootsCombatFilled
+    id: HoPPDA
+    belt: ClothingBeltMilitaryWebbing
+
+- type: job
+  id: SoldierBrohviza
+  name: солдат Брохвицы
+  description: Мы не кусок ОПЗ! Мы независимы!
+  playTimeTracker: JobBrohvizaSoldier
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 36000 #10 часов на СБ
+    - !type:OverallPlaytimeRequirement
+      time: 72000 #20 часов в игре
+  icon: "JobIconTechnicalAssistant"
+  startingGear: BrohvizaGear
+  supervisors: воеводам Брохвицкой армии
+  canBeAntag: false
+  access:
+  - Cargo
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: BrohvizaGear
+  equipment:
+    head: ClothingHeadHelmetBrohviza
+    jumpsuit: ClothingUniformJumpsuitSolBrohviza
+    back: ClothingBackpackMerc
+    ears: ClothingHeadsetAltFreelancer
+    shoes: ClothingShoesBootsBrohviza
+    id: JanitorPDA
+    belt: ClothingBeltMilitaryWebbing
+
+- type: job
+  id: SoldierSpaniela
+  name: солдат Спаньелы
+  description: За короля!
+  playTimeTracker: JobSpanielaSoldier
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Security
+      time: 36000 #10 часов на СБ
+    - !type:OverallPlaytimeRequirement
+      time: 72000 #20 часов в игре
+  icon: "JobIconJanitor"
+  startingGear: SpanielaGear
+  supervisors: офицерам армии Спаньелы
+  canBeAntag: false
+  access:
+  - Engineering
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+
+- type: startingGear
+  id: SpanielaGear
+  equipment:
+    head: ClothingHeadHelmetSpaniela
+    jumpsuit: ClothingUniformJumpsuitSolSpaniela
+    back: ClothingBackpackMerc
+    ears: ClothingHeadsetAltSpaniela
+    shoes: ClothingShoesBootsCombatFilled
+    id: JanitorPDA
+    belt: ClothingBeltMilitaryWebbing
+
+
+
+# Гарнитура для солдатиков ОПЗ
+
+- type: entity
+  parent: ClothingHeadsetAlt
+  id: ClothingHeadsetAltUEG
+  name: Гарнитура ОПЗ
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyCentCom
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/command.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/command.rsi
+
+# Гарнитура для солдатиков Спаньелы
+
+- type: entity
+  parent: ClothingHeadsetAlt
+  id: ClothingHeadsetAltSpaniela
+  name: Гарнитура Спаньелы
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyBinary
+  - type: Sprite
+    sprite: Clothing/Ears/Headsets/command.rsi
+  - type: Clothing
+    sprite: Clothing/Ears/Headsets/command.rsi

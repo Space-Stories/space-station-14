@@ -2,49 +2,72 @@
 
 - type: entity
   parent: ClothingHeadHelmetBasic
-  id: ClothingHeadHelmetGenSpa
-  name: Фуражка генерала Спаньелы
-  description: Фуражка символ лидерства и авторитета.
+  id: ClothingHeadHelmetGenSpaniela
+  name: Берет генерала Спаньелы
+  description: Берет - символ лидерства и авторитета.
   components:
   - type: Sprite
-    sprite: Stories/HeartsOfSS14/Spaniela/capGenS.rsi
+    sprite: Stories/HeartsOfSS14/Spaniela/beret_general_spaniel.rsi
   - type: Clothing
-    sprite: Stories/HeartsOfSS14/Spaniela/capGenS.rsi
+    sprite: Stories/HeartsOfSS14/Spaniela/beret_general_spaniel.rsi
 
 - type: entity
   parent: ClothingHeadHelmetBasic
-  id: ClothingHeadHelmetSpa
-  name: боевая фуражка Спаньелы 
-  description: Фуражка для использования в условиях боевых действий.
+  id: ClothingHeadHelmetSpaniela
+  name: Берет офицера Спаньелы
+  description: Берет - символ лидерства и авторитета.
   components:
   - type: Sprite
-    sprite: Stories/HeartsOfSS14/Spaniela/capS.rsi
+    sprite: Stories/HeartsOfSS14/Spaniela/beret_officer_spaniel.rsi
   - type: Clothing
-    sprite: Stories/HeartsOfSS14/Spaniela/capS.rsi
+    sprite: Stories/HeartsOfSS14/Spaniela/beret_officer_spaniel.rsi
+
+- type: entity
+  parent: ClothingHeadHelmetBasic
+  id: ClothingHeadHelmetOffSpaniela
+  name: боевая фуражка Спаньелы 
+  description: Фуражка для использования в условиях боевых действий. Не имеет никакой защиты...
+  components:
+  - type: Sprite
+    sprite: Stories/HeartsOfSS14/Spaniela/helmet_soldier_spaniel.rsi
+  - type: Clothing
+    sprite: Stories/HeartsOfSS14/Spaniela/helmet_soldier_spaniel.rsi
 
 # Брохвица
 
 - type: entity
   parent: ClothingHeadHelmetBasic
-  id: ClothingHeadHelmetB
+  id: ClothingHeadHelmetBrohviza
   name: Боевой шлем Брохвицы
   description: Шлем для использования в боевых условиях, обеспечивающий защиту и долговечность.
   components:
   - type: Sprite
-    sprite: Stories/HeartsOfSS14/Brohviza/HelmetB.rsi
+    sprite: Stories/HeartsOfSS14/Brohviza/helmet_soldier_Brohvitsa.rsi
   - type: Clothing
-    sprite: Stories/HeartsOfSS14/Brohviza/HelmetB.rsi
+    sprite: Stories/HeartsOfSS14/Brohviza/helmet_soldier_Brohvitsa.rsi
 
 - type: entity
   parent: ClothingHeadBase
-  id: ClothingHeadHatGenB
+  id: ClothingHeadHatOffBrohviza
+  name: Фуражка офицера Брохвицы
+  description: Строгий стиль, символ лидерства и авторитета.
+  components:
+  - type: Sprite
+    sprite: Stories/HeartsOfSS14/Brohviza/hat_officer_Brohvitsa.rsi
+  - type: Clothing
+    sprite: Stories/HeartsOfSS14/Brohviza/hat_officer_Brohvitsa.rsi
+
+
+- type: entity
+  parent: ClothingHeadBase
+  id: ClothingHeadHatGenBrohviza
   name: Фуражка генерала Брохвицы
   description: Строгий стиль, символ лидерства и авторитета.
   components:
   - type: Sprite
-    sprite: Stories/HeartsOfSS14/Brohviza/capGenB.rsi
+    sprite: Stories/HeartsOfSS14/Brohviza/hat_general_Brohvitsa.rsi
   - type: Clothing
-    sprite: Stories/HeartsOfSS14/Brohviza/capGenB.rsi
+    sprite: Stories/HeartsOfSS14/Brohviza/hat_general_Brohvitsa.rsi
 
 # ОПЗ
 

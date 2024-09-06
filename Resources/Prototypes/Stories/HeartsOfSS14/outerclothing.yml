@@ -1,15 +1,28 @@
+# Спаньела
+
+- type: entity
+  parent: ClothingOuterCoatHoSTrench
+  id: ClothingOuterCoatSpabielaGen
+  name: Тренч генерала Спаньелы
+  description: Золотые вышивки, стильный дизайн - это всё показывает ваш статус.
+  components:
+  - type: Sprite
+    sprite: Stories/HeartsOfSS14/Brohviza/coat_general_spaniel.rsi
+  - type: Clothing
+    sprite: Stories/HeartsOfSS14/Brohviza/coat_general_spaniel.rsi
+
 # Брохвица
 
 - type: entity
   parent: ClothingOuterCoatHoSTrench
-  id: ClothingOuterCoatBroGen
+  id: ClothingOuterCoatBrohvizaGen
   name: Тренч генерала Брохвицы 
   description: Элегантный и функциональный, с изысканным дизайном.
   components:
   - type: Sprite
-    sprite: Stories/HeartsOfSS14/Brohviza/BroGen.rsi
+    sprite: Stories/HeartsOfSS14/Brohviza/coat_general_Brohvitsa.rsi
   - type: Clothing
-    sprite: Stories/HeartsOfSS14/Brohviza/BroGen.rsi
+    sprite: Stories/HeartsOfSS14/Brohviza/coat_general_Brohvitsa.rsi
 
 # ОПЗ
 

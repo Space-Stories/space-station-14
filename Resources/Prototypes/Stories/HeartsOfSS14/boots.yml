@@ -1,0 +1,14 @@
+# Брохвица
+
+- type: entity
+  parent: ClothingShoesMilitaryBase
+  id: ClothingShoesBootsBrohviza
+  name: Обмотки солдат Брохвицы
+  description: Эти обмотки сделаны во время кризиса и до сих пор используются армией Брохвицы в связи с недостатком нормальных сапогов.
+  components:
+  - type: Sprite
+    sprite: Stories/HeartsOfSS14/Brohviza/boots_soldier_Brohvitsa.rsi
+  - type: Clothing
+    sprite: Stories/HeartsOfSS14/Brohviza/boots_soldier_Brohvitsa.rsi
+  - type: ClothingSlowOnDamageModifier
+    modifier: 0.3

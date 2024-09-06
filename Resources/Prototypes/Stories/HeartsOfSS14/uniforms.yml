@@ -2,27 +2,71 @@
 
 - type: entity
   parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitOffSpa
-  name: Форма офицера Спаньелы. 
+  id: ClothingUniformJumpsuitSolSpaniela
+  name: Форма солдата Спаньелы.
   description: Прочна, крепка, защиту несет и стройна.
   components:
   - type: Sprite
-    sprite: Stories/HeartsOfSS14/Spaniela/OffS.rsi
+    sprite: Stories/HeartsOfSS14/Spaniela/jumpsuit_soldier_spaniel.rsi
   - type: Clothing
-    sprite: Stories/HeartsOfSS14/Spaniela/OffS.rsi
+    sprite: Stories/HeartsOfSS14/Spaniela/jumpsuit_soldier_spaniel.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitOffSpaniela
+  name: Форма офицера Спаньелы. 
+  description: Офицерский костюм, смахивает на 20 век.
+  components:
+  - type: Sprite
+    sprite: Stories/HeartsOfSS14/Spaniela/jumpsuit_officer_spaniel.rsi
+  - type: Clothing
+    sprite: Stories/HeartsOfSS14/Spaniela/jumpsuit_officer_spaniel.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitGenSpaniela
+  name: Форма генерала Спаньелы. 
+  description: Генеральский фиолетовый комбинезон. Смахивает на.. Древний Рим?
+  components:
+  - type: Sprite
+    sprite: Stories/HeartsOfSS14/Spaniela/jumpsuit_general_spaniel.rsi
+  - type: Clothing
+    sprite: Stories/HeartsOfSS14/Spaniela/jumpsuit_general_spaniel.rsi
 
 # Брохвица
 
 - type: entity
   parent: ClothingUniformBase
-  id: ClothingUniformJumpsuitOffB
+  id: ClothingUniformJumpsuitOffBrohviza
   name: Форма офицера Брохвицы. 
   description: Утонченный стиль, строгость и функциональность, воплощение чести и дисциплины.
   components:
   - type: Sprite
-    sprite: Stories/HeartsOfSS14/Brohviza/OffB.rsi
+    sprite: Stories/HeartsOfSS14/Brohviza/jumpsuit_officer_Brohvitsa.rsi
   - type: Clothing
-    sprite: Stories/HeartsOfSS14/Brohviza/OffB.rsi
+    sprite: Stories/HeartsOfSS14/Brohviza/jumpsuit_officer_Brohvitsa.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitSolBrohviza
+  name: Форма солдата Брохвицы. 
+  description: Лёгкая форма для ведения боевых действий. По стилю чем-то напоминает времена 20-ого века.
+  components:
+  - type: Sprite
+    sprite: Stories/HeartsOfSS14/Brohviza/jumpsuit_soldier_Brohvitsa.rsi
+  - type: Clothing
+    sprite: Stories/HeartsOfSS14/Brohviza/jumpsuit_soldier_Brohvitsa.rsi
+
+- type: entity
+  parent: ClothingUniformBase
+  id: ClothingUniformJumpsuitGenBrohviza
+  name: Форма генерала Брохвицы. 
+  description: Униформа воистину уважаемого человека в армии Брохвицы.
+  components:
+  - type: Sprite
+    sprite: Stories/HeartsOfSS14/Brohviza/jumpsuit_general_Brohvitsa.rsi
+  - type: Clothing
+    sprite: Stories/HeartsOfSS14/Brohviza/jumpsuit_general_Brohvitsa.rsi
 
 # ОПЗ
 
