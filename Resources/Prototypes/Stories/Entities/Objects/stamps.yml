@@ -25,7 +25,6 @@
   components: 
     - type: ChameleonStamp
       default: RubberStampBase
-      slot: [all]
     - type: UserInterface
       interfaces:
         enum.ChameleonUiKey.Key:
