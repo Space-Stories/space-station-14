@@ -61,7 +61,22 @@ public abstract class SharedChameleonStampSystem : EntitySystem
         // world sprite icon
         UpdateSprite(uid, proto);
 
-        // sta sprite logic
+        // copy name and description, unless its an ID card
+        if (!HasComp<IdCardComponent>(uid))
+        {
+            var meta = MetaData(uid);
+            _metaData.SetEntityName(uid, proto.Name, meta);
+            _metaData.SetEntityDescription(uid, proto.Description, meta);
+        }
+
+        // item sprite logic
+        if (TryComp(uid, out ItemComponent? item) &&
+            proto.TryGetComponent(out ItemComponent? otherItem, _factory))
+        {
+            _itemSystem.CopyVisuals(uid, otherItem, item);
+        }
+
+        // clothing sprite logic
         if (TryComp(uid, out StampComponent? stamp) &&
             proto.TryGetComponent("Stamp", out StampComponent? otherStamp))
         {

@@ -14,6 +14,13 @@ namespace Content.Shared.Stories.ChameleonStamp;
 public sealed partial class ChameleonStampComponent : Component
 {
     /// <summary>
+    ///     Filter possible chameleon options by their slot flag.
+    /// </summary>
+    [ViewVariables(VVAccess.ReadOnly)]
+    [DataField(required: true)]
+    public SlotFlags Slot = SlotFlags.All;
+
+    /// <summary>
     ///     EntityPrototype id that chameleon item is trying to mimic.
     /// </summary>
     [ViewVariables(VVAccess.ReadOnly)]
@@ -30,10 +37,12 @@ public sealed partial class ChameleonStampComponent : Component
 [Serializable, NetSerializable]
 public sealed class ChameleonStampBoundUserInterfaceState : BoundUserInterfaceState
 {
+    public readonly SlotFlags Slot;
     public readonly string? SelectedId;
 
-    public ChameleonStampBoundUserInterfaceState(string? selectedId)
+    public ChameleonStampBoundUserInterfaceState(SlotFlags slot, string? selectedId)
     {
+        Slot = slot;
         SelectedId = selectedId;
     }
 }

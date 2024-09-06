@@ -4,6 +4,7 @@ using Content.Client.Clothing.UI;
 using JetBrains.Annotations;
 using Robust.Client.GameObjects;
 using Robust.Client.UserInterface;
+using Content.Client.Stories.ChameleonStamp;
 using Content.Shared.Stories.ChameleonStamp;
 namespace Content.Client.Stories.ChameleonStamp.UI;
 
@@ -37,7 +38,7 @@ public sealed class ChameleonStampBoundUserInterface : BoundUserInterface
             return;
         }   
         Logger.Info($"Проверка стейтов пройдена.");
-        var targets = _chameleon.GetValidTargets();
+        var targets = _chameleon.GetValidTargets(st.Slot);
         _menu?.UpdateState(targets, st.SelectedId);
     }
 

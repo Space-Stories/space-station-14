@@ -13,7 +13,14 @@ namespace Content.Client.Stories.ChameleonStamp
         [Dependency] private readonly IPrototypeManager _proto = default!;
         [Dependency] private readonly IComponentFactory _factory = default!;
 
-        private readonly List<string> _data = new List<string>();
+        private static readonly SlotFlags[] IgnoredSlots =
+        {
+            SlotFlags.PREVENTEQUIP,
+            SlotFlags.NONE
+        };
+        private static readonly SlotFlags[] Slots = Enum.GetValues<SlotFlags>().Except(IgnoredSlots).ToArray();
+
+        private readonly Dictionary<SlotFlags, List<string>> _data = new();
 
         public override void Initialize()
         {
@@ -40,22 +47,28 @@ namespace Content.Client.Stories.ChameleonStamp
         protected override void UpdateSprite(EntityUid uid, EntityPrototype proto)
         {
             base.UpdateSprite(uid, proto);
+            Logger.Info($"Обновление спрайта для сущности с UID: {uid}, используя прототип: {proto.ID}");
 
             if (TryComp(uid, out SpriteComponent? sprite)
                 && proto.TryGetComponent(out SpriteComponent? otherSprite, _factory))
             {
+                Logger.Info($"Копирование спрайта из другого спрайт-компонента для UID: {uid}");
                 sprite.CopyFrom(otherSprite);
             }
         }
 
-        public IEnumerable<string> GetValidTargets()
+        public IEnumerable<string> GetValidTargets(SlotFlags slot)
         {
             var set = new HashSet<string>();
+            Logger.Info($"Получение допустимых целей для слота: {slot}");
 
-            foreach (var proto in _data)
+            foreach (var availableSlot in _data.Keys)
             {
-                Logger.Info($"Добавление прототипа {proto} в список");
-                set.UnionWith(_data);
+                if (slot.HasFlag(availableSlot))
+                {
+                    Logger.Info($"Добавление целей для слота: {availableSlot}");
+                    set.UnionWith(_data[availableSlot]);
+                }
             }
             return set;
         }
@@ -76,8 +89,15 @@ namespace Content.Client.Stories.ChameleonStamp
                 {
                     continue;
                 }
-                _data.Add(proto.ID);
-                Logger.Info($"Добавлен прототип {proto.ID}");
+                foreach (var slot in Slots)
+                {
+                    if (!_data.ContainsKey(slot))
+                    {
+                        _data.Add(slot, new List<string>());
+                        Logger.Info($"Создан новый слот: {slot}");
+                    }
+                    _data[slot].Add(proto.ID);
+                }
             }
         }
     }
