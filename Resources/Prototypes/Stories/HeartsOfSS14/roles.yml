@@ -161,18 +161,3 @@
     sprite: Clothing/Ears/Headsets/command.rsi
   - type: Clothing
     sprite: Clothing/Ears/Headsets/command.rsi
-
-
-
-- type: department
-  id: EventRoles
-  name: department-EventRoles
-  description: department-EventRoles-description
-  color: "#334E6D"
-  roles:
-  - SoldierUSSP
-  - SoldierUEG
-  - SoldierBrohviza
-  - SoldierSpaniela
-  primary: false
-  weight: 101
