@@ -1,0 +1,47 @@
+- type: entity
+  id: SpawnPointSoldierUSSP
+  parent: SpawnPointJobBase
+  name: Спавнер СССП
+  components:
+  - type: SpawnPoint
+    job_id: SoldierUSSP
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointSoldierUEG
+  parent: SpawnPointJobBase
+  name: Спавнер ОПЗ
+  components:
+  - type: SpawnPoint
+    job_id: SoldierUEG
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointSoldierBrohviza
+  parent: SpawnPointJobBase
+  name: Спавнер Брохвицы
+  components:
+  - type: SpawnPoint
+    job_id: SoldierBrohviza
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger
+
+- type: entity
+  id: SpawnPointSoldierSpaniela
+  parent: SpawnPointJobBase
+  name: Спавнер Спаньелы
+  components:
+  - type: SpawnPoint
+    job_id: SoldierSpaniela
+  - type: Sprite
+    layers:
+      - state: green
+      - state: passenger

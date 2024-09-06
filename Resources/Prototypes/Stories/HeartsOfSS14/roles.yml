@@ -107,7 +107,7 @@
       time: 36000 #10 часов на СБ
     - !type:OverallPlaytimeRequirement
       time: 72000 #20 часов в игре
-  icon: "JobIconJanitor"
+  icon: "JobIconResearchAssistant"
   startingGear: SpanielaGear
   supervisors: офицерам армии Спаньелы
   canBeAntag: false
@@ -161,3 +161,18 @@
     sprite: Clothing/Ears/Headsets/command.rsi
   - type: Clothing
     sprite: Clothing/Ears/Headsets/command.rsi
+
+
+
+- type: department
+  id: EventRoles
+  name: department-EventRoles
+  description: department-EventRoles-description
+  color: "#334E6D"
+  roles:
+  - SoldierUSSP
+  - SoldierUEG
+  - SoldierBrohviza
+  - SoldierSpaniela
+  primary: false
+  weight: 101
