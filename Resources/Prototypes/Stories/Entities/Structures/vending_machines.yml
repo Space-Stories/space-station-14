@@ -69,7 +69,6 @@
       offState: off
       brokenState: broken
       normalState: normal-unshaded
-      ejectState: eject-unshaded
       denyState: deny-unshaded
     - type: Advertise
       pack: SecTechAds
