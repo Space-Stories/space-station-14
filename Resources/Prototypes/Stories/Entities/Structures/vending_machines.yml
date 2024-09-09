@@ -57,3 +57,36 @@
       radius: 1
       energy: 1.2
       color: "#78645c"
+
+- type: entity
+  parent: VendingMachine
+  id: MusicalVendingMachine
+  name: МузМат
+  description: Торговый автомат с музыкальными инструментами".
+  components:
+    - type: VendingMachine
+      pack: MusVendInventory
+      offState: off
+      brokenState: broken
+      normalState: normal-unshaded
+      denyState: deny-unshaded
+    - type: Advertise
+      pack: SecTechAds
+    - type: SpeakOnUIClosed
+      pack: SecTechGoodbyes
+    - type: Sprite
+      sprite: Stories/Structures/Machines/VendingMachines/musmat.rsi
+      layers:
+        - state: "off"
+          map: ["enum.VendingMachineVisualLayers.Base"]
+        - state: "off"
+          map: ["enum.VendingMachineVisualLayers.BaseUnshaded"]
+          shader: unshaded
+        - state: panel
+          map: ["enum.WiresVisualLayers.MaintenancePanel"]
+    - type: AccessReader
+      access: [["Prison"]]
+    - type: PointLight
+      radius: 1
+      energy: 1.2
+      color: "#6f42d6"
