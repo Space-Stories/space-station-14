@@ -2,6 +2,7 @@
   id: StoriesDefaultMapPool
   maps:
   - StoriesAtlas
+  - StoriesBarratry
   - StoriesBagel
   - StoriesBox
   - StoriesCluster

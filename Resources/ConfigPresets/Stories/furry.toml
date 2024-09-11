@@ -44,3 +44,6 @@ preload = false
 
 [netres]
 limit = 30
+
+[viewport]
+maximum_width = 26
