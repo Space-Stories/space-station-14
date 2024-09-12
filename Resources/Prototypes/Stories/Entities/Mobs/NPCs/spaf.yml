@@ -20,7 +20,6 @@
     spawned:
     - id: FoodMeatSlime
       amount: 2
-  - type: StepTriggerImmune
   - type: Speech
     speechVerb: Slime
     speechSounds: Slime

@@ -79,3 +79,6 @@ generator_enabled = false
 
 [netres]
 limit = 10
+
+[viewport]
+maximum_width = 26
