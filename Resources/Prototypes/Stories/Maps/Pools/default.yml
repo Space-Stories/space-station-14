@@ -13,14 +13,14 @@
   - StoriesPacked
   - StoriesTrain
   - StoriesCog
-  # - CorvaxAstra
-  # - CorvaxAvrite
+  - CorvaxAstra
+  - CorvaxAvrite
   - CorvaxDelta
-  # - CorvaxSilly
+  - CorvaxSilly
   # - CorvaxTerra
-  # - CorvaxPilgrim
+  - CorvaxPilgrim
   # - CorvaxPearl
-  # - CorvaxPaper
+  - CorvaxPaper
   # - CorvaxOutpost
   # - CorvaxMaus
   # - CorvaxIshimura
