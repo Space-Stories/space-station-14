@@ -58,6 +58,17 @@
       emergencyLightColor: Orange
       forceEnableEmergencyLights: true
       shuttleTime: 1200
+    altdelta:
+      announcement: alert-level-altdelta-announcement
+      selectable: false
+      sound:
+        path: /Audio/Stories/Misc/altdelta.ogg
+        params:
+          volume: -3
+      color: DarkRed
+      emergencyLightColor: Orange
+      forceEnableEmergencyLights: true
+      shuttleTime: 1200
     epsilon:
       announcement: alert-level-epsilon-announcement
       selectable: false
