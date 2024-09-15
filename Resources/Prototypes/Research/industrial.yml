@@ -101,9 +101,9 @@
   recipeUnlocks:
   - ThermomachineFreezerMachineCircuitBoard
   - GasRecyclerMachineCircuitboard
-  - ReflectorBoxMachineCircuitboard
-  - ReflectorCornerMachineCircuitboard
-  - ReflectorCornerTsideMachineCircuitboard
+  - ReflectorBoxMachineCircuitboard # Stories
+  - ReflectorCornerMachineCircuitboard # Stories
+  - ReflectorCornerTsideMachineCircuitboard # Stories
 
 - type: technology
   id: RipleyAPLU
