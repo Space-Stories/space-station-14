@@ -190,10 +190,6 @@
       - tool: Welding
         doAfter: 1
 
-  - type: constructionGraph
-  id: GasBinary
-  start: start
-  graph:
   - node: radiatorbend
     entity: HeatExchangerBend
     edges:
