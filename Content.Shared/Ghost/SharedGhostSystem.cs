@@ -69,7 +69,6 @@ namespace Content.Shared.Ghost
         public void SetColor(GhostComponent component, Color value)
         {
             component.color = value;
-            Dirty(component);
         }
     }
 
