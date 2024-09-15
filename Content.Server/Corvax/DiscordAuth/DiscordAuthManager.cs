@@ -53,10 +53,8 @@ public sealed class DiscordAuthManager
     private async void OnAuthCheck(MsgDiscordAuthCheck message)
     {
         var isVerified = await IsVerified(message.MsgChannel.UserId);
-        if (isVerified)
+        if (isVerified && _playerMgr.TryGetSessionById(message.MsgChannel.UserId, out var session))
         {
-            var session = _playerMgr.GetSessionByUserId(message.MsgChannel.UserId);
-
             PlayerVerified?.Invoke(this, session);
         }
     }
@@ -83,7 +81,7 @@ public sealed class DiscordAuthManager
 
             var authUrl = await GenerateAuthLink(e.Session.UserId);
             var msg = new MsgDiscordAuthRequired() { AuthUrl = authUrl };
-            e.Session.ConnectedClient.SendMessage(msg);
+            e.Session.Channel.SendMessage(msg);
         }
     }
 
