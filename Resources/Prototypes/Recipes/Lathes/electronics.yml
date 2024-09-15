@@ -22,8 +22,8 @@
   parent: BaseElectronicsRecipe
   id: BaseCheapCircuitboardRecipe
   materials:
-    Steel: 50
-    Glass: 250
+     Steel: 50
+     Glass: 250
 
 - type: latheRecipe
   abstract: true
@@ -596,18 +596,3 @@
   parent: BaseCircuitboardRecipe
   id: CutterMachineCircuitboard
   result: CutterMachineCircuitboard
-
-- type: latheRecipe
-  parent: BaseCircuitboardRecipe
-  id: ReflectorBoxMachineCircuitboard
-  result: ReflectorBoxMachineCircuitboard
-
-- type: latheRecipe
-  parent: BaseCircuitboardRecipe
-  id: ReflectorCornerMachineCircuitboard
-  result: ReflectorCornerMachineCircuitboard
-
-- type: latheRecipe
-  parent: BaseCircuitboardRecipe
-  id: ReflectorCornerTsideMachineCircuitboard
-  result: ReflectorCornerTsideMachineCircuitboard
