@@ -340,6 +340,10 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitEngineeringWhite
+  - type: SupermatterImmune
+  - type: ClothingGrantComponent # Goobstation - Make sure the CE doesn't get cooked by supermatter
+    component:
+    - type: SupermatterImmune
 
 #Chief Medical Officer's Hardsuit
 - type: entity
@@ -871,6 +875,10 @@
     sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertengineer.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitERTEngineer
+  - type: SupermatterImmune
+  - type: ClothingGrantComponent # Goobstation - Make sure the CE doesn't get cooked by supermatter
+    component:
+    - type: SupermatterImmune
 
 #ERT Medic Hardsuit
 - type: entity
@@ -971,6 +979,10 @@
   - type: HeldSpeedModifier
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitDeathsquad
+  - type: SupermatterImmune
+  - type: ClothingGrantComponent # Goobstation - Make sure the CE doesn't get cooked by supermatter
+    component:
+    - type: SupermatterImmune
 
 #CBURN Hardsuit
 - type: entity
