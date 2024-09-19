@@ -1,6 +1,6 @@
 - type: technology
-  id: AtmosphericTechTier2
-  name: research-technology-atmospheric-tech
+  id: ReflectionTech
+  name: Технологии отражения
   icon:
     sprite: Stories/Structures/Machines/reflectors.rsi
     state: reflector_circle

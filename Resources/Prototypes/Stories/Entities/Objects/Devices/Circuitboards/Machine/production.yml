@@ -15,7 +15,7 @@
 - type: entity
   id: ReflectorBoxMachineCircuitboard
   parent: BaseMachineCircuitboard
-  name: Отражатель, тип "Коробка" - Машинная плата
+  name: Отражатель, тип "Коробка"
   description: Машинная плата отражателя, тип "Коробка"
   components:
   - type: Sprite
