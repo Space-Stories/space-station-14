@@ -1,0 +1,13 @@
+- type: technology
+  id: AtmosphericTechTier2
+  name: research-technology-atmospheric-tech
+  icon:
+    sprite: Stories/Structures/Machines/reflectors.rsi
+    state: reflector_circle
+  discipline: Industrial
+  tier: 2
+  cost: 5000
+  recipeUnlocks:
+  - ReflectorBoxMachineCircuitboard
+  - ReflectorCornerMachineCircuitboard
+  - ReflectorCornerTsideMachineCircuitboard

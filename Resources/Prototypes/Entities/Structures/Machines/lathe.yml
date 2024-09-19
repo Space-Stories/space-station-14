@@ -518,6 +518,9 @@
       - MassMediaCircuitboard
       - ReagentGrinderIndustrialMachineCircuitboard
       - JukeboxCircuitBoard
+      - ReflectorBoxMachineCircuitboard # Stories
+      - ReflectorCornerMachineCircuitboard # Stories
+      - ReflectorCornerTsideMachineCircuitboard # Stories
   - type: EmagLatheRecipes
     emagDynamicRecipes:
       - ShuttleGunDusterCircuitboard
