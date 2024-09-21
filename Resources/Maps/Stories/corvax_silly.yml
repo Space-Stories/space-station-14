@@ -67,7 +67,7 @@ entities:
   - uid: 1
     components:
     - type: MetaData
-      name: map 113
+      name: Silly Island
     - type: Transform
     - type: Map
       mapPaused: True
@@ -2821,7 +2821,8 @@ entities:
         maxVol: 30
         name: food
         reagents:
-        - ReagentId: Fiber
+        - data: []
+          ReagentId: Fiber
           Quantity: 30
     - type: ContainedSolution
       containerName: food
@@ -2836,7 +2837,8 @@ entities:
         maxVol: 30
         name: food
         reagents:
-        - ReagentId: Fiber
+        - data: []
+          ReagentId: Fiber
           Quantity: 30
     - type: ContainedSolution
       containerName: food
@@ -2851,7 +2853,8 @@ entities:
         maxVol: 10
         name: food
         reagents:
-        - ReagentId: Fiber
+        - data: []
+          ReagentId: Fiber
           Quantity: 10
     - type: ContainedSolution
       containerName: food
@@ -2866,7 +2869,8 @@ entities:
         maxVol: 10
         name: food
         reagents:
-        - ReagentId: Fiber
+        - data: []
+          ReagentId: Fiber
           Quantity: 10
     - type: ContainedSolution
       containerName: food
@@ -2881,7 +2885,8 @@ entities:
         maxVol: 10
         name: food
         reagents:
-        - ReagentId: Fiber
+        - data: []
+          ReagentId: Fiber
           Quantity: 10
     - type: ContainedSolution
       containerName: food
@@ -22347,24 +22352,37 @@ entities:
       parent: 4510
     - type: Physics
       canCollide: False
-- proto: FoodMeatHawaiianKebab
-  entities:
-  - uid: 2695
-    components:
-    - type: Transform
-      pos: 25.54434,-25.260622
-      parent: 2
-- proto: FoodMeatKebab
+- proto: FoodKebabSkewer
   entities:
   - uid: 1442
     components:
     - type: Transform
       pos: -22.505842,-4.494341
       parent: 2
+  - uid: 1829
+    components:
+    - type: Transform
+      pos: -27.570175,-0.42250896
+      parent: 2
+  - uid: 2096
+    components:
+    - type: Transform
+      pos: 25.38586,-25.260622
+      parent: 2
   - uid: 2109
     components:
     - type: Transform
       pos: -2.5440254,-2.3007455
+      parent: 2
+  - uid: 2695
+    components:
+    - type: Transform
+      pos: 25.54434,-25.260622
+      parent: 2
+  - uid: 2697
+    components:
+    - type: Transform
+      pos: 25.531134,-25.432255
       parent: 2
 - proto: FoodMeatMeatball
   entities:
@@ -22375,25 +22393,6 @@ entities:
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
-- proto: FoodMeatRatdoubleKebab
-  entities:
-  - uid: 1829
-    components:
-    - type: Transform
-      pos: -27.570175,-0.42250896
-      parent: 2
-  - uid: 2697
-    components:
-    - type: Transform
-      pos: 25.531134,-25.432255
-      parent: 2
-- proto: FoodMeatSnakeKebab
-  entities:
-  - uid: 2096
-    components:
-    - type: Transform
-      pos: 25.38586,-25.260622
-      parent: 2
 - proto: FoodMeatWheat
   entities:
   - uid: 5483
@@ -29438,13 +29437,6 @@ entities:
     - type: Transform
       pos: 3.2464519,-4.6204143
       parent: 2
-- proto: MaterialReclaimer
-  entities:
-  - uid: 1651
-    components:
-    - type: Transform
-      pos: 24.5,18.5
-      parent: 2
 - proto: MaterialWoodPlank1
   entities:
   - uid: 4650
@@ -30495,7 +30487,7 @@ entities:
     - type: Transform
       pos: -2.5,3.5
       parent: 2
-- proto: PottedPlant6
+- proto: PottedPlant7
   entities:
   - uid: 2955
     components:
@@ -34791,7 +34783,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 9.5,6.5
       parent: 2
-- proto: SignChemistry2
+- proto: SignChem
   entities:
   - uid: 2868
     components:
@@ -34958,7 +34950,7 @@ entities:
       rot: 3.141592653589793 rad
       pos: 29.5,-1.5
       parent: 2
-- proto: SignScience1
+- proto: SignScience
   entities:
   - uid: 3365
     components:
@@ -35698,7 +35690,7 @@ entities:
       parent: 2
 - proto: SpawnPointJediNt
   entities:
-  - uid: 99999
+  - uid: 4316
     components:
     - type: Transform
       pos: -7.5,12.5
