@@ -1,45 +1,46 @@
 - type: job
   id: IAA
-  name: агент внутрених дел
+  name: job-name-iaa
+  description: job-description-iaa
   playTimeTracker: JobIAA
   requirements:
-    - !type:DepartmentTimeRequirement
-      department: Command
-      time: 72000
-    - !type:DepartmentTimeRequirement
-      department: Security
-      time: 36000
-  weight: 10
+  - !type:DepartmentTimeRequirement
+    department: Command
+    time: 72000
+  - !type:DepartmentTimeRequirement
+    department: Security
+    time: 36000
+  - !type:AgeRequirement
+    requiredAge: 21
   startingGear: IAAGear
   icon: "JobIconIAA"
   supervisors: job-supervisors-centcom
   canBeAntag: false
   access:
-    - Service
-    - Lawyer
-    - Brig
-    - Maintenance
-    - Command
-    - External
+  - Service
+  - Brig
+  - Maintenance
+  - Command
+  - External
+  - Lawyer
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
-  - !type:AddComponentSpecial
-    components:
-      - type: CommandStaff
 
 - type: startingGear
   id: IAAGear
   equipment:
-    jumpsuit: ClothingUniformJumpsuitLawyerBlack  # TODO change jumpsuit to randomiser of the 4 variants
-    back: ClothingBackpackIAAFilled
     shoes: ClothingShoesColorBlack
     id: IAAPDA
     eyes: ClothingEyesGlassesSunglasses
     ears: ClothingHeadsetIAA
-    neck: ClothingNeckLawyerbadge
-  innerclothingskirt: ClothingUniformJumpskirtLawyerBlack
+    pocket2: BookSpaceLaw
   inhand:
-    - BriefcaseIAAFilled
-  satchel: ClothingBackpackSatchelIAAFilled
-  duffelbag: ClothingBackpackDuffelIAAFilled
+    - BriefcaseBrown
+  storage:
+    back:
+    - BoxSurvival
+    - Paper
+    - Paper
+    - PenCentcom
+    - RubberStampIAA
