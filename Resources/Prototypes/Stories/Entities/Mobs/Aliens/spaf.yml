@@ -68,7 +68,7 @@
     baseSprintSpeed : 4
   - type: UnpoweredFlashlight
     toggleFlashlightSound:
-      path: ""
+      path: /Audio/Voice/Slime/slime_squish.ogg
     toggleAction: ActionSpafLight
   - type: PointLight
     enabled: false

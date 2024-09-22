@@ -130,11 +130,6 @@
   - type: ActiveRadio
     channels:
     - ShadowlingMind
-  - type: Vocal
-    sounds:
-      Male: UnsexedShadowling
-      Female: UnsexedShadowling
-      Unsexed: UnsexedShadowling
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Shadowling

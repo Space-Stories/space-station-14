@@ -6,10 +6,9 @@
   components:
   - type: MachineBoard
     prototype: PrinterDoc
-    requirements:
+    stackRequirements:
       MatterBin: 3
       Manipulator: 1
-    materialRequirements:
       Glass: 1
 
 - type: entity
@@ -60,7 +59,7 @@
     sprite: Stories/Objects/Misc/module.rsi
     state: reflectortsidecorner_circuitboard
   - type: MachineBoard
-    prototype: ReflectoCornerTside
+    prototype: ReflectorCornerTside
     stackRequirements:
       Capacitor: 3
       CableHV: 10

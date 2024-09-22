@@ -2,7 +2,7 @@
   id: ActionShadowlingHatch
   name: Раскрыться
   description: На удивление, раскрывает вас, делая тенеморфом.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     icon: { sprite: Stories/Actions/shadowling.rsi, state: hatch }
@@ -14,7 +14,7 @@
   id: ActionShadowlingEnthrall
   name: Порабощение
   description: Делает выбранного члена экипажа без импланта защиты разума вашим покорным рабом.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: EntityTargetAction
     icon: { sprite: Stories/Actions/shadowling.rsi, state: enthrall }
@@ -32,7 +32,7 @@
   id: ActionShadowlingGlare
   name: Блик
   description: Блик — базовый прием для оглушения целей.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: EntityTargetAction
     useDelay: 30
@@ -46,7 +46,7 @@
   id: ActionShadowlingVeil
   name: Пелена
   description: Отключает свет вокруг вас (фонарики, лампы)
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     useDelay: 10
@@ -59,7 +59,7 @@
   id: ActionShadowlingShadowWalk
   name: Теневой шаг
   description: Шаг тени позволяет тенеморфу быстро перейти в астрал, чтобы спастись от неприятеля.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     useDelay: 45
@@ -74,7 +74,7 @@
   id: ActionShadowlingIcyVeins
   name: Стынущие жилы
   description: При активации мгновенно вводит всем не тенеморфам в радиусе вашего прямого зрения приличное количества ледяного масла, и оглушает их на короткий период.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     useDelay: 90
@@ -101,7 +101,7 @@
   id: ActionShadowlingCollectiveMind
   name: Разум улья
   description: После короткого каста, вы увидите текущее количество рабов, и если их будет достаточно, вам откроется новая способность
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     useDelay: 10
@@ -114,7 +114,7 @@
   id: ActionShadowlingRapidReHatch
   name: Быстрое перераскрытие
   description: Позволяет тенеморфу обновить свой генетический материал, чтобы устранить повреждения и генетические дефекты
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     useDelay: 120
@@ -127,7 +127,7 @@
   id: ActionShadowlingSonicScreech
   name: Волна визга
   description: Временно делает гуманоидов глухими, оглушает и наносит урон боргам, выбивает окна, действует по области
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     useDelay: 90
@@ -140,7 +140,7 @@
   id: ActionShadowlingBlindnessSmoke
   name: Слепящий дым
   description: Испуская облако чёрного дыма, тенеморфы могут дизориентировать преследователей
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     useDelay: 60
@@ -153,7 +153,7 @@
   id: ActionShadowlingBlackRecuperation
   name: Чёрная медицина
   description: Воскрешает выбранного раба, или превращает живого раба в низшего тенеморфа
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: EntityTargetAction
     useDelay: 90
@@ -166,7 +166,7 @@
   id: ActionShadowlingAscendance
   name: Превознесение
   description: Стань сродни богом, поработи всё живое
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     icon: { sprite: Stories/Actions/shadowling.rsi, state: ascendance }
@@ -178,7 +178,7 @@
   id: ActionShadowlingHypnosis
   name: Гипноз
   description: Делает выбранного члена экипажа без импланта защиты разума вашим покорным рабом.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: EntityTargetAction
     useDelay: 60
@@ -192,7 +192,7 @@
   id: ActionShadowlingAnnihilate
   name: Аннигиляция
   description: Заставьте кого-то разорваться на мелкие части силой мысли
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: EntityTargetAction
     useDelay: 15
@@ -206,7 +206,7 @@
   id: ActionShadowlingPlaneShift
   name: Смещение
   description: Продвинутая версия Шага тени, позволяющая Превознёсшимся перемещаться в астрал когда угодно и на сколько угодно
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     icon: { sprite: Stories/Actions/shadowling.rsi, state: plane_shift }
@@ -220,7 +220,7 @@
   id: ActionShadowlingLightningStorm
   name: Грозовой шторм
   description: Превознёсшиеся могут генерировать энергетический шар, а затем выпускать его, оглушая всех в определенном от себя радиусе.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     useDelay: 30

@@ -1,7 +1,7 @@
 - type: entity
   parent: ClothingHeadHelmetHardsuitMedical
   id: PRISONClothingHeadHelmetHardsuitMedic
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: шлем скафандра врача тюрьмы
   description: Шлем скафандра, обеспечивающий незначительную защиту от большинства источников повреждений.
   components:
@@ -13,7 +13,7 @@
 - type: entity
   parent: ClothingHeadHelmetHardsuitEngineering
   id: PRISONClothingHeadHelmetHardsuitEngi
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: шлем скафандра инженера тюрьмы
   description: Шлем скафандра, обеспечивающий незначительную защиту от большинства источников повреждений.
   components:
@@ -25,7 +25,7 @@
 - type: entity
   parent: ClothingHeadHelmetHardsuitSecurity
   id: PRISONClothingHeadHelmetHardsuitOfficer
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: шлем скафандра персонала тюрьмы
   description: Шлем скафандра, обеспечивающий защиту от большинства источников повреждений.
   components:
@@ -37,7 +37,7 @@
 - type: entity
   parent: ClothingHeadHelmetHardsuitSecurityRed
   id: PRISONClothingHeadHelmetHardsuitHeadOfPrison
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   name: шлем скафандра начальника тюрьмы
   description: Шлем скафандра, обеспечивающий защиту от большинства источников повреждений.
   components:

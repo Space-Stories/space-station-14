@@ -48,7 +48,6 @@
     blockedDirections:
     - West
     reflectionDirection: South
-    ReflectorType: Simple
   - type: Machine
     board: ReflectorBoxMachineCircuitboard
   - type: Rotatable
