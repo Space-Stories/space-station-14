@@ -69,8 +69,6 @@
     state: icon
   - type: Clothing
     sprite: Stories/Clothing/Shoes/Boots/exe_boots.rsi
-  - type: Magboots
-    toggleAction: ActionToggleMagbootsAdvanced
   - type: Tag
     tags:
     - WhitelistChameleon

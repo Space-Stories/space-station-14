@@ -43,7 +43,6 @@
       - MediumSpringGreen
       - MediumOrchid
   - type: Reflect
-    enabled: false
     reflectProb: 0.50
     spread: 90
     reflects:
@@ -105,7 +104,6 @@
     blockSound:
       path: /Audio/Weapons/eblade1.ogg
   - type: Reflect
-    enabled: false
     reflectProb: 0.50
     spread: 90
     reflects:
@@ -161,7 +159,6 @@
     blockSound:
       path: /Audio/Weapons/eblade1.ogg
   - type: Reflect
-    enabled: false
     reflectProb: 0.50
     spread: 90
     reflects:
@@ -249,7 +246,6 @@
             Heat: 7.5
             Structural: 5
   - type: Reflect
-    enabled: false
     reflectProb: 0.25
     spread: 90
     reflects:

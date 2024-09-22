@@ -1,7 +1,7 @@
 - type: entity
   name: Гравирука
   parent: BaseItem
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   id: HandTetherGun
   description: Вот это да! Ваша рука может манипулировать гравитацией вокруг объектов.
   components:

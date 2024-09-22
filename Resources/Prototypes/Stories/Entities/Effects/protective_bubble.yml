@@ -21,7 +21,7 @@
 
 - type: entity
   id: EffectProtectiveBubble
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseEffectProtectiveBubble
   components:
   - type: Destructible
@@ -73,7 +73,7 @@
 
 - type: entity
   id: EffectSithProtectiveBubble
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseEffectProtectiveBubble
   components:
   - type: Fixtures

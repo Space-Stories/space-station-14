@@ -24,7 +24,7 @@ public sealed class DamageContactsSystem : EntitySystem
         base.Initialize();
         SubscribeLocalEvent<DamageContactsComponent, StartCollideEvent>(OnEntityEnter);
         SubscribeLocalEvent<DamageContactsComponent, EndCollideEvent>(OnEntityExit);
-        SubscribeLocalEvent<ItemToggleDamageContactsComponent, ItemToggledEvent>(OnItemToggle); // SpaceStories
+        SubscribeLocalEvent<ItemToggleDamageContactsComponent, ItemToggledEvent>(OnItemToggle); // Stories
     }
 
     public override void Update(float frameTime)
@@ -74,12 +74,12 @@ public sealed class DamageContactsSystem : EntitySystem
         if (_whitelistSystem.IsWhitelistPass(component.IgnoreWhitelist, otherUid))
             return;
 
-        if (!HasComp<TetheredComponent>(uid) && component.OnlyTethered) // SpaceStories
+        if (!HasComp<TetheredComponent>(uid) && component.OnlyTethered) // Stories
             return;
 
         var damagedByContact = EnsureComp<DamagedByContactComponent>(otherUid);
         damagedByContact.Damage = component.Damage;
-        if (component.HitSound != null) _audio.PlayPredicted(component.HitSound, uid, otherUid);
+        if (component.HitSound != null) _audio.PlayPredicted(component.HitSound, uid, otherUid); // Stories
     }
 
     private void OnItemToggle(EntityUid uid, ItemToggleDamageContactsComponent itemToggleMelee, ItemToggledEvent args)
