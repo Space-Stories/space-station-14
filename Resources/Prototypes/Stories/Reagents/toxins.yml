@@ -31,3 +31,21 @@
         - !type:Temperature
           min: 243.15
         amount: -20000
+
+- type: reagent
+  id: TeleToxin
+  name: Теле-токсин
+  group: Toxins
+  desc: Это вещество странно колеблется, перемещаясь из одной части мензурки в другую..
+  physicalDesc: reagent-physical-desc-strong-smelling
+  flavor: bitter
+  color: "#00ffff"
+  metabolisms:
+    Poison:
+      effects:
+      - !type:Teletoxin
+        radius: 4
+      - !type:HealthChange
+        damage:
+          types:
+            Poison: 0.5
