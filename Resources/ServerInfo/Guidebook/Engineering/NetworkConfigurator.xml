@@ -1,39 +1,37 @@
-  # Network Configurator
-  The network configurator allows you to manipulate device lists, link devices together and configure accesses for airlocks through door electronics.
-  <Box>
-    <GuideEntityEmbed Entity="NetworkConfigurator"/>
-  </Box>
-  The configurator has two modes: List and Link. You can press [color=gray]Alt+Z[/color] or [color=gray]Alt+Y[/color] to switch between them.
+<Document>
+# Конфигуратор сетей
+Конфигуратор сетей позволяет вам управлять списками устройств и связывать устройства друг с другом.
+<Box>
+  <GuideEntityEmbed Entity="NetworkConfigurator"/>
+</Box>
+Конфигуратор имеет два режима: Список и Связь. Вы можете нажать [color=gray]Alt+Z[/color] или [color=gray]Alt+Y[/color], чтобы переключаться между ними.
 
-  ## List Mode
-  In list mode you can click on network devices to save them on the configurator and then on a network device that has a device list like the [color=#a4885c]Air Alarm[/color].
+## Режим списка
+В этом режиме вы можете нажать на любые сетевые устройства, чтобы сохранить их в конфигураторе, а затем всех их разом связать с устройством, имеющим компонент сетевого прибора, как [color=#a4885c]Воздушная сигнализация[/color].
 
-  When clicking on a device like the Air Alarm, a UI will open, displaying the list currently saved on the device and buttons to manipulate that list.
+При нажатии на прибор из примера, откроется интерфейс, отображающий список сохраненных сетевых устройств и кнопки для его управления.
 
-  You can:
-  - Replace the current list with the one saved on the configurator
-  - Add the list on the configurator to the current one
-  - Clear the current list
-  - Copy the current list to the configurator
-  - Visualize the connections to the devices on the current list
+Вы можете:
+- Заменить текущий список устройства на тот, который вы сохранили в своём конфигураторе
+- Добавить список сохранённых на вашем конфигураторе устройств к уже существующему списку
+- Очистить текущий список
+- Скопировать список устройства, которые вы просматриваете, на ваш сетевой конфигуратор
+- Визуализировать соединения всех устройств текущего списка
 
-  Pressing [color=gray][keybind="ActivateItemInHand"][/color] opens the list saved on the configurator where you can remove saved devices.
+Нажатие [color=gray]z[/color] или [color=gray]y[/color] откроет список сохранённый на конфигураторе сетей, где вы сможете удалять сохранённые устройства.
 
-  ## Link Mode
-  With link mode, you can click on a device that is capable of device linking and then click on any other device that is either a sink or source.
+## Режим связи
+Выбрав режим связи, вы можете нажать на любое сетевое устройство, которое можно привязать к другому, а затем нажать на другое устройство, которое является либо источником сигнала, либо получателем.
 
-  For example, first clicking on a source, like a [color=#a4885c]signal button[/color], and then on sink, like a [color=#a4885c]small light[/color], opens a UI that displays the source ports on the left side and the sink ports on the right.
+К примеру, если вы нажмёте на "источник", по типу [color=#a4885c]signal button[/color], а затем на "получателя" сигнала, вроде [color=#a4885c]small light[/color], то откроется интерфейс, показывающий порты "источника" слева, а порты "получателя" справа.
 
-  Now, you can either click [color=gray]Link Defaults[/color] to link the default ports for a source + sink combination, or press on a source port and then a sink port to connect them.
+Теперь вы можете нажать [color=gray]Соединить по-умолчанию[/color] чтобы соединить стандартные для этих устройств порты, или же сделать это вручную.
 
-  An example of a default link for the aforementioned combinaton of devices would be:
-  <Box>
-    [color=cyan]Pressed 🠒 Toggle[/color]
-   </Box>
-  When you're done connecting the ports you want, you can click on [color=gray]OK[/color] to close the UI.
+Пример обычного соединения для комбинации устройств, описанной выше будет:
+<Box>
+  [color=cyan]Нажато 🠒 Переключить[/color]
+</Box>
+Когда вы закончили соединять желаемые порты, нажмите на [color=gray]Готово[/color] чтобы закрыть интерфейс.
 
-  You can quickly link multiple devices to their default port by first clicking on a device that can be linked and then using [color=gray]Alt+Left Mouse button[/color] on the devices you want to link together.
-
-  ## Airlock Access
-  To configure an airlock's access, simply take the airlock's door electronics and interact with it using a network configurator (or multitool). Select the accesses you want, insert the door electronics into an airlock frame, and construct to finish!
+Вы можете быстро соединять множество устройств по своим стандартным портам, если сначала кликните на сетевое устройство, а затем, используя [color=gray]Alt+ЛКМ[/color], начнёте нажимать на остальные сетевые устройства.
 </Document>

@@ -1,8 +1,8 @@
 <Document>
 
-# Основные препараты
+# Основные лекарства
 
-Эти препараты практически всегда так или иначе полезны для medbay.
+Эти препараты почти всегда так или иначе полезны для медблока.
 
 <GuideReagentEmbed Reagent="Bicaridine"/>
 <GuideReagentEmbed Reagent="Kelotane"/>
@@ -13,9 +13,9 @@
 <GuideReagentEmbed Reagent="DexalinPlus"/>
 <GuideReagentEmbed Reagent="Iron"/>
 
-# Специальные лекарственные средства
+# Специальные препараты
 
-Эти препараты, как правило, имеют специфические сценарии использования.
+Эти препараты, как правило, имеют специфические случаи применения.
 
 <GuideReagentEmbed Reagent="Cryoxadone"/>
 <GuideReagentEmbed Reagent="Epinephrine"/>
@@ -29,7 +29,7 @@
 
 # Все лекарства
 
-Это список всех имеющихся препаратов, включая ранее перечисленные.
+Это список всех имеющихся лекарств, включая ранее перечисленные.
 
 <GuideReagentGroupEmbed Group="Medicine"/>
 
