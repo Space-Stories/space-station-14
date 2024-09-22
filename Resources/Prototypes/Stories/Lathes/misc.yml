@@ -5,3 +5,18 @@
   materials:
      Steel: 100
      Glass: 900
+
+- type: latheRecipe
+  parent: BaseCircuitboardRecipe
+  id: ReflectorBoxMachineCircuitboard
+  result: ReflectorBoxMachineCircuitboard
+
+- type: latheRecipe
+  parent: BaseCircuitboardRecipe
+  id: ReflectorCornerMachineCircuitboard
+  result: ReflectorCornerMachineCircuitboard
+
+- type: latheRecipe
+  parent: BaseCircuitboardRecipe
+  id: ReflectorCornerTsideMachineCircuitboard
+  result: ReflectorCornerTsideMachineCircuitboard
