@@ -1,6 +1,6 @@
 - type: loadoutGroup
   id: DetectiveBelt
-  name: Детектив, пояс
+  name:  loadout-group-detective-belt
   loadouts:
   - ClothingBeltHolsterFilled
   - StoriesClothingBeltHolsterFilled

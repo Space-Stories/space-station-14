@@ -16,21 +16,21 @@
 
 - type: loadoutGroup
   id: JediNtHead
-  name: Страж Клинка, голова
+  name: loadout-group-Jedi-head
   minLimit: 0
   loadouts:
   - ClothingHeadHatExe
 
 - type: loadoutGroup
   id: JediNtMask
-  name: Страж Клинка, маска
+  name: loadout-group-Jedi-mask
   minLimit: 0
   loadouts:
   - ClothingMaskGasExe
 
 - type: loadoutGroup
   id: JediNtShoes
-  name: Страж Клинка, обувь
+  name: loadout-group-Jedi-shoes
   loadouts:
   - ClothingShoesBootsExe
   - ClothingShoesBootsJackJediNomad
@@ -39,7 +39,7 @@
 
 - type: loadoutGroup
   id: JediNtBelt
-  name: Страж Клинка, пояс
+  name: loadout-group-Jedi-belt
   loadouts:
   - SecurityBelt
   - ClothingBeltJedi
@@ -47,7 +47,7 @@
 
 - type: loadoutGroup
   id: JediNtNeck
-  name: Страж Клинка, шея
+  name: loadout-group-Jedi-neck
   minLimit: 0
   loadouts:
   - ClothingNeckCloakExe
@@ -56,7 +56,7 @@
 
 - type: loadoutGroup
   id: JediNtJumpsuit
-  name: Страж Клинка, комбинезон
+  name: loadout-group-Jedi-jumpsuits
   minLimit: 1
   loadouts:
   - ClothingUniformJumpsuitExe
@@ -66,7 +66,7 @@
 
 - type: loadoutGroup
   id: JediNtBackpack
-  name: Страж Клинка, рюкзак
+  name: loadout-group-Jedi-backpack
   loadouts:
   # Stories-partners - start
   # Handbag
