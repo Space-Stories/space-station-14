@@ -50,6 +50,15 @@
       gun_chamber: !type:ContainerSlot
   - type: StaticPrice
     price: 500
+  - type: MeleeRequiresWield ## MeleeAttack for Gun
+  - type: MeleeWeapon
+    attackRate: .85
+    damage:
+      types:
+       Blunt: 5
+    angle: 0
+  - type: StaminaDamageOnHit
+    damage: 10
 
 - type: entity
   name: AKMS
@@ -221,3 +230,12 @@
       path: /Audio/Weapons/Guns/Empty/empty.ogg
     clumsyProof: true
   - type: PacifismAllowedGun
+  - type: MeleeRequiresWield ## MeleeAttack for Gun
+  - type: MeleeWeapon
+    attackRate: .85
+    damage:
+      types:
+       Blunt: 5
+    angle: 0
+  - type: StaminaDamageOnHit
+    damage: 10

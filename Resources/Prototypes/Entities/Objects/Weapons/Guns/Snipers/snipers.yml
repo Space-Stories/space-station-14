@@ -17,6 +17,7 @@
     slots:
     - Back
     - suitStorage
+  - type: MeleeRequiresWield
   - type: AmmoCounter
   - type: Gun
     fireRate: 0.75
@@ -46,6 +47,19 @@
   components:
   - type: Sprite
     sprite: Objects/Weapons/Guns/Snipers/bolt_gun_wood.rsi
+  - type: ThrowingAngle
+    angle: -135
+  - type: MeleeRequiresWield ## MeleeAttack for Gun
+  - type: MeleeWeapon
+    attackRate: .85
+    damage:
+      types:
+       Slash: 10
+       Piercing: 5
+    angle: 0
+    animation: WeaponArcThrust
+    soundHit:
+      path: /Audio/Weapons/bladeslice.ogg
 
 - type: entity
   name: Hristov
@@ -63,6 +77,15 @@
       - CartridgeAntiMateriel
     capacity: 5
     proto: CartridgeAntiMateriel
+  - type: MeleeRequiresWield ## MeleeAttack for Gun
+  - type: MeleeWeapon
+    attackRate: .85
+    damage:
+      types:
+       Blunt: 5
+    angle: 0
+  - type: StaminaDamageOnHit
+    damage: 10
 
 - type: entity
   name: musket

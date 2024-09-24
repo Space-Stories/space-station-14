@@ -61,6 +61,15 @@
     price: 500
   - type: UseDelay
     delay: 1
+  - type: MeleeRequiresWield ## MeleeAttack for Gun
+  - type: MeleeWeapon
+    attackRate: .85
+    damage:
+      types:
+       Blunt: 3
+    angle: 0
+  - type: StaminaDamageOnHit
+    damage: 10
 
 - type: entity
   name: L6 SAW
