@@ -56,7 +56,7 @@
 
 - type: loadoutGroup
   id: PRISONHeadOfPrisonHead
-  name: Начальник тюрьмы, голова
+  name: loadout-group-HeadOfPrison-head
   minLimit: 0
   loadouts:
   - PRISONCapHeadOfPrison
@@ -76,7 +76,7 @@
 
 - type: loadoutGroup
   id: PRISONGloves
-  name: Тюрьма, перчатки
+  name: loadout-group-PRISON-Gloves
   minLimit: 0
   loadouts:
   - PRISONGloves
@@ -99,7 +99,7 @@
 
 - type: loadoutGroup
   id: PRISONOuterClothing
-  name: Тюрьма, верхняя одежда
+  name: loadout-group-PRISON-OuterClothing
   loadouts:
   - PRISONArmorVest
 
@@ -112,7 +112,7 @@
 
 - type: loadoutGroup
   id: PRISONBackpack
-  name: Тюрьма, рюкзак
+  name: loadout-group-PRISON-Backpack
   loadouts:
   - PRISONBackpack
   - PRISONSatchel
@@ -163,7 +163,7 @@
 
 - type: loadoutGroup
   id: PRISONHead
-  name: Тюрьма, голова
+  name: loadout-group-PRISON-head
   minLimit: 0
   loadouts:
   - PRISONCap
@@ -183,7 +183,7 @@
 
 - type: loadoutGroup
   id: PRISONShoes
-  name: Тюрьма, обувь
+  name: loadout-group-PRISON-Shoes
   loadouts:
   - CombatBoots
   - JackBoots
@@ -199,7 +199,7 @@
 
 - type: loadoutGroup
   id: PRISONBelt
-  name: Тюрьма, пояс
+  name: loadout-group-PRISON-Belt
   loadouts:
   - SecurityBelt
   - PRISONWebbing
