@@ -1,7 +1,7 @@
 - type: department
   id: Prison
-  name: Космическая тюрьма
-  description: Содержите заключенных и охраняйте тюрьму.
+  name: department-Prison
+  description: department-Cargo-description
   color: "#e99844"
   roles:
   - PRISONHeadOfPrison

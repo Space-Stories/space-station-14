@@ -111,7 +111,7 @@
             HeadOfSecurity: [ 1, 1 ]
             Warden: [ 1, 1 ]
             Detective: [ 1, 1 ]
-            Pilot: [ 2, 2]
+            # Pilot: [ 2, 2]
             SecurityOfficer: [ 3, 3 ]
             SecurityCadet: [ 2, 3 ]
             # cargo

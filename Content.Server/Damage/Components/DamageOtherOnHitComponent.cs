@@ -8,7 +8,7 @@ namespace Content.Server.Damage.Components
     [RegisterComponent]
     public sealed partial class DamageOtherOnHitComponent : Component
     {
-        [DataField("hitSound")]
+        [DataField("soundHit")]
         public SoundSpecifier? HitSound;
 
         [DataField("ignoreResistances")]

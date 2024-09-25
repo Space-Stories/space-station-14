@@ -10,7 +10,7 @@ public sealed partial class DamageContactsComponent : Component
     [DataField("onlyTethered")]
     public bool OnlyTethered = false;
 
-    [DataField("hitSound")]
+    [DataField("soundHit")]
     public SoundSpecifier? HitSound;
 
     /// <summary>

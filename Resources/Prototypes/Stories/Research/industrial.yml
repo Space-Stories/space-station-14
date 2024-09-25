@@ -1,6 +1,6 @@
 - type: technology
   id: ReflectionTech
-  name: Технологии отражения
+  name: research-technology-reflection
   icon:
     sprite: Stories/Structures/Machines/reflectors.rsi
     state: reflector_circle

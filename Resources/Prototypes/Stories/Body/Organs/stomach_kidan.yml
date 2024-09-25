@@ -2,7 +2,7 @@
   id: OrganKidanStomach
   parent: BaseAnimalOrgan
   name: желудок
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Organ
   - type: SolutionContainerManager
@@ -28,7 +28,7 @@
   id: OrganKidanLiver
   parent: BaseAnimalOrgan
   name: печень
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Organ
   - type: Metabolizer
@@ -42,7 +42,7 @@
   id: OrganKidanHeart
   parent: BaseAnimalOrgan
   name: сердце
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Organ
   - type: Metabolizer
@@ -58,7 +58,7 @@
   id: OrganKidanKidneys
   parent: BaseAnimalOrgan
   name: почки
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Organ
   - type: Metabolizer

@@ -6,7 +6,6 @@
     mode: SnapgridCenter
   components:
     - type: Supermatter
-      alertCodeDeltaId: altDelta
       whitelist:
         tags:
           - EmitterBolt
