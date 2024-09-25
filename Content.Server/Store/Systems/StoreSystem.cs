@@ -10,6 +10,7 @@ using JetBrains.Annotations;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 using System.Linq;
+using Robust.Shared.Timing;
 
 namespace Content.Server.Store.Systems;
 
@@ -19,6 +20,7 @@ namespace Content.Server.Store.Systems;
 /// </summary>
 public sealed partial class StoreSystem : EntitySystem
 {
+    [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
 
@@ -86,6 +88,13 @@ public sealed partial class StoreSystem : EntitySystem
 
         if (!TryComp<StoreComponent>(args.Target, out var store))
             return;
+
+        var curTime = _gameTiming.CurTime;
+
+        if (curTime < store.LastCurrencyInsertTime + store.CurrencyInsertDelay)
+            return;
+
+        store.LastCurrencyInsertTime = curTime;
 
         var ev = new CurrencyInsertAttemptEvent(args.User, args.Target.Value, args.Used, store);
         RaiseLocalEvent(args.Target.Value, ev);
