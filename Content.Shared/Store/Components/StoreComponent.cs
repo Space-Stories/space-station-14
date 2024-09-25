@@ -12,6 +12,13 @@ namespace Content.Shared.Store.Components;
 [RegisterComponent, NetworkedComponent]
 public sealed partial class StoreComponent : Component
 {
+    [DataField("insertDelay")]
+    [ViewVariables(VVAccess.ReadWrite)]
+    public TimeSpan CurrencyInsertDelay = TimeSpan.FromSeconds(1.0);
+
+    [ViewVariables(VVAccess.ReadWrite)]
+    public TimeSpan LastCurrencyInsertTime;
+
     [DataField]
     public LocId Name = "store-ui-default-title";
 
