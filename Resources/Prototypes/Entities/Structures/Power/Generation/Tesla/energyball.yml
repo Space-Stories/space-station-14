@@ -31,7 +31,6 @@
     shootMaxInterval: 10
     shootRange: 3
     lightningPrototype: Lightning
-  - type: SupermatterImmune # Goobstation
 
 - type: entity
   id: TeslaEnergyBall
