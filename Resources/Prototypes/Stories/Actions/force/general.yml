@@ -113,7 +113,7 @@
         solution:
           maxVol: 15
           reagents:
-          - ReagentId: Stimulants
+          - ReagentId: ArtOfMovement
             Quantity: 15
 
 - type: entity
