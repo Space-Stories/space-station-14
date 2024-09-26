@@ -43,5 +43,3 @@
       - !type:GenericStatusEffect
         key: NoSlip
         component: NoSlip
-        type: Add
-        time: 1
