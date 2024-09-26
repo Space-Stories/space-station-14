@@ -1,0 +1,9 @@
+- type: entity
+  parent: SeedBase
+  name: пакет семян блюспейс томата
+  id: BlueSpaceTomatoSeeds
+  components:
+  - type: Seed
+    seedId: blueSpaceTomato
+  - type: Sprite
+    sprite: Stories/Objects/Specific/Hydroponics/bluespace_tomato.rsi

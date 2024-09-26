@@ -1,0 +1,33 @@
+- type: seed
+  id: blueSpaceTomato
+  name: Блюспейс томат
+  noun: seeds-noun-seeds
+  displayName: Куст блюспейс томата
+  plantRsi: Stories/Objects/Specific/Hydroponics/bluespace_tomato.rsi
+  packetPrototype: BlueSpaceTomatoSeeds
+  productPrototypes:
+  - FoodBlueSpaceTomato
+  harvestRepeat: Repeat
+  lifespan: 30
+  maturation: 8
+  production: 1
+  yield: 2
+  potency: 10
+  waterConsumption: 0.60
+  nutrientConsumption: 0.70
+  idealLight: 8
+  idealHeat: 298
+  splatPrototype: PuddleSplatter
+  chemicals:
+    Nutriment:
+      Min: 1
+      Max: 5
+      PotencyDivisor: 20
+    SpaceLube:
+      Min: 5
+      Max: 15
+      PotencyDivisor: 10
+    Vitamin:
+      Min: 1
+      Max: 4
+      PotencyDivisor: 25

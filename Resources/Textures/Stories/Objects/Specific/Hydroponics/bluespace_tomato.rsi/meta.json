@@ -1,0 +1,42 @@
+{
+    "version": 1,
+     "license": "Собственная лицензия. Полный запрет на копирование и использование вне проекта Space Station без одобрения текущего владельца проекта",
+    "copyright": "Insurgent, discord: archont8176",
+    "size": {
+      "x": 32,
+      "y": 32
+    },
+    "states": [
+      {
+        "name": "dead"
+      },
+      {
+        "name": "harvest"
+      },
+      {
+        "name": "produce"
+      },
+      {
+        "name": "seed"
+      },
+      {
+        "name": "stage-1"
+      },
+      {
+        "name": "stage-2"
+      },
+      {
+        "name": "stage-3"
+      },
+      {
+        "name": "stage-4"
+      },
+      {
+        "name": "stage-5"
+      },
+      {
+        "name": "stage-6"
+      }
+    ]
+  }
+  

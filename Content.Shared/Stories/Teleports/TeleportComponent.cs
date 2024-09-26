@@ -13,9 +13,6 @@ public sealed partial class TeleportComponent : Component
     public double TeleportTime = 2;
 
     [DataField, AutoNetworkedField]
-    public bool Refresh = true;
-
-    [DataField, AutoNetworkedField]
     public float ChanceToWall = 0.2f;
 
     [DataField]

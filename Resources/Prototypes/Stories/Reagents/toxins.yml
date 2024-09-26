@@ -43,7 +43,7 @@
   metabolisms:
     Poison:
       effects:
-      - !type:Teletoxin
+      - !type:TeleToxin
         radius: 4
       - !type:HealthChange
         damage:
