@@ -13,6 +13,7 @@
     - type: MothAccent
     - type: ReplacementAccent
       accent: dwarf
+    - type: KidanAccent # Stories
 
 # 1 Cost
 
