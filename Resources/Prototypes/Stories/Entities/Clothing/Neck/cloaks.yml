@@ -81,7 +81,7 @@
   parent: ClothingNeckBase
   id: ClothingNeckCloakExe
   name: плащ хранителя
-  description: Похоже, тут выгравировано R u s t e d T i m. Что же это может значить?
+  description: Похоже, тут выгравировано "R u s t e d T i m". Что же это может значить?
   components:
   - type: Tag
     tags:
