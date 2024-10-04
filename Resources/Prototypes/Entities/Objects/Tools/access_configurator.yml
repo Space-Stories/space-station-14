@@ -122,12 +122,12 @@
     - Security
     - Service
     - Theatre
-    - HeadOfPrison
-    - PrisonBrig
-    - Prison
-    - PrisonMed
-    - PrisonEng
-    - Prisoner
+    - HeadOfPrison # Stories
+    - PrisonBrig # Stories
+    - Prison # Stories
+    - PrisonMed # Stories
+    - PrisonEng # Stories
+    - Prisoner # Stories
     - CentralCommand
     - NuclearOperative
     - SyndicateAgent
