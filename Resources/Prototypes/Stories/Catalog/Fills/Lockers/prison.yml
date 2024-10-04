@@ -25,6 +25,7 @@
         - id: PRISONClothingUniformJumpsuitHeadOfPrison
         - id: PRISONRubberStamp
         - id: HoloprojectorSecurity
+        - id: AccessConfigurator
 
 - type: entity
   id: PRISONLockerFilled
