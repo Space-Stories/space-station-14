@@ -16,13 +16,9 @@
   requireAdminNotify: true
   supervisors: job-supervisors-centcom
   canBeAntag: false
+  accessGroups:
+  - PrisonAllAccess
   access:
-  - HeadOfPrison
-  - PrisonBrig
-  - Prison
-  - PrisonMed
-  - PrisonEng
-  - Prisoner
   - Command
   - Brig
   - Security
