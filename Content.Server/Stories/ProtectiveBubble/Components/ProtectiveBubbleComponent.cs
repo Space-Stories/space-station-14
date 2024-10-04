@@ -17,5 +17,5 @@ public sealed partial class ProtectiveBubbleComponent : Component
     public HashSet<EntityUid> ProtectedEntities = new();
 
     [DataField("temperatureCoefficient")]
-    public float TemperatureCoefficient = 0f;
+    public float TemperatureCoefficient = 1f;
 }
