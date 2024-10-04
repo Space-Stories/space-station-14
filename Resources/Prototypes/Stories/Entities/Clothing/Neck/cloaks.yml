@@ -5,7 +5,7 @@
   description: Невероятное произведение искусства, объединяющее в себе прочность и легкость. Заряжен неведомой энергией.
   components:
   - type: TemperatureProtection
-    CoolingCooficient: 0.001
+    CoolingCoefficient: 0.001
     HeatingCoefficient: 0.001
   - type: PressureProtection
     highPressureMultiplier: 0.02
@@ -47,7 +47,7 @@
   description: Невероятное произведение искусства, объединяющее в себе прочность и легкость.
   components:
   - type: TemperatureProtection
-    CoolingCooficient: 0.001
+    CoolingCoefficient: 0.001
     HeatingCoefficient: 0.001
   - type: PressureProtection
     highPressureMultiplier: 0.02

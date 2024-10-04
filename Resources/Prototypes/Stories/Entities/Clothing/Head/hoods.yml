@@ -33,7 +33,7 @@
     - HeadTop
     - HeadSide
   - type: TemperatureProtection
-    CoolingCooficient: 0.005
+    CoolingCoefficient: 0.005
     HeatingCoefficient: 0.005
   - type: PressureProtection
     highPressureMultiplier: 0.08
@@ -67,7 +67,7 @@
     - HeadTop
     - HeadSide
   - type: TemperatureProtection
-    CoolingCooficient: 0.005
+    CoolingCoefficient: 0.005
     HeatingCoefficient: 0.005
   - type: PressureProtection
     highPressureMultiplier: 0.08
