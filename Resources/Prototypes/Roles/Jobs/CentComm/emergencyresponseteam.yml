@@ -11,6 +11,7 @@
   canBeAntag: false
   accessGroups:
   - AllAccess
+  - PrisonAllAccess # Stories
   access:
   - CentralCommand
 
@@ -101,6 +102,7 @@
   canBeAntag: false
   accessGroups:
   - AllAccess
+  - PrisonAllAccess # Stories
   access:
   - CentralCommand
   special:
@@ -183,6 +185,7 @@
   canBeAntag: false
   accessGroups:
   - AllAccess
+  - PrisonAllAccess # Stories
   access:
   - CentralCommand
 
@@ -255,6 +258,7 @@
   canBeAntag: false
   accessGroups:
   - AllAccess
+  - PrisonAllAccess # Stories
   access:
   - CentralCommand
 
@@ -345,6 +349,7 @@
   canBeAntag: false
   accessGroups:
   - AllAccess
+  - PrisonAllAccess # Stories
   access:
   - CentralCommand
 
@@ -407,6 +412,7 @@
   canBeAntag: false
   accessGroups:
   - AllAccess
+  - PrisonAllAccess # Stories
   access:
   - CentralCommand
 
