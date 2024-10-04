@@ -2,10 +2,11 @@
   parent: ClothingNeckBase
   id: ClothingNeckCloakSith
   name: плащ инквизитора
-  description: Невероятное произведение искусства объединяющие в себе прочность и легкость. Заряжен неведомой энергией.
+  description: Невероятное произведение искусства, объединяющее в себе прочность и легкость. Заряжен неведомой энергией.
   components:
   - type: TemperatureProtection
-    coefficient: 0.001
+    CoolingCooficient: 0.001
+    HeatingCoefficient: 0.001
   - type: PressureProtection
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
@@ -43,10 +44,11 @@
   parent: ClothingNeckBase
   id: ClothingNeckCloakKylo
   name: плащ кайло рена
-  description: Невероятное произведение искусства объединяющие в себе прочность и легкость.
+  description: Невероятное произведение искусства, объединяющее в себе прочность и легкость.
   components:
   - type: TemperatureProtection
-    coefficient: 0.001
+    CoolingCooficient: 0.001
+    HeatingCoefficient: 0.001
   - type: PressureProtection
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
@@ -79,7 +81,7 @@
   parent: ClothingNeckBase
   id: ClothingNeckCloakExe
   name: плащ хранителя
-  description: Похоже тут выгравировано R u s t e d T i m. Что же это может значить?
+  description: Похоже, тут выгравировано R u s t e d T i m. Что же это может значить?
   components:
   - type: Tag
     tags:
