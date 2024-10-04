@@ -48,6 +48,12 @@
       - Security
       - Service
       - Theatre
+      - HeadOfPrison # Stories
+      - PrisonBrig # Stories
+      - Prison # Stories
+      - PrisonMed # Stories
+      - PrisonEng # Stories
+      - Prisoner # Stories
       privilegedIdSlot:
         name: id-card-console-privileged-id
         ejectSound: /Audio/Machines/id_swipe.ogg
@@ -116,6 +122,12 @@
     - Security
     - Service
     - Theatre
+    - HeadOfPrison # Stories
+    - PrisonBrig # Stories
+    - Prison # Stories
+    - PrisonMed # Stories
+    - PrisonEng # Stories
+    - Prisoner # Stories
     - CentralCommand
     - NuclearOperative
     - SyndicateAgent
