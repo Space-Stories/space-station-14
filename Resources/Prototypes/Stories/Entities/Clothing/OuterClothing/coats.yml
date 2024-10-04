@@ -13,7 +13,7 @@
     coefficient: 0.001
   - type: ClothingSpeedModifier
     walkModifier: 1
-    sprintModifier: 1.04
+    sprintModifier: 1.1
   - type: Sprite
     sprite: Stories/Clothing/OuterClothing/Coats/jedi.rsi
   - type: Clothing
