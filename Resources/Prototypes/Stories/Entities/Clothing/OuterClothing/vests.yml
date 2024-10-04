@@ -2,7 +2,7 @@
   parent: ClothingOuterArmorBasic
   id: ClothingOuterVestJediNt
   name: утепленный бронежилет стража клинка
-  description: Потому что, кто-то сказал, что бронежилеты могут быть утепленны. Ваш щит уже утеплен!
+  description: Потому что кто-то сказал, что бронежилеты могут быть утеплены.
   components:
     - type: Tag
       tags:
