@@ -16,7 +16,7 @@
 - type: entity
   id: ActionLifeSteal
   name: Кража жизни
-  description: Иссушает жертву восстанавливая вас.
+  description: Иссушает жертву, восстанавливая вас.
   noSpawn: true
   components:
   - type: EntityTargetAction
