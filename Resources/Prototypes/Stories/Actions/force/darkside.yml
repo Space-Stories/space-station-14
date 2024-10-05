@@ -199,7 +199,7 @@
 - type: entity
   id: ActionCleanse
   name: Очищение
-  description: Удаляет щит разума Стража и обращает его на сторону Империи.
+  description: Позволяет деактивировать щит разума внутри другого пользователя силы.
   noSpawn: true
   components:
   - type: EntityTargetAction
@@ -213,7 +213,7 @@
     interactOnMiss: false
     icon:
       sprite: Stories/Actions/force.rsi
-      state: hypnosis # Плейсхолдер
+      state: cleanse
     event: !type:DoAfterTargetEvent
       hidden: false
       needHand: true

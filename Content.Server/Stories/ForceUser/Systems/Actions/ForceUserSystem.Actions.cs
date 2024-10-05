@@ -120,9 +120,9 @@ public sealed partial class ForceUserSystem
     }
     private void OnCleanse(CleanseTargetActionEvent args)
     {
-        if (args.Handled || !_mobState.IsIncapacitated(args.Target) || !HasComp<MindShieldComponent>(args.Target) || !HasComp<ForceUserComponent>(args.Target)) return;
+        if (args.Handled || !HasComp<MindShieldComponent>(args.Target) || !HasComp<ForceUserComponent>(args.Target)) return;
         RemComp<MindShieldComponent>(args.Target); // Говнокод, удаляет МШ, но не сам имплант, не позволяя повторную имплантацию стража
-        _popup.PopupEntity("Инквизитор начинает очищать тело от щита разума!", args.Performer, PopupType.LargeCaution);
+        _popup.PopupEntity("Щит разума был деактивирован!", args.Target, PopupType.LargeCaution);
         args.Handled = true;
     }
     private void OnIgnite(IgniteTargetActionEvent args)

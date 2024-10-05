@@ -79,7 +79,7 @@
 - type: listing
   id: ActionCleanse
   name: Очищение
-  description: Позволяет удалить щит разума из трупа другого пользователя силы.
+  description: Позволяет деактивировать щит разума внутри другого пользователя силы.
   productAction: ActionCleanse
   cost:
     SkillPoint: 0 # Нужно для выполнения цели.

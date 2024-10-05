@@ -81,6 +81,9 @@
     },
     {
         "name": "movement"
+    },
+    {
+        "name": "cleanse"
     }
   ]
 }
