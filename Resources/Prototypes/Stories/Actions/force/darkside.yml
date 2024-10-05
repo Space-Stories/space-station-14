@@ -181,7 +181,7 @@
     whitelist:
       components:
       - Body
-    canTargetSelf: true
+    canTargetSelf: false # Почему тут было true?..
     interactOnMiss: false
     icon:
       sprite: Stories/Actions/force.rsi
@@ -195,6 +195,34 @@
       event: !type:EntityTargetForceUserActionEvent
         volume: 100
         event: !type:HypnosisTargetActionEvent
+
+- type: entity
+  id: ActionCleanse
+  name: Очищение
+  description: Удаляет щит разума Стража и обращает его на сторону Империи.
+  noSpawn: true
+  components:
+  - type: EntityTargetAction
+    useDelay: 3
+    range: 1
+    itemIconStyle: BigAction
+    whitelist:
+      components:
+      - Body
+    canTargetSelf: false
+    interactOnMiss: false
+    icon:
+      sprite: Stories/Actions/force.rsi
+      state: hypnosis # Плейсхолдер
+    event: !type:DoAfterTargetEvent
+      hidden: false
+      needHand: true
+      delay: 25
+      breakOnDamage: true
+      breakOnMove: true
+      event: !type:EntityTargetForceUserActionEvent
+        volume: 100
+        event: !type:CleanseTargetActionEvent
 
 - type: entity
   id: ActionSithRevertPolymorph

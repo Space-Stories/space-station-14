@@ -77,6 +77,19 @@
     stock: 1
 
 - type: listing
+  id: ActionCleanse
+  name: Очищение
+  description: Позволяет удалить щит разума из трупа другого пользователя силы.
+  productAction: ActionCleanse
+  cost:
+    SkillPoint: 0 # Нужно для выполнения цели.
+  categories:
+  - ForceDark
+  conditions:
+  - !type:ListingLimitedStockCondition
+    stock: 1
+
+- type: listing
   id: ActionIgniteTarget
   name: Пирокинез
   description: Вызывает легкое выгорание у врага.

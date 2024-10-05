@@ -9,6 +9,8 @@ using Content.Shared.Mobs;
 using Content.Shared.Stories.Empire.Components;
 using Content.Server.Stories.ForceUser.ProtectiveBubble.Components;
 using Content.Shared.Store.Components;
+using Content.Shared.Popups;
+using Content.Shared.Mind.Components;
 
 namespace Content.Server.Stories.ForceUser;
 public sealed partial class ForceUserSystem
@@ -28,6 +30,8 @@ public sealed partial class ForceUserSystem
         SubscribeLocalEvent<ForceUserComponent, FrozeBulletsActionEvent>(OnFrozeBullets);
         SubscribeLocalEvent<ForceUserComponent, ForceShopActionEvent>(OnShop);
         SubscribeLocalEvent<ForceUserComponent, ForceLookUpActionEvent>(OnLookUp); // FIXME: Тут не должно быть этого - end
+
+        SubscribeLocalEvent<CleanseTargetActionEvent>(OnCleanse);
     }
     private void OnLookUp(EntityUid uid, ForceUserComponent component, ForceLookUpActionEvent args)
     {
@@ -109,6 +113,16 @@ public sealed partial class ForceUserSystem
     {
         if (args.Handled || _mobState.IsIncapacitated(args.Target) || HasComp<MindShieldComponent>(args.Target)) return;
         _conversion.TryConvert(args.Target, "HypnotizedEmpire", args.Performer); // FIXME: Hardcode. Исправим в обновлении инквизитора.
+        if (HasComp<ForceUserComponent>(args.Target)) {
+            AddComp<IsDeadICComponent>(args.Target); // Для цели на убийство стража. ЛЮТЫЙ ГОВНОКОД (!!!), но работает.
+        }
+        args.Handled = true;
+    }
+    private void OnCleanse(CleanseTargetActionEvent args)
+    {
+        if (args.Handled || !_mobState.IsIncapacitated(args.Target) || !HasComp<MindShieldComponent>(args.Target) || !HasComp<ForceUserComponent>(args.Target)) return;
+        RemComp<MindShieldComponent>(args.Target); // Говнокод, удаляет МШ, но не сам имплант, не позволяя повторную имплантацию стража
+        _popup.PopupEntity("Инквизитор начинает очищать тело от щита разума!", args.Performer, PopupType.LargeCaution);
         args.Handled = true;
     }
     private void OnIgnite(IgniteTargetActionEvent args)
