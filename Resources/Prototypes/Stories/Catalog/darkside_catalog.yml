@@ -81,7 +81,7 @@
   name: Очищение
   description: Позволяет деактивировать щит разума внутри другого пользователя силы.
   productAction: ActionCleanse
-  cost:
+  cost:vc
     SkillPoint: 0 # Нужно для выполнения цели.
   categories:
   - ForceDark
@@ -117,7 +117,7 @@
 
 - type: listing
   id: ActionStrangle
-  name: Удушение Силой
+  name: Удушение cилой
   description: Удушающий прием техники бесконтактного боя.
   productAction: ActionStrangle
   cost:
@@ -131,7 +131,7 @@
 - type: listing
   id: ActionLifeSteal
   name: Кража жизни
-  description: Иссушает жертву восстанавливая вас.
+  description: Иссушает жертву, восстанавливая вас.
   productAction: ActionLifeSteal
   cost:
     SkillPoint: 2

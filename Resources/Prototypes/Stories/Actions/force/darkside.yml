@@ -104,7 +104,7 @@
 
 - type: entity
   id: ActionStrangle
-  name: Удушение Силой
+  name: Удушение силой
   description: Удушающий прием техники бесконтактного боя.
   noSpawn: true
   components:

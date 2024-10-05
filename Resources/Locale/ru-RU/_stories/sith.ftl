@@ -26,9 +26,4 @@ objective-issuer-inquisitor = [color=Red]Инквизитор[/color]
 
 store-currency-display-skill-point = Навык
 
-objective-inquisitor-jedint-title = Убить или загипнотизировать { $name }
-objective-inquisitor-jedint-desc = Неверные императору недостойны пользоваться силой. Он или встанет на нашу сторону, или умрёт.
-objective-inquisitor-hypnosis-title = Загипнотизировать 3 существа.
-objective-inquisitor-hypnosis-desc = Императору нужны новые подданные.
-objective-inquisitor-survive-title = Выжить.
-objective-inquisitor-survive-desc = У вас нет планов умирать.
+kill-jedint-objective-name = Убить или загипнотизировать Стража Клинка ({ $targetName }).

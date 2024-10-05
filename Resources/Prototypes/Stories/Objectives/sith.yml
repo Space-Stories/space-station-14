@@ -15,19 +15,32 @@
   noSpawn: true
   parent: [BaseInquisitorObjective, BaseKillObjective]
   id: KillJediNtObjective
-  description: objective-inquisitor-jedint-desc
+  description: Неверные императору недостойны пользоваться силой. Он или встанет на нашу сторону, или умрёт.
   components:
   - type: Objective
     difficulty: 3.0
     unique: true
   - type: TargetObjective
-    title: objective-inquisitor-jedint-title
+    title: kill-jedint-objective-name
   - type: PickRandomJobPerson
     jobID: JediNt
   - type: KillPersonCondition
     # don't count missing evac as killing as heads are higher profile, so you really need to do the dirty work
     # if ce flies a shittle to centcom you better find a way onto it
     requireDead: true
+
+- type: entity
+  noSpawn: true
+  parent: [BaseInquisitorObjective, BaseSurviveObjective]
+  id: SithSurviveObjective
+  name: Выжить.
+  description: У вас нет планов умирать.
+  components:
+  - type: Objective
+    difficulty: 1.0
+    icon:
+      sprite: Stories/Mobs/Ghosts/sith.rsi
+      state: sith
 
 - type: entity
   noSpawn: true
@@ -41,19 +54,6 @@
   - type: NumberObjective
     min: 3
     max: 3
-    title: objective-inquisitor-hypnosis-title
-    description: objective-inquisitor-hypnosis-desc
+    title: Загипнотизировать 3 существа.
+    description: Императору нужны новые подданные.
   - type: HypnosisCondition
-
-- type: entity
-  noSpawn: true
-  parent: [BaseInquisitorObjective, BaseSurviveObjective]
-  id: SithSurviveObjective
-  name: objective-inquisitor-survive-title
-  description: objective-inquisitor-survive-desc
-  components:
-  - type: Objective
-    difficulty: 1.0
-    icon:
-      sprite: Stories/Mobs/Ghosts/sith.rsi
-      state: sith
