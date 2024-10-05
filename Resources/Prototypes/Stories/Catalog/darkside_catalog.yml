@@ -81,7 +81,7 @@
   name: Очищение
   description: Позволяет деактивировать щит разума внутри другого пользователя силы.
   productAction: ActionCleanse
-  cost:vc
+  cost:
     SkillPoint: 0 # Нужно для выполнения цели.
   categories:
   - ForceDark
