@@ -11,7 +11,7 @@
 - type: listing
   id: UplinkPistolAnaconda
   name: Анаконда
-  description: Любимый пистолет верхушки Синдиката, способный создавать патроны калибра .45 Магнум с помощью встроенного фабрикатора.
+  description: Любимый пистолет верхушки Синдиката, способный создавать патроны калибра .45 магнум с помощью встроенного фабрикатора.
   productEntity: WeaponPistolAnaconda
   discountCategory: veryRareDiscounts
   discountDownTo:
