@@ -82,7 +82,7 @@
   - type: BasicEntityAmmoProvider
     proto: CartridgeMagnum
     capacity: 7
-    count: 1
+    count: 7
   - type: RechargeBasicEntityAmmo
     rechargeCooldown: 5
     rechargeSound:
