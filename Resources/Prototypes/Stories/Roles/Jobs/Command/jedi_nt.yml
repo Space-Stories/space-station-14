@@ -1,7 +1,7 @@
 - type: job
   id: JediNt
   name: страж клинка
-  description: Встань на защиту станции со своим крутым мечом и способностями!
+  description: Встань на защиту командования станции со своим крутым мечом и способностями!
   playTimeTracker: JobJediNt
   requirements:
     - !type:RoleTimeRequirement
@@ -18,14 +18,10 @@
       time: 18000 # 5 hours
   startingGear: JediNtGear
   icon: "JobIconJediNt"
-  supervisors: job-supervisors-hos
+  supervisors: job-supervisors-captain
   canBeAntag: false
-  access:
-  - Security
-  - Brig
-  - Maintenance
-  - Service
-  - External
+  accessGroups:
+  - AllAccess
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]

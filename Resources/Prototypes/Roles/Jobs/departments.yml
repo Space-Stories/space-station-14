@@ -58,6 +58,7 @@
   color: "#334E6D"
   roles:
   - Captain
+  - JediNt # Stories-Jedi
   - IAA # Stories-IAA
   - ChiefEngineer
   - ChiefMedicalOfficer
@@ -113,7 +114,6 @@
   - SecurityOfficer
   - Detective
   - Warden
-  - JediNt # Stories-Jedi
 
 - type: department
   id: Science
