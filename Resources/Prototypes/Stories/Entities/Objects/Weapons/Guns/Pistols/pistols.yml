@@ -47,10 +47,10 @@
   name: Анаконда
   parent: [ BaseItem, BaseSyndicateContraband ] # Не наследуется от пистолета, так как не использует магазины. Система контрабанды у нас своя, но для постоянности пусть будет контрабандой Синдиката
   id: WeaponPistolAnaconda
-  description: Тяжёлый пистолет, способный создавать патроны калибра .45 магнум с помощью встроенного фабрикатора. На рукоятке виднеется затёртая надпись, в которой можно распознать "phee..."
+  description: Тяжёлый пистолет, стреляющий уникальными патронами калибра .40 безгильзовый, которые создаются с помощью встроенного фабрикатора. На рукоятке виднеется затёртая надпись, в которой можно распознать "phee..."
   components:
   - type: Gun
-    fireRate: 3.5
+    fireRate: 4
     availableModes:
       - SemiAuto
     soundGunshot:
@@ -80,11 +80,11 @@
     containers:
       ballistic-ammo: !type:Container
   - type: BasicEntityAmmoProvider
-    proto: CartridgeMagnum
+    proto: BulletAnaconda
     capacity: 7
     count: 7
   - type: RechargeBasicEntityAmmo
-    rechargeCooldown: 5
+    rechargeCooldown: 4
     rechargeSound:
       path: /Audio/Weapons/Guns/Cock/shotgun_close.ogg
   - type: AmmoCounter

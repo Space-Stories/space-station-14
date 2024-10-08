@@ -1,0 +1,24 @@
+- type: entity
+  id: CartridgeAnaconda
+  name: патрон (.40 безгильзовый)
+  parent: [ BaseCartridge, BaseRestrictedContraband ]
+  abstract: true
+  components:
+  - type: CartridgeAmmo
+    proto: BulletAnaconda
+  - type: Tag
+    tags:
+      - Cartridge
+      - CartridgeCaselessRifle
+  - type: CartridgeAmmo
+    deleteOnSpawn: true
+  - type: Sprite
+    noRot: false
+    sprite: Objects/Weapons/Guns/Ammunition/Casings/ammo_casing.rsi
+    layers:
+    - state: base
+      map: ["enum.AmmoVisualLayers.Base"]
+  - type: Appearance
+  - type: SpentAmmoVisuals
+  - type: StaticPrice
+    price: 10
