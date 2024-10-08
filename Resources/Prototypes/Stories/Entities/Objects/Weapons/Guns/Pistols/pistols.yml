@@ -80,7 +80,7 @@
     containers:
       ballistic-ammo: !type:Container
   - type: BasicEntityAmmoProvider
-    proto: BulletAnaconda
+    proto: CartridgeAnaconda
     capacity: 7
     count: 7
   - type: RechargeBasicEntityAmmo
