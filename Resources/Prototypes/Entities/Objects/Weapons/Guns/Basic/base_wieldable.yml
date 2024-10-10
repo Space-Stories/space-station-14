@@ -11,3 +11,12 @@
   - type: Gun
     minAngle: 21
     maxAngle: 32   
+  - type: MeleeRequiresWield ## MeleeAttack for Gun
+  - type: MeleeWeapon
+    attackRate: .85
+    damage:
+      types:
+       Blunt: 3
+    angle: 0
+  - type: StaminaDamageOnHit
+    damage: 10
