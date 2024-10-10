@@ -24,3 +24,9 @@
       collection: KidanWigglesAtennae
     WavesAntennaeSharply:
       collection: KidanWavesAntennaeSharply
+    Weh:
+      collection: Weh
+    Gasp:
+      collection: KidanGasp
+    DefaultDeathgasp:
+      collection: KidanDeathGasp
