@@ -7,3 +7,16 @@
     Telecrystal: 6
   categories:
   - UplinkDisruption
+
+- type: listing
+  id: UplinkPistolAnaconda
+  name: Анаконда
+  description: Легендарная Анаконда - тяжёлый пистолет, стреляющий уникальными патронами калибра .40 безгильзовый, которые создаются с помощью встроенного фабрикатора.
+  productEntity: WeaponPistolAnaconda
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    Telecrystal: 5
+  cost:
+    Telecrystal: 9
+  categories:
+  - UplinkWeaponry

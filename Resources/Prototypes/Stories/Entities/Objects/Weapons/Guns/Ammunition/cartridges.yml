@@ -1,0 +1,8 @@
+- type: entity
+  id: CartridgeAnaconda
+  name: патрон (.40 безгильзовый)
+  parent: [ BaseCartridge, BaseRestrictedContraband ]
+  components:
+  - type: CartridgeAmmo
+    proto: BulletAnaconda
+    deleteOnSpawn: true
