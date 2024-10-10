@@ -18,7 +18,7 @@
 
 - type: forcePreset
   id: Inquisitor
-  name: Иквизитор
+  name: Инквизитор
   side: Dark
   volume: 140
   alert: SithForceVolume
