@@ -18,7 +18,7 @@
       time: 18000 # 5 hours
   startingGear: JediNtGear
   icon: "JobIconJediNt"
-  supervisors: job-supervisors-captain
+  supervisors: job-supervisors-centcom
   canBeAntag: false
   accessGroups:
   - AllAccess
