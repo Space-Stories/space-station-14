@@ -68,3 +68,7 @@
     quickEquip: false
     slots:
     - back
+  - type: ForTheWorthy # Stories - start
+    selfDamage:
+      types:
+        Slash: 12 # Stories - end

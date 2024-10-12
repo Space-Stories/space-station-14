@@ -114,6 +114,7 @@
       - type: NpcFactionMember
         factions:
         - Syndicate
+      - type: EswordWorthy # Stories
       mindComponents:
       - type: NukeopsRole
         prototype: NukeopsCommander
@@ -132,6 +133,7 @@
       - type: NpcFactionMember
         factions:
         - Syndicate
+      - type: EswordWorthy # Stories
       mindComponents:
       - type: NukeopsRole
         prototype: NukeopsMedic
@@ -152,6 +154,7 @@
       - type: NpcFactionMember
         factions:
         - Syndicate
+      - type: EswordWorthy # Stories
       mindComponents:
       - type: NukeopsRole
         prototype: Nukeops
@@ -189,6 +192,8 @@
         components:
         - AntagImmune
       lateJoinAdditional: true
+      components: # Stories - start
+      - type: EswordWorthy # Stories - end
       mindComponents:
       - type: TraitorRole
         prototype: Traitor
@@ -213,6 +218,7 @@
       components:
       - type: Revolutionary
       - type: HeadRevolutionary
+      - type: EswordWorthy # Stories
       mindComponents:
       - type: RevolutionaryRole
         prototype: HeadRev
@@ -277,7 +283,7 @@
         tableId: CalmPestEventsTable
       - !type:NestedSelector
         tableId: SpicyPestEventsTable
-        
+
 
 - type: entityTable
   id: SpaceTrafficControlTable

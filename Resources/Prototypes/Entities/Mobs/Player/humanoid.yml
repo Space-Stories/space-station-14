@@ -49,6 +49,7 @@
       nameSegments:
         - NamesFirstMilitaryLeader
         - NamesLastMilitary
+    - type: EswordWorthy # Stories
 
 
 ## ERT Leader
@@ -87,6 +88,7 @@
       nameSegments:
       - NamesFirstMilitaryLeader
       - NamesLastMilitary
+    - type: EswordWorthy # Stories
 
 - type: entity
   id: RandomHumanoidSpawnerERTLeaderEVA
@@ -513,6 +515,7 @@
       nameSegments:
       - NamesFirstMilitary
       - NamesLastMilitary
+    - type: EswordWorthy # Stories
 
 ## Central Command
 
@@ -539,6 +542,7 @@
     - type: Loadout
       prototypes: [ CentcomGear ]
       roleLoadout: [ RoleSurvivalStandard ]
+    - type: EswordWorthy # Stories
 
 ## Syndicate
 
@@ -562,6 +566,7 @@
     - type: Loadout
       prototypes: [SyndicateOperativeGearExtremelyBasic]
       roleLoadout: [ RoleSurvivalSyndicate ]
+    - type: EswordWorthy # Stories
 
 - type: entity
   id: RandomHumanoidSpawnerNukeOp
@@ -579,6 +584,7 @@
     - type: RandomHumanoidAppearance
       randomizeName: false
     - type: NukeOperative
+    - type: EswordWorthy # Stories
 
 - type: entity
   id: RandomHumanoidSpawnerCluwne

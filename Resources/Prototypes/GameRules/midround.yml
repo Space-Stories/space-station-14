@@ -24,8 +24,9 @@
       allowNonHumans: true
       multiAntagSetting: NotExclusive
       startingGear: ThiefGear
-      # components: # Stories-MRP
-      # - type: Pacified # Stories-MRP
+      components:
+      - type: EswordWorthy # Stories - start
+      # - type: Pacified # Stories - end
       mindComponents:
       - type: ThiefRole
         prototype: Thief

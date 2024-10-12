@@ -98,6 +98,10 @@
     - Back
     - Belt
   - type: Reflect
+  - type: ForTheWorthy # Stories - start
+    selfDamage:
+      types:
+        Slash: 18 # Stories - end
 
 - type: entity
   name: machete

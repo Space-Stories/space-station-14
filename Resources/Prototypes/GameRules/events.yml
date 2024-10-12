@@ -223,6 +223,7 @@
       - type: NpcFactionMember
         factions:
         - Syndicate
+      - type: EswordWorthy # Stories
       - type: AutoImplant
         implants:
         - DeathAcidifierImplant
@@ -521,6 +522,8 @@
       blacklist:
         components:
         - AntagImmune
+      components: # Stories - start
+      - type: EswordWorthy # Stories - end
       mindComponents:
       - type: TraitorRole
         prototype: TraitorSleeper

@@ -30,6 +30,7 @@
     - type: Force
     - type: ForceUser
       preset: Jedi
+    - type: EswordWorthy
 
 - type: startingGear
   id: JediNtGear

@@ -1399,6 +1399,7 @@
   - type: GhostTakeoverAvailable
   - type: Loadout
     prototypes: [SyndicateOperativeGearMonkey]
+  - type: EswordWorthy # Stories
 
 - type: entity
   id: MobMonkeySyndicateAgent
@@ -1558,6 +1559,7 @@
     - Syndicate
   - type: Loadout
     prototypes: [SyndicateOperativeGearMonkey]
+  - type: EswordWorthy # Stories
 
 - type: entity
   id: MobKoboldSyndicateAgent

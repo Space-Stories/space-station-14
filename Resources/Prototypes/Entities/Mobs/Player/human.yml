@@ -22,6 +22,7 @@
   - type: NpcFactionMember
     factions:
     - Syndicate
+  - type: EswordWorthy # Stories
 
 - type: entity
   parent: MobHumanSyndicateAgentBase
@@ -83,6 +84,7 @@
   components:
   - type: NukeOperative
   - type: RandomHumanoidAppearance
+  - type: EswordWorthy # Stories
 
 - type: entity
   categories: [ HideSpawnMenu ]
@@ -103,3 +105,4 @@
   - type: NpcFactionMember
     factions:
     - Syndicate
+  - type: EswordWorthy # Stories
