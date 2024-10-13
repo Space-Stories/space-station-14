@@ -76,7 +76,7 @@ public sealed class SpecialRolesSystem : EntitySystem
             return false;
         }
 
-        if (TryComp<JobComponent>(mindId, out var comp) && _proto.TryIndex(comp.Prototype, out var jobProto) && !jobProto.CanBeAntag)
+        if (_mind.TryGetRole<MindRoleComponent>(mindId, out var comp) && _proto.TryIndex(comp.JobPrototype, out var jobProto) && !jobProto.CanBeAntag)
         {
             reason = StatusLabel.CantBeAntag;
             return false;
@@ -166,7 +166,7 @@ public sealed class SpecialRolesSystem : EntitySystem
         if (HasComp<GhostComponent>(uid))
             return PlayerState.Ghost;
 
-        if (_mind.TryGetMind(uid, out var mindId, out var mind) && HasComp<JobComponent>(mindId))
+        if (_mind.TryGetMind(uid, out var mindId, out var mind) && _mind.TryGetRole<MindRoleComponent>(mindId, out var comp) && comp.JobPrototype != null)
             return PlayerState.CrewMember;
 
         return PlayerState.None;
