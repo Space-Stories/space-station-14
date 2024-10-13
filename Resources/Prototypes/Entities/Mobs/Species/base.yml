@@ -187,8 +187,6 @@
     interfaces:
       enum.StoreUiKey.Key: # SpaceStories Немного магазина во всех нас. // TODO: Убрать отсюда
         type: StoreBoundUserInterface # ! Это нужно, чтобы пользователи силы могли открывать свой магазин навыков.
-      enum.VoiceMaskUIKey.Key:
-        type: VoiceMaskBoundUserInterface
       enum.HumanoidMarkingModifierKey.Key:
         type: HumanoidMarkingModifierBoundUserInterface
       enum.StrippingUiKey.Key:

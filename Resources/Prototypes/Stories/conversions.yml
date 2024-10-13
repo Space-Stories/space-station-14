@@ -13,11 +13,8 @@
   components:
   - type: ThermalVision
   - type: ShadowlingThrall
-  mindComponents:
-  - type: RoleBriefing
-    briefing: thrall-briefing
-  - type: ShadowlingThrallRole
-    prototype: ShadowlingThrall
+  mindRoles:
+    - MindRoleShadowlingThrall
   channels:
     - ShadowlingMind
 
@@ -36,8 +33,7 @@
     color: Red
   components:
     - type: HypnotizedEmpire
-  mindComponents:
-    - type: HypnotizedEmpireMemberRole
-      prototype: HypnotizedEmpireMember
+  mindRoles:
+    - MindRoleShadowlingThrall
   channels:
     - Empire

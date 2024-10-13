@@ -79,10 +79,10 @@ public sealed partial class PrisonSystem : EntitySystem
             HashSet<EntityUid> escapedPrisoners = new();
 
 
-            var queryPrisonersMinds = EntityQueryEnumerator<JobComponent, MindComponent>();
-            while (queryPrisonersMinds.MoveNext(out var uid, out var job, out var mind))
+            var queryPrisonersMinds = EntityQueryEnumerator<MindRoleComponent>();
+            while (queryPrisonersMinds.MoveNext(out var uid, out var job))
             {
-                if (job.Prototype == _prisonerJobId)
+                if (job.JobPrototype == _prisonerJobId)
                     roundstartPrisoners++;
             }
 

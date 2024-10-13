@@ -24,6 +24,9 @@
   - ToyFigurineOSP
   - ToyFigurineESP
   - ToyFigurineHOSP
+  #
+  - FlowerWreath
+  - Hairflower
   - PlushieLizard
   - PlushieSpaceLizard
   - Lighter
@@ -37,6 +40,7 @@
   # - ClothingNeckAromanticPin
   # - ClothingNeckAsexualPin
   # - ClothingNeckBisexualPin
+  # - ClothingNeckGayPin
   # - ClothingNeckIntersexPin
   # - ClothingNeckLesbianPin
   # - ClothingNeckNonBinaryPin
@@ -1390,6 +1394,7 @@
   - DetectiveCoatSpecialGrey # Stories
   - DetectiveArmorVest
   - DetectiveCoat
+  - DetectiveCoatGrey
 
 - type: loadoutGroup
   id: SecurityCadetJumpsuit
