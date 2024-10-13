@@ -1,7 +1,7 @@
 - type: entity
   id: CartridgeAnaconda
   name: патрон (.40 безгильзовый)
-  parent: [ BaseCartridge, BaseRestrictedContraband ]
+  parent: BaseCartridgeCaselessRifle
   components:
   - type: CartridgeAmmo
     proto: BulletAnaconda
