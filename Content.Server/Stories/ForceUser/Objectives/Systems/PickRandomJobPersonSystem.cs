@@ -58,7 +58,7 @@ public sealed class PickRandomJobPersonSystem : EntitySystem
         var allHeads = new List<EntityUid>();
         foreach (var mind in allHumans)
         {
-            if (_mind.TryGetRole<MindRoleComponent>(mind, out var component) && component.JobPrototype == comp.JobID)
+            if (_job.MindTryGetJob(mind, out var job) && job.ID == comp.JobID)
                 allHeads.Add(mind);
         }
 
