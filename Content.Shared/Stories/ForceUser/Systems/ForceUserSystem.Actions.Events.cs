@@ -64,6 +64,7 @@ public sealed partial class RecliningPulseEvent : InstantActionEvent
     public float Range { get; set; } = 10f;
 }
 public sealed partial class HypnosisTargetActionEvent : EntityTargetActionEvent { }
+public sealed partial class CleanseTargetActionEvent : EntityTargetActionEvent { }
 public sealed partial class IgniteTargetActionEvent : EntityTargetActionEvent
 {
     [ViewVariables(VVAccess.ReadWrite)]

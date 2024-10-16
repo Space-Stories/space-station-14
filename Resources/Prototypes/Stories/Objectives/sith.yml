@@ -4,7 +4,7 @@
   id: BaseInquisitorObjective
   components:
   - type: Objective
-    issuer: inquisitor
+    issuer: objective-issuer-inquisitor
     difficulty: 1.0
   # - type: RoleRequirement
   #   roles:
@@ -15,13 +15,13 @@
   noSpawn: true
   parent: [BaseInquisitorObjective, BaseKillObjective]
   id: KillJediNtObjective
-  description: Уничтожьте его.
+  description: Неверные императору недостойны пользоваться силой. Он или встанет на нашу сторону, или умрёт.
   components:
   - type: Objective
     difficulty: 3.0
     unique: true
   - type: TargetObjective
-    title: objective-condition-kill-head-title
+    title: kill-jedint-objective-name
   - type: PickRandomJobPerson
     jobID: JediNt
   - type: KillPersonCondition
@@ -54,6 +54,6 @@
   - type: NumberObjective
     min: 3
     max: 3
-    title: objective-sith-hypnosis-title
-    description: objective-sith-hypnosis-description
+    title: Загипнотизировать 3 существа.
+    description: Императору нужны новые подданные.
   - type: HypnosisCondition
