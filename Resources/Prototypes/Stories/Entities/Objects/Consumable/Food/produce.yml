@@ -1,0 +1,48 @@
+- type: entity
+  name: Блюспейс томат
+  parent: FoodTomato
+  id: FoodBlueSpaceTomato
+  description: Эти порталы завораживают..
+  components:
+  - type: SolutionContainerManager
+    solutions:
+      food:
+        maxVol: 24
+        reagents:
+        - ReagentId: Nutriment
+          Quantity: 5
+        - ReagentId: TeleToxin
+          Quantity: 5
+        - ReagentId: Vitamin
+          Quantity: 4
+  - type: Sprite
+    sprite: Stories/Objects/Specific/Hydroponics/bluespace_tomato.rsi
+  - type: Produce
+    seedId: blueSpaceTomato
+  - type: Extractable
+    grindableSolutionName: food
+    juiceSolution:
+      reagents:
+      - ReagentId: TeleToxin
+        Quantity: 5
+  - type: Destructible
+    thresholds:
+    - trigger:
+        !type:DamageTrigger
+        damage: 1
+      behaviors:
+      - !type:PlaySoundBehavior
+        sound:
+          collection: desecration
+      - !type:SpillBehavior
+        solution: food
+      - !type:DoActsBehavior
+        acts: [ "Destruction" ]
+  - type: Tag
+    tags:
+    - Fruit
+    - Vegetable
+  - type: FoodSequenceElement
+    entries:
+      Burger: BlueSpaceTomato
+      Taco: BlueSpaceTomato
