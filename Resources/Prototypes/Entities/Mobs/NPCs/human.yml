@@ -86,8 +86,6 @@
         Asphyxiation: 76
         Slash: 56
         Blunt: 19
-  - type: Inventory
-    templateId: corpse
 
 - type: entity
   parent: MobHuman
