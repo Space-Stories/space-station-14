@@ -1,89 +1,93 @@
 <Document>
-## Начало
-Это не обширный список рецептов, в нем представлены основные блюда.
+  ## Начало
+  Это не все существующие рецепты, этот список предназначен для демонстрации основ.
 
-Смеси делаются в стакане, продукты готовятся в микроволновой печи. Время приготовления будет указано.
+  Продукты смешиваются в мензурке, еда готовится в микроволновке. Время готовки обычно указывается в рецепте.
 
-ВНИМАНИЕ: Это не автоматически сгенерированный список, все, что здесь перечислено, может устареть. В вики есть гораздо больше, чем указано здесь.
+  ВНИМАНИЕ: Это не автоматически сгенерированный список, все, что здесь перечислено, может устареть. На Wiki есть гораздо больше, чем перечислено здесь.
 
-## Основы: Смешивание
+  ## Основы: Смешивание
 
-- Dough = 15 Flour, 10 Water
-- Cornmeal Dough = 1 Egg (6u), 10 Milk, 15 Cornmeal
-- Tortila Dough = 15 Cornmeal, 10 Water
-- Tofu = 5 Enzyme (Catalyst), 30 Soy Milk
-- Pie Dough = 2 Eggs (12u), 15 Flour, 5 Table Salt
-- Cake Batter = 2 Eggs(12u), 15 flour, 5 Sugar, 5 Milk
-- Vegan Cake Batter = 15 Soy Milk, 15 Flour, 5 Sugar
-- Butter = 30 Milk, 5 Table Salt (Catalyst)
-- Cheese Wheel = 5 Enzyme (Catalyst), 40 Milk
-- Chèvre Log = 5 Enzyme (Catalyst), 10 Goat Milk
-- Meatball = 1 Egg (6u), 5 Flour, 5 Uncooked Animal Proteins
-- Chocolate = 6 Cocoa Powder, 2 Milk, 2 Sugar
-- Uncooked Animal Protein: Grind Raw Meat
+  - Тесто = 15 муки, 10 воды
+  - Кукурузное тесто = 1 яйцо (6 ед.), 10 молока, 15 кукурузной муки
+  - Tortila Dough = 15 Cornmeal, 10 Water
+  - Тофу = 5 универсального фермента (Catalyst), 30 соевого молока
+  - Тесто для пирога = 2 яйца (12 ед.), 15 муки, 5 столовой соли
+  - Тесто для торта = 2 яйца(12 ед.), 15 муки, 5 сахара
+  - Веганское тесто для торта = 15 соевого молока, 15 муки, 5 сахара
+  - Масло = 30 молока, 5 столовой соли (Catalyst)
+  - Головка сыра = 5 универсального фермента (Catalyst), 40 молока
+  - Chèvre Log = 5 Enzyme (Catalyst), 10 Goat Milk
+  - Фрикаделька = 1 яйцо (6 ед.), 5 муки, 5 непрожаренные животные протеины
+  - Chocolate = 6 Cocoa Powder, 2 Milk, 2 Sugar
+  - Непрожаренные животные протеины: измельчить сырое мясо
 
-Buzz! Don't forget about Moth diet!
-- Cotton Dough = 5 Flour, 10 Fabric, 10 Water
-- Cotton bread baked the same as default but with cotton dough instead
-- Cotton Pizza: Microwave 1 Flat Cotton Dough and 4 Cotton Bolls for 30 Seconds
+  Buzz! Don't forget about Moth diet!
+  - Cotton Dough = 5 Flour, 10 Fabric, 10 Water
+  - Cotton bread baked the same as default but with cotton dough instead
+  - Cotton Pizza: Microwave 1 Flat Cotton Dough and 4 Cotton Bolls for 30 Seconds
 
-<Box>
-<GuideEntityEmbed Entity="FoodDough"/>
-<GuideEntityEmbed Entity="FoodDoughCornmeal"/>
-<GuideEntityEmbed Entity="FoodDoughCotton"/>
-<GuideEntityEmbed Entity="FoodTofu"/>
-<GuideEntityEmbed Entity="FoodDoughPie"/>
-<GuideEntityEmbed Entity="FoodCakeBatter"/>
-<GuideEntityEmbed Entity="FoodDoughFlat"/>
-<GuideEntityEmbed Entity="FoodDoughTortilla"/>
-</Box>
+  <Box>
+    <GuideEntityEmbed Entity="FoodDough"/>
+    <GuideEntityEmbed Entity="FoodDoughCornmeal"/>
+    <GuideEntityEmbed Entity="FoodDoughCotton"/>
+    <GuideEntityEmbed Entity="FoodTofu"/>
+    <GuideEntityEmbed Entity="FoodDoughPie"/>
+    <GuideEntityEmbed Entity="FoodCakeBatter"/>
+    <GuideEntityEmbed Entity="FoodDoughFlat"/>
+    <GuideEntityEmbed Entity="FoodDoughTortilla"/>
+  </Box>
 
-<Box>
-<GuideEntityEmbed Entity="FoodButter"/>
-<GuideEntityEmbed Entity="FoodMeatMeatball"/>
-<GuideEntityEmbed Entity="FoodCheese"/>
-<GuideEntityEmbed Entity="FoodChevre"/>
-<GuideEntityEmbed Entity="FoodSnackChocolateBar"/>
-</Box>
+  <Box>
+    <GuideEntityEmbed Entity="FoodButter"/>
+    <GuideEntityEmbed Entity="FoodMeatMeatball"/>
+    <GuideEntityEmbed Entity="FoodCheese"/>
+    <GuideEntityEmbed Entity="FoodChevre"/>
+    <GuideEntityEmbed Entity="FoodSnackChocolateBar"/>
+  </Box>
 
-## Вторичные продукты
+  ## Второстепенные продукты
 
-- Нарезка теста: Нарезать тесто
-- Булочка: Ломтик теста в микроволновой печи в течение 5 секунд
-- Котлета: Нарезать сырое мясо
-- Сырный клин: Ломтик сыра
-- Плоское тесто: Проведите по тесту скалкой или круглым предметом (огнетушителем, банкой с содовой, бутылкой).
-- Ломтик теста для тортильи: нарезать тесто для тортильи
-- Плоское тесто для тортильи: Используйте скалку или круглый предмет (огнетушитель, банку с газировкой, бутылку) для нарезки теста Тортилья.
-- Ракушка тако: Раскатайте плоское тесто для тортильи в микроволновой печи в течение 5 секунд.
+  - Кусочек теста: нарезать тесто
+  - Булочка: положить в микроволновку кусочек теста на 5 секунд
+  - Сырая котлета: нарезать сырое мясо
+  - Сырный ломтик: нарезать головку сыра
+  - Плоское тесто: раскатайте тесто скалкой либо другим крыглым объектом (огнетушитель, жестяная банка, бутылка).
+  - Tortilla Dough Slice: cut Tortilla Dough
+  - Flat Tortilla Dough: Use a rolling pin or a round object (fire extinguisher, soda can, bottle) on Tortilla Dough Slice
+  - Taco Shell: Microwave Flat Tortilla Dough for 5 Seconds
 
-## Примеры продуктов питания
+  ## Примеры блюд
 
-- Хлеб: Тесто в микроволновой печи в течение 10 секунд
-- Обычный бургер: 1 булочка и 1 сырое мясо в микроволновой печи в течение 10 секунд
-- Томатный суп: 10u воды, 1 миска и 2 помидора в течение 10 секунд
-- Цитрусовый салат: 1 миска, 1 лимон, 1 лайм, 1 апельсин в течение 5 секунд
-- Пицца "Маргарита": 1 плоское тесто, 1 сырный клин и 4 помидора в микроволновой печи в течение 30 секунд
-- Торт: 1 тесто для торта в течение 15 секунд
-- Яблочный пирог: 1 тесто для пирога, 3 яблока и 1 форма для пирога в течение 15 секунд
-- Тако из говядины: 1 ракушка для тако, 1 котлета из сырого мяса, 1 сырный клин в течение 10 секунд.
+  - Хлеб: положить в микроволновку тесто на 10 секунд
+  - Бургер: положить в микроволновку 1 булочку и 1 сырое мясо на 10 секунд
+  - Томатный суп: 10 ед. воды, 1 пустая миска и 2 помидора на 10 секунд
+  - Цитрусовый салат: 1 пустая миска, 1 лемон, 1 лайм, 1 апельсин на 5 секунд
+  - Маргарита: положить в микроволновку 1 плоское тесто, 1 сырный ломтик и 4 помидора на 30 секунд
+  - Торт: 1 тесто для торта в микроволновку на 15 секунд
+  - Яблочный пирог: 1 тесто для пирога, 3 яблока и 1 формочку для пирога на 15 секунд
+  - Beef Taco: Microwave 1 Taco Shell, 1 Raw Meat Cutlet, 1 Cheese Wedge for 10 Seconds
+  - Cuban Carp : Microwave 1 Dough, 1 Cheese Wedge, 1 Chili, 1 Carp Meat for 15 Seconds
+  - Banana Cream Pie : Microwave 1 Pie Dough, 3 Bananas, and 1 Pie Tin for 15 Seconds
+  - Carrot Fries : Microwave 1 Carrot, 15u Salt for 15 Seconds
+  - Pancake : Microwave 5u Flour, 5u Milk, 1 Egg (6u) for 5 Seconds
 
-<Box>
-<GuideEntityEmbed Entity="FoodBreadPlain"/>
-<GuideEntityEmbed Entity="FoodBurgerPlain"/>
-<GuideEntityEmbed Entity="FoodSoupTomato"/>
-<GuideEntityEmbed Entity="FoodSaladCitrus"/>
-</Box>
-<Box>
-<GuideEntityEmbed Entity="FoodPizzaMargherita"/>
-<GuideEntityEmbed Entity="FoodCakePlain"/>
-<GuideEntityEmbed Entity="FoodPieApple"/>
-</Box>
-<Box>
-<GuideEntityEmbed Entity="FoodMealCubancarp"/>
-<GuideEntityEmbed Entity="FoodPieBananaCream"/>
-<GuideEntityEmbed Entity="FoodMealFriesCarrot"/>
-<GuideEntityEmbed Entity="FoodBakedPancake"/>
-</Box>
+  <Box>
+    <GuideEntityEmbed Entity="FoodBreadPlain"/>
+    <GuideEntityEmbed Entity="FoodBurgerPlain"/>
+    <GuideEntityEmbed Entity="FoodSoupTomato"/>
+    <GuideEntityEmbed Entity="FoodSaladCitrus"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="FoodPizzaMargherita"/>
+    <GuideEntityEmbed Entity="FoodCakePlain"/>
+    <GuideEntityEmbed Entity="FoodPieApple"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="FoodMealCubancarp"/>
+    <GuideEntityEmbed Entity="FoodPieBananaCream"/>
+    <GuideEntityEmbed Entity="FoodMealFriesCarrot"/>
+    <GuideEntityEmbed Entity="FoodBakedPancake"/>
+  </Box>
 
 </Document>
