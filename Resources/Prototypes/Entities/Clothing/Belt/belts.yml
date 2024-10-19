@@ -79,7 +79,24 @@
             - Multitool
     sprite: Clothing/Belt/belt_overlay.rsi
   - type: Appearance
-
+  
+- type: entity
+  parent: ClothingBeltStorageBase
+  id: ClothingBeltOrgans
+  name: medical organs belt
+  description: You can store organs there.
+  components:
+  - type: Sprite
+    sprite: Clothing/Belt/organsbelt.rsi
+  - type: Clothing
+    sprite: Clothing/Belt/organsbelt.rsi
+  - type: Storage
+    whitelist:
+         tags:
+          - Meat
+    sprite: Clothing/Belt/belt_overlay.rsi
+  - type: Appearance
+  
 - type: entity
   parent: ClothingBeltStorageBase
   id: ClothingBeltChiefEngineer
