@@ -1,5 +1,20 @@
 - type: entity
   parent: ClothingEyesBase
+  id: BaseEyeThermal
+  abstract: true
+  components:
+  - type: ThermalVisionClothing
+  # Уязвимость к вспышкам?
+
+- type: entity
+  parent: [ ClothingEyesGlassesThermal, BaseEyeThermal ]
+  id: ClothingEyesTermalVisionDebug
+  name: очки термального зрения
+  suffix: ДЕБАГ
+  description: Позволяют видеть людей через стены.
+
+- type: entity
+  parent: ClothingEyesBase
   id: ClothingEyesNightvision
   name: прибор ночного видения
   description: Позволяют видеть в полной темноте. Работает на ядерной батарее внутри и совсем не вреден для глаз.
