@@ -17,14 +17,15 @@ public sealed class NightvisionSystem : EntitySystem
     }
     private void OnUnequipped(EntityUid uid, NightvisionClothingComponent component, GotUnequippedEvent args)
     {
-        RemCompDeferred<NightvisionComponent>(args.Equipee);
+        if (args.Slot == "eyes")
+            RemCompDeferred<NightvisionComponent>(args.Equipee);
     }
     private void OnEquipped(EntityUid uid, NightvisionClothingComponent component, GotEquippedEvent args)
     {
         if (_gameTiming.ApplyingState)
             return;
 
-        if (component.Enabled && !HasComp<NightvisionComponent>(args.Equipee))
+        if (component.Enabled && !HasComp<NightvisionComponent>(args.Equipee) && (args.Slot == "eyes"))
             AddComp<NightvisionComponent>(args.Equipee);
     }
 }
