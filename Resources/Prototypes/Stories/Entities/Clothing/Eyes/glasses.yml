@@ -2,7 +2,7 @@
   parent: ClothingEyesBase
   id: ClothingEyesNightvision
   name: прибор ночного видения
-  description: Позволяют видеть в полной темноте. Работает на ядерной батарее внутри и совсем не вреден для глаз.
+  description: Позволяет видеть в полной темноте. Работает на ядерной батарее внутри и совсем не вреден для глаз.
   components:
   - type: NightvisionClothing # Space Stories
   - type: Sprite

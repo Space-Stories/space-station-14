@@ -1,8 +1,8 @@
 - type: entity
   parent: ClothingHeadset
   id: ClothingHeadsetIAA
-  name: iaa headset
-  description: A headset for internal affairs agent to hear the captain's last words.
+  name: гарнитура АВД
+  description: Гарнитура, чтобы агент внутренних дел услышал последние слова капитана.
   components:
     - type: ContainerFill
       containers:
