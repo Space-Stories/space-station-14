@@ -10,7 +10,7 @@ namespace Content.Shared.Stories.Nightvision;
 public sealed partial class NightvisionComponent : Component
 {
     [ViewVariables(VVAccess.ReadWrite), DataField("enabled"), AutoNetworkedField]
-    public bool Enabled { get; set; } = true;
+    public bool Enabled { get; set; } = false;
     [DataField]
     public string ToggleAction = "ToggleNightvisionAction";
     [DataField, AutoNetworkedField]

@@ -1,7 +1,6 @@
 using Content.Shared.Actions;
 using Content.Shared.GameTicking;
 using Content.Shared.Inventory.Events;
-using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
 using Content.Shared.Stories.Nightvision;
@@ -12,7 +11,6 @@ public sealed class NightvisionSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _gameTiming = default!;
     [Dependency] private readonly SharedActionsSystem _actions = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
     public override void Initialize()
     {
         base.Initialize();
@@ -36,8 +34,6 @@ public sealed class NightvisionSystem : EntitySystem
     }
     private void OnStartUp(EntityUid uid, NightvisionComponent component, ComponentStartup args)
     {
-        if (component.PlaySound)
-            _audio.PlayPvs(component.ToggleOnSound, uid);
         _actions.AddAction(uid, ref component.ToggleActionEntity, component.ToggleAction);
     }
     private void OnShutdown(EntityUid uid, NightvisionComponent component, ComponentShutdown args)

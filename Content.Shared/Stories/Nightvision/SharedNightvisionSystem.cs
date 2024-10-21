@@ -17,6 +17,6 @@ public sealed class SharedNightvisionSystem : EntitySystem
             return;
         component.Enabled = !component.Enabled;
         if (component.Enabled && component.PlaySound)
-            _audio.PlayPredicted(component.ToggleOnSound, uid, uid);
+            _audio.PlayLocal(component.ToggleOnSound, uid, uid);
     }
 }
