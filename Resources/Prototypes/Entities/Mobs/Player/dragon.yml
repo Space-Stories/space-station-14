@@ -152,8 +152,8 @@
     - DoorBumpOpener
   - type: Puller
     needsHands: false
-  - type: Nightvision
-    playSound: false
+  - type: Nightvision # Stories
+    playSound: false # Stories
 
 - type: entity
   parent: BaseMobDragon
