@@ -1,16 +1,21 @@
+using Content.Server.Mind;
+using Content.Server.Stories.Shadowling;
 using Content.Shared.Actions;
 using Content.Shared.GameTicking;
 using Content.Shared.Inventory.Events;
+using Content.Shared.Roles;
+using Content.Shared.Stories.ThermalVision;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
-using Content.Shared.Stories.ThermalVision;
 
 namespace Content.Server.Stories.ThermalVision;
 
 public sealed class ThermalVisionSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _gameTiming = default!;
+    [Dependency] private readonly MindSystem _mind = default!;
     [Dependency] private readonly SharedActionsSystem _actions = default!;
+    [Dependency] private readonly SharedRoleSystem _roles = default!;
 
     public override void Initialize()
     {
@@ -22,8 +27,8 @@ public sealed class ThermalVisionSystem : EntitySystem
     }
     private void OnUnequipped(EntityUid uid, ThermalVisionClothingComponent component, GotUnequippedEvent args)
     {
-        if (args.Slot == "eyes")
-            RemCompDeferred<ThermalVisionComponent>(args.Equipee);
+    if (args.Slot == "eyes" && _mind.GetMind(args.Equipee) is { } mind && !_roles.MindHasRole<ShadowlingThrallRoleComponent>(mind)) // Hardcode
+        RemCompDeferred<ThermalVisionComponent>(args.Equipee);
     }
     private void OnEquipped(EntityUid uid, ThermalVisionClothingComponent component, GotEquippedEvent args)
     {

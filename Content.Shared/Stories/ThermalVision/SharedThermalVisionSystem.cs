@@ -48,7 +48,5 @@ public abstract class SharedThermalVisionSystem : EntitySystem
         component.Enabled = !component.Enabled;
         var ent = new Entity<ThermalVisionComponent>(uid, component);
         ThermalVisionChanged(ent);
-        if (component.Enabled && component.PlaySound)
-            _audio.PlayLocal(component.ToggleOnSound, uid, uid);
     }
 }
