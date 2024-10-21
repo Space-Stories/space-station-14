@@ -1657,16 +1657,6 @@
   categories:
     - UplinkWearables
 
-- type: listing
-  id: UplinkNightvision
-  name: Прибор ночного видения
-  description: Позволяют видеть в полной темноте
-  productEntity: ClothingEyesNightvision
-  cost:
-    Telecrystal: 2
-  categories:
-    - UplinkWearables
-
  # Pointless
 
 - type: listing
