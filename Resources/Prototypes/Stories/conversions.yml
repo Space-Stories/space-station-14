@@ -12,6 +12,7 @@
     color: Red
   components:
   - type: ThermalVision
+    playSound: false
   - type: ShadowlingThrall
   mindRoles:
     - MindRoleShadowlingThrall
