@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "license": "CC-BY-SA-3.0",
+  "copyright": "Created by RustedTim (discord:Helloo4771) for SpaceStories(Server SS14)",
+  "size": {
+    "x": 32,
+    "y": 32
+  },
+  "states": [
+    {
+      "name": "syndicat",
+      "directions": 4
+    },
+    {
+      "name": "syndicat_dead"
+    },
+    {
+      "name": "old-radio-syndicat"
+    }
+  ]
+}
