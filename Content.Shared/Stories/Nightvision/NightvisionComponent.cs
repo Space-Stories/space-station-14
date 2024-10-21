@@ -1,5 +1,6 @@
 using Content.Shared.Actions;
 using Content.Shared.Eye.Blinding.Systems;
+using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 
 namespace Content.Shared.Stories.Nightvision;
@@ -12,6 +13,7 @@ public sealed partial class NightvisionComponent : Component
     public bool Enabled { get; set; } = true;
     public string ToggleAction = "ToggleNightvisionAction";
     public EntityUid? ToggleActionEntity;
+    public SoundSpecifier ToggleOnSound = new SoundPathSpecifier("/Audio/Stories/Misc/night_vision.ogg");
 }
 
 [RegisterComponent]

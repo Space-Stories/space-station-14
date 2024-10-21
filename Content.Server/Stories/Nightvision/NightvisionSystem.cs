@@ -1,5 +1,7 @@
+using Content.Shared.Actions;
 using Content.Shared.GameTicking;
 using Content.Shared.Inventory.Events;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
 using Content.Shared.Stories.Nightvision;
@@ -9,11 +11,15 @@ namespace Content.Server.Stories.Nightvision;
 public sealed class NightvisionSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _gameTiming = default!;
+    [Dependency] private readonly SharedActionsSystem _actions = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!;
     public override void Initialize()
     {
         base.Initialize();
         SubscribeLocalEvent<NightvisionClothingComponent, GotEquippedEvent>(OnEquipped);
         SubscribeLocalEvent<NightvisionClothingComponent, GotUnequippedEvent>(OnUnequipped);
+        SubscribeLocalEvent<NightvisionComponent, ComponentStartup>(OnStartUp);
+        SubscribeLocalEvent<NightvisionComponent, ComponentShutdown>(OnShutdown);
     }
     private void OnUnequipped(EntityUid uid, NightvisionClothingComponent component, GotUnequippedEvent args)
     {
@@ -27,5 +33,14 @@ public sealed class NightvisionSystem : EntitySystem
 
         if (component.Enabled && !HasComp<NightvisionComponent>(args.Equipee) && (args.Slot == "eyes"))
             AddComp<NightvisionComponent>(args.Equipee);
+    }
+    private void OnStartUp(EntityUid uid, NightvisionComponent component, ComponentStartup args)
+    {
+        _actions.AddAction(uid, ref component.ToggleActionEntity, component.ToggleAction);
+        _audio.PlayPvs(component.ToggleOnSound, uid);
+    }
+    private void OnShutdown(EntityUid uid, NightvisionComponent component, ComponentShutdown args)
+    {
+        Del(component.ToggleActionEntity);
     }
 }
