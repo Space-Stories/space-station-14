@@ -16,7 +16,7 @@ public sealed class SharedNightvisionSystem : EntitySystem
         if (!_timing.IsFirstTimePredicted)
             return;
         component.Enabled = !component.Enabled;
-        if (component.Enabled)
+        if (component.Enabled && component.PlaySound)
             _audio.PlayPredicted(component.ToggleOnSound, uid, uid);
     }
 }

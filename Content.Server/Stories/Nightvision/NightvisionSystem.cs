@@ -36,8 +36,9 @@ public sealed class NightvisionSystem : EntitySystem
     }
     private void OnStartUp(EntityUid uid, NightvisionComponent component, ComponentStartup args)
     {
+        if (component.PlaySound)
+            _audio.PlayPvs(component.ToggleOnSound, uid);
         _actions.AddAction(uid, ref component.ToggleActionEntity, component.ToggleAction);
-        _audio.PlayPvs(component.ToggleOnSound, uid);
     }
     private void OnShutdown(EntityUid uid, NightvisionComponent component, ComponentShutdown args)
     {

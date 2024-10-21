@@ -11,8 +11,13 @@ public sealed partial class NightvisionComponent : Component
 {
     [ViewVariables(VVAccess.ReadWrite), DataField("enabled"), AutoNetworkedField]
     public bool Enabled { get; set; } = true;
+    [DataField]
     public string ToggleAction = "ToggleNightvisionAction";
+    [DataField, AutoNetworkedField]
     public EntityUid? ToggleActionEntity;
+    [ViewVariables(VVAccess.ReadWrite), DataField("playSound"), AutoNetworkedField]
+    public bool PlaySound { get; set; } = true; // For dragon
+    [DataField("toggleOnSound")]
     public SoundSpecifier ToggleOnSound = new SoundPathSpecifier("/Audio/Stories/Misc/night_vision.ogg");
 }
 
