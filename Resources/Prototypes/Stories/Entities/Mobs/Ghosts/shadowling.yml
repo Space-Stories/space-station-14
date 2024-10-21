@@ -8,6 +8,7 @@
   components:
   - type: ZombieImmune
   - type: ThermalVision
+    playSound: false
   - type: MobState
     allowedStates:
     - Alive
