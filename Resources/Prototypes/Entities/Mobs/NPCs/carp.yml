@@ -86,7 +86,7 @@
       interactFailureSound:
         path: /Audio/Effects/bite.ogg
     - type: Nightvision # Stories
-      playSound: false # Stories
+      toggleOnSound: null # Stories
 
 - type: entity
   parent: BaseMobCarp
