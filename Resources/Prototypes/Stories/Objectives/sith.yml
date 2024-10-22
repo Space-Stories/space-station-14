@@ -4,7 +4,7 @@
   id: BaseInquisitorObjective
   components:
   - type: Objective
-    issuer: inquisitor
+    issuer: objective-issuer-inquisitor
     difficulty: 1.0
   # - type: RoleRequirement
   #   roles:
