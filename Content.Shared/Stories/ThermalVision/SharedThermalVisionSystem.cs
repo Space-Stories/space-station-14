@@ -1,12 +1,10 @@
-﻿using Robust.Shared.Audio.Systems;
-using Robust.Shared.Timing;
+﻿using Robust.Shared.Timing;
 
 namespace Content.Shared.Stories.ThermalVision;
 
 public abstract class SharedThermalVisionSystem : EntitySystem
 {
     [Dependency] private readonly IGameTiming _timing = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
     public override void Initialize()
     {
         base.Initialize();
