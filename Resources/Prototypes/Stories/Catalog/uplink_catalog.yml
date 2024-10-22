@@ -9,6 +9,16 @@
   - UplinkDisruption
 
 - type: listing
+  id: UplinkNightvision
+  name: Прибор ночного видения
+  description: Позволяет видеть в полной темноте. Работает на ядерной батарее внутри и совсем не вреден для глаз.
+  productEntity: ClothingEyesNightvision
+  cost:
+    Telecrystal: 2
+  categories:
+    - UplinkWearables
+
+- type: listing
   id: UplinkClothingEyesThermalVisionMonocular
   name: Монокль термального зрения
   description: Новейшая разведочная технология, которую поместили внутрь монокля. Позволяет видеть органические цели в полной темноте и даже через стены.

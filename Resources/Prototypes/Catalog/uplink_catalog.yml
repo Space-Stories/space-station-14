@@ -1227,7 +1227,7 @@
   id: UplinkMobCatMicrobomb
   name: uplink-mobcat-microbomb-name
   description: uplink-mobcat-microbomb-desc
-  icon: { sprite: Objects/Devices/communication.rsi, state: old-radio-syndicat }
+  icon: { sprite: Stories/Mobs/Pets/syndiCat.rsi, state: old-radio-syndicat } # { sprite: Objects/Devices/communication.rsi, state: old-radio-syndicat } # Stories
   productEntity: ReinforcementRadioSyndicateSyndiCat
   discountCategory: usualDiscounts
   discountDownTo:
@@ -1652,16 +1652,6 @@
   name: uplink-backpack-syndicate-name
   description: uplink-backpack-syndicate-desc
   productEntity: ClothingBackpackSyndicate
-  cost:
-    Telecrystal: 2
-  categories:
-    - UplinkWearables
-
-- type: listing
-  id: UplinkNightvision
-  name: Прибор ночного видения
-  description: Позволяют видеть в полной темноте
-  productEntity: ClothingEyesNightvision
   cost:
     Telecrystal: 2
   categories:

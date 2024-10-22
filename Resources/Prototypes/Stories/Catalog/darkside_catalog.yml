@@ -104,7 +104,7 @@
 
 - type: listing
   id: ActionStrangle
-  name: Удушение Силой
+  name: Удушение силой
   description: Удушающий прием техники бесконтактного боя.
   productAction: ActionStrangle
   cost:
@@ -118,7 +118,7 @@
 - type: listing
   id: ActionLifeSteal
   name: Кража жизни
-  description: Иссушает жертву восстанавливая вас.
+  description: Иссушает жертву, восстанавливая вас.
   productAction: ActionLifeSteal
   cost:
     SkillPoint: 2
