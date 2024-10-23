@@ -25,3 +25,5 @@ force-concentrate = Вы чувствуете прилив сил...
 objective-issuer-inquisitor = [color=Red]Инквизитор[/color]
 
 store-currency-display-skill-point = Навык
+
+objective-sith-hypnosis-title = Загипнотизировать { $count } существ.
