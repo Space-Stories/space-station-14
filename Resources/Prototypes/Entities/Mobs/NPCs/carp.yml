@@ -85,6 +85,8 @@
       interactFailureString: petting-failure-carp
       interactFailureSound:
         path: /Audio/Effects/bite.ogg
+    - type: Nightvision # Stories
+      toggleOnSound: null # Stories
 
 - type: entity
   parent: BaseMobCarp
