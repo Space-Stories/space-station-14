@@ -12,3 +12,8 @@
   license: "CC-BY-4.0"
   copyright: "bobik-music"
   source: "https://youtu.be/rhABoExfiEM?si=8RjBhIxZ4JqxOltX"
+
+- files: ["night_vision.ogg"]
+  license: "CC-BY-4.0"
+  copyright: "NoahBangs"
+  source: "https://freesound.org/people/NoahBangs/sounds/636090/"
