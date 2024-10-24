@@ -87,11 +87,15 @@
   - type: StorageFill
     contents:
       - id: ClothingEyesGlassesSecurity
-      - id: WeaponDisabler
+      # - id: WeaponDisabler # Stories
       - id: TrackingImplanter
         amount: 2
       - id: ClothingOuterHardsuitBrigmedic
       - id: BoxSterileMask
+      - id: BoxSyringe # Stories
+      - id: Bloodpack # Stories
+        amount: 2
+      - id: EpinephrineChemistryBottle # Stories
       - id: ClothingHeadHatBeretBrigmedic
       - id: ClothingOuterCoatAMG
       - id: ClothingUniformJumpsuitBrigmedic
