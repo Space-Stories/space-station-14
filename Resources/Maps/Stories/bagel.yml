@@ -15790,6 +15790,18 @@ entities:
     - type: Transform
       pos: 49.5,-23.5
       parent: 60
+- proto: BedsheetBrigmedic
+  entities:
+  - uid: 1354
+    components:
+    - type: Transform
+      pos: -18.5,-2.5
+      parent: 60
+  - uid: 1502
+    components:
+    - type: Transform
+      pos: -18.5,-7.5
+      parent: 60
 - proto: BedsheetCaptain
   entities:
   - uid: 18506
@@ -15876,17 +15888,6 @@ entities:
     components:
     - type: Transform
       pos: 36.5,-16.5
-      parent: 60
-  - uid: 1354
-    components:
-    - type: Transform
-      rot: 1.5707963267948966 rad
-      pos: -18.5,-2.5
-      parent: 60
-  - uid: 1502
-    components:
-    - type: Transform
-      pos: -18.5,-7.5
       parent: 60
   - uid: 9005
     components:
@@ -69185,13 +69186,6 @@ entities:
     - type: Transform
       pos: 51.5,25.5
       parent: 60
-- proto: EmergencyMedipen
-  entities:
-  - uid: 3505
-    components:
-    - type: Transform
-      pos: -19.478468,-2.5346627
-      parent: 60
 - proto: EmergencyOxygenTankFilled
   entities:
   - uid: 21242
@@ -109876,6 +109870,13 @@ entities:
     - type: Transform
       pos: 33.5,-35.5
       parent: 60
+- proto: LockerBrigmedicFilled
+  entities:
+  - uid: 3505
+    components:
+    - type: Transform
+      pos: -19.5,-2.5
+      parent: 60
 - proto: LockerCaptainFilledNoLaser
   entities:
   - uid: 21695
@@ -111120,11 +111121,6 @@ entities:
       parent: 60
 - proto: MedkitFilled
   entities:
-  - uid: 3493
-    components:
-    - type: Transform
-      pos: -19.525343,-2.3159127
-      parent: 60
   - uid: 5914
     components:
     - type: Transform
@@ -131044,6 +131040,13 @@ entities:
     - type: Transform
       pos: 34.5,-36.5
       parent: 60
+- proto: SpawnPointBrigmedic
+  entities:
+  - uid: 3493
+    components:
+    - type: Transform
+      pos: -18.5,-3.5
+      parent: 60
 - proto: SpawnPointCaptain
   entities:
   - uid: 18681
@@ -134894,12 +134897,6 @@ entities:
     components:
     - type: Transform
       pos: 3.5,-38.5
-      parent: 60
-  - uid: 4754
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -19.5,-2.5
       parent: 60
   - uid: 4818
     components:

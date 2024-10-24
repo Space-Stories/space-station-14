@@ -11640,6 +11640,13 @@ entities:
     - type: Transform
       pos: 6.5,-139.5
       parent: 2
+- proto: BedsheetBrigmedic
+  entities:
+  - uid: 710
+    components:
+    - type: Transform
+      pos: -4.5,-361.5
+      parent: 2
 - proto: BedsheetCaptain
   entities:
   - uid: 698
@@ -11716,11 +11723,6 @@ entities:
     components:
     - type: Transform
       pos: 8.5,-172.5
-      parent: 2
-  - uid: 710
-    components:
-    - type: Transform
-      pos: -4.5,-361.5
       parent: 2
 - proto: BedsheetMime
   entities:
@@ -37279,13 +37281,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 8.5,-279.5
-      parent: 2
-- proto: ComputerShuttleSalvage
-  entities:
-  - uid: 5560
-    components:
-    - type: Transform
-      pos: -5.5,-270.5
       parent: 2
 - proto: ComputerSolarControl
   entities:
@@ -76306,7 +76301,7 @@ entities:
       pos: 8.5,-176.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -147491.25
+      secondsUntilStateChange: -147662.22
       state: Closing
   - uid: 11227
     components:
@@ -76975,6 +76970,13 @@ entities:
     components:
     - type: Transform
       pos: -6.5,-89.5
+      parent: 2
+- proto: LockerBrigmedicFilled
+  entities:
+  - uid: 13985
+    components:
+    - type: Transform
+      pos: -5.5,-361.5
       parent: 2
 - proto: LockerCaptainFilled
   entities:
@@ -78065,7 +78067,7 @@ entities:
   - uid: 11493
     components:
     - type: Transform
-      pos: -6.360816,-360.66074
+      pos: -6.337611,-361.50674
       parent: 2
 - proto: MedkitBruteFilled
   entities:
@@ -78121,7 +78123,7 @@ entities:
   - uid: 11503
     components:
     - type: Transform
-      pos: -6.627599,-360.45245
+      pos: -6.619071,-361.27237
       parent: 2
 - proto: MedkitOxygenFilled
   entities:
@@ -89034,6 +89036,13 @@ entities:
     - type: Transform
       pos: -6.5,-84.5
       parent: 2
+- proto: SpawnPointBrigmedic
+  entities:
+  - uid: 13779
+    components:
+    - type: Transform
+      pos: -5.5,-360.5
+      parent: 2
 - proto: SpawnPointCaptain
   entities:
   - uid: 13329
@@ -91037,6 +91046,11 @@ entities:
       parent: 2
 - proto: TableReinforced
   entities:
+  - uid: 11482
+    components:
+    - type: Transform
+      pos: -6.5,-361.5
+      parent: 2
   - uid: 11786
     components:
     - type: Transform
@@ -91697,11 +91711,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 4.5,-358.5
-      parent: 2
-  - uid: 13779
-    components:
-    - type: Transform
-      pos: -6.5,-360.5
       parent: 2
   - uid: 13780
     components:
@@ -93221,6 +93230,11 @@ entities:
       parent: 2
 - proto: VendingMachineMedical
   entities:
+  - uid: 5560
+    components:
+    - type: Transform
+      pos: -6.5,-360.5
+      parent: 2
   - uid: 13983
     components:
     - type: Transform
@@ -93230,11 +93244,6 @@ entities:
     components:
     - type: Transform
       pos: 3.5,-196.5
-      parent: 2
-  - uid: 13985
-    components:
-    - type: Transform
-      pos: -6.5,-361.5
       parent: 2
 - proto: VendingMachineMediDrobe
   entities:

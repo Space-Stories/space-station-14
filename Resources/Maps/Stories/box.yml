@@ -11579,7 +11579,7 @@ entities:
       pos: 24.5,16.5
       parent: 8364
     - type: Door
-      secondsUntilStateChange: -15146.963
+      secondsUntilStateChange: -15335.784
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -15896,6 +15896,13 @@ entities:
     - type: Transform
       pos: -20.5,48.5
       parent: 8364
+- proto: BedsheetBrigmedic
+  entities:
+  - uid: 7789
+    components:
+    - type: Transform
+      pos: -6.5,31.5
+      parent: 8364
 - proto: BedsheetCaptain
   entities:
   - uid: 5315
@@ -15960,11 +15967,6 @@ entities:
     components:
     - type: Transform
       pos: 30.5,-27.5
-      parent: 8364
-  - uid: 9485
-    components:
-    - type: Transform
-      pos: -6.5,31.5
       parent: 8364
   - uid: 18601
     components:
@@ -17055,7 +17057,7 @@ entities:
   - uid: 7928
     components:
     - type: Transform
-      pos: -6.5023327,30.526033
+      pos: -6.614479,30.538969
       parent: 8364
   - uid: 19263
     components:
@@ -84322,7 +84324,7 @@ entities:
       pos: -34.5,-14.5
       parent: 8364
     - type: Door
-      secondsUntilStateChange: -9335.5
+      secondsUntilStateChange: -9524.321
       state: Closing
   - uid: 15010
     components:
@@ -122165,6 +122167,13 @@ entities:
     - type: Transform
       pos: 49.5,-0.5
       parent: 8364
+- proto: LockerBrigmedicFilled
+  entities:
+  - uid: 22443
+    components:
+    - type: Transform
+      pos: -6.5,29.5
+      parent: 8364
 - proto: LockerCaptainFilled
   entities:
   - uid: 10526
@@ -123819,7 +123828,7 @@ entities:
   - uid: 8749
     components:
     - type: Transform
-      pos: -6.5648327,29.651033
+      pos: -6.6195965,30.782274
       parent: 8364
   - uid: 9086
     components:
@@ -123851,7 +123860,7 @@ entities:
   - uid: 7927
     components:
     - type: Transform
-      pos: -6.3929577,29.432283
+      pos: -6.3381367,30.64165
       parent: 8364
 - proto: MedkitRadiationFilled
   entities:
@@ -143393,6 +143402,13 @@ entities:
     - type: Transform
       pos: 47.5,-4.5
       parent: 8364
+- proto: SpawnPointBrigmedic
+  entities:
+  - uid: 9485
+    components:
+    - type: Transform
+      pos: -7.5,30.5
+      parent: 8364
 - proto: SpawnPointCaptain
   entities:
   - uid: 11766
@@ -149234,11 +149250,6 @@ entities:
     components:
     - type: Transform
       pos: 21.5,10.5
-      parent: 8364
-  - uid: 7789
-    components:
-    - type: Transform
-      pos: -6.5,29.5
       parent: 8364
   - uid: 9360
     components:
