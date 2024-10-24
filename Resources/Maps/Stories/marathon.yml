@@ -12112,8 +12112,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: -24.5,-6.5
       parent: 30
-    - type: Apc
-      hasAccess: True
   - uid: 7079
     components:
     - type: MetaData
@@ -12137,8 +12135,6 @@ entities:
     - type: Transform
       pos: -21.5,-6.5
       parent: 30
-    - type: Apc
-      hasAccess: True
   - uid: 7433
     components:
     - type: MetaData
@@ -12155,8 +12151,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: -31.5,-14.5
       parent: 30
-    - type: Apc
-      hasAccess: True
   - uid: 7610
     components:
     - type: MetaData
@@ -13780,6 +13774,13 @@ entities:
     - type: Transform
       pos: -48.5,39.5
       parent: 30
+- proto: BedsheetBrigmedic
+  entities:
+  - uid: 2238
+    components:
+    - type: Transform
+      pos: -50.5,50.5
+      parent: 30
 - proto: BedsheetCaptain
   entities:
   - uid: 4986
@@ -13844,11 +13845,6 @@ entities:
     components:
     - type: Transform
       pos: -24.5,-7.5
-      parent: 30
-  - uid: 21653
-    components:
-    - type: Transform
-      pos: -50.5,50.5
       parent: 30
 - proto: BedsheetOrange
   entities:
@@ -49348,12 +49344,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -28.5,59.5
       parent: 30
-  - uid: 2247
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -50.5,52.5
-      parent: 30
   - uid: 6694
     components:
     - type: Transform
@@ -49435,6 +49425,12 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 17.504675,15.6658
+      parent: 30
+  - uid: 22544
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -51.5,52.5
       parent: 30
 - proto: ChairWood
   entities:
@@ -51728,7 +51724,7 @@ entities:
   - uid: 2242
     components:
     - type: Transform
-      pos: -52.504753,53.54799
+      pos: -52.441635,53.429848
       parent: 30
   - uid: 21252
     components:
@@ -52099,7 +52095,7 @@ entities:
   - uid: 2243
     components:
     - type: Transform
-      pos: -52.52038,53.282364
+      pos: -52.472885,53.106934
       parent: 30
 - proto: ClothingNeckBling
   entities:
@@ -98975,6 +98971,13 @@ entities:
         - 0
         - 0
         - 0
+- proto: LockerBrigmedicFilled
+  entities:
+  - uid: 2247
+    components:
+    - type: Transform
+      pos: -50.5,53.5
+      parent: 30
 - proto: LockerCaptainFilledNoLaser
   entities:
   - uid: 12238
@@ -100441,7 +100444,7 @@ entities:
   - uid: 2239
     components:
     - type: Transform
-      pos: -51.477226,53.661713
+      pos: -52.212463,53.81066
       parent: 30
 - proto: MedkitFilled
   entities:
@@ -100453,7 +100456,7 @@ entities:
   - uid: 2240
     components:
     - type: Transform
-      pos: -50.48913,53.64174
+      pos: -51.337463,53.57108
       parent: 30
   - uid: 3174
     components:
@@ -100485,7 +100488,7 @@ entities:
   - uid: 2241
     components:
     - type: Transform
-      pos: -51.008476,53.677338
+      pos: -51.754135,53.71691
       parent: 30
   - uid: 7752
     components:
@@ -116894,6 +116897,13 @@ entities:
     - type: Transform
       pos: -24.5,16.5
       parent: 30
+- proto: SpawnPointBrigmedic
+  entities:
+  - uid: 21653
+    components:
+    - type: Transform
+      pos: -50.5,52.5
+      parent: 30
 - proto: SpawnPointCaptain
   entities:
   - uid: 5001
@@ -117425,7 +117435,7 @@ entities:
   - uid: 2244
     components:
     - type: Transform
-      pos: -52.02038,53.73549
+      pos: -52.70205,53.76138
       parent: 30
 - proto: Stairs
   entities:
@@ -121548,11 +121558,6 @@ entities:
     components:
     - type: Transform
       pos: -51.5,53.5
-      parent: 30
-  - uid: 2238
-    components:
-    - type: Transform
-      pos: -50.5,53.5
       parent: 30
   - uid: 2410
     components:

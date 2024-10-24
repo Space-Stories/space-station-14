@@ -10880,7 +10880,7 @@ entities:
       pos: -42.5,29.5
       parent: 5350
     - type: Door
-      secondsUntilStateChange: -5745.716
+      secondsUntilStateChange: -5858.883
       state: Opening
     - type: DeviceLinkSink
       invokeCounter: 2
@@ -14864,6 +14864,18 @@ entities:
     - type: Transform
       pos: 41.5,-35.5
       parent: 5350
+- proto: BedsheetBrigmedic
+  entities:
+  - uid: 9228
+    components:
+    - type: Transform
+      pos: -15.5,29.5
+      parent: 5350
+  - uid: 9229
+    components:
+    - type: Transform
+      pos: -15.5,28.5
+      parent: 5350
 - proto: BedsheetCaptain
   entities:
   - uid: 1026
@@ -14934,16 +14946,6 @@ entities:
       canCollide: False
 - proto: BedsheetMedical
   entities:
-  - uid: 9228
-    components:
-    - type: Transform
-      pos: -15.5,28.5
-      parent: 5350
-  - uid: 9229
-    components:
-    - type: Transform
-      pos: -15.5,29.5
-      parent: 5350
   - uid: 14473
     components:
     - type: Transform
@@ -117043,6 +117045,13 @@ entities:
     - type: Transform
       pos: 35.5,-21.5
       parent: 5350
+- proto: LockerBrigmedicFilled
+  entities:
+  - uid: 26986
+    components:
+    - type: Transform
+      pos: -18.5,30.5
+      parent: 5350
 - proto: LockerCaptainFilledNoLaser
   entities:
   - uid: 12528
@@ -117859,10 +117868,10 @@ entities:
         - 0
         - 0
         - 0
-  - uid: 24256
+  - uid: 26985
     components:
     - type: Transform
-      pos: -18.5,30.5
+      pos: -15.5,30.5
       parent: 5350
 - proto: LockerParamedicFilled
   entities:
@@ -137316,6 +137325,13 @@ entities:
     components:
     - type: Transform
       pos: 35.5,-22.5
+      parent: 5350
+- proto: SpawnPointBrigmedic
+  entities:
+  - uid: 24256
+    components:
+    - type: Transform
+      pos: -17.5,30.5
       parent: 5350
 - proto: SpawnPointCaptain
   entities:
