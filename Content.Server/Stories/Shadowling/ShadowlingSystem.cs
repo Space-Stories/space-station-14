@@ -15,6 +15,7 @@ using Content.Server.Stories.Photosensitivity;
 using Content.Server.Stunnable;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Systems;
+using Content.Shared.Light.EntitySystems;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.Stories.Shadowling;
 using Content.Shared.Weapons.Ranged.Events;
@@ -36,6 +37,7 @@ public sealed partial class ShadowlingSystem : EntitySystem
     [Dependency] private readonly SmokeSystem _smoke = default!;
     [Dependency] private readonly StandingStateSystem _standing = default!;
     [Dependency] private readonly HandheldLightSystem _handheldLight = default!;
+    [Dependency] private readonly UnpoweredFlashlightSystem _unpoweredFlashlight = default!;
     [Dependency] private readonly DoAfterSystem _doAfter = default!;
     [Dependency] private readonly AudioSystem _audio = default!;
     [Dependency] private readonly RoundEndSystem _roundEnd = default!;

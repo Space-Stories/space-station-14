@@ -174,8 +174,10 @@ public sealed partial class ShadowlingSystem
         {
             if (HasComp<PoweredLightComponent>(ent))
                 _poweredLight.TryDestroyBulb(ent);
-            else if (TryComp<HandheldLightComponent>(ent, out var comp))
-                _handheldLight.TurnOff((ent, comp));
+            else if (TryComp<HandheldLightComponent>(ent, out var HandheldLight))
+                _handheldLight.TurnOff((ent, HandheldLight));
+            else if (TryComp<UnpoweredFlashlightComponent>(ent, out var UnpoweredFlashlight))
+                _unpoweredFlashlight.SetLight(ent, false, ent, true);
         }
 
         args.Handled = true;
