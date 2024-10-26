@@ -2926,6 +2926,7 @@
   description: Explosive kitten.
   components:
   - type: Sprite
+    sprite: Stories/Mobs/Pets/syndiCat.rsi # Stories
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: syndicat
@@ -3377,6 +3378,9 @@
   - type: NpcFactionMember
     factions:
     - Passive
+  - type: HTN
+    rootTask:
+      task: RuminantCompound
 
 - type: entity
   name: diona nymph

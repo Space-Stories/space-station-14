@@ -9,6 +9,16 @@
   - UplinkDisruption
 
 - type: listing
+  id: UplinkNightvision
+  name: Прибор ночного видения
+  description: Позволяет видеть в полной темноте. Работает на ядерной батарее внутри и совсем не вреден для глаз.
+  productEntity: ClothingEyesNightvision
+  cost:
+    Telecrystal: 2
+  categories:
+    - UplinkWearables
+
+- type: listing
   id: UplinkPistolAnaconda
   name: Анаконда
   description: Легендарная Анаконда - тяжёлый пистолет, стреляющий уникальными патронами калибра .40 безгильзовый, которые создаются с помощью встроенного фабрикатора.

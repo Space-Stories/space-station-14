@@ -17,7 +17,7 @@
   parent: ClothingShoesBootsJack
   id: ClothingShoesBootsJackJedi
   name: подкованные сапоги джедая
-  description: Создан, чтобы ваши ножки не промокли на далеких планетах.
+  description: Созданы, чтобы ваши ножки не промокли на далеких планетах.
   components:
     - type: Tag
       tags:
@@ -62,7 +62,7 @@
   parent: ClothingShoesBootsMag
   id: ClothingShoesBootsExe
   name: сапоги хранителя
-  description: Продвинутая обувь, гарантирующая удобство носителя и полное сцепление с любой поверхностью
+  description: Продвинутая обувь, гарантирующая удобство носителя и полное сцепление с любой поверхностью.
   components:
   - type: Sprite
     sprite: Stories/Clothing/Shoes/Boots/exe_boots.rsi

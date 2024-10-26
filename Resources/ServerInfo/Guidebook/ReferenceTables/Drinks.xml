@@ -1,6 +1,6 @@
 <Document>
-# Drinks
-Knowing how to make a requested drink is important. Here are the different drinks in the game, including their recipes:
+  # Напитки
+  Порой необходимо знать, как приготовить требуемый напиток. Здесь представлены различные напитки в игре, включая рецепты их приготовления:
 
-<GuideReagentGroupEmbed Group="Drinks"/>
+  <GuideReagentGroupEmbed Group="Drinks"/>
 </Document>

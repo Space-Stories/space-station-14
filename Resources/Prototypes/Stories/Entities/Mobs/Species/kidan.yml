@@ -1,6 +1,6 @@
 - type: entity
   save: false
-  name: Urisst' McKidan
+  name: Урист МакКидан (Уриззт МакХэндзз)
   parent: BaseMobSpeciesOrganic
   id: BaseMobKidan
   abstract: true
@@ -15,11 +15,23 @@
   - type: Body
     prototype: Kidan
     requiredLegs: 2
+  - type: Speech
+    speechVerb: Kidan
+#    speechSounds: Kidan # оно работает, но звуки просто ужас
   - type: Butcherable
     butcheringType: Spike
     spawned:
     - id: FoodMeat
       amount: 5
+  - type: Bloodstream
+    bloodReagent: InsectBlood # Логично.
+  - type: DamageVisuals
+    damageOverlayGroups:
+      Brute:
+        sprite: Mobs/Effects/brute_damage.rsi
+        color: "#808A51"
+      Burn:
+        sprite: Mobs/Effects/burn_damage.rsi
   - type: IntrinsicRadioReceiver
   - type: IntrinsicRadioTransmitter
     channels:
@@ -83,5 +95,3 @@
   keycode: 'х'
   color: "#556b2f"
   longRange: true
-
-#Weh

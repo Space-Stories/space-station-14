@@ -1,4 +1,32 @@
 - type: lobbyBackground
+  id: GlorySSSP
+  background: /Textures/Stories/LobbyScreens/GlorySSSP.jpg
+
+- type: lobbyBackground
+  id: Nuclear_environment
+  background: /Textures/Stories/LobbyScreens/Nuclear_environment.jpg
+
+- type: lobbyBackground
+  id: Nuclear_environmentV2
+  background: /Textures/Stories/LobbyScreens/Nuclear_environmentV2.jpg
+
+- type: lobbyBackground
+  id: Paramedic
+  background: /Textures/Stories/LobbyScreens/Paramedic.jpg
+
+- type: lobbyBackground
+  id: Starbow
+  background: /Textures/Stories/LobbyScreens/Starbow.jpg
+
+- type: lobbyBackground
+  id: Therapy
+  background: /Textures/Stories/LobbyScreens/Therapy.jpg
+
+- type: lobbyBackground
+  id: Zombie
+  background: /Textures/Stories/LobbyScreens/Zombie.jpg
+
+- type: lobbyBackground
   id: Atmos
   background: /Textures/Stories/LobbyScreens/atmos.jpg
 

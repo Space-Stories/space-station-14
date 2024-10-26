@@ -48,7 +48,7 @@ public sealed partial class ConversionPrototype : IPrototype
     public ComponentRegistry Components = new();
 
     [DataField]
-    public ComponentRegistry MindComponents = new();
+    public List<ProtoId<EntityPrototype>>? MindRoles;
     #endregion
 }
 
