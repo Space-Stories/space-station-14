@@ -13,7 +13,7 @@
 ## Группы для вещей
 - type: loadoutGroup
   id: AIIJumpsuit
-  name: Агент Внутренних Дел, комбинезон
+  name: loadout-group-iaa-jumpsuit
   loadouts:
   - AIIJumpsuit
   - AIIJumpskirt
