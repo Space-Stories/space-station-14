@@ -23,7 +23,7 @@
     damageContainer: Biological
   - type: NoSlip
   - type: TTS # Stories-TTS
-    voice: papich
+    voice: twitch
   - type: Eye
     drawFov: false
     visMask:
