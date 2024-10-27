@@ -481,9 +481,6 @@
   description: A heavily armored hardsuit designed for work in special operations. Property of Gorlex Marauders.
   components:
   - type: ClothingWhitelist # Stories-ExplodingHardsuit (doublechest) - start
-    whitelist:
-      components:
-      - NukeOperative
     factionsWhitelist:
     - Syndicate
   - type: Explosive
@@ -551,9 +548,6 @@
   description: An elite version of the blood-red hardsuit, with improved mobility and fireproofing. Property of Gorlex Marauders.
   components:
   - type: ClothingWhitelist # Stories-ExplodingHardsuit (doublechest) - start
-    whitelist:
-      components:
-      - NukeOperative
     factionsWhitelist:
     - Syndicate
   - type: Explosive
@@ -603,9 +597,6 @@
   description: A bulked up version of the blood-red hardsuit, purpose-built for the commander of a syndicate operative squad. Has significantly improved armor for those deadly front-lines firefights.
   components:
   - type: ClothingWhitelist # Stories-ExplodingHardsuit (doublechest) - start
-    whitelist:
-      components:
-      - NukeOperative
     factionsWhitelist:
     - Syndicate
   - type: Explosive
@@ -648,9 +639,6 @@
   description: A suit made by the cutting edge R&D department at cybersun to be hyper resilient.
   components:
   - type: ClothingWhitelist # Stories-ExplodingHardsuit (doublechest) - start
-    whitelist:
-      components:
-      - NukeOperative
     factionsWhitelist:
     - Syndicate
   - type: Explosive
@@ -843,6 +831,8 @@
     sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertleader.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitERTLeader
+  - type: ClothingWhitelist # Stories-ExplodingHardsuit
+    factionsWhitelist: null
 
 #ERT Chaplain Hardsuit
 - type: entity
@@ -857,6 +847,8 @@
     sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertchaplain.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitERTChaplain
+  - type: ClothingWhitelist # Stories-ExplodingHardsuit
+    factionsWhitelist: null
 
 #ERT Engineer Hardsuit
 - type: entity
@@ -885,6 +877,8 @@
     sprite: Clothing/OuterClothing/Hardsuits/ERTSuits/ertmedical.rsi
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHelmetHardsuitERTMedical
+  - type: ClothingWhitelist # Stories-ExplodingHardsuit
+    factionsWhitelist: null
 
 #ERT Security Hardsuit
 - type: entity
@@ -920,6 +914,8 @@
     tags:
     - Hardsuit
     - WhitelistChameleon
+  - type: ClothingWhitelist # Stories-ExplodingHardsuit
+    factionsWhitelist: null
 
 #ERT Janitor Hardsuit
 - type: entity
