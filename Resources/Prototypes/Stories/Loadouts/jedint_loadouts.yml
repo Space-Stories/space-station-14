@@ -99,7 +99,7 @@
 
 - type: loadoutGroup
   id: JediNtOuterClothing
-  name: Страж Клинка, верхняя одежда
+  name: loadout-group-Jedi-outer-clothing
   minLimit: 0
   loadouts:
   - ClothingOuterVestArmorExe
@@ -108,7 +108,7 @@
 
 - type: loadoutGroup
   id: JediNtLightsaber
-  name: Страж Клинка, световой меч
+  name: loadout-group-Jedi-lightsaber
   minLimit: 1
   loadouts:
   - LightsaberCrossguard

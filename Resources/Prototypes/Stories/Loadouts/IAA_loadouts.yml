@@ -22,7 +22,7 @@
 - type: loadout
   id: AIIJumpsuit
   equipment:
-   jumpsuit: ClothingUniformJumpsuitLawyerBlack
+    jumpsuit: ClothingUniformJumpsuitLawyerBlack
 
 - type: loadout
   id: AIIJumpskirt
