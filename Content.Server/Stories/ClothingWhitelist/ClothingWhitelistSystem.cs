@@ -28,13 +28,12 @@ public sealed class ClothingWhitelistSystem : EntitySystem
 
     private void OnEquipped(EntityUid uid, ClothingWhitelistComponent comp, GotEquippedEvent args)
     {
-        if (comp.Blacklist != null && !_whitelistSystem.IsWhitelistFail(comp.Blacklist, args.Equipee) || comp.Blacklist == null)
-            if (comp.Whitelist != null && _whitelistSystem.IsWhitelistFail(comp.Whitelist, args.Equipee)) return;
+        if (_whitelistSystem.IsBlacklistFailOrNull(comp.Blacklist, args.Equipee) && _whitelistSystem.IsWhitelistPass(comp.Whitelist, args.Equipee)) return;
 
         if (TryComp<NpcFactionMemberComponent>(args.Equipee, out var npc))
         {
             var fs = npc.Factions;
-            if (!fs.Overlaps(comp.FactionsBlacklist) && fs.Overlaps(comp.FactionsWhitelist)) return;
+            if ((comp.FactionsBlacklist != null && !fs.Overlaps(comp.FactionsBlacklist)) && (comp.FactionsWhitelist == null || fs.Overlaps(comp.FactionsWhitelist))) return;
         }
 
         _popupSystem.PopupEntity(Loc.GetString("Ошибка доступа! Активация протоколов защиты.."), args.Equipee, args.Equipee, PopupType.LargeCaution);
