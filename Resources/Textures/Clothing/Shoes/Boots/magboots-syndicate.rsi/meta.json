@@ -12,10 +12,6 @@
             "directions": 4
         },
         {
-            "name": "equipped-FEET-digi",
-            "directions": 4
-        },
-        {
             "name": "on-equipped-FEET",
             "directions": 4
         },
