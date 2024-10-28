@@ -4,7 +4,6 @@
   icon: { sprite: Objects/Misc/bureaucracy.rsi, state: paper }
   spawn: SheetPrinter1
   maxCount: 30
-  itemSize: 1
 
 - type: stack
   id: InkPrinter
@@ -12,4 +11,3 @@
   icon: { sprite: Stories/Objects/Misc/bureaucracy.rsi, state: ink }
   spawn: InkPrinter1
   maxCount: 30
-  itemSize: 1

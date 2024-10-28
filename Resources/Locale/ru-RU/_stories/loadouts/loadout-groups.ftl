@@ -18,7 +18,7 @@ loadout-group-PRISON-Belt = Тюрьма, пояс
 
 loadout-group-PRISON-head = Тюрьма, голова
 
-# Спонсор Рюказки
+# Спонсор Рюкзаки
 
 loadout-group-sponsor-Backpack = Спонсор, рюкзаки
 
@@ -38,7 +38,14 @@ loadout-group-Jedi-jumpsuits = Страж, комбинезон
 
 loadout-group-Jedi-backpack = Страж, рюкзак
 
+loadout-group-Jedi-lightsaber = Страж Клинка, световой меч
+
+loadout-group-Jedi-outer-clothing = Страж Клинка, верхняя одежда
+
 # Детектив
 
 loadout-group-detective-belt = Детектив, пояс
 
+# АВД
+
+loadout-group-iaa-jumpsuit = Агент Внутренних Дел, комбинезон

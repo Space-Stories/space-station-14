@@ -10,8 +10,8 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodJedihood
   - type: TemperatureProtection
-    coolingCoefficient: 0.001
-    heatingCoefficient: 0.001
+    heatingCoefficient: 0.005
+    coolingCoefficient: 0.005
   - type: ClothingSpeedModifier
     walkModifier: 1
     sprintModifier: 1.1

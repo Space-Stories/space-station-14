@@ -2,7 +2,7 @@
   id: TurnBioluminescenceAction
   name: Биолюминесценция
   description: Начать или прекратить светится
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     useDelay: 5

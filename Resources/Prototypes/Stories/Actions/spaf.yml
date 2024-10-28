@@ -2,7 +2,7 @@
   id: ActionSpafStealth
   name: "[color=limegreen]Режим невидимости[/color]"
   description: Потратьте 30 единиц еды, чтобы замаскироваться на 5 секунд.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     useDelay: 15
@@ -15,7 +15,7 @@
   id: ActionSpafLight
   name: "[color=orange]Светящаяся эссенция[/color]"
   description: Выработайте светящуюся эссенцию, чтобы осветить себе путь.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     useDelay: 1
@@ -26,7 +26,7 @@
   id: ActionSpafLube
   name: "[color=purple]Слизь[/color]"
   description: Потратьте 30 единиц еды, чтобы выделить очень скользкую слизь.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     useDelay: 15
@@ -43,7 +43,7 @@
   id: ActionSpafMine
   name: "[color=rosybrown]Органическая ловушка[/color]"
   description: Потратьте 40 единиц еды, чтобы создать органическую ловушку, которая оглушает врагов на время.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     useDelay: 15
@@ -56,7 +56,7 @@
   id: ActionSpafFood
   name: "[color=lightseagreen]Таинственные знания[/color]"
   description: Неизвестный науке метод, который позволяет вам с точностью до сотых определить наполненность своего желудка.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     useDelay: 1
@@ -67,7 +67,7 @@
   id: ActionSpafGlue
   name: "[color=darkslateblue]Липкая слизь[/color]"
   description: Потратьте 10 единиц еды, чтобы выделить липкую слизь.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     useDelay: 5
@@ -84,7 +84,7 @@
   id: ActionSpafEgg
   name: "[color=orange]Новая жизнь[/color]"
   description: Потратьте 150 единиц еды, чтобы создать яйцо с маленькой копией себя.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     useDelay: 60
@@ -97,7 +97,7 @@
   id: ActionSpafEvol
   name: "[color=blue]Эволюция[/color]"
   description: Потратьте 100 единиц еды, чтобы эволюционировать во взрослую особь.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     useDelay: 60
@@ -110,7 +110,7 @@
   id: ActionSpafDevour
   name: "[color=lime]Поглощение[/color]"
   description: Съешьте свою жертву, чтобы насытиться.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: EntityTargetAction
     icon: Stories/Actions/spaf.rsi/spaf_devour.png
