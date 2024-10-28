@@ -1,5 +1,5 @@
 - type: guideEntry
-  id: TableLaw
+  id: SpaceLaw
   name: Таблица Статей
   priority: -1
   text: "/ServerInfo/Guidebook/ServerRules/SpaceStoriesLaw/SpaceStationTableLaw.xml"
