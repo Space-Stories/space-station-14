@@ -5,7 +5,6 @@
 
 [whitelist]
 enabled = true
-reason = "Фрр... UwU... Рррр..."
 
 [adminlogs]
 enabled = false
