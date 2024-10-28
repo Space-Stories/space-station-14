@@ -57,7 +57,7 @@ public sealed partial class ForceSystem : EntitySystem // TODO: Навести �
             return false;
         }
 
-        if (!Resolve(uid, ref component))
+        if (!Resolve(uid, ref component, false))
             return false;
 
         component.Volume = volume;
@@ -79,7 +79,7 @@ public sealed partial class ForceSystem : EntitySystem // TODO: Навести �
             return false;
         }
 
-        if (!Resolve(uid, ref component) || !Resolve(toUid, ref toComponent))
+        if (!Resolve(uid, ref component, false) || !Resolve(toUid, ref toComponent))
             return false;
 
         if (component.Volume - amount < 0)
@@ -112,7 +112,7 @@ public sealed partial class ForceSystem : EntitySystem // TODO: Навести �
             return false;
         }
 
-        if (!Resolve(uid, ref component) || !Resolve(toUid, ref toComponent))
+        if (!Resolve(uid, ref component, false) || !Resolve(toUid, ref toComponent))
             return false;
 
         if (component.Volume - amount < 0)
@@ -136,7 +136,7 @@ public sealed partial class ForceSystem : EntitySystem // TODO: Навести �
             DebugTools.Assert(toAdd == 0, "Attempted to add negative force volume");
             return false;
         }
-        if (!Resolve(uid, ref component))
+        if (!Resolve(uid, ref component, false))
             return false;
         if (component.Volume + toAdd > component.MaxVolume)
             return false;
@@ -162,7 +162,7 @@ public sealed partial class ForceSystem : EntitySystem // TODO: Навести �
             DebugTools.Assert(toAdd == 0, "Attempted to add negative force volume");
             return false;
         }
-        if (!Resolve(uid, ref component))
+        if (!Resolve(uid, ref component, false))
             return false;
 
         var ev = new VolumeChangedEvent(uid, oldVolume: component.Volume, newVolume: component.Volume + toAdd, component.CurrentDebuff.Float(), component.MaxVolume);
@@ -186,7 +186,7 @@ public sealed partial class ForceSystem : EntitySystem // TODO: Навести �
             DebugTools.Assert(toRemove == 0, "Attempted to remove negative force volume");
             return false;
         }
-        if (!Resolve(uid, ref component))
+        if (!Resolve(uid, ref component, false))
             return false;
         if (component.Volume - toRemove < 0)
             return false;
@@ -212,7 +212,7 @@ public sealed partial class ForceSystem : EntitySystem // TODO: Навести �
             DebugTools.Assert(toRemove == 0, "Attempted to remove negative force volume");
             return false;
         }
-        if (!Resolve(uid, ref component))
+        if (!Resolve(uid, ref component, false))
             return false;
         if (component.Volume - toRemove < 0)
             return false;
@@ -229,7 +229,7 @@ public sealed partial class ForceSystem : EntitySystem // TODO: Навести �
     #region Debuffs
     public void RefreshDebuffs(EntityUid uid, ForceComponent? component = null)
     {
-        if (!Resolve(uid, ref component))
+        if (!Resolve(uid, ref component, false))
             return;
         RaiseLocalEvent(uid, new RefreshDebuffsEvent(uid, component.CurrentDebuff.Float(), component.Volume.Float(), component.MaxVolume.Float()));
     }
