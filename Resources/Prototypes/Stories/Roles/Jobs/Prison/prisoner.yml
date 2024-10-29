@@ -2,6 +2,9 @@
   id: PRISONPrisoner
   name: заключенный космической тюрьмы
   playTimeTracker: JobPrisoner
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 36000 #10 часов
   description: Как я сюда попал?
   startingGear: PRISONPrisoner
   icon: "JobIconPRISONPrisoner"
@@ -13,6 +16,9 @@
   - !type:AddComponentSpecial
     components:
     - type: Prisoner
+    - type: NpcFactionMember
+      factions:
+      - Syndicate
 
 - type: startingGear
   id: PRISONPrisoner
@@ -20,4 +26,3 @@
     id: PRISONIDCardPrisoner
     jumpsuit: ClothingUniformJumpsuitPrisoner
     shoes: ClothingShoesColorBlack
-
