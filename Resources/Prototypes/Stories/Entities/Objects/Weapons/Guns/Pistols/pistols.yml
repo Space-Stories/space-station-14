@@ -64,13 +64,13 @@
     tags:
     - Sidearm
   - type: Clothing
-    sprite: Stories/Objects/Weapons/Guns/Pistols/desert_eagle.rsi
+    sprite: Stories/Objects/Weapons/Guns/Pistols/anaconda.rsi
     quickEquip: false
     slots:
     - suitStorage
     - Belt
   - type: Sprite
-    sprite: Stories/Objects/Weapons/Guns/Pistols/desert_eagle.rsi
+    sprite: Stories/Objects/Weapons/Guns/Pistols/anaconda.rsi
     layers:
       - state: base
         map: ["enum.GunVisualLayers.Base"]
