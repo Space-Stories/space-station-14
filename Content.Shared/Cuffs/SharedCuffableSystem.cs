@@ -34,6 +34,8 @@ using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
 using PullableComponent = Content.Shared.Movement.Pulling.Components.PullableComponent;
 
+using Content.Shared.Stories.Shadowling; // Stories
+
 namespace Content.Shared.Cuffs
 {
     // TODO remove all the IsServer() checks.
@@ -472,6 +474,8 @@ namespace Content.Shared.Cuffs
         /// <returns>False if the target entity isn't cuffable.</returns>
         public bool TryCuffing(EntityUid user, EntityUid target, EntityUid handcuff, HandcuffComponent? handcuffComponent = null, CuffableComponent? cuffable = null)
         {
+            if (HasComp<ShadowlingComponent>(user)) return false; // Stories
+
             if (!Resolve(handcuff, ref handcuffComponent) || !Resolve(target, ref cuffable, false))
                 return false;
 
