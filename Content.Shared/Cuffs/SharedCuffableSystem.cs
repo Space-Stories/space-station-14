@@ -34,7 +34,7 @@ using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
 using PullableComponent = Content.Shared.Movement.Pulling.Components.PullableComponent;
 
-using Content.Shared.Stories.Shadowling; // Stories
+using Content.Shared.Stories.Cuffs; // Stories
 
 namespace Content.Shared.Cuffs
 {
@@ -474,8 +474,6 @@ namespace Content.Shared.Cuffs
         /// <returns>False if the target entity isn't cuffable.</returns>
         public bool TryCuffing(EntityUid user, EntityUid target, EntityUid handcuff, HandcuffComponent? handcuffComponent = null, CuffableComponent? cuffable = null)
         {
-            if (HasComp<ShadowlingComponent>(user)) return false; // Stories
-
             if (!Resolve(handcuff, ref handcuffComponent) || !Resolve(target, ref cuffable, false))
                 return false;
 
@@ -503,6 +501,12 @@ namespace Content.Shared.Cuffs
 
             if (HasComp<StunnedComponent>(target))
                 cuffTime = MathF.Max(0.1f, cuffTime - handcuffComponent.StunBonus);
+
+            if (TryComp<CuffingSpeedComponent>(user, out var speed)) // Stories - CuffingSpeed - start
+            {
+                if (speed.Modifier == 0) return false;
+                cuffTime = cuffTime / speed.Modifier;
+            } // Stories - CuffingSpeed - end
 
             if (HasComp<DisarmProneComponent>(target))
                 cuffTime = 0.0f; // cuff them instantly.
