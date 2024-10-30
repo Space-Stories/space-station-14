@@ -1,8 +1,8 @@
 - type: entity
   parent: EncryptionKey
   id: EncryptionKeyIAA
-  name: iaa encryption key
-  description: An encryption key used by the most meticulous person.
+  name: ключ шифрования АВД
+  description: Ключ шифрования, используемый самой педантичной персоной на станции.
   components:
     - type: EncryptionKey
       channels:
@@ -15,3 +15,19 @@
       layers:
         - state: crypt_silver
         - state: nano_label
+
+- type: entity
+  parent: EncryptionKey
+  id: PRISONEncryptionKey
+  name: ключ шифрования тюрьмы
+  description: Ключ шифрования, используемый сотрудниками космической тюрьмы.
+  components:
+    - type: EncryptionKey
+      channels:
+        - Prison
+      defaultChannel: Prison
+    - type: Sprite
+      sprite: Stories/Objects/Devices/encryption_keys.rsi
+      layers:
+        - state: crypt_prison
+        - state: prison_label
