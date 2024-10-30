@@ -504,7 +504,11 @@ namespace Content.Shared.Cuffs
 
             if (TryComp<CuffingSpeedComponent>(user, out var speed)) // Stories - CuffingSpeed - start
             {
-                if (speed.Modifier == 0) return false;
+                if (speed.Modifier == 0)
+                {
+                    _popup.PopupClient(Loc.GetString("handcuff-component-cannot-use-cuffs"), user, user);
+                    return false;
+                }
                 cuffTime = cuffTime / speed.Modifier;
             } // Stories - CuffingSpeed - end
 
