@@ -34,8 +34,6 @@ using Robust.Shared.Serialization;
 using Robust.Shared.Utility;
 using PullableComponent = Content.Shared.Movement.Pulling.Components.PullableComponent;
 
-using Content.Shared.Stories.Cuffs; // Stories
-
 namespace Content.Shared.Cuffs
 {
     // TODO remove all the IsServer() checks.
@@ -502,14 +500,14 @@ namespace Content.Shared.Cuffs
             if (HasComp<StunnedComponent>(target))
                 cuffTime = MathF.Max(0.1f, cuffTime - handcuffComponent.StunBonus);
 
-            if (TryComp<CuffingSpeedComponent>(user, out var speed)) // Stories - CuffingSpeed - start
+            if (TryComp<CufferComponent>(user, out var cuffer)) // Stories - CuffingSpeed - start
             {
-                if (speed.Modifier == 0)
+                if (cuffer.TimeModifier == null)
                 {
                     _popup.PopupClient(Loc.GetString("handcuff-component-cannot-use-cuffs"), user, user);
                     return false;
                 }
-                cuffTime = cuffTime / speed.Modifier;
+                cuffTime = cuffTime * (float)cuffer.TimeModifier;
             } // Stories - CuffingSpeed - end
 
             if (HasComp<DisarmProneComponent>(target))
