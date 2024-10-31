@@ -4,7 +4,7 @@
     - shadowling
   name: Тенеморфы
   description: На станции обитают тенеморфы. Это опасные гуманоидные существа, цель которых поработить всю станцию. Если они сделают это, то галактика будет обречена на вымирание.
-  showInVote: false
+  showInVote: true
   rules:
     - Shadowling
     - SubGamemodesRule
