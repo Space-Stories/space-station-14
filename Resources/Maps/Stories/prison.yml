@@ -80,7 +80,6 @@ entities:
       name: NTTG Космическая Тюрьма
     - type: Transform
       pos: -18.008732,-4.3629217
-      parent: invalid
     - type: MapGrid
       chunks:
         0,0:
@@ -177,7 +176,7 @@ entities:
           version: 6
         2,-5:
           ind: 2,-5
-          tiles: CAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAABAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAABAAAAAAACAAAAAAACAAAAAAACAAAAAAABAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAABAAAAAAABAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAABAAAAAAACAAAAAAABAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAABAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAAfQAAAAAACAAAAAAADgAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAAfQAAAAAACAAAAAAACAAAAAAACAAAAAAAAgAAAAAAMAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAAfQAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAAMAAAAAAAAgAAAAAAMAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAAfQAAAAAAfQAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAAfQAAAAAACAAAAAAACAAAAAAAfQAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAAFAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAAFAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAA
+          tiles: CAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAAfQAAAAAACAAAAAAADgAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAAfQAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAAfQAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAAfQAAAAAAfQAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAAfQAAAAAACAAAAAAACAAAAAAAfQAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAAFAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAAFAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAA
           version: 6
         0,-5:
           ind: 0,-5
@@ -297,7 +296,7 @@ entities:
           version: 6
         3,-5:
           ind: 3,-5
-          tiles: CAAAAAAACAAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAAAAAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAMQAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAAAAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAMQAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAAAAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMQAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAACAAAAAAACAAAAAAAAAAAAAAACAAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAACAAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAAAAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAMgAAAAAACAAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMgAAAAAACAAAAAAANAAAAAAAMgAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAACAAAAAAACAAAAAAAMgAAAAAAMgAAAAAANAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAACAAAAAAACAAAAAAAMgAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAAAAAAAAAACAAAAAAAAAAAAAAACAAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+          tiles: CAAAAAAACAAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAAAAAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAMQAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAAAAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAAAAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAACAAAAAAACAAAAAAAAAAAAAAACAAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAACAAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAAAAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAMgAAAAAACAAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMgAAAAAACAAAAAAANAAAAAAAMgAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAACAAAAAAACAAAAAAAMgAAAAAAMgAAAAAANAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAACAAAAAAACAAAAAAAMgAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAACAAAAAAACAAAAAAACAAAAAAAAAAAAAAACAAAAAAAAAAAAAAACAAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
           version: 6
         3,-3:
           ind: 3,-3
@@ -4464,13 +4463,15 @@ entities:
           8,-12:
             0: 12
           8,-10:
-            0: 35968
+            0: 3072
+            4: 32896
           8,-13:
             0: 51601
           9,-11:
             0: 15974
           9,-10:
-            0: 12560
+            0: 8464
+            4: 4096
           9,-9:
             0: 644
           9,-12:
@@ -4666,7 +4667,8 @@ entities:
           9,-20:
             0: 63921
           9,-19:
-            0: 29135
+            0: 29071
+            5: 64
           9,-18:
             0: 65526
           9,-21:
@@ -4674,7 +4676,8 @@ entities:
           10,-20:
             0: 29497
           10,-19:
-            0: 1015
+            0: 999
+            6: 16
           10,-18:
             0: 206
           10,-21:
@@ -4885,7 +4888,7 @@ entities:
             0: 37481
           8,10:
             0: 32769
-            4: 512
+            6: 512
           8,11:
             0: 1
           -8,4:
@@ -5057,7 +5060,7 @@ entities:
             0: 51336
           -12,3:
             1: 16
-            5: 2
+            7: 2
             0: 2252
           -12,1:
             1: 1024
@@ -5368,6 +5371,36 @@ entities:
         - volume: 2500
           temperature: 293.14975
           moles:
+          - 20.078888
+          - 75.53487
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+        - volume: 2500
+          temperature: 293.15
+          moles:
+          - 23.57087
+          - 88.67137
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+          - 0
+        - volume: 2500
+          temperature: 293.14975
+          moles:
           - 21.824879
           - 82.10312
           - 0
@@ -5400,222 +5433,6 @@ entities:
     - type: RadiationGridResistance
     - type: BecomesStation
       id: Prison
-  - uid: 4
-    components:
-    - type: MetaData
-      name: solution - smokable
-    - type: Transform
-      parent: 3
-    - type: Solution
-      solution:
-        temperature: 285.016
-        maxVol: 40
-        name: smokable
-        reagents:
-        - data: []
-          ReagentId: Nicotine
-          Quantity: 10
-        - data: []
-          ReagentId: Ipecac
-          Quantity: 2
-        - data: []
-          ReagentId: DexalinPlus
-          Quantity: 10
-        - data: []
-          ReagentId: Omnizine
-          Quantity: 18
-    - type: ContainedSolution
-      containerName: smokable
-      container: 3
-  - uid: 6
-    components:
-    - type: MetaData
-      name: solution - smokable
-    - type: Transform
-      parent: 5
-    - type: Solution
-      solution:
-        temperature: 285.01596
-        maxVol: 40
-        name: smokable
-        reagents:
-        - data: []
-          ReagentId: Nicotine
-          Quantity: 10
-        - data: []
-          ReagentId: Tricordrazine
-          Quantity: 10
-        - data: []
-          ReagentId: DexalinPlus
-          Quantity: 10
-        - data: []
-          ReagentId: Omnizine
-          Quantity: 10
-    - type: ContainedSolution
-      containerName: smokable
-      container: 5
-  - uid: 8
-    components:
-    - type: MetaData
-      name: solution - smokable
-    - type: Transform
-      parent: 7
-    - type: Solution
-      solution:
-        temperature: 285.01596
-        maxVol: 40
-        name: smokable
-        reagents:
-        - data: []
-          ReagentId: Nicotine
-          Quantity: 10
-        - data: []
-          ReagentId: Tricordrazine
-          Quantity: 10
-        - data: []
-          ReagentId: DexalinPlus
-          Quantity: 10
-        - data: []
-          ReagentId: Omnizine
-          Quantity: 10
-    - type: ContainedSolution
-      containerName: smokable
-      container: 7
-  - uid: 10
-    components:
-    - type: MetaData
-      name: solution - smokable
-    - type: Transform
-      parent: 9
-    - type: Solution
-      solution:
-        temperature: 285.01596
-        maxVol: 40
-        name: smokable
-        reagents:
-        - data: []
-          ReagentId: Nicotine
-          Quantity: 10
-        - data: []
-          ReagentId: Bicaridine
-          Quantity: 10
-        - data: []
-          ReagentId: DexalinPlus
-          Quantity: 10
-        - data: []
-          ReagentId: Omnizine
-          Quantity: 10
-    - type: ContainedSolution
-      containerName: smokable
-      container: 9
-  - uid: 12
-    components:
-    - type: MetaData
-      name: solution - smokable
-    - type: Transform
-      parent: 11
-    - type: Solution
-      solution:
-        temperature: 285.01596
-        maxVol: 40
-        name: smokable
-        reagents:
-        - data: []
-          ReagentId: Nicotine
-          Quantity: 10
-        - data: []
-          ReagentId: Dermaline
-          Quantity: 10
-        - data: []
-          ReagentId: DexalinPlus
-          Quantity: 10
-        - data: []
-          ReagentId: Omnizine
-          Quantity: 10
-    - type: ContainedSolution
-      containerName: smokable
-      container: 11
-  - uid: 14
-    components:
-    - type: MetaData
-      name: solution - smokable
-    - type: Transform
-      parent: 13
-    - type: Solution
-      solution:
-        temperature: 285.01596
-        maxVol: 40
-        name: smokable
-        reagents:
-        - data: []
-          ReagentId: Nicotine
-          Quantity: 10
-        - data: []
-          ReagentId: Arithrazine
-          Quantity: 10
-        - data: []
-          ReagentId: DexalinPlus
-          Quantity: 10
-        - data: []
-          ReagentId: Omnizine
-          Quantity: 10
-    - type: ContainedSolution
-      containerName: smokable
-      container: 13
-  - uid: 16
-    components:
-    - type: MetaData
-      name: solution - smokable
-    - type: Transform
-      parent: 15
-    - type: Solution
-      solution:
-        temperature: 285.01596
-        maxVol: 40
-        name: smokable
-        reagents:
-        - data: []
-          ReagentId: Nicotine
-          Quantity: 10
-        - data: []
-          ReagentId: Dylovene
-          Quantity: 10
-        - data: []
-          ReagentId: DexalinPlus
-          Quantity: 10
-        - data: []
-          ReagentId: Omnizine
-          Quantity: 10
-    - type: ContainedSolution
-      containerName: smokable
-      container: 15
-  - uid: 18
-    components:
-    - type: MetaData
-      name: solution - smokable
-    - type: Transform
-      parent: 17
-    - type: Solution
-      solution:
-        temperature: 285.01596
-        maxVol: 40
-        name: smokable
-        reagents:
-        - data: []
-          ReagentId: Nicotine
-          Quantity: 10
-        - data: []
-          ReagentId: Iron
-          Quantity: 10
-        - data: []
-          ReagentId: DexalinPlus
-          Quantity: 10
-        - data: []
-          ReagentId: Omnizine
-          Quantity: 10
-    - type: ContainedSolution
-      containerName: smokable
-      container: 17
   - uid: 25
     components:
     - type: MetaData
@@ -6544,9 +6361,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 3.5,17.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 45
   - uid: 119
@@ -7862,20 +7676,6 @@ entities:
     - type: Transform
       pos: 23.5,-23.5
       parent: 1
-- proto: BlackKnight
-  entities:
-  - uid: 10375
-    components:
-    - type: Transform
-      pos: 43.259315,-70.34656
-      parent: 1
-- proto: BlackPawn
-  entities:
-  - uid: 527
-    components:
-    - type: Transform
-      pos: 42.505577,-71.30769
-      parent: 1
 - proto: BladedFlatcapGrey
   entities:
   - uid: 514
@@ -7888,21 +7688,6 @@ entities:
       parent: 1
 - proto: BlastDoor
   entities:
-  - uid: 515
-    components:
-    - type: Transform
-      pos: 5.5,0.5
-      parent: 1
-  - uid: 516
-    components:
-    - type: Transform
-      pos: 6.5,0.5
-      parent: 1
-  - uid: 517
-    components:
-    - type: Transform
-      pos: 4.5,0.5
-      parent: 1
   - uid: 518
     components:
     - type: Transform
@@ -8002,6 +7787,21 @@ entities:
       parent: 1
 - proto: BlastDoorOpen
   entities:
+  - uid: 515
+    components:
+    - type: Transform
+      pos: 5.5,0.5
+      parent: 1
+  - uid: 516
+    components:
+    - type: Transform
+      pos: 4.5,0.5
+      parent: 1
+  - uid: 517
+    components:
+    - type: Transform
+      pos: 6.5,0.5
+      parent: 1
   - uid: 538
     components:
     - type: Transform
@@ -16456,11 +16256,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 10.5,-20.5
       parent: 1
-  - uid: 3075
-    components:
-    - type: Transform
-      pos: 43.577568,-71.45885
-      parent: 1
 - proto: ChurchOrganInstrument
   entities:
   - uid: 2040
@@ -16469,243 +16264,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 10.5,-34.5
       parent: 1
-- proto: CigaretteArithrazine
-  entities:
-  - uid: 13
-    components:
-    - type: MetaData
-      name: Римский трубопрокат (Омнизин + Дексалин)
-    - type: Transform
-      parent: 2
-    - type: SolutionContainerManager
-      solutions: null
-      containers:
-      - smokable
-    - type: Physics
-      canCollide: False
-    - type: ContainerContainer
-      containers:
-        solution@smokable: !type:ContainerSlot
-          ent: 14
-    - type: Label
-      currentLabel: Омнизин + Дексалин
-    - type: NameModifier
-      baseName: Римский трубопрокат
-- proto: CigaretteBicaridine
-  entities:
-  - uid: 9
-    components:
-    - type: MetaData
-      name: Усовершенствованная сигарета Мокрый пёс (Омнизин + Дексалин)
-    - type: Transform
-      parent: 2
-    - type: SolutionContainerManager
-      solutions: null
-      containers:
-      - smokable
-    - type: Physics
-      canCollide: False
-    - type: ContainerContainer
-      containers:
-        solution@smokable: !type:ContainerSlot
-          ent: 10
-    - type: Label
-      currentLabel: Омнизин + Дексалин
-    - type: NameModifier
-      baseName: Усовершенствованная сигарета Мокрый пёс
-- proto: CigaretteDermaline
-  entities:
-  - uid: 11
-    components:
-    - type: MetaData
-      name: Алоэ-арахисовый маслянный попурри (Омнизин + Дексалин)
-    - type: Transform
-      parent: 2
-    - type: SolutionContainerManager
-      solutions: null
-      containers:
-      - smokable
-    - type: Physics
-      canCollide: False
-    - type: ContainerContainer
-      containers:
-        solution@smokable: !type:ContainerSlot
-          ent: 12
-    - type: Label
-      currentLabel: Омнизин + Дексалин
-    - type: NameModifier
-      baseName: Алоэ-арахисовый маслянный попурри
-- proto: CigaretteDylovene
-  entities:
-  - uid: 15
-    components:
-    - type: MetaData
-      name: Удалитель туалетного жмыха (Омнизин + Дексалин)
-    - type: Transform
-      parent: 2
-    - type: SolutionContainerManager
-      solutions: null
-      containers:
-      - smokable
-    - type: Physics
-      canCollide: False
-    - type: ContainerContainer
-      containers:
-        solution@smokable: !type:ContainerSlot
-          ent: 16
-    - type: Label
-      currentLabel: Омнизин + Дексалин
-    - type: NameModifier
-      baseName: Удалитель туалетного жмыха
-- proto: CigaretteIpecac
-  entities:
-  - uid: 3
-    components:
-    - type: MetaData
-      name: Бабушкин рождественский фруктовый кекс (Омнизин + Дексалин)
-    - type: Transform
-      parent: 2
-    - type: SolutionContainerManager
-      solutions: null
-      containers:
-      - smokable
-    - type: Physics
-      canCollide: False
-    - type: ContainerContainer
-      containers:
-        solution@smokable: !type:ContainerSlot
-          ent: 4
-    - type: Label
-      currentLabel: Омнизин + Дексалин
-    - type: NameModifier
-      baseName: Бабушкин рождественский фруктовый кекс
-- proto: CigaretteIron
-  entities:
-  - uid: 17
-    components:
-    - type: MetaData
-      name: Ржавый оранжевый нижний взрыв (Омнизин + Дексалин)
-    - type: Transform
-      parent: 2
-    - type: SolutionContainerManager
-      solutions: null
-      containers:
-      - smokable
-    - type: Physics
-      canCollide: False
-    - type: ContainerContainer
-      containers:
-        solution@smokable: !type:ContainerSlot
-          ent: 18
-    - type: Label
-      currentLabel: Омнизин + Дексалин
-    - type: NameModifier
-      baseName: Ржавый оранжевый нижний взрыв
-- proto: CigaretteTricordrazine
-  entities:
-  - uid: 5
-    components:
-    - type: MetaData
-      name: Лакричный ассорти (Омнизин + Дексалин)
-    - type: Transform
-      parent: 2
-    - type: SolutionContainerManager
-      solutions: null
-      containers:
-      - smokable
-    - type: Physics
-      canCollide: False
-    - type: ContainerContainer
-      containers:
-        solution@smokable: !type:ContainerSlot
-          ent: 6
-    - type: Label
-      currentLabel: Омнизин + Дексалин
-    - type: NameModifier
-      baseName: Лакричный ассорти
-  - uid: 7
-    components:
-    - type: MetaData
-      name: Лакричный ассорти (Омнизин + Дексалин)
-    - type: Transform
-      parent: 2
-    - type: SolutionContainerManager
-      solutions: null
-      containers:
-      - smokable
-    - type: Physics
-      canCollide: False
-    - type: ContainerContainer
-      containers:
-        solution@smokable: !type:ContainerSlot
-          ent: 8
-    - type: Label
-      currentLabel: Омнизин + Дексалин
-    - type: NameModifier
-      baseName: Лакричный ассорти
-- proto: CigPackSyndicate
-  entities:
-  - uid: 2
-    components:
-    - type: Transform
-      pos: -20.233282,-8.651838
-      parent: 1
-    - type: Storage
-      storedItems:
-        11:
-          position: 4,1
-          _rotation: South
-        15:
-          position: 3,0
-          _rotation: South
-        9:
-          position: 3,1
-          _rotation: South
-        17:
-          position: 1,1
-          _rotation: South
-        3:
-          position: 1,0
-          _rotation: South
-        13:
-          position: 0,0
-          _rotation: South
-        5:
-          position: 4,0
-          _rotation: South
-        7:
-          position: 0,1
-          _rotation: South
-    - type: UserInterface
-      actors:
-        enum.StorageUiKey.Key:
-        - invalid
-    - type: ContainerContainer
-      containers:
-        storagebase: !type:Container
-          showEnts: False
-          occludes: True
-          ents:
-          - 13
-          - 3
-          - 15
-          - 5
-          - 7
-          - 17
-          - 9
-          - 11
-    - type: UseDelay
-      delays:
-        default:
-          endTime: 80180.4460314
-          startTime: 80398.6862679
-          length: 1
-        quickInsert:
-          length: 0.5
-        storage:
-          endTime: 80179.4460314
-          startTime: 80398.6862679
-    - type: ActiveUserInterface
 - proto: CircuitImprinter
   entities:
   - uid: 2041
@@ -17146,13 +16704,6 @@ entities:
     components:
     - type: Transform
       pos: -30.521679,-55.57459
-      parent: 1
-- proto: ClothingEyesNightvision
-  entities:
-  - uid: 10438
-    components:
-    - type: Transform
-      pos: 33.540257,-76.46649
       parent: 1
 - proto: ClothingHandsGlovesBoxingRed
   entities:
@@ -21421,9 +20972,6 @@ entities:
     - type: Transform
       pos: 18.5,-19.5
       parent: 1
-    - type: DisposalUnit
-      recentlyEjected:
-      - invalid
   - uid: 2697
     components:
     - type: Transform
@@ -21709,26 +21257,6 @@ entities:
       parent: 1
 - proto: EggSpider
   entities:
-  - uid: 2736
-    components:
-    - type: Transform
-      pos: -16.465117,-37.30028
-      parent: 1
-  - uid: 2737
-    components:
-    - type: Transform
-      pos: -14.676971,-37.51903
-      parent: 1
-  - uid: 2738
-    components:
-    - type: Transform
-      pos: -15.7776165,-37.534657
-      parent: 1
-  - uid: 2739
-    components:
-    - type: Transform
-      pos: -14.643461,-35.659657
-      parent: 1
   - uid: 2740
     components:
     - type: Transform
@@ -22932,7 +22460,7 @@ entities:
       pos: 7.5,-55.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -150388.53
+      secondsUntilStateChange: -151064.77
       state: Closing
     - type: DeviceNetwork
       deviceLists:
@@ -23105,9 +22633,6 @@ entities:
     - type: Transform
       pos: 8.5,44.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 11312
   - uid: 11443
@@ -23115,9 +22640,6 @@ entities:
     - type: Transform
       pos: 8.5,43.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 11312
 - proto: Fireplace
@@ -30065,9 +29587,6 @@ entities:
     - type: Transform
       pos: 6.5,17.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 45
     - type: AtmosPipeColor
@@ -30451,9 +29970,6 @@ entities:
     - type: Transform
       pos: 1.5,18.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
       deviceLists:
       - 45
     - type: AtmosPipeColor
@@ -37268,62 +36784,6 @@ entities:
         - Pressed: Toggle
 - proto: PRISONLocker
   entities:
-  - uid: 3063
-    components:
-    - type: Transform
-      pos: 38.5,-74.5
-      parent: 1
-    - type: EntityStorage
-      air:
-        volume: 200
-        immutable: False
-        temperature: 293.14673
-        moles:
-        - 1.7459903
-        - 6.568249
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-        - 0
-  - uid: 3064
-    components:
-    - type: Transform
-      pos: 39.5,-74.5
-      parent: 1
-    - type: Lock
-      locked: False
-    - type: Fixtures
-      fixtures:
-        fix1:
-          shape: !type:PolygonShape
-            radius: 0.01
-            vertices:
-            - -0.25,-0.48
-            - 0.25,-0.48
-            - 0.25,0.48
-            - -0.25,0.48
-          mask:
-          - Impassable
-          - TableLayer
-          - LowImpassable
-          layer:
-          - BulletImpassable
-          - Opaque
-          density: 75
-          hard: True
-          restitution: 0
-          friction: 0.4
-    - type: EntityStorage
-      open: True
-      removedMasks: 20
-    - type: PlaceableSurface
-      isPlaceable: True
   - uid: 4791
     components:
     - type: Transform
@@ -37349,11 +36809,6 @@ entities:
         - 0
 - proto: PRISONLockerFilled
   entities:
-  - uid: 3076
-    components:
-    - type: Transform
-      pos: 40.5,-74.5
-      parent: 1
   - uid: 4792
     components:
     - type: Transform
@@ -38305,13 +37760,6 @@ entities:
     components:
     - type: Transform
       pos: 27.5,-50.5
-      parent: 1
-- proto: RandomMedicCorpseSpawner
-  entities:
-  - uid: 4939
-    components:
-    - type: Transform
-      pos: 22.5,-23.5
       parent: 1
 - proto: RandomPosterContraband
   entities:
@@ -40603,11 +40051,6 @@ entities:
     - type: Transform
       pos: -22.550043,-35.560856
       parent: 1
-  - uid: 5287
-    components:
-    - type: Transform
-      pos: -15.371986,-36.575768
-      parent: 1
   - uid: 5288
     components:
     - type: Transform
@@ -40929,25 +40372,6 @@ entities:
     - type: DeviceLinkSource
       linkedPorts:
         524:
-        - Pressed: Toggle
-  - uid: 5336
-    components:
-    - type: Transform
-      pos: 1.5,-0.5
-      parent: 1
-    - type: DeviceLinkSource
-      linkedPorts:
-        516:
-        - Pressed: Toggle
-        515:
-        - Pressed: Toggle
-        540:
-        - Pressed: Toggle
-        539:
-        - Pressed: Toggle
-        538:
-        - Pressed: Toggle
-        517:
         - Pressed: Toggle
   - uid: 5483
     components:
@@ -42244,17 +41668,38 @@ entities:
       parent: 1
 - proto: SpawnMobSpaceSpider
   entities:
-  - uid: 5510
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -14.5,-36.5
-      parent: 1
   - uid: 5511
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -32.5,-14.5
+      parent: 1
+- proto: SpawnPointLatejoin
+  entities:
+  - uid: 527
+    components:
+    - type: Transform
+      pos: 5.5,47.5
+      parent: 1
+  - uid: 2044
+    components:
+    - type: Transform
+      pos: 5.5,46.5
+      parent: 1
+  - uid: 2046
+    components:
+    - type: Transform
+      pos: 5.5,44.5
+      parent: 1
+  - uid: 2736
+    components:
+    - type: Transform
+      pos: 5.5,43.5
+      parent: 1
+  - uid: 2737
+    components:
+    - type: Transform
+      pos: 5.5,45.5
       parent: 1
 - proto: Spear
   entities:
@@ -42310,36 +41755,6 @@ entities:
     components:
     - type: Transform
       pos: 2.5,-12.5
-      parent: 1
-  - uid: 5524
-    components:
-    - type: Transform
-      pos: -16.5,-36.5
-      parent: 1
-  - uid: 5525
-    components:
-    - type: Transform
-      pos: -16.5,-37.5
-      parent: 1
-  - uid: 5526
-    components:
-    - type: Transform
-      pos: -15.5,-37.5
-      parent: 1
-  - uid: 5527
-    components:
-    - type: Transform
-      pos: -14.5,-37.5
-      parent: 1
-  - uid: 5528
-    components:
-    - type: Transform
-      pos: -14.5,-36.5
-      parent: 1
-  - uid: 5529
-    components:
-    - type: Transform
-      pos: -14.5,-35.5
       parent: 1
   - uid: 5530
     components:
@@ -42600,16 +42015,70 @@ entities:
     - type: Transform
       pos: 35.5,-36.5
       parent: 1
+    - type: EntityStorage
+      air:
+        volume: 200
+        immutable: False
+        temperature: 293.14673
+        moles:
+        - 1.7459903
+        - 6.568249
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
   - uid: 5574
     components:
     - type: Transform
       pos: 36.5,-36.5
       parent: 1
+    - type: EntityStorage
+      air:
+        volume: 200
+        immutable: False
+        temperature: 293.14673
+        moles:
+        - 1.7459903
+        - 6.568249
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
   - uid: 5575
     components:
     - type: Transform
       pos: 35.5,-38.5
       parent: 1
+    - type: EntityStorage
+      air:
+        volume: 200
+        immutable: False
+        temperature: 293.14673
+        moles:
+        - 1.7459903
+        - 6.568249
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
+        - 0
 - proto: SuitStorageEVAAlternate
   entities:
   - uid: 5576
@@ -42666,9 +42135,6 @@ entities:
     - type: Transform
       pos: -9.5,-1.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
 - proto: SurveillanceCameraSecurity
   entities:
   - uid: 4813
@@ -42687,18 +42153,12 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 6.5,-19.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
   - uid: 5587
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: -15.5,-0.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
@@ -42710,9 +42170,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 21.5,-32.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
@@ -42724,9 +42181,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 12.5,3.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
@@ -42749,9 +42203,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 18.5,-37.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
@@ -42763,9 +42214,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -16.5,2.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
@@ -42777,9 +42225,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -18.5,-7.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
@@ -42791,9 +42236,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -13.5,2.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
@@ -42805,9 +42247,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -9.5,2.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
@@ -42819,9 +42258,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -1.5,2.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
@@ -42833,9 +42269,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -4.5,-1.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
@@ -42847,9 +42280,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 0.5,-1.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
@@ -42861,9 +42291,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 12.5,-0.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
@@ -42875,9 +42302,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 16.5,-3.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
@@ -42889,9 +42313,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: -6.5,-6.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
@@ -42903,9 +42324,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 12.5,-45.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
@@ -42917,9 +42335,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 4.5,-28.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
@@ -42931,9 +42346,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 6.5,-40.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
@@ -42945,9 +42357,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 8.5,-42.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
@@ -42959,9 +42368,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 19.5,-21.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
@@ -42973,9 +42379,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 23.5,-18.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
@@ -42987,9 +42390,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 28.5,-33.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
@@ -43001,9 +42401,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: -0.5,-46.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
@@ -43015,9 +42412,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 2.5,-56.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
@@ -43028,18 +42422,12 @@ entities:
     - type: Transform
       pos: 16.5,-15.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
   - uid: 5614
     components:
     - type: Transform
       rot: 3.141592653589793 rad
       pos: 14.5,-53.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
@@ -43051,9 +42439,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 28.5,-56.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
@@ -43065,9 +42450,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 18.5,-9.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
@@ -43079,9 +42461,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 22.5,-9.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
@@ -43093,9 +42472,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 13.5,-10.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
@@ -43133,9 +42509,6 @@ entities:
     - type: Transform
       pos: -14.5,-8.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
@@ -43147,9 +42520,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 6.5,-11.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
@@ -43161,9 +42531,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -1.5,-1.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
@@ -43175,9 +42542,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 6.5,-52.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
@@ -43200,9 +42564,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 12.5,-19.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
@@ -43214,9 +42575,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 20.5,-41.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
@@ -43227,9 +42585,6 @@ entities:
     - type: Transform
       pos: 17.5,-1.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
@@ -43240,9 +42595,6 @@ entities:
     - type: Transform
       pos: 9.5,-8.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
@@ -43254,9 +42606,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 18.5,-17.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
@@ -43267,9 +42616,6 @@ entities:
     - type: Transform
       pos: 22.5,-39.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
@@ -43280,9 +42626,6 @@ entities:
     - type: Transform
       pos: 12.5,-39.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
@@ -43294,9 +42637,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 27.5,-39.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
@@ -43307,9 +42647,6 @@ entities:
     - type: Transform
       pos: 14.5,-35.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
@@ -43321,9 +42658,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 8.5,-32.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
@@ -43335,9 +42669,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 8.5,-61.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
@@ -43349,9 +42680,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 31.5,-53.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
@@ -43363,9 +42691,6 @@ entities:
       rot: -1.5707963267948966 rad
       pos: 22.5,-50.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
@@ -43377,9 +42702,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 31.5,-57.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
@@ -43391,9 +42713,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 28.5,-50.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
@@ -43405,9 +42724,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 20.5,-57.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraSecurity
@@ -43513,9 +42829,6 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 2.5,2.5
       parent: 1
-    - type: DeviceNetwork
-      configurators:
-      - invalid
     - type: SurveillanceCamera
       setupAvailableNetworks:
       - SurveillanceCameraEntertainment
@@ -44333,11 +43646,6 @@ entities:
       parent: 1
 - proto: ToolboxSyndicateFilled
   entities:
-  - uid: 4313
-    components:
-    - type: Transform
-      pos: 38.40234,-62.615677
-      parent: 1
   - uid: 5794
     components:
     - type: Transform
@@ -44388,14 +43696,6 @@ entities:
     - type: Transform
       pos: 2.5019069,1.4938002
       parent: 1
-  - uid: 5803
-    components:
-    - type: MetaData
-      desc: Живая легенда, ТОТАЛЬНАЯ глупышня и коммендант жилого отсека.
-      name: Армен Ополев
-    - type: Transform
-      pos: 38.46919,-41.448486
-      parent: 1
 - proto: ToyFigurineChemist
   entities:
   - uid: 5804
@@ -44433,8 +43733,6 @@ entities:
       parent: 1
     - type: ItemToggle
       activated: True
-    - type: ItemToggleActiveSound
-      playingStream: invalid
     - type: MeleeWeapon
       soundNoDamage: !type:SoundPathSpecifier
         params:
@@ -45033,12 +44331,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: -0.5,-4.5
-      parent: 1
-  - uid: 5891
-    components:
-    - type: Transform
-      rot: -1.5707963267948966 rad
-      pos: -3.5,-1.5
       parent: 1
   - uid: 5892
     components:
@@ -64152,11 +63444,6 @@ entities:
     - type: Transform
       pos: 22.5,8.5
       parent: 1
-  - uid: 7568
-    components:
-    - type: Transform
-      pos: 1.5,-67.5
-      parent: 1
   - uid: 7574
     components:
     - type: Transform
@@ -66543,11 +65830,6 @@ entities:
     components:
     - type: Transform
       pos: -12.5,-35.5
-      parent: 1
-  - uid: 7068
-    components:
-    - type: Transform
-      pos: -28.5,-19.5
       parent: 1
   - uid: 7077
     components:
@@ -70006,13 +69288,6 @@ entities:
     components:
     - type: Transform
       pos: 9.5,-11.5
-      parent: 1
-- proto: WhitePawn
-  entities:
-  - uid: 10378
-    components:
-    - type: Transform
-      pos: 44.532883,-70.32059
       parent: 1
 - proto: Windoor
   entities:
