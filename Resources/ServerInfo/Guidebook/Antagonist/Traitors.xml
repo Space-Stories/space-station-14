@@ -30,12 +30,17 @@
   Нажав [color=yellow][bold][keybind="OpenCharacterMenu"][/bold][/color], вы увидите свой персональный код для аплинка. [bold]Введя код в мелодию звонка на своем КПК, вы откроете доступ аплинку.[/bold]
   Нажав [color=yellow][bold][keybind="OpenCharacterMenu"][/bold][/color], вы также сможете просмотреть свои цели и кодовые слова.
 
+  If you do not have a PDA when you are activated, an [color=cyan]uplink implant[/color] is provided [bold]for the full [color=red]TC[/color] price of the implant.[/bold]
+  It can be accessed from your hotbar.
   <Box>
     <GuideEntityEmbed Entity="PassengerPDA" Caption="КПК"/>
     <GuideEntityEmbed Entity="Telecrystal" Caption="Телекристаллы"/>
+    <GuideEntityEmbed Entity="BaseUplinkRadio" Caption="Имплант аплинка"/>
   </Box>
 
   [bold]Обязательно закрывайте аплинк, чтобы никто другой его не увидел.[/bold] Вы же не хотите, чтобы в руки [color=#cb0000]Службы Безопасности[/color] попал этот первоклассный контрабандный товар!
+
+  Импланты аплинка обычно недоступны другим людям, поэтому они не имеют каких-либо мер безопасности. Однако их можно удалить с помощью пустого имплантера.
 
   - Став предателем, вы получите список задач, начиная от побега живым, кражи чего-то, и заканчивая убийством. Использование [color=#a4885c]Аплинка[/color] поможет вам справиться с большинством из этих задач.
 
