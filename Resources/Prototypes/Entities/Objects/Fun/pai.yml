@@ -52,7 +52,7 @@
   - type: TypingIndicator
     proto: robot
   - type: TTS # Stories-TTS
-    voice: urret_floor
+    voice: turret_floor
   - type: Speech
     speechVerb: Robotic
     speechSounds: Pai
