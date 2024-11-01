@@ -1,7 +1,6 @@
 using Content.Shared.Actions;
 using Content.Shared.GameTicking;
 using Content.Shared.Inventory.Events;
-using Content.Shared.Stories.Shadowling;
 using Content.Shared.Stories.ThermalVision;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
@@ -23,7 +22,7 @@ public sealed class ThermalVisionSystem : EntitySystem
     }
     private void OnUnequipped(EntityUid uid, ThermalVisionClothingComponent component, GotUnequippedEvent args)
     {
-    if (args.Slot == "eyes" && !HasComp<ShadowlingThrallComponent>(args.Equipee))
+    if (args.Slot == "eyes" && !(TryComp<ThermalVisionComponent>(args.Equipee, out var comp) && comp.Innate))
         RemCompDeferred<ThermalVisionComponent>(args.Equipee);
     }
     private void OnEquipped(EntityUid uid, ThermalVisionClothingComponent component, GotEquippedEvent args)
@@ -31,7 +30,7 @@ public sealed class ThermalVisionSystem : EntitySystem
         if (_gameTiming.ApplyingState)
             return;
 
-        if (component.Enabled && !HasComp<ThermalVisionComponent>(args.Equipee) && (args.Slot == "eyes"))
+        if (args.Slot == "eyes" && component.Enabled && !HasComp<ThermalVisionComponent>(args.Equipee))
             AddComp<ThermalVisionComponent>(args.Equipee);
     }
     private void OnStartUp(EntityUid uid, ThermalVisionComponent component, ComponentStartup args)

@@ -12,6 +12,7 @@
     color: Red
   components:
   - type: ThermalVision
+    innate: true
   - type: ShadowlingThrall
   mindRoles:
     - MindRoleShadowlingThrall
