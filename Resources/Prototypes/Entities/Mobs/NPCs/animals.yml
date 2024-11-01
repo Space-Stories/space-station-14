@@ -2927,7 +2927,7 @@
   description: Explosive kitten.
   components:
   - type: Sprite
-    sprite: Stories/Mobs/Pets/syndiCat.rsi # Stories
+    sprite: _Stories/Mobs/Pets/syndiCat.rsi # Stories
     layers:
     - map: ["enum.DamageStateVisualLayers.Base"]
       state: syndicat
