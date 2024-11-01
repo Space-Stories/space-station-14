@@ -500,6 +500,16 @@ namespace Content.Shared.Cuffs
             if (HasComp<StunnedComponent>(target))
                 cuffTime = MathF.Max(0.1f, cuffTime - handcuffComponent.StunBonus);
 
+            if (TryComp<CufferComponent>(user, out var cuffer)) // Stories - CuffingSpeed - start
+            {
+                if (cuffer.TimeModifier == null)
+                {
+                    _popup.PopupClient(Loc.GetString("handcuff-component-cannot-use-cuffs"), user, user);
+                    return false;
+                }
+                cuffTime = cuffTime * (float)cuffer.TimeModifier;
+            } // Stories - CuffingSpeed - end
+
             if (HasComp<DisarmProneComponent>(target))
                 cuffTime = 0.0f; // cuff them instantly.
 

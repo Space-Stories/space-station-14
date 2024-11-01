@@ -9,6 +9,8 @@
   id: BaseMobShadowling
   abstract: true
   components:
+  - type: Cuffer
+    timeModifier: 2
   - type: ZombieImmune
   - type: ThermalVision
   - type: ComplexInteraction
