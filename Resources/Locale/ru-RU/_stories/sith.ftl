@@ -1,7 +1,7 @@
 hypnosis-empire-role-greeting =
     Вы - Имперец.
     Вы под гипнозом и готовы на все.
-    Выполняйте приказы инкивизоторов.
+    Выполняйте приказы инквизиторов.
     За императора!
 
 hypnosis-empire-role-goodbye =
@@ -13,7 +13,7 @@ empire-role-greeting =
     Не дайте себя раскрыть.
     За императора!
 
-hypnosis-empire-briefing = Исполняйте приказы инкивизоторов и других представителей империи.
+hypnosis-empire-briefing = Исполняйте приказы инквизиторов и других представителей империи.
 empire-briefing = Исполняйте приказы старших по званию.
 
 force-init-message = Вы - { $name }...
@@ -25,3 +25,5 @@ force-concentrate = Вы чувствуете прилив сил...
 objective-issuer-inquisitor = [color=Red]Инквизитор[/color]
 
 store-currency-display-skill-point = Навык
+
+objective-sith-hypnosis-title = Загипнотизировать { $count } существ.

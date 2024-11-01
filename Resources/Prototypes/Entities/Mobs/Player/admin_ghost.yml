@@ -1,5 +1,5 @@
 - type: entity
-  parent: [MobObserver, InventoryBase]
+  parent: [MobObserverBase, InventoryBase]
   id: AdminObserver
   name: admin observer
   categories: [ HideSpawnMenu ]
@@ -12,6 +12,7 @@
     - CanPilot
     - BypassInteractionRangeChecks
     - BypassDropChecks
+    - NoConsoleSound
   - type: Input
     context: "aghost"
   - type: Ghost
@@ -30,6 +31,7 @@
   - type: Access
     groups:
     - AllAccess
+    - PrisonAllAccess # Stories
     tags:
     - NuclearOperative
     - SyndicateAgent
@@ -174,7 +176,7 @@
   id: ActionHideGhost
   name: Hide ghost
   description: Remove all ways to see your presence
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     icon: Stories/Interface/AdminActions/hide_ghost.png

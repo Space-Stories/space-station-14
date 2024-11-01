@@ -806,13 +806,8 @@
   - type: Access
     groups:
     - AllAccess
+    - PrisonAllAccess # Stories
     tags:
     - CentralCommand
     - NuclearOperative
     - SyndicateAgent
-    - HeadOfPrison # Stories - start
-    - PrisonBrig
-    - Prison
-    - PrisonMed
-    - PrisonEng
-    - Prisoner # Stories - end

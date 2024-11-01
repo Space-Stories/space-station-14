@@ -13,7 +13,6 @@
     - type: Clothing
       sprite: Stories/Clothing/Belt/jedi_belt.rsi
     - type: Storage
-      maxSlots: 5
       whitelist:
         tags:
           - CigPack

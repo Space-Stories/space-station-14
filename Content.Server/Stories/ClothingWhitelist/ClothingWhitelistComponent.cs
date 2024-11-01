@@ -13,13 +13,13 @@ public sealed partial class ClothingWhitelistComponent : Component
     public EntityWhitelist? Whitelist;
 
     [DataField("factionsWhitelist"), ViewVariables(VVAccess.ReadWrite)]
-    public HashSet<ProtoId<NpcFactionPrototype>> FactionsWhitelist = new();
+    public HashSet<ProtoId<NpcFactionPrototype>>? FactionsWhitelist = new();
 
     [DataField("blacklist")]
     public EntityWhitelist? Blacklist;
 
     [DataField("factionsBlacklist"), ViewVariables(VVAccess.ReadWrite)]
-    public HashSet<ProtoId<NpcFactionPrototype>> FactionsBlacklist = new();
+    public HashSet<ProtoId<NpcFactionPrototype>>? FactionsBlacklist = new();
 
     [DataField("delay")]
     public float Delay = 3f;

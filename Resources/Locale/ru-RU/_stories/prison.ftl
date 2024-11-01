@@ -1,5 +1,5 @@
-prison-title = Тюрьма
 department-Prison = Космическая тюрьма
+department-Prison-description = Содержите заключенных и охраняйте тюрьму.
 
 prisoner-major = [color=crimson]Крупная победа заключенных![/color]
 prisoner-major-desc =

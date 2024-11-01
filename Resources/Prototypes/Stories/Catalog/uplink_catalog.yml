@@ -19,6 +19,19 @@
     - UplinkWearables
 
 - type: listing
+  id: UplinkPistolAnaconda
+  name: Анаконда
+  description: Легендарная Анаконда - тяжёлый пистолет, стреляющий уникальными патронами калибра .40 безгильзовый, которые создаются с помощью встроенного фабрикатора.
+  productEntity: WeaponPistolAnaconda
+  discountCategory: veryRareDiscounts
+  discountDownTo:
+    Telecrystal: 4
+  cost:
+    Telecrystal: 8
+  categories:
+  - UplinkWeaponry
+
+- type: listing
   id: UplinkClothingEyesThermalVisionMonocular
   name: Монокль термального зрения
   description: Новейшая разведочная технология, которую поместили внутрь монокля. Позволяет видеть органические цели в полной темноте и даже через стены.
