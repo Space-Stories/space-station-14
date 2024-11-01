@@ -5,5 +5,5 @@
   components:
   - type: InstantAction
     useDelay: 5
-    icon: { sprite: Stories/Clothing/Eyes/Glasses/termalhud.rsi, state: action }
+    icon: { sprite: Stories/Actions/thermalVision.rsi, state: toggle }
     event: !type:ToggleThermalVisionEvent

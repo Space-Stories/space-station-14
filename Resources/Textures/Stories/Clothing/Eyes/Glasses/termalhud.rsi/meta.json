@@ -1,29 +1,26 @@
 {
-  "version": 1,
-  "license": "Собственная лицензия. Копирование, модификация и использование вне проекта Space Stories полностью запрещено без предварительного согласия текущего владельца проекта",
-  "copyright": "Created By RustedTim(discord:helloo4771) for SpaceStories(Server SS14).",
-  "size": {
-    "x": 32,
-    "y": 32
-  },
-  "states": [
-    {
-        "name": "action"
+    "version": 1,
+    "license": "Any distribution, modification or use outside of SpaceStories without the agreement of SpaceStories owner is strictly prohibited.",
+    "copyright": "Created By RustedTim(discord:helloo4771) for SpaceStories(Server SS14).",
+    "size": {
+        "x": 32,
+        "y": 32
     },
-    {
-      "name": "equipped-EYES",
-      "directions": 4
-    },
-    {
-      "name": "icon"
-    },
-    {
-      "name": "inhand-left",
-      "directions": 4
-    },
-    {
-      "name": "inhand-right",
-      "directions": 4
-    }
-  ]
+    "states": [
+        {
+            "name": "equipped-EYES",
+            "directions": 4
+        },
+        {
+            "name": "icon"
+        },
+        {
+            "name": "inhand-left",
+            "directions": 4
+        },
+        {
+            "name": "inhand-right",
+            "directions": 4
+        }
+    ]
 }

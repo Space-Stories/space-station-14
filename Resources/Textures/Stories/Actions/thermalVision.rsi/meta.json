@@ -1,0 +1,14 @@
+{
+    "version": 1,
+    "license": "Any distribution, modification or use outside of SpaceStories without the SpaceStories owner's agreement is strictly prohibited.",
+    "copyright": "Created By RustedTim(discord:helloo4771) for SpaceStories(Server SS14).",
+    "size": {
+        "x": 32,
+        "y": 32
+    },
+    "states": [
+        {
+            "name": "toggle"
+        }
+    ]
+}
