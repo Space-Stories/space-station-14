@@ -10,7 +10,7 @@
   abstract: true
   components:
   - type: Cuffer
-    timeModifier: null
+    timeModifier: 2
   - type: ZombieImmune
   - type: ThermalVision
   - type: ComplexInteraction
