@@ -17,7 +17,6 @@
     context: "aghost"
   - type: Ghost
     canInteract: true
-  - type: HideGhost
   - type: GhostHearing
   - type: Hands
   - type: ComplexInteraction
@@ -171,15 +170,3 @@
     keywords: [ "AI", "console", "interface" ]
     priority: -8
     event: !type:ToggleIntrinsicUIEvent { key: enum.GeneralStationRecordConsoleKey.Key }
-
-- type: entity
-  id: ActionHideGhost
-  name: Hide ghost
-  description: Remove all ways to see your presence
-  categories: [ HideSpawnMenu ]
-  components:
-  - type: InstantAction
-    icon: Stories/Interface/AdminActions/hide_ghost.png
-    iconOn: Stories/Interface/AdminActions/hide_ghost.png
-    event: !type:HideGhostEvent
-    priority: -10
