@@ -497,9 +497,6 @@ namespace Content.Shared.Cuffs
 
             var cuffTime = handcuffComponent.CuffTime;
 
-            if (HasComp<StunnedComponent>(target))
-                cuffTime = MathF.Max(0.1f, cuffTime - handcuffComponent.StunBonus);
-
             if (TryComp<CufferComponent>(user, out var cuffer)) // Stories - CuffingSpeed - start
             {
                 if (cuffer.TimeModifier == null)
@@ -509,6 +506,9 @@ namespace Content.Shared.Cuffs
                 }
                 cuffTime = cuffTime * (float)cuffer.TimeModifier;
             } // Stories - CuffingSpeed - end
+
+            if (HasComp<StunnedComponent>(target))
+                cuffTime = MathF.Max(0.1f, cuffTime - handcuffComponent.StunBonus);
 
             if (HasComp<DisarmProneComponent>(target))
                 cuffTime = 0.0f; // cuff them instantly.
