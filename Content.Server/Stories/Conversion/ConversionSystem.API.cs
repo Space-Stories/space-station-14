@@ -3,11 +3,12 @@ using Content.Shared.Roles;
 using Content.Shared.Stories.Conversion;
 using Robust.Shared.Prototypes;
 using Content.Server.Radio.Components;
-using Content.Shared.Database;
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 
 namespace Content.Server.Stories.Conversion;
 
+// TODO: Move to shared
 public sealed partial class ConversionSystem
 {
     public HashSet<EntityUid> GetEntitiesConvertedBy(EntityUid? uid, ProtoId<ConversionPrototype> prototype)
@@ -138,21 +139,31 @@ public sealed partial class ConversionSystem
         if (roles == null)
             return;
 
-        mind.MindRoles?.ForEach((mindRole) =>
+        var rolesUid = mind.MindRoles.Where((role) => EntityPrototyped(role, roles)).ToList();
+
+        rolesUid.ForEach((mindRole) =>
         {
-            var proto = MetaData(mindRole).EntityPrototype;
-            if (proto != null && roles.Contains(proto))
-            {
-                var antagonist = Comp<MindRoleComponent>(mindRole).Antag;
+            var antagonist = Comp<MindRoleComponent>(mindRole).Antag;
 
-                QueueDel(mindRole);
-                mind.MindRoles.Remove(mindRole);
+            QueueDel(mindRole);
 
-                var message = new RoleRemovedEvent(mindId, mind, antagonist);
+            mind.MindRoles.Remove(mindRole);
 
-                if (mind.OwnedEntity != null)
-                    RaiseLocalEvent(mind.OwnedEntity.Value, message, true);
-            }
+            var message = new RoleRemovedEvent(mindId, mind, antagonist);
+
+            if (mind.OwnedEntity != null)
+                RaiseLocalEvent(mind.OwnedEntity.Value, message, true);
         });
+
+        mind.MindRoles?.Clear();
+    }
+    public bool EntityPrototyped(EntityUid role, List<ProtoId<EntityPrototype>> roles)
+    {
+        var proto = MetaData(role).EntityPrototype;
+
+        if (proto == null)
+            return false;
+
+        return roles.Contains(proto);
     }
 }
