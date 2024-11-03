@@ -66,10 +66,6 @@ namespace Content.Shared.Ghost
             component.CanReturnToBody = value;
         }
 
-        public void SetColor(GhostComponent component, Color value)
-        {
-            component.color = value;
-        }
     }
 
     /// <summary>
