@@ -1,6 +1,6 @@
 - type: entity
   save: false
-  parent: SimpleSpaceMobBase
+  parent: [ SimpleSpaceMobBase, FlyingMobBase ]
   id: BaseMobSpaf
   abstract: true
   components:

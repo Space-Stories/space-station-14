@@ -24,7 +24,7 @@
 - type: radioChannel
   id: SpafMind
   name: chat-radio-spaf-mind
-  keycode: 'r'
+  keycode: 'щ'
   frequency: 9361
   color: "#00FF00"
   longRange: true
