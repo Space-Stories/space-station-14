@@ -100,7 +100,6 @@
 - type: loadoutGroup
   id: JediNtOuterClothing
   name: loadout-group-Jedi-outer-clothing
-  minLimit: 0
   loadouts:
   - ClothingOuterVestArmorExe
   - ClothingOuterVestJediNt

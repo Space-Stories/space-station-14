@@ -40,5 +40,7 @@ public sealed partial class ForceUserComponent : Component
 
     [DataField, AutoNetworkedField]
     public EntityUid? ShopActionEntity;
-}
 
+    [DataField]
+    public bool LightsaberPowered = true;
+}

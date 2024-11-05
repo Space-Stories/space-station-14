@@ -1,12 +1,13 @@
 - type: entity
   parent: ClothingOuterArmorBasic
   id: ClothingOuterVestJediNt
-  name: утепленный бронежилет стража клинка
-  description: Потому что кто-то сказал, что бронежилеты могут быть утеплены. Ваш щит уже утеплен!
+  name: ядро-бронежилет стража клинка
+  description: Утеплённый бронежилет, несущий в себе энергию, что позволяет с помощью силы запитать световой меч.
   components:
     - type: Tag
       tags:
         - ForceRecallEquipment
+    - type: LightsaberCore
     - type: TemperatureProtection
       heatingCoefficient: 0.005
       coolingCoefficient: 0.005
@@ -27,17 +28,11 @@
       sprite: Stories/Clothing/OuterClothing/Vests/armor_sp.rsi
 
 - type: entity
-  parent: ClothingOuterArmorBasic
+  parent: ClothingOuterVestJediNt
   id: ClothingOuterVestArmorExe
-  name: бронежилет хранителя
-  description: Элегантный бронежилет, оберегающий хранителя от большинства видов повреждений и перепадов температур.
+  name: ядро-бронежилет хранителя
+  description: Бронежилет, дающий хранителю как защиту от повреждений и температур, так и энергию для подпитки его меча.
   components:
-    - type: Tag
-      tags:
-        - ForceRecallEquipment
-    - type: TemperatureProtection
-      coolingCoefficient: 0.001
-      heatingCoefficient: 0.001
     - type: Sprite
       sprite: Stories/Clothing/OuterClothing/Vests/exe_armor.rsi
     - type: Clothing

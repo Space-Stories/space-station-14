@@ -2,7 +2,7 @@
   parent: ClothingNeckBase
   id: ClothingNeckCloakSith
   name: плащ инквизитора
-  description: Невероятное произведение искусства, объединяющее в себе прочность и легкость. Заряжен неведомой энергией.
+  description: Невероятное произведение искусства, объединяющее в себе прочность и легкость. Заряжен неведомой энергией сам и способен зарядить ей меч пользователя.
   components:
   - type: TemperatureProtection
     heatingCoefficient: 0.005
@@ -26,6 +26,7 @@
         Heat: 0.4
         Radiation: 0.25
         Caustic: 0.4
+  - type: LightsaberCore
   - type: Tag
     tags:
       - ForceRecallEquipment
@@ -41,39 +42,12 @@
     sprite: Stories/Clothing/Neck/Cloaks/cloak_sith.rsi
 
 - type: entity
-  parent: ClothingNeckBase
+  parent: ClothingNeckCloakSith
   id: ClothingNeckCloakKylo
   name: плащ кайло рена
-  description: Невероятное произведение искусства, объединяющее в себе прочность и легкость.
   components:
-  - type: TemperatureProtection
-    heatingCoefficient: 0.005
-    coolingCoefficient: 0.005
-  - type: PressureProtection
-    highPressureMultiplier: 0.02
-    lowPressureMultiplier: 1000
-  - type: ExplosionResistance
-    damageCoefficient: 0.2
-  - type: Armor
-    modifiers:
-      coefficients:
-        Blunt: 0.6
-        Slash: 0.6
-        Piercing: 0.3
-        Heat: 0.4
-        Radiation: 0.25
-        Caustic: 0.4
-  - type: Tag
-    tags:
-      - ForceRecallEquipment
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodKylo
-    slot: head
-    requiredSlot:
-    - neck
-  - type: ContainerContainer
-    containers:
-      toggleable-clothing: !type:ContainerSlot {}
   - type: Sprite
     sprite: Stories/Clothing/Neck/Cloaks/cloak_kylo.rsi
 

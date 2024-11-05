@@ -18,6 +18,7 @@ using Content.Shared.Interaction;
 using Content.Server.Stories.ForceUser;
 using Content.Shared.Verbs;
 using Content.Shared.Stories.ForceUser.Actions.Events;
+using Content.Server.Stories.ForceUser.Components;
 
 namespace Content.Server.Stories.ForceUser;
 
@@ -29,6 +30,8 @@ public sealed partial class ForceUserSystem
         SubscribeLocalEvent<LightsaberComponent, ItemToggleActivateAttemptEvent>(OnActivateAttempt);
         SubscribeLocalEvent<LightsaberComponent, GotEquippedEvent>(OnEquipped);
         SubscribeLocalEvent<LightsaberComponent, GettingPickedUpAttemptEvent>(OnTryPickUp);
+        SubscribeLocalEvent<LightsaberCoreComponent, GotEquippedEvent>(OnCoreEquipped);
+        SubscribeLocalEvent<LightsaberCoreComponent, GotUnequippedEvent>(OnCoreUnequipped);
     }
     private void OnEquipped(EntityUid uid, LightsaberComponent comp, GotEquippedEvent args)
     {
@@ -57,14 +60,34 @@ public sealed partial class ForceUserSystem
     private void OnTryPickUp(EntityUid uid, LightsaberComponent component, GettingPickedUpAttemptEvent args)
     {
         if (component.LightsaberOwner != null && args.User != component.LightsaberOwner && HasComp<TetheredComponent>(uid))
+        {
             args.Cancel();
+            return;
+        }
 
-        if (component.LightsaberOwner != args.User && _toggleSystem.IsActivated(uid))
+        if ((!HasComp<ForceUserComponent>(args.User)
+        || !(TryComp<ForceUserComponent>(component.LightsaberOwner, out var owner) && owner.LightsaberPowered))
+        && _toggleSystem.IsActivated(uid))
             _toggleSystem.TryDeactivate(uid);
     }
     private void OnActivateAttempt(EntityUid uid, LightsaberComponent comp, ref ItemToggleActivateAttemptEvent args)
     {
-        if (comp.LightsaberOwner != args.User) // TODO: Черт, как его включить, если меня клонировали?
+        if (!HasComp<ForceUserComponent>(args.User)
+        || !(TryComp<ForceUserComponent>(comp.LightsaberOwner, out var owner) && owner.LightsaberPowered))
             args.Cancelled = true;
+    }
+    private void OnCoreEquipped(EntityUid uid, LightsaberCoreComponent comp, GotEquippedEvent args)
+    {
+        if (TryComp<ForceUserComponent>(args.Equipee, out var forceuser))
+            forceuser.LightsaberPowered = true;
+    }
+    private void OnCoreUnequipped(EntityUid uid, LightsaberCoreComponent comp, GotUnequippedEvent args)
+    {
+        if (TryComp<ForceUserComponent>(args.Equipee, out var forceuser))
+        {
+            forceuser.LightsaberPowered = false;
+            if (forceuser.Lightsaber != null && HasComp<ItemToggleComponent>(forceuser.Lightsaber.Value) && _toggleSystem.IsActivated(forceuser.Lightsaber.Value))
+                _toggleSystem.TryDeactivate(forceuser.Lightsaber.Value);
+        }
     }
 }
