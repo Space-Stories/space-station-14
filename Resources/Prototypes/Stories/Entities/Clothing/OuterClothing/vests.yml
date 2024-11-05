@@ -4,9 +4,6 @@
   name: утепленный бронежилет стража клинка
   description: Потому что кто-то сказал, что бронежилеты могут быть утеплены. Ваш щит уже утеплен!
   components:
-    - type: Tag
-      tags:
-        - ForceRecallEquipment
     - type: TemperatureProtection
       heatingCoefficient: 0.005
       coolingCoefficient: 0.005
@@ -14,6 +11,8 @@
       sprite: Stories/Clothing/OuterClothing/Vests/jedi_nt.rsi
     - type: Clothing
       sprite: Stories/Clothing/OuterClothing/Vests/jedi_nt.rsi
+    - type: Unremoveable
+      deleteOnDrop: false
 
 - type: entity
   parent: ClothingOuterArmorBasic
@@ -32,13 +31,12 @@
   name: бронежилет хранителя
   description: Элегантный бронежилет, оберегающий хранителя от большинства видов повреждений и перепадов температур.
   components:
-    - type: Tag
-      tags:
-        - ForceRecallEquipment
     - type: TemperatureProtection
-      coolingCoefficient: 0.001
-      heatingCoefficient: 0.001
+      coolingCoefficient: 0.005
+      heatingCoefficient: 0.005
     - type: Sprite
       sprite: Stories/Clothing/OuterClothing/Vests/exe_armor.rsi
     - type: Clothing
       sprite: Stories/Clothing/OuterClothing/Vests/exe_armor.rsi
+    - type: Unremoveable
+      deleteOnDrop: false

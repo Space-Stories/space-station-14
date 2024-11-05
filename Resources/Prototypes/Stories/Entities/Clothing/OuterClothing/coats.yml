@@ -4,9 +4,6 @@
   name: накидка джедая
   description: Длинный вид одежды, который свободно лежит на плечах, охватывая шею.
   components:
-  - type: Tag
-    tags:
-      - ForceRecallEquipment
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodJedihood
   - type: TemperatureProtection
@@ -26,6 +23,8 @@
         Slash: 0.80
         Piercing: 0.80
         Heat: 0.90
+  - type: Unremoveable
+    deleteOnDrop: false
 
 - type: entity
   parent: ClothingOuterStorageBase
