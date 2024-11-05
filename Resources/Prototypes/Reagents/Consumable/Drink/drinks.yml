@@ -438,7 +438,7 @@
   slippery: true
   physicalDesc: reagent-physical-desc-translucent
   flavor: water
-  color: "#75b1f020"
+  color: "#75b1f0"
   recognizable: true
   boilingPoint: 100.0
   meltingPoint: 0.0
