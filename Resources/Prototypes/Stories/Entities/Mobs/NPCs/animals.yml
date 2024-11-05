@@ -55,10 +55,6 @@
           Slash: 7
     - type: TypingIndicator
       proto: alien
-    - type: Tag
-      tags:
-        - Carp
-        - DoorBumpOpener
     - type: ReplacementAccent
       accent: genericAggressive
     - type: Speech
