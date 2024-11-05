@@ -64,7 +64,12 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
     [ValidatePrototypeId<ReagentPrototype>]
     private const string CopperBlood = "CopperBlood";
 
+    [ValidatePrototypeId<ReagentPrototype>]
+    private const string Water = "Water";
+
     private static string[] _standoutReagents = [Blood, Slime, CopperBlood];
+    private static string[] _transparentReagents = [Water];
+    private static string[] _nonStandardReagents = (_standoutReagents = _transparentReagents);
 
     public static readonly float PuddleVolume = 1000;
 
@@ -365,7 +370,7 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
             // Kinda EH
             // Could potentially do alpha per-solution but future problem.
 
-            color = solution.GetColorWithout(_prototypeManager, _standoutReagents);
+            color = solution.GetColorWithout(_prototypeManager, _nonStandardReagents);
             color = color.WithAlpha(0.7f);
 
             foreach (var standout in _standoutReagents)
@@ -377,6 +382,16 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
                 var interpolateValue = quantity.Float() / solution.Volume.Float();
                 color = Color.InterpolateBetween(color,
                     _prototypeManager.Index<ReagentPrototype>(standout).SubstanceColor, interpolateValue);
+            }
+            foreach (var transparent in _transparentReagents)
+            {
+                var quantity = solution.GetTotalPrototypeQuantity(transparent);
+                if (quantity <= FixedPoint2.Zero)
+                    continue;
+
+                var interpolateValue = quantity.Float() / solution.Volume.Float();
+                color = Color.InterpolateBetween(color,
+                    _prototypeManager.Index<ReagentPrototype>(transparent).SubstanceColor.WithAlpha(0.15f), interpolateValue);
             }
         }
 
