@@ -370,7 +370,7 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
             // Kinda EH
             // Could potentially do alpha per-solution but future problem.
 
-            color = solution.GetColorWithout(_prototypeManager, _nonStandardReagents); // Changed _standoutReagents to _nonStandardReagents.
+            color = solution.GetColorWithout(_prototypeManager, _nonStandardReagents); // Changed _standoutReagents to _nonStandardReagents. Stories
             color = color.WithAlpha(0.7f);
 
             foreach (var standout in _standoutReagents)
@@ -394,7 +394,7 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
                 color = Color.InterpolateBetween(color,
                     _prototypeManager.Index<ReagentPrototype>(transparent).SubstanceColor.WithAlpha(0.15f), interpolateValue);
             }
-            // to here/.
+            // to here.
         }
 
         _appearance.SetData(uid, PuddleVisuals.CurrentVolume, volume.Float(), appearance);
