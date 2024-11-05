@@ -64,12 +64,12 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
     [ValidatePrototypeId<ReagentPrototype>]
     private const string CopperBlood = "CopperBlood";
 
-    [ValidatePrototypeId<ReagentPrototype>]
-    private const string Water = "Water";
+    [ValidatePrototypeId<ReagentPrototype>] // Stories
+    private const string Water = "Water";   // Stories
 
     private static string[] _standoutReagents = [Blood, Slime, CopperBlood];
-    private static string[] _transparentReagents = [Water];
-    private static string[] _nonStandardReagents = (_standoutReagents = _transparentReagents);
+    private static string[] _transparentReagents = [Water]; //stories
+    private static string[] _nonStandardReagents = (_standoutReagents = _transparentReagents); // Stories
 
     public static readonly float PuddleVolume = 1000;
 
@@ -370,7 +370,7 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
             // Kinda EH
             // Could potentially do alpha per-solution but future problem.
 
-            color = solution.GetColorWithout(_prototypeManager, _nonStandardReagents);
+            color = solution.GetColorWithout(_prototypeManager, _nonStandardReagents); // Changed _standoutReagents to _nonStandardReagents.
             color = color.WithAlpha(0.7f);
 
             foreach (var standout in _standoutReagents)
@@ -383,6 +383,7 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
                 color = Color.InterpolateBetween(color,
                     _prototypeManager.Index<ReagentPrototype>(standout).SubstanceColor, interpolateValue);
             }
+            // Stories from here
             foreach (var transparent in _transparentReagents)
             {
                 var quantity = solution.GetTotalPrototypeQuantity(transparent);
@@ -393,6 +394,7 @@ public sealed partial class PuddleSystem : SharedPuddleSystem
                 color = Color.InterpolateBetween(color,
                     _prototypeManager.Index<ReagentPrototype>(transparent).SubstanceColor.WithAlpha(0.15f), interpolateValue);
             }
+            // to here/.
         }
 
         _appearance.SetData(uid, PuddleVisuals.CurrentVolume, volume.Float(), appearance);
