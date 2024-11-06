@@ -59,7 +59,16 @@
         scaleByQuantity: true
         damage:
           types:
-            Structural: 5 # Stories - end
+            Structural: 5
+      - !type:PopupMessage
+        visualType: LargeCaution
+        messages:
+        - "thermite-effect-burns-gap"
+        - "thermite-effect-corrodes"
+        - "thermite-effect-burns-through"
+        - "thermite-effect-burns-hole"
+        - "thermite-effect-ignites"
+        type: Pvs # Stories - end
 
 - type: entity
   parent: BaseWall
