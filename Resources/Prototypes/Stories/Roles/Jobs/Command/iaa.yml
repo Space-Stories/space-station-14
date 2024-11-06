@@ -10,8 +10,6 @@
   - !type:DepartmentTimeRequirement
     department: Security
     time: 36000
-  - !type:AgeRequirement
-    requiredAge: 21
   startingGear: IAAGear
   icon: "JobIconIAA"
   supervisors: job-supervisors-centcom
@@ -30,17 +28,12 @@
 - type: startingGear
   id: IAAGear
   equipment:
-    shoes: ClothingShoesColorBlack
     id: IAAPDA
     eyes: ClothingEyesGlassesSunglasses
     ears: ClothingHeadsetIAA
-    pocket2: BookSpaceLaw
+    neck: ClothingNeckLawyerbadge
   inhand:
     - BriefcaseBrown
   storage:
     back:
-    - BoxSurvival
-    - Paper
-    - Paper
-    - PenCentcom
     - RubberStampIAA

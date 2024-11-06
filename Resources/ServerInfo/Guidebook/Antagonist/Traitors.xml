@@ -1,11 +1,18 @@
 <Document>
   # Предатели
 
+  - Предатель - это антагонист, нанятый Синдикатом. Они имеют доступ к различным инструментам и оружию Синдиката через [color=#a4885c]Аплинк[/color].
+  - Предатели могут использовать кодовые слова, чтобы идентифицировать себя друг с другом для сотрудничества.
+  - В раунде предателем может стать любой игрок, кроме глав отделов, капитана и сотрудников службы безопасности.
+  - Предатели должны в первую очередь сосредоточиться на том, чтобы успешно выполнить свои задачи к концу раунда.
+
+  ## Аплинк
   <Box>
     [color=#999999][italic]"WHISKEY. ECHO. WHISKEY. LIMA. ALPHA. DELTA. АГЕНТ, ВЫ АКТИВИРОВАНЫ."[/italic][/color]
   </Box>
+  - [color=#a4885c]Аплинк[/color] - самый важный инструмент Предателя, так как с его помощью можно покупать инструменты и оружие за [color=#a4885c]телекристаллы[/color] (ТК).
   <Box>
-    <GuideEntityEmbed Entity="PosterContrabandSyndicateRecruitment" Caption=""/>
+    <GuideEntityEmbed Entity="Telecrystal" Caption="Телекристаллы"/>
   </Box>
   Предатели - это антагонисты, нанятые [color=#ff0000]Синдикатом.[/color] Вы - скрытый агент, который имеет доступ к различным инструментам и оружию через свой [bold]аплинк.[/bold]
   Также вы получаете кодовые слова для идентификации других агентов, а слаженная команда предателей может привести к [italic]жестоким результатам.[/italic]
@@ -23,13 +30,30 @@
   Нажав [color=yellow][bold][keybind="OpenCharacterMenu"][/bold][/color], вы увидите свой персональный код для аплинка. [bold]Введя код в мелодию звонка на своем КПК, вы откроете доступ аплинку.[/bold]
   Нажав [color=yellow][bold][keybind="OpenCharacterMenu"][/bold][/color], вы также сможете просмотреть свои цели и кодовые слова.
 
+  If you do not have a PDA when you are activated, an [color=cyan]uplink implant[/color] is provided [bold]for the full [color=red]TC[/color] price of the implant.[/bold]
+  It can be accessed from your hotbar.
   <Box>
     <GuideEntityEmbed Entity="PassengerPDA" Caption="КПК"/>
     <GuideEntityEmbed Entity="Telecrystal" Caption="Телекристаллы"/>
+    <GuideEntityEmbed Entity="BaseUplinkRadio" Caption="Имплант аплинка"/>
   </Box>
 
   [bold]Обязательно закрывайте аплинк, чтобы никто другой его не увидел.[/bold] Вы же не хотите, чтобы в руки [color=#cb0000]Службы Безопасности[/color] попал этот первоклассный контрабандный товар!
 
+  Импланты аплинка обычно недоступны другим людям, поэтому они не имеют каких-либо мер безопасности. Однако их можно удалить с помощью пустого имплантера.
+
+  - Став предателем, вы получите список задач, начиная от побега живым, кражи чего-то, и заканчивая убийством. Использование [color=#a4885c]Аплинка[/color] поможет вам справиться с большинством из этих задач.
+
+  ## Список возможных целей
+
+  - Убить или не дать покинуть станцию случайному не предателю.
+  - Убить или не дать покинуть станцию случайному предателю.
+  - Убить или не дать покинуть станцию случайному главе отдела.
+  - Не дать умереть случайно выбранному предателю.
+  - Сбежать на эвакуационном шаттле живым и без наручников.
+  - Помогите случайно выбранному предателю завершить 2/3 его целей.
+  - Умереть славной смертью.
+  - Украсть у Капитана [color=#a4885c]ID карту[/color].
   <Box>
     <GuideEntityEmbed Entity="WeaponPistolCobra" Caption="Вооружение"/>
     <GuideEntityEmbed Entity="MagazineBoxLightRifle" State="icon" Caption="Боеприпасы"/>
@@ -37,6 +61,7 @@
     <GuideEntityEmbed Entity="ClothingOuterHardsuitSyndie" Caption="Экипировка"/>
     <GuideEntityEmbed Entity="Stimpack" Caption="Химикаты"/>
   </Box>
+  - Украсть у Капитана [color=#a4885c]Антикварный Лазерный Пистолет[/color].
   <Box>
     <GuideEntityEmbed Entity="ChameleonProjector" Caption="Обман"/>
     <GuideEntityEmbed Entity="Emag" Caption="Саботаж"/>

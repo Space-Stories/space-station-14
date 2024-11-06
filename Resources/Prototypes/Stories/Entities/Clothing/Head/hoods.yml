@@ -2,7 +2,7 @@
   parent: ClothingHeadBase
   id: ClothingHeadHatHoodJedihood
   name: капюшон джедая
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: Достаточно крут, чтобы вы его носили.
   components:
   - type: HideLayerClothing
@@ -23,7 +23,7 @@
   parent: ClothingHeadBase
   id: ClothingHeadHatHoodSith
   name: капюшон инквизитора
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: Какой же вы злодей без крутого капюшона?
   components:
   - type: HideLayerClothing
@@ -33,8 +33,8 @@
     - HeadTop
     - HeadSide
   - type: TemperatureProtection
-    coolingCoefficient: 0.005
     heatingCoefficient: 0.005
+    coolingCoefficient: 0.005
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000
@@ -57,7 +57,7 @@
   parent: ClothingHeadBase
   id: ClothingHeadHatHoodKylo
   name: капюшон кайло рена
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   description: Какой же вы злодей без крутого капюшона?
   components:
   - type: HideLayerClothing
@@ -67,8 +67,8 @@
     - HeadTop
     - HeadSide
   - type: TemperatureProtection
-    coolingCoefficient: 0.005
     heatingCoefficient: 0.005
+    coolingCoefficient: 0.005
   - type: PressureProtection
     highPressureMultiplier: 0.08
     lowPressureMultiplier: 1000

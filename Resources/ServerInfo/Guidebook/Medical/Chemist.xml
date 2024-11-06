@@ -6,19 +6,8 @@
 
   ## Оборудование:
 
-  <Box>
-    <GuideEntityEmbed Entity="ChemDispenser"/>
-    <GuideEntityEmbed Entity="ChemBag"/>
-    <GuideEntityEmbed Entity="KitchenReagentGrinder"/>
-    <GuideEntityEmbed Entity="ChemMaster"/>
-  </Box>
-  <Box>
-    <GuideEntityEmbed Entity="LargeBeaker"/>
-    <GuideEntityEmbed Entity="ChemistryEmptyBottle01"/>
-    <GuideEntityEmbed Entity="HandLabeler"/>
-    <GuideEntityEmbed Entity="Syringe"/>
-    <GuideEntityEmbed Entity="PillCanister"/>
-  </Box>
+## Основы:
+На самом деле весь процесс изготовления предельно прост, нужно лишь знать чего ожидать. Внизу для вас расписан простой, пошаговый процесс.
 
   ## Основы:
   На самом деле весь процесс изготовления предельно прост, нужно лишь знать чего ожидать. Внизу для вас расписан простой, пошаговый процесс.

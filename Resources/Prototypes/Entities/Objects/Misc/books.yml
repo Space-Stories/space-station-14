@@ -230,7 +230,8 @@
   - type: GuideHelp
     guides:
     - Security
-    - Antagonists
+    # - Antagonists # Stories
+    - SpaceLaw # Stories
 
 - type: entity
   id: BookHowToKeepStationClean

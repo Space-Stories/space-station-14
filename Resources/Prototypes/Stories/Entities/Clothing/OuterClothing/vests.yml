@@ -8,8 +8,8 @@
       tags:
         - ForceRecallEquipment
     - type: TemperatureProtection
-      coolingCoefficient: 0.001
-      heatingCoefficient: 0.001
+      heatingCoefficient: 0.005
+      coolingCoefficient: 0.005
     - type: Sprite
       sprite: Stories/Clothing/OuterClothing/Vests/jedi_nt.rsi
     - type: Clothing

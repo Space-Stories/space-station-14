@@ -38,6 +38,6 @@
     makeSentient: true
     name: ghost-role-information-spafegg-name
     description: ghost-role-information-spafegg-description
-    rules: ghost-role-information-spafegg-rules
+    rules: ghost-role-information-spaf-rules
     raffle:
       settings: default

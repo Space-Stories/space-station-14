@@ -2,7 +2,7 @@
   id: JediPushBall
   name: base bullet rubber
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Reflective
     reflective:
@@ -28,7 +28,7 @@
   name: disabler bolt
   id: BulletRedPlazma
   parent: BaseBullet
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: Reflective
     reflective:
@@ -68,11 +68,10 @@
         Heat: 35
     soundHit:
       path: /Audio/Effects/lightburn.ogg
-    soundForce: true
 
 - type: entity
   id: BulletImpactEffectRedPlazma
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
     - type: TimedDespawn
       lifetime: 0.2
