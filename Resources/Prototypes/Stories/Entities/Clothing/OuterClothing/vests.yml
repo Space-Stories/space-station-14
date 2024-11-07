@@ -44,13 +44,11 @@
       sprite: Stories/Clothing/OuterClothing/Vests/exe_armor.rsi
 
 - type: entity
-  parent: [ClothingOuterArmorBasic, BaseSyndicateContraband]
+  parent: ClothingOuterArmorBasic
   id: ClothingOuterVestSith
   name: бронежилет инквизитора
   description: Грозный бронежилет, обеспечивающий высокую защиту от механических повреждений.
   components:
-  - type: Contraband
-    severity: Syndicate
   - type: ExplosionResistance
     damageCoefficient: 0.2
   - type: Armor
