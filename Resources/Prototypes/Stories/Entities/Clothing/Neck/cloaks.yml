@@ -2,7 +2,7 @@
   parent: ClothingNeckBase
   id: ClothingNeckCloakSith
   name: плащ инквизитора
-  description: Невероятное произведение искусства, объединяющее в себе прочность и легкость. Заряжен неведомой энергией.
+  description: Плащ оформленный как невероятное произведение искусства. Заряжен неведомой энергией.
   components:
   - type: TemperatureProtection
     heatingCoefficient: 0.005
@@ -15,14 +15,9 @@
     radius: 1.5
     energy: 0.45
     softness: 3
-  - type: ExplosionResistance
-    damageCoefficient: 0.2
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.6
-        Slash: 0.6
-        Piercing: 0.3
         Heat: 0.4
         Radiation: 0.25
         Caustic: 0.4

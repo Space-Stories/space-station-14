@@ -6,6 +6,7 @@
     neck: ClothingNeckCloakSith
     eyes: ClothingEyesHudSyndicate
     gloves: ClothingHandsGlovesSith
+    outerClothing: ClothingOuterVestSith
     shoes: ClothingShoesSith
     id: AgentIDCard
     back: JetpackBlackFilled
