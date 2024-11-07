@@ -44,7 +44,7 @@
       sprite: Stories/Clothing/OuterClothing/Vests/exe_armor.rsi
 
 - type: entity
-  parent: ClothingOuterArmorBasic
+  parent: [ClothingOuterStorageBase, BaseSyndicateContraband]
   id: ClothingOuterVestSith
   name: бронежилет инквизитора
   description: Грозный бронежилет, перенесёт даже ядерный взрыв.
