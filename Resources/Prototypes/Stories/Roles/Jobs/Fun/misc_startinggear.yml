@@ -22,6 +22,7 @@
     mask: ClothingMaskGasSyndicate
     neck: ClothingNeckCloakKylo
     gloves: ClothingHandsGlovesCombat
+    outerClothing: ClothingOuterVestSith
     shoes: ClothingShoesSith
     id: AgentIDCard
     back: JetpackBlackFilled

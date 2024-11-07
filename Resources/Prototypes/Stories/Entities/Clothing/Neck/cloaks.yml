@@ -39,7 +39,7 @@
   parent: ClothingNeckBase
   id: ClothingNeckCloakKylo
   name: плащ кайло рена
-  description: Невероятное произведение искусства, объединяющее в себе прочность и легкость.
+  description: Тёмный плащ, поглощает огненный урон и защищает от космических невзгод.
   components:
   - type: TemperatureProtection
     heatingCoefficient: 0.005
@@ -47,14 +47,9 @@
   - type: PressureProtection
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
-  - type: ExplosionResistance
-    damageCoefficient: 0.2
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.6
-        Slash: 0.6
-        Piercing: 0.3
         Heat: 0.4
         Radiation: 0.25
         Caustic: 0.4
