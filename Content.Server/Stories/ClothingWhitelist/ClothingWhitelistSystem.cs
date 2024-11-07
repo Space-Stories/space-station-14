@@ -1,12 +1,13 @@
-using Content.Shared.Popups;
-using Content.Shared.Inventory.Events;
-using Content.Shared.Explosion.Components;
-using Content.Shared.Emag.Systems;
-using Content.Shared.NPC.Prototypes;
-using Content.Shared.NPC.Components;
-using Content.Shared.NPC.Systems;
-using Content.Shared.Whitelist;
 using Content.Server.Explosion.EntitySystems;
+using Content.Server.Forensics;
+using Content.Shared.Emag.Systems;
+using Content.Shared.Explosion.Components;
+using Content.Shared.Inventory.Events;
+using Content.Shared.NPC.Components;
+using Content.Shared.NPC.Prototypes;
+using Content.Shared.NPC.Systems;
+using Content.Shared.Popups;
+using Content.Shared.Whitelist;
 using System.Linq;
 
 namespace Content.Server.Stories.ClothingWhitelist;
@@ -28,6 +29,8 @@ public sealed class ClothingWhitelistSystem : EntitySystem
 
     private void OnEquipped(EntityUid uid, ClothingWhitelistComponent comp, GotEquippedEvent args)
     {
+        if (!HasComp<DnaComponent>(args.Equipee)) return;
+
         if (_whitelistSystem.IsBlacklistFailOrNull(comp.Blacklist, args.Equipee) && _whitelistSystem.IsWhitelistPass(comp.Whitelist, args.Equipee)) return;
 
         if (TryComp<NpcFactionMemberComponent>(args.Equipee, out var npc))
