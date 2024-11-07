@@ -2,7 +2,7 @@
   parent: ClothingNeckBase
   id: ClothingNeckCloakSith
   name: плащ инквизитора
-  description: Плащ оформленный как невероятное произведение искусства. Заряжен неведомой энергией.
+  description: Невероятное произведение искусства, защищающее от космических невзгод. Заряжен неведомой энергией.
   components:
   - type: TemperatureProtection
     heatingCoefficient: 0.005

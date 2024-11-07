@@ -47,7 +47,7 @@
   parent: [ClothingOuterStorageBase, BaseSyndicateContraband]
   id: ClothingOuterVestSith
   name: бронежилет инквизитора
-  description: Грозный бронежилет, перенесёт даже ядерный взрыв.
+  description: Грозный бронежилет, обеспечивающий высокую защиту от механических повреждений.
   components:
   - type: ExplosionResistance
     damageCoefficient: 0.2
