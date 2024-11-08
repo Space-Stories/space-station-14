@@ -473,7 +473,7 @@ doc-text-printer-order-recognizing-rentience-creature =
     { "[" }bold]                                             ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾[/bold]
     { "[" }bold]Внешний вид:[/bold][italic][ОПИСАНИЕ][/italic]
     { "[" }bold]                               ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾[/bold]
-    { "[" }bold]Признание пассажиром станции: [ [ДАНЕТ] ][/bold]
+    { "[" }bold]Признание ассистентом станции: [ [ДАНЕТ] ][/bold]
 doc-text-printer-order-medical-intervention =
     { "[" }head = 3]              РАСПОРЯЖЕНИЕ О МЕДИЦИНСКОМ
     { "[" }bold]                               ВМЕШАТЕЛЬСТВЕ[/bold][/head]
