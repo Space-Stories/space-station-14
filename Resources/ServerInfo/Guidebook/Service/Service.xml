@@ -3,7 +3,7 @@
   [color=#9fed58]Сервис[/color] поддерживает чистоту, эффективность и порядок на станции, чтобы все остальные отделы могли лучше выполнять свои задачи и поддерживать свой персонал довольным. Они также занимаются большей частью документации на станции.
 
   ## Персонал
-  Персонал [color=#9fed58]Сервиса[/color] состоит из Работников сервиса, Шеф-Поваров, Ботаников, Барменов, Уборщиков, Священников, Клоунов, Мимов, Музыкантов, Библиотекарей и Пассажиров. Отделом [color=#9fed58]Сервиса[/color] руководит Глава Персонала.
+  Персонал [color=#9fed58]Сервиса[/color] состоит из Работников сервиса, Шеф-Поваров, Ботаников, Барменов, Уборщиков, Священников, Клоунов, Мимов, Музыкантов, Библиотекарей и Ассистентов. Отделом [color=#9fed58]Сервиса[/color] руководит Глава Персонала.
 
   <Box>
     <GuideEntityEmbed Entity="ToyFigurineChef" Caption="Шеф-Повар"/>
@@ -19,7 +19,7 @@
   </Box>
   <Box>
     <GuideEntityEmbed Entity="ToyFigurineLibrarian" Caption="Библиотекарь"/>
-    <GuideEntityEmbed Entity="ToyFigurinePassenger" Caption="Пассажир"/>
+    <GuideEntityEmbed Entity="ToyFigurinePassenger" Caption="Ассистент"/>
     <GuideEntityEmbed Entity="ToyFigurineHeadOfPersonnel" Caption="ГП"/>
   </Box>
 
