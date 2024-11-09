@@ -10607,6 +10607,20 @@ entities:
     - type: Transform
       pos: 2.5,-36.5
       parent: 2
+- proto: ArtistCircuitBoard
+  entities:
+  - uid: 17425
+    components:
+    - type: Transform
+      pos: 22.5,-309.5
+      parent: 2
+- proto: AsimovCircuitBoard
+  entities:
+  - uid: 17421
+    components:
+    - type: Transform
+      pos: 22.5,-309.5
+      parent: 2
 - proto: AsteroidRock
   entities:
   - uid: 528
@@ -11433,14 +11447,6 @@ entities:
     components:
     - type: Transform
       pos: 1.5,-60.5
-      parent: 2
-- proto: BaseComputer
-  entities:
-  - uid: 655
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: 21.5,-305.5
       parent: 2
 - proto: BaseSecretDoorAssembly
   entities:
@@ -37050,6 +37056,13 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -9.5,-134.5
       parent: 2
+- proto: CommandmentCircuitBoard
+  entities:
+  - uid: 17417
+    components:
+    - type: Transform
+      pos: 22.5,-309.5
+      parent: 2
 - proto: ComputerAlert
   entities:
   - uid: 5528
@@ -37225,11 +37238,6 @@ entities:
       rot: 3.141592653589793 rad
       pos: 2.5,-252.5
       parent: 2
-  - uid: 5552
-    components:
-    - type: Transform
-      pos: 23.5,-309.5
-      parent: 2
 - proto: ComputerRadar
   entities:
   - uid: 5553
@@ -37279,13 +37287,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 8.5,-279.5
-      parent: 2
-- proto: ComputerShuttleSalvage
-  entities:
-  - uid: 5560
-    components:
-    - type: Transform
-      pos: -5.5,-270.5
       parent: 2
 - proto: ComputerSolarControl
   entities:
@@ -37479,6 +37480,13 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 8.5,-277.5
+      parent: 2
+- proto: CorporateCircuitBoard
+  entities:
+  - uid: 17420
+    components:
+    - type: Transform
+      pos: 22.5,-305.5
       parent: 2
 - proto: CowToolboxFilled
   entities:
@@ -46728,6 +46736,13 @@ entities:
     components:
     - type: Transform
       pos: 4.0908213,-7.3229785
+      parent: 2
+- proto: DungeonMasterCircuitBoard
+  entities:
+  - uid: 17419
+    components:
+    - type: Transform
+      pos: 21.5,-309.5
       parent: 2
 - proto: EggSpider
   entities:
@@ -76306,7 +76321,7 @@ entities:
       pos: 8.5,-176.5
       parent: 2
     - type: Door
-      secondsUntilStateChange: -147491.25
+      secondsUntilStateChange: -147754.02
       state: Closing
   - uid: 11227
     components:
@@ -76929,6 +76944,13 @@ entities:
     components:
     - type: Transform
       pos: -13.643399,-246.28522
+      parent: 2
+- proto: LiveLetLiveCircuitBoard
+  entities:
+  - uid: 17418
+    components:
+    - type: Transform
+      pos: 23.5,-305.5
       parent: 2
 - proto: LockableButtonAtmospherics
   entities:
@@ -78678,6 +78700,13 @@ entities:
       rot: 3.141592653589793 rad
       pos: 2.5,-92.5
       parent: 2
+- proto: NTDefaultCircuitBoard
+  entities:
+  - uid: 13466
+    components:
+    - type: Transform
+      pos: 21.5,-309.5
+      parent: 2
 - proto: NuclearBomb
   entities:
   - uid: 11594
@@ -78692,6 +78721,13 @@ entities:
     components:
     - type: Transform
       pos: 5.5,-66.5
+      parent: 2
+- proto: NutimovCircuitBoard
+  entities:
+  - uid: 17422
+    components:
+    - type: Transform
+      pos: 23.5,-305.5
       parent: 2
 - proto: OperatingTable
   entities:
@@ -78733,6 +78769,13 @@ entities:
     components:
     - type: Transform
       pos: -1.5,-270.5
+      parent: 2
+- proto: OverlordCircuitBoard
+  entities:
+  - uid: 13890
+    components:
+    - type: Transform
+      pos: 22.5,-305.5
       parent: 2
 - proto: OxygenCanister
   entities:
@@ -78784,6 +78827,13 @@ entities:
     components:
     - type: Transform
       pos: 13.5,-59.5
+      parent: 2
+- proto: PaladinCircuitBoard
+  entities:
+  - uid: 17423
+    components:
+    - type: Transform
+      pos: 21.5,-309.5
       parent: 2
 - proto: Paper
   entities:
@@ -79089,6 +79139,13 @@ entities:
     components:
     - type: Transform
       pos: 4.5,-217.5
+      parent: 2
+- proto: PlayerStationAi
+  entities:
+  - uid: 11482
+    components:
+    - type: Transform
+      pos: 29.5,-307.5
       parent: 2
 - proto: PlushieArachind
   entities:
@@ -79441,6 +79498,13 @@ entities:
     components:
     - type: Transform
       pos: -7.5,-111.5
+      parent: 2
+- proto: PosterLegitStateLaws
+  entities:
+  - uid: 5560
+    components:
+    - type: Transform
+      pos: 22.5,-307.5
       parent: 2
 - proto: PottedPlant16
   entities:
@@ -86356,6 +86420,13 @@ entities:
       rot: -1.5707963267948966 rad
       pos: -7.3536196,-255.64711
       parent: 2
+- proto: RobocopCircuitBoard
+  entities:
+  - uid: 17424
+    components:
+    - type: Transform
+      pos: 22.5,-305.5
+      parent: 2
 - proto: SadTromboneImplanter
   entities:
   - uid: 12908
@@ -89535,6 +89606,26 @@ entities:
     - type: Transform
       pos: 8.5,-178.5
       parent: 2
+- proto: StationAiUploadComputer
+  entities:
+  - uid: 655
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 21.5,-305.5
+      parent: 2
+  - uid: 5552
+    components:
+    - type: Transform
+      pos: 23.5,-309.5
+      parent: 2
+- proto: StationEfficiencyCircuitBoard
+  entities:
+  - uid: 17426
+    components:
+    - type: Transform
+      pos: 23.5,-305.5
+      parent: 2
 - proto: StationMap
   entities:
   - uid: 13410
@@ -89899,13 +89990,6 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 2.5,-229.5
-      parent: 2
-- proto: Sugarcane
-  entities:
-  - uid: 13466
-    components:
-    - type: Transform
-      pos: 29.942026,-307.55215
       parent: 2
 - proto: SuitStorageAtmos
   entities:
@@ -92538,13 +92622,6 @@ entities:
     components:
     - type: Transform
       pos: 7.48008,-244.32011
-      parent: 2
-- proto: ToyAi
-  entities:
-  - uid: 13890
-    components:
-    - type: Transform
-      pos: 29.472055,-307.37292
       parent: 2
 - proto: ToyAmongPequeno
   entities:
@@ -107589,6 +107666,41 @@ entities:
       rot: 1.5707963267948966 rad
       pos: 2.5,-166.5
       parent: 2
+- proto: WindoorSecureCommandLocked
+  entities:
+  - uid: 17427
+    components:
+    - type: Transform
+      pos: 23.5,-309.5
+      parent: 2
+  - uid: 17428
+    components:
+    - type: Transform
+      pos: 22.5,-309.5
+      parent: 2
+  - uid: 17429
+    components:
+    - type: Transform
+      pos: 21.5,-309.5
+      parent: 2
+  - uid: 17430
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 21.5,-305.5
+      parent: 2
+  - uid: 17431
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 22.5,-305.5
+      parent: 2
+  - uid: 17432
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 23.5,-305.5
+      parent: 2
 - proto: WindoorSecureEngineeringLocked
   entities:
   - uid: 16506
@@ -108267,6 +108379,54 @@ entities:
     - type: Transform
       rot: -1.5707963267948966 rad
       pos: 6.5,-358.5
+      parent: 2
+  - uid: 17433
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 23.5,-305.5
+      parent: 2
+  - uid: 17434
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 21.5,-305.5
+      parent: 2
+  - uid: 17435
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 21.5,-309.5
+      parent: 2
+  - uid: 17436
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 23.5,-309.5
+      parent: 2
+  - uid: 17437
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 22.5,-309.5
+      parent: 2
+  - uid: 17438
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 21.5,-309.5
+      parent: 2
+  - uid: 17439
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 22.5,-305.5
+      parent: 2
+  - uid: 17440
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 21.5,-305.5
       parent: 2
 - proto: WindowReinforcedDirectional
   entities:
