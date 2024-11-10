@@ -137,6 +137,7 @@
   id: MobAghostGear
   equipment:
     back: ClothingBackpackSatchelHolding
+    eyes: ClothingEyesHudMultiversal #Stories
     id: AdminPDA
   storage:
     back:
