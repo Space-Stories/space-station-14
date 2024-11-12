@@ -150,6 +150,8 @@
         Base: spaf
       Dead:
         Base: dead
+  - type: TTS
+    voice: ziggs
 
 - type: entity
   name: маленький радужный слизняк
@@ -193,4 +195,5 @@
     damage:
       types:
         Slash: 5
-
+  - type: TTS
+    voice: charlotte

@@ -59,6 +59,8 @@
       - Xenoarchaeology
     - type: StealTarget
       stealGroup: XenoArtifact
+    - type: TTS # Stories-TTS
+      voice: threedog_radio
 
 - type: entity
   parent: BaseXenoArtifact
