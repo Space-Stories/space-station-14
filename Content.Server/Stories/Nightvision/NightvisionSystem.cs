@@ -1,9 +1,9 @@
 using Content.Shared.Actions;
-using Content.Shared.GameTicking;
+using Content.Shared.Inventory;
 using Content.Shared.Inventory.Events;
+using Content.Shared.Stories.Nightvision;
 using Robust.Shared.Player;
 using Robust.Shared.Timing;
-using Content.Shared.Stories.Nightvision;
 
 namespace Content.Server.Stories.Nightvision;
 
@@ -21,16 +21,24 @@ public sealed class NightvisionSystem : EntitySystem
     }
     private void OnUnequipped(EntityUid uid, NightvisionClothingComponent component, GotUnequippedEvent args)
     {
-        if (args.Slot == "eyes")
-            RemCompDeferred<NightvisionComponent>(args.Equipee);
+        if (TryComp<NightvisionComponent>(args.Equipee, out var comp) && comp.Sources != null)
+        {
+           comp.Sources.Remove(uid);
+            if (comp.Sources.Count == 0)
+                RemCompDeferred<NightvisionComponent>(args.Equipee);
+        }
     }
     private void OnEquipped(EntityUid uid, NightvisionClothingComponent component, GotEquippedEvent args)
     {
         if (_gameTiming.ApplyingState)
             return;
 
-        if (component.Enabled && !HasComp<NightvisionComponent>(args.Equipee) && (args.Slot == "eyes"))
-            AddComp<NightvisionComponent>(args.Equipee);
+        if (!args.SlotFlags.HasFlag(SlotFlags.POCKET) && component.Enabled)
+        {
+            EnsureComp<NightvisionComponent>(args.Equipee, out var comp);
+            if (comp.Sources != null)
+                comp.Sources.Add(uid);
+        }
     }
     private void OnStartUp(EntityUid uid, NightvisionComponent component, ComponentStartup args)
     {

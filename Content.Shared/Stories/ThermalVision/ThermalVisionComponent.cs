@@ -8,8 +8,8 @@ public sealed partial class ThermalVisionComponent : Component
 {
     [ViewVariables(VVAccess.ReadWrite), DataField("enabled"), AutoNetworkedField]
     public bool Enabled { get; set; } = false;
-    [ViewVariables(VVAccess.ReadWrite), DataField("innate"), AutoNetworkedField]
-    public bool Innate { get; set; } = false;
+    [DataField("sources")]
+    public List<EntityUid>? Sources = new List<EntityUid>();
     [DataField]
     public string ToggleAction = "ToggleThermalVisionAction";
     [DataField, AutoNetworkedField]

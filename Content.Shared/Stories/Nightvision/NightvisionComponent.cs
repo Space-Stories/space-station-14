@@ -11,6 +11,8 @@ public sealed partial class NightvisionComponent : Component
 {
     [ViewVariables(VVAccess.ReadWrite), DataField("enabled"), AutoNetworkedField]
     public bool Enabled { get; set; } = false;
+    [DataField("sources")]
+    public List<EntityUid>? Sources = new List<EntityUid>();
     [DataField]
     public string ToggleAction = "ToggleNightvisionAction";
     [DataField, AutoNetworkedField]
