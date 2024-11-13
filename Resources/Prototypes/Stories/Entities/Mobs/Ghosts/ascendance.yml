@@ -8,7 +8,7 @@
   components:
   - type: ZombieImmune
   - type: ThermalVision
-    innate: true
+    sources: null
   - type: MobState
     allowedStates:
     - Alive

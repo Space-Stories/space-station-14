@@ -1,5 +1,4 @@
 using Content.Shared.Actions;
-using Content.Shared.Eye.Blinding.Systems;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 
@@ -11,6 +10,8 @@ public sealed partial class NightvisionComponent : Component
 {
     [ViewVariables(VVAccess.ReadWrite), DataField("enabled"), AutoNetworkedField]
     public bool Enabled { get; set; } = false;
+    [DataField("sources")]
+    public List<EntityUid>? Sources = new List<EntityUid>();
     [DataField]
     public string ToggleAction = "ToggleNightvisionAction";
     [DataField, AutoNetworkedField]
@@ -20,10 +21,8 @@ public sealed partial class NightvisionComponent : Component
 }
 
 [RegisterComponent]
-[NetworkedComponent]
 public sealed partial class NightvisionClothingComponent : Component
 {
-    [ViewVariables(VVAccess.ReadWrite), DataField("enabled")]
-    public bool Enabled { get; set; } = true;
 }
+
 public sealed partial class ToggleNightvisionEvent : InstantActionEvent { }

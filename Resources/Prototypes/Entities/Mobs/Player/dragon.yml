@@ -154,6 +154,7 @@
     needsHands: false
   - type: Nightvision # Stories - start
     toggleOnSound: null
+    sources: null
   - type: TTS
     voice: ranrak # Stories - end
 
