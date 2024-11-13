@@ -13,7 +13,7 @@
     timeModifier: 2
   - type: ZombieImmune
   - type: ThermalVision
-    source: null
+    sources: null
   - type: ComplexInteraction
   - type: Destructible
     thresholds:
