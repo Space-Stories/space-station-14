@@ -33,7 +33,6 @@
   - type: ActionGrant
     actions:
     - ActionJumpToCore
-    - ActionShowJobIcons
     - ActionSurvCameraLights
     - ActionAIViewLaws
   - type: UserInterface
@@ -72,6 +71,7 @@
     color: "#2ed2fd"
   - type: TTS # Stories-TTS
     voice: glados
+  - type: ShowJobIcons
 
 - type: entity
   id: AiHeldIntellicard
@@ -395,6 +395,9 @@
     drawFov: false
   - type: Examiner
   - type: InputMover
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Borg
   - type: Tag
     tags:
     - HideContextMenu
