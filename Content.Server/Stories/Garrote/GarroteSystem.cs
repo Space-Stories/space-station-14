@@ -1,4 +1,5 @@
 using Content.Server.Body.Components;
+using Content.Server.Body.Systems;
 using Content.Server.Chat.Systems;
 using Content.Server.Popups;
 using Content.Shared.ActionBlocker;
@@ -28,6 +29,7 @@ public sealed class GarroteSystem : EntitySystem
     [Dependency] private readonly ChatSystem _chatSystem = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly MobThresholdSystem _mobThresholdSystem = default!;
+    [Dependency] private readonly RespiratorSystem _respirator = default!;
     [Dependency] private readonly PopupSystem _popupSystem = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
@@ -45,8 +47,8 @@ public sealed class GarroteSystem : EntitySystem
         || args.User == args.Target
         || !args.CanReach
         || !HasComp<BodyComponent>(args.Target)
-        || !TryComp<DamageableComponent>(args.Target, out var damageable)
-        || !TryComp<MobThresholdsComponent>(args.Target, out var thresholds)) return;
+        || !HasComp<DamageableComponent>(args.Target)
+        || !TryComp<MobStateComponent>(args.Target, out var mobstate)) return;
 
         if (TryComp<WieldableComponent>(uid, out var wieldable) && !wieldable.Wielded)
         {
@@ -55,7 +57,7 @@ public sealed class GarroteSystem : EntitySystem
             return;
         }
 
-        if (!DoesBreathe(args.Target.Value))
+        if (!(mobstate.CurrentState == MobState.Alive && TryComp<RespiratorComponent>(args.Target, out var respirator)))
         {
             var message = Loc.GetString("garrote-component-doesnt-breath", ("target", args.Target));
             _popupSystem.PopupEntity(message, uid, args.User);
@@ -75,7 +77,7 @@ public sealed class GarroteSystem : EntitySystem
         var messageothers = Loc.GetString("garrote-component-started-others", ("user", args.User), ("target", args.Target));
         _popupSystem.PopupEntity(messageothers, args.User, Filter.PvsExcept(args.Target.Value), true, PopupType.MediumCaution);
 
-        var doAfterEventArgs = new DoAfterArgs(EntityManager, args.User, comp.DoAfterTime, new GarroteDoneEvent(), uid)
+        var doAfterEventArgs = new DoAfterArgs(EntityManager, args.User, comp.DoAfterTime, new GarroteDoneEvent(), uid, target: args.Target)
         {
             BreakOnMove = true,
             BreakOnDamage = true,
@@ -99,6 +101,9 @@ public sealed class GarroteSystem : EntitySystem
             AddComp<MutedComponent>(args.Target.Value);
         }
 
+        var saturationDelta = respirator.MinSaturation - respirator.Saturation;
+        _respirator.UpdateSaturation(args.Target.Value, saturationDelta, respirator);
+
         comp.Busy = true;
     }
 
@@ -106,16 +111,15 @@ public sealed class GarroteSystem : EntitySystem
     {
         if (args.Target == null
         || !TryComp<DamageableComponent>(args.Target, out var damageable)
-        || !TryComp<MobThresholdsComponent>(args.Target, out var thresholds))
+        || !TryComp<MobThresholdsComponent>(args.Target, out var thresholds)
+        || !TryComp<RespiratorComponent>(args.Target, out var respirator)
+        || !TryComp<MobStateComponent>(args.Target, out var mobstate))
         {
             comp.RemoveStun = false;
             comp.RemoveMute = false;
             comp.Busy = false;
             return;
         }
-
-        if (!DoesBreathe(args.Target.Value) || args.Cancelled)
-            args.Handled = true;
 
         if (comp.RemoveStun)
         {
@@ -131,22 +135,17 @@ public sealed class GarroteSystem : EntitySystem
 
         comp.Busy = false;
 
-        if (args.Handled) return;
+        if (args.Cancelled || mobstate.CurrentState != MobState.Alive) return;
 
-        var damage = _mobThresholdSystem.GetThresholdForState(args.Target.Value, MobState.Critical, thresholds) - damageable.TotalDamage + 5;
+        var damage = _mobThresholdSystem.GetThresholdForState(args.Target.Value, MobState.Critical, thresholds) - damageable.TotalDamage;
         DamageSpecifier damageDealt = new(_prototypeManager.Index<DamageTypePrototype>("Asphyxiation"), damage);
         _damageable.TryChangeDamage(args.Target, damageDealt, false, origin: args.User);
 
+        var saturationDelta = respirator.MinSaturation - respirator.Saturation;
+        _respirator.UpdateSaturation(args.Target.Value, saturationDelta, respirator);
+
         var message = Loc.GetString("garrote-component-complete", ("user", args.User), ("target", args.Target));
         _popupSystem.PopupEntity(message, args.User, PopupType.LargeCaution);
-
-        args.Handled = true;
-    }
-
-    private bool DoesBreathe(EntityUid target)
-    {
-        if (!TryComp<MobStateComponent>(target, out var mobstate)) return false;
-        return (HasComp<RespiratorComponent>(target) && mobstate.CurrentState == MobState.Alive);
     }
 
     private bool IsBehind(EntityUid user, EntityUid target, float minAngleFromFace)
