@@ -7,7 +7,7 @@ public sealed partial class GarroteComponent : Component
     /// For how long a DoAfter lasts
     /// </summary>
     [DataField("doAfterTime")]
-    public TimeSpan DoAfterTime = TimeSpan.FromSeconds(7f);
+    public TimeSpan DoAfterTime = TimeSpan.FromSeconds(5f);
 
     /// <summary>
     /// The mininum angle in degrees from face to back to use
@@ -20,6 +20,12 @@ public sealed partial class GarroteComponent : Component
     /// </summary>
     [DataField]
     public bool Busy = false;
+
+    /// <summary>
+    /// Whether the stun should be removed on DoAfter cancel, so we don't unstun stunned entities
+    /// </summary>
+    [DataField]
+    public bool RemoveStun = false;
 
     /// <summary>
     /// Whether the mute should be removed on DoAfter cancel, so we don't unmute mimes and alike
