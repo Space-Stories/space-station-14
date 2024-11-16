@@ -1,7 +1,7 @@
 - type: entity
   parent: BaseItem
   id: Garrote
-  name: Удавка
+  name: удавка
   description: Приспособление, используемое не иначе, как для скрытных убийств.
   components:
   - type: Sprite

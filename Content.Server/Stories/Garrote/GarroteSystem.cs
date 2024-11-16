@@ -57,7 +57,7 @@ public sealed class GarroteSystem : EntitySystem
             return;
         }
 
-        if (!(mobstate.CurrentState == MobState.Alive && TryComp<RespiratorComponent>(args.Target, out var respirator)))
+        if (!(mobstate.CurrentState == MobState.Alive && HasComp<RespiratorComponent>(args.Target)))
         {
             var message = Loc.GetString("garrote-component-doesnt-breath", ("target", args.Target));
             _popupSystem.PopupEntity(message, uid, args.User);
@@ -101,9 +101,6 @@ public sealed class GarroteSystem : EntitySystem
             AddComp<MutedComponent>(args.Target.Value);
         }
 
-        var saturationDelta = respirator.MinSaturation - respirator.Saturation;
-        _respirator.UpdateSaturation(args.Target.Value, saturationDelta, respirator);
-
         comp.Busy = true;
     }
 
@@ -137,7 +134,9 @@ public sealed class GarroteSystem : EntitySystem
 
         if (args.Cancelled || mobstate.CurrentState != MobState.Alive) return;
 
-        var damage = _mobThresholdSystem.GetThresholdForState(args.Target.Value, MobState.Critical, thresholds) - damageable.TotalDamage;
+        var critthreshold = _mobThresholdSystem.GetThresholdForState(args.Target.Value, MobState.Critical, thresholds);
+        var deadthreshold = _mobThresholdSystem.GetThresholdForState(args.Target.Value, MobState.Dead, thresholds);
+        var damage = critthreshold + 0.1 * (deadthreshold - critthreshold) - damageable.TotalDamage;
         DamageSpecifier damageDealt = new(_prototypeManager.Index<DamageTypePrototype>("Asphyxiation"), damage);
         _damageable.TryChangeDamage(args.Target, damageDealt, false, origin: args.User);
 
