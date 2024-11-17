@@ -2,7 +2,7 @@
   id: HumanHornsShort
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Human, SlimePerson]
+  speciesRestriction: [Human]
   sprites:
   - sprite: Mobs/Customization/horns.rsi
     state: horns_short
@@ -11,7 +11,7 @@
   id: HumanHornsSimple
   bodyPart: HeadTop
   markingCategory: HeadTop
-  speciesRestriction: [Human, SlimePerson]
+  speciesRestriction: [Human]
   sprites:
   - sprite: Mobs/Customization/horns.rsi
     state: horns_simple
