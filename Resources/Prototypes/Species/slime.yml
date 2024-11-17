@@ -17,6 +17,7 @@
     FacialHair: MobSlimeMarkingFollowSkin
     Chest: MobSlimeTorso
     Eyes: MobHumanoidEyes
+    HeadTop: MobSlimeMarkingFollowSkin
     LArm: MobSlimeLArm
     RArm: MobSlimeRArm
     LHand: MobSlimeLHand
@@ -43,6 +44,9 @@
       required: false
     Arms:
       points: 4
+      required: false
+    HeadTop: #stories?
+      points: 1
       required: false
 
 - type: humanoidBaseSprite

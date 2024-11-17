@@ -1,0 +1,43 @@
+- type: marking
+  id: SlimeHornsShort
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [SlimePerson]
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
+  sprites:
+  - sprite: Mobs/Customization/horns.rsi
+    state: horns_short
+
+- type: marking
+  id: SlimeHornsSimple
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [SlimePerson]
+  coloring:
+    default:
+      type:
+        !type:SkinColoring
+  sprites:
+  - sprite: Mobs/Customization/horns.rsi
+    state: horns_simple
+
+- type: marking
+  id: HumanHornsShort
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Human]
+  sprites:
+  - sprite: Mobs/Customization/horns.rsi
+    state: horns_short
+
+- type: marking
+  id: HumanHornsSimple
+  bodyPart: HeadTop
+  markingCategory: HeadTop
+  speciesRestriction: [Human]
+  sprites:
+  - sprite: Mobs/Customization/horns.rsi
+    state: horns_simple
