@@ -4,7 +4,7 @@
   markingCategory: HeadTop
   speciesRestriction: [Human]
   sprites:
-  - sprite: Mobs/Customization/horns.rsi
+  - sprite: Stories/Mobs/Customization/horns.rsi
     state: horns_short
 
 - type: marking
@@ -13,5 +13,5 @@
   markingCategory: HeadTop
   speciesRestriction: [Human]
   sprites:
-  - sprite: Mobs/Customization/horns.rsi
+  - sprite: Stories/Mobs/Customization/horns.rsi
     state: horns_simple
