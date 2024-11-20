@@ -5,6 +5,6 @@ namespace Content.Shared.Stories.Garrote;
 
 [Serializable, NetSerializable]
 
-public sealed partial class GarroteDoneEvent : SimpleDoAfterEvent
+public sealed partial class GarroteDoAfterEvent : SimpleDoAfterEvent
 {
 }

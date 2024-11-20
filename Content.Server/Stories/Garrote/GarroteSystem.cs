@@ -11,9 +11,9 @@ using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Components;
-using Content.Shared.Mobs.Systems;
 using Content.Shared.Popups;
 using Content.Shared.Speech.Muting;
+using Content.Shared.StatusEffect;
 using Content.Shared.Stunnable;
 using Content.Shared.Wieldable.Components;
 using Robust.Shared.Player;
@@ -28,23 +28,23 @@ public sealed class GarroteSystem : EntitySystem
     [Dependency] private readonly DamageableSystem _damageable = default!;
     [Dependency] private readonly ChatSystem _chatSystem = default!;
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
-    [Dependency] private readonly MobThresholdSystem _mobThresholdSystem = default!;
     [Dependency] private readonly RespiratorSystem _respirator = default!;
     [Dependency] private readonly PopupSystem _popupSystem = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
+    [Dependency] private readonly StatusEffectsSystem _statusEffect = default!;
+    [Dependency] private readonly SharedStunSystem _stun = default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
 
     public override void Initialize()
     {
         base.Initialize();
         SubscribeLocalEvent<GarroteComponent, AfterInteractEvent>(OnGarroteAttempt);
-        SubscribeLocalEvent<GarroteComponent, GarroteDoneEvent>(OnGarroteDone);
+        SubscribeLocalEvent<GarroteComponent, GarroteDoAfterEvent>(OnGarroteDoAfter);
     }
 
     private void OnGarroteAttempt(EntityUid uid, GarroteComponent comp, ref AfterInteractEvent args)
     {
-        if (comp.Busy
-        || args.User == args.Target
+        if (args.User == args.Target
         || !args.CanReach
         || !HasComp<BodyComponent>(args.Target)
         || !HasComp<DamageableComponent>(args.Target)
@@ -60,14 +60,14 @@ public sealed class GarroteSystem : EntitySystem
         if (!(mobstate.CurrentState == MobState.Alive && HasComp<RespiratorComponent>(args.Target)))
         {
             var message = Loc.GetString("garrote-component-doesnt-breath", ("target", args.Target));
-            _popupSystem.PopupEntity(message, uid, args.User);
+            _popupSystem.PopupEntity(message, args.Target.Value, args.User);
             return;
         }
 
         if (!IsBehind(args.User, args.Target.Value, comp.MinAngleFromFace) && _actionBlocker.CanInteract(args.Target.Value, null))
         {
             var message = Loc.GetString("garrote-component-must-be-behind", ("target", args.Target));
-            _popupSystem.PopupEntity(message, uid, args.User);
+            _popupSystem.PopupEntity(message, args.Target.Value, args.User);
             return;
         }
 
@@ -77,11 +77,12 @@ public sealed class GarroteSystem : EntitySystem
         var messageothers = Loc.GetString("garrote-component-started-others", ("user", args.User), ("target", args.Target));
         _popupSystem.PopupEntity(messageothers, args.User, Filter.PvsExcept(args.Target.Value), true, PopupType.MediumCaution);
 
-        var doAfterEventArgs = new DoAfterArgs(EntityManager, args.User, comp.DoAfterTime, new GarroteDoneEvent(), uid, target: args.Target)
+        var doAfterEventArgs = new DoAfterArgs(EntityManager, args.User, comp.DoAfterTime, new GarroteDoAfterEvent(), uid, target: args.Target)
         {
             BreakOnMove = true,
             BreakOnDamage = true,
-            NeedHand = true
+            NeedHand = true,
+            DuplicateCondition = DuplicateConditions.SameTool
         };
 
         if (!_doAfter.TryStartDoAfter(doAfterEventArgs)) return;
@@ -89,62 +90,30 @@ public sealed class GarroteSystem : EntitySystem
         ProtoId<EmotePrototype> emote = "Cough";
         _chatSystem.TryEmoteWithChat(args.Target.Value, emote, ChatTransmitRange.HideChat, ignoreActionBlocker: true);
 
-        if (!HasComp<StunnedComponent>(args.Target))
-        {
-            comp.RemoveStun = true;
-            AddComp<StunnedComponent>(args.Target.Value);
-        }
-
-        if (!HasComp<MutedComponent>(args.Target))
-        {
-            comp.RemoveMute = true;
-            AddComp<MutedComponent>(args.Target.Value);
-        }
-
-        comp.Busy = true;
+        _stun.TryStun(args.Target.Value, 2*comp.DoAfterTime, true); // multiplying time by 2 to prevent mispredictons
+        _statusEffect.TryAddStatusEffect<MutedComponent>(args.Target.Value, "Muted", 2*comp.DoAfterTime, true);
     }
 
-    private void OnGarroteDone(EntityUid uid, GarroteComponent comp, GarroteDoneEvent args)
+    private void OnGarroteDoAfter(EntityUid uid, GarroteComponent comp, GarroteDoAfterEvent args)
     {
         if (args.Target == null
         || !TryComp<DamageableComponent>(args.Target, out var damageable)
-        || !TryComp<MobThresholdsComponent>(args.Target, out var thresholds)
         || !TryComp<RespiratorComponent>(args.Target, out var respirator)
         || !TryComp<MobStateComponent>(args.Target, out var mobstate))
-        {
-            comp.RemoveStun = false;
-            comp.RemoveMute = false;
-            comp.Busy = false;
             return;
-        }
-
-        if (comp.RemoveStun)
-        {
-            RemComp<StunnedComponent>(args.Target.Value);
-            comp.RemoveStun = false;
-        }
-
-        if (comp.RemoveMute)
-        {
-            RemComp<MutedComponent>(args.Target.Value);
-            comp.RemoveMute = false;
-        }
-
-        comp.Busy = false;
 
         if (args.Cancelled || mobstate.CurrentState != MobState.Alive) return;
 
-        var critthreshold = _mobThresholdSystem.GetThresholdForState(args.Target.Value, MobState.Critical, thresholds);
-        var deadthreshold = _mobThresholdSystem.GetThresholdForState(args.Target.Value, MobState.Dead, thresholds);
-        var damage = critthreshold + 0.1 * (deadthreshold - critthreshold) - damageable.TotalDamage;
-        DamageSpecifier damageDealt = new(_prototypeManager.Index<DamageTypePrototype>("Asphyxiation"), damage);
-        _damageable.TryChangeDamage(args.Target, damageDealt, false, origin: args.User);
+        DamageSpecifier damage = new(_prototypeManager.Index<DamageTypePrototype>("Asphyxiation"), comp.Damage); // TODO: unhardcode asphyxiation?
+        _damageable.TryChangeDamage(args.Target, damage, false, origin: args.User);
 
         var saturationDelta = respirator.MinSaturation - respirator.Saturation;
         _respirator.UpdateSaturation(args.Target.Value, saturationDelta, respirator);
 
-        var message = Loc.GetString("garrote-component-complete", ("user", args.User), ("target", args.Target));
-        _popupSystem.PopupEntity(message, args.User, PopupType.LargeCaution);
+        _stun.TryStun(args.Target.Value, 2*comp.DoAfterTime, true);
+        _statusEffect.TryAddStatusEffect<MutedComponent>(args.Target.Value, "Muted", 2*comp.DoAfterTime, true);
+
+        args.Repeat = true;
     }
 
     private bool IsBehind(EntityUid user, EntityUid target, float minAngleFromFace)
