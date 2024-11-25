@@ -45,7 +45,6 @@ public sealed class GarroteSystem : EntitySystem
     private void OnGarroteAttempt(EntityUid uid, GarroteComponent comp, ref AfterInteractEvent args)
     {
         if (args.User == args.Target
-        || !args.CanReach
         || !HasComp<BodyComponent>(args.Target)
         || !HasComp<DamageableComponent>(args.Target)
         || !TryComp<MobStateComponent>(args.Target, out var mobstate)) return;
@@ -71,6 +70,13 @@ public sealed class GarroteSystem : EntitySystem
             return;
         }
 
+        if (!args.CanReach)
+        {
+            var message = Loc.GetString("garrote-component-too-far-away", ("target", args.Target));
+            _popupSystem.PopupEntity(message, args.Target.Value, args.User);
+            return;
+        }
+
         var messagetarget = Loc.GetString("garrote-component-started-target", ("user", args.User));
         _popupSystem.PopupEntity(messagetarget, args.User, args.Target.Value, PopupType.LargeCaution);
 
@@ -82,7 +88,8 @@ public sealed class GarroteSystem : EntitySystem
             BreakOnMove = true,
             BreakOnDamage = true,
             NeedHand = true,
-            DuplicateCondition = DuplicateConditions.SameTool
+            DuplicateCondition = DuplicateConditions.SameTool,
+            DistanceThreshold = 0.1f
         };
 
         if (!_doAfter.TryStartDoAfter(doAfterEventArgs)) return;
