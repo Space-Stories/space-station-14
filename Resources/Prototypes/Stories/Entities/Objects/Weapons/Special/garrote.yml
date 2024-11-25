@@ -5,11 +5,9 @@
   description: Приспособление, используемое не иначе, как для скрытных убийств.
   components:
   - type: Sprite
-    sprite: Objects/Weapons/Guns/Snipers/bolt_gun_wood.rsi # Плейсхолдер
+    sprite: Stories/Objects/Weapons/Special/garrote.rsi
     state: icon
   - type: Item
     size: Small
-    shape:
-    - 0,0,0,2
   - type: Garrote
   - type: Wieldable
