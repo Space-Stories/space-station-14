@@ -90,7 +90,7 @@ public sealed partial class ForceUserSystem : SharedForceUserSystem
         InitializePolymorph();
         InitializeProtectiveBubble();
         InitializeLightsaber();
-        InitializeLightning();
+        // InitializeLightning();
         InitializeSteal();
     }
     public override void Update(float frameTime)

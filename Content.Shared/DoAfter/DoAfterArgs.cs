@@ -11,7 +11,7 @@ public sealed partial class DoAfterArgs
     ///     The entity invoking do_after
     /// </summary>
     [NonSerialized]
-    [DataField("user", required: true)]
+    [DataField("user")]
     public EntityUid User;
 
     public NetEntity NetUser;
@@ -19,7 +19,7 @@ public sealed partial class DoAfterArgs
     /// <summary>
     ///     How long does the do_after require to complete
     /// </summary>
-    [DataField(required: true)]
+    [DataField]
     public TimeSpan Delay;
 
     /// <summary>
@@ -50,7 +50,7 @@ public sealed partial class DoAfterArgs
     /// <summary>
     ///     The event that will get raised when the DoAfter has finished. If null, this will simply raise a <see cref="SimpleDoAfterEvent"/>
     /// </summary>
-    [DataField(required: true)]
+    [DataField]
     public DoAfterEvent Event = default!;
 
     /// <summary>

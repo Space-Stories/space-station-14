@@ -49,7 +49,7 @@
     checkCanInteract: false
     event: !type:InstantForceUserActionEvent
       volume: 100
-      event: !type:InjectReagentsEvent
+      event: !type:InjectSolutionEvent
         solution:
           maxVol: 150
           reagents:
@@ -86,14 +86,15 @@
     icon:
       sprite: Stories/Actions/force.rsi
       state: healingtouch
-    event: !type:DoAfterTargetEvent
-      needHand: true
-      delay: 2
-      breakOnDamage: true
-      breakOnMove: true
+    event: !type:StartDoAfterWithTargetEvent
+      doAfterArgs:
+        needHand: true
+        delay: 2
+        breakOnDamage: true
+        breakOnMove: true
       event: !type:EntityTargetForceUserActionEvent
         volume: 25
-        event: !type:InjectReagentsToTargetEvent
+        event: !type:InjectSolutionToTargetEvent
           solution:
             maxVol: 7.5
             reagents:
@@ -105,17 +106,29 @@
   name: Силовой толчок
   description: Создайте сильный толчок, который может сбить человека с ног. Полностью ослабевает, пролетев 4 тайла.
   components:
-  - type: WorldTargetAction
-    useDelay: 10
+  - type: EntityTargetAction
     itemIconStyle: BigAction
     checkCanAccess: false
-    range: 60
-    sound: !type:SoundPathSpecifier
-      path: /Audio/Magic/forcewall.ogg
+    canTargetSelf: false
+    useDelay: 10
+    range: 3
+    whitelist:
+      components:
+      - Body
     icon:
       sprite: Stories/Actions/force.rsi
       state: push
-    event: !type:WorldTargetForceUserActionEvent
-      volume: 50
-      event: !type:ProjectileSpellEvent
-        prototype: JediPushBall
+    event: !type:StartDoAfterWithTargetEvent
+      doAfterArgs:
+        needHand: true
+        delay: 5
+        distanceThreshold: 3
+        breakOnDamage: false
+        breakOnMove: false
+        breakOnHandChange: false
+      event: !type:EntityTargetForceUserActionEvent
+        volume: 50
+        event: !type:PushTargetEvent
+          strength: 10
+          sound: !type:SoundPathSpecifier
+            path: /Audio/Magic/forcewall.ogg

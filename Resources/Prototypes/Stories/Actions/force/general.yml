@@ -109,7 +109,7 @@
     checkCanInteract: false
     event: !type:InstantForceUserActionEvent
       volume: 100
-      event: !type:InjectReagentsEvent
+      event: !type:InjectSolutionEvent
         solution:
           maxVol: 15
           reagents:
@@ -170,7 +170,7 @@
       path: /Audio/Magic/blink.ogg
     event: !type:WorldTargetForceUserActionEvent
       volume: 50
-      event: !type:ForceDashActionEvent
+      event: !type:ThrownDashActionEvent
         strength: 20
 
 - type: entity

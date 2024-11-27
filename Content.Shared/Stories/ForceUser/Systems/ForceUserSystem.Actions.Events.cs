@@ -11,71 +11,7 @@ using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Stories.ForceUser.Actions.Events;
 
-// "Простые" события, которые не нуждаются в Content.Shared.Stories.ForceUser.Components
-// ? Возможно стоит их убрать отсюда?
-#region Simple
-public sealed partial class LightningStrikeEvent : EntityTargetActionEvent { }
-public sealed partial class EmpActionEvent : InstantActionEvent
-{
-    [DataField("range"), ViewVariables(VVAccess.ReadWrite)]
-    public float Range = 1.0f;
-
-    /// <summary>
-    /// How much energy will be consumed per battery in range
-    /// </summary>
-    [DataField("energyConsumption"), ViewVariables(VVAccess.ReadWrite)]
-    public float EnergyConsumption;
-
-    /// <summary>
-    /// How long it disables targets in seconds
-    /// </summary>
-    [DataField("disableDuration"), ViewVariables(VVAccess.ReadWrite)]
-    public float DisableDuration = 60f;
-}
-public sealed partial class FreedomActionEvent : InstantActionEvent { }
-public sealed partial class RejuvenateActionEvent : InstantActionEvent { }
-public sealed partial class FlashAreaEvent : InstantActionEvent
-{
-    [DataField("duration")]
-    [ViewVariables(VVAccess.ReadWrite)]
-    public int FlashDuration { get; set; } = 8000;
-
-    [DataField("range")]
-    [ViewVariables(VVAccess.ReadWrite)]
-    public float Range { get; set; } = 7f;
-
-    [DataField("slowTo")]
-    [ViewVariables(VVAccess.ReadWrite)]
-    public float SlowTo { get; set; } = 0.5f;
-
-    [ViewVariables(VVAccess.ReadWrite)]
-    [DataField("sound")]
-    public SoundSpecifier Sound { get; set; } = new SoundPathSpecifier("/Audio/Weapons/flash.ogg");
-}
-public sealed partial class RecliningPulseEvent : InstantActionEvent
-{
-    [DataField("stun")]
-    public float StunTime { get; set; } = 3f;
-
-    [DataField("strength")]
-    public int Strength { get; set; } = 10;
-
-    [DataField("range")]
-    public float Range { get; set; } = 10f;
-}
 public sealed partial class HypnosisTargetActionEvent : EntityTargetActionEvent { }
-public sealed partial class IgniteTargetActionEvent : EntityTargetActionEvent
-{
-    [ViewVariables(VVAccess.ReadWrite)]
-    [DataField("stackAmount")]
-    public float StackAmount = 1f;
-}
-public sealed partial class ForceDashActionEvent : WorldTargetActionEvent
-{
-    [DataField("strength")]
-    public float Strength = 10;
-}
-#endregion
 
 #region ForceProtectiveBubble
 public sealed partial class CreateProtectiveBubbleEvent : InstantActionEvent

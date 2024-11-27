@@ -20,12 +20,13 @@
     icon: { sprite: Stories/Actions/shadowling.rsi, state: enthrall }
     itemIconStyle: NoItem
     priority: -11
-    event: !type:DoAfterTargetEvent
-      hidden: false
-      needHand: true
-      delay: 5
-      breakOnDamage: true
-      breakOnMove: true
+    event: !type:StartDoAfterWithTargetEvent
+      doAfterArgs:
+        hidden: false
+        needHand: true
+        delay: 5
+        breakOnDamage: true
+        breakOnMove: true
       event: !type:ShadowlingEnthrallEvent {}
 
 - type: entity
@@ -39,8 +40,12 @@
     icon: { sprite: Stories/Actions/shadowling.rsi, state: glare }
     itemIconStyle: NoItem
     range: 10
+    whitelist:
+      components:
+      - Body
     priority: -11
-    event: !type:ShadowlingGlareEvent {}
+    canTargetSelf: false
+    event: !type:RangedGlareEvent {}
 
 - type: entity
   id: ActionShadowlingVeil
@@ -81,14 +86,9 @@
     icon: { sprite: Stories/Actions/shadowling.rsi, state: icy_veins }
     itemIconStyle: NoItem
     priority: -11
-    event: !type:InjectReagentsInRangeEvent
-      injectToPerformer: false
+    event: !type:ApplyInRangeEvent
+      includePerformer: false
       range: 7.5
-      solutionTarget: chemicals
-      solution:
-        reagents:
-        - ReagentId: IceOil
-          Quantity: 4
       whitelist:
         components:
         - Body
@@ -96,6 +96,11 @@
         components:
         - Shadowling
         - ShadowlingThrall
+      event: !type:InjectSolutionToTargetEvent
+        solution:
+          reagents:
+          - ReagentId: IceOil
+            Quantity: 4
 
 - type: entity
   id: ActionShadowlingCollectiveMind
