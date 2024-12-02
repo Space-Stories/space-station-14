@@ -629,6 +629,8 @@ entities:
       bodyType: Dynamic
     - type: Fixtures
       fixtures: {}
+    - type: BecomesStation
+      id: Kilo
     - type: OccluderTree
     - type: SpreaderGrid
     - type: Shuttle
@@ -100692,8 +100694,6 @@ entities:
       pos: -43.5,-17.5
       parent: 2
     - type: DeviceList
-      configurators:
-      - invalid
       devices:
       - 16121
       - 16122
@@ -100718,8 +100718,6 @@ entities:
       pos: 9.5,22.5
       parent: 2
     - type: DeviceList
-      configurators:
-      - invalid
       devices:
       - 16014
       - 16013
@@ -101943,8 +101941,6 @@ entities:
       pos: -35.5,-20.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
   - uid: 16111
     components:
     - type: Transform
@@ -101952,8 +101948,6 @@ entities:
       pos: -35.5,-21.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
   - uid: 16112
     components:
     - type: Transform
@@ -101961,8 +101955,6 @@ entities:
       pos: -35.5,-22.5
       parent: 2
     - type: DeviceNetwork
-      configurators:
-      - invalid
   - uid: 16113
     components:
     - type: Transform
@@ -139384,8 +139376,6 @@ entities:
       pos: -8.5,30.5
       parent: 2
     - type: Followed
-      following:
-      - invalid
 - proto: Ointment
   entities:
   - uid: 21381
