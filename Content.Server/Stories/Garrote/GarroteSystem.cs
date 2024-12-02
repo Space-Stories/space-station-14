@@ -134,10 +134,10 @@ public sealed class GarroteSystem : EntitySystem
     /// <remarks>
     ///     Does not check for the presence of TransformComponent.
     /// </remarks>
-    private bool IsRightTargetDistance(TransformComponent user, TransformComponent target, float minUseDistance)
+    private bool IsRightTargetDistance(TransformComponent user, TransformComponent target, float maxUseDistance)
     {
-        if (Math.Abs(user.LocalPosition.X - target.LocalPosition.X) <= minUseDistance
-            && Math.Abs(user.LocalPosition.Y - target.LocalPosition.Y) <= minUseDistance)
+        if (Math.Abs(user.LocalPosition.X - target.LocalPosition.X) <= maxUseDistance
+            && Math.Abs(user.LocalPosition.Y - target.LocalPosition.Y) <= maxUseDistance)
             return true;
         else
             return false;
