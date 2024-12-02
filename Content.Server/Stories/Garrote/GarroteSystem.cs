@@ -6,7 +6,6 @@ using Content.Shared.ActionBlocker;
 using Content.Shared.Body.Components;
 using Content.Shared.Chat.Prototypes;
 using Content.Shared.Damage;
-using Content.Shared.Damage.Prototypes;
 using Content.Shared.DoAfter;
 using Content.Shared.Interaction;
 using Content.Shared.Mobs;
@@ -30,7 +29,6 @@ public sealed class GarroteSystem : EntitySystem
     [Dependency] private readonly SharedDoAfterSystem _doAfter = default!;
     [Dependency] private readonly RespiratorSystem _respirator = default!;
     [Dependency] private readonly PopupSystem _popupSystem = default!;
-    [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly StatusEffectsSystem _statusEffect = default!;
     [Dependency] private readonly SharedStunSystem _stun = default!;
 
@@ -119,8 +117,7 @@ public sealed class GarroteSystem : EntitySystem
         if (args.Cancelled || mobstate.CurrentState != MobState.Alive)
             return;
 
-        DamageSpecifier damage = new(_prototypeManager.Index<DamageTypePrototype>("Asphyxiation"), comp.Damage); // TODO: unhardcode asphyxiation?
-        _damageable.TryChangeDamage(args.Target, damage, false, origin: args.User);
+        _damageable.TryChangeDamage(args.Target, comp.Damage, false, origin: args.User);
 
         var saturationDelta = respirator.MinSaturation - respirator.Saturation;
         _respirator.UpdateSaturation(args.Target.Value, saturationDelta, respirator);

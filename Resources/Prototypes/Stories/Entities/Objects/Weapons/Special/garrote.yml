@@ -10,4 +10,7 @@
   - type: Item
     size: Small
   - type: Garrote
+    damage:
+      types:
+        Asphyxiation: 5
   - type: Wieldable
