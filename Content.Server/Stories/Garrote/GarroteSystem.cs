@@ -33,7 +33,6 @@ public sealed class GarroteSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly StatusEffectsSystem _statusEffect = default!;
     [Dependency] private readonly SharedStunSystem _stun = default!;
-    [Dependency] private readonly SharedTransformSystem _transform = default!;
 
     public override void Initialize()
     {
@@ -47,7 +46,8 @@ public sealed class GarroteSystem : EntitySystem
         if (args.User == args.Target
         || !HasComp<BodyComponent>(args.Target)
         || !HasComp<DamageableComponent>(args.Target)
-        || !TryComp<MobStateComponent>(args.Target, out var mobstate)) return;
+        || !TryComp<MobStateComponent>(args.Target, out var mobstate))
+            return;
 
         if (TryComp<WieldableComponent>(uid, out var wieldable) && !wieldable.Wielded)
         {
@@ -63,16 +63,22 @@ public sealed class GarroteSystem : EntitySystem
             return;
         }
 
-        if (!IsBehind(args.User, args.Target.Value, comp.MinAngleFromFace) && _actionBlocker.CanInteract(args.Target.Value, null))
+        if (!TryComp(args.User, out TransformComponent? userTransform))
+            return;
+
+        if (!TryComp(args.Target.Value, out TransformComponent? targetTransform))
+            return;
+
+        if (!args.CanReach || !IsRightTargetDistance(userTransform, targetTransform, comp.MaxUseDistance))
         {
-            var message = Loc.GetString("garrote-component-must-be-behind", ("target", args.Target));
+            var message = Loc.GetString("garrote-component-too-far-away", ("target", args.Target));
             _popupSystem.PopupEntity(message, args.Target.Value, args.User);
             return;
         }
 
-        if (!args.CanReach)
+        if (GetEntityDirection(userTransform) != GetEntityDirection(targetTransform) && _actionBlocker.CanInteract(args.Target.Value, null))
         {
-            var message = Loc.GetString("garrote-component-too-far-away", ("target", args.Target));
+            var message = Loc.GetString("garrote-component-must-be-behind", ("target", args.Target));
             _popupSystem.PopupEntity(message, args.Target.Value, args.User);
             return;
         }
@@ -92,7 +98,8 @@ public sealed class GarroteSystem : EntitySystem
             DistanceThreshold = 0.1f
         };
 
-        if (!_doAfter.TryStartDoAfter(doAfterEventArgs)) return;
+        if (!_doAfter.TryStartDoAfter(doAfterEventArgs))
+            return;
 
         ProtoId<EmotePrototype> emote = "Cough";
         _chatSystem.TryEmoteWithChat(args.Target.Value, emote, ChatTransmitRange.HideChat, ignoreActionBlocker: true);
@@ -109,7 +116,8 @@ public sealed class GarroteSystem : EntitySystem
         || !TryComp<MobStateComponent>(args.Target, out var mobstate))
             return;
 
-        if (args.Cancelled || mobstate.CurrentState != MobState.Alive) return;
+        if (args.Cancelled || mobstate.CurrentState != MobState.Alive)
+            return;
 
         DamageSpecifier damage = new(_prototypeManager.Index<DamageTypePrototype>("Asphyxiation"), comp.Damage); // TODO: unhardcode asphyxiation?
         _damageable.TryChangeDamage(args.Target, damage, false, origin: args.User);
@@ -123,17 +131,40 @@ public sealed class GarroteSystem : EntitySystem
         args.Repeat = true;
     }
 
-    private bool IsBehind(EntityUid user, EntityUid target, float minAngleFromFace)
+    /// <summary>
+    ///     Checking whether the distance from the user to the target is set correctly.
+    /// </summary>
+    /// <remarks>
+    ///     Does not check for the presence of TransformComponent.
+    /// </remarks>
+    private bool IsRightTargetDistance(TransformComponent user, TransformComponent target, float minUseDistance)
     {
-        if (!TryComp(target, out TransformComponent? targetTransform)) return false;
-        var targetLocalCardinal = targetTransform.LocalRotation.GetCardinalDir().ToAngle();
-        var cardinalDifference = targetLocalCardinal - targetTransform.LocalRotation;
-        var targetRotation = _transform.GetWorldRotation(target);
-        var targetRotationCardinal = targetRotation + cardinalDifference;
-        var userRelativeRotation = (_transform.GetWorldPosition(user) - _transform.GetWorldPosition(target)).Normalized().ToWorldAngle().FlipPositive();
-        var targetRotationDegrees = targetRotationCardinal.Opposite().Reduced().FlipPositive().Degrees;
-        var userRotationDegrees = userRelativeRotation.Reduced().FlipPositive().Degrees;
-        var angleFromFace = Math.Abs(Math.Abs(targetRotationDegrees - userRotationDegrees) - 180);
-        return angleFromFace >= minAngleFromFace;
+        if (Math.Abs(user.LocalPosition.X - target.LocalPosition.X) <= minUseDistance
+            && Math.Abs(user.LocalPosition.Y - target.LocalPosition.Y) <= minUseDistance)
+            return true;
+        else
+            return false;
+    }
+
+    /// <remarks>
+    ///     Does not check for the presence of TransformComponent.
+    /// </remarks>
+    private Direction GetEntityDirection(TransformComponent entityTransform)
+    {
+        double entityLocalRotation;
+
+        if (entityTransform.LocalRotation.Degrees < 0)
+            entityLocalRotation = 360 - Math.Abs(entityTransform.LocalRotation.Degrees);
+        else
+            entityLocalRotation = entityTransform.LocalRotation.Degrees;
+
+        if(entityLocalRotation > 43.5d && entityLocalRotation < 136.5d)
+            return Direction.East;
+        else if(entityLocalRotation >= 136.5d && entityLocalRotation <= 223.5d)
+            return Direction.North;
+        else if(entityLocalRotation > 223.5d && entityLocalRotation < 316.5d)
+            return Direction.West;
+        else
+            return Direction.South;
     }
 }

@@ -9,9 +9,6 @@ public sealed partial class GarroteComponent : Component
     [DataField("damage")]
     public float Damage = 5f;
 
-    /// <summary>
-    /// The mininum angle in degrees from face to back to use
-    /// </summary>
-    [DataField("minAngleFromFace")]
-    public float MinAngleFromFace = 90;
+    [DataField("maxUseDistance")]
+    public float MaxUseDistance = 0.5f;
 }
