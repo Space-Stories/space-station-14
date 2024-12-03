@@ -64,7 +64,6 @@ entities:
     - type: MetaData
       name: Kilo Station
     - type: Transform
-      pos: -20.053383,-18.952026
       parent: 1
     - type: MapGrid
       chunks:
@@ -101940,21 +101939,18 @@ entities:
       rot: 1.5707963267948966 rad
       pos: -35.5,-20.5
       parent: 2
-    - type: DeviceNetwork
   - uid: 16111
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -35.5,-21.5
       parent: 2
-    - type: DeviceNetwork
   - uid: 16112
     components:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: -35.5,-22.5
       parent: 2
-    - type: DeviceNetwork
   - uid: 16113
     components:
     - type: Transform
@@ -139376,6 +139372,7 @@ entities:
       pos: -8.5,30.5
       parent: 2
     - type: Followed
+      following: []
 - proto: Ointment
   entities:
   - uid: 21381
@@ -139472,9 +139469,6 @@ entities:
     components:
     - type: Transform
       parent: 14877
-    - type: DLungs
-      warningThreshold: 0.05
-      criticalThreshold: 0.18
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
@@ -139493,9 +139487,6 @@ entities:
     components:
     - type: Transform
       parent: 14877
-    - type: ToxinFilter
-      warningThreshold: 250
-      criticalThreshold: 375
     - type: Physics
       canCollide: False
     - type: InsideEntityStorage
@@ -154284,6 +154275,28 @@ entities:
     - type: Transform
       pos: -27.5,-29.5
       parent: 2
+- proto: SpawnPointLatejoin
+  entities:
+  - uid: 14938
+    components:
+    - type: Transform
+      pos: 46.5,-17.5
+      parent: 2
+  - uid: 28668
+    components:
+    - type: Transform
+      pos: 49.5,-14.5
+      parent: 2
+  - uid: 28669
+    components:
+    - type: Transform
+      pos: 41.5,-16.5
+      parent: 2
+  - uid: 28670
+    components:
+    - type: Transform
+      pos: 44.5,-17.5
+      parent: 2
 - proto: SpawnPointLawyer
   entities:
   - uid: 23839
@@ -154333,6 +154346,13 @@ entities:
     components:
     - type: Transform
       pos: 12.5,19.5
+      parent: 2
+- proto: SpawnPointObserver
+  entities:
+  - uid: 29350
+    components:
+    - type: Transform
+      pos: 0.5,-9.5
       parent: 2
 - proto: SpawnPointParamedic
   entities:
@@ -154403,26 +154423,6 @@ entities:
     - type: Transform
       pos: -29.5,0.5
       parent: 2
-  - uid: 29350
-    components:
-    - type: Transform
-      pos: 46.5,-17.5
-      parent: 2
-  - uid: 29351
-    components:
-    - type: Transform
-      pos: 44.5,-17.5
-      parent: 2
-  - uid: 29352
-    components:
-    - type: Transform
-      pos: 49.5,-14.5
-      parent: 2
-  - uid: 29353
-    components:
-    - type: Transform
-      pos: 41.5,-16.5
-      parent: 2
 - proto: SpawnPointPsychologist
   entities:
   - uid: 29164
@@ -154455,6 +154455,23 @@ entities:
     components:
     - type: Transform
       pos: 35.5,29.5
+      parent: 2
+- proto: SpawnPointSalvageSpecialist
+  entities:
+  - uid: 28667
+    components:
+    - type: Transform
+      pos: 42.5,8.5
+      parent: 2
+  - uid: 28671
+    components:
+    - type: Transform
+      pos: 43.5,8.5
+      parent: 2
+  - uid: 28675
+    components:
+    - type: Transform
+      pos: 44.5,8.5
       parent: 2
 - proto: SpawnPointScientist
   entities:
