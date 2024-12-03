@@ -57,7 +57,10 @@ public sealed partial class ForceUserSystem
     private void OnTryPickUp(EntityUid uid, LightsaberComponent component, GettingPickedUpAttemptEvent args)
     {
         if (component.LightsaberOwner != null && args.User != component.LightsaberOwner && HasComp<TetheredComponent>(uid))
+        {
             args.Cancel();
+            return;
+        }
 
         if (component.LightsaberOwner != args.User && _toggleSystem.IsActivated(uid))
             _toggleSystem.TryDeactivate(uid);

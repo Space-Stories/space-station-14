@@ -2,7 +2,7 @@ using Content.Shared.Roles;
 
 namespace Content.Server.Stories.Shadowling;
 
-[RegisterComponent, ExclusiveAntagonist]
-public sealed partial class ShadowlingThrallRoleComponent : AntagonistRoleComponent
+[RegisterComponent]
+public sealed partial class ShadowlingThrallRoleComponent : BaseMindRoleComponent
 {
 }

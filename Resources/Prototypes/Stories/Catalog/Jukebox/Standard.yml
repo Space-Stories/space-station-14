@@ -23,6 +23,12 @@
     path: /Audio/Stories/Jukebox/spaceoddity.ogg
 
 - type: jukebox
+  id: ShBoom
+  name: The Chords - Sh Boom
+  path:
+    path: /Audio/Stories/Jukebox/shboom.ogg
+
+- type: jukebox
   id: StarWars
   name: Star Wars - Cantina Band
   path:
@@ -63,3 +69,4 @@
   name: Wrong Organ - Absolute Travesty
   path:
     path: /Audio/Stories/Jukebox/absolutetravesty.ogg
+    path: /Audio/Stories/Jukebox/mycastletown.ogg

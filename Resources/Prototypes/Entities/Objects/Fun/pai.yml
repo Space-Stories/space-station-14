@@ -44,19 +44,15 @@
     stopSearchVerbPopup: pai-system-stopped-searching
   - type: Examiner
   - type: IntrinsicRadioReceiver
-  - type: IntrinsicRadioTransmitter
-    channels:
-    - Binary
   - type: ActiveRadio
     channels:
-    - Binary
     - Common
   - type: DoAfter
   - type: Actions
   - type: TypingIndicator
     proto: robot
   - type: TTS # Stories-TTS
-    voice: glados
+    voice: turret_floor
   - type: Speech
     speechVerb: Robotic
     speechSounds: Pai
@@ -75,6 +71,10 @@
           Searching: { state: pai-searching-overlay }
           On: { state: pai-on-overlay }
   - type: StationMap
+  - type: ChangeVoiceInContainer
+    whitelist:
+      components:
+        - SecretStash
 
 - type: entity
   parent: [ PersonalAI, BaseSyndicateContraband]

@@ -50,6 +50,25 @@
   - type: RadiationBlocker
     resistance: 2
   - type: BlockWeather
+  - type: Reactive # Stories - start
+    reactions:
+    - reagents: [Thermite]
+      methods: [Touch]
+      effects:
+      - !type:HealthChange
+        scaleByQuantity: true
+        damage:
+          types:
+            Structural: 5
+      - !type:PopupMessage
+        visualType: LargeCaution
+        messages:
+        - "thermite-effect-burns-gap"
+        - "thermite-effect-corrodes"
+        - "thermite-effect-burns-through"
+        - "thermite-effect-burns-hole"
+        - "thermite-effect-ignites"
+        type: Pvs # Stories - end
 
 - type: entity
   parent: BaseWall

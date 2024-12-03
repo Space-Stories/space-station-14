@@ -4,7 +4,7 @@
   id: MobSiliconBase
   components:
   - type: TTS # Stories-TTS
-    voice: glados
+    voice: turret_floor
   - type: LagCompensation
   - type: Reactive
     groups:
@@ -34,12 +34,8 @@
     factions:
     - SimpleNeutral
   - type: IntrinsicRadioReceiver
-  - type: IntrinsicRadioTransmitter
-    channels:
-    - Binary
   - type: ActiveRadio
     channels:
-    - Binary
     - Common
   - type: HealthExaminable
     examinableTypes:
@@ -68,6 +64,7 @@
   - type: Tag
     tags:
     - DoorBumpOpener
+    - Bot
   - type: MobState
     allowedStates:
       - Alive
@@ -109,9 +106,56 @@
   - type: TypingIndicator
     proto: robot
   - type: ZombieImmune
-  - type: StepTriggerImmune
+  - type: ProtectedFromStepTriggers
   - type: NoSlip
   - type: Insulated
+
+- type: entity
+  parent: MobSiliconBase
+  id: MobFireBot
+  name: firebot
+  description: A little fire extinguishing bot. He looks rather anxious.
+  components:
+  - type: Sprite
+    sprite: Mobs/Silicon/Bots/firebot.rsi
+    state: firebot
+  - type: Construction
+    graph: FireBot
+    node: bot
+  - type: HTN
+    rootTask:
+      task: FirebotCompound
+  - type: SolutionContainerManager
+    solutions:
+      spray:
+        maxVol: 10
+        reagents:
+        - ReagentId: Water
+          Quantity: 10
+  - type: SolutionRegeneration
+    solution: spray
+    generated:
+      reagents:
+        - ReagentId: Water
+          Quantity: 10
+  - type: Spray
+    transferAmount: 10
+    pushbackAmount: 60
+    spraySound:
+      path: /Audio/Effects/extinguish.ogg
+    sprayedPrototype: ExtinguisherSpray
+    vaporAmount: 1
+    vaporSpread: 90
+    sprayVelocity: 3.0
+  - type: UseDelay
+    delay: 2
+  - type: InteractionPopup
+    interactSuccessString: petting-success-firebot
+    interactFailureString: petting-failure-firebot
+    interactSuccessSound:
+      path: /Audio/Ambience/Objects/periodic_beep.ogg
+  - type: Advertise
+    pack: FirebotAd
 
 - type: entity
   parent: MobSiliconBase
@@ -124,6 +168,8 @@
     maxInterval: 12
     sound:
       collection: BikeHorn
+      params:
+        variation: 0.125
   - type: Sprite
     sprite: Mobs/Silicon/Bots/honkbot.rsi
     state: honkbot
@@ -168,6 +214,10 @@
     interactFailureString: petting-failure-honkbot
     interactSuccessSound:
       path: /Audio/Items/bikehorn.ogg
+      params:
+        variation: 0.125
+  - type: TTS # Stories-TTS
+    voice: space_core
 
 - type: entity
   parent: MobHonkBot
@@ -178,6 +228,8 @@
   - type: SpamEmitSound
     sound:
       collection: CluwneHorn
+      params:
+        variation: 0.125
   - type: Sprite
     state: jonkbot
   - type: Construction
@@ -193,6 +245,8 @@
   - type: InteractionPopup
     interactSuccessSound:
       path: /Audio/Items/brokenbikehorn.ogg
+      params:
+        variation: 0.125
   - type: Vocal
     sounds:
       Unsexed: Cluwne
@@ -216,8 +270,6 @@
   - type: Construction
     graph: CleanBot
     node: bot
-  - type: SentienceTarget
-    flavorKind: station-event-random-sentience-flavor-mechanical
   - type: Absorbent
     pickupAmount: 10
   - type: UseDelay
@@ -289,8 +341,6 @@
   - type: Construction
     graph: MediBot
     node: bot
-  - type: SentienceTarget
-    flavorKind: station-event-random-sentience-flavor-mechanical
   - type: Anchorable
   - type: InteractionPopup
     interactSuccessString: petting-success-medibot
@@ -394,8 +444,8 @@
     tags:
     - DoorBumpOpener
     - FootstepSound
+    - Bot
   - type: ActiveRadio
     channels:
-    - Binary
     - Common
     - Supply

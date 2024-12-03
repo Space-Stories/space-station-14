@@ -1,13 +1,9 @@
-using Content.Shared.Popups;
-using Content.Shared.Inventory.Events;
-using Content.Shared.Explosion.Components;
-using Content.Shared.Emag.Systems;
-using Content.Shared.NPC.Prototypes;
-using Content.Shared.NPC.Components;
-using Content.Shared.NPC.Systems;
-using Content.Shared.Whitelist;
 using Content.Server.Explosion.EntitySystems;
-using System.Linq;
+using Content.Shared.Emag.Systems;
+using Content.Shared.Explosion.Components;
+using Content.Shared.Inventory.Events;
+using Content.Shared.NPC.Components;
+using Content.Shared.Popups;
 
 namespace Content.Server.Stories.ClothingWhitelist;
 
@@ -15,7 +11,6 @@ public sealed class ClothingWhitelistSystem : EntitySystem
 {
     [Dependency] private readonly SharedPopupSystem _popupSystem = default!;
     [Dependency] private readonly TriggerSystem _trigger = default!;
-    [Dependency] private readonly EntityWhitelistSystem _whitelistSystem = default!;
 
     public override void Initialize()
     {
@@ -28,14 +23,11 @@ public sealed class ClothingWhitelistSystem : EntitySystem
 
     private void OnEquipped(EntityUid uid, ClothingWhitelistComponent comp, GotEquippedEvent args)
     {
-        if (comp.Blacklist != null && !_whitelistSystem.IsWhitelistFail(comp.Blacklist, args.Equipee) || comp.Blacklist == null)
-            if (comp.Whitelist != null && _whitelistSystem.IsWhitelistFail(comp.Whitelist, args.Equipee)) return;
+        if (!TryComp<NpcFactionMemberComponent>(args.Equipee, out var npc)) return;
 
-        if (TryComp<NpcFactionMemberComponent>(args.Equipee, out var npc))
-        {
-            var fs = npc.Factions;
-            if (!fs.Overlaps(comp.FactionsBlacklist) && fs.Overlaps(comp.FactionsWhitelist)) return;
-        }
+        var fs = npc.Factions;
+        if ((comp.FactionsWhitelist == null || fs.Overlaps(comp.FactionsWhitelist))
+        && (comp.FactionsBlacklist == null || !fs.Overlaps(comp.FactionsBlacklist))) return;
 
         _popupSystem.PopupEntity(Loc.GetString("Ошибка доступа! Активация протоколов защиты.."), args.Equipee, args.Equipee, PopupType.LargeCaution);
 

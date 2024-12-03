@@ -1,89 +1,79 @@
 <Document>
-## Начало
-Это не обширный список рецептов, в нем представлены основные блюда.
+  ## Начало
+  Это не все существующие рецепты, этот список предназначен для демонстрации основ.
 
-Смеси делаются в стакане, продукты готовятся в микроволновой печи. Время приготовления будет указано.
+  Продукты смешиваются в мензурке, еда готовится в микроволновке. Время готовки обычно указывается в рецепте.
 
-ВНИМАНИЕ: Это не автоматически сгенерированный список, все, что здесь перечислено, может устареть. В вики есть гораздо больше, чем указано здесь.
+  ВНИМАНИЕ: Это не автоматически сгенерированный список, все, что здесь перечислено, может устареть. На Wiki есть гораздо больше, чем перечислено здесь.
 
-## Основы: Смешивание
+  ## Основы: Смешивание
 
-- Тесто = 15 муки, 10 воды
-- Тесто из кукурузной муки = 1 яйцо (6 шт.), 10 молока, 15 кукурузной муки
-- Тесто для тортилы = 15 кукурузной муки, 10 воды
-- Тофу = 5 энзимов (катализатор), 30 соевого молока
-- Тесто для пирога = 2 яйца (12 шт.), 15 муки, 5 поваренной соли
-- Тесто для пирога = 2 яйца (12u), 15 муки, 5 сахара
-- Тесто для веганского пирога = 15 соевого молока, 15 муки, 5 сахара
-- Масло = 30 молока, 5 поваренной соли (катализатор)
-- Колесо сыра = 5 энзимов (катализатор), 40 молока
-- Бревно из шевра = 5 ферментов (катализатор), 10 козьего молока
-- Фрикаделька = 1 яйцо (6u), 5 муки, 5 непроваренных животных белков
-- Шоколад = 6 Какао-порошок, 2 Молоко, 2 Сахар
-- Неприготовленный животный белок: Измельчить сырое мясо
+  - Тесто = 15 муки, 10 воды
+  - Кукурузное тесто = 1 яйцо (6 ед.), 10 молока, 15 кукурузной муки
+  - Тесто тортильи = 15 кукурузного теста, 10 воды
+  - Тофу = 5 универсального фермента (Катализатор), 30 соевого молока
+  - Тесто для пирога = 2 яйца (12 ед.), 15 муки, 5 столовой соли
+  - Тесто для торта = 2 яйца(12 ед.), 15 муки, 5 сахара
+  - Веганское тесто для торта = 15 соевого молока, 15 муки, 5 сахара
+  - Масло = 30 молока, 5 столовой соли (Катализатор)
+  - Головка сыра = 5 универсального фермента (Катализатор), 40 молока
+  - Фрикаделька = 1 яйцо (6 ед.), 5 муки, 5 непрожаренные животные протеины
+  - Шоколад = 6 какао порошка, 2 молока, 2 сахара
+  - Непрожаренные животные протеины: измельчить сырое мясо
 
-Buzz! Don't forget about Moth diet!
-- Cotton Dough = 5 Flour, 10 Fabric, 10 Water
-- Cotton bread baked the same as default but with cotton dough instead
-- Cotton Pizza: Microwave 1 Flat Cotton Dough and 4 Cotton Bolls for 30 Seconds
+  <Box>
+    <GuideEntityEmbed Entity="FoodDough"/>
+    <GuideEntityEmbed Entity="FoodDoughCornmeal"/>
+    <GuideEntityEmbed Entity="FoodDoughCotton"/>
+    <GuideEntityEmbed Entity="FoodTofu"/>
+    <GuideEntityEmbed Entity="FoodDoughPie"/>
+    <GuideEntityEmbed Entity="FoodCakeBatter"/>
+    <GuideEntityEmbed Entity="FoodDoughFlat"/>
+    <GuideEntityEmbed Entity="FoodDoughTortilla"/>
+  </Box>
 
-<Box>
-<GuideEntityEmbed Entity="FoodDough"/>
-<GuideEntityEmbed Entity="FoodDoughCornmeal"/>
-<GuideEntityEmbed Entity="FoodDoughCotton"/>
-<GuideEntityEmbed Entity="FoodTofu"/>
-<GuideEntityEmbed Entity="FoodDoughPie"/>
-<GuideEntityEmbed Entity="FoodCakeBatter"/>
-<GuideEntityEmbed Entity="FoodDoughFlat"/>
-<GuideEntityEmbed Entity="FoodDoughTortilla"/>
-</Box>
+  <Box>
+    <GuideEntityEmbed Entity="FoodButter"/>
+    <GuideEntityEmbed Entity="FoodMeatMeatball"/>
+    <GuideEntityEmbed Entity="FoodCheese"/>
+    <GuideEntityEmbed Entity="FoodChevre"/>
+    <GuideEntityEmbed Entity="FoodSnackChocolateBar"/>
+  </Box>
 
-<Box>
-<GuideEntityEmbed Entity="FoodButter"/>
-<GuideEntityEmbed Entity="FoodMeatMeatball"/>
-<GuideEntityEmbed Entity="FoodCheese"/>
-<GuideEntityEmbed Entity="FoodChevre"/>
-<GuideEntityEmbed Entity="FoodSnackChocolateBar"/>
-</Box>
+  ## Второстепенные продукты
 
-## Вторичные продукты
+  - Кусочек теста: нарезать тесто
+  - Булочка: положить в микроволновку кусочек теста на 5 секунд
+  - Сырая котлета: нарезать сырое мясо
+  - Сырный ломтик: нарезать головку сыра
+  - Плоское тесто: раскатайте тесто скалкой либо другим крыглым объектом (огнетушитель, жестяная банка, бутылка).
 
-- Нарезка теста: Нарезать тесто
-- Булочка: Ломтик теста в микроволновой печи в течение 5 секунд
-- Котлета: Нарезать сырое мясо
-- Сырный клин: Ломтик сыра
-- Плоское тесто: Проведите по тесту скалкой или круглым предметом (огнетушителем, банкой с содовой, бутылкой).
-- Ломтик теста для тортильи: нарезать тесто для тортильи
-- Плоское тесто для тортильи: Используйте скалку или круглый предмет (огнетушитель, банку с газировкой, бутылку) для нарезки теста Тортилья.
-- Ракушка тако: Раскатайте плоское тесто для тортильи в микроволновой печи в течение 5 секунд.
+  ## Примеры блюд
 
-## Примеры продуктов питания
+  - Хлеб: положить в микроволновку тесто на 10 секунд
+  - Бургер: положить в микроволновку 1 булочку и 1 сырое мясо на 10 секунд
+  - Томатный суп: 10 ед. воды, 1 пустая миска и 2 помидора на 10 секунд
+  - Цитрусовый салат: 1 пустая миска, 1 лемон, 1 лайм, 1 апельсин на 5 секунд
+  - Маргарита: положить в микроволновку 1 плоское тесто, 1 сырный ломтик и 4 помидора на 30 секунд
+  - Торт: 1 тесто для торта в микроволновку на 15 секунд
+  - Яблочный пирог: 1 тесто для пирога, 3 яблока и 1 формочку для пирога на 15 секунд
 
-- Хлеб: Тесто в микроволновой печи в течение 10 секунд
-- Обычный бургер: 1 булочка и 1 сырое мясо в микроволновой печи в течение 10 секунд
-- Томатный суп: 10u воды, 1 миска и 2 помидора в течение 10 секунд
-- Цитрусовый салат: 1 миска, 1 лимон, 1 лайм, 1 апельсин в течение 5 секунд
-- Пицца "Маргарита": 1 плоское тесто, 1 сырный клин и 4 помидора в микроволновой печи в течение 30 секунд
-- Торт: 1 тесто для торта в течение 15 секунд
-- Яблочный пирог: 1 тесто для пирога, 3 яблока и 1 форма для пирога в течение 15 секунд
-- Тако из говядины: 1 ракушка для тако, 1 котлета из сырого мяса, 1 сырный клин в течение 10 секунд.
-
-<Box>
-<GuideEntityEmbed Entity="FoodBreadPlain"/>
-<GuideEntityEmbed Entity="FoodBurgerPlain"/>
-<GuideEntityEmbed Entity="FoodSoupTomato"/>
-<GuideEntityEmbed Entity="FoodSaladCitrus"/>
-</Box>
-<Box>
-<GuideEntityEmbed Entity="FoodPizzaMargherita"/>
-<GuideEntityEmbed Entity="FoodCakePlain"/>
-<GuideEntityEmbed Entity="FoodPieApple"/>
-</Box>
-<Box>
-<GuideEntityEmbed Entity="FoodMealCubancarp"/>
-<GuideEntityEmbed Entity="FoodPieBananaCream"/>
-<GuideEntityEmbed Entity="FoodMealFriesCarrot"/>
-<GuideEntityEmbed Entity="FoodBakedPancake"/>
-</Box>
+  <Box>
+    <GuideEntityEmbed Entity="FoodBreadPlain"/>
+    <GuideEntityEmbed Entity="FoodBurgerPlain"/>
+    <GuideEntityEmbed Entity="FoodSoupTomato"/>
+    <GuideEntityEmbed Entity="FoodSaladCitrus"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="FoodPizzaMargherita"/>
+    <GuideEntityEmbed Entity="FoodCakePlain"/>
+    <GuideEntityEmbed Entity="FoodPieApple"/>
+  </Box>
+  <Box>
+    <GuideEntityEmbed Entity="FoodMealCubancarp"/>
+    <GuideEntityEmbed Entity="FoodPieBananaCream"/>
+    <GuideEntityEmbed Entity="FoodMealFriesCarrot"/>
+    <GuideEntityEmbed Entity="FoodBakedPancake"/>
+  </Box>
 
 </Document>

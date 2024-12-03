@@ -9,8 +9,11 @@
   id: BaseMobShadowling
   abstract: true
   components:
+  - type: Cuffer
+    timeModifier: 2
   - type: ZombieImmune
   - type: ThermalVision
+    innate: true
   - type: ComplexInteraction
   - type: Destructible
     thresholds:
@@ -130,11 +133,6 @@
   - type: ActiveRadio
     channels:
     - ShadowlingMind
-  - type: Vocal
-    sounds:
-      Male: UnsexedShadowling
-      Female: UnsexedShadowling
-      Unsexed: UnsexedShadowling
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Shadowling

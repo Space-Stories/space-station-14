@@ -7,3 +7,13 @@
   license: "CC-BY-4.0"
   copyright: "bobik-music"
   source: "https://www.youtube.com/watch?v=vFO7bhv54W0"
+
+- files: ["purple_code_remix.ogg"]
+  license: "CC-BY-4.0"
+  copyright: "bobik-music"
+  source: "https://youtu.be/rhABoExfiEM?si=8RjBhIxZ4JqxOltX"
+
+- files: ["night_vision.ogg"]
+  license: "CC-BY-4.0"
+  copyright: "NoahBangs"
+  source: "https://freesound.org/people/NoahBangs/sounds/636090/"

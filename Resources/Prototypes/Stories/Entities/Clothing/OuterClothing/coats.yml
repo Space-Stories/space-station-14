@@ -2,7 +2,7 @@
   parent: ClothingOuterStorageBase
   id: ClothingOuterCoatJedi
   name: накидка джедая
-  description: Длинный вид одежды, который свободно лежит на плечах, охватывая шею, но не имеет капюшона.
+  description: Длинный вид одежды, который свободно лежит на плечах, охватывая шею.
   components:
   - type: Tag
     tags:
@@ -10,10 +10,11 @@
   - type: ToggleableClothing
     clothingPrototype: ClothingHeadHatHoodJedihood
   - type: TemperatureProtection
-    coefficient: 0.001
+    heatingCoefficient: 0.005
+    coolingCoefficient: 0.005
   - type: ClothingSpeedModifier
     walkModifier: 1
-    sprintModifier: 1.04
+    sprintModifier: 1.1
   - type: Sprite
     sprite: Stories/Clothing/OuterClothing/Coats/jedi.rsi
   - type: Clothing

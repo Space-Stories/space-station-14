@@ -28,6 +28,7 @@
     BookSpaceLaw: 3
     LuxuryPen: 2
     HandLabeler: 2
+    BoxPrinter: 1 # Stories
   contrabandInventory:
     ClothingOuterRobesJudge: 1
     ClothingHeadHatPwig: 1

@@ -3,11 +3,12 @@ using Content.Shared.Roles;
 using Content.Shared.Stories.Conversion;
 using Robust.Shared.Prototypes;
 using Content.Server.Radio.Components;
-using Content.Shared.Database;
 using System.Diagnostics.CodeAnalysis;
+using System.Linq;
 
 namespace Content.Server.Stories.Conversion;
 
+// TODO: Move to shared
 public sealed partial class ConversionSystem
 {
     public HashSet<EntityUid> GetEntitiesConvertedBy(EntityUid? uid, ProtoId<ConversionPrototype> prototype)
@@ -62,13 +63,13 @@ public sealed partial class ConversionSystem
 
         // До удаления компонентов, чтобы эти компоненты могли его обработать.
         var ev = new RevertedEvent(target, performer, data);
-        RaiseLocalEvent(target, (object) ev, true);
+        RaiseLocalEvent(target, (object)ev, true);
 
         if (proto.EndBriefing != null)
             _antag.SendBriefing(target, Loc.GetString(proto.EndBriefing.Value.Text ?? ""), proto.EndBriefing.Value.Color, proto.EndBriefing.Value.Sound);
 
         EntityManager.RemoveComponents(target, registry: proto.Components);
-        MindRemoveRoles(mindId, proto.MindComponents);
+        MindRemoveRoles(mindId, proto.MindRoles);
 
         if (proto.Channels.Count > 0)
         {
@@ -107,7 +108,7 @@ public sealed partial class ConversionSystem
             _antag.SendBriefing(target, Loc.GetString(proto.Briefing.Value.Text ?? ""), proto.Briefing.Value.Color, proto.Briefing.Value.Sound);
 
         EntityManager.AddComponents(target, registry: proto.Components);
-        _role.MindAddRoles(mindId, proto.MindComponents);
+        _role.MindAddRoles(mindId, proto.MindRoles);
 
         if (proto.Channels.Count > 0)
         {
@@ -127,36 +128,42 @@ public sealed partial class ConversionSystem
         component.ActiveConversions.Add(proto.ID, conversion);
 
         var ev = new ConvertedEvent(target, performer, conversion);
-        RaiseLocalEvent(target, (object) ev, true);
+        RaiseLocalEvent(target, (object)ev, true);
         Dirty(target, component);
     }
-    public void MindRemoveRoles(EntityUid mindId, ComponentRegistry components, MindComponent? mind = null, bool silent = false)
+    public void MindRemoveRoles(EntityUid mindId, List<ProtoId<EntityPrototype>>? roles, MindComponent? mind = null)
     {
         if (!Resolve(mindId, ref mind))
             return;
 
-        EntityManager.RemoveComponents(mindId, components);
-        var antagonist = false;
-        foreach (var compReg in components.Values)
+        if (roles == null)
+            return;
+
+        var rolesUid = mind.MindRoles.Where((role) => EntityPrototyped(role, roles)).ToList();
+
+        rolesUid.ForEach((mindRole) =>
         {
-            var compType = compReg.Component.GetType();
+            var antagonist = Comp<MindRoleComponent>(mindRole).Antag;
 
-            var comp = EntityManager.ComponentFactory.GetComponent(compType);
-            if (_role.IsAntagonistRole(comp.GetType()))
-            {
-                antagonist = true;
-                break;
-            }
-        }
+            QueueDel(mindRole);
 
-        var message = new RoleRemovedEvent(mindId, mind, antagonist);
+            mind.MindRoles.Remove(mindRole);
 
-        if (mind.OwnedEntity != null)
-        {
-            RaiseLocalEvent(mind.OwnedEntity.Value, message, true);
-        }
+            var message = new RoleRemovedEvent(mindId, mind, antagonist);
 
-        _adminLogger.Add(LogType.Mind, LogImpact.Low,
-            $"Role components {string.Join(components.Keys.ToString(), ", ")} removed to mind of {_mind.MindOwnerLoggingString(mind)}");
+            if (mind.OwnedEntity != null)
+                RaiseLocalEvent(mind.OwnedEntity.Value, message, true);
+        });
+
+        mind.MindRoles?.Clear();
+    }
+    public bool EntityPrototyped(EntityUid role, List<ProtoId<EntityPrototype>> roles)
+    {
+        var proto = MetaData(role).EntityPrototype;
+
+        if (proto == null)
+            return false;
+
+        return roles.Contains(proto);
     }
 }

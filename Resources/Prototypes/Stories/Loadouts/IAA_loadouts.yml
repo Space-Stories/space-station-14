@@ -1,0 +1,195 @@
+- type: loadoutEffectGroup
+  id: MasterIAA
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:RoleTimeRequirement
+      role: JobIAA
+      time: 72000 #20 часов
+
+- type: roleLoadout
+  id: JobIAA
+  groups:
+  - IAAHead
+  - IAAJumpsuit
+  - IAABelt
+  - IAAGloves
+  - IAAShoes
+  - GroupTankHarness
+  - CommonBackpack
+  - Survival
+  - Trinkets
+  - GroupSpeciesBreathTool
+
+# Комбинезон
+- type: loadoutGroup
+  id: IAAJumpsuit
+  name: loadout-group-iaa-jumpsuit
+  loadouts:
+  - IAAJumpsuitBlue
+  - IAAJumpskirtBlue
+  - IAAJumpsuitPurple
+  - IAAJumpskirtPurple
+  - IAAJumpsuitRed
+  - IAAJumpskirtRed
+  - IAAJumpsuitBlack
+  - IAAJumpskirtBlack
+  - IAAJumpsuitGood
+  - IAAJumpskirtGood
+
+# Синий комбинезон
+- type: loadout
+  id: IAAJumpsuitBlue
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitLawyerBlue
+
+# Синяя юбка
+- type: loadout
+  id: IAAJumpskirtBlue
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtLawyerBlue
+
+# Фиолетовый комбинезон
+- type: loadout
+  id: IAAJumpsuitPurple
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitLawyerPurple
+
+# Фиолетовая юбка
+- type: loadout
+  id: IAAJumpskirtPurple
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtLawyerPurple
+
+# Красный комбинезон
+- type: loadout
+  id: IAAJumpsuitRed
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitLawyerRed
+
+# Красная юбка
+- type: loadout
+  id: IAAJumpskirtRed
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtLawyerRed
+
+# Чёрный комбинезон
+- type: loadout
+  id: IAAJumpsuitBlack
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitLawyerBlack
+
+# Чёрная юбка
+- type: loadout
+  id: IAAJumpskirtBlack
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtLawyerBlack
+
+# Хороший комбинезон
+- type: loadout
+  id: IAAJumpsuitGood
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitLawyerGood
+
+# Хорошая юбка
+- type: loadout
+  id: IAAJumpskirtGood
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtLawyerGood
+
+# Пояс
+- type: loadoutGroup
+  id: IAABelt
+  name: loadout-group-iaa-belt
+  minLimit: 0
+  loadouts:
+  - IAAClipboard
+  - IAAClipboardCentcom
+
+# Планшет
+- type: loadout
+  id: IAAClipboard
+  equipment:
+    belt: BoxFolderClipboard
+
+# Планшет ЦК
+- type: loadout
+  id: IAAClipboardCentcom
+  equipment:
+    belt: BoxFolderCentComClipboard
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: MasterIAA
+
+# Перчатки
+- type: loadoutGroup
+  id: IAAGloves
+  name: loadout-group-iaa-gloves
+  minLimit: 0
+  loadouts:
+  - IAAGlovesWhite
+  - IAAGlovesGray
+  - IAAGlovesBlack
+  - IAAGlovesRed
+  - IAAGlovesBlue
+
+# Белые перчатки
+- type: loadout
+  id: IAAGlovesWhite
+  equipment:
+    gloves: ClothingHandsGlovesColorWhite
+
+# Серые перчатки
+- type: loadout
+  id: IAAGlovesGray
+  equipment:
+    gloves: ClothingHandsGlovesColorGray
+
+# Чёрные перчатки
+- type: loadout
+  id: IAAGlovesBlack
+  equipment:
+    gloves: ClothingHandsGlovesColorBlack
+
+# Красные перчатки
+- type: loadout
+  id: IAAGlovesRed
+  equipment:
+    gloves: ClothingHandsGlovesColorRed
+
+# Синие перчатки
+- type: loadout
+  id: IAAGlovesBlue
+  equipment:
+    gloves: ClothingHandsGlovesColorBlue
+
+# Шляпа
+- type: loadoutGroup
+  id: IAAHead
+  name: loadout-group-iaa-head
+  minLimit: 0
+  loadouts:
+  - BartenderBowler
+  - IAAHeadOutlaw
+  - BartenderHead
+
+# Шляпа негодяя
+- type: loadout
+  id: IAAHeadOutlaw
+  equipment:
+    head: ClothingHeadHatOutlawHat
+
+# Обувь
+- type: loadoutGroup
+  id: IAAShoes
+  name: loadout-group-iaa-shoes
+  loadouts:
+  - BlackShoes
+  - WhiteShoes
+  - IAAShoesLaceup
+
+# Шнурованые туфли
+- type: loadout
+  id: IAAShoesLaceup
+  equipment:
+    shoes: ClothingShoesBootsLaceup

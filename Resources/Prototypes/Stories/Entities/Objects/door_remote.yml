@@ -12,10 +12,5 @@
     - state: door_remotescreencolour
       color: "#2f3d79"
   - type: Access
-    tags:
-    - HeadOfPrison
-    - PrisonBrig
-    - Prison
-    - PrisonMed
-    - PrisonEng
-    - Prisoner
+    groups:
+    - PrisonAllAccess

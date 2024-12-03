@@ -24,10 +24,9 @@
       allowNonHumans: true
       multiAntagSetting: NotExclusive
       startingGear: ThiefGear
-      # components: # Stories-MRP
-      # - type: Pacified # Stories-MRP
-      mindComponents:
-      - type: ThiefRole
-        prototype: Thief
+      # components:
+      # - type: Pacified Stories-MRP
+      mindRoles:
+      - MindRoleThief
       briefing:
         sound: "/Audio/Misc/thief_greeting.ogg"

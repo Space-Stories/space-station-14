@@ -1,5 +1,11 @@
 shadowling-ascendance-announcement = Сканерами дальнего действия было зафиксировано превознесение тенеморфа. Спасибо, что выбрали NanoTrasen!
 
+reagent-name-iceoil = ледяное масло
+reagent-desc-iceoil = Холодно.
+
+reagent-name-shadowlingsmoke = секрет тенеморфа
+reagent-desc-shadowlingsmoke = Даже у теней есть свои секреты.
+
 shadowling-list-name-user = - [color=DarkRed]{ $name }[/color] ([color=gray]{ $user }[/color])
 shadowling-count = { $initialCount ->
         [one] Тенеморф был один:

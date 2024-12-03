@@ -2,10 +2,11 @@
   parent: ClothingNeckBase
   id: ClothingNeckCloakSith
   name: плащ инквизитора
-  description: Невероятное произведение искусства объединяющие в себе прочность и легкость. Заряжен неведомой энергией.
+  description: Невероятное произведение искусства, защищающее от космических невзгод. Заряжен неведомой энергией.
   components:
   - type: TemperatureProtection
-    coefficient: 0.001
+    heatingCoefficient: 0.005
+    coolingCoefficient: 0.005
   - type: PressureProtection
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
@@ -14,14 +15,9 @@
     radius: 1.5
     energy: 0.45
     softness: 3
-  - type: ExplosionResistance
-    damageCoefficient: 0.2
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.6
-        Slash: 0.6
-        Piercing: 0.3
         Heat: 0.4
         Radiation: 0.25
         Caustic: 0.4
@@ -43,21 +39,17 @@
   parent: ClothingNeckBase
   id: ClothingNeckCloakKylo
   name: плащ кайло рена
-  description: Невероятное произведение искусства объединяющие в себе прочность и легкость.
+  description: Тёмный плащ, поглощает огненный урон и защищает от космических невзгод.
   components:
   - type: TemperatureProtection
-    coefficient: 0.001
+    heatingCoefficient: 0.005
+    coolingCoefficient: 0.005
   - type: PressureProtection
     highPressureMultiplier: 0.02
     lowPressureMultiplier: 1000
-  - type: ExplosionResistance
-    damageCoefficient: 0.2
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.6
-        Slash: 0.6
-        Piercing: 0.3
         Heat: 0.4
         Radiation: 0.25
         Caustic: 0.4
@@ -79,7 +71,7 @@
   parent: ClothingNeckBase
   id: ClothingNeckCloakExe
   name: плащ хранителя
-  description: Похоже тут выгравировано R u s t e d T i m. Что же это может значить?
+  description: Похоже, тут выгравировано "R u s t e d T i m". Что же это может значить?
   components:
   - type: Tag
     tags:

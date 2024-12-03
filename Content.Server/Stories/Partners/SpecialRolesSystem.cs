@@ -28,6 +28,7 @@ public sealed class SpecialRolesSystem : EntitySystem
     [Dependency] private readonly GameTicker _gameTicker = default!;
     [Dependency] private readonly MindSystem _mind = default!;
     [Dependency] private readonly SharedRoleSystem _role = default!;
+    [Dependency] private readonly SharedJobSystem _job = default!;
     [Dependency] private readonly AntagSelectionSystem _antag = default!;
     [Dependency] private readonly EventManagerSystem _event = default!;
     [Dependency] private readonly IPrototypeManager _proto = default!;
@@ -76,7 +77,7 @@ public sealed class SpecialRolesSystem : EntitySystem
             return false;
         }
 
-        if (TryComp<JobComponent>(mindId, out var comp) && _proto.TryIndex(comp.Prototype, out var jobProto) && !jobProto.CanBeAntag)
+        if (_job.MindTryGetJob(mindId, out var job) && !job.CanBeAntag)
         {
             reason = StatusLabel.CantBeAntag;
             return false;
@@ -166,7 +167,7 @@ public sealed class SpecialRolesSystem : EntitySystem
         if (HasComp<GhostComponent>(uid))
             return PlayerState.Ghost;
 
-        if (_mind.TryGetMind(uid, out var mindId, out var mind) && HasComp<JobComponent>(mindId))
+        if (_mind.TryGetMind(uid, out var mindId, out _) && _job.MindTryGetJob(mindId, out var job))
             return PlayerState.CrewMember;
 
         return PlayerState.None;

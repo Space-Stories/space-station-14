@@ -1,0 +1,39 @@
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleEmpireMember
+  name: EmpireMember Role
+  components:
+  - type: MindRole
+    antagPrototype: EmpireMember
+    exclusiveAntag: true
+  - type: EmpireMemberRole
+
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleHypnotizedEmpireMember
+  name: HypnotizedEmpireMember Role
+  components:
+  - type: MindRole
+    antagPrototype: HypnotizedEmpireMember
+    exclusiveAntag: true
+  - type: HypnotizedEmpireMemberRole
+
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleShadowling
+  name: Shadowling role
+  components:
+  - type: MindRole
+    antagPrototype: Shadowling
+    exclusiveAntag: true
+  - type: ShadowlingRole
+
+- type: entity
+  parent: BaseMindRoleAntag
+  id: MindRoleShadowlingThrall
+  name: Shadowling thrall role
+  components:
+  - type: MindRole
+    antagPrototype: ShadowlingThrall
+    exclusiveAntag: true
+  - type: ShadowlingThrallRole

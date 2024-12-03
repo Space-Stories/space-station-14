@@ -2,7 +2,7 @@
 #   id: ActionSithCreateProtectiveBubble
 #   name: Защитный пузырь инквизитора
 #   description: Создайте защитный телекинетический кокон, который отразит любые лазеры, сильно уменьшит урон от пуль и защитит от взрывов и давления. Почти не защищает от ударов ближнего боя.
-#   noSpawn: true
+#   categories: [ HideSpawnMenu ]
 #   components:
 #   - type: InstantAction
 #     useDelay: 300
@@ -16,8 +16,8 @@
 - type: entity
   id: ActionLifeSteal
   name: Кража жизни
-  description: Иссушает жертву восстанавливая вас.
-  noSpawn: true
+  description: Иссушает жертву, восстанавливая вас.
+  categories: [ HideSpawnMenu ]
   components:
   - type: EntityTargetAction
     useDelay: 10
@@ -42,7 +42,7 @@
   id: ActionSithGhost
   name: Теневой призрак
   description: Станьте призраком и проходите сквозь стены. В таком состоянии вы не можете воздействовать на мир, но всегда можете вернуться.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     useDelay: 5
@@ -62,7 +62,7 @@
   id: ActionFrozeBullets
   name: Замедление силы
   description: Используйте телекинез, чтобы останавливать пули вокруг вас на протяжении 10 секунд.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     itemIconStyle: BigAction
@@ -76,7 +76,7 @@
 #   id: ActionRejuvenate
 #   name: Самовосстановление
 #   description: Используйте телекинез, чтобы останавливать пули вокруг вас на протяжении 10 секунд.
-#   noSpawn: true
+#   categories: [ HideSpawnMenu ]
 #   components:
 #   - type: InstantAction
 #     useDelay: 180
@@ -89,7 +89,7 @@
   id: ActionRecliningPulse
   name: Оттолкнуть
   description: Оттолкните всех вокруг вас.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     itemIconStyle: BigAction
@@ -104,9 +104,9 @@
 
 - type: entity
   id: ActionStrangle
-  name: Удушение Силой
+  name: Удушение силой
   description: Удушающий прием техники бесконтактного боя.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: EntityTargetAction
     useDelay: 10
@@ -131,7 +131,7 @@
   id: ActionLightningStrike
   name: Молнии силы
   description: Направьте молнию из ваших рук в вашего врага.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: EntityTargetAction
     useDelay: 5
@@ -150,7 +150,7 @@
   id: ActionIgniteTarget
   name: Пирокинез
   description: Вызывает легкое выгорание у врага.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: EntityTargetAction
     useDelay: 10
@@ -172,7 +172,7 @@
   id: ActionHypnosis
   name: Гипноз силы
   description: Обращает жертву на сторону Императора.
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: EntityTargetAction
     useDelay: 3
@@ -181,7 +181,7 @@
     whitelist:
       components:
       - Body
-    canTargetSelf: true
+    canTargetSelf: false
     interactOnMiss: false
     icon:
       sprite: Stories/Actions/force.rsi
@@ -200,7 +200,7 @@
   id: ActionSithRevertPolymorph
   name: Вернуться в обычную форму
   description: Перестаньте бегать и сразитесь!
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   components:
   - type: InstantAction
     icon: { sprite: Stories/Actions/force.rsi, state: sith }

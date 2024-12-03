@@ -7,9 +7,6 @@
     - type: Tag
       tags:
         - ForceRecallEquipment
-    - type: ClothingSpeedModifier
-      walkModifier: 1
-      sprintModifier: 1.02
     - type: Sprite
       sprite: Stories/Clothing/Uniforms/Jumpsuit/jedi.rsi
     - type: Clothing
@@ -19,7 +16,7 @@
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitJediNt
   name: униформа стража клинка
-  description: Специальная униформа никак не повышающая точность владения мечом.
+  description: Специальная униформа, никак не повышающая точность владения мечом.
   components:
     - type: Tag
       tags:
@@ -61,7 +58,7 @@
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitJediNomad
   name: униформа путника
-  description: Униформа никак не повышающая точность владения мечом.
+  description: Униформа, никак не повышающая точность владения мечом.
   components:
     - type: Tag
       tags:
@@ -75,7 +72,7 @@
   parent: ClothingUniformBase
   id: ClothingUniformJumpsuitExe
   name: униформа хранителя
-  description: Специальная униформа никак не повышающая точность владения мечом.
+  description: Специальная униформа, никак не повышающая точность владения мечом.
   components:
     - type: Tag
       tags:

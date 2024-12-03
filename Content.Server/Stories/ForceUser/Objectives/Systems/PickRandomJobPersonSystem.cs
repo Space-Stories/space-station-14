@@ -11,6 +11,7 @@ using Content.Shared.Popups;
 using Content.Server.Store.Systems;
 using Content.Shared.FixedPoint;
 using Content.Shared.Chat;
+using Content.Shared.Roles;
 
 namespace Content.Server.Objectives.Systems;
 
@@ -57,8 +58,7 @@ public sealed class PickRandomJobPersonSystem : EntitySystem
         var allHeads = new List<EntityUid>();
         foreach (var mind in allHumans)
         {
-            // RequireAdminNotify used as a cheap way to check for command department
-            if (_job.MindTryGetJob(mind, out _, out var prototype) && prototype.ID == comp.JobID)
+            if (_job.MindTryGetJob(mind, out var job) && job.ID == comp.JobID)
                 allHeads.Add(mind);
         }
 

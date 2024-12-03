@@ -1,5 +1,5 @@
 - type: entity
-  name: law office's rubber stamp
+  name: Печать агента внутренних дел
   parent: RubberStampBase
   id: RubberStampIAA
   suffix: DO NOT MAP
@@ -13,15 +13,16 @@
       state: stamp-iaa
 
 - type: entity
-  name: psychologist's rubber stamp
+  name: печать начальника тюрьмы
+  description: Печать из резины, для проставления печатей на важных документах.
   parent: RubberStampBase
-  id: RubberStampPsychologist
+  id: PRISONRubberStamp
   suffix: DO NOT MAP
   components:
-  - type: Stamp
-    stampedName: stamp-component-stamped-name-psychologist
-    stampedColor: "#0082AE"
-    stampState: "paper_stamp-psychologist"
-  - type: Sprite
-    sprite: Objects/Misc/bureaucracy.rsi
-    state: stamp-psychologist
+    - type: Stamp
+      stampedName: Начальник тюрьмы
+      stampedColor: "#0036A2"
+      stampState: "paper_stamp-hosp"
+    - type: Sprite
+      sprite: Objects/Misc/bureaucracy.rsi
+      state: stamp-hosp

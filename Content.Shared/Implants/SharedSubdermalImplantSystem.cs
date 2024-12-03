@@ -17,6 +17,7 @@ public abstract class SharedSubdermalImplantSystem : EntitySystem
     [Dependency] private readonly SharedActionsSystem _actionsSystem = default!;
     [Dependency] private readonly SharedContainerSystem _container = default!;
     [Dependency] private readonly TagSystem _tag = default!;
+    [Dependency] private readonly SharedInteractionSystem _interaction = default!;
 
     public const string BaseStorageId = "storagebase";
 
@@ -27,7 +28,7 @@ public abstract class SharedSubdermalImplantSystem : EntitySystem
         SubscribeLocalEvent<SubdermalImplantComponent, EntGotRemovedFromContainerMessage>(OnRemove);
 
         SubscribeLocalEvent<ImplantedComponent, MobStateChangedEvent>(RelayToImplantEvent);
-        SubscribeLocalEvent<ImplantedComponent, AfterInteractUsingEvent>(RelayToImplantEvent);
+        SubscribeLocalEvent<ImplantedComponent, AfterInteractUsingEvent>(RelayToImplantInteractEvent);
         SubscribeLocalEvent<ImplantedComponent, SuicideEvent>(RelayToImplantEvent);
     }
 
@@ -94,20 +95,36 @@ public abstract class SharedSubdermalImplantSystem : EntitySystem
     /// </summary>
     public void AddImplants(EntityUid uid, IEnumerable<String> implants)
     {
-        var coords = Transform(uid).Coordinates;
         foreach (var id in implants)
         {
-            var ent = Spawn(id, coords);
-            if (TryComp<SubdermalImplantComponent>(ent, out var implant))
-            {
-                ForceImplant(uid, ent, implant);
-            }
-            else
-            {
-                Log.Warning($"Found invalid starting implant '{id}' on {uid} {ToPrettyString(uid):implanted}");
-                Del(ent);
-            }
+            AddImplant(uid, id);
         }
+    }
+
+    /// <summary>
+    /// Adds a single implant to a person, and returns the implant.
+    /// Logs any implant ids that don't have <see cref="SubdermalImplantComponent"/>.
+    /// </summary>
+    /// <returns>
+    /// The implant, if it was successfully created. Otherwise, null.
+    /// </returns>>
+    public EntityUid? AddImplant(EntityUid uid, String implantId)
+    {
+        var coords = Transform(uid).Coordinates;
+        var ent = Spawn(implantId, coords);
+
+        if (TryComp<SubdermalImplantComponent>(ent, out var implant))
+        {
+            ForceImplant(uid, ent, implant);
+        }
+        else
+        {
+            Log.Warning($"Found invalid starting implant '{implantId}' on {uid} {ToPrettyString(uid):implanted}");
+            Del(ent);
+            return null;
+        }
+
+        return ent;
     }
 
     /// <summary>
@@ -157,6 +174,20 @@ public abstract class SharedSubdermalImplantSystem : EntitySystem
         var implantContainer = implanted.ImplantContainer;
 
         _container.CleanContainer(implantContainer);
+    }
+
+    private void RelayToImplantInteractEvent(EntityUid uid, ImplantedComponent component, AfterInteractUsingEvent args)
+    {
+        if (args.Handled)
+            return;
+
+        if (!_container.TryGetContainer(uid, ImplanterComponent.ImplantSlotId, out var implantContainer))
+            return;
+
+        foreach (var implant in implantContainer.ContainedEntities)
+        {
+            args.Handled = _interaction.InteractDoAfter(args.User, args.Used, implant, args.ClickLocation, args.CanReach);
+        }
     }
 
     //Relays from the implanted to the implant

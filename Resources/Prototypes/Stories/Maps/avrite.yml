@@ -1,7 +1,7 @@
 - type: gameMap
   id: CorvaxAvrite
   mapName: '[KT] Avrite Station'
-  mapPath: /Maps/Stories/corvax_avrit.yml
+  mapPath: /Maps/Stories/corvax_avrite.yml
   maxRandomOffset: 0
   minPlayers: 55
   stations:
@@ -60,7 +60,7 @@
             Detective: [ 1, 1 ]
             SecurityOfficer: [ 7, 8 ]
             SecurityCadet: [ 4, 6 ]
-            Pilot: [ 1, 1]
+            # Pilot: [ 1, 1]
             # cargo
             Quartermaster: [ 1, 1 ]
             SalvageSpecialist: [ 4, 4 ]

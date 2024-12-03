@@ -4,15 +4,15 @@
   id: BaseInquisitorObjective
   components:
   - type: Objective
-    issuer: inquisitor
+    issuer: objective-issuer-inquisitor
     difficulty: 1.0
-  # - type: RoleRequirement
-  #   roles:
-  #     components:
-  #     - TraitorRole
+  - type: RoleRequirement
+    roles:
+      components:
+      - EmpireMemberRole
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: [BaseInquisitorObjective, BaseKillObjective]
   id: KillJediNtObjective
   description: Уничтожьте его.
@@ -30,7 +30,7 @@
     requireDead: true
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: [BaseInquisitorObjective, BaseSurviveObjective]
   id: SithSurviveObjective
   name: Выжить.
@@ -43,9 +43,10 @@
       state: sith
 
 - type: entity
-  noSpawn: true
+  categories: [ HideSpawnMenu ]
   parent: BaseInquisitorObjective
   id: HypnosisObjective
+  description: Императору нужны новые подданные.
   components:
   - type: Objective
     icon:
@@ -55,5 +56,4 @@
     min: 3
     max: 3
     title: objective-sith-hypnosis-title
-    description: objective-sith-hypnosis-description
   - type: HypnosisCondition

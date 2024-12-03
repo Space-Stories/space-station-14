@@ -70,3 +70,16 @@
   files:
   - /Audio/Stories/Voice/Kidan/waves_antennae_sharply1.ogg
   - /Audio/Stories/Voice/Kidan/waves_antennae_sharply2.ogg
+
+- type: soundCollection
+  id: KidanGasp
+  files:
+  - /Audio/Stories/Voice/Kidan/dying_gasp1.ogg
+  - /Audio/Stories/Voice/Kidan/dying_gasp2.ogg
+  - /Audio/Stories/Voice/Kidan/dying_gasp3.ogg
+
+- type: soundCollection
+  id: KidanDeathGasp
+  files:
+  - /Audio/Stories/Voice/Kidan/deathgasp1.ogg
+  - /Audio/Stories/Voice/Kidan/deathgasp2.ogg

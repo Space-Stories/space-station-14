@@ -1,11 +1,4 @@
 - type: radioChannel
-  id: PrisonStation
-  name: Тюрьма-Станция
-  keycode: 'p' # Stories-Localization
-  frequency: 1101
-  color: "#e96044"
-
-- type: radioChannel
   id: Prison
   name: chat-radio-prison
   keycode: 'з'
@@ -14,7 +7,7 @@
 
 - type: radioChannel
   id: Empire
-  name: Империя
+  name: chat-radio-empire
   keycode: 'г' # Stories-Localization
   frequency: 1984
   color: "#1b67a5"
@@ -29,9 +22,9 @@
   longRange: true
 
 - type: radioChannel
-  id: SpafMind #for spaf
-  name: Общий разум
-  keycode: 'r'
+  id: SpafMind
+  name: chat-radio-spaf-mind
+  keycode: 'щ'
   frequency: 9361
   color: "#00FF00"
   longRange: true

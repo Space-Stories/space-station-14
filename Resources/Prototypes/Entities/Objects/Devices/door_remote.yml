@@ -158,6 +158,7 @@
   - type: Access
     groups:
     - AllAccess
+    - PrisonAllAccess # Stories
     tags:
     - CentralCommand
     - NuclearOperative
