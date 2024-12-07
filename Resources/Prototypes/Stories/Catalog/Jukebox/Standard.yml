@@ -51,3 +51,21 @@
   name: Toby Fox - My Castle Town
   path:
     path: /Audio/Stories/Jukebox/mycastletown.ogg
+
+- type: jukebox
+  id: SinceIFellForYou
+  name: Lee Morgan - Since I Fell For You
+  path:
+    path: /Audio/Stories/Jukebox/sinceifellforyou.ogg
+
+- type: jukebox
+  id: VisionsBrooklyn
+  name: Daniel Pemberton - Visions Brooklyn
+  path:
+    path: /Audio/Stories/Jukebox/visionsbrooklyn.ogg
+
+- type: jukebox
+  id: AbsoluteTravesty
+  name: Wrong Organ - Absolute Travesty
+  path:
+    path: /Audio/Stories/Jukebox/absolutetravesty.ogg
